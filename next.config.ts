@@ -74,6 +74,12 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/vince-baker.vcf",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
+        ],
+      },
+      {
         source: "/api/markdown",
         headers: [
           { key: "Content-Type", value: "text/markdown; charset=utf-8" },
