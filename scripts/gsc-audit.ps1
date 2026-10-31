@@ -49,8 +49,8 @@ $CanonicalUrls = @()
 $IndexNowPs1 = Join-Path $PSScriptRoot "submit-indexnow.ps1"
 if (Test-Path $IndexNowPs1) {
     $scriptContent = Get-Content $IndexNowPs1 -Raw
-    $matches = [regex]::Matches($scriptContent, '"https://\$HostDomain([^"]*)"')
-    foreach ($m in $matches) {
+    $urlMatches = [regex]::Matches($scriptContent, '"https://\$HostDomain([^"]*)"')
+    foreach ($m in $urlMatches) {
         $CanonicalUrls += "https://$HostDomain$($m.Groups[1].Value)"
     }
     $CanonicalUrls = $CanonicalUrls | Select-Object -Unique
