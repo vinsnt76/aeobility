@@ -47,6 +47,28 @@ export const metadata = {
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
   },
+  openGraph: {
+    title: "Telemetry Diagnostic Tool: Technical Architecture Guide | AEObility",
+    description: "An open technical specification of AEObility Architecture v2.6 detailing dual-vector hashing, text-embedding-004 RAG simulations, Subject-Predicate-Object entity triples, and server-side HMAC session security.",
+    url: "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
+    siteName: "AEObility",
+    locale: "en_AU",
+    type: "article",
+    images: [
+      {
+        url: "https://aeobility.com.au/images/knowledge-hub/telemetry-diagnostic-guide_AEObility.webp",
+        width: 1200,
+        height: 800,
+        alt: "Visualisation of AEObility NLP agent AI Bill overseeing the Telemetry Engine 6-stage diagnostic pipeline",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Telemetry Diagnostic Tool: Technical Architecture Guide | AEObility",
+    description: "An open technical specification of AEObility Architecture v2.6 detailing dual-vector hashing, text-embedding-004 RAG simulations, Subject-Predicate-Object entity triples, and server-side HMAC session security.",
+    images: ["https://aeobility.com.au/images/knowledge-hub/telemetry-diagnostic-guide_AEObility.webp"],
+  },
 };
 
 export default function TelemetryDiagnosticArchitectureArticlePage() {
@@ -91,6 +113,10 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
         "@id": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture#article",
         "url": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
         "headline": "Telemetry Diagnostic Tool: Technical Architecture Guide",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://aeobility.com.au/images/knowledge-hub/telemetry-diagnostic-guide_AEObility.webp"
+        },
         "description": "An open technical specification of AEObility Architecture v2.6 detailing dual-vector hashing, text-embedding-004 RAG simulations, Subject-Predicate-Object entity triple extraction, and server-side HMAC session security.",
         "inLanguage": "en-AU",
         "educationalLevel": "Advanced",
@@ -224,6 +250,28 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             }
           }
         ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/images/knowledge-hub/telemetry-diagnostic-guide_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/knowledge-hub/telemetry-diagnostic-guide_AEObility.webp",
+        "url": "https://aeobility.com.au/images/knowledge-hub/telemetry-diagnostic-guide_AEObility.webp",
+        "name": "Visualisation of AEObility NLP agent AI Bill overseeing the Telemetry Engine 6-stage diagnostic pipeline",
+        "description": "Visualisation of AEObility NLP agent AI Bill overseeing the Telemetry Engine 6-stage diagnostic pipeline, vector mapping infrastructure, and RAG retrieval simulations.",
+        "caption": "Visualisation of AEObility NLP agent AI Bill overseeing the Telemetry Engine 6-stage diagnostic pipeline",
+        "keywords": [
+          "Telemetry Diagnostic Engine",
+          "AI Bill",
+          "6-stage diagnostic pipeline",
+          "Answer Engine Optimisation",
+          "AEO Architecture",
+          "Vector Map Infrastructure",
+          "RAG Simulation",
+          "Machine Legibility",
+          "Entity Architecture"
+        ],
+        "representativeOfPage": true,
+        "inLanguage": "en-AU"
       }
     ]
   };
@@ -281,8 +329,8 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
             <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-neutral-950 shadow-2xl space-y-2">
               <div className="relative aspect-[16/9] w-full">
                 <Image
-                  src="/images/knowledge-hub/telemetry_architecture_hero.jpg"
-                  alt="AEObility Telemetry Diagnostic Engine Pipeline Architecture Diagram"
+                  src="/images/knowledge-hub/telemetry-diagnostic-guide_AEObility.webp"
+                  alt="Visualisation of AEObility NLP agent AI Bill overseeing the Telemetry Engine 6-stage diagnostic pipeline"
                   fill
                   className="object-cover"
                   priority
