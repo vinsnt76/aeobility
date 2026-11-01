@@ -48,8 +48,8 @@ export default function ArticlesHubPage() {
       category: "Foundational Theory / Entity Architecture",
       description: "Explore the foundational paper connecting machine legibility, verifiable data provenance, deterministic entity relationships, and intentional data structures for AI search.",
       href: "/knowledge-hub/articles/machine-legibility-data-provenance",
-      image: "/images/knowledge-hub/structured-data-query-fan-out_AEObility.webp",
-      alt: "Machine Legibility & Data Provenance: intentional data structures for AI search by AEObility in Perth, Western Australia.",
+      image: "/images/knowledge-hub/machine-legibility-data-provenance_AEObility.webp",
+      alt: "Abstract image visualising how AEObility uses Machine Legibility & Data Provenance to trace origins of NLP Agent and Brand moniker AI Bill",
       metrics: [
         { label: "Type", value: "Foundational Paper" },
         { label: "Read Time", value: "4 min" }

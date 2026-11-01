@@ -26,45 +26,88 @@ export const metadata: Metadata = {
     description: "Field notes on machine legibility, reconstructible entity provenance, and intentional data structures for generative answer engines.",
     url: "https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance",
     type: "article",
+    images: [
+      {
+        url: "https://aeobility.com.au/images/knowledge-hub/machine-legibility-data-provenance_AEObility.webp",
+        width: 1200,
+        height: 800,
+        alt: "Abstract image visualising how AEObility uses Machine Legibility & Data Provenance to trace origins of NLP Agent and Brand moniker AI Bill",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Machine Legibility & Data Provenance | AEObility",
+    description: "Field notes on machine legibility, reconstructible entity provenance, and intentional data structures for generative answer engines.",
+    images: ["https://aeobility.com.au/images/knowledge-hub/machine-legibility-data-provenance_AEObility.webp"],
   },
 };
 
 export default function MachineLegibilityDataProvenancePage() {
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": ["TechArticle", "DigitalDocument"],
-    "@id": "https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance",
-    "name": "Machine Legibility & Data Provenance: Intentional Data Structures",
-    "headline": "Why Answer Engines Don't Read Your Website: Field Notes on Provenance",
-    "alternativeHeadline": "Machine Legibility & Data Provenance: Intentional Data Structures",
-    "description": "Foundational theoretical paper and field notes connecting machine legibility, reconstructible entity provenance, deterministic triples, and intentional data structures for generative search.",
-    "url": "https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance",
-    "inLanguage": "en-AU",
-    "datePublished": "2026-06-28",
-    "dateModified": "2026-09-23",
-    "version": "1.2.0",
-    "articleSection": "AI Search and Entity Architecture",
-    "mainEntityOfPage": {
-      "@id": "https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance"
-    },
-    "author": {
-      "@type": "Person",
-      "@id": "https://aeobility.com.au/vince-baker#person",
-      "name": "Vinnie Baker",
-      "jobTitle": "Founder & Principal Technical Architect"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
-      "name": "AEObility",
-      "url": "https://aeobility.com.au"
-    },
-    "about": [
-      "Machine legibility",
-      "Data provenance",
-      "Entity relationship modelling",
-      "Answer Engine Optimisation",
-      "Generative Engine Optimisation"
+    "@graph": [
+      {
+        "@type": ["TechArticle", "DigitalDocument"],
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance#article",
+        "name": "Machine Legibility & Data Provenance: Intentional Data Structures",
+        "headline": "Why Answer Engines Don't Read Your Website: Field Notes on Provenance",
+        "alternativeHeadline": "Machine Legibility & Data Provenance: Intentional Data Structures",
+        "description": "Foundational theoretical paper and field notes connecting machine legibility, reconstructible entity provenance, deterministic triples, and intentional data structures for generative search.",
+        "url": "https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://aeobility.com.au/images/knowledge-hub/machine-legibility-data-provenance_AEObility.webp"
+        },
+        "inLanguage": "en-AU",
+        "datePublished": "2026-06-28",
+        "dateModified": "2026-09-23",
+        "version": "1.2.0",
+        "articleSection": "AI Search and Entity Architecture",
+        "mainEntityOfPage": {
+          "@id": "https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://aeobility.com.au/vince-baker#person",
+          "name": "Vinnie Baker",
+          "jobTitle": "Founder & Principal Technical Architect"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://aeobility.com.au/#organisation",
+          "name": "AEObility",
+          "url": "https://aeobility.com.au"
+        },
+        "about": [
+          "Machine legibility",
+          "Data provenance",
+          "Entity relationship modelling",
+          "Answer Engine Optimisation",
+          "Generative Engine Optimisation"
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/images/knowledge-hub/machine-legibility-data-provenance_AEObility.webp",
+        "contentUrl": "https://aeobility.com.au/images/knowledge-hub/machine-legibility-data-provenance_AEObility.webp",
+        "url": "https://aeobility.com.au/images/knowledge-hub/machine-legibility-data-provenance_AEObility.webp",
+        "name": "Abstract Image Visualising How AEObility Uses Machine Legibility & Data Provenance to Trace Origins of NLP Agent and Brand Moniker AI Bill",
+        "description": "Abstract image visualising how AEObility uses Machine Legibility & Data Provenance to trace origins of NLP Agent and Brand moniker AI Bill.",
+        "caption": "Abstract image visualising how AEObility uses Machine Legibility & Data Provenance to trace origins of NLP Agent and Brand moniker AI Bill",
+        "keywords": [
+          "Machine Legibility",
+          "Data Provenance",
+          "AI Bill",
+          "NLP Agent",
+          "Entity Relationship Modelling",
+          "Intentional Data Structures",
+          "Answer Engine Optimisation",
+          "Generative Search"
+        ],
+        "representativeOfPage": true,
+        "inLanguage": "en-AU"
+      }
     ]
   };
 
