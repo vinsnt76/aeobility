@@ -72,8 +72,8 @@ export default function ArticlesHubPage() {
       category: "Technical Architecture / Spec",
       description: "Deep-dive technical specification detailing vector mapping infrastructure, text-embedding-004 RAG dilution mitigation, scoring math, AI Bill ingestion, and NLWeb/MCP protocols.",
       href: "/knowledge-hub/articles/telemetry-diagnostic-architecture",
-      image: "/images/knowledge-hub/structured-data-query-fan-out_AEObility.webp",
-      alt: "Telemetry Diagnostic Engine architecture visualisation showing vector map infrastructure and RAG simulation by AEObility in Perth, Western Australia.",
+      image: "/images/knowledge-hub/telemetry-diagnostic-guide_AEObility.webp",
+      alt: "Visualisation of AEObility NLP agent AI Bill overseeing the Telemetry Engine 6-stage diagnostic pipeline",
       metrics: [
         { label: "Type", value: "Technical Spec" },
         { label: "Read Time", value: "8 min" }
