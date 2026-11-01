@@ -332,6 +332,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
                   src="/images/knowledge-hub/telemetry-diagnostic-guide_AEObility.webp"
                   alt="Visualisation of AEObility NLP agent AI Bill overseeing the Telemetry Engine 6-stage diagnostic pipeline"
                   fill
+                  sizes="(max-width: 1200px) 100vw, 1200px"
                   className="object-cover"
                   priority
                 />
