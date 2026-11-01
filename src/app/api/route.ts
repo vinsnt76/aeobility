@@ -33,6 +33,7 @@ export async function GET() {
       'WWW-Authenticate': 'x402 scheme="exact", asset="USDC", network="base", amount="1000"',
       'Content-Type': 'application/json; charset=utf-8',
       'Cache-Control': 'no-store, must-revalidate',
+      'X-Robots-Tag': 'noindex, nofollow, noarchive',
     },
   });
 }
