@@ -32,6 +32,18 @@ export default function ArticlesHubPage() {
 
   const articles = [
     {
+      title: "5 Critical Signals Your Business Needs GEO (Not Just Traditional SEO)",
+      category: "Generative Engine Optimisation / Diagnostic Guide",
+      description: "Technical analysis of five operational indicators showing when a business requires Generative Engine Optimisation (GEO) instead of legacy keyword SEO.",
+      href: "/knowledge-hub/articles/seo-vs-geo-red-flags",
+      image: "/images/knowledge-hub/geo-vs-seo-red-flags-banner_AEObility.webp",
+      alt: "Abstract hypercolour illustration showing divergent discovery pathways between traditional search optimisation and AI-driven generative engine optimisation, with warning signals on one side and layered answer-engine discovery systems on the other.",
+      metrics: [
+        { label: "Type", value: "Diagnostic Guide" },
+        { label: "Read Time", value: "8 min" }
+      ]
+    },
+    {
       title: "Machine Legibility & Data Provenance: Intentional Data Structures",
       category: "Foundational Theory / Entity Architecture",
       description: "Explore the foundational paper connecting machine legibility, verifiable data provenance, deterministic entity relationships, and intentional data structures for AI search.",
