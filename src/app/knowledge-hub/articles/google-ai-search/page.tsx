@@ -257,29 +257,29 @@ export default function GoogleAiSearchArticlePage() {
               Google AI Search: <span className="text-gradient-aeo">Grounded Synthesis &amp; Retrieval Mechanics</span>
             </h1>
 
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/50 border-t border-b border-white/10 py-3.5">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-400 border-t border-b border-white/10 py-3.5">
               <span>Author: <strong className="text-white">Vince Baker</strong></span>
               <span>&bull;</span>
               <span>Organisation: <strong className="text-white">AEObility</strong></span>
               <span>&bull;</span>
               <span>Published: <strong className="text-white">02/11/2026</strong></span>
               <span>&bull;</span>
-              <span>Target Topic: <strong className="text-aeo-cyan">google ai search</strong></span>
+              <span>Target Topic: <strong className="text-aeo-cyan font-mono">google ai search</strong></span>
               <span>&bull;</span>
               <span>7 min read</span>
             </div>
 
             {/* Opening 100-Word Salience Block */}
-            <p className="text-lg md:text-xl font-light text-white/90 font-serif leading-relaxed">
+            <p className="text-lg md:text-xl font-normal text-slate-200 font-sans leading-relaxed">
               Google&apos;s AI Mode extends AI Overviews by shifting search from a traditional directory toward a grounded synthesis engine. Instead of matching keywords directly to an index, AI Overviews and AI Mode can break complex prompts into secondary background queries, retrieve relevant passages from the index, and assemble a direct answer on the page.
             </p>
 
             {/* Inverted Pyramid Core Definition Box */}
-            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900/60 to-transparent border-l-4 border-aeo-cyan rounded-r-2xl space-y-3 shadow-xl">
+            <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-r from-aeo-cyan/10 via-slate-950/80 to-slate-950/90 border-l-4 border-l-aeo-cyan p-6 backdrop-blur-md shadow-xl space-y-3">
               <h2 className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">
                 What is Google AI Search?
               </h2>
-              <p className="text-white/90 text-sm md:text-base font-normal leading-relaxed">
+              <p className="text-slate-200 text-sm md:text-base font-normal leading-relaxed">
                 <strong>Google AI Search</strong> integrates generative AI features like AI Overviews and AI Mode directly into search results. Google Search&apos;s core strength remains its established web index and ranking systems. Rather than operating purely as a standalone vector-store generator, AI Mode appears to sit directly on top of those systems, issuing multiple searches into Google&apos;s retrieval stack and grounding a generated response from returned web evidence. While this retrieval-and-grounding pattern strongly resembles a{' '}
                 <Link 
                   href="/knowledge-hub/articles/retrieval-augmented-generation" 
@@ -289,14 +289,14 @@ export default function GoogleAiSearchArticlePage() {
                 </Link>
                 , Google&apos;s public documentation emphasises query fan-out and retrieval from Search rather than pure vector-store generation. To maintain organic search visibility, content creators and brands must structure concise, verifiable passage-level evidence that search models can reliably extract, ground, and cite during complex multi-turn queries.
               </p>
-              <p className="text-xs text-white/60 font-mono pt-1">
+              <p className="text-xs text-slate-400 font-mono pt-1">
                 For site owners, this changes the operational target. You are no longer optimising solely for a top-ranking URL; you are structuring clear, verifiable passages that give the model reliable evidence to extract and cite.
               </p>
             </div>
           </header>
 
           {/* Hero Architecture Visual Banner */}
-          <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video shadow-2xl bg-neutral-950 group">
+          <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] aspect-video shadow-2xl bg-neutral-950 group">
             <Image
               src="/images/knowledge-hub/google-ai-search-grounded-synthesis-query-fanout-visualisation.webp"
               alt="Abstract visualisation of AI search retrieval showing multiple coloured information streams converging into a central synthesis node surrounded by citation networks, entity relationships and layered evidence structures."
@@ -315,7 +315,7 @@ export default function GoogleAiSearchArticlePage() {
                   <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
                     Dual-Layer Retrieval: Web Indexing Meets Grounded Generative Synthesis
                   </h3>
-                  <p className="text-xs sm:text-sm text-white/70 font-light">
+                  <p className="text-xs sm:text-sm text-slate-300 font-normal">
                     How Google synthesises web evidence across multi-query expansions, Search retrieval, and conversational sessions.
                   </p>
                 </div>
@@ -334,19 +334,19 @@ export default function GoogleAiSearchArticlePage() {
               </h2>
             </div>
 
-            <p className="text-base text-white/80 font-light leading-relaxed">
+            <p className="text-base text-slate-300 font-normal leading-relaxed">
               Google&apos;s generative search experiences do not replace standard web indexing. They sit directly on top of existing crawling, indexation, and technical quality systems. If your pages are slow, orphaned, or blocked in robots.txt, Google may have limited ability to retrieve and use them in downstream generative features.
             </p>
 
             {/* Subsection: Query Fan-Out */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
+            <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-6 backdrop-blur-md shadow-xl shadow-black/40 space-y-4">
               <div className="flex items-center gap-2">
                 <GitFork className="w-4 h-4 text-aeo-cyan" />
                 <h3 className="text-lg font-bold text-white">
                   Query Fan-Out and Subtopic Expansion
                 </h3>
               </div>
-              <p className="text-sm md:text-base text-white/80 leading-relaxed font-light">
+              <p className="text-sm md:text-base text-slate-300 leading-relaxed font-normal">
                 When a user submits an open or complex query, the model rarely executes a single lookup. Instead, it generates multiple secondary queries across related subtopics simultaneously. For instance, a prompt like &ldquo;how to restore a weed-infested buffalo lawn&rdquo; triggers background searches across selective herbicides, physical thatch removal, and seasonal fertilisation windows. If your site covers only the broad head term and ignores these practical sub-intent clusters, the retrieval engine simply bypasses you during multi-query expansion, exposing your content to{' '}
                 <Link 
                   href="/knowledge-hub/articles/positional-bias-in-retrieval" 
@@ -359,14 +359,14 @@ export default function GoogleAiSearchArticlePage() {
             </div>
 
             {/* Subsection: Retrieval, Grounding and RAG Patterns */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
+            <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-6 backdrop-blur-md shadow-xl shadow-black/40 space-y-4">
               <div className="flex items-center gap-2">
                 <Database className="w-4 h-4 text-aeo-cyan" />
                 <h3 className="text-lg font-bold text-white">
                   Retrieval, Grounding, and Retrieval-Augmented Generation (RAG)
                 </h3>
               </div>
-              <p className="text-sm md:text-base text-white/80 leading-relaxed font-light">
+              <p className="text-sm md:text-base text-slate-300 leading-relaxed font-normal">
                 Google does not publicly describe all AI Overviews and AI Mode architecture simply as a standalone vector &ldquo;RAG&rdquo; pipeline. Google Search&apos;s core strength remains its world-scale web index and core ranking systems. AI Mode appears to sit on top of those systems, issuing multiple searches into Google&apos;s retrieval stack and then grounding a generated response from the returned evidence. While this retrieval-plus-grounding pattern clearly resembles a{' '}
                 <Link 
                   href="/knowledge-hub/articles/retrieval-augmented-generation" 
@@ -379,40 +379,40 @@ export default function GoogleAiSearchArticlePage() {
             </div>
 
             {/* Subsection: Multi-Turn Conversational Reasoning */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
+            <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-6 backdrop-blur-md shadow-xl shadow-black/40 space-y-4">
               <div className="flex items-center gap-2">
                 <Network className="w-4 h-4 text-aeo-cyan" />
                 <h3 className="text-lg font-bold text-white">
                   Multi-Turn Conversational Reasoning
                 </h3>
               </div>
-              <p className="text-sm md:text-base text-white/80 leading-relaxed font-light">
+              <p className="text-sm md:text-base text-slate-300 leading-relaxed font-normal">
                 Through conversational interfaces like AI Mode, users refine constraints, exclude variables, and test comparisons across a continuous session. The engine continually retrieves fresh candidate passages at each turn to answer follow-up prompts.
               </p>
             </div>
 
             {/* Subsection: The Mechanical Reality vs The Commercial Impact */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
+            <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-6 backdrop-blur-md shadow-xl shadow-black/40 space-y-4">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-aeo-cyan" />
                 <h3 className="text-lg font-bold text-white">
                   The Mechanical Reality vs The Commercial Impact
                 </h3>
               </div>
-              <p className="text-sm md:text-base text-white/80 leading-relaxed font-light">
+              <p className="text-sm md:text-base text-slate-300 leading-relaxed font-normal">
                 While modern RAG literature frequently discusses vector representations and dense embeddings, Google&apos;s proprietary internal ranking weights and vector calculations remain closed. We do not pretend to reverse-engineer these black boxes. What we can observe and measure is the operational result: when query fan-out occurs, brands absent from secondary subtopic expansions may lose visibility for that branch of the query, regardless of how well their homepage ranks for the primary keyword.
               </p>
             </div>
 
             {/* Subsection: What Has Not Changed */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-4">
+            <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-6 backdrop-blur-md shadow-xl shadow-black/40 space-y-4">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-aeo-cyan" />
                 <h3 className="text-lg font-bold text-white">
                   What Has Not Changed
                 </h3>
               </div>
-              <p className="text-sm md:text-base text-white/80 leading-relaxed font-light">
+              <p className="text-sm md:text-base text-slate-300 leading-relaxed font-normal">
                 Despite the introduction of AI Overviews and AI Mode, core fundamentals remain unchanged. Pages must still be crawlable, indexable, accessible, trustworthy, and competitively relevant. Generative systems operate directly on top of Google&apos;s existing retrieval infrastructure rather than replacing it. If a site suffers from technical indexation debt, slow server response times, orphaned navigation, or thin authority signals, answer engines will never have the opportunity to extract or cite its content. Foundational technical excellence remains the mandatory prerequisite for any advanced answer engine visibility.
               </p>
             </div>
@@ -423,52 +423,52 @@ export default function GoogleAiSearchArticlePage() {
                 <Layers className="w-4 h-4 text-aeo-cyan" />
                 <span>Topic Cluster &amp; Semantic Lattice Architecture</span>
               </h3>
-              <p className="text-xs text-white/70">
+              <p className="text-xs text-slate-400">
                 A single page cannot claim broad category dominance without supporting concept nodes that reinforce the primary entity across intent corridors:
               </p>
               
-              <div className="overflow-x-auto rounded-xl border border-white/10 bg-neutral-950/50">
-                <table className="w-full text-left text-xs md:text-sm">
-                  <thead className="bg-white/5 border-b border-white/10 text-white font-mono uppercase text-[11px] tracking-wider">
-                    <tr>
-                      <th className="p-3.5">Pillar / Sub-Node Category</th>
-                      <th className="p-3.5">Target Intent &amp; Focus</th>
-                      <th className="p-3.5">Suggested URL Structure</th>
-                      <th className="p-3.5">Key Entity Triples</th>
+              <div className="overflow-x-auto rounded-2xl border border-white/[0.08] bg-slate-950/75 p-3 backdrop-blur-md shadow-xl shadow-black/40 my-6">
+                <table className="w-full text-left border-collapse text-xs md:text-sm">
+                  <thead>
+                    <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400 font-mono">
+                      <th className="py-3 px-4 font-normal">Pillar / Sub-Node Category</th>
+                      <th className="py-3 px-4 font-normal text-slate-400">Target Intent &amp; Focus</th>
+                      <th className="py-3 px-4 font-normal text-aeo-cyan">Suggested URL Structure</th>
+                      <th className="py-3 px-4 font-normal text-slate-400">Key Entity Triples</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-white/5 text-white/80 font-light">
+                  <tbody className="divide-y divide-white/[0.06]">
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-3.5 font-medium text-white">Core Definition Node</td>
-                      <td className="p-3.5">Informational: What is Google AI Search?</td>
-                      <td className="p-3.5 font-mono text-aeo-cyan">
+                      <td className="py-3.5 px-4 font-medium text-white">Core Definition Node</td>
+                      <td className="py-3.5 px-4 text-slate-300 font-normal">Informational: What is Google AI Search?</td>
+                      <td className="py-3.5 px-4 font-mono text-aeo-cyan">
                         <Link href="/services/aeo/definition" className="hover:underline">/services/aeo/definition</Link>
                       </td>
-                      <td className="p-3.5 font-mono text-[11px] text-white/70">(Google AI Search, utilises, Gemini RAG)</td>
+                      <td className="py-3.5 px-4 font-mono text-[11px] text-teal-300 italic">(Google AI Search, utilises, Gemini RAG)</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-3.5 font-medium text-white">Comparison Node</td>
-                      <td className="p-3.5">Commercial / Educational: Google AI Search vs. Traditional Search</td>
-                      <td className="p-3.5 font-mono text-aeo-cyan">
+                      <td className="py-3.5 px-4 font-medium text-white">Comparison Node</td>
+                      <td className="py-3.5 px-4 text-slate-300 font-normal">Commercial / Educational: Google AI Search vs. Traditional Search</td>
+                      <td className="py-3.5 px-4 font-mono text-aeo-cyan">
                         <Link href="/services/aeo/comparison" className="hover:underline">/services/aeo/comparison</Link>
                       </td>
-                      <td className="p-3.5 font-mono text-[11px] text-white/70">(AEO, complements, Lexical SEO)</td>
+                      <td className="py-3.5 px-4 font-mono text-[11px] text-teal-300 italic">(AEO, complements, Lexical SEO)</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-3.5 font-medium text-white">Technical Optimisation Node</td>
-                      <td className="p-3.5">Technical / Practical: Structuring Schema for AI Overviews</td>
-                      <td className="p-3.5 font-mono text-aeo-cyan">
+                      <td className="py-3.5 px-4 font-medium text-white">Technical Optimisation Node</td>
+                      <td className="py-3.5 px-4 text-slate-300 font-normal">Technical / Practical: Structuring Schema for AI Overviews</td>
+                      <td className="py-3.5 px-4 font-mono text-aeo-cyan">
                         <Link href="/knowledge-hub/articles/google-ai-search" className="hover:underline">/knowledge-hub/articles/google-ai-search</Link>
                       </td>
-                      <td className="p-3.5 font-mono text-[11px] text-white/70">(Atomic Blocks, increases, Passage Extraction)</td>
+                      <td className="py-3.5 px-4 font-mono text-[11px] text-teal-300 italic">(Atomic Blocks, increases, Passage Extraction)</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-3.5 font-medium text-white">Local / GEO Node</td>
-                      <td className="p-3.5">Commercial: AI Search for Local &amp; Map Discovery</td>
-                      <td className="p-3.5 font-mono text-aeo-cyan">
+                      <td className="py-3.5 px-4 font-medium text-white">Local / GEO Node</td>
+                      <td className="py-3.5 px-4 text-slate-300 font-normal">Commercial: AI Search for Local &amp; Map Discovery</td>
+                      <td className="py-3.5 px-4 font-mono text-aeo-cyan">
                         <Link href="/services/geo-marketing" className="hover:underline">/services/geo-marketing</Link>
                       </td>
-                      <td className="p-3.5 font-mono text-[11px] text-white/70">(Google Maps, feeds, Spatial AI Overviews)</td>
+                      <td className="py-3.5 px-4 font-mono text-[11px] text-teal-300 italic">(Google Maps, feeds, Spatial AI Overviews)</td>
                     </tr>
                   </tbody>
                 </table>
@@ -487,13 +487,13 @@ export default function GoogleAiSearchArticlePage() {
               </h2>
             </div>
 
-            <p className="text-base text-white/80 font-light leading-relaxed">
+            <p className="text-base text-slate-300 font-normal leading-relaxed">
               The integration of generative answers fundamentally changes user click patterns and search funnel mechanics. Instead of browsing a list of links, users increasingly absorb synthesised summaries directly on the result page, shifting organic traffic dynamics across several fronts:
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {/* Point 1 */}
-              <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 space-y-3">
+              <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-5 backdrop-blur-md shadow-xl shadow-black/40 space-y-3">
                 <div className="flex items-center gap-2 text-aeo-cyan text-xs font-mono font-bold uppercase">
                   <BarChart3 className="w-4 h-4" />
                   <span>Click Dynamics</span>
@@ -501,13 +501,13 @@ export default function GoogleAiSearchArticlePage() {
                 <h3 className="text-base font-bold text-white">
                   Traditional Click Volume Drops on Informational Queries
                 </h3>
-                <p className="text-xs md:text-sm text-white/70 leading-relaxed font-light">
+                <p className="text-xs md:text-sm text-slate-300 leading-relaxed font-normal">
                   Independent tracking shows a clear decline in standard organic clicks whenever an AI overview generates. For example, Pew Research documented that traditional organic clicks took place in only 8% of user sessions when an AI summary was present (down from 15% when absent). Direct clicks on citations embedded inside summaries occurred in roughly 1% of visits.
                 </p>
               </div>
 
               {/* Point 2 */}
-              <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 space-y-3">
+              <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-5 backdrop-blur-md shadow-xl shadow-black/40 space-y-3">
                 <div className="flex items-center gap-2 text-aeo-cyan text-xs font-mono font-bold uppercase">
                   <Compass className="w-4 h-4" />
                   <span>Intent Collapse</span>
@@ -515,13 +515,13 @@ export default function GoogleAiSearchArticlePage() {
                 <h3 className="text-base font-bold text-white">
                   Conversational Funnel Compression
                 </h3>
-                <p className="text-xs md:text-sm text-white/70 leading-relaxed font-light">
+                <p className="text-xs md:text-sm text-slate-300 leading-relaxed font-normal">
                   Research journeys that previously took four or five separate searches across multiple browser tabs are collapsing into single, multi-turn sessions. The extent of this compression depends on commercial risk and query intent: low-risk informational questions resolve almost entirely on-interface, while high-stakes, transactional, or localised requirements still drive deeper evaluation.
                 </p>
               </div>
 
               {/* Point 3 */}
-              <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 space-y-3">
+              <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-5 backdrop-blur-md shadow-xl shadow-black/40 space-y-3">
                 <div className="flex items-center gap-2 text-aeo-cyan text-xs font-mono font-bold uppercase">
                   <Sparkles className="w-4 h-4" />
                   <span>Extractable Proof</span>
@@ -529,14 +529,35 @@ export default function GoogleAiSearchArticlePage() {
                 <h3 className="text-base font-bold text-white">
                   The Strategic Revaluation of Citations
                 </h3>
-                <p className="text-xs md:text-sm text-white/70 leading-relaxed font-light">
+                <p className="text-xs md:text-sm text-slate-300 leading-relaxed font-normal">
                   Because generative interfaces absorb and resolve generic definitional text without sending referral traffic, standard explainer content has lost its legacy organic utility. Commercial value now centres on extractable proof: proprietary datasets, verified local pricing, primary case studies, and clear first-party methodologies that grounding models must explicitly reference and cite.
                 </p>
               </div>
             </div>
 
+            {/* Practitioner Field Note / Author Vignette */}
+            <div className="rounded-2xl border border-aeo-cyan/30 bg-gradient-to-r from-aeo-cyan/10 via-slate-950/80 to-slate-950/90 p-6 backdrop-blur-md shadow-xl space-y-3 relative overflow-hidden">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-full border border-aeo-cyan/40 bg-black overflow-hidden flex-shrink-0 relative">
+                  <Image
+                    src="/images/about/Profile-Picture-Vinnie.png"
+                    alt="Vince Baker"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-white">Practitioner Field Note &bull; Vince Baker</div>
+                  <div className="text-xs text-aeo-cyan font-mono">Real-world Perth retrieval observation</div>
+                </div>
+              </div>
+              <p className="text-sm text-slate-200 leading-relaxed font-normal">
+                &ldquo;When inspecting our retrieval logs across Australian trade and healthcare domains, the divergence is stark: pages engineered solely for keyword density rank on page one but are completely absent from Gemini and Perplexity citations. The engines cite the competitor whose pricing and service boundaries are stated in clean, unhedged 100-token blocks. Machine search does not reward clever marketing metaphors; it rewards verifiable informational utility.&rdquo;
+              </p>
+            </div>
+
             {/* Radial Proof Loop Callout: Module 1 */}
-            <div className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-aeo-cyan/15 via-black to-neutral-950 border border-aeo-cyan/40 shadow-2xl relative overflow-hidden group">
+            <div className="mt-6 p-6 rounded-2xl bg-slate-950/75 border border-aeo-cyan/30 backdrop-blur-md shadow-2xl relative overflow-hidden group">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="space-y-1.5 max-w-xl">
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-aeo-cyan/20 border border-aeo-cyan/30 text-aeo-cyan text-[11px] font-mono font-semibold">
@@ -546,13 +567,13 @@ export default function GoogleAiSearchArticlePage() {
                   <h3 className="text-lg font-bold text-white tracking-tight">
                     Want to see how a structured 90-day entity lattice performed on a fresh Australian domain?
                   </h3>
-                  <p className="text-xs sm:text-sm text-white/70 font-light">
+                  <p className="text-xs sm:text-sm text-slate-300 font-normal">
                     Read our 78-day empirical case study analysing live search indexation, entity graph verification, and citation lift.
                   </p>
                 </div>
                 <Link
                   href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days"
-                  className="px-4 py-2.5 rounded-xl bg-aeo-cyan text-black font-semibold text-xs hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap shadow-lg flex-shrink-0"
+                  className="px-5 py-2.5 rounded-xl bg-aeo-cyan text-black font-semibold text-xs hover:bg-white transition-all flex items-center gap-1.5 whitespace-nowrap shadow-lg flex-shrink-0"
                 >
                   <span>Case Study: AEObility&apos;s First 90 Days</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -572,7 +593,7 @@ export default function GoogleAiSearchArticlePage() {
               </h2>
             </div>
 
-            <p className="text-base text-white/80 font-light leading-relaxed">
+            <p className="text-base text-slate-300 font-normal leading-relaxed">
               Succeeding in a multi-query, grounded search environment requires refining content for clarity, machine readability, and original value rather than chasing speculative token budgets:
             </p>
 
@@ -583,35 +604,35 @@ export default function GoogleAiSearchArticlePage() {
                 <span>Strategic Action Matrix</span>
               </h3>
 
-              <div className="overflow-x-auto rounded-xl border border-white/10 bg-neutral-950/50">
-                <table className="w-full text-left text-xs md:text-sm">
-                  <thead className="bg-white/5 border-b border-white/10 text-white font-mono uppercase text-[11px] tracking-wider">
-                    <tr>
-                      <th className="p-3.5">Strategic Shift</th>
-                      <th className="p-3.5">Traditional SEO Focus</th>
-                      <th className="p-3.5 text-aeo-cyan">AI Search Commercial Strategy</th>
+              <div className="overflow-x-auto rounded-2xl border border-white/[0.08] bg-slate-950/75 p-3 backdrop-blur-md shadow-xl shadow-black/40 my-6">
+                <table className="w-full text-left border-collapse text-xs md:text-sm">
+                  <thead>
+                    <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400 font-mono">
+                      <th className="py-3 px-4 font-normal">Strategic Shift</th>
+                      <th className="py-3 px-4 font-normal text-slate-400">Traditional SEO Focus</th>
+                      <th className="py-3 px-4 font-normal text-aeo-cyan">AI Search Commercial Strategy</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-white/5 text-white/80 font-light">
+                  <tbody className="divide-y divide-white/[0.06]">
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-3.5 font-medium text-white">Content Focus</td>
-                      <td className="p-3.5">Broad definitional &amp; high-volume keyword content</td>
-                      <td className="p-3.5 text-white font-medium">Proprietary data, unique research &amp; expert insights</td>
+                      <td className="py-3.5 px-4 font-medium text-white">Content Focus</td>
+                      <td className="py-3.5 px-4 text-slate-400 font-normal">Broad definitional &amp; high-volume keyword content</td>
+                      <td className="py-3.5 px-4 text-teal-200 font-medium">Proprietary data, unique research &amp; expert insights</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-3.5 font-medium text-white">Optimisation Goal</td>
-                      <td className="p-3.5">Single-keyword URL rankings</td>
-                      <td className="p-3.5 text-white font-medium">Citation presence across multi-query fan-out</td>
+                      <td className="py-3.5 px-4 font-medium text-white">Optimisation Goal</td>
+                      <td className="py-3.5 px-4 text-slate-400 font-normal">Single-keyword URL rankings</td>
+                      <td className="py-3.5 px-4 text-teal-200 font-medium">Citation presence across multi-query fan-out</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-3.5 font-medium text-white">Authority Signal</td>
-                      <td className="p-3.5">Backlink quantity &amp; exact-anchor matching</td>
-                      <td className="p-3.5 text-white font-medium">Cross-web entity consensus &amp; verification</td>
+                      <td className="py-3.5 px-4 font-medium text-white">Authority Signal</td>
+                      <td className="py-3.5 px-4 text-slate-400 font-normal">Backlink quantity &amp; exact-anchor matching</td>
+                      <td className="py-3.5 px-4 text-teal-200 font-medium">Cross-web entity consensus &amp; verification</td>
                     </tr>
                     <tr className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-3.5 font-medium text-white">Success Metrics</td>
-                      <td className="p-3.5">Rankings &amp; raw organic click volume</td>
-                      <td className="p-3.5 text-white font-medium">Citation share, referral quality &amp; conversions</td>
+                      <td className="py-3.5 px-4 font-medium text-white">Success Metrics</td>
+                      <td className="py-3.5 px-4 text-slate-400 font-normal">Rankings &amp; raw organic click volume</td>
+                      <td className="py-3.5 px-4 text-teal-200 font-medium">Citation share, referral quality &amp; conversions</td>
                     </tr>
                   </tbody>
                 </table>
@@ -619,12 +640,12 @@ export default function GoogleAiSearchArticlePage() {
             </div>
 
             {/* Subsection A: Modular Content */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
+            <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-6 backdrop-blur-md shadow-xl shadow-black/40 space-y-3">
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
                 <span className="text-aeo-cyan font-mono text-sm">A.</span>
                 <span>Modular, Answer-First Content Structure</span>
               </h3>
-              <ul className="space-y-2.5 text-sm md:text-base text-white/80 font-light leading-relaxed">
+              <ul className="space-y-2.5 text-sm md:text-base text-slate-300 font-normal leading-relaxed">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-1" />
                   <span><strong>Direct Inverted-Pyramid Framing:</strong> Lead sections with concise, self-contained definitions or solutions directly beneath descriptive subheadings (H2/H3).</span>
@@ -637,12 +658,12 @@ export default function GoogleAiSearchArticlePage() {
             </div>
 
             {/* Subsection B: Standardised Schema */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
+            <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-6 backdrop-blur-md shadow-xl shadow-black/40 space-y-3">
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
                 <span className="text-aeo-cyan font-mono text-sm">B.</span>
                 <span>Standardised Schema &amp; Entity Signals</span>
               </h3>
-              <p className="text-sm md:text-base text-white/80 font-light leading-relaxed">
+              <p className="text-sm md:text-base text-slate-300 font-normal leading-relaxed">
                 Use standard Schema.org markup where it accurately describes visible content to assist in{' '}
                 <Link 
                   href="/knowledge-hub/articles/entity-authority-building" 
@@ -655,12 +676,12 @@ export default function GoogleAiSearchArticlePage() {
             </div>
 
             {/* Subsection C: Entity Consensus */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
+            <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-6 backdrop-blur-md shadow-xl shadow-black/40 space-y-3">
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
                 <span className="text-aeo-cyan font-mono text-sm">C.</span>
                 <span>Entity Consensus &amp; Verification Framework</span>
               </h3>
-              <p className="text-sm md:text-base text-white/80 font-light leading-relaxed">
+              <p className="text-sm md:text-base text-slate-300 font-normal leading-relaxed">
                 Ensure core business information, product specs, and expert credentials are consistently stated across third-party industry databases, review platforms, and structured markup to build strong entity verification across search ecosystems. Maintain a canonical{' '}
                 <Link href="/brand-facts" className="text-aeo-cyan hover:underline font-semibold">
                   Brand Facts directory
@@ -670,33 +691,33 @@ export default function GoogleAiSearchArticlePage() {
             </div>
 
             {/* Subsection D: Measurable Success Metrics */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
+            <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-6 backdrop-blur-md shadow-xl shadow-black/40 space-y-3">
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
                 <span className="text-aeo-cyan font-mono text-sm">D.</span>
                 <span>Measurable Success Metrics</span>
               </h3>
-              <p className="text-sm md:text-base text-white/80 font-light leading-relaxed">
+              <p className="text-sm md:text-base text-slate-300 font-normal leading-relaxed">
                 Replace static keyword rank tracking with grounded, observable KPIs combining Search Console data, brand citation frequency, multi-turn prompt presence, and entity sentiment consistency.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
+                <div className="p-4 rounded-xl bg-slate-900/60 border border-white/[0.06] space-y-1">
                   <div className="text-xs font-mono text-aeo-cyan font-bold">Citation Share</div>
-                  <div className="text-xs text-white/70">Sample a representative set of target industry prompts to track brand mention frequency and link citations over time.</div>
+                  <div className="text-xs text-slate-400">Sample a representative set of target industry prompts to track brand mention frequency and link citations over time.</div>
                 </div>
-                <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-1">
+                <div className="p-4 rounded-xl bg-slate-900/60 border border-white/[0.06] space-y-1">
                   <div className="text-xs font-mono text-aeo-cyan font-bold">Qualified Traffic &amp; Conversion</div>
-                  <div className="text-xs text-white/70">Track branded search volume and first-party conversion rates from referral traffic.</div>
+                  <div className="text-xs text-slate-400">Track branded search volume and first-party conversion rates from referral traffic.</div>
                 </div>
               </div>
             </div>
 
             {/* Subsection E: Practitioner Testing */}
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl space-y-3">
+            <div className="rounded-2xl border border-white/[0.08] bg-slate-950/75 p-6 backdrop-blur-md shadow-xl shadow-black/40 space-y-3">
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
                 <span className="text-aeo-cyan font-mono text-sm">E.</span>
                 <span>Practitioner Testing &amp; Audit Methodology</span>
               </h3>
-              <p className="text-sm md:text-base text-white/80 font-light leading-relaxed">
+              <p className="text-sm md:text-base text-slate-300 font-normal leading-relaxed">
                 Based on real-world organic search audits, teams should regularly execute multi-turn prompt sets or leverage an{' '}
                 <Link 
                   href="/diagnostic" 
@@ -708,48 +729,47 @@ export default function GoogleAiSearchArticlePage() {
               </p>
             </div>
 
-            {/* Commercial Action Corridor: Module 2 */}
-            <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-neutral-950 via-neutral-900 to-black border border-white/20 shadow-2xl relative overflow-hidden">
-              <div className="space-y-4 max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/30 text-xs text-aeo-cyan font-mono font-bold uppercase">
-                  <span>Entity Readability Audit</span>
-                </div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
-                  Ready to Audit Your Entity Readability?
-                </h3>
-                <p className="text-sm text-white/80 leading-relaxed font-light">
-                  Move from legacy keyword tracking to structured, RAG-ready machine discovery.
-                </p>
-                <div className="flex flex-wrap gap-3 pt-2">
-                  <Link
-                    href="/services/aeo"
-                    className="px-4 py-2.5 rounded-xl bg-aeo-cyan text-black font-semibold text-xs hover:bg-white transition-all flex items-center gap-1.5 shadow-lg"
-                  >
-                    <span>AEO Services &amp; Answer Engine Marketing Hub</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                  <Link
-                    href="/diagnostic"
-                    className="px-4 py-2.5 rounded-xl bg-white/10 text-white font-medium text-xs hover:bg-white/20 transition-all flex items-center gap-1.5 border border-white/10"
-                  >
-                    <span>AI Search Visibility Diagnostic</span>
-                  </Link>
-                  <Link
-                    href="/solutions/aeo-blueprint"
-                    className="px-4 py-2.5 rounded-xl bg-white/5 text-aeo-cyan font-mono text-xs hover:bg-white/10 transition-all flex items-center gap-1.5 border border-aeo-cyan/30"
-                  >
-                    <span>$995 Strategic Blueprint</span>
-                  </Link>
-                </div>
+            {/* Commercial Action Corridor: Module 2 (Hick's Law Unified CTA) */}
+            <div className="mt-12 rounded-2xl border border-white/[0.08] bg-slate-950/75 p-8 text-center max-w-3xl mx-auto backdrop-blur-md shadow-2xl shadow-black/50 relative overflow-hidden">
+              <span className="text-xs uppercase tracking-widest text-aeo-cyan font-mono font-bold">Entity Readability Audit</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2 mb-3 tracking-tight">
+                Ready to Audit Your Entity Readability?
+              </h2>
+              <p className="text-slate-300 text-sm max-w-xl mx-auto mb-6 font-normal leading-relaxed">
+                Move from legacy keyword tracking to structured, RAG-ready machine discovery.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  href="/solutions/aeo-blueprint"
+                  className="w-full sm:w-auto px-6 py-3 rounded-xl font-semibold text-slate-950 bg-aeo-cyan hover:bg-white transition-all shadow-[0_0_20px_rgba(0,229,255,0.25)] hover:shadow-[0_0_28px_rgba(0,229,255,0.4)] flex items-center justify-center gap-2 text-xs md:text-sm"
+                >
+                  <span>$995 Strategic Blueprint</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/services/aeo"
+                  className="w-full sm:w-auto px-6 py-3 rounded-xl font-medium text-slate-200 border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all text-xs md:text-sm"
+                >
+                  <span>Explore AEO Services</span>
+                </Link>
               </div>
+              <div className="mt-4 text-xs text-slate-400">
+                Prefer a quick self-serve audit? Run a scan with our{' '}
+                <Link href="/diagnostic" className="text-aeo-cyan hover:underline font-medium">
+                  AI Search Visibility Diagnostic
+                </Link>
+              </div>
+              <p className="text-xs text-slate-400 mt-5 tracking-wide font-mono">
+                Zero ongoing lock-in &bull; 48-hour turn-around &bull; Built for Australian entities
+              </p>
             </div>
 
             {/* Key Takeaway */}
-            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900/60 to-transparent border-l-4 border-aeo-cyan rounded-r-2xl space-y-2 mt-8 shadow-xl">
+            <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-r from-aeo-cyan/10 via-slate-950/80 to-slate-950/90 border-l-4 border-l-aeo-cyan p-6 backdrop-blur-md shadow-xl space-y-2 mt-8">
               <h3 className="text-xs text-aeo-cyan font-mono font-bold uppercase tracking-wider">
                 Key Takeaway
               </h3>
-              <p className="text-white/90 text-sm md:text-base font-normal leading-relaxed">
+              <p className="text-slate-200 text-sm md:text-base font-normal leading-relaxed">
                 Google AI Search shifts user discovery from simple link lists toward grounded multi-query synthesis. In this environment, visibility now includes being accurately represented and cited, not merely ranking. The response is not a separate &ldquo;AI SEO&rdquo; discipline, but an emphasis on fundamental technical excellence: crawlable infrastructure, self-contained and clear answers, verified business data, and original, expert-led insights.
               </p>
             </div>
@@ -771,13 +791,13 @@ export default function GoogleAiSearchArticlePage() {
               {articleFaqs.map((faq, index) => (
                 <div 
                   key={index} 
-                  className="p-5 rounded-xl bg-white/[0.02] border border-white/10 space-y-2.5"
+                  className="p-5 rounded-xl bg-slate-950/75 border border-white/[0.08] backdrop-blur-sm space-y-2.5 shadow-md shadow-black/30"
                 >
                   <h3 className="text-base font-bold text-white flex items-start gap-2">
                     <span className="text-aeo-cyan font-mono text-xs mt-1">Q{index + 1}.</span>
                     <span>{faq.question}</span>
                   </h3>
-                  <p className="text-sm text-white/70 font-light leading-relaxed pl-6">
+                  <p className="text-sm text-slate-300 font-normal leading-relaxed pl-6">
                     {faq.answer}
                   </p>
                 </div>
