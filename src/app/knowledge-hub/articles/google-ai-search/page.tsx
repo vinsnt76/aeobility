@@ -100,23 +100,45 @@ export default function GoogleAiSearchArticlePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/google-ai-search#webpage",
+        "url": "https://aeobility.com.au/knowledge-hub/articles/google-ai-search",
+        "name": "Why Query Fan-Out Bypasses Your Pillar Pages | Google AI Search | AEObility",
+        "description": "Why Google AI Search query fan-out bypasses 4,000-word guides. An 8-step practitioner blueprint for structuring extractable passage-level retrieval nodes.",
+        "inLanguage": "en-AU",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://aeobility.com.au/knowledge-hub/articles/google-ai-search#breadcrumb"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://aeobility.com.au/images/knowledge-hub/google-ai-search-grounded-synthesis-query-fanout-visualisation.webp#primaryimage"
+        }
+      },
+      {
         "@type": "TechArticle",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/google-ai-search#article",
         "isPartOf": {
-          "@type": "WebPage",
-          "@id": "https://aeobility.com.au/knowledge-hub/articles/google-ai-search"
+          "@id": "https://aeobility.com.au/knowledge-hub/articles/google-ai-search#webpage"
         },
+        "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/google-ai-search",
         "headline": "Why Query Fan-Out Bypasses Your Pillar Pages: Google AI Search Retrieval Architecture",
         "description": "Why Google AI Search query fan-out bypasses 4,000-word guides. An 8-step practitioner blueprint for structuring extractable passage-level retrieval nodes.",
         "inLanguage": "en-AU",
-        "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/google-ai-search",
         "datePublished": "2026-11-02T08:00:00+08:00",
         "dateModified": "2026-11-03T00:00:00+08:00",
+        "image": [
+          "https://aeobility.com.au/images/knowledge-hub/google-ai-search-grounded-synthesis-query-fanout-visualisation.webp"
+        ],
         "author": {
           "@type": "Person",
           "@id": "https://aeobility.com.au/vince-baker#person",
           "name": "Vince Baker",
-          "url": "https://aeobility.com.au/vince-baker"
+          "url": "https://aeobility.com.au/vince-baker",
+          "image": {
+            "@id": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png#authorimage"
+          }
         },
         "publisher": {
           "@type": "Organization",
@@ -127,12 +149,12 @@ export default function GoogleAiSearchArticlePage() {
           "url": "https://aeobility.com.au",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://aeobility.com.au/icons/android-chrome-512x512.png"
+            "@id": "https://aeobility.com.au/icons/android-chrome-512x512.png#logo",
+            "url": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+            "contentUrl": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+            "width": 512,
+            "height": 512
           }
-        },
-        "image": {
-          "@type": "ImageObject",
-          "@id": "https://aeobility.com.au/images/knowledge-hub/google-ai-search-grounded-synthesis-query-fanout-visualisation.webp"
         },
         "about": [
           {
@@ -198,23 +220,58 @@ export default function GoogleAiSearchArticlePage() {
       },
       {
         "@type": "ImageObject",
-        "@id": "https://aeobility.com.au/images/knowledge-hub/google-ai-search-grounded-synthesis-query-fanout-visualisation.webp",
-        "contentUrl": "https://aeobility.com.au/images/knowledge-hub/google-ai-search-grounded-synthesis-query-fanout-visualisation.webp",
+        "@id": "https://aeobility.com.au/images/knowledge-hub/google-ai-search-grounded-synthesis-query-fanout-visualisation.webp#primaryimage",
         "url": "https://aeobility.com.au/images/knowledge-hub/google-ai-search-grounded-synthesis-query-fanout-visualisation.webp",
+        "contentUrl": "https://aeobility.com.au/images/knowledge-hub/google-ai-search-grounded-synthesis-query-fanout-visualisation.webp",
         "name": "Abstract visualisation of AI search retrieval showing multiple coloured information streams converging into a central synthesis node surrounded by citation networks, entity relationships and layered evidence structures.",
         "description": "Abstract visualisation of AI search retrieval showing multiple coloured information streams converging into a central synthesis node surrounded by citation networks, entity relationships and layered evidence structures.",
         "caption": "Abstract visualisation of AI search retrieval showing multiple coloured information streams converging into a central synthesis node surrounded by citation networks, entity relationships and layered evidence structures.",
-        "keywords": [
-          "Google AI Search",
-          "Google AI Overviews",
-          "Query Fan-Out",
-          "Grounded Synthesis",
-          "RAG Architecture",
-          "Answer Engine Optimisation",
-          "AEO Strategy"
-        ],
+        "width": 1200,
+        "height": 800,
+        "encodingFormat": "image/webp",
         "representativeOfPage": true,
         "inLanguage": "en-AU"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png#authorimage",
+        "url": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
+        "contentUrl": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
+        "caption": "Vince Baker Founder and AEO Specialist at AEObility",
+        "width": 800,
+        "height": 800,
+        "encodingFormat": "image/png",
+        "inLanguage": "en-AU"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://aeobility.com.au/knowledge-hub/articles/google-ai-search#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://aeobility.com.au"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Knowledge Hub",
+            "item": "https://aeobility.com.au/knowledge-hub"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Articles",
+            "item": "https://aeobility.com.au/knowledge-hub/articles"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Google AI Search Retrieval Architecture",
+            "item": "https://aeobility.com.au/knowledge-hub/articles/google-ai-search"
+          }
+        ]
       },
       {
         "@type": "FAQPage",
