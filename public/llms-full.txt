@@ -109,6 +109,15 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 - **Title**: Machine Legibility & Data Provenance: Intentional Data Structures
 - **Summary**: Foundational paper connecting machine legibility, data provenance, deterministic entity relationships, and intentional data structures for AI search.
 
+### Node: `/knowledge-hub/articles/google-ai-search`
+- **Title**: Why Query Fan-Out Bypasses Your Pillar Pages | Google AI Search | AEObility
+- **H1**: Why Query Fan-Out Bypasses Your Pillar Pages (And How to Fix the Retrieval Architecture)
+- **Summary**: Comprehensive 8-step field-journal guide explaining Google AI Search, AI Overviews, and AI Mode retrieval mechanics. Details how background query fan-out decomposes complex prompts into secondary subtopics, causing positional bias and context dilution on traditional 4,000-word guides. Features real-world Australian trade case study on buffalo grass bindii removal, a 4-step implementation playbook, Pew Research Center organic click benchmarks, and an explicit limits framework.
+
+### Node: `/knowledge-hub/articles/seo-vs-geo-red-flags`
+- **Title**: 5 Critical Signals Your Business Needs GEO (Not Just Traditional SEO)
+- **Summary**: Technical analysis of five operational indicators showing when a business requires Generative Engine Optimisation (GEO) instead of legacy keyword SEO.
+
 ### Node: `/knowledge-hub/ai-seo-tools`
 - **Title**: AI SEO Tools Comparison: AEO & GEO Features
 - **Summary**: Comprehensive comparison of AI SEO tools specifically evaluating their Answer Engine Optimisation (AEO) and Geographic Engine Optimisation (GEO) capabilities.

@@ -66,8 +66,8 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       {
         "title": "GEO Marketing",
         "href": "/services/geo-marketing",
-        "description": "Engineering generative engine optimisation (GEO) & schema graphs for AI search engines. Boost your brand citation scores on ChatGPT & Gemini.",
-        "entityName": "GEO Marketing",
+        "description": "Optimise your brand for GEO Google search, Maps, and AI Overviews. Schema graph engineering for ChatGPT, Gemini, and Google local discovery.",
+        "entityName": "GEO Google Marketing Services",
         "isServicePillar": true,
         "isKnowledgeCapsule": false,
         "corridors": [

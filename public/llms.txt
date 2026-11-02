@@ -78,6 +78,8 @@
   - [`/knowledge-hub/articles/retrieval-augmented-generation`](https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation): RAG, answer engines & machine-readable content.
   - [`/knowledge-hub/articles/structured-data-query-fan-out`](https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out): How Structured Data Helps You Survive the Query Fan-Out.
   - [`/knowledge-hub/articles/telemetry-diagnostic-architecture`](https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture): Telemetry Diagnostic Tool: Technical Architecture Guide.
+  - [`/knowledge-hub/articles/seo-vs-geo-red-flags`](https://aeobility.com.au/knowledge-hub/articles/seo-vs-geo-red-flags): 5 Critical Signals Your Business Needs GEO (Not Just Traditional SEO).
+  - [`/knowledge-hub/articles/google-ai-search`](https://aeobility.com.au/knowledge-hub/articles/google-ai-search): Why Query Fan-Out Bypasses Your Pillar Pages: Google AI Search, Grounded Synthesis, and Passage Retrieval Mechanics.
 - [`/knowledge-hub/case-studies`](https://aeobility.com.au/knowledge-hub/case-studies): Directory of real-world structural search alignment case studies.
   - [`/knowledge-hub/case-studies/baby-bento`](https://aeobility.com.au/knowledge-hub/case-studies/baby-bento): E-commerce case study showing +17% sales uplift and +95% CTR improvement.
   - [`/knowledge-hub/case-studies/aeo-geo-blueprint-90-days`](https://aeobility.com.au/knowledge-hub/case-studies/aeo-geo-blueprint-90-days): From entity ambiguity to commercial discovery: The AEO/GEO Blueprint Methodology.
