@@ -68,6 +68,33 @@ export const ALL_ARTICLES: ArticleItem[] = [
     image: '/images/knowledge-hub/fix-ai-hallucinations-and-evidence-gaps_AEObility.webp',
     readTime: '9 min read',
   },
+  {
+    slug: 'google-ai-search',
+    href: '/knowledge-hub/articles/google-ai-search',
+    title: 'Google AI Search: Grounded Synthesis Guide',
+    category: 'AEO Strategy & Retrieval Architecture',
+    description: 'Understand how Google AI Search operates: query fan-out, RAG grounding, and multi-turn AI Mode. Practical guide for maintaining search visibility.',
+    image: '/images/knowledge-hub/google-ai-search-grounded-synthesis-query-fanout-visualisation.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'seo-vs-geo-red-flags',
+    href: '/knowledge-hub/articles/seo-vs-geo-red-flags',
+    title: '5 Critical Signals Your Business Needs GEO (Not Just Traditional SEO)',
+    category: 'Generative Engine Optimisation / Diagnostic Guide',
+    description: 'Technical analysis of five operational indicators showing when a business requires Generative Engine Optimisation (GEO) instead of legacy keyword SEO.',
+    image: '/images/knowledge-hub/geo-vs-seo-red-flags-banner_AEObility.webp',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'telemetry-diagnostic-architecture',
+    href: '/knowledge-hub/articles/telemetry-diagnostic-architecture',
+    title: 'Telemetry Diagnostic Tool: Architecture & Operational Walkthrough',
+    category: 'Technical Architecture / Spec',
+    description: 'Deep-dive technical specification detailing vector mapping infrastructure, text-embedding-004 RAG dilution mitigation, scoring math, and AI Bill ingestion.',
+    image: '/images/knowledge-hub/telemetry-diagnostic-guide_AEObility.webp',
+    readTime: '8 min read',
+  },
 ];
 
 interface RelatedArticlesProps {

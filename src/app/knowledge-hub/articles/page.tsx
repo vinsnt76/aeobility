@@ -32,6 +32,18 @@ export default function ArticlesHubPage() {
 
   const articles = [
     {
+      title: "Google AI Search: Grounded Synthesis Guide",
+      category: "AEO Strategy & Retrieval Architecture",
+      description: "Understand how Google AI Search operates: query fan-out, RAG grounding, and multi-turn AI Mode. Practical guide for maintaining search visibility.",
+      href: "/knowledge-hub/articles/google-ai-search",
+      image: "/images/knowledge-hub/google-ai-search-grounded-synthesis-query-fanout-visualisation.webp",
+      alt: "Abstract visualisation of AI search retrieval showing multiple coloured information streams converging into a central synthesis node surrounded by citation networks, entity relationships and layered evidence structures.",
+      metrics: [
+        { label: "Type", value: "Technical Strategy" },
+        { label: "Read Time", value: "7 min" }
+      ]
+    },
+    {
       title: "5 Critical Signals Your Business Needs GEO (Not Just Traditional SEO)",
       category: "Generative Engine Optimisation / Diagnostic Guide",
       description: "Technical analysis of five operational indicators showing when a business requires Generative Engine Optimisation (GEO) instead of legacy keyword SEO.",

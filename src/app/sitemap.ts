@@ -293,6 +293,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/knowledge-hub/articles/google-ai-search`,
+      lastModified: articleLastMod,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/knowledge-hub/case-studies`,
       lastModified: articleLastMod,
       changeFrequency: "weekly",
