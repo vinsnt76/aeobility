@@ -64,7 +64,7 @@ export default function Breadcrumbs() {
   const schemaId = `breadcrumb-schema-${pathParts.join('-')}`;
 
   return (
-    <div className="max-w-6xl mx-auto w-full px-6 pt-24 -mb-8">
+    <div className="max-w-6xl mx-auto w-full px-6 pt-4 pb-2 relative z-20">
       {/* JSON-LD Schema */}
       <script
         id={schemaId}
@@ -83,6 +83,7 @@ export default function Breadcrumbs() {
             <ChevronRight className="w-3 h-3 text-white/20" />
             <Link
               href={crumb.href}
+              aria-current={crumb.isLast ? 'page' : undefined}
               className={`transition-colors cursor-pointer hover:underline ${
                 crumb.isLast
                   ? 'text-cyan-300 font-medium hover:text-cyan-200 hover:opacity-90'
