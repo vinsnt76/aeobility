@@ -1,6 +1,9 @@
 import React, { Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SubNavPills from '@/components/navigation/SubNavPills';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import DiagnosticEngine from '@/components/DiagnosticEngine';
 import { Metadata } from 'next';
 
@@ -218,6 +221,10 @@ export default function DiagnosticPage() {
       />
       <div className="relative z-10 flex flex-col min-h-screen print:min-h-0 print:overflow-visible">
         <Navbar />
+        <div className="no-print w-full">
+          <SubNavPills items={HUB_SUBNAV_MAPS.solutions} />
+          <Breadcrumbs />
+        </div>
         
         <main className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-32 sm:pb-24 flex flex-col items-center print:p-0 print:m-0 print:max-w-full print:block">
           {/* Main Server-Side Rendered H1 Header Block */}

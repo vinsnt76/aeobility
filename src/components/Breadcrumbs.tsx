@@ -24,7 +24,8 @@ export default function Breadcrumbs() {
       'machine-legibility-data-provenance': 'Machine Legibility & Data Provenance',
       'how-to-audit-and-build-entity-density-for-aeo': 'How to Audit & Build Entity Density for AEO',
       'seo-vs-geo-red-flags': 'SEO vs GEO Red Flags',
-      'book': 'Book a Clarity Call'
+      'book': 'Book a Clarity Call',
+      'diagnostic': 'Visibility Scan'
     };
     return overrideMap[part] || part.toLowerCase();
   };
