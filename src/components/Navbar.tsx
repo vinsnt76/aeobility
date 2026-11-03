@@ -203,7 +203,7 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
       <MobileMenuOverlay isOpen={isOpen} onClose={() => setIsOpen(false)}>
         {/* Mobile Header */}
         <div className="flex justify-between items-center border-b border-white/10 pb-4">
-          <div className="flex items-center">
+          <Link href="/" onClick={() => setIsOpen(false)} aria-label="AEObility Home" className="flex items-center">
             <Image
               src="/images/brand/aeobility-logo-dark.svg"
               alt="AEObility Logo"
@@ -212,7 +212,7 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
               className="h-8 w-auto object-contain"
               priority
             />
-          </div>
+          </Link>
           <button
             onClick={() => setIsOpen(false)}
             className="p-2 text-white/60 hover:text-white rounded-lg hover:bg-white/10 transition-colors"

@@ -90,6 +90,12 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/:path*.svg",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
+        ],
+      },
+      {
         source: "/assets/geo-banner",
         headers: [
           { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
