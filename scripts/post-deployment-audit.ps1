@@ -119,13 +119,13 @@ $claim = @{
     iat   = $now
 }
 
-function Base64UrlEncode([byte[]]$bytes) {
+function ConvertTo-Base64Url([byte[]]$bytes) {
     return [Convert]::ToBase64String($bytes).Replace('+', '-').Replace('/', '_').TrimEnd('=')
 }
 
 $headerBytes = [System.Text.Encoding]::UTF8.GetBytes(($header | ConvertTo-Json -Compress))
 $claimBytes = [System.Text.Encoding]::UTF8.GetBytes(($claim | ConvertTo-Json -Compress))
-$unsignedToken = (Base64UrlEncode $headerBytes) + "." + (Base64UrlEncode $claimBytes)
+$unsignedToken = (ConvertTo-Base64Url $headerBytes) + "." + (ConvertTo-Base64Url $claimBytes)
 
 $lines = ($sa.private_key -split "`n") | Where-Object { $_ -notmatch '-----' -and $_.Trim() -ne '' } | ForEach-Object { $_.Trim() }
 $b64 = $lines -join ''
@@ -133,7 +133,7 @@ $der = [Convert]::FromBase64String($b64)
 $cng = [System.Security.Cryptography.CngKey]::Import($der, [System.Security.Cryptography.CngKeyBlobFormat]::Pkcs8PrivateBlob)
 $rsa = New-Object System.Security.Cryptography.RSACng($cng)
 $sigBytes = $rsa.SignData([System.Text.Encoding]::UTF8.GetBytes($unsignedToken), [System.Security.Cryptography.HashAlgorithmName]::SHA256, [System.Security.Cryptography.RSASignaturePadding]::Pkcs1)
-$signedJwt = $unsignedToken + "." + (Base64UrlEncode $sigBytes)
+$signedJwt = $unsignedToken + "." + (ConvertTo-Base64Url $sigBytes)
 
 $tokenRes = Invoke-RestMethod -Uri "https://oauth2.googleapis.com/token" -Method Post -Body @{
     grant_type = "urn:ietf:params:oauth:grant-type:jwt-bearer"
@@ -174,7 +174,7 @@ Write-Host "  Canonical Match:  $(if ($idx.userCanonical -eq $idx.googleCanonica
 # -------------------------------------------------------------------------
 Write-Host "`n>>> Step 3: Search Analytics API (Baseline Recheck & Token Queries)..." -ForegroundColor Yellow
 
-function Run-SearchAnalytics($days, $label) {
+function Invoke-SearchAnalytics($days, $label) {
     Write-Host "`n--- Running Search Analytics: $label ($days Days) ---" -ForegroundColor Cyan
     $endDateStr = [DateTime]::UtcNow.AddDays(-2).ToString("yyyy-MM-dd")
     $startDateStr = [DateTime]::UtcNow.AddDays(-2 - $days).ToString("yyyy-MM-dd")
@@ -272,8 +272,8 @@ function Run-SearchAnalytics($days, $label) {
     }
 }
 
-$qa28 = Run-SearchAnalytics 28 "Last 28 Days"
-$qa7  = Run-SearchAnalytics 7 "Last 7 Days"
+$qa28 = Invoke-SearchAnalytics 28 "Last 28 Days"
+$qa7  = Invoke-SearchAnalytics 7 "Last 7 Days"
 
 # Export report JSON
 $auditExport = @{
