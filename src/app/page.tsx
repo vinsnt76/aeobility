@@ -12,7 +12,7 @@ import { Metadata } from 'next';
 
 
 export const metadata: Metadata = {
-  title: "AEObility | Answer Engine Optimisation & AI SEO Services",
+  title: "AEObility Perth | Answer Engine Optimisation & AI SEO Consultancy",
   description: "Australia's premier AEO & AI SEO agency. Optimise your brand for ChatGPT, Perplexity & Google AI Overviews. Claim your free AI visibility audit.",
   keywords: [
     "aeo",
