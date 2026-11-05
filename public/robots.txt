@@ -128,5 +128,5 @@ Allow: /
 
 # Indexing Resources & Machine Maps
 Sitemap: https://aeobility.com.au/sitemap.xml
-Agentmap: https://aeobility.com.au/.well-known/ai-catalog.json
+# Agentmap: https://aeobility.com.au/.well-known/ai-catalog.json
 
