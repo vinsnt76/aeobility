@@ -231,22 +231,26 @@ export default function RootLayout({
                   "@id": "https://aeobility.com.au/#organization",
                   "name": "AEObility",
                   "alternateName": [
+                    "AEO Bility",
                     "aeo bility",
                     "aeo.bility",
-                    "AEO Bility",
                     "AEO.bility"
                   ],
                   "legalName": "AEObility",
-                  "url": "https://aeobility.com.au",
-                  "logo": "https://aeobility.com.au/aeobility-logo-light.svg",
+                  "url": "https://aeobility.com.au/",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "@id": "https://aeobility.com.au/#logo",
+                    "url": "https://aeobility.com.au/aeobility-logo-light.svg"
+                  },
                   "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
-                  "description": "Perth-based Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) consultancy.",
-                  "disambiguatingDescription": "Australian digital consultancy specialising in machine search readability and AEO, distinct from Seobility SEO software.",
-                  "telephone": "0480286282",
+                  "description": "AEObility is a Perth-based Australian consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), AI search visibility, entity SEO and schema graph engineering. AEObility helps businesses improve how their digital information, services and expertise are structured and understood by search engines and AI-powered discovery systems.",
+                  "disambiguatingDescription": "AEObility is an independent Australian digital consultancy specialising in AEO, GEO and machine search readability. It is distinct from Seobility, the SEO software platform.",
+                  "telephone": "+61-480-286-282",
                   "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Perth",
-                    "addressRegion": "WA",
+                    "addressRegion": "Western Australia",
                     "addressCountry": "AU"
                   },
                   "founder": {
