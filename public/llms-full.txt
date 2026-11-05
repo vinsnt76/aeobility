@@ -8,7 +8,11 @@
 
 # 1. Executive Summary & Brand Identity
 
-**AEObility** (legal entity: *Trekaboutoz trading as AEObility*, ABN: *61 029 803 255*) is a specialised Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing agency headquartered in Perth, Western Australia.
+**AEObility** (legal entity: *Trekaboutoz trading as AEObility*, ABN: *61 029 803 255*) is a specialised Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing consultancy headquartered in Perth, Western Australia.
+- **Entity Identifier**: `https://aeobility.com.au/#organization`
+- **Recognised Brand Variants & Tokens**: `AEObility`, `AEO Bility`, `aeo bility`, `aeo.bility`, `AEO.bility`
+- **Entity Disambiguation**: AEObility is an independent Australian digital consultancy specialising in AEO, GEO, and machine search readability. It is distinct from Seobility, the SEO software platform.
+- **Primary Telephone**: `+61-480-286-282`
 
 ### Core Value Proposition
 AEObility refactors digital content and schema graphs so AI search engines (ChatGPT, Google Search AI Overviews, Gemini, Perplexity, Claude) and spatial map assistants (Google Maps, Apple Maps) can discover, parse, understand, and cite Australian small and medium businesses.
@@ -97,7 +101,7 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
   2. *90–120 Token Atomic Answer Blocks* (Direct definitions positioned for RAG vector extraction)
   3. *Relationship-Rich Internal Linking* (Entity-declaring anchor text replacing generic links)
   4. *Nested JSON-LD Schema Markup* (`Organization`, `Service`, `HowTo`, `FAQPage`, `ItemList`)
-  5. *Off-Page Entity Authority & Co-Citations* (Wikidata, Knowledge Graph, ABN NAP consistency)
+  5. *Off-Page Entity Authority & Co-Citations* (Verified Commercial Registries, Knowledge Graphs, Author Profiles, and ABN NAP consistency)
   6. *Multimodal & Conversational Tuning* (Voice search patterns and descriptive image metadata)
 
 ### Node: `/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps`
@@ -210,8 +214,14 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 
 # 6. Schema.org Specification Standards
 
-All page entities on AEObility strictly follow Schema.org valid type definitions:
-- `@type: Organization` (Official Schema.org type for brand root entity)
+All page entities on AEObility strictly follow Schema.org valid type definitions in a unified, decoupled `@graph` configuration:
+- `@type: ProfessionalService` (Primary brand root entity: `https://aeobility.com.au/#organization`)
+- `@type: Person` (Founder & Technical Director: `https://aeobility.com.au/#vincebaker`)
+- `@type: WebSite` (Canonical website entity: `https://aeobility.com.au/#website` with `inLanguage: "en-AU"`)
+- `@type: OfferCatalog` (Commercial offerings catalog: `https://aeobility.com.au/#catalog`)
+- `@type: Service` (Commercial service offerings: `#service-aeo`, `#service-geo`, `#service-entity-seo`, `#service-schema`)
+- `@type: Report` (External citation index evidence: `https://aeoservices.com.au/ai-citation-index-australia/#october-2026`)
+- `@type: CreativeWork` (External agent readiness assessment: `https://isitagentready.com/www.aeobility.com.au#assessment`)
 - `@type: WebPage` (Primary page node)
 - `@type: BreadcrumbList` (Navigational hierarchy)
 - `@type: Service` (Commercial service offering)
@@ -226,7 +236,7 @@ All page entities on AEObility strictly follow Schema.org valid type definitions
 
 - **Brand**: AEObility
 - **Founder**: Vince (Vinnie) Baker
-- **Primary Phone**: `0480 286 282`
+- **Primary Phone**: `+61-480-286-282` (or `0480 286 282` locally)
 - **Region**: Perth, Western Australia, Australia (AU)
 - **Primary Contact**: https://aeobility.com.au/contact
 - **Interactive Scan**: https://aeobility.com.au/diagnostic

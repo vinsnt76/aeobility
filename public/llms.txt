@@ -1,6 +1,12 @@
 # AEObility: Answer Engine Optimisation (AEO) Systems
 
-[AEObility](https://aeobility.com.au) is a specialised Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing agency based in Perth, Western Australia. We help local service businesses and SMBs restructure their digital presence to be crawled, indexed, and cited by Large Language Models (LLMs), conversational search assistants (ChatGPT, Gemini, Claude, Perplexity), and spatial map engines.
+[AEObility](https://aeobility.com.au) is a specialised Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing consultancy based in Perth, Western Australia. We help businesses and SMBs restructure their digital presence, entity graphs, and schema architectures to be crawled, indexed, and cited by Large Language Models (ChatGPT, Gemini, Claude, Perplexity) and spatial search engines.
+
+- **Entity Identifier**: `https://aeobility.com.au/#organization`
+- **Recognised Brand Tokens & Aliases**: `AEObility`, `AEO Bility`, `aeo bility`, `aeo.bility`, `AEO.bility`
+- **Entity Disambiguation**: AEObility is an independent Australian digital consultancy specialising in AEO, GEO, and machine search readability. It is distinct from Seobility, the SEO software platform.
+- **Primary Telephone**: `+61-480-286-282`
+- **Primary Location**: Perth, Western Australia, Australia (AU)
 
 ## Core Terminology & Concepts
 - **AEO (Answer Engine Optimisation)**: Restructuring content specifically for direct query extraction and LLM retrieval.
@@ -124,8 +130,18 @@ AEObility exposes automated discovery and vector-grounded Answer & Form APIs:
 ---
 
 ## Structured Data Schema Standards
-We utilise schema.org vocabulary mapped via unified `@graph` JSON-LD configurations.
-- **Brand ID**: `https://aeobility.com.au/#organization`
+We utilise Schema.org vocabulary mapped via a unified, decoupled `@graph` JSON-LD configuration:
+- **Brand Entity**: `@type: ProfessionalService`, `@id: "https://aeobility.com.au/#organization"`
+- **Founder Entity**: `@type: Person`, `@id: "https://aeobility.com.au/#vincebaker"` (Vincent Baker)
+- **Website Node**: `@type: WebSite`, `@id: "https://aeobility.com.au/#website"` (`inLanguage: "en-AU"`)
+- **Offer Catalog (`#catalog`)**:
+  - `Answer Engine Optimisation (AEO)` (`https://aeobility.com.au/#service-aeo`)
+  - `Generative Engine Optimisation (GEO)` (`https://aeobility.com.au/#service-geo`)
+  - `Entity SEO and Knowledge Graph Engineering` (`https://aeobility.com.au/#service-entity-seo`)
+  - `Schema Graph Engineering` (`https://aeobility.com.au/#service-schema`)
+- **Third-Party Evidence & Assessment Nodes (`subjectOf`)**:
+  - `Report`: AI Citation Index Australia (`https://aeoservices.com.au/ai-citation-index-australia/#october-2026`)
+  - `CreativeWork`: Agent Readiness Assessment (`https://isitagentready.com/www.aeobility.com.au#assessment`)
 - **Main Service Area served**: Australia (AU), Western Australia (WA), Perth.
-- **Inline Schema Types**: `@type: Service`, `@type: Product`, `@type: TechArticle`, `@type: Organization`, `@type: HowTo`, `@type: FAQPage`, `@type: ItemList`
+- **Page Schema Types**: `@type: ProfessionalService`, `@type: Person`, `@type: Service`, `@type: Report`, `@type: CreativeWork`, `@type: TechArticle`, `@type: HowTo`, `@type: FAQPage`, `@type: ItemList`
 

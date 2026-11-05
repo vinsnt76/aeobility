@@ -4,10 +4,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aeobility.com.au";
   
   // Stable build-time dates per route tier (updated only when content changes)
-  const coreLastMod = "2026-10-08T00:00:00.000Z";
-  const serviceLastMod = "2026-10-08T00:00:00.000Z";
-  const articleLastMod = "2026-10-08T00:00:00.000Z";
-  const staticLastMod = "2026-09-01T00:00:00.000Z";
+  const coreLastMod = "2026-11-05T00:00:00.000Z";
+  const serviceLastMod = "2026-11-05T00:00:00.000Z";
+  const articleLastMod = "2026-11-05T00:00:00.000Z";
+  const staticLastMod = "2026-11-05T00:00:00.000Z";
 
   return [
     {
