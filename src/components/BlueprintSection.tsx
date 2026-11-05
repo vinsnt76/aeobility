@@ -31,8 +31,8 @@ export default function BlueprintSection() {
     {
       icon: <Zap className="w-4 h-4 text-cyan-400" />,
       step: 'Step 1: Diagnostic Discovery',
-      title: 'DOM-Level Schema & Entity Audit',
-      description: 'Full technical crawl inspecting Wikidata reconciliation, JSON-LD schema syntax, and rich result error logs across your priority pages.'
+      title: 'DOM-Level Schema & Entity Architecture Audit',
+      description: 'Full technical crawl evaluating structured data integrity, multi-source entity reconciliation, canonical health, and query-level indexation signals across search engines and AI models.'
     },
     {
       icon: <FileCode className="w-4 h-4 text-cyan-400" />,

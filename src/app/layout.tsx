@@ -61,8 +61,16 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/icons/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   manifest: "/site.webmanifest",
   verification: {
@@ -219,18 +227,21 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "Organization",
-                  "@id": "https://aeobility.com.au/#organisation",
+                  "@type": "ProfessionalService",
+                  "@id": "https://aeobility.com.au/#organization",
                   "name": "AEObility",
                   "alternateName": [
+                    "aeo bility",
+                    "aeo.bility",
                     "AEO Bility",
-                    "AEObilty",
-                    "AEO bility Perth",
-                    "AEObility Perth"
+                    "AEO.bility"
                   ],
-                  "legalName": "Trekaboutoz trading as AEObility",
+                  "legalName": "AEObility",
                   "url": "https://aeobility.com.au",
-                  "logo": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
+                  "logo": "https://aeobility.com.au/aeobility-logo-light.svg",
+                  "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
+                  "description": "Perth-based Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) consultancy.",
+                  "disambiguatingDescription": "Australian digital consultancy specialising in machine search readability and AEO, distinct from Seobility SEO software.",
                   "telephone": "0480286282",
                   "address": {
                     "@type": "PostalAddress",
@@ -240,8 +251,19 @@ export default function RootLayout({
                   },
                   "founder": {
                     "@type": "Person",
-                    "@id": "https://aeobility.com.au/#person"
+                    "@id": "https://aeobility.com.au/#vincebaker"
                   },
+                  "sameAs": [
+                    "https://www.cbinsights.com/company/aeobility",
+                    "https://www.producthunt.com/@aeobility",
+                    "https://www.linkedin.com/company/aeobility",
+                    "https://dev.to/aeobility",
+                    "https://www.crunchbase.com/organization/aeobility",
+                    "https://github.com/vinsnt76/aeobilty",
+                    "https://www.instagram.com/aeo.bility/",
+                    "https://www.facebook.com/profile.php?id=61591781069830",
+                    "https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg"
+                  ],
                   "areaServed": [
                     {
                       "@type": "City",
@@ -348,7 +370,7 @@ export default function RootLayout({
                   "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
                   "telephone": "+61480286282",
                   "parentOrganization": {
-                    "@id": "https://aeobility.com.au/#organisation"
+                    "@id": "https://aeobility.com.au/#organization"
                   },
                   "address": {
                     "@type": "PostalAddress",
@@ -427,10 +449,10 @@ export default function RootLayout({
                     "Provenance and entity graph explanations"
                   ],
                   "creator": {
-                    "@id": "https://aeobility.com.au/#person"
+                    "@id": "https://aeobility.com.au/#vincebaker"
                   },
                   "publisher": {
-                    "@id": "https://aeobility.com.au/#organisation"
+                    "@id": "https://aeobility.com.au/#organization"
                   },
                   "isAccessibleForFree": true,
                   "potentialAction": [
@@ -455,7 +477,7 @@ export default function RootLayout({
                   "@id": "https://aeobility.com.au/services/aeo#service",
                   "name": "Answer Engine Optimisation (AEO)",
                   "provider": {
-                    "@id": "https://aeobility.com.au/#organisation"
+                    "@id": "https://aeobility.com.au/#organization"
                   },
                   "areaServed": {
                     "@id": "https://aeobility.com.au/#service-area-australia"
@@ -499,21 +521,25 @@ export default function RootLayout({
                 },
                 {
                   "@type": "Person",
-                  "@id": "https://aeobility.com.au/#person",
-                  "name": "Vinnie Baker",
-                  "alternateName": ["Vince Baker"],
-                  "jobTitle": "Founder & AEO Specialist",
+                  "@id": "https://aeobility.com.au/#vincebaker",
+                  "name": "Vincent Baker",
+                  "alternateName": ["Vince Baker", "Vinnie Baker"],
+                  "jobTitle": "Founder & Technical Director",
                   "url": "https://aeobility.com.au/vince-baker",
                   "sameAs": [
-                    "https://www.linkedin.com/in/vince-baker/",
+                    "https://www.linkedin.com/in/vincebaker",
+                    "https://app.qwoted.com/sources/vince-baker",
                     "https://github.com/vinsnt76"
                   ],
                   "worksFor": {
-                    "@id": "https://aeobility.com.au/#organisation"
+                    "@id": "https://aeobility.com.au/#organization"
                   },
                   "knowsAbout": [
                     "Answer Engine Optimisation",
                     "Generative Engine Optimisation",
+                    "AI Search Readiness",
+                    "Information Architecture",
+                    "Schema Graph Architecture",
                     "Model Context Protocol",
                     {
                       "@type": "Thing",
@@ -533,7 +559,7 @@ export default function RootLayout({
                   "url": "https://aeobility.com.au",
                   "name": "AEObility",
                   "publisher": {
-                    "@id": "https://aeobility.com.au"
+                    "@id": "https://aeobility.com.au/#organization"
                   },
                   "potentialAction": {
                     "@type": "SearchAction",

@@ -33,180 +33,97 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const serviceJsonLd = {
+  const homepageSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "AI Search Optimisation Services",
-    "provider": {
-      "@id": "https://aeobility.com.au/#perth-local-business"
-    },
-    "areaServed": [
+    "@graph": [
       {
-        "@type": "Country",
-        "name": "Australia",
+        "@type": "ProfessionalService",
+        "@id": "https://aeobility.com.au/#organization",
+        "name": "AEObility",
+        "alternateName": [
+          "aeo bility",
+          "aeo.bility",
+          "AEO Bility",
+          "AEO.bility"
+        ],
+        "legalName": "AEObility",
+        "url": "https://aeobility.com.au",
+        "logo": "https://aeobility.com.au/aeobility-logo-light.svg",
+        "description": "Perth-based Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) consultancy.",
+        "disambiguatingDescription": "Australian digital consultancy specialising in machine search readability and AEO, distinct from Seobility SEO software.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Perth",
+          "addressRegion": "WA",
+          "addressCountry": "AU"
+        },
+        "founder": {
+          "@id": "https://aeobility.com.au/#vincebaker"
+        },
         "sameAs": [
-          "https://www.wikidata.org/wiki/Q408",
-          "https://www.geonames.org/2077456/australia.html"
+          "https://www.cbinsights.com/company/aeobility",
+          "https://www.producthunt.com/@aeobility",
+          "https://www.linkedin.com/company/aeobility",
+          "https://dev.to/aeobility"
         ]
       },
       {
-        "@type": "AdministrativeArea",
-        "name": "Western Australia",
+        "@type": "Person",
+        "@id": "https://aeobility.com.au/#vincebaker",
+        "name": "Vincent Baker",
+        "alternateName": ["Vince Baker", "Vinnie Baker"],
+        "jobTitle": "Founder & Technical Director",
+        "worksFor": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
+        "knowsAbout": [
+          "Answer Engine Optimisation",
+          "Generative Engine Optimisation",
+          "Information Architecture",
+          "Schema Graph Engineering"
+        ],
         "sameAs": [
-          "https://www.wikidata.org/wiki/Q3205",
-          "https://www.geonames.org/2058645/western-australia.html"
+          "https://www.linkedin.com/in/vincebaker",
+          "https://app.qwoted.com/sources/vince-baker",
+          "https://github.com/vinsnt76"
         ]
       },
       {
-        "@type": "City",
-        "name": "Perth",
-        "sameAs": [
-          "https://www.wikidata.org/wiki/Q3183",
-          "https://www.geonames.org/2063523/perth.html"
-        ]
-      }
-    ],
-    "serviceType": "Search, Maps & AI Visibility",
-    "url": "https://aeobility.com.au",
-    "offers": {
-      "@type": "Offer",
-      "name": "Free Visibility Audit",
-      "price": "0.00",
-      "priceCurrency": "AUD"
-    }
-  };
-
-  const personJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Vinnie Baker",
-    "jobTitle": "Founder",
-    "url": "https://aeobility.com.au/vince-baker",
-    "sameAs": [
-      "https://www.linkedin.com/in/vince-baker/"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "AEObility",
-      "url": "https://aeobility.com.au"
-    }
-  };
-
-  const localBusinessJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://aeobility.com.au/#perth-local-business",
-    "name": "AEObility",
-    "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
-    "url": "https://aeobility.com.au",
-    "alternateName": [
-      "AI Search Optimisation Australia",
-      "AI Engine Optimisation Australia",
-      "AEO Services Australia"
-    ],
-    "keywords": "ai search optimisation, generative engine optimisation, answer engine optimisation, aeo perth",
-    "telephone": "+61480286282",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Perth",
-      "addressRegion": "Western Australia",
-      "postalCode": "6000",
-      "addressCountry": "AU"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -31.9505,
-      "longitude": 115.8605
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
-    ],
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "Australia",
-        "sameAs": [
-          "https://www.wikidata.org/wiki/Q408",
-          "https://www.geonames.org/2077456/australia.html"
-        ]
+        "@type": "WebSite",
+        "@id": "https://aeobility.com.au/#website",
+        "url": "https://aeobility.com.au",
+        "name": "AEObility",
+        "publisher": {
+          "@id": "https://aeobility.com.au/#organization"
+        }
       },
       {
-        "@type": "AdministrativeArea",
-        "name": "Western Australia",
-        "sameAs": [
-          "https://www.wikidata.org/wiki/Q3205",
-          "https://www.geonames.org/2058645/western-australia.html"
-        ]
-      },
-      {
-        "@type": "City",
-        "name": "Perth",
-        "sameAs": [
-          "https://www.wikidata.org/wiki/Q3183",
-          "https://www.geonames.org/2063523/perth.html"
-        ]
+        "@type": "VideoObject",
+        "@id": "https://aeobility.com.au/#video-explainer",
+        "name": "Our Approach to Answer Engine Search",
+        "description": "Learn how AEObility refactors digital content to rank and get cited inside conversational AI systems and map interfaces.",
+        "thumbnailUrl": [
+          "https://aeobility.com.au/images/brand/aeobility-video-explainer.webp"
+        ],
+        "uploadDate": "2026-07-05T00:00:00+08:00",
+        "contentUrl": "https://aeobility.com.au/videos/explainer.mp4",
+        "embedUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/preview",
+        "creator": {
+          "@id": "https://aeobility.com.au/#vincebaker"
+        },
+        "publisher": {
+          "@id": "https://aeobility.com.au/#organization"
+        }
       }
     ]
-  };
-
-  const organizationJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "AEObility",
-    "url": "https://aeobility.com.au",
-    "logo": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
-    "founder": {
-      "@type": "Person",
-      "name": "Vinnie Baker"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/133445734/",
-      "https://www.instagram.com/aeo.bility/",
-      "https://www.facebook.com/profile.php?id=61591781069830",
-      "https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg"
-    ]
-  };
-
-  const videoJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": "Our Approach to Answer Engine Search",
-    "description": "Learn how AEObility refactors digital content to rank and get cited inside conversational AI systems and map interfaces.",
-    "thumbnailUrl": [
-      "https://aeobility.com.au/images/brand/aeobility-video-explainer.webp"
-    ],
-    "uploadDate": "2026-07-05T00:00:00+08:00",
-    "contentUrl": "https://aeobility.com.au/videos/explainer.mp4",
-    "embedUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/preview"
   };
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
-      {/* JSON-LD Schemas */}
+      {/* Unified Homepage Entity Disambiguation Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
       />
 
       <Navbar />

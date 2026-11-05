@@ -21,6 +21,13 @@ Allow: /api/wallet-pass
 Allow: /api/brand-facts
 Allow: /api/markdown
 
+# Search Engine Crawlers
+User-agent: bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
 # Explicit AI Agent Crawlers Allowed
 User-agent: GPTBot
 Content-Signal: search=yes, ai-input=yes, ai-train=yes

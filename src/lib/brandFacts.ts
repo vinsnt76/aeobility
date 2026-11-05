@@ -42,8 +42,8 @@ export const BRAND_IDENTITY = {
   website: "https://aeobility.com.au",
   brandPromise: "Get Found. Get Chosen.",
   tagline: "No jargon. No pressure. Just clarity.",
-  knownAs: ["AEObility"],
-  notToBeConfusedWith: ["generic consulting brands", "unverified AI-search claims"],
+  knownAs: ["AEObility", "aeo bility", "aeo.bility", "AEO Bility", "AEO.bility"],
+  notToBeConfusedWith: ["Seobility (German SEO audit software)", "generic consulting brands", "unverified AI-search claims"],
   officialSources: [
     { title: "AEObility Home", url: "https://aeobility.com.au" },
     { title: "Brand Facts Directory", url: "https://aeobility.com.au/brand-facts" },
@@ -713,13 +713,28 @@ export const PUBLIC_SCHEMA_GRAPH = {
     ...PROVENANCE_GRAPH_SCHEMA['@graph'],
     {
       '@type': 'ProfessionalService',
-      '@id': 'https://aeobility.com.au/#organisation',
+      '@id': 'https://aeobility.com.au/#organization',
       name: BRAND_IDENTITY.name,
+      alternateName: [
+        'aeo bility',
+        'aeo.bility',
+        'AEO Bility',
+        'AEO.bility'
+      ],
       legalName: BRAND_IDENTITY.legalName,
       url: BRAND_IDENTITY.website,
       logo: 'https://aeobility.com.au/assets/AEObility_Logo.webp',
       image: 'https://aeobility.com.au/assets/AEObility_Featured_Image.webp',
       description: 'Australian Answer Engine Optimisation consultancy specialising in structured business knowledge, entity graphs, and AI-search visibility.',
+      disambiguatingDescription: 'Australian digital consultancy specialising in machine search readability and AEO, distinct from Seobility SEO software.',
+      sameAs: [
+        'https://www.cbinsights.com/company/aeobility',
+        'https://www.producthunt.com/@aeobility',
+        'https://www.linkedin.com/company/aeobility',
+        'https://dev.to/aeobility',
+        'https://www.crunchbase.com/organization/aeobility',
+        'https://github.com/vinsnt76/aeobilty'
+      ],
       identifier: [
         {
           '@type': 'PropertyValue',
@@ -735,9 +750,15 @@ export const PUBLIC_SCHEMA_GRAPH = {
       founder: {
         '@type': 'Person',
         '@id': 'https://aeobility.com.au/vince-baker#person',
-        name: BRAND_IDENTITY.founder,
-        jobTitle: 'Founder & Principal Consultant',
-        url: 'https://aeobility.com.au/vince-baker'
+        name: 'Vincent Baker',
+        alternateName: ['Vince Baker', 'Vinnie Baker'],
+        jobTitle: 'Founder & Technical Director',
+        url: 'https://aeobility.com.au/vince-baker',
+        sameAs: [
+          'https://www.linkedin.com/in/vince-baker/',
+          'https://app.qwoted.com/sources/vince-baker',
+          'https://github.com/vinsnt76'
+        ]
       },
       address: {
         '@type': 'PostalAddress',

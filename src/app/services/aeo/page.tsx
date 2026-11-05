@@ -830,7 +830,7 @@ export default function AEORootPage() {
                   <div>
                     <h3 className="text-lg font-bold text-white">Google AI Overviews &amp; Gemini</h3>
                     <p className="text-xs text-slate-300 leading-relaxed mt-1">
-                      Evaluates relational triples against external authority registries (ABN, ASIC, Wikidata) for high-salience passage extraction.
+                      Evaluates relational triples against external authority registries (ABR, ASIC, OpenCorporates) for high-salience passage extraction.
                     </p>
                   </div>
                   <div className="space-y-2 pt-2 border-t border-slate-800/80">
@@ -838,7 +838,7 @@ export default function AEORootPage() {
                     <ul className="space-y-1.5 text-xs text-slate-300">
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                        <span><strong className="text-white">Triple-linked JSON-LD</strong> referencing Wikidata entity nodes</span>
+                        <span><strong className="text-white">Triple-linked JSON-LD</strong> referencing canonical knowledge graphs and verified registry nodes</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />

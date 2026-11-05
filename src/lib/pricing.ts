@@ -114,7 +114,7 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
     category: 'blueprint',
     purpose: 'De-risk technical execution through comprehensive diagnostic discovery. Identify missing business entities, broken citation links, and outdated schema across your digital footprint so search engines and AI models accurately recognise your services before deploying code.',
     deliverables: [
-      'Entity Architecture & Gap Analysis: Comprehensive audit of brand entities, Wikidata/knowledge graph alignment, and competitive schema coverage.',
+      'Entity Architecture & Gap Analysis: Comprehensive audit of brand entities, multi-source knowledge graph alignment, and competitive schema coverage.',
       'Schema Drift & Syntax Report: DOM-level diagnostic identifying malformed JSON-LD, missing entity nodes, and rich-result errors so search engines parse your content without confusion.',
       'Retrieval & Search Visibility Evaluation: Empirical evaluation of answer passage retrieval and semantic coverage to ensure your services get recommended in AI Overviews and conversational search.',
       '90-Day Prioritised Implementation Roadmap: Chronological sprint plan detailing priority fixes, required labour allocation, and engineering prerequisites.',

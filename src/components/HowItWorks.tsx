@@ -170,8 +170,8 @@ export default function HowItWorks() {
             <div className="space-y-2.5 text-xs font-sans">
               <div className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <div className="font-semibold text-white">Entity Resolution Graph</div>
-                  <div className="text-[11px] text-zinc-400 font-serif">Wikidata &amp; Schema alignment</div>
+                  <div className="font-semibold text-white">Entity Graph Alignment</div>
+                  <div className="text-[11px] text-zinc-400 font-serif">Multi-source registry &amp; Schema alignment</div>
                 </div>
                 <span className="font-mono text-cyan-300 text-[11px] font-bold">94% Verified</span>
               </div>

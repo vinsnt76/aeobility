@@ -222,7 +222,7 @@ export default function AboutUsContent() {
               </p>
               <ul className="space-y-2.5 list-disc list-inside text-zinc-300">
                 <li><strong className="text-white">Structured data graphs:</strong> Nested JSON-LD schemas linking LocalBusiness, Person, and Service entities without broken hierarchy.</li>
-                <li><strong className="text-white">Wikidata &amp; Knowledge Graph reconciliation:</strong> Explicit entity URIs that tie your brand name to verified external registries.</li>
+                <li><strong className="text-white">Multi-source Knowledge Graph reconciliation:</strong> Explicit entity URIs that tie your brand name to verified external registries and business databases.</li>
                 <li><strong className="text-white">Atomic answer blocks:</strong> 90 to 120-word self-contained content passages engineered for easy retrieval and attribution in model context windows.</li>
                 <li><strong className="text-white">Retrieval testing:</strong> Evaluating how search bots and model scrapers extract your primary facts under simulated retrieval conditions.</li>
                 <li><strong className="text-white">First-party fact ledgers:</strong> Canonical business data hosted at <Link href="/brand-facts" className="text-aeo-cyan underline">/brand-facts</Link> to give AI scrapers a single source of truth.</li>
