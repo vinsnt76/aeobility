@@ -173,7 +173,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-sm sm:text-base text-slate-300 max-w-lg leading-relaxed font-serif">
-              Position your business across Google, Maps, and AI answer engines with zero guesswork. Discover how search platforms understand and recommend your services today.
+              AEObility is a Perth digital consultancy dedicated to Answer Engine Optimisation (AEO) and machine search readability. Position your business across Google, Maps, and AI answer engines with zero guesswork.
             </p>
 
             {/* Embedded Telemetry Form Card with Sprint Glow */}
