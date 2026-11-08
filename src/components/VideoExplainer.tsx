@@ -16,31 +16,6 @@ export default function VideoExplainer({
 
   return (
     <section id="explainer-video" className="py-20 bg-black relative border-t border-white/5">
-      {/* VideoObject Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "VideoObject",
-            "@id": "https://aeobility.com.au/#video-explainer",
-            "name": "Our Approach to Answer Engine Search",
-            "description": "Learn how AEObility refactors digital content to rank and get cited inside conversational AI systems and map interfaces.",
-            "thumbnailUrl": [
-              "https://aeobility.com.au/images/brand/aeobility-video-explainer.webp"
-            ],
-            "uploadDate": "2026-07-05T00:00:00+08:00",
-            "contentUrl": "https://aeobility.com.au/videos/explainer.mp4",
-            "embedUrl": embedUrl,
-            "creator": {
-              "@id": "https://aeobility.com.au/#vincebaker"
-            },
-            "publisher": {
-              "@id": "https://aeobility.com.au/#organization"
-            }
-          })
-        }}
-      />
       {/* Background glow effects */}
       <div className="absolute left-1/4 top-1/4 w-[400px] h-[400px] bg-aeo-purple/5 rounded-full filter blur-[100px] pointer-events-none" />
       <div className="absolute right-1/4 bottom-1/4 w-[400px] h-[400px] bg-aeo-cyan/5 rounded-full filter blur-[100px] pointer-events-none" />

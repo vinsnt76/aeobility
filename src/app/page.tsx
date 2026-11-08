@@ -10,7 +10,6 @@ import HomepageContactForm from '@/components/forms/HomepageContactForm';
 import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 
-
 export const metadata: Metadata = {
   title: "AEObility Perth | Answer Engine Optimisation & AI SEO Consultancy",
   description: "Australia's premier AEO & AI SEO agency. Optimise your brand for ChatGPT, Perplexity & Google AI Overviews. Claim your free AI visibility audit.",
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const homepageSchema = {
+  const schemaGraph = {
     "@context": "https://schema.org",
     "@graph": [
       {
@@ -56,6 +55,7 @@ export default function Home() {
           "@id": "https://aeobility.com.au/#logo",
           "url": "https://aeobility.com.au/aeobility-logo-light.svg"
         },
+        "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
         "description": "AEObility is a Perth-based Australian consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), AI search visibility, entity SEO and schema graph engineering. AEObility helps businesses improve how their digital information, services and expertise are structured and understood by search engines and AI-powered discovery systems.",
         "disambiguatingDescription": "AEObility is an independent Australian digital consultancy specialising in AEO, GEO and machine search readability. It is distinct from Seobility, the SEO software platform.",
         "address": {
@@ -65,14 +65,32 @@ export default function Home() {
           "postalCode": "6059",
           "addressCountry": "AU"
         },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -31.8900,
+          "longitude": 115.8690
+        },
         "areaServed": [
           {
             "@type": "City",
-            "name": "Perth"
+            "name": "Perth",
+            "sameAs": [
+              "https://www.wikidata.org/wiki/Q3183",
+              "https://en.wikipedia.org/wiki/Perth"
+            ]
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Western Australia",
+            "sameAs": [
+              "https://www.wikidata.org/wiki/Q3205",
+              "https://en.wikipedia.org/wiki/Western_Australia"
+            ]
           },
           {
             "@type": "Country",
-            "name": "Australia"
+            "name": "Australia",
+            "sameAs": "https://www.wikidata.org/wiki/Q408"
           }
         ],
         "founder": {
@@ -109,7 +127,8 @@ export default function Home() {
           "https://www.cbinsights.com/company/aeobility",
           "https://www.producthunt.com/@aeobility",
           "https://www.linkedin.com/company/aeobility",
-          "https://dev.to/aeobility"
+          "https://dev.to/aeobility",
+          "https://github.com/vinsnt76/aeobilty"
         ],
         "subjectOf": [
           {
@@ -121,6 +140,52 @@ export default function Home() {
         ]
       },
       {
+        "@type": "LocalBusiness",
+        "@id": "https://aeobility.com.au/#perth-local-business",
+        "name": "AEObility",
+        "url": "https://aeobility.com.au/",
+        "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
+        "telephone": "+61-480-286-282",
+        "parentOrganization": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dianella",
+          "addressRegion": "Western Australia",
+          "postalCode": "6059",
+          "addressCountry": "AU"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -31.8900,
+          "longitude": 115.8690
+        },
+        "serviceArea": [
+          {
+            "@type": "City",
+            "@id": "https://aeobility.com.au/#service-area-perth",
+            "name": "Perth",
+            "sameAs": "https://www.wikidata.org/wiki/Q3183"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "@id": "https://aeobility.com.au/#service-area-western-australia",
+            "name": "Western Australia",
+            "sameAs": "https://www.wikidata.org/wiki/Q3205"
+          },
+          {
+            "@type": "Country",
+            "@id": "https://aeobility.com.au/#service-area-australia",
+            "name": "Australia",
+            "sameAs": "https://www.wikidata.org/wiki/Q408"
+          }
+        ],
+        "sameAs": [
+          "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
+        ]
+      },
+      {
         "@type": "Person",
         "@id": "https://aeobility.com.au/#vincebaker",
         "name": "Vincent Baker",
@@ -129,6 +194,7 @@ export default function Home() {
           "Vinnie Baker"
         ],
         "jobTitle": "Founder and Technical Director",
+        "url": "https://aeobility.com.au/vince-baker",
         "worksFor": {
           "@id": "https://aeobility.com.au/#organization"
         },
@@ -145,7 +211,7 @@ export default function Home() {
           "Structured Data"
         ],
         "sameAs": [
-          "https://www.linkedin.com/in/vincebaker",
+          "https://www.linkedin.com/in/vince-baker/",
           "https://app.qwoted.com/sources/vince-baker",
           "https://github.com/vinsnt76"
         ]
@@ -162,7 +228,15 @@ export default function Home() {
         "about": {
           "@id": "https://aeobility.com.au/#organization"
         },
-        "inLanguage": "en-AU"
+        "inLanguage": "en-AU",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://aeobility.com.au/api/search/answer?query={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
       },
       {
         "@type": "Service",
@@ -221,6 +295,64 @@ export default function Home() {
         }
       },
       {
+        "@type": "SoftwareApplication",
+        "@id": "https://aeobility.com.au/#ai-bill",
+        "name": "AI Bill",
+        "alternateName": "AEObility AI Bill",
+        "description": "A web-based AI diagnostic assistant from AEObility that analyses AEO, GEO, local search, and AI visibility signals using grounded site knowledge and telemetry audit context.",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "AI visibility diagnostic assistant",
+        "operatingSystem": "Web",
+        "url": "https://aeobility.com.au/diagnostic",
+        "featureList": [
+          "Grounded conversational answers about AEObility services and methodologies",
+          "AI visibility telemetry audit analysis",
+          "Citation share, clarity score, and hallucination risk interpretation",
+          "Provenance and entity graph explanations"
+        ],
+        "creator": {
+          "@id": "https://aeobility.com.au/#vincebaker"
+        },
+        "publisher": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
+        "isAccessibleForFree": true,
+        "potentialAction": [
+          {
+            "@type": "CommunicateAction",
+            "name": "Chat with AI Bill",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://aeobility.com.au/api/bill",
+              "actionPlatform": [
+                "https://schema.org/DesktopWebPlatform",
+                "https://schema.org/MobileWebPlatform"
+              ],
+              "httpMethod": "POST",
+              "contentType": "application/json"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://aeobility.com.au/#video-explainer",
+        "name": "Our Approach to Answer Engine Search",
+        "description": "Learn how AEObility refactors digital content to rank and get cited inside conversational AI systems and map interfaces.",
+        "thumbnailUrl": [
+          "https://aeobility.com.au/images/brand/aeobility-video-explainer.webp"
+        ],
+        "uploadDate": "2026-07-05T00:00:00+08:00",
+        "contentUrl": "https://aeobility.com.au/videos/explainer.mp4",
+        "embedUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/preview",
+        "creator": {
+          "@id": "https://aeobility.com.au/#vincebaker"
+        },
+        "publisher": {
+          "@id": "https://aeobility.com.au/#organization"
+        }
+      },
+      {
         "@type": "Report",
         "@id": "https://aeoservices.com.au/ai-citation-index-australia/#october-2026",
         "name": "AI Citation Index Australia: October 2026",
@@ -262,10 +394,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
-      {/* Unified Homepage Entity Disambiguation Schema */}
+      {/* Consolidated Root Schema Graph */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
       />
 
       <Navbar />
