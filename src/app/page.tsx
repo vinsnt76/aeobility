@@ -36,7 +36,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "ProfessionalService",
+        "@type": ["ProfessionalService", "LocalBusiness"],
         "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "legalName": "AEObility",
@@ -128,61 +128,40 @@ export default function Home() {
           "https://www.producthunt.com/@aeobility",
           "https://www.linkedin.com/company/aeobility",
           "https://dev.to/aeobility",
-          "https://github.com/vinsnt76/aeobilty"
+          "https://github.com/vinsnt76/aeobilty",
+          "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
         ],
         "subjectOf": [
           {
-            "@id": "https://aeoservices.com.au/ai-citation-index-australia/#october-2026"
+            "@type": "Report",
+            "@id": "https://aeoservices.com.au/ai-citation-index-australia/#october-2026",
+            "name": "AI Citation Index Australia: October 2026",
+            "url": "https://aeoservices.com.au/ai-citation-index-australia/",
+            "description": "A monthly Australian AI-citation study measuring the domains cited by Perplexity Sonar across a fixed set of 29 AEO-related questions. The October 2026 edition recorded 587 citations across 343 domains. AEObility was cited in 2 of 29 questions, receiving 5 citations, and was listed among the domains that joined the 15 most-cited domains since September 2026.",
+            "datePublished": "2026-10-17",
+            "inLanguage": "en-AU",
+            "license": "https://creativecommons.org/licenses/by/4.0/",
+            "author": {
+              "@type": "Organization",
+              "name": "AEO Services",
+              "url": "https://aeoservices.com.au/"
+            },
+            "keywords": [
+              "AI Citation Index",
+              "Australian AI Search",
+              "Perplexity Sonar",
+              "Answer Engine Optimisation",
+              "Generative Engine Optimisation",
+              "AI Search Visibility"
+            ]
           },
           {
-            "@id": "https://isitagentready.com/www.aeobility.com.au#assessment"
+            "@type": "CreativeWork",
+            "@id": "https://isitagentready.com/www.aeobility.com.au#assessment",
+            "name": "AEObility Agent Readiness Assessment",
+            "url": "https://isitagentready.com/www.aeobility.com.au",
+            "description": "External agent-readiness assessment of the AEObility website, reporting a score of 94 out of 100 and Level 5 Agent-Native classification according to the assessment result."
           }
-        ]
-      },
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://aeobility.com.au/#perth-local-business",
-        "name": "AEObility",
-        "url": "https://aeobility.com.au/",
-        "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
-        "telephone": "+61-480-286-282",
-        "parentOrganization": {
-          "@id": "https://aeobility.com.au/#organization"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Dianella",
-          "addressRegion": "Western Australia",
-          "postalCode": "6059",
-          "addressCountry": "AU"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -31.8900,
-          "longitude": 115.8690
-        },
-        "serviceArea": [
-          {
-            "@type": "City",
-            "@id": "https://aeobility.com.au/#service-area-perth",
-            "name": "Perth",
-            "sameAs": "https://www.wikidata.org/wiki/Q3183"
-          },
-          {
-            "@type": "AdministrativeArea",
-            "@id": "https://aeobility.com.au/#service-area-western-australia",
-            "name": "Western Australia",
-            "sameAs": "https://www.wikidata.org/wiki/Q3205"
-          },
-          {
-            "@type": "Country",
-            "@id": "https://aeobility.com.au/#service-area-australia",
-            "name": "Australia",
-            "sameAs": "https://www.wikidata.org/wiki/Q408"
-          }
-        ],
-        "sameAs": [
-          "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
         ]
       },
       {
@@ -223,10 +202,9 @@ export default function Home() {
         "name": "AEObility",
         "description": "The official website of AEObility, an Australian Answer Engine Optimisation and Generative Engine Optimisation consultancy.",
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
-        },
-        "about": {
-          "@id": "https://aeobility.com.au/#organization"
+          "@type": "Organization",
+          "name": "AEObility",
+          "url": "https://aeobility.com.au/"
         },
         "inLanguage": "en-AU",
         "potentialAction": {
@@ -349,43 +327,6 @@ export default function Home() {
           "@id": "https://aeobility.com.au/#vincebaker"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
-        }
-      },
-      {
-        "@type": "Report",
-        "@id": "https://aeoservices.com.au/ai-citation-index-australia/#october-2026",
-        "name": "AI Citation Index Australia: October 2026",
-        "url": "https://aeoservices.com.au/ai-citation-index-australia/",
-        "description": "A monthly Australian AI-citation study measuring the domains cited by Perplexity Sonar across a fixed set of 29 AEO-related questions. The October 2026 edition recorded 587 citations across 343 domains. AEObility was cited in 2 of 29 questions, receiving 5 citations, and was listed among the domains that joined the 15 most-cited domains since September 2026.",
-        "datePublished": "2026-10-17",
-        "inLanguage": "en-AU",
-        "license": "https://creativecommons.org/licenses/by/4.0/",
-        "author": {
-          "@type": "Organization",
-          "@id": "https://aeoservices.com.au/#organization",
-          "name": "AEO Services",
-          "url": "https://aeoservices.com.au/"
-        },
-        "mentions": {
-          "@id": "https://aeobility.com.au/#organization"
-        },
-        "keywords": [
-          "AI Citation Index",
-          "Australian AI Search",
-          "Perplexity Sonar",
-          "Answer Engine Optimisation",
-          "Generative Engine Optimisation",
-          "AI Search Visibility"
-        ]
-      },
-      {
-        "@type": "CreativeWork",
-        "@id": "https://isitagentready.com/www.aeobility.com.au#assessment",
-        "name": "AEObility Agent Readiness Assessment",
-        "url": "https://isitagentready.com/www.aeobility.com.au",
-        "description": "External agent-readiness assessment of the AEObility website, reporting a score of 94 out of 100 and Level 5 Agent-Native classification according to the assessment result.",
-        "about": {
           "@id": "https://aeobility.com.au/#organization"
         }
       }
