@@ -32,10 +32,18 @@ export default function AboutPage() {
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://aeobility.com.au/#organisation",
+    "@id": "https://aeobility.com.au/#organization",
+    "alternateName": [
+      "AEO Bility",
+      "aeo bility",
+      "aeo.bility",
+      "AEO.bility"
+    ],
+    "description": "AEObility (pronounced A-E-O-bility) is an independent Australian digital consultancy based in Perth, Western Australia, founded by Vince Baker. The name is a portmanteau of Answer Engine Optimisation (AEO) and ability, reflecting our focus on machine readability, schema graph architecture, and AI search discovery.",
+    "disambiguatingDescription": "AEObility is an independent Australian digital consultancy specialising in AEO, GEO and machine search readability. It is distinct from Seobility, the SEO software platform.",
     "name": "AEObility",
     "url": "https://aeobility.com.au",
-    "logo": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
+    "logo": "https://aeobility.com.au/aeobility-logo-light.svg",
     "founder": {
       "@type": "Person",
       "name": "Vinnie Baker",

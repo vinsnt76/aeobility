@@ -441,6 +441,22 @@ export default function AboutUsContent() {
         </div>
       </section>
 
+      {/* Dedicated Brand Identity: Our Name & Mission */}
+      <section className="border-t border-white/10 pt-12 space-y-6">
+        <div className="space-y-2">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-aeo-cyan font-bold uppercase">
+            <Compass className="w-4 h-4" />
+            <span>Our Name &amp; Mission</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">About AEObility</h2>
+        </div>
+        <div className="p-6 sm:p-8 bg-zinc-950/80 border border-cyan-500/30 rounded-2xl space-y-4 max-w-3xl shadow-xl">
+          <p className="text-sm sm:text-base text-zinc-200 font-serif leading-relaxed">
+            AEObility (pronounced A-E-O-bility) is an independent Australian digital consultancy based in Perth, Western Australia, founded by Vince Baker. The name is a portmanteau of Answer Engine Optimisation (AEO) and ability, reflecting our focus on machine readability, schema graph architecture, and AI search discovery. AEObility is an independent professional services consultancy and is not affiliated with, sponsored by, or related to Seobility, the European SEO software platform.
+          </p>
+        </div>
+      </section>
+
       {/* Origin Story Section ("Why AEObility exists") */}
       <section className="border-t border-white/10 pt-12 space-y-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Why AEObility exists</h2>
