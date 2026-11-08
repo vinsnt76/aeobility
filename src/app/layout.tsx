@@ -218,6 +218,8 @@ export default function RootLayout({
             });
           `}
         </Script>
+        {children}
+        <GlobalConsentBanner />
         <BillWidget />
         <AIModalAssistant />
         <SpeedInsights />
