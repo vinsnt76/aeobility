@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { 
+  BRAND_FACTS,
   BRAND_IDENTITY, 
   BRAND_DEFINITIONS, 
   PRICING_CONFIG, 
@@ -79,14 +80,28 @@ export default function HumanBrandFactsPage() {
         </header>
 
         {/* Lexical Disambiguation Block */}
-        <div className="bg-amber-500/10 border border-amber-500/25 rounded-2xl p-5 text-sm text-zinc-300 space-y-2">
+        <div className="bg-amber-500/10 border border-amber-500/25 rounded-2xl p-5 text-sm text-zinc-300 space-y-3">
           <div className="flex items-center gap-2 font-mono text-amber-400 font-semibold text-xs uppercase tracking-wider">
             <Sparkles className="w-4 h-4" />
             <span>Lexical Disambiguation &amp; Trading Profile</span>
           </div>
           <p className="text-xs sm:text-sm font-serif leading-relaxed">
-            Primary public trading name: <strong className="text-white font-mono">AEObility</strong>. Corporate entity: <strong className="text-white font-mono">{BRAND_IDENTITY.legalName}</strong>. AEObility is a specific Australian consultancy and should not be confused with {BRAND_IDENTITY.notToBeConfusedWith.join(' or ')}.
+            Primary public trading name: <strong className="text-white font-mono">{BRAND_FACTS.name}</strong> (pronounced <span className="text-amber-300 font-mono">{BRAND_FACTS.pronunciation}</span>). Corporate entity: <strong className="text-white font-mono">{BRAND_IDENTITY.legalName}</strong>.
           </p>
+          <p className="text-xs sm:text-sm font-serif leading-relaxed">
+            <strong>Etymology:</strong> {BRAND_FACTS.etymology}.
+          </p>
+          <p className="text-xs sm:text-sm font-serif leading-relaxed text-zinc-200">
+            <strong>Disambiguation:</strong> {BRAND_FACTS.disambiguation.statement}
+          </p>
+          <div className="pt-2 border-t border-amber-500/20 flex flex-wrap gap-2 items-center text-xs">
+            <span className="text-zinc-400 font-mono text-[11px]">Known Aliases:</span>
+            {BRAND_FACTS.knownAliases.map((alias) => (
+              <span key={alias} className="px-2 py-0.5 rounded bg-black/40 border border-amber-500/30 font-mono text-amber-200 text-[11px]">
+                {alias}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* 1. Identity Alignment Block */}
@@ -103,12 +118,12 @@ export default function HumanBrandFactsPage() {
                 <p className="text-xs text-zinc-400 font-serif mt-0.5">ABN: <strong className="text-white font-mono">{BRAND_IDENTITY.abn}</strong></p>
                 <p className="text-xs text-zinc-400 font-serif">Trading Name: <strong className="text-white">{BRAND_IDENTITY.name}</strong></p>
                 <p className="text-xs text-zinc-300 font-serif pt-1">
-                  Primary entity type: <strong className="text-white">{BRAND_IDENTITY.entityType}</strong>. AEObility operates from Perth, Western Australia, and delivers services remotely across Australia.
+                  Primary entity type: <strong className="text-white">{BRAND_FACTS.entityType}</strong>. AEObility operates from {BRAND_FACTS.headquarters}, and delivers services remotely across Australia.
                 </p>
               </div>
               <div className="pt-2 border-t border-white/5">
                 <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Key Personnel &amp; Leadership</span>
-                <p className="text-base font-semibold text-white mt-1">Founder: {BRAND_IDENTITY.founder}</p>
+                <p className="text-base font-semibold text-white mt-1">Founder: {BRAND_FACTS.founder}</p>
                 <p className="text-xs text-zinc-400 font-serif">Established: {BRAND_IDENTITY.foundingDate}</p>
               </div>
             </div>
@@ -119,11 +134,15 @@ export default function HumanBrandFactsPage() {
                 <p className="text-xs text-zinc-400 font-serif pt-1">Brand Promise: &ldquo;{BRAND_IDENTITY.brandPromise}&rdquo;</p>
                 <p className="text-xs text-zinc-500 font-serif">Tagline: &ldquo;{BRAND_IDENTITY.tagline}&rdquo;</p>
               </div>
-              <div className="pt-2 border-t border-white/5">
-                <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Primary Service Coverage</span>
-                <p className="text-xs text-zinc-300 font-serif mt-1 leading-relaxed">
-                  Australia, with delivery focused on Western Australia and major capital cities.
-                </p>
+              <div className="pt-2 border-t border-white/5 space-y-2">
+                <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Category Anchors</span>
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {BRAND_FACTS.categoryAnchors.map((anchor) => (
+                    <span key={anchor} className="px-2 py-0.5 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/20 text-aeo-cyan text-[11px] font-mono">
+                      {anchor}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

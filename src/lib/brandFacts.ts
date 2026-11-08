@@ -23,14 +23,44 @@ export interface FactProvenance {
 // ============================================================================
 // 1. IDENTITY FACTS (Who/What the Entity Is)
 // ============================================================================
+export const BRAND_FACTS = {
+  name: "AEObility",
+  legalName: "AEObility",
+  pronunciation: "A-E-O-bility",
+  etymology: "Portmanteau of Answer Engine Optimisation (AEO) and ability",
+  entityType: "Professional Services / Digital Consultancy",
+  headquarters: "Perth, Western Australia",
+  founder: "Vincent (Vince) Baker",
+  disambiguation: {
+    distinctFrom: "Seobility (SEO Software Platform)",
+    statement: "AEObility is an independent Perth digital consultancy specialising in Answer Engine Optimisation (AEO) and AI search visibility, completely unrelated to Seobility software.",
+  },
+  knownAliases: [
+    "AEO Bility",
+    "aeo bility",
+    "aeo.bility",
+    "AEO.bility"
+  ],
+  categoryAnchors: [
+    "Perth digital consultancy",
+    "Answer Engine Optimisation Perth",
+    "AEO consultancy Australia",
+    "AI search visibility"
+  ]
+};
+
 export const BRAND_IDENTITY = {
   name: "AEObility",
   legalName: "Trekaboutoz trading as AEObility",
   abn: "61 029 803 255",
+  pronunciation: BRAND_FACTS.pronunciation,
+  etymology: BRAND_FACTS.etymology,
   entityType: "ProfessionalService",
   industry: "Answer Engine Optimisation",
   foundingDate: "2011-03-15",
   founder: "Vince Baker",
+  disambiguation: BRAND_FACTS.disambiguation,
+  categoryAnchors: BRAND_FACTS.categoryAnchors,
   location: {
     city: "Perth",
     state: "Western Australia",
@@ -42,8 +72,8 @@ export const BRAND_IDENTITY = {
   website: "https://aeobility.com.au",
   brandPromise: "Get Found. Get Chosen.",
   tagline: "No jargon. No pressure. Just clarity.",
-  knownAs: ["AEObility", "aeo bility", "aeo.bility", "AEO Bility", "AEO.bility"],
-  notToBeConfusedWith: ["Seobility (German SEO audit software)", "generic consulting brands", "unverified AI-search claims"],
+  knownAs: BRAND_FACTS.knownAliases,
+  notToBeConfusedWith: ["Seobility (SEO Software Platform)", "generic consulting brands", "unverified AI-search claims"],
   officialSources: [
     { title: "AEObility Home", url: "https://aeobility.com.au" },
     { title: "Brand Facts Directory", url: "https://aeobility.com.au/brand-facts" },
