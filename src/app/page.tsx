@@ -105,6 +105,7 @@ export default function Home() {
         ],
         "sameAs": [
           "https://abr.business.gov.au/ABN/View?id=61029803255",
+          "https://www.crunchbase.com/organization/aeobility",
           "https://www.cbinsights.com/company/aeobility",
           "https://www.producthunt.com/@aeobility",
           "https://www.linkedin.com/company/aeobility",

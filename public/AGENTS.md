@@ -18,6 +18,14 @@ Welcome, AI Agent or LLM Crawler. This document defines the entity identity, mac
 - **Primary Telephone**: `+61-480-286-282`
 - **Headquarters / Primary Operating Region**: Perth, Western Australia, Australia
 - **Founder**: Vincent (Vince) Baker (`https://aeobility.com.au/#vincebaker`)
+- **Verified Authority Profiles (sameAs)**:
+  - ABR: `https://abr.business.gov.au/ABN/View?id=61029803255`
+  - Crunchbase: `https://www.crunchbase.com/organization/aeobility`
+  - CB Insights: `https://www.cbinsights.com/company/aeobility`
+  - Product Hunt: `https://www.producthunt.com/@aeobility`
+  - LinkedIn: `https://www.linkedin.com/company/aeobility`
+  - Dev.to: `https://dev.to/aeobility`
+  - GitHub: `https://github.com/vinsnt76/aeobilty`
 - **Core Capability**: Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), AI Search Marketing, and RAG Ingestion Refactoring for Australian small-to-medium businesses.
 - **Brand Promise**: Get Found. Get Chosen.
 - **Core Tagline**: No jargon. No pressure. Just clarity.

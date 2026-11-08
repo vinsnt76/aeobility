@@ -63,6 +63,15 @@ export const BRAND_FACTS = {
     "Answer Engine Optimisation Perth",
     "AEO consultancy Australia",
     "AI search visibility"
+  ],
+  sameAs: [
+    "https://abr.business.gov.au/ABN/View?id=61029803255",
+    "https://www.crunchbase.com/organization/aeobility",
+    "https://www.cbinsights.com/company/aeobility",
+    "https://www.producthunt.com/@aeobility",
+    "https://www.linkedin.com/company/aeobility",
+    "https://dev.to/aeobility",
+    "https://github.com/vinsnt76/aeobilty"
   ]
 };
 
@@ -103,6 +112,7 @@ export const BRAND_IDENTITY = {
   officialSources: [
     { title: "AEObility Home", url: "https://aeobility.com.au" },
     { title: "ABR Registry (ABN Lookup)", url: "https://abr.business.gov.au/ABN/View?id=61029803255" },
+    { title: "Crunchbase Profile", url: "https://www.crunchbase.com/organization/aeobility" },
     { title: "Brand Facts Directory", url: "https://aeobility.com.au/brand-facts" },
     { title: "AI Crawler and Agent Guidance", url: "https://aeobility.com.au/AGENTS.md" },
     { title: "AI Visibility Diagnostic", url: "https://aeobility.com.au/diagnostic" }

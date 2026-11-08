@@ -10,6 +10,7 @@
 - **Principal Place of Business**: Dianella, Western Australia 6059
 - **Primary Telephone**: `+61-480-286-282`
 - **Primary Location**: Perth, Western Australia, Australia (AU)
+- **Authority Profiles (sameAs)**: `https://www.crunchbase.com/organization/aeobility`, `https://www.cbinsights.com/company/aeobility`, `https://www.linkedin.com/company/aeobility`
 
 ## Core Terminology & Concepts
 - **AEO (Answer Engine Optimisation)**: Restructuring content specifically for direct query extraction and LLM retrieval.

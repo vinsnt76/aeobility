@@ -16,6 +16,7 @@
 - **Primary Telephone**: `+61-480-286-282`
 - **Principal Place of Business**: Dianella, Western Australia 6059
 - **Founder**: Vincent (Vince) Baker (`https://aeobility.com.au/#vincebaker`)
+- **Verified Entity Profiles (sameAs)**: `https://www.crunchbase.com/organization/aeobility`, `https://www.cbinsights.com/company/aeobility`, `https://www.producthunt.com/@aeobility`, `https://www.linkedin.com/company/aeobility`, `https://dev.to/aeobility`, `https://github.com/vinsnt76/aeobilty`
 
 ### Core Value Proposition
 AEObility refactors digital content and schema graphs so AI search engines (ChatGPT, Google Search AI Overviews, Gemini, Perplexity, Claude) and spatial map assistants (Google Maps, Apple Maps) can discover, parse, understand, and cite Australian small and medium businesses.

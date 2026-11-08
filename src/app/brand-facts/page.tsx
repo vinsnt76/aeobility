@@ -153,6 +153,30 @@ export default function HumanBrandFactsPage() {
                   ))}
                 </div>
               </div>
+              <div className="pt-2 border-t border-white/5 space-y-2">
+                <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Entity Grounding (sameAs)</span>
+                <div className="flex flex-wrap gap-2 pt-1 text-[11px] font-mono">
+                  <a href="https://abr.business.gov.au/ABN/View?id=61029803255" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-aeo-cyan underline inline-flex items-center gap-1">
+                    ABR <ExternalLink className="w-2.5 h-2.5" />
+                  </a>
+                  <span className="text-zinc-600">•</span>
+                  <a href="https://www.crunchbase.com/organization/aeobility" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-aeo-cyan underline inline-flex items-center gap-1">
+                    Crunchbase <ExternalLink className="w-2.5 h-2.5" />
+                  </a>
+                  <span className="text-zinc-600">•</span>
+                  <a href="https://www.cbinsights.com/company/aeobility" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-aeo-cyan underline inline-flex items-center gap-1">
+                    CB Insights <ExternalLink className="w-2.5 h-2.5" />
+                  </a>
+                  <span className="text-zinc-600">•</span>
+                  <a href="https://www.linkedin.com/company/aeobility" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-aeo-cyan underline inline-flex items-center gap-1">
+                    LinkedIn <ExternalLink className="w-2.5 h-2.5" />
+                  </a>
+                  <span className="text-zinc-600">•</span>
+                  <a href="https://github.com/vinsnt76/aeobilty" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-aeo-cyan underline inline-flex items-center gap-1">
+                    GitHub <ExternalLink className="w-2.5 h-2.5" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
