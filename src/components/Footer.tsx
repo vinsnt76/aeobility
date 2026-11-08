@@ -279,7 +279,9 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 border-t border-white/5 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-white/30 font-light">
         <div className="space-y-1">
           <div>© {new Date().getFullYear()} AEObility. All rights reserved.</div>
-          <div>Trekaboutoz trading as AEObility | ABN: 61 029 803 255</div>
+          <div>
+            AEObility is a registered Australian business name (ABN: 61 029 803 255), registered with the Australian Securities and Investments Commission (ASIC) on 21 July 2026. Principal place of business: Dianella, Western Australia 6059.
+          </div>
         </div>
         <div>
           Built for Australian local entities.

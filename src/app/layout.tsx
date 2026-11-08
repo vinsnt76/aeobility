@@ -247,10 +247,13 @@ export default function RootLayout({
                   "description": "AEObility is a Perth-based Australian consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), AI search visibility, entity SEO and schema graph engineering. AEObility helps businesses improve how their digital information, services and expertise are structured and understood by search engines and AI-powered discovery systems.",
                   "disambiguatingDescription": "AEObility is an independent Australian digital consultancy specialising in AEO, GEO and machine search readability. It is distinct from Seobility, the SEO software platform.",
                   "telephone": "+61-480-286-282",
+                  "foundingDate": "2026-07-21",
+                  "taxID": "ABN 61 029 803 255",
                   "address": {
                     "@type": "PostalAddress",
-                    "addressLocality": "Perth",
+                    "addressLocality": "Dianella",
                     "addressRegion": "Western Australia",
+                    "postalCode": "6059",
                     "addressCountry": "AU"
                   },
                   "founder": {
@@ -258,6 +261,7 @@ export default function RootLayout({
                     "@id": "https://aeobility.com.au/#vincebaker"
                   },
                   "sameAs": [
+                    "https://abr.business.gov.au/ABN/View?id=61029803255",
                     "https://www.cbinsights.com/company/aeobility",
                     "https://www.producthunt.com/@aeobility",
                     "https://www.linkedin.com/company/aeobility",

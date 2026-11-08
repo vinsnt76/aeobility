@@ -26,6 +26,23 @@ export interface FactProvenance {
 export const BRAND_FACTS = {
   name: "AEObility",
   legalName: "AEObility",
+  legalStructure: "Registered Australian Business Name",
+  abn: "61 029 803 255",
+  abnLink: "https://abr.business.gov.au/ABN/View?id=61029803255",
+  registrationDate: "2026-07-21",
+  registeringBody: "Australian Securities and Investments Commission (ASIC)",
+  status: "Registered / Active",
+  principalPlaceOfBusiness: {
+    locality: "Dianella",
+    region: "Western Australia",
+    postalCode: "6059",
+    country: "AU"
+  },
+  holder: {
+    name: "Vincent Anthony Baker",
+    type: "Person",
+    role: "Proprietor / Founder"
+  },
   pronunciation: "A-E-O-bility",
   etymology: "Portmanteau of Answer Engine Optimisation (AEO) and ability",
   entityType: "Professional Services / Digital Consultancy",
@@ -52,20 +69,29 @@ export const BRAND_FACTS = {
 export const BRAND_IDENTITY = {
   name: "AEObility",
   legalName: "Trekaboutoz trading as AEObility",
-  abn: "61 029 803 255",
+  legalStructure: BRAND_FACTS.legalStructure,
+  abn: BRAND_FACTS.abn,
+  abnLink: BRAND_FACTS.abnLink,
+  registrationDate: BRAND_FACTS.registrationDate,
+  registeringBody: BRAND_FACTS.registeringBody,
+  status: BRAND_FACTS.status,
+  principalPlaceOfBusiness: BRAND_FACTS.principalPlaceOfBusiness,
+  holder: BRAND_FACTS.holder,
   pronunciation: BRAND_FACTS.pronunciation,
   etymology: BRAND_FACTS.etymology,
   entityType: "ProfessionalService",
   industry: "Answer Engine Optimisation",
-  foundingDate: "2011-03-15",
+  foundingDate: BRAND_FACTS.registrationDate,
   founder: "Vince Baker",
   disambiguation: BRAND_FACTS.disambiguation,
   categoryAnchors: BRAND_FACTS.categoryAnchors,
   location: {
     city: "Perth",
-    state: "Western Australia",
-    country: "AU",
-    coordinates: { latitude: -31.9505, longitude: 115.8605 }
+    locality: BRAND_FACTS.principalPlaceOfBusiness.locality,
+    state: BRAND_FACTS.principalPlaceOfBusiness.region,
+    postalCode: BRAND_FACTS.principalPlaceOfBusiness.postalCode,
+    country: BRAND_FACTS.principalPlaceOfBusiness.country,
+    coordinates: { latitude: -31.8900, longitude: 115.8690 }
   },
   foundingLocation: { city: "Perth", state: "Western Australia", country: "AU" },
   serviceArea: ["Australia", "Western Australia (Primary Base)", "Major Capital Cities (Remote Delivery)"],
@@ -76,6 +102,7 @@ export const BRAND_IDENTITY = {
   notToBeConfusedWith: ["Seobility (SEO Software Platform)", "generic consulting brands", "unverified AI-search claims"],
   officialSources: [
     { title: "AEObility Home", url: "https://aeobility.com.au" },
+    { title: "ABR Registry (ABN Lookup)", url: "https://abr.business.gov.au/ABN/View?id=61029803255" },
     { title: "Brand Facts Directory", url: "https://aeobility.com.au/brand-facts" },
     { title: "AI Crawler and Agent Guidance", url: "https://aeobility.com.au/AGENTS.md" },
     { title: "AI Visibility Diagnostic", url: "https://aeobility.com.au/diagnostic" }
@@ -655,7 +682,7 @@ export const PROVENANCE_ENTITIES: ProvenanceEntity[] = [
     layer: 'Production',
     description: 'Australian Answer Engine Optimisation consultancy and legal brand holder.',
     canonicalUri: 'https://aeobility.com.au/#organisation',
-    dateCreated: '2011-03-15',
+    dateCreated: '2026-07-21',
     dateModified: '2026-08-29',
     version: '2026.3'
   },
@@ -757,7 +784,10 @@ export const PUBLIC_SCHEMA_GRAPH = {
       image: 'https://aeobility.com.au/assets/AEObility_Featured_Image.webp',
       description: 'Australian Answer Engine Optimisation consultancy specialising in structured business knowledge, entity graphs, and AI-search visibility.',
       disambiguatingDescription: 'Australian digital consultancy specialising in machine search readability and AEO, distinct from Seobility SEO software.',
+      taxID: `ABN ${BRAND_FACTS.abn}`,
+      foundingDate: BRAND_FACTS.registrationDate,
       sameAs: [
+        BRAND_FACTS.abnLink,
         'https://www.cbinsights.com/company/aeobility',
         'https://www.producthunt.com/@aeobility',
         'https://www.linkedin.com/company/aeobility',
@@ -768,6 +798,13 @@ export const PUBLIC_SCHEMA_GRAPH = {
       identifier: [
         {
           '@type': 'PropertyValue',
+          propertyID: 'AustralianBusinessNumber',
+          name: 'Australian Business Number (ABN)',
+          value: BRAND_FACTS.abn,
+          url: BRAND_FACTS.abnLink
+        },
+        {
+          '@type': 'PropertyValue',
           propertyID: 'agent_readiness_score',
           name: 'Is Your Site Agent-Ready Score',
           value: '94',
@@ -776,7 +813,6 @@ export const PUBLIC_SCHEMA_GRAPH = {
           description: 'Level 5 Agent-Native rating from isitagentready.com evaluated on 2026-10-24'
         }
       ],
-      foundingDate: BRAND_IDENTITY.foundingDate,
       founder: {
         '@type': 'Person',
         '@id': 'https://aeobility.com.au/vince-baker#person',
@@ -792,10 +828,10 @@ export const PUBLIC_SCHEMA_GRAPH = {
       },
       address: {
         '@type': 'PostalAddress',
-        addressLocality: BRAND_IDENTITY.location.city,
-        addressRegion: BRAND_IDENTITY.location.state,
-        postalCode: '6000',
-        addressCountry: BRAND_IDENTITY.location.country
+        addressLocality: BRAND_FACTS.principalPlaceOfBusiness.locality,
+        addressRegion: BRAND_FACTS.principalPlaceOfBusiness.region,
+        postalCode: BRAND_FACTS.principalPlaceOfBusiness.postalCode,
+        addressCountry: BRAND_FACTS.principalPlaceOfBusiness.country
       },
       geo: {
         '@type': 'GeoCoordinates',

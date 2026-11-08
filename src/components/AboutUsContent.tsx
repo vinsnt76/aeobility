@@ -454,6 +454,10 @@ export default function AboutUsContent() {
           <p className="text-sm sm:text-base text-zinc-200 font-serif leading-relaxed">
             AEObility (pronounced A-E-O-bility) is an independent Australian digital consultancy based in Perth, Western Australia, founded by Vince Baker. The name is a portmanteau of Answer Engine Optimisation (AEO) and ability, reflecting our focus on machine readability, schema graph architecture, and AI search discovery. AEObility is an independent professional services consultancy and is not affiliated with, sponsored by, or related to Seobility, the European SEO software platform.
           </p>
+          <div className="pt-3 border-t border-white/10 text-xs sm:text-sm text-zinc-400 font-serif leading-relaxed">
+            <strong className="text-zinc-200">Corporate Identity:</strong>{' '}
+            AEObility is a registered Australian business name (ABN: 61 029 803 255), registered with the Australian Securities and Investments Commission (ASIC) on 21 July 2026. Principal place of business: Dianella, Western Australia 6059.
+          </div>
         </div>
       </section>
 

@@ -115,8 +115,16 @@ export default function HumanBrandFactsPage() {
               <div>
                 <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Registered Corporate Entity</span>
                 <p className="text-lg font-bold text-white mt-1">{BRAND_IDENTITY.legalName}</p>
-                <p className="text-xs text-zinc-400 font-serif mt-0.5">ABN: <strong className="text-white font-mono">{BRAND_IDENTITY.abn}</strong></p>
-                <p className="text-xs text-zinc-400 font-serif">Trading Name: <strong className="text-white">{BRAND_IDENTITY.name}</strong></p>
+                <p className="text-xs text-zinc-400 font-serif mt-0.5">
+                  Legal Structure: <strong className="text-white font-mono">{BRAND_FACTS.legalStructure}</strong>
+                </p>
+                <p className="text-xs text-zinc-400 font-serif">
+                  ABN: <a href={BRAND_FACTS.abnLink} target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline font-mono font-bold inline-flex items-center gap-1">{BRAND_FACTS.abn} <ExternalLink className="w-3 h-3 inline" /></a>
+                </p>
+                <p className="text-xs text-zinc-400 font-serif">
+                  Registration: <strong className="text-white font-mono">{BRAND_FACTS.registrationDate}</strong> ({BRAND_FACTS.registeringBody})
+                </p>
+                <p className="text-xs text-zinc-400 font-serif">Trading Name: <strong className="text-white">{BRAND_IDENTITY.name}</strong> ({BRAND_FACTS.status})</p>
                 <p className="text-xs text-zinc-300 font-serif pt-1">
                   Primary entity type: <strong className="text-white">{BRAND_FACTS.entityType}</strong>. AEObility operates from {BRAND_FACTS.headquarters}, and delivers services remotely across Australia.
                 </p>
@@ -124,13 +132,14 @@ export default function HumanBrandFactsPage() {
               <div className="pt-2 border-t border-white/5">
                 <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Key Personnel &amp; Leadership</span>
                 <p className="text-base font-semibold text-white mt-1">Founder: {BRAND_FACTS.founder}</p>
-                <p className="text-xs text-zinc-400 font-serif">Established: {BRAND_IDENTITY.foundingDate}</p>
+                <p className="text-xs text-zinc-400 font-serif">Holder: {BRAND_FACTS.holder.name} ({BRAND_FACTS.holder.role})</p>
+                <p className="text-xs text-zinc-400 font-serif">Registered: {BRAND_FACTS.registrationDate}</p>
               </div>
             </div>
             <div className="space-y-4">
               <div>
-                <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Primary Operating Location</span>
-                <p className="text-base font-bold text-aeo-cyan mt-1">{BRAND_IDENTITY.location.city}, {BRAND_IDENTITY.location.state}, Australia</p>
+                <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Principal Place of Business</span>
+                <p className="text-base font-bold text-aeo-cyan mt-1">{BRAND_FACTS.principalPlaceOfBusiness.locality}, {BRAND_FACTS.principalPlaceOfBusiness.region} {BRAND_FACTS.principalPlaceOfBusiness.postalCode}, Australia</p>
                 <p className="text-xs text-zinc-400 font-serif pt-1">Brand Promise: &ldquo;{BRAND_IDENTITY.brandPromise}&rdquo;</p>
                 <p className="text-xs text-zinc-500 font-serif">Tagline: &ldquo;{BRAND_IDENTITY.tagline}&rdquo;</p>
               </div>

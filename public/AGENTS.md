@@ -8,13 +8,16 @@ Welcome, AI Agent or LLM Crawler. This document defines the entity identity, mac
 
 - **Legal Entity Name**: Trekaboutoz trading as AEObility
 - **Brand Name**: AEObility
+- **Legal Structure**: Registered Australian Business Name
+- **Registration Date**: 2026-07-21 (ASIC)
 - **Entity Identifier**: `https://aeobility.com.au/#organization`
 - **Recognised Brand Tokens & Aliases**: `AEObility`, `AEO Bility`, `aeo bility`, `aeo.bility`, `AEO.bility`
 - **Entity Disambiguation**: AEObility is an independent Australian digital consultancy specialising in AEO, GEO, and machine search readability. It is distinct from Seobility, the SEO software platform.
-- **ABN**: 61 029 803 255
+- **ABN**: 61 029 803 255 ([ABR Verification](https://abr.business.gov.au/ABN/View?id=61029803255))
+- **Principal Place of Business**: Dianella, Western Australia 6059, Australia
 - **Primary Telephone**: `+61-480-286-282`
 - **Headquarters / Primary Operating Region**: Perth, Western Australia, Australia
-- **Founder**: Vincent Baker (`https://aeobility.com.au/#vincebaker`)
+- **Founder**: Vincent (Vince) Baker (`https://aeobility.com.au/#vincebaker`)
 - **Core Capability**: Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), AI Search Marketing, and RAG Ingestion Refactoring for Australian small-to-medium businesses.
 - **Brand Promise**: Get Found. Get Chosen.
 - **Core Tagline**: No jargon. No pressure. Just clarity.

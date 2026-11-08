@@ -49,6 +49,8 @@ export default function Home() {
         ],
         "url": "https://aeobility.com.au/",
         "telephone": "+61-480-286-282",
+        "foundingDate": "2026-07-21",
+        "taxID": "ABN 61 029 803 255",
         "logo": {
           "@type": "ImageObject",
           "@id": "https://aeobility.com.au/#logo",
@@ -58,8 +60,9 @@ export default function Home() {
         "disambiguatingDescription": "AEObility is an independent Australian digital consultancy specialising in AEO, GEO and machine search readability. It is distinct from Seobility, the SEO software platform.",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Perth",
+          "addressLocality": "Dianella",
           "addressRegion": "Western Australia",
+          "postalCode": "6059",
           "addressCountry": "AU"
         },
         "areaServed": [
@@ -101,6 +104,7 @@ export default function Home() {
           "Search Engine Optimisation"
         ],
         "sameAs": [
+          "https://abr.business.gov.au/ABN/View?id=61029803255",
           "https://www.cbinsights.com/company/aeobility",
           "https://www.producthunt.com/@aeobility",
           "https://www.linkedin.com/company/aeobility",

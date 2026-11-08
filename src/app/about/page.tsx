@@ -31,8 +31,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   const orgSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "ProfessionalService",
     "@id": "https://aeobility.com.au/#organization",
+    "name": "AEObility",
+    "legalName": "AEObility",
     "alternateName": [
       "AEO Bility",
       "aeo bility",
@@ -41,9 +43,24 @@ export default function AboutPage() {
     ],
     "description": "AEObility (pronounced A-E-O-bility) is an independent Australian digital consultancy based in Perth, Western Australia, founded by Vince Baker. The name is a portmanteau of Answer Engine Optimisation (AEO) and ability, reflecting our focus on machine readability, schema graph architecture, and AI search discovery.",
     "disambiguatingDescription": "AEObility is an independent Australian digital consultancy specialising in AEO, GEO and machine search readability. It is distinct from Seobility, the SEO software platform.",
-    "name": "AEObility",
+    "foundingDate": "2026-07-21",
+    "taxID": "ABN 61 029 803 255",
     "url": "https://aeobility.com.au",
     "logo": "https://aeobility.com.au/aeobility-logo-light.svg",
+    "sameAs": [
+      "https://abr.business.gov.au/ABN/View?id=61029803255",
+      "https://www.cbinsights.com/company/aeobility",
+      "https://www.producthunt.com/@aeobility",
+      "https://www.linkedin.com/company/aeobility",
+      "https://dev.to/aeobility"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dianella",
+      "addressRegion": "Western Australia",
+      "postalCode": "6059",
+      "addressCountry": "AU"
+    },
     "founder": {
       "@type": "Person",
       "name": "Vinnie Baker",
@@ -61,19 +78,25 @@ export default function AboutPage() {
     "@type": "LocalBusiness",
     "@id": "https://aeobility.com.au/#localbusiness",
     "name": "AEObility",
+    "legalName": "AEObility",
     "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
     "url": "https://aeobility.com.au/about",
     "telephone": "0480 286 282",
+    "taxID": "ABN 61 029 803 255",
+    "sameAs": [
+      "https://abr.business.gov.au/ABN/View?id=61029803255"
+    ],
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Perth",
+      "addressLocality": "Dianella",
       "addressRegion": "Western Australia",
-      "addressCountry": "Australia"
+      "postalCode": "6059",
+      "addressCountry": "AU"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": -31.9505,
-      "longitude": 115.8605
+      "latitude": -31.8900,
+      "longitude": 115.8690
     },
     "founder": {
       "@type": "Person",
@@ -126,9 +149,7 @@ export default function AboutPage() {
     "name": "Vinnie Baker",
     "jobTitle": "Founder",
     "worksFor": {
-      "@type": "Organization",
-      "name": "AEObility",
-      "url": "https://aeobility.com.au"
+      "@id": "https://aeobility.com.au/#organization"
     },
     "sameAs": [
       "https://www.linkedin.com/in/vince-baker/"
