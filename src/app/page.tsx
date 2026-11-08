@@ -36,10 +36,16 @@ export default function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["ProfessionalService", "LocalBusiness"],
+        "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
         "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "legalName": "AEObility",
+        "slogan": "Get Found. Get Chosen.",
+        "brand": {
+          "@type": "Brand",
+          "name": "AEObility",
+          "slogan": "Get Found. Get Chosen."
+        },
         "alternateName": [
           "AEO Bility",
           "aeo bility",
@@ -215,6 +221,20 @@ export default function Home() {
           },
           "query-input": "required name=search_term_string"
         }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://aeobility.com.au/#webpage",
+        "url": "https://aeobility.com.au/",
+        "name": "AEObility Perth | Answer Engine Optimisation & AI SEO Consultancy",
+        "description": "Australia's premier AEO & AI SEO agency. Optimise your brand for ChatGPT, Perplexity & Google AI Overviews. Claim your free AI visibility audit.",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/#website"
+        },
+        "about": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
+        "inLanguage": "en-AU"
       },
       {
         "@type": "Service",
