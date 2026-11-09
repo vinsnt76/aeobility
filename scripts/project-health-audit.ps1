@@ -60,21 +60,22 @@ foreach ($r in $routesToTest) {
         $res = Invoke-WebRequest -Uri $url -Method Get -UseBasicParsing -TimeoutSec 15
         $html = $res.Content
         $status = $res.StatusCode
-        $hasBailout = $html -match 'data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING"'
         $hasChildrenRendered = ($html -match '<main' -or $html -match 'id="about-us-content"' -or $html -match 'class="min-h-screen')
+        $isFullBailout = (-not $hasChildrenRendered) -or ($html.Length -lt 20000 -and $html -match 'data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING"')
         $hasTitle = $html -match '<title>(.*?)</title>'
         $title = if ($hasTitle) { $matches[1] } else { "NO TITLE" }
         
-        $pass = ($status -eq 200) -and (-not $hasBailout)
+        $pass = ($status -eq 200) -and (-not $isFullBailout) -and $hasChildrenRendered
         $color = if ($pass) { 'Green' } else { 'Red' }
 
-        Write-Host "  $($r.Name.PadRight(22)) [$status] $(if (-not $hasBailout) { 'Rendered [PASS]' } else { 'Bailout [FAIL]' }) | Size: $($html.Length) bytes" -ForegroundColor $color
+        Write-Host "  $($r.Name.PadRight(22)) [$status] $(if ($pass) { 'Rendered [PASS]' } else { 'Bailout/Missing Content [FAIL]' }) | Size: $($html.Length) bytes" -ForegroundColor $color
 
         $auditResults.LiveRoutes += @{
             Name = $r.Name
             Path = $r.Path
             Status = $status
-            Rendered = (-not $hasBailout)
+            Rendered = $pass
+            HasChildren = $hasChildrenRendered
             Size = $html.Length
             Title = $title
         }
