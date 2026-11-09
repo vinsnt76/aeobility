@@ -86,7 +86,7 @@ export default function HumanBrandFactsPage() {
             <span>Lexical Disambiguation &amp; Trading Profile</span>
           </div>
           <p className="text-xs sm:text-sm font-serif leading-relaxed">
-            Primary public trading name: <strong className="text-white font-mono">{BRAND_FACTS.name}</strong> (pronounced <span className="text-amber-300 font-mono">{BRAND_FACTS.pronunciation}</span>). Corporate entity: <strong className="text-white font-mono">{BRAND_IDENTITY.legalName}</strong>.
+            Primary public trading name: <strong className="text-white font-mono">{BRAND_FACTS.name}</strong> (pronounced <span className="text-amber-300 font-mono">{BRAND_FACTS.pronunciation}</span>). Registered entity: <strong className="text-white font-mono">{BRAND_IDENTITY.legalName}</strong> (ABN: <a href={BRAND_FACTS.abnLink} target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline font-mono inline-flex items-center gap-1">{BRAND_FACTS.abn} <ExternalLink className="w-3 h-3 inline" /></a>).
           </p>
           <p className="text-xs sm:text-sm font-serif leading-relaxed">
             <strong>Etymology:</strong> {BRAND_FACTS.etymology}.
@@ -116,10 +116,10 @@ export default function HumanBrandFactsPage() {
                 <span className="text-xs font-semibold text-zinc-400 uppercase font-mono">Registered Corporate Entity</span>
                 <p className="text-lg font-bold text-white mt-1">{BRAND_IDENTITY.legalName}</p>
                 <p className="text-xs text-zinc-400 font-serif mt-0.5">
-                  Legal Structure: <strong className="text-white font-mono">{BRAND_FACTS.legalStructure}</strong>
+                  Legal Structure: <strong className="text-white font-mono">{BRAND_FACTS.legalStructure}</strong> (ABN: <a href={BRAND_FACTS.abnLink} target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline font-mono inline-flex items-center gap-1">{BRAND_FACTS.abn} <ExternalLink className="w-3 h-3 inline" /></a>)
                 </p>
                 <p className="text-xs text-zinc-400 font-serif">
-                  ABN: <a href={BRAND_FACTS.abnLink} target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline font-mono font-bold inline-flex items-center gap-1">{BRAND_FACTS.abn} <ExternalLink className="w-3 h-3 inline" /></a>
+                  Entity Verification: <a href={BRAND_FACTS.abnLink} target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline inline-flex items-center gap-1">Australian Business Register (ABR) <ExternalLink className="w-3 h-3 inline" /></a>
                 </p>
                 <p className="text-xs text-zinc-400 font-serif">
                   Registration: <strong className="text-white font-mono">{BRAND_FACTS.registrationDate}</strong> ({BRAND_FACTS.registeringBody})

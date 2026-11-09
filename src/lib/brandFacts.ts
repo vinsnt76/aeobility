@@ -44,20 +44,21 @@ export const BRAND_FACTS = {
     role: "Proprietor / Founder"
   },
   pronunciation: "A-E-O-bility",
-  etymology: "Portmanteau of Answer Engine Optimisation (AEO) and ability",
+  etymology: "Portmanteau of Answer Engine Optimisation (AEO) and ability (the capacity to execute machine-readable discovery)",
   entityType: "Professional Services / Digital Consultancy",
   headquarters: "Perth, Western Australia",
   founder: "Vincent (Vince) Baker",
   disambiguation: {
-    distinctFrom: "Seobility (SEO Software Platform)",
-    statement: "AEObility is an independent Perth digital consultancy specialising in Answer Engine Optimisation (AEO) and AI search visibility, completely unrelated to Seobility software.",
+    distinctFrom: "Seobility (global SEO software platform) and physical mobility equipment or healthcare suppliers in Western Australia",
+    statement: "AEObility is an independent Perth B2B digital consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and structured entity architecture. It is strictly unrelated to Seobility (global SEO software platform) and shares zero affiliation with physical mobility equipment, assistive healthcare, or disability care providers in Western Australia.",
   },
   knownAliases: [
     "AEO Bility",
     "aeo bility",
     "aeo.bility",
     "AEO.bility",
-    "AEObility Perth"
+    "AEObility Perth",
+    "AEObility Australia"
   ],
   categoryAnchors: [
     "Perth digital consultancy",
@@ -119,8 +120,8 @@ export const BRAND_IDENTITY = {
     { title: "AI Visibility Diagnostic", url: "https://aeobility.com.au/diagnostic" }
   ],
   temporalBadge: {
-    lastVerified: "29 Aug 2026",
-    effectiveDate: "29 Aug 2026",
+    lastVerified: "9 Nov 2026",
+    effectiveDate: "9 Nov 2026",
     fiscalCycle: "FY27",
     reviewedBy: "AEObility editorial and technical team",
     governanceNote: "We review this page when a material brand, service, pricing, or contact detail changes, and at least annually."
@@ -142,6 +143,14 @@ export const BRAND_DEFINITIONS = {
 };
 
 export const BRAND_KNOWLEDGE_LATTICE: FactProvenance[] = [
+  {
+    statement: "AEObility is the registered Australian business name verified on the Australian Business Register (ABR) under ABN 61 029 803 255",
+    source: "https://abr.business.gov.au/ABN/View?id=61029803255",
+    evidenceType: "CorporateRegistry",
+    status: "verified",
+    firstPublished: "2026-07-21",
+    lastVerified: "2026-11-09"
+  },
   {
     statement: "AEObility provides Answer Engine Optimisation services",
     source: "https://aeobility.com.au/services/aeo",
@@ -784,18 +793,19 @@ export const PUBLIC_SCHEMA_GRAPH = {
       '@id': 'https://aeobility.com.au/#organization',
       name: BRAND_IDENTITY.name,
       alternateName: [
+        'AEO Bility',
         'aeo bility',
         'aeo.bility',
-        'AEO Bility',
         'AEO.bility',
-        'AEObility Perth'
+        'AEObility Perth',
+        'AEObility Australia'
       ],
       legalName: BRAND_IDENTITY.legalName,
       url: BRAND_IDENTITY.website,
       logo: 'https://aeobility.com.au/assets/AEObility_Logo.webp',
       image: 'https://aeobility.com.au/assets/AEObility_Featured_Image.webp',
       description: 'Australian Answer Engine Optimisation consultancy specialising in structured business knowledge, entity graphs, and AI-search visibility.',
-      disambiguatingDescription: 'Australian digital consultancy specialising in machine search readability and AEO, distinct from Seobility SEO software.',
+      disambiguatingDescription: 'AEObility is an independent Australian B2B digital consultancy based in Dianella, Perth, specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and structured data architecture. Distinct from Seobility software and physical mobility equipment or healthcare suppliers in Western Australia.',
       taxID: `ABN ${BRAND_FACTS.abn}`,
       foundingDate: BRAND_FACTS.registrationDate,
       sameAs: [
@@ -949,13 +959,13 @@ export const PUBLIC_SCHEMA_GRAPH = {
       ]
     },
     {
-      '@type': ['WebPage', 'CollectionPage'],
+      '@type': ['AboutPage', 'WebPage', 'CollectionPage'],
       '@id': 'https://aeobility.com.au/brand-facts#webpage',
       url: 'https://aeobility.com.au/brand-facts',
       name: 'Canonical Brand Facts & Machine Interface Directory | AEObility',
       description: "AEObility's canonical business knowledge layer, publishing verified first-party business facts, entity graphs, provenance evidence, and machine interface endpoints.",
       inLanguage: 'en-AU',
-      dateModified: '2026-08-29',
+      dateModified: '2026-11-09',
       isPartOf: {
         '@id': 'https://aeobility.com.au/#website'
       },

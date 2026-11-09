@@ -20,7 +20,8 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         "aeo bility",
         "aeo.bility",
         "AEO.bility",
-        "AEObility Perth"
+        "AEObility Perth",
+        "AEObility Australia"
       ],
       "url": "https://aeobility.com.au/",
       "logo": "https://aeobility.com.au/aeobility-logo-light.svg",

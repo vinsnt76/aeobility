@@ -86,7 +86,8 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
         "aeo bility",
         "aeo.bility",
         "AEO.bility",
-        "AEObility Perth"
+        "AEObility Perth",
+        "AEObility Australia"
       ],
       "url": "https://aeobility.com.au/",
       "telephone": "+61-480-286-282",

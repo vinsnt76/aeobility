@@ -1,4 +1,4 @@
-# AEObility Comprehensive Project Health Audit
+﻿# AEObility Comprehensive Project Health Audit
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $ErrorActionPreference = "Continue"
 
@@ -192,23 +192,27 @@ $allSourceFiles = Get-ChildItem -Path src -Recurse -Include *.tsx, *.ts
 $emDashOccurrences = @()
 foreach ($f in $allSourceFiles) {
     $content = [System.IO.File]::ReadAllText($f.FullName)
-    if ($content -match '—') {
+    if ($content -match [char]0x2014) {
         $emDashOccurrences += $f.FullName.Replace((Get-Location).Path + "\", "")
     }
 }
 $emDashPass = ($emDashOccurrences.Count -eq 0)
-Write-Host "  Em-Dash Check (Brand Don't: No '—'):   $(if ($emDashPass) { 'ZERO FOUND [PASS]' } else { 'FOUND in ' + $emDashOccurrences.Count + ' file(s) [WARN]' })" -ForegroundColor $(if ($emDashPass) { 'Green' } else { 'Yellow' })
+Write-Host "  Em-Dash Check (Brand Don't: No em-dash): $(if ($emDashPass) { 'ZERO FOUND [PASS]' } else { 'FOUND in ' + $emDashOccurrences.Count + ' file(s) [WARN]' })" -ForegroundColor $(if ($emDashPass) { 'Green' } else { 'Yellow' })
 
-# B. Negative keyword check: "wheelchair" or "mobility equipment"
+# B. Negative keyword check: "wheelchair" or affirmative "mobility equipment"
 $mobilityCheck = @()
 foreach ($f in $allSourceFiles) {
     $content = [System.IO.File]::ReadAllText($f.FullName)
-    if ($content -match 'wheelchair|mobility equipment') {
+    # Exclude negative disambiguation statements
+    $stripped = $content -replace 'zero affiliation with physical mobility equipment', '' `
+                         -replace 'Distinct from Seobility software and physical mobility equipment', '' `
+                         -replace 'distinctFrom:[^,\n]*mobility equipment', ''
+    if ($stripped -match 'wheelchair|mobility equipment') {
         $mobilityCheck += $f.FullName.Replace((Get-Location).Path + "\", "")
     }
 }
 $mobilityPass = ($mobilityCheck.Count -eq 0)
-Write-Host "  Mobility Decoupling (No wheelchair):  $(if ($mobilityPass) { 'CLEAN [PASS]' } else { 'FOUND [FAIL]' })" -ForegroundColor $(if ($mobilityPass) { 'Green' } else { 'Red' })
+Write-Host "  Mobility Decoupling (No affirmative mobility): $(if ($mobilityPass) { 'CLEAN [PASS]' } else { 'FOUND in ' + $mobilityCheck.Count + ' file(s) [FAIL]' })" -ForegroundColor $(if ($mobilityPass) { 'Green' } else { 'Red' })
 
 # C. Seobility mentions check (should only appear factually for disambiguation)
 $seobilityOccurrences = @()

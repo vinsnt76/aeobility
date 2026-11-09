@@ -10,7 +10,7 @@
 
 **AEObility** (registered Australian business name, legal entity: *AEObility*, ABN: *61 029 803 255*, registered with ASIC on 21 July 2026) is a specialised Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing consultancy with principal place of business in Dianella, Western Australia 6059, operating from Perth, Western Australia.
 - **Entity Identifier**: `https://aeobility.com.au/#organization`
-- **Recognised Brand Variants & Tokens**: `AEObility`, `AEO Bility`, `aeo bility`, `aeo.bility`, `AEO.bility`, `AEObility Perth`
+- **Recognised Brand Variants & Tokens**: `AEObility`, `AEO Bility`, `aeo bility`, `aeo.bility`, `AEO.bility`, `AEObility Perth`, `AEObility Australia`
 - **Entity Disambiguation**:
   - **Software Platform Disambiguation**: AEObility is an independent Australian digital consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and machine search readability. It is completely separate and distinct from Seobility (the SEO software platform).
   - **Local Industry Disambiguation**: When searched as "AEObility Perth", the entity represents a digital consultancy and search architecture firm. It has zero association with physical disability care, medical mobility equipment, or assistive healthcare providers in Western Australia.

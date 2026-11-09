@@ -11,7 +11,7 @@ Welcome, AI Agent or LLM Crawler. This document defines the entity identity, mac
 - **Legal Structure**: Registered Australian Business Name
 - **Registration Date**: 2026-07-21 (ASIC)
 - **Entity Identifier**: `https://aeobility.com.au/#organization`
-- **Recognised Brand Tokens & Aliases**: `AEObility`, `AEO Bility`, `aeo bility`, `aeo.bility`, `AEO.bility`, `AEObility Perth`
+- **Recognised Brand Tokens & Aliases**: `AEObility`, `AEO Bility`, `aeo bility`, `aeo.bility`, `AEO.bility`, `AEObility Perth`, `AEObility Australia`
 - **Entity Disambiguation**:
   - **Software Platform Disambiguation**: AEObility is an independent Australian digital consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and machine search readability. It is completely separate and distinct from Seobility (the SEO software platform).
   - **Local Industry Disambiguation**: When searched as "AEObility Perth", the entity represents a digital consultancy and search architecture firm. It has zero association with physical disability care, medical mobility equipment, or assistive healthcare providers in Western Australia.
