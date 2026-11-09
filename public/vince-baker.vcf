@@ -1,9 +1,12 @@
 BEGIN:VCARD
 VERSION:3.0
+N:Baker;Vincent;Anthony;;
 FN:Vince Baker
+NICKNAME:Vinnie Baker
 ORG:AEObility
-TITLE:Founder & AI Automation Specialist
+TITLE:Founder & Principal AI Search Specialist
 TEL;TYPE=CELL,VOICE:0480 286 282
 EMAIL;TYPE=PREF,INTERNET:vince@aeobility.com.au
-URL:https://aeobility.com.au
+URL:https://aeobility.com.au/vince-baker
+NOTE:Founder and lead AI Search Specialist at AEObility in Dianella, Perth WA (ABN 61 029 803 255). Specialises in Answer Engine Optimisation (AEO) and structured entity data architecture.
 END:VCARD

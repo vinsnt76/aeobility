@@ -54,13 +54,14 @@ export default function EntityAuthorityArticlePage() {
       },
       {
         "@type": "Person",
-        "@id": "https://aeobility.com.au/vince-baker#person",
-        "name": "Vince Baker",
+        "@id": "https://aeobility.com.au/#vincebaker",
+        "name": "Vincent Anthony Baker",
+        "alternateName": ["Vince Baker", "Vinnie Baker"],
         "jobTitle": "AEO & Semantic Search Specialist",
         "worksFor": {
           "@id": "https://aeobility.com.au/#organization"
         },
-        "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
+        "url": "https://aeobility.com.au/vince-baker",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Perth",
@@ -86,9 +87,9 @@ export default function EntityAuthorityArticlePage() {
         "@type": "TechArticle",
         "@id": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building#article",
         "headline": "Entity Authority: Why AI Search Ranks Entities Not Pages",
-        "description": "AI search has fundamentally changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities — the people, brands, products, and organisations behind those pages.",
+        "description": "AI search has fundamentally changed how customers discover businesses. Instead of ranking pages by keywords, modern systems evaluate entities, including the people, brands, products, and organisations behind those pages.",
         "author": {
-          "@id": "https://aeobility.com.au/vince-baker#person"
+          "@id": "https://aeobility.com.au/#vincebaker"
         },
         "publisher": {
           "@id": "https://aeobility.com.au/#organization"

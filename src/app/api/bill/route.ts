@@ -52,10 +52,12 @@ const orgGraph = {
     {
       '@type': 'Person',
       '@id': 'https://aeobility.com.au/#vincebaker',
-      name: 'Vince Baker',
+      name: 'Vincent Anthony Baker',
+      alternateName: ['Vince Baker', 'Vinnie Baker'],
       jobTitle: 'Founder & Principal AEO Architect',
       worksFor: { '@id': 'https://aeobility.com.au/#organization' },
-      sameAs: ['https://linkedin.com/in/vincebaker']
+      url: 'https://aeobility.com.au/vince-baker',
+      sameAs: ['https://www.linkedin.com/in/vince-baker/']
     }
   ]
 };

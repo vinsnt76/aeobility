@@ -98,12 +98,12 @@ export default function PerthSeoSpecialistPage() {
         })),
         "employee": {
           "@type": "Person",
-          "@id": "https://aeobility.com.au/vince-baker#person",
-          "name": "Vince Baker",
+          "@id": "https://aeobility.com.au/#vincebaker",
+          "name": "Vincent Anthony Baker",
+          "alternateName": ["Vince Baker", "Vinnie Baker"],
           "jobTitle": "Lead SEO Specialist & Founder",
+          "url": "https://aeobility.com.au/vince-baker",
           "sameAs": [
-            "https://aeobility.com.au/vince-baker",
-            "https://aeobility.com.au/about/freelance-seo-consultant-perth",
             "https://www.linkedin.com/in/vince-baker/",
             "https://github.com/vinsnt76"
           ]

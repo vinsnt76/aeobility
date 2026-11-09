@@ -95,12 +95,15 @@ export default function AboutPage() {
         "founder": {
           "@type": "Person",
           "@id": "https://aeobility.com.au/#vincebaker",
-          "name": "Vincent Baker",
-          "alternateName": "Vince Baker",
+          "name": "Vincent Anthony Baker",
+          "givenName": "Vincent",
+          "familyName": "Baker",
+          "alternateName": ["Vince Baker", "Vinnie Baker"],
           "jobTitle": "Founder & Principal AEO Specialist",
           "url": "https://aeobility.com.au/vince-baker",
           "sameAs": [
             "https://www.linkedin.com/in/vince-baker/",
+            "https://app.qwoted.com/sources/vince-baker",
             "https://github.com/vinsnt76"
           ]
         }

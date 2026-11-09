@@ -81,8 +81,9 @@ export default function WhatIsAeoPage() {
         },
         "author": {
           "@type": "Person",
-          "@id": "https://aeobility.com.au/vince-baker#person",
-          "name": "Vince Baker",
+          "@id": "https://aeobility.com.au/#vincebaker",
+          "name": "Vincent Anthony Baker",
+          "alternateName": ["Vince Baker", "Vinnie Baker"],
           "jobTitle": "Technical Search Architect",
           "url": "https://aeobility.com.au/vince-baker"
         },
@@ -145,13 +146,17 @@ export default function WhatIsAeoPage() {
         "description": "Conceptual graphic illustrating Answer Engine Optimisation (AEO). An AI scanner robot parses prompt coordinate points and vector data, demonstrating how AI models discover, interpret, and link digital entities to business brands.",
         "author": {
           "@type": "Person",
-          "@id": "https://aeobility.com.au/vince-baker#person",
-          "name": "Vincent Baker (AEObility)"
+          "@id": "https://aeobility.com.au/#vincebaker",
+          "name": "Vincent Anthony Baker",
+          "alternateName": ["Vince Baker", "Vinnie Baker"],
+          "url": "https://aeobility.com.au/vince-baker"
         },
         "creator": {
           "@type": "Person",
-          "@id": "https://aeobility.com.au/vince-baker#person",
-          "name": "Vincent Baker (AEObility)"
+          "@id": "https://aeobility.com.au/#vincebaker",
+          "name": "Vincent Anthony Baker",
+          "alternateName": ["Vince Baker", "Vinnie Baker"],
+          "url": "https://aeobility.com.au/vince-baker"
         },
         "copyrightNotice": "© 2026 AEObility. All rights reserved.",
         "copyrightHolder": {

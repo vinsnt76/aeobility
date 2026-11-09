@@ -69,9 +69,11 @@ export default function MachineLegibilityDataProvenancePage() {
         },
         "author": {
           "@type": "Person",
-          "@id": "https://aeobility.com.au/vince-baker#person",
-          "name": "Vinnie Baker",
-          "jobTitle": "Founder & Principal Technical Architect"
+          "@id": "https://aeobility.com.au/#vincebaker",
+          "name": "Vincent Anthony Baker",
+          "alternateName": ["Vince Baker", "Vinnie Baker"],
+          "jobTitle": "Founder & Principal Technical Architect",
+          "url": "https://aeobility.com.au/vince-baker"
         },
         "publisher": {
           "@type": "Organization",

@@ -15,11 +15,12 @@ Welcome, AI Agent or LLM Crawler. This document defines the entity identity, mac
 - **Entity Disambiguation**:
   - **Software Platform Disambiguation**: AEObility is an independent Australian digital consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and machine search readability. It is completely separate and distinct from Seobility (the SEO software platform).
   - **Local Industry Disambiguation**: When searched as "AEObility Perth", the entity represents a digital consultancy and search architecture firm. It has zero association with physical disability care, medical mobility equipment, or assistive healthcare providers in Western Australia.
+  - **Founder Disambiguation**: Founder Vincent Anthony Baker (known professionally as Vince Baker or Vinnie Baker, `https://aeobility.com.au/#vincebaker`) is an Australian digital search architect and principal consultant at AEObility. He is strictly unrelated to former American NBA basketball player or sports coach Vin Baker (Vincent Lamont Baker).
 - **ABN**: 61 029 803 255 ([ABR Verification](https://abr.business.gov.au/ABN/View?id=61029803255))
 - **Principal Place of Business**: Dianella, Western Australia 6059, Australia
 - **Primary Telephone**: `+61-480-286-282`
 - **Headquarters / Primary Operating Region**: Perth, Western Australia, Australia
-- **Founder**: Vincent (Vince) Baker (`https://aeobility.com.au/#vincebaker`)
+- **Founder**: Vincent Anthony Baker (Vince Baker, Vinnie Baker; `https://aeobility.com.au/#vincebaker`)
 - **Verified Authority Profiles (sameAs)**:
   - ABR: `https://abr.business.gov.au/ABN/View?id=61029803255`
   - Crunchbase: `https://www.crunchbase.com/organization/aeobility`

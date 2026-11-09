@@ -73,7 +73,7 @@ export default function PositionalBiasArticlePage() {
         "dateModified": "2026-07",
         "datePublished": "2026-07",
         "author": {
-          "@id": "https://aeobility.com.au/vince-baker#person"
+          "@id": "https://aeobility.com.au/#vincebaker"
         },
         "publisher": {
           "@id": "https://aeobility.com.au/#organization"
@@ -127,11 +127,12 @@ export default function PositionalBiasArticlePage() {
       },
       {
         "@type": "Person",
-        "@id": "https://aeobility.com.au/vince-baker#person",
-        "name": "Vince Baker",
+        "@id": "https://aeobility.com.au/#vincebaker",
+        "name": "Vincent Anthony Baker",
+        "alternateName": ["Vince Baker", "Vinnie Baker"],
         "jobTitle": "Senior Information Architect & AEO Strategist",
         "description": "Author of AEObility’s technical guides on retrieval, semantic SEO, and answer engine optimisation.",
-        "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
+        "url": "https://aeobility.com.au/vince-baker",
         "worksFor": {
           "@id": "https://aeobility.com.au/#organization"
         },

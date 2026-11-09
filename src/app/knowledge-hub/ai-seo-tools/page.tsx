@@ -143,8 +143,9 @@ export default function AiSeoToolsPage() {
         "abn": "61 029 803 255",
         "founder": {
           "@type": "Person",
-          "@id": "https://aeobility.com.au/vince-baker#person",
-          "name": "Vince Baker",
+          "@id": "https://aeobility.com.au/#vincebaker",
+          "name": "Vincent Anthony Baker",
+          "alternateName": ["Vince Baker", "Vinnie Baker"],
           "url": "https://aeobility.com.au/vince-baker"
         },
         "geo": {
@@ -196,8 +197,9 @@ export default function AiSeoToolsPage() {
         ],
         "author": {
           "@type": "Person",
-          "@id": "https://aeobility.com.au/vince-baker#person",
-          "name": "Vince Baker",
+          "@id": "https://aeobility.com.au/#vincebaker",
+          "name": "Vincent Anthony Baker",
+          "alternateName": ["Vince Baker", "Vinnie Baker"],
           "jobTitle": "AEO & SEO Specialist",
           "url": "https://aeobility.com.au/vince-baker",
           "sameAs": [

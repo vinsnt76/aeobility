@@ -173,13 +173,14 @@ export default async function Page({ params }: PageProps) {
           "@id": "https://aeobility.com.au/#organization"
         },
         "founder": {
-          "@id": "https://aeobility.com.au/#person"
+          "@id": "https://aeobility.com.au/#vincebaker"
         }
       },
       {
         "@type": "Person",
-        "@id": "https://aeobility.com.au/#person",
-        "name": "Vinnie Baker",
+        "@id": "https://aeobility.com.au/#vincebaker",
+        "name": "Vincent Anthony Baker",
+        "alternateName": ["Vince Baker", "Vinnie Baker"],
         "jobTitle": "Founder & AEO Specialist",
         "image": imageUrl,
         "url": "https://aeobility.com.au/vince-baker",

@@ -79,8 +79,8 @@ export async function GET() {
       linksModuleData: {
         uris: [
           {
-            uri: "https://aeobility.com.au/about/freelance-digital-specialist-perth",
-            description: "View Portfolio"
+            uri: "https://aeobility.com.au/vince-baker",
+            description: "Founder Profile"
           },
           {
             uri: "https://www.linkedin.com/in/vince-baker/",

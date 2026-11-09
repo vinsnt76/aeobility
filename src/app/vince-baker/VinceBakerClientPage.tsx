@@ -76,13 +76,34 @@ export default function VinceBakerClientPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Person",
-        "@id": "https://aeobility.com.au/#person",
-        "name": "Vincent Baker",
-        "alternateName": ["Vince Baker", "Vinnie Baker"],
-        "jobTitle": "Founder & Technical Director",
+        "@type": "ProfilePage",
+        "@id": "https://aeobility.com.au/vince-baker#webpage",
         "url": "https://aeobility.com.au/vince-baker",
-        "image": "https://aeobility.com.au/vinnie-baker.jpg",
+        "name": "Vince Baker (Vinnie Baker) | Founder Profile & Entity Authority",
+        "description": "Founder profile and structured entity credentials for Vincent Anthony Baker (known as Vince or Vinnie Baker), founder of AEObility in Dianella, Perth, Western Australia.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://aeobility.com.au/#website"
+        },
+        "about": {
+          "@id": "https://aeobility.com.au/#vincebaker"
+        },
+        "mainEntity": {
+          "@id": "https://aeobility.com.au/#vincebaker"
+        },
+        "inLanguage": "en-AU"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://aeobility.com.au/#vincebaker",
+        "name": "Vincent Anthony Baker",
+        "givenName": "Vincent",
+        "familyName": "Baker",
+        "alternateName": ["Vince Baker", "Vinnie Baker"],
+        "jobTitle": "Founder & Principal AI Search Specialist",
+        "disambiguatingDescription": "Australian B2B digital search architect, founder and principal AI Search Specialist at AEObility (Dianella, Perth, Western Australia; ABN: 61 029 803 255). Specialises in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and structured entity data architecture. Strictly distinct and unrelated to former American NBA basketball player or sports coach Vin Baker.",
+        "url": "https://aeobility.com.au/vince-baker",
+        "image": "https://aeobility.com.au/images/about/vince-baker-profile_AEObility.webp",
         "sameAs": [
           "https://www.linkedin.com/in/vince-baker/",
           "https://app.qwoted.com/sources/vince-baker",
@@ -95,17 +116,36 @@ export default function VinceBakerClientPage() {
           "legalName": "AEObility",
           "url": "https://aeobility.com.au"
         },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Perth",
-          "addressRegion": "WA",
-          "addressCountry": "AU"
-        }
+        "homeLocation": {
+          "@type": "Place",
+          "name": "Perth, Western Australia",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dianella",
+            "addressRegion": "WA",
+            "postalCode": "6059",
+            "addressCountry": "AU"
+          }
+        },
+        "knowsAbout": [
+          "Answer Engine Optimisation",
+          "Generative Engine Optimisation",
+          "AI Search Visibility",
+          "Knowledge Graph Engineering",
+          "Schema Graph Engineering",
+          "Entity SEO",
+          "JSON-LD",
+          "Information Architecture",
+          "Structured Data Architecture"
+        ]
       },
       {
         "@type": "FAQPage",
         "@id": "https://aeobility.com.au/vince-baker#faq",
         "url": "https://aeobility.com.au/vince-baker",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/vince-baker#webpage"
+        },
         "mainEntity": founderFaqs.map((faq) => ({
           "@type": "Question",
           "name": faq.question,
@@ -186,6 +226,7 @@ export default function VinceBakerClientPage() {
 
             <div className="vince-profile-info">
               <h1 className="vince-name">Vinnie Baker</h1>
+              <p className="text-xs font-mono text-zinc-400">Vincent Anthony Baker</p>
               <p className="vince-title">Founder &amp; AI Search Specialist</p>
               <p className="vince-location">
                 <svg className="w-3.5 h-3.5 text-aeo-cyan inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -259,7 +300,7 @@ export default function VinceBakerClientPage() {
           {/* Social Links */}
           <div className="vince-socials">
             <a
-              href="https://www.linkedin.com/in/vincentbakerperth/"
+              href="https://www.linkedin.com/in/vince-baker/"
               target="_blank"
               rel="noopener noreferrer"
               className="vince-social-link"
@@ -320,6 +361,67 @@ export default function VinceBakerClientPage() {
 
         </div>
       </div>
+
+        {/* Founder Entity Verification & Disambiguation Block */}
+        <section className="max-w-2xl w-full mt-8 p-6 sm:p-8 rounded-2xl bg-white/[0.03] border border-white/10 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="flex items-center gap-2 mb-4">
+            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-mono tracking-wider uppercase bg-cyan-950/60 border border-cyan-800/50 text-cyan-400">
+              Verified Entity Anchor
+            </span>
+            <span className="text-xs font-mono text-zinc-400">Schema Node: #vincebaker</span>
+          </div>
+
+          <h2 className="text-lg sm:text-xl font-bold text-white mb-2">
+            Founder Entity Facts &amp; Disambiguation
+          </h2>
+          <p className="text-xs sm:text-sm text-zinc-400 mb-6 leading-relaxed">
+            Machine-verifiable identity profile grounding the human founder node for the AEObility knowledge graph and AI retrieval engines.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono mb-6">
+            <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+              <span className="text-zinc-400 uppercase tracking-wider text-[10px] block">Full Legal Name</span>
+              <span className="text-white font-semibold text-sm">Vincent Anthony Baker</span>
+              <span className="text-zinc-400 block text-[11px]">Known as: Vince Baker, Vinnie Baker</span>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+              <span className="text-zinc-400 uppercase tracking-wider text-[10px] block">Commercial Entity &amp; Role</span>
+              <span className="text-white font-semibold text-sm">Founder &amp; Principal Specialist</span>
+              <span className="text-zinc-400 block text-[11px]">AEObility (ABN: <a href="https://abr.business.gov.au/ABN/View?id=61029803255" target="_blank" rel="noopener noreferrer" className="text-aeo-cyan hover:underline">61 029 803 255</a>)</span>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+              <span className="text-zinc-400 uppercase tracking-wider text-[10px] block">Principal Location</span>
+              <span className="text-white font-semibold text-sm">Dianella, Perth, WA 6059</span>
+              <span className="text-zinc-400 block text-[11px]">Western Australia, Australia</span>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+              <span className="text-zinc-400 uppercase tracking-wider text-[10px] block">Core Specialisation</span>
+              <span className="text-white font-semibold text-sm">AEO, GEO &amp; Entity Architecture</span>
+              <span className="text-zinc-400 block text-[11px]">Answer Engine Optimisation specialist</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-xl bg-cyan-950/20 border border-cyan-800/30">
+            <div className="flex items-start gap-2.5">
+              <svg className="w-4 h-4 text-aeo-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h3 className="text-xs font-semibold text-cyan-300 uppercase tracking-wider mb-1">
+                  Entity Disambiguation Notice
+                </h3>
+                <p className="text-xs text-zinc-300 leading-relaxed">
+                  Vincent Anthony Baker is an Australian digital search architect and founder of AEObility in Perth, Western Australia. This profile represents the verified commercial entity anchor (<code className="text-cyan-400 bg-black/40 px-1 py-0.5 rounded">https://aeobility.com.au/#vincebaker</code>) and is strictly independent, separate, and unrelated to former American NBA basketball player or professional sports coach Vin Baker (Vincent Lamont Baker).
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Founder & Authority FAQ Block */}
         <section id="faq" className="max-w-2xl w-full mt-12 pt-10 border-t border-white/10">

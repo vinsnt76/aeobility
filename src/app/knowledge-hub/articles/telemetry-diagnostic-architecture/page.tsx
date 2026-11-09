@@ -96,13 +96,14 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
       },
       {
         "@type": "Person",
-        "@id": "https://aeobility.com.au/about/freelance-seo-consultant-perth#person",
-        "name": "Vince Baker",
+        "@id": "https://aeobility.com.au/#vincebaker",
+        "name": "Vincent Anthony Baker",
+        "alternateName": ["Vince Baker", "Vinnie Baker"],
         "jobTitle": "Chief AEO Architect",
-        "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
+        "url": "https://aeobility.com.au/vince-baker",
         "sameAs": [
-          "https://aeobility.com.au",
-          "https://aeobility.com.au/about/freelance-seo-consultant-perth"
+          "https://www.linkedin.com/in/vince-baker/",
+          "https://github.com/vinsnt76"
         ],
         "worksFor": {
           "@id": "https://aeobility.com.au/#organization"
@@ -124,7 +125,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture",
         "dependencies": "Google Gemini text-embedding-004, gemini-3.7-flash, Wikidata SPARQL Engine",
         "author": {
-          "@id": "https://aeobility.com.au/about/freelance-seo-consultant-perth#person"
+          "@id": "https://aeobility.com.au/#vincebaker"
         },
         "publisher": {
           "@id": "https://aeobility.com.au/#organization"

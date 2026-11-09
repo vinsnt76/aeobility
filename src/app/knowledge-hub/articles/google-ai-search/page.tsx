@@ -133,8 +133,9 @@ export default function GoogleAiSearchArticlePage() {
         ],
         "author": {
           "@type": "Person",
-          "@id": "https://aeobility.com.au/vince-baker#person",
-          "name": "Vince Baker",
+          "@id": "https://aeobility.com.au/#vincebaker",
+          "name": "Vincent Anthony Baker",
+          "alternateName": ["Vince Baker", "Vinnie Baker"],
           "url": "https://aeobility.com.au/vince-baker",
           "image": {
             "@id": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png#authorimage"

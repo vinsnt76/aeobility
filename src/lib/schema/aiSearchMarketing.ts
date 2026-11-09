@@ -70,14 +70,19 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
     {
       "@type": "Person",
       "@id": "https://aeobility.com.au/#vincebaker",
-      "name": "Vince Baker",
+      "name": "Vincent Anthony Baker",
+      "givenName": "Vincent",
+      "familyName": "Baker",
+      "alternateName": ["Vince Baker", "Vinnie Baker"],
       "jobTitle": "Founder & Principal AEO Specialist",
       "worksFor": {
         "@id": "https://aeobility.com.au/#organization"
       },
-      "url": "https://aeobility.com.au/about",
+      "url": "https://aeobility.com.au/vince-baker",
       "sameAs": [
-        "https://www.linkedin.com/in/vincebaker/"
+        "https://www.linkedin.com/in/vince-baker/",
+        "https://app.qwoted.com/sources/vince-baker",
+        "https://github.com/vinsnt76"
       ]
     },
     {

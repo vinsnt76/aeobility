@@ -128,8 +128,9 @@ export default function AEODefinitionPage() {
         "dateModified": "2026-08-31T11:20:00+08:00",
         "author": {
           "@type": "Person",
-          "@id": "https://aeobility.com.au/vince-baker#person",
-          "name": "Vince Baker",
+          "@id": "https://aeobility.com.au/#vincebaker",
+          "name": "Vincent Anthony Baker",
+          "alternateName": ["Vince Baker", "Vinnie Baker"],
           "url": "https://aeobility.com.au/vince-baker"
         },
         "publisher": {

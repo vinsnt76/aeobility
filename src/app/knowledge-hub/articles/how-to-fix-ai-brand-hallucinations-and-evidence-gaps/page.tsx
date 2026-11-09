@@ -62,8 +62,9 @@ export default function AISeachArchitectureArticle() {
       },
       {
         "@type": "Person",
-        "@id": "https://aeobility.com.au/vince-baker#person",
-        "name": "Vinnie Baker",
+        "@id": "https://aeobility.com.au/#vincebaker",
+        "name": "Vincent Anthony Baker",
+        "alternateName": ["Vince Baker", "Vinnie Baker"],
         "jobTitle": "Founder & AEO Specialist",
         "worksFor": {
           "@id": "https://aeobility.com.au/#organization"
@@ -84,7 +85,7 @@ export default function AISeachArchitectureArticle() {
         "inLanguage": "en-AU",
         "description": "A comprehensive guide on structuring website content around semantic propositions, claim governance, and the 5-stage retrieval verification loop.",
         "author": {
-          "@id": "https://aeobility.com.au/vince-baker#person"
+          "@id": "https://aeobility.com.au/#vincebaker"
         },
         "publisher": {
           "@id": "https://aeobility.com.au/#organization"

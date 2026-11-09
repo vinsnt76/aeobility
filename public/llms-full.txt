@@ -14,10 +14,11 @@
 - **Entity Disambiguation**:
   - **Software Platform Disambiguation**: AEObility is an independent Australian digital consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and machine search readability. It is completely separate and distinct from Seobility (the SEO software platform).
   - **Local Industry Disambiguation**: When searched as "AEObility Perth", the entity represents a digital consultancy and search architecture firm. It has zero association with physical disability care, medical mobility equipment, or assistive healthcare providers in Western Australia.
+  - **Founder Disambiguation**: Founder Vincent Anthony Baker (known professionally as Vince Baker or Vinnie Baker, `https://aeobility.com.au/#vincebaker`) is an Australian digital search architect and principal consultant at AEObility. He is strictly unrelated to former American NBA basketball player or sports coach Vin Baker (Vincent Lamont Baker).
 - **ABN Verification**: `https://abr.business.gov.au/ABN/View?id=61029803255`
 - **Primary Telephone**: `+61-480-286-282`
 - **Principal Place of Business**: Dianella, Western Australia 6059
-- **Founder**: Vincent (Vince) Baker (`https://aeobility.com.au/#vincebaker`)
+- **Founder**: Vincent Anthony Baker (Vince Baker, Vinnie Baker; `https://aeobility.com.au/#vincebaker`)
 - **Verified Entity Profiles (sameAs)**: `https://www.crunchbase.com/organization/aeobility`, `https://www.cbinsights.com/company/aeobility`, `https://www.producthunt.com/@aeobility`, `https://www.linkedin.com/company/aeobility`, `https://dev.to/aeobility`, `https://github.com/vinsnt76/aeobility`
 
 ### Core Value Proposition
@@ -222,7 +223,7 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 
 All page entities on AEObility strictly follow Schema.org valid type definitions in a unified, decoupled `@graph` configuration:
 - `@type: ProfessionalService` (Primary brand root entity: `https://aeobility.com.au/#organization`)
-- `@type: Person` (Founder & Technical Director: `https://aeobility.com.au/#vincebaker`)
+- `@type: Person` (Founder & Principal AI Search Specialist: `https://aeobility.com.au/#vincebaker` - Vincent Anthony Baker)
 - `@type: WebSite` (Canonical website entity: `https://aeobility.com.au/#website` with `inLanguage: "en-AU"`)
 - `@type: OfferCatalog` (Commercial offerings catalog: `https://aeobility.com.au/#catalog`)
 - `@type: Service` (Commercial service offerings: `#service-aeo`, `#service-geo`, `#service-entity-seo`, `#service-schema`)
@@ -241,7 +242,7 @@ All page entities on AEObility strictly follow Schema.org valid type definitions
 # 7. Contact & Operational Location
 
 - **Brand**: AEObility
-- **Founder**: Vince (Vinnie) Baker
+- **Founder**: Vincent Anthony Baker (Vince Baker, Vinnie Baker)
 - **Primary Phone**: `+61-480-286-282` (or `0480 286 282` locally)
 - **Region**: Perth, Western Australia, Australia (AU)
 - **Primary Contact**: https://aeobility.com.au/contact

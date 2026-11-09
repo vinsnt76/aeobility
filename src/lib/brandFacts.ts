@@ -712,7 +712,7 @@ export const PROVENANCE_ENTITIES: ProvenanceEntity[] = [
     schemaType: 'Person',
     layer: 'Origin',
     description: 'Founder and principal technical architect of AEObility and AI Bill.',
-    canonicalUri: 'https://aeobility.com.au/vince-baker#person',
+    canonicalUri: 'https://aeobility.com.au/#vincebaker',
     dateCreated: '2011-03-15',
     dateModified: '2026-08-29',
     version: '1.0.0',
@@ -742,7 +742,7 @@ export const PROVENANCE_GRAPH_SCHEMA = {
       dateCreated: '2026-06-28',
       dateModified: '2026-09-23',
       version: '1.2.0',
-      author: { '@id': 'https://aeobility.com.au/vince-baker#person' }
+      author: { '@id': 'https://aeobility.com.au/#vincebaker' }
     },
     {
       '@type': 'SoftwareApplication',
@@ -837,8 +837,10 @@ export const PUBLIC_SCHEMA_GRAPH = {
       ],
       founder: {
         '@type': 'Person',
-        '@id': 'https://aeobility.com.au/vince-baker#person',
-        name: 'Vincent Baker',
+        '@id': 'https://aeobility.com.au/#vincebaker',
+        name: 'Vincent Anthony Baker',
+        givenName: 'Vincent',
+        familyName: 'Baker',
         alternateName: ['Vince Baker', 'Vinnie Baker'],
         jobTitle: 'Founder & Technical Director',
         url: 'https://aeobility.com.au/vince-baker',

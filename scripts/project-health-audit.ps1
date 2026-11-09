@@ -1,4 +1,4 @@
-﻿# AEObility Comprehensive Project Health Audit
+# AEObility Comprehensive Project Health Audit
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $ErrorActionPreference = "Continue"
 

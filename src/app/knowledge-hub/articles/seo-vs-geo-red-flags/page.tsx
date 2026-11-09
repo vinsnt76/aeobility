@@ -181,8 +181,9 @@ export default function SeoVsGeoRedFlagsPage() {
         "dateModified": "2026-10-31T08:00:00+08:00",
         "author": {
           "@type": "Person",
-          "@id": "https://aeobility.com.au/vince-baker#person",
-          "name": "Vince Baker",
+          "@id": "https://aeobility.com.au/#vincebaker",
+          "name": "Vincent Anthony Baker",
+          "alternateName": ["Vince Baker", "Vinnie Baker"],
           "url": "https://aeobility.com.au/vince-baker"
         },
         "publisher": {

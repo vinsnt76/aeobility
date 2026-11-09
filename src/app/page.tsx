@@ -182,12 +182,15 @@ export default function Home() {
       {
         "@type": "Person",
         "@id": "https://aeobility.com.au/#vincebaker",
-        "name": "Vincent Baker",
+        "name": "Vincent Anthony Baker",
+        "givenName": "Vincent",
+        "familyName": "Baker",
         "alternateName": [
           "Vince Baker",
           "Vinnie Baker"
         ],
         "jobTitle": "Founder and Technical Director",
+        "disambiguatingDescription": "Australian B2B digital search architect, founder and principal AI Search Specialist at AEObility (Dianella, Perth, Western Australia; ABN 61 029 803 255). Specialises in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and structured entity data architecture. Strictly distinct and unrelated to former American NBA basketball player or sports coach Vin Baker.",
         "url": "https://aeobility.com.au/vince-baker",
         "worksFor": {
           "@id": "https://aeobility.com.au/#organization"
