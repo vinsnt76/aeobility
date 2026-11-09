@@ -278,3 +278,4 @@ Located in `public/` and statically served at root:
 | **07** | Directory & Hub Indexes | 6 | 10.0% |
 | **08** | Core Brand, Trust & Utility | 18 | 30.0% |
 | **TOTAL** | **All 8 Archetypes** | **60** | **100.0%** |
+
