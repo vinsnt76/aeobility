@@ -21,7 +21,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       },
       "about": [
         {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         {
           "@type": "Thing",
@@ -151,7 +151,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
         }
       ],
       "parentOrganization": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       }
     },
     {
@@ -256,7 +256,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           },
           "availability": "https://schema.org/InStock",
           "description": "Primary diagnostic gateway testing high-intent buyer prompts across AI search engines, auditing brand accuracy and citation gaps, with 100% of fee credited toward AEO Foundation. Price excludes GST.",
-          "seller": { "@id": "https://aeobility.com.au/#organisation" }
+          "seller": { "@id": "https://aeobility.com.au/#organization" }
         },
         {
           "@type": "Offer",
@@ -270,7 +270,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           },
           "availability": "https://schema.org/InStock",
           "description": "Fixed-scope micro-sprint resolving conflicting business details, NAP errors, and profile inconsistencies across priority local platforms. Price excludes GST.",
-          "seller": { "@id": "https://aeobility.com.au/#organisation" }
+          "seller": { "@id": "https://aeobility.com.au/#organization" }
         },
         {
           "@type": "Offer",
@@ -284,7 +284,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           },
           "availability": "https://schema.org/InStock",
           "description": "Enhance priority service pages with structured answer scaffolding, explicit eligibility criteria, and verified local proof. Price excludes GST.",
-          "seller": { "@id": "https://aeobility.com.au/#organisation" }
+          "seller": { "@id": "https://aeobility.com.au/#organization" }
         },
         {
           "@type": "Offer",
@@ -298,7 +298,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           },
           "availability": "https://schema.org/InStock",
           "description": "Deploy semantic internal linking lattices connecting regional location hubs with core commercial services. Price excludes GST.",
-          "seller": { "@id": "https://aeobility.com.au/#organisation" }
+          "seller": { "@id": "https://aeobility.com.au/#organization" }
         },
         {
           "@type": "Offer",
@@ -312,7 +312,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           },
           "availability": "https://schema.org/InStock",
           "description": "Validate eligible, visible Schema.org markup and resolve implementation errors across key site paths. Price excludes GST.",
-          "seller": { "@id": "https://aeobility.com.au/#organisation" }
+          "seller": { "@id": "https://aeobility.com.au/#organization" }
         },
         {
           "@type": "Offer",
@@ -326,7 +326,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           },
           "availability": "https://schema.org/InStock",
           "description": "Establish an auditable baseline prompt set and recurring AI mention and citation tracking setup. Price excludes GST.",
-          "seller": { "@id": "https://aeobility.com.au/#organisation" }
+          "seller": { "@id": "https://aeobility.com.au/#organization" }
         },
         {
           "@type": "Offer",
@@ -340,7 +340,7 @@ export const getGeoMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           },
           "availability": "https://schema.org/InStock",
           "description": "Four-week turnkey deployment covering priority page improvements, Brand Facts page, internal linking, structured data validation, profile consistency, and measurement setup at $1,990 AUD ex. GST.",
-          "seller": { "@id": "https://aeobility.com.au/#organisation" }
+          "seller": { "@id": "https://aeobility.com.au/#organization" }
         }
       ]
     }

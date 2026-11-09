@@ -35,7 +35,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
         "@id": "https://aeobility.com.au/#website"
       },
       "about": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "breadcrumb": {
         "@id": "https://aeobility.com.au/solutions#breadcrumb"
@@ -87,7 +87,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
           "description": `${bpStrat.purpose} Standalone digital presence audit and prioritised 90-day execution roadmap. 100% credited toward AEO Foundation within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
           "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
@@ -110,7 +110,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
           "description": `${foundationDirect.purpose} Includes complimentary Technical Onboarding ($250 value).`,
           "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
@@ -133,7 +133,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
           "description": `${foundationTurnkey.purpose} Turnkey 4-pillar execution across up to ${GOVERNANCE_RULES.turnkeyPageLimit} core commercial pages. Includes complimentary Technical Onboarding ($250 value).`,
           "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
@@ -156,7 +156,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
           "description": `Fixed-scope 10-day macro sprints (${formatAudCurrency(macroSample.priceExGst)} each) bundling 4 micro-sprints across Identity & Schema, Answer Architecture, Semantic Lattice, or Brand Facts & Trust. Includes complimentary Technical Onboarding ($250 value).`,
           "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
@@ -179,7 +179,7 @@ export const getSolutionsSchemaGraph = (faqs?: FaqItem[]) => {
           "description": `Modular half-day micro-sprints (${formatAudCurrency(microSample.priceExGst)} each) targeting a single agreed priority: schema injection, atomic page rewrites, internal link lattice, or citation standardisation.`,
           "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         }
       ]

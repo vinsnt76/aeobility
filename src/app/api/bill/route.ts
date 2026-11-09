@@ -1,4 +1,4 @@
-import { NextRequest } from 'next/server';
+﻿import { NextRequest } from 'next/server';
 import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import knowledgeBase from '../../../lib/search/knowledgeBase.json';
@@ -43,18 +43,18 @@ const orgGraph = {
   '@graph': [
     {
       '@type': 'Organisation',
-      '@id': 'https://aeobility.com.au/#organisation',
+      '@id': 'https://aeobility.com.au/#organization',
       name: 'AEObility',
       url: 'https://aeobility.com.au',
       description: 'An agency defining the standard for Answer Engine Optimisation (AEO) in Australia.',
-      founder: { '@type': 'Person', '@id': 'https://aeobility.com.au/#vince-baker' }
+      founder: { '@type': 'Person', '@id': 'https://aeobility.com.au/#vincebaker' }
     },
     {
       '@type': 'Person',
-      '@id': 'https://aeobility.com.au/#vince-baker',
+      '@id': 'https://aeobility.com.au/#vincebaker',
       name: 'Vince Baker',
       jobTitle: 'Founder & Principal AEO Architect',
-      worksFor: { '@id': 'https://aeobility.com.au/#organisation' },
+      worksFor: { '@id': 'https://aeobility.com.au/#organization' },
       sameAs: ['https://linkedin.com/in/vincebaker']
     }
   ]
@@ -65,7 +65,7 @@ const blueprintService = {
   '@type': 'Service',
   '@id': 'https://aeobility.com.au/solutions/aeo-blueprint#service',
   serviceType: 'AI Readiness Optimisation Consultancy',
-  provider: { '@id': 'https://aeobility.com.au/#organisation' },
+  provider: { '@id': 'https://aeobility.com.au/#organization' },
   offers: { 
     '@type': 'Offer', 
     price: 995, 

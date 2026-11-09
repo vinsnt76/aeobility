@@ -90,9 +90,9 @@ export default function VinceBakerClientPage() {
         ],
         "worksFor": {
           "@type": "Organization",
-          "@id": "https://aeobility.com.au/#organisation",
+          "@id": "https://aeobility.com.au/#organization",
           "name": "AEObility",
-          "legalName": "Trekaboutoz",
+          "legalName": "AEObility",
           "url": "https://aeobility.com.au"
         },
         "address": {

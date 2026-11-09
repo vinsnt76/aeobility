@@ -70,7 +70,8 @@ Traditional SEO focuses on keyword stuffing and backlinks. AEO focuses on entity
 
 ## Organisation & Provenance
 
-- **Brand Name**: AEObility (Trekaboutoz trading as AEObility)
+- **Brand Name**: AEObility
+- **Legal Entity Name**: AEObility
 - **ABN**: 61 029 803 255
 - **Headquarters**: Perth, Western Australia, Australia
 - **Contact Email**: vince@aeobility.com.au

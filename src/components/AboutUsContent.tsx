@@ -367,7 +367,7 @@ export default function AboutUsContent() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono text-zinc-300 pt-2 border-t border-white/10">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-aeo-cyan shrink-0" />
-              <span>Legal Entity: Trekaboutoz trading as AEObility</span>
+              <span>Legal Entity: AEObility</span>
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-aeo-cyan shrink-0" />

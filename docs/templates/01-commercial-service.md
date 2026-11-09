@@ -1,4 +1,4 @@
-# Template 01: Commercial Service Pillar (`01-commercial-service.md`)
+﻿# Template 01: Commercial Service Pillar (`01-commercial-service.md`)
 
 > **Archetype:** Commercial Service Pillar & Sub-Service Corridor  
 > **Target Routes:** `/services/aeo`, `/services/geo-marketing`, `/services/aeo/shopify`, `/services/ai-search-agency`, `/services/aeo/local-business`  
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     3. *Entity Binding:* "All engagements tie directly into authoritative registries (`ABN`, `LocalBusiness`, `Schema.org`) with zero ongoing lock-in contracts."
   - **Token Budget:** Exactly 84 words (~105 tokens), matching bi-encoder vector similarity sweet spot.
 * **Dual-Reader E-E-A-T Framework:**
-  - **Mechanical Credibility (LLMs & Graphs):** Linked `Service` schema connected to root `Organization` (`https://aeobility.com.au/#organisation`), named practitioner provenance (`Person` schema for Vince Baker, Founder & Principal), timestamped recrawl validation.
+  - **Mechanical Credibility (LLMs & Graphs):** Linked `Service` schema connected to root `Organization` (`https://aeobility.com.au/#organization`), named practitioner provenance (`Person` schema for Vince Baker, Founder & Principal), timestamped recrawl validation.
   - **Human-Centred Usability (Buyers):** U.S. grade 8–9 plain English, zero agency jargon, transparent flat-rate pricing, risk-reducing operational reassurance (*"Zero lock-in"*, *"4–5 day turnaround"*) adjacent to CTAs.
   - **The Hybrid Rule:** Answer-first H2 lead paragraphs under every section; explicit naming of entities (`AEObility`, `Perplexity Pro`, `ChatGPT Search`, `Google AI Overviews`).
 * **Semantic Density Architecture:**
@@ -162,7 +162,7 @@ All implementations must invoke the canonical schema generator returning an abso
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au/",
       "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png"
@@ -173,7 +173,7 @@ All implementations must invoke the canonical schema generator returning an abso
       "name": "Answer Engine Optimisation (AEO) Services",
       "url": "https://aeobility.com.au/services/aeo",
       "provider": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "serviceType": "Search Engine Optimisation & AI Answer Engine Readiness",
       "hasOfferCatalog": {

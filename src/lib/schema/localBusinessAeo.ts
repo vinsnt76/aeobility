@@ -12,21 +12,35 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
   const graphNodes: Record<string, unknown>[] = [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
-      "legalName": "Trekaboutoz trading as AEObility",
+      "legalName": "AEObility",
+      "alternateName": [
+        "AEO Bility",
+        "aeo bility",
+        "aeo.bility",
+        "AEO.bility",
+        "AEObility Perth"
+      ],
       "url": "https://aeobility.com.au/",
-      "telephone": "+61480286282",
+      "telephone": "+61-480-286-282",
+      "foundingDate": "2026-07-21",
+      "taxID": "ABN 61 029 803 255",
       "identifier": {
         "@type": "PropertyValue",
-        "propertyID": "ABN",
-        "value": "61 029 803 255"
+        "propertyID": "AUSTRALIAN_BUSINESS_NUMBER",
+        "name": "ABN",
+        "value": "61029803255",
+        "url": "https://abr.business.gov.au/ABN/View?id=61029803255"
       },
       "sameAs": [
-        "https://www.linkedin.com/company/133445734/",
-        "https://www.instagram.com/aeo.bility/",
-        "https://www.facebook.com/profile.php?id=61591781069830",
-        "https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg",
+        "https://abr.business.gov.au/ABN/View?id=61029803255",
+        "https://www.crunchbase.com/organization/aeobility",
+        "https://www.cbinsights.com/company/aeobility",
+        "https://www.producthunt.com/@aeobility",
+        "https://www.linkedin.com/company/aeobility",
+        "https://dev.to/aeobility",
+        "https://github.com/vinsnt76/aeobilty",
         "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
       ],
       "areaServed": {
@@ -40,7 +54,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "url": "https://aeobility.com.au/",
       "name": "AEObility",
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "inLanguage": "en-AU"
     },
@@ -86,7 +100,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
         "@id": "https://aeobility.com.au/#website"
       },
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "breadcrumb": {
         "@id": "https://aeobility.com.au/services/aeo/local-business#breadcrumb"
@@ -176,7 +190,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
         }
       ],
       "parentOrganization": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       }
     },
     {
@@ -299,7 +313,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "NAP standardisation"
         ],
         "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "areaServed": {
           "@type": "Country",
@@ -333,7 +347,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "Service-area optimisation"
         ],
         "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "areaServed": {
           "@type": "Country",
@@ -367,7 +381,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "90-day local visibility roadmap"
         ],
         "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "areaServed": {
           "@type": "Country",

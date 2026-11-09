@@ -12,24 +12,47 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
   const graphNodes: Record<string, unknown>[] = [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
+      "legalName": "AEObility",
+      "alternateName": [
+        "AEO Bility",
+        "aeo bility",
+        "aeo.bility",
+        "AEO.bility",
+        "AEObility Perth"
+      ],
       "url": "https://aeobility.com.au/",
-      "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+      "logo": "https://aeobility.com.au/aeobility-logo-light.svg",
+      "telephone": "+61-480-286-282",
+      "foundingDate": "2026-07-21",
+      "taxID": "ABN 61 029 803 255",
       "description": "AEObility is a technical AI search marketing firm in Perth executing native Answer Engine Optimisation (AEO) using proprietary NLP workflows, automated multimedia video generation, and open-standard Model Context Protocol (MCP) servers.",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Perth",
-        "addressRegion": "WA",
+        "addressLocality": "Dianella",
+        "addressRegion": "Western Australia",
+        "postalCode": "6059",
         "addressCountry": "AU"
       },
       "founder": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "AUSTRALIAN_BUSINESS_NUMBER",
+        "name": "ABN",
+        "value": "61029803255",
+        "url": "https://abr.business.gov.au/ABN/View?id=61029803255"
       },
       "sameAs": [
-        "https://m.youtube.com/@aeobility",
+        "https://abr.business.gov.au/ABN/View?id=61029803255",
+        "https://www.crunchbase.com/organization/aeobility",
+        "https://www.cbinsights.com/company/aeobility",
+        "https://www.producthunt.com/@aeobility",
         "https://www.linkedin.com/company/aeobility",
-        "https://aeobility.substack.com"
+        "https://dev.to/aeobility",
+        "https://github.com/vinsnt76/aeobilty"
       ]
     },
     {
@@ -39,17 +62,17 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "applicationCategory": "Diagnostic Assistant",
       "operatingSystem": "Web",
       "author": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "description": "Proprietary NLP diagnostic assistant and RAG telemetry engine for AEObility."
     },
     {
       "@type": "Person",
-      "@id": "https://aeobility.com.au/#vince-baker",
+      "@id": "https://aeobility.com.au/#vincebaker",
       "name": "Vince Baker",
       "jobTitle": "Founder & Principal AEO Specialist",
       "worksFor": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "url": "https://aeobility.com.au/about",
       "sameAs": [
@@ -62,7 +85,7 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "url": "https://aeobility.com.au/",
       "name": "AEObility",
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "inLanguage": "en-AU"
     },
@@ -78,7 +101,7 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       },
       "about": [
         {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         {
           "@id": "https://aeobility.com.au/#ai-bill"
@@ -134,7 +157,7 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "contentUrl": "https://www.youtube.com/watch?v=ghX_txnK7WU",
       "inLanguage": "en-AU",
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "about": [
         {
@@ -153,7 +176,7 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
       "alternateName": "Generative Search Strategy",
       "description": "Technical AEO, MCP server integration, multi-modal video provenance, and schema architecture for Australian businesses.",
       "provider": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "mainEntityOfPage": "https://aeobility.com.au/services/ai-search-marketing",
       "areaServed": [
@@ -212,7 +235,7 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           "name": "MCP Endpoint Integration & Schema Deployment",
           "description": "Open-standard Model Context Protocol endpoint deployment, machine-readable tool catalogues, and structured schema integration.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
@@ -230,7 +253,7 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "Fixed-scope micro-sprints starting from $495 AUD ex. GST targeting one agreed priority: structured schema markup, page rewrites, internal linking or citation clean-up.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
@@ -244,7 +267,7 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "A standalone digital presence audit and prioritised 90-day execution roadmap. Price excludes GST.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
@@ -262,7 +285,7 @@ export const getAiSearchMarketingSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "A focused four-week turnkey implementation engagement at $1,990 AUD ex. GST for multi-page connected improvements across structured data, content clarity, and internal linking.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         }
       ]

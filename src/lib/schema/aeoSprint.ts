@@ -39,7 +39,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
           "@id": "https://aeobility.com.au/#website"
         },
         "about": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "breadcrumb": {
           "@id": "https://aeobility.com.au/solutions/aeo-sprint#breadcrumb"
@@ -78,7 +78,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "name": "AEO Technical Sprints",
         "description": "Fixed-scope implementation services for structured data, priority-page content, and page structure. Available as individual Micro-Sprints, 4-pillar Macro Sprints, or comprehensive AEO Foundation.",
         "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "areaServed": {
           "@type": "Country",
@@ -124,7 +124,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
                 "@id": `https://aeobility.com.au/solutions/aeo-sprint#service-${macro.code.toLowerCase()}`
               },
               "seller": {
-                "@id": "https://aeobility.com.au/#organisation"
+                "@id": "https://aeobility.com.au/#organization"
               }
             }))
           },
@@ -152,7 +152,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
               "description": `${micro.purpose} Deliverables: ${micro.deliverables.join('; ')}.`,
               "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
               "seller": {
-                "@id": "https://aeobility.com.au/#organisation"
+                "@id": "https://aeobility.com.au/#organization"
               }
             }))
           },
@@ -184,7 +184,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
                   "@id": "https://aeobility.com.au/solutions/aeo-sprint#foundation-direct-service"
                 },
                 "seller": {
-                  "@id": "https://aeobility.com.au/#organisation"
+                  "@id": "https://aeobility.com.au/#organization"
                 }
               },
               {
@@ -210,7 +210,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
                   "@id": "https://aeobility.com.au/solutions/aeo-sprint#foundation-implementation"
                 },
                 "seller": {
-                  "@id": "https://aeobility.com.au/#organisation"
+                  "@id": "https://aeobility.com.au/#organization"
                 }
               }
             ]
@@ -225,7 +225,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "alternateName": macro.code,
         "description": macro.purpose,
         "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "areaServed": {
           "@type": "Country",
@@ -242,7 +242,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "name": foundationDirect.name,
         "description": foundationDirect.purpose,
         "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "areaServed": {
           "@type": "Country",
@@ -259,7 +259,7 @@ export const getAeoSprintSchemaGraph = (faqs: FaqItem[]) => {
         "name": foundationTurnkey.name,
         "description": foundationTurnkey.purpose,
         "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "areaServed": {
           "@type": "Country",

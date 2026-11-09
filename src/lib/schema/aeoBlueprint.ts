@@ -31,7 +31,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
         "@id": "https://aeobility.com.au/#website"
       },
       "about": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "breadcrumb": {
         "@id": "https://aeobility.com.au/solutions/aeo-blueprint#breadcrumb"
@@ -96,7 +96,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
         "description": `${bpStrat.purpose} Deliverables: ${bpStrat.deliverables.join('; ')}. 100% of the ${formatAudCurrency(bpStrat.priceExGst)} fee is credited toward AEO Foundation within ${GOVERNANCE_RULES.creditWindowDays} calendar days.`,
         "eligibleCustomerType": "Australian SMBs, Allied Health Clinics, and Home Service Trades",
         "seller": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         }
       }
     },
@@ -107,7 +107,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
       "alternateName": bpStrat.code,
       "description": `${bpStrat.purpose} Deliverables: ${bpStrat.deliverables.join('; ')}. 100% of the ${formatAudCurrency(bpStrat.priceExGst)} fee is credited toward AEO Foundation within ${GOVERNANCE_RULES.creditWindowDays} days.`,
       "provider": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "areaServed": {
         "@type": "Country",

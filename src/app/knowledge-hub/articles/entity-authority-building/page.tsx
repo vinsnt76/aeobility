@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
@@ -38,7 +38,7 @@ export default function EntityAuthorityArticlePage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -58,7 +58,7 @@ export default function EntityAuthorityArticlePage() {
         "name": "Vince Baker",
         "jobTitle": "AEO & Semantic Search Specialist",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
         "address": {
@@ -91,7 +91,7 @@ export default function EntityAuthorityArticlePage() {
           "@id": "https://aeobility.com.au/vince-baker#person"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/entity-authority-building",
         "image": "https://aeobility.com.au/images/knowledge-hub/entity-visibilty-semantic-SEO_AEObility.webp",

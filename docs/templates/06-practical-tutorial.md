@@ -1,4 +1,4 @@
-# Template 06: Practical Tutorial & Guide (`06-practical-tutorial.md`)
+﻿# Template 06: Practical Tutorial & Guide (`06-practical-tutorial.md`)
 
 > **Archetype:** Procedural How-To Guide, Technical Playbook & Schema Deployment Manual  
 > **Target Routes:** `/knowledge-hub/tutorials/*`, `/knowledge-hub/guides/aeo`  
@@ -122,12 +122,12 @@ export const metadata: Metadata = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au/",
       "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
       "founder": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
       },
       "sameAs": [
         "https://www.linkedin.com/company/aeobility"
@@ -135,11 +135,11 @@ export const metadata: Metadata = {
     },
     {
       "@type": "Person",
-      "@id": "https://aeobility.com.au/#vince-baker",
+      "@id": "https://aeobility.com.au/#vincebaker",
       "name": "Vince Baker",
       "jobTitle": "Founder & Principal AEO Specialist",
       "worksFor": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "url": "https://aeobility.com.au/about",
       "sameAs": [
@@ -152,7 +152,7 @@ export const metadata: Metadata = {
       "url": "https://aeobility.com.au/",
       "name": "AEObility",
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       }
     },
     {
@@ -165,7 +165,7 @@ export const metadata: Metadata = {
       },
       "about": [
         {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         {
           "@id": "https://aeobility.com.au/knowledge-hub/tutorials/deploy-json-ld-schema-for-aeo#howto"
@@ -178,10 +178,10 @@ export const metadata: Metadata = {
       "name": "How to Deploy Nested JSON-LD Schema for AEO",
       "description": "Step-by-step playbook for configuring absolute canonical JSON-LD schema graphs for answer engine optimisation.",
       "author": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
       },
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "totalTime": "PT30M",
       "tool": [
@@ -296,7 +296,7 @@ export default function SchemaTutorialPage() {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility"
     }
   ]

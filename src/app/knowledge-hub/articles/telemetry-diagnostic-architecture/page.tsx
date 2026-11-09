@@ -77,9 +77,9 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
-        "legalName": "Trekaboutoz",
+        "legalName": "AEObility",
         "url": "https://aeobility.com.au",
         "telephone": "+61 480 286 282",
         "logo": {
@@ -105,7 +105,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           "https://aeobility.com.au/about/freelance-seo-consultant-perth"
         ],
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         }
       },
       {
@@ -127,7 +127,7 @@ export default function TelemetryDiagnosticArchitectureArticlePage() {
           "@id": "https://aeobility.com.au/about/freelance-seo-consultant-perth#person"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "datePublished": "2026-08-13",
         "dateModified": "2026-09-03",

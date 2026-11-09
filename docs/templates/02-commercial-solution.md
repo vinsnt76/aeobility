@@ -1,4 +1,4 @@
-# Template 02: Commercial Solution Sprint (`02-commercial-solution.md`)
+﻿# Template 02: Commercial Solution Sprint (`02-commercial-solution.md`)
 
 > **Archetype:** Productised Solution Sprint & Strategic Roadmap  
 > **Target Routes:** `/solutions/aeo-blueprint`, `/solutions/aeo-sprint`  
@@ -135,12 +135,12 @@ export const metadata: Metadata = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au/",
       "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
       "founder": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
       },
       "sameAs": [
         "https://www.linkedin.com/company/aeobility"
@@ -148,11 +148,11 @@ export const metadata: Metadata = {
     },
     {
       "@type": "Person",
-      "@id": "https://aeobility.com.au/#vince-baker",
+      "@id": "https://aeobility.com.au/#vincebaker",
       "name": "Vince Baker",
       "jobTitle": "Founder & Principal AEO Specialist",
       "worksFor": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "url": "https://aeobility.com.au/about",
       "sameAs": [
@@ -165,7 +165,7 @@ export const metadata: Metadata = {
       "url": "https://aeobility.com.au/",
       "name": "AEObility",
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       }
     },
     {
@@ -178,7 +178,7 @@ export const metadata: Metadata = {
       },
       "about": [
         {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         {
           "@id": "https://aeobility.com.au/solutions/aeo-blueprint#product"
@@ -191,7 +191,7 @@ export const metadata: Metadata = {
       "name": "Strategic Blueprint",
       "description": "Comprehensive digital presence audit, technical gap analysis, visibility scorecard, and 90-day action plan for Australian businesses.",
       "brand": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "offers": {
         "@type": "Offer",

@@ -34,6 +34,7 @@ export default function ContactPage() {
         "description": "Book a 15-minute clarity call or submit an enquiry for AEO, SEO, and AI search visibility support. Direct founder-led assistance with zero pressure.",
         "publisher": {
           "@type": "Organization",
+          "@id": "https://aeobility.com.au/#organization",
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         }
@@ -42,7 +43,7 @@ export default function ContactPage() {
         "@type": "LocalBusiness",
         "@id": "https://aeobility.com.au/#localbusiness",
         "name": "AEObility",
-        "legalName": "Trekaboutoz trading as AEObility",
+        "legalName": "AEObility",
         "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
         "url": "https://aeobility.com.au/contact",
         "email": "support@aeobility.com.au",

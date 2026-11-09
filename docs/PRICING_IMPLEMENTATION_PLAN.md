@@ -1,4 +1,4 @@
-# AEObility Technical Sprint Pricing Implementation Plan
+﻿# AEObility Technical Sprint Pricing Implementation Plan
 
 ## Executive Overview
 This implementation plan establishes a centralised, single source of truth (SSOT) for AEObility pricing and commercial terms. It refactors Schema.org structured data generators, updates AI Bill and agent grounding contexts, and synchronises all public-facing UI components and comparison pages.
@@ -74,7 +74,7 @@ flowchart TD
    - Output `@type: "OfferCatalog"` with structured sub-catalogs for Macro Sprints and Micro Sprints.
    - Set `@type: "Offer"` on each SKU with numerical `price`, `priceCurrency: "AUD"`, `availability: "https://schema.org/InStock"`, and `priceSpecification: { "@type": "UnitPriceSpecification", "valueAddedTaxIncluded": false }`.
    - Maintain fully-qualified canonical `@id` URIs (e.g., `https://aeobility.com.au/solutions/aeo-sprint#offer-ss1macro`).
-   - Ground seller entity to `https://aeobility.com.au/#organisation`.
+   - Ground seller entity to `https://aeobility.com.au/#organization`.
 
 ---
 

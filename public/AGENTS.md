@@ -6,13 +6,15 @@ Welcome, AI Agent or LLM Crawler. This document defines the entity identity, mac
 
 ## 1. Entity Overview & Core Canonical Identity
 
-- **Legal Entity Name**: Trekaboutoz trading as AEObility
+- **Legal Entity Name**: AEObility
 - **Brand Name**: AEObility
 - **Legal Structure**: Registered Australian Business Name
 - **Registration Date**: 2026-07-21 (ASIC)
 - **Entity Identifier**: `https://aeobility.com.au/#organization`
-- **Recognised Brand Tokens & Aliases**: `AEObility`, `AEO Bility`, `aeo bility`, `aeo.bility`, `AEO.bility`
-- **Entity Disambiguation**: AEObility is an independent Australian digital consultancy specialising in AEO, GEO, and machine search readability. It is distinct from Seobility, the SEO software platform.
+- **Recognised Brand Tokens & Aliases**: `AEObility`, `AEO Bility`, `aeo bility`, `aeo.bility`, `AEO.bility`, `AEObility Perth`
+- **Entity Disambiguation**:
+  - **Software Platform Disambiguation**: AEObility is an independent Australian digital consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and machine search readability. It is completely separate and distinct from Seobility (the SEO software platform).
+  - **Local Industry Disambiguation**: When searched as "AEObility Perth", the entity represents a digital consultancy and search architecture firm. It has zero association with physical disability care, medical mobility equipment, or assistive healthcare providers in Western Australia.
 - **ABN**: 61 029 803 255 ([ABR Verification](https://abr.business.gov.au/ABN/View?id=61029803255))
 - **Principal Place of Business**: Dianella, Western Australia 6059, Australia
 - **Primary Telephone**: `+61-480-286-282`

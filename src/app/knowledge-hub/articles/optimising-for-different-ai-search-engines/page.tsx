@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
@@ -103,12 +103,12 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         },
         "author": {
           "@type": "Organization",
-          "@id": "https://aeobility.com.au/#organisation",
+          "@id": "https://aeobility.com.au/#organization",
           "name": "AEObility",
           "url": "https://aeobility.com.au/"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "datePublished": "2026-08-10T00:00:00+08:00",
         "dateModified": "2026-08-11T00:00:00+08:00",
@@ -205,7 +205,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         ],
         "isAccessibleForFree": true,
         "copyrightHolder": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "copyrightYear": 2026,
         "potentialAction": {
@@ -285,7 +285,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
       },
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -308,7 +308,7 @@ export default function OptimisingForDifferentAiSearchEnginesPage() {
         "url": "https://aeobility.com.au/",
         "name": "AEObility",
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "inLanguage": "en-AU"
       }

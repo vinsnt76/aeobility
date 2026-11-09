@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
@@ -76,7 +76,7 @@ export default function PositionalBiasArticlePage() {
           "@id": "https://aeobility.com.au/vince-baker#person"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "mainEntityOfPage": "https://aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval",
         "image": "https://aeobility.com.au/images/knowledge-hub/positional-bias-retrieval-AEObility.webp",
@@ -133,7 +133,7 @@ export default function PositionalBiasArticlePage() {
         "description": "Author of AEObility’s technical guides on retrieval, semantic SEO, and answer engine optimisation.",
         "url": "https://aeobility.com.au/about/freelance-seo-consultant-perth",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "address": {
           "@type": "PostalAddress",
@@ -151,7 +151,7 @@ export default function PositionalBiasArticlePage() {
       },
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",

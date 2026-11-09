@@ -105,8 +105,9 @@ export default function BookingPage() {
         "serviceType": "Answer Engine Optimisation & AI Search Strategy Review",
         "provider": {
           "@type": "Organization",
+          "@id": "https://aeobility.com.au/#organization",
           "name": "AEObility",
-          "legalName": "Trekaboutoz trading as AEObility",
+          "legalName": "AEObility",
           "identifier": "ABN 61 029 803 255",
           "url": "https://aeobility.com.au"
         },

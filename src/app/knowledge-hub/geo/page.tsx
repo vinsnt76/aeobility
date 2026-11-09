@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
@@ -164,11 +164,11 @@ export default function GEOKnowledgeNodePage() {
 
       {
         "@type": "Person",
-        "@id": "https://aeobility.com.au/#vince-baker",
+        "@id": "https://aeobility.com.au/#vincebaker",
         "name": "Vince Baker",
         "jobTitle": "Founder & Principal AEO Architect",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "sameAs": [
           "https://linkedin.com/in/vincebaker"
@@ -177,12 +177,12 @@ export default function GEOKnowledgeNodePage() {
 
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "description": "Optimising Australian small businesses for the future of search across maps, SERPs, and generative AI corridors.",
         "founder": {
-          "@id": "https://aeobility.com.au/#vince-baker"
+          "@id": "https://aeobility.com.au/#vincebaker"
         },
         "address": {
           "@type": "PostalAddress",
@@ -208,7 +208,7 @@ export default function GEOKnowledgeNodePage() {
         "name": "GEO vs Local SEO Framework Banner",
         "description": "Framework diagram comparing Local SEO and Geographic Engine Optimisation (GEO) signals across physical proximity and AI entity discovery by AEObility.",
         "creator": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "contentUrl": "https://aeobility.com.au/images/knowledge-hub/fix-local-discovery-with-geo-seo_AEObility.webp",
         "contentLocation": {
@@ -241,11 +241,11 @@ export default function GEOKnowledgeNodePage() {
           "Service Boundaries"
         ],
         "author": [
-          { "@id": "https://aeobility.com.au/#vince-baker" },
-          { "@id": "https://aeobility.com.au/#organisation" }
+          { "@id": "https://aeobility.com.au/#vincebaker" },
+          { "@id": "https://aeobility.com.au/#organization" }
         ],
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "image": {
           "@id": "https://aeobility.com.au/images/knowledge-hub/fix-local-discovery-with-geo-seo_AEObility.webp"
@@ -300,7 +300,7 @@ export default function GEOKnowledgeNodePage() {
   const jsonLdExample = `{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://aeobility.com.au/#organisation",
+  "@id": "https://aeobility.com.au/#organization",
   "name": "AEObility",
   "address": {
     "@type": "PostalAddress",

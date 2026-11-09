@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
@@ -102,7 +102,7 @@ export default async function Page({ params }: PageProps) {
         "width": 1200,
         "height": 1200,
         "copyrightHolder": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         }
       },
       {
@@ -170,7 +170,7 @@ export default async function Page({ params }: PageProps) {
           "https://aeobility.com.au/brand-facts"
         ],
         "provider": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "founder": {
           "@id": "https://aeobility.com.au/#person"
@@ -184,7 +184,7 @@ export default async function Page({ params }: PageProps) {
         "image": imageUrl,
         "url": "https://aeobility.com.au/vince-baker",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         }
       }
     ]

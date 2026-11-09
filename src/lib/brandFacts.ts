@@ -56,7 +56,8 @@ export const BRAND_FACTS = {
     "AEO Bility",
     "aeo bility",
     "aeo.bility",
-    "AEO.bility"
+    "AEO.bility",
+    "AEObility Perth"
   ],
   categoryAnchors: [
     "Perth digital consultancy",
@@ -77,7 +78,7 @@ export const BRAND_FACTS = {
 
 export const BRAND_IDENTITY = {
   name: "AEObility",
-  legalName: "Trekaboutoz trading as AEObility",
+  legalName: "AEObility",
   legalStructure: BRAND_FACTS.legalStructure,
   abn: BRAND_FACTS.abn,
   abnLink: BRAND_FACTS.abnLink,
@@ -691,7 +692,7 @@ export const PROVENANCE_ENTITIES: ProvenanceEntity[] = [
     schemaType: 'Organization',
     layer: 'Production',
     description: 'Australian Answer Engine Optimisation consultancy and legal brand holder.',
-    canonicalUri: 'https://aeobility.com.au/#organisation',
+    canonicalUri: 'https://aeobility.com.au/#organization',
     dateCreated: '2026-07-21',
     dateModified: '2026-08-29',
     version: '2026.3'
@@ -786,7 +787,8 @@ export const PUBLIC_SCHEMA_GRAPH = {
         'aeo bility',
         'aeo.bility',
         'AEO Bility',
-        'AEO.bility'
+        'AEO.bility',
+        'AEObility Perth'
       ],
       legalName: BRAND_IDENTITY.legalName,
       url: BRAND_IDENTITY.website,
@@ -897,7 +899,7 @@ export const PUBLIC_SCHEMA_GRAPH = {
       url: BRAND_IDENTITY.website,
       telephone: '+61480286282',
       parentOrganization: {
-        '@id': 'https://aeobility.com.au/#organisation'
+        '@id': 'https://aeobility.com.au/#organization'
       },
       address: {
         '@type': 'PostalAddress',
@@ -958,10 +960,10 @@ export const PUBLIC_SCHEMA_GRAPH = {
         '@id': 'https://aeobility.com.au/#website'
       },
       about: {
-        '@id': 'https://aeobility.com.au/#organisation'
+        '@id': 'https://aeobility.com.au/#organization'
       },
       mainEntity: {
-        '@id': 'https://aeobility.com.au/#organisation'
+        '@id': 'https://aeobility.com.au/#organization'
       }
     },
     {

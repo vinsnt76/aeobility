@@ -133,9 +133,9 @@ export default function AiSeoToolsPage() {
     "@graph": [
       {
         "@type": ["LocalBusiness", "ProfessionalService"],
-        "@id": "https://aeobility.com.au/#organisation",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
-        "legalName": "Trekaboutoz trading as AEObility",
+        "legalName": "AEObility",
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/assets/AEObility_Logo.webp",
         "image": "https://aeobility.com.au/assets/AEObility_Featured_Image.webp",
@@ -217,7 +217,7 @@ export default function AiSeoToolsPage() {
           "@id": "https://aeobility.com.au/#website"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",

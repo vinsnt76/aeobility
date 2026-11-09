@@ -21,7 +21,7 @@ export const getAeoComparisonSchemaGraph = (faqs?: FaqItem[]) => {
         "@id": "https://aeobility.com.au/#website"
       },
       "about": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "breadcrumb": {
         "@id": "https://aeobility.com.au/services/aeo/comparison#breadcrumb"
@@ -67,7 +67,7 @@ export const getAeoComparisonSchemaGraph = (faqs?: FaqItem[]) => {
       "alternateName": "AEO vs SEO Strategic Audit",
       "description": "Strategic advisory and sprint execution comparing traditional lexical SEO against dense vector AEO retrieval models for Australian businesses.",
       "provider": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "areaServed": {
         "@type": "Country",
@@ -100,7 +100,7 @@ export const getAeoComparisonSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "Fixed-scope micro-sprints starting from $495 AUD ex. GST targeting one agreed priority: structured schema markup, page rewrites, internal linking or citation clean-up.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
@@ -113,7 +113,7 @@ export const getAeoComparisonSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "A standalone digital presence audit and prioritised 90-day execution roadmap. Price excludes GST.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
@@ -130,7 +130,7 @@ export const getAeoComparisonSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "A focused four-week turnkey implementation engagement at $1,990 AUD ex. GST for multi-page connected improvements across structured data, content clarity, and internal linking.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         }
       ]

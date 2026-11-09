@@ -1,4 +1,4 @@
-# Template 04: Concept Research Article (`04-concept-article.md`)
+﻿# Template 04: Concept Research Article (`04-concept-article.md`)
 
 > **Archetype:** Long-Form Technical Research & Thought Leadership  
 > **Target Routes:** `/knowledge-hub/articles/*` (e.g. RAG, Entity Authority, Query Fan-Out, Positional Bias, AI Hallucinations)  
@@ -138,12 +138,12 @@ To achieve a futuristic, dimensional aesthetic without compromising reading ergo
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au/",
       "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
       "founder": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
       },
       "sameAs": [
         "https://www.linkedin.com/company/aeobility"
@@ -151,11 +151,11 @@ To achieve a futuristic, dimensional aesthetic without compromising reading ergo
     },
     {
       "@type": "Person",
-      "@id": "https://aeobility.com.au/#vince-baker",
+      "@id": "https://aeobility.com.au/#vincebaker",
       "name": "Vince Baker",
       "jobTitle": "Founder & Principal AEO Specialist",
       "worksFor": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "url": "https://aeobility.com.au/about",
       "sameAs": [
@@ -168,7 +168,7 @@ To achieve a futuristic, dimensional aesthetic without compromising reading ergo
       "url": "https://aeobility.com.au/",
       "name": "AEObility",
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       }
     },
     {
@@ -181,7 +181,7 @@ To achieve a futuristic, dimensional aesthetic without compromising reading ergo
       },
       "about": [
         {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation#article"
@@ -194,10 +194,10 @@ To achieve a futuristic, dimensional aesthetic without compromising reading ergo
       "headline": "RAG, Answer Engines & Why Machine-Readable Content Matters",
       "description": "A technical guide explaining Retrieval-Augmented Generation (RAG) and its role in AI search optimisation.",
       "author": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
       },
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "datePublished": "2026-07-23",
       "dateModified": "2026-08-31",

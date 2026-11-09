@@ -1,4 +1,4 @@
-# Template 03: Local Metro Intent (`03-local-intent.md`)
+﻿# Template 03: Local Metro Intent (`03-local-intent.md`)
 
 > **Archetype:** Local Metro & Geo-Targeted Intent Landing Page  
 > **Target Routes:** `/services/ai-search-marketing/{perth,sydney,melbourne,brisbane,adelaide}`, `/services/perth/seo-specialist`  
@@ -126,12 +126,12 @@ export const metadata: Metadata = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au/",
       "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
       "founder": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
       },
       "sameAs": [
         "https://www.linkedin.com/company/aeobility"
@@ -139,11 +139,11 @@ export const metadata: Metadata = {
     },
     {
       "@type": "Person",
-      "@id": "https://aeobility.com.au/#vince-baker",
+      "@id": "https://aeobility.com.au/#vincebaker",
       "name": "Vince Baker",
       "jobTitle": "Founder & Principal AEO Specialist",
       "worksFor": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "url": "https://aeobility.com.au/about",
       "sameAs": [
@@ -156,7 +156,7 @@ export const metadata: Metadata = {
       "url": "https://aeobility.com.au/",
       "name": "AEObility",
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       }
     },
     {
@@ -169,7 +169,7 @@ export const metadata: Metadata = {
       },
       "about": [
         {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         {
           "@id": "https://aeobility.com.au/services/ai-search-marketing/perth#local-service"
@@ -205,7 +205,7 @@ export const metadata: Metadata = {
         }
       ],
       "parentOrganization": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       }
     }
   ]

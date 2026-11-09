@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
@@ -46,7 +46,7 @@ export default function RagArticlePage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -60,7 +60,7 @@ export default function RagArticlePage() {
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         }
       },
       {
@@ -70,7 +70,7 @@ export default function RagArticlePage() {
         "url": "https://aeobility.com.au/vince-baker",
         "jobTitle": "Founder & AI Search Consultant",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         }
       },
       {
@@ -102,7 +102,7 @@ export default function RagArticlePage() {
           "@id": "https://aeobility.com.au/vince-baker#author"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "datePublished": "2026-07-23",
         "dateModified": "2026-08-31",

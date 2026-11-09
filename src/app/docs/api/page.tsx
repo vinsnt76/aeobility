@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
@@ -47,7 +47,7 @@ export default function ApiDocumentationPage() {
         'documentation': 'https://aeobility.com.au/docs/api',
         'provider': {
           '@type': 'ProfessionalService',
-          '@id': 'https://aeobility.com.au/#organisation',
+          '@id': 'https://aeobility.com.au/#organization',
           'name': 'AEObility'
         },
         'termsOfService': 'https://aeobility.com.au/terms',
@@ -61,12 +61,12 @@ export default function ApiDocumentationPage() {
         'url': 'https://aeobility.com.au/docs/api',
         'author': {
           '@type': 'Person',
-          '@id': 'https://aeobility.com.au/#vince-baker',
+          '@id': 'https://aeobility.com.au/#vincebaker',
           'name': 'Vince Baker'
         },
         'publisher': {
           '@type': 'ProfessionalService',
-          '@id': 'https://aeobility.com.au/#organisation',
+          '@id': 'https://aeobility.com.au/#organization',
           'name': 'AEObility'
         }
       }

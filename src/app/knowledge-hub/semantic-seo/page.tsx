@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
@@ -71,10 +71,10 @@ export default function SemanticSEONodePage() {
           "@id": "https://aeobility.com.au/knowledge-hub/semantic-seo#imageobject"
         },
         "author": {
-          "@id": "https://aeobility.com.au/#vince-baker"
+          "@id": "https://aeobility.com.au/#vincebaker"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "datePublished": "2026-07",
         "dateModified": "2026-07"
@@ -88,7 +88,7 @@ export default function SemanticSEONodePage() {
         "name": "Cyberpunk Abstract Semantic SEO Visualisation",
         "description": "An abstract cyberpunk artwork visualising Semantic SEO relationships: cause->effect, problem->solution, feature->benefit, and prerequisite->outcome: using neon gradients and geometric shapes.",
         "creator": {
-          "@id": "https://aeobility.com.au/#vince-baker"
+          "@id": "https://aeobility.com.au/#vincebaker"
         },
         "uploadDate": "2026-07-01",
         "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
@@ -99,7 +99,7 @@ export default function SemanticSEONodePage() {
         "name": "Cyberpunk Abstract Visualisation of Semantic SEO Relationships",
         "description": "A neon cyberpunk visualisation showing how Semantic SEO connects cause-effect, problem-solution, feature-benefit, and prerequisite-outcome relationships.",
         "creator": {
-          "@id": "https://aeobility.com.au/#vince-baker"
+          "@id": "https://aeobility.com.au/#vincebaker"
         },
         "image": {
           "@id": "https://aeobility.com.au/knowledge-hub/semantic-seo#imageobject"
@@ -114,12 +114,12 @@ export default function SemanticSEONodePage() {
       },
       {
         "@type": "Person",
-        "@id": "https://aeobility.com.au/#vince-baker",
+        "@id": "https://aeobility.com.au/#vincebaker",
         "name": "Vince Baker",
         "jobTitle": "Senior Information Architect & AEO Strategist",
         "description": "Author of AEObility’s technical guides on Semantic SEO, entity optimisation, and AI search architecture.",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "address": {
           "@type": "PostalAddress",
@@ -130,7 +130,7 @@ export default function SemanticSEONodePage() {
       },
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",

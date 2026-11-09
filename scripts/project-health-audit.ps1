@@ -1,4 +1,4 @@
-# AEObility Comprehensive Project Health Audit
+﻿# AEObility Comprehensive Project Health Audit
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $ErrorActionPreference = "Continue"
 
@@ -231,7 +231,7 @@ $auditResults.BrandCompliance = @{
 # -------------------------------------------------------------------------
 Write-Host "`n>>> [5/6] Verifying Static Asset Integrity..." -ForegroundColor Yellow
 
-$assetRegex = '["''`](?:https:\/\/aeobility\.com\.au)?(\/(?:images|icons|files)\/[a-zA-Z0-9_\-\/%.]+\.(?:webp|png|jpg|jpeg|svg|gif|ico|pdf|vcf))["''`]'
+$assetRegex = '[\x22\x27\x60](?:https:\/\/aeobility\.com\.au)?(\/(?:images|icons|files)\/[a-zA-Z0-9_\-\/%.]+\.(?:webp|png|jpg|jpeg|svg|gif|ico|pdf|vcf))[\x22\x27\x60]'
 $checkedAssets = New-Object System.Collections.Generic.HashSet[string]
 $missingAssets = @()
 $validAssetsCount = 0

@@ -186,3 +186,4 @@ In addition to `package.json` scripts, the [`scripts/`](file:///c:/Users/vince/a
 1. **Deterministic Prebuild Pipeline:** Any alteration to site taxonomy or `AEObility -IA & SLM.csv` automatically recompiles vector embeddings and navigation trees before Next.js begins asset bundling.
 2. **Memory Safety:** Allocating 4GB heap space (`--max-old-space-size=4096`) guarantees flawless Vercel CI/CD builds without memory starvation.
 3. **Strict Australian English Compliance:** Integrated conversion and audit scripts guarantee that American English spelling is banned across all user-facing, metadata, and schema surfaces.
+

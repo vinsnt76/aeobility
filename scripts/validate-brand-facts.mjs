@@ -21,10 +21,10 @@ const products = schema['@graph'].filter(p => p['@type'] === 'Product' || p.sku)
 console.log(`✅ Loaded ${products.length} product SKUs from brand-facts.json`);
 
 const requiredSkus = [
-  'BPSTRAT', 'SS1MACROS1', 'SS1MICRO1', 'SS1MICRO2', 'SS1MICRO3', 'SS1MICRO4',
-  'SS2MACROS2', 'SS2MICRO1', 'SS2MICRO2', 'SS2MICRO3', 'SS2MICRO4',
-  'SS3MACROS3', 'SS3MICRO1', 'SS3MICRO2', 'SS3MICRO3',
-  'SS4MACROS4', 'SS4MICRO1', 'SS4MICRO2', 'SS4MICRO3'
+  'BPSTRAT', 'SS1MACRO', 'SS1MICRO1', 'SS1MICRO2', 'SS1MICRO3', 'SS1MICRO4',
+  'SS2MACRO', 'SS2MICRO1', 'SS2MICRO2', 'SS2MICRO3', 'SS2MICRO4',
+  'SS3MACRO', 'SS3MICRO1', 'SS3MICRO2', 'SS3MICRO3',
+  'SS4MACRO', 'SS4MICRO1', 'SS4MICRO2', 'SS4MICRO3'
 ];
 
 const foundSkus = new Set(products.map(p => p.sku));

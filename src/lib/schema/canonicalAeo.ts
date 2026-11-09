@@ -12,28 +12,54 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
   const graphNodes: Record<string, unknown>[] = [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
+      "legalName": "AEObility",
+      "alternateName": [
+        "AEO Bility",
+        "aeo bility",
+        "aeo.bility",
+        "AEO.bility",
+        "AEObility Perth"
+      ],
       "url": "https://aeobility.com.au/",
-      "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+      "logo": "https://aeobility.com.au/aeobility-logo-light.svg",
+      "telephone": "+61-480-286-282",
+      "foundingDate": "2026-07-21",
+      "taxID": "ABN 61 029 803 255",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "AUSTRALIAN_BUSINESS_NUMBER",
+        "name": "ABN",
+        "value": "61029803255",
+        "url": "https://abr.business.gov.au/ABN/View?id=61029803255"
+      },
       "founder": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
       },
       "sameAs": [
-        "https://www.linkedin.com/company/aeobility"
+        "https://abr.business.gov.au/ABN/View?id=61029803255",
+        "https://www.crunchbase.com/organization/aeobility",
+        "https://www.cbinsights.com/company/aeobility",
+        "https://www.producthunt.com/@aeobility",
+        "https://www.linkedin.com/company/aeobility",
+        "https://dev.to/aeobility",
+        "https://github.com/vinsnt76/aeobilty"
       ]
     },
     {
       "@type": "Person",
-      "@id": "https://aeobility.com.au/#vince-baker",
-      "name": "Vince Baker",
+      "@id": "https://aeobility.com.au/#vincebaker",
+      "name": "Vincent Baker",
+      "alternateName": "Vince Baker",
       "jobTitle": "Founder & Principal AEO Specialist",
       "worksFor": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
-      "url": "https://aeobility.com.au/about",
+      "url": "https://aeobility.com.au/about/freelance-digital-specialist-perth",
       "sameAs": [
-        "https://www.linkedin.com/in/vincebaker/"
+        "https://www.linkedin.com/in/vincebaker/",
+        "https://github.com/vinsnt76"
       ]
     },
     {
@@ -60,7 +86,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "contentUrl": "https://www.youtube.com/watch?v=_ynQCnTVsGw",
       "inLanguage": "en-AU",
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "about": [
         {
@@ -79,10 +105,10 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "datePublished": "2026-09-01T00:00:00+08:00",
       "dateModified": "2026-10-01T00:00:00+08:00",
       "author": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
       },
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "isPartOf": {
         "@id": "https://aeobility.com.au/#website"
@@ -98,7 +124,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       },
       "about": [
         {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         {
           "@type": "Thing",
@@ -208,7 +234,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "alternateName": "Generative AI Search & Entity Optimisation Services",
       "description": "Structured digital infrastructure solutions that help search engines, LLMs, and conversational AI interfaces index, verify, and reference your organisation accurately.",
       "provider": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "areaServed": [
         {
@@ -312,7 +338,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "Fixed-scope micro-sprints starting from $495 AUD ex. GST targeting one agreed priority: structured schema markup, page rewrites, internal linking or citation clean-up.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
@@ -325,7 +351,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "A standalone digital presence audit and prioritised 90-day execution roadmap. Price excludes GST.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         },
         {
@@ -342,7 +368,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "availability": "https://schema.org/InStock",
           "description": "A focused four-week turnkey implementation engagement at $1,990 AUD ex. GST for multi-page connected improvements across structured data, content clarity, and internal linking.",
           "seller": {
-            "@id": "https://aeobility.com.au/#organisation"
+            "@id": "https://aeobility.com.au/#organization"
           }
         }
       ]

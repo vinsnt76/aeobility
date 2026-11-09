@@ -21,7 +21,7 @@ export const getAeoProceduresSchemaGraph = (faqs?: FaqItem[]) => {
         "@id": "https://aeobility.com.au/#website"
       },
       "about": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "breadcrumb": {
         "@id": "https://aeobility.com.au/services/aeo/procedures#breadcrumb"

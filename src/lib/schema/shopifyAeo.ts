@@ -18,7 +18,7 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
       "description": "Platform-specific restructuring of Shopify Liquid templates, Google Merchant Center feeds, and server-side product schema to maximise discovery across AI search and shopping assistants.",
       "provider": {
         "@type": "ProfessionalService",
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "areaServed": {
         "@type": "Country",
@@ -71,7 +71,7 @@ export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
         "@id": "https://aeobility.com.au/#website"
       },
       "about": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "breadcrumb": {
         "@id": "https://aeobility.com.au/services/aeo/shopify#breadcrumb"

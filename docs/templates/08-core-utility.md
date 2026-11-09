@@ -1,4 +1,4 @@
-# Template 08: Core Utility & Trust (`08-core-utility.md`)
+﻿# Template 08: Core Utility & Trust (`08-core-utility.md`)
 
 > **Archetype:** Trust, Brand Governance, Interactive Diagnostic & Factual Ledger  
 > **Target Routes:** `/about`, `/contact`, `/diagnostic`, `/brand-facts`  
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   - *Section-Level:* Ledgers format entity attributes in clean Key: Value pairs for instantaneous crawler ingestion.
 * **Entity Density & Tri-Graph Architecture:**
   - Core JSON-LD `@graph` defines `AboutPage`, `ContactPage`, `Organization`, `Person` (Vinnie Baker), `DefinedTermSet`.
-  - Canonical `@id` bindings link to root Organization (`https://aeobility.com.au/#organisation`).
+  - Canonical `@id` bindings link to root Organization (`https://aeobility.com.au/#organization`).
 
 ---
 
@@ -105,12 +105,12 @@ export const metadata: Metadata = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au/",
       "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
       "founder": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
       },
       "sameAs": [
         "https://www.linkedin.com/company/aeobility"
@@ -118,11 +118,11 @@ export const metadata: Metadata = {
     },
     {
       "@type": "Person",
-      "@id": "https://aeobility.com.au/#vince-baker",
+      "@id": "https://aeobility.com.au/#vincebaker",
       "name": "Vince Baker",
       "jobTitle": "Founder & Principal AEO Specialist",
       "worksFor": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "url": "https://aeobility.com.au/about",
       "sameAs": [
@@ -135,7 +135,7 @@ export const metadata: Metadata = {
       "url": "https://aeobility.com.au/",
       "name": "AEObility",
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       }
     },
     {
@@ -148,11 +148,11 @@ export const metadata: Metadata = {
       },
       "about": [
         {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         }
       ],
       "mainEntity": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       }
     }
   ]

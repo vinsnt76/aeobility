@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
@@ -60,10 +60,10 @@ export default function StructuredDataQueryFanOutArticlePage() {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out"
         },
         "author": {
-          "@id": "https://aeobility.com.au/#vince-baker"
+          "@id": "https://aeobility.com.au/#vincebaker"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "datePublished": "2026-07-01",
         "dateModified": "2026-08-13",
@@ -99,17 +99,17 @@ export default function StructuredDataQueryFanOutArticlePage() {
         "description": "Abstract landscape visualisation showing query fan-out constrained within a strong data structure using azure, green, and orange gradients.",
         "uploadDate": "2026-07-01",
         "creator": {
-          "@id": "https://aeobility.com.au/#vince-baker"
+          "@id": "https://aeobility.com.au/#vincebaker"
         }
       },
       {
         "@type": "Person",
-        "@id": "https://aeobility.com.au/#vince-baker",
+        "@id": "https://aeobility.com.au/#vincebaker",
         "name": "Vince Baker",
         "jobTitle": "Senior Information Architect & AEO Strategist",
         "description": "Vince Baker specialises in structured data engineering, entity SEO architecture, and AI vector retrieval context for Australian enterprises.",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "address": {
           "@type": "PostalAddress",
@@ -120,7 +120,7 @@ export default function StructuredDataQueryFanOutArticlePage() {
       },
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",

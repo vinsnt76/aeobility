@@ -1,4 +1,4 @@
-# Template 05: Evidence Case Study (`05-evidence-case-study.md`)
+﻿# Template 05: Evidence Case Study (`05-evidence-case-study.md`)
 
 > **Archetype:** Quantified Empirical Case Study & Client Evidence  
 > **Target Routes:** `/knowledge-hub/case-studies/baby-bento`, `/knowledge-hub/case-studies/aeo-geo-blueprint-90-days`  
@@ -136,12 +136,12 @@ export const metadata: Metadata = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au/",
       "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
       "founder": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
       },
       "sameAs": [
         "https://www.linkedin.com/company/aeobility"
@@ -149,11 +149,11 @@ export const metadata: Metadata = {
     },
     {
       "@type": "Person",
-      "@id": "https://aeobility.com.au/#vince-baker",
+      "@id": "https://aeobility.com.au/#vincebaker",
       "name": "Vince Baker",
       "jobTitle": "Founder & Principal AEO Specialist",
       "worksFor": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "url": "https://aeobility.com.au/about",
       "sameAs": [
@@ -166,7 +166,7 @@ export const metadata: Metadata = {
       "url": "https://aeobility.com.au/",
       "name": "AEObility",
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       }
     },
     {
@@ -179,7 +179,7 @@ export const metadata: Metadata = {
       },
       "about": [
         {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         {
           "@id": "https://aeobility.com.au/services/aeo#service"
@@ -192,10 +192,10 @@ export const metadata: Metadata = {
       "headline": "Case Study: Baby Bento — Structural Search Alignment & AI Visibility Recovery",
       "description": "Discover how AEObility restored structural clarity and lifted Baby Bento's AI search visibility, resulting in a +17% sales uplift and 95% CTR improvement.",
       "author": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
       },
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "datePublished": "2026-07-16",
       "inLanguage": "en-AU",

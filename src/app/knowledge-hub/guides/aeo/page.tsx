@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
@@ -99,7 +99,7 @@ export default function AEOGuideWhitepaperPage() {
         },
         'publisher': {
           '@type': 'ProfessionalService',
-          '@id': 'https://aeobility.com.au/#organisation',
+          '@id': 'https://aeobility.com.au/#organization',
           'name': 'AEObility',
           'url': 'https://aeobility.com.au'
         },

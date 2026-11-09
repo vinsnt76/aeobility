@@ -142,9 +142,9 @@ export default function GoogleAiSearchArticlePage() {
         },
         "publisher": {
           "@type": "Organization",
-          "@id": "https://aeobility.com.au/#organisation",
+          "@id": "https://aeobility.com.au/#organization",
           "name": "AEObility",
-          "legalName": "Trekaboutoz trading as AEObility",
+          "legalName": "AEObility",
           "taxID": "61 029 803 255",
           "url": "https://aeobility.com.au",
           "logo": {

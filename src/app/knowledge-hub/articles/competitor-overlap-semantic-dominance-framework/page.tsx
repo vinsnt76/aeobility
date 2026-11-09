@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
@@ -59,12 +59,12 @@ export default function CompetitorOverlapFrameworkArticlePage() {
         "url": "https://aeobility.com.au/",
         "name": "AEObility",
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         }
       },
       {
         "@type": "Organization",
-        "@id": "https://aeobility.com.au/#organisation",
+        "@id": "https://aeobility.com.au/#organization",
         "name": "AEObility",
         "url": "https://aeobility.com.au/",
         "logo": {
@@ -102,7 +102,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
         "url": "https://aeobility.com.au/vince-baker",
         "jobTitle": "Senior Information Architect & AEO Consultant",
         "worksFor": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         }
       },
       {
@@ -229,7 +229,7 @@ export default function CompetitorOverlapFrameworkArticlePage() {
           "@id": "https://aeobility.com.au/vince-baker#author"
         },
         "publisher": {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "mainEntityOfPage": {
           "@id": "https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework#webpage"

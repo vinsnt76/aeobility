@@ -78,25 +78,39 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
   const graphNodes: Record<string, unknown>[] = [
     {
       "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organisation",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
-      "legalName": "Trekaboutoz trading as AEObility",
+      "legalName": "AEObility",
+      "alternateName": [
+        "AEO Bility",
+        "aeo bility",
+        "aeo.bility",
+        "AEO.bility",
+        "AEObility Perth"
+      ],
       "url": "https://aeobility.com.au/",
-      "telephone": "+61480286282",
-      "logo": "https://aeobility.com.au/icons/android-chrome-512x512.png",
+      "telephone": "+61-480-286-282",
+      "logo": "https://aeobility.com.au/aeobility-logo-light.svg",
+      "foundingDate": "2026-07-21",
+      "taxID": "ABN 61 029 803 255",
       "founder": {
-        "@id": "https://aeobility.com.au/#vince-baker"
+        "@id": "https://aeobility.com.au/#vincebaker"
       },
       "identifier": {
         "@type": "PropertyValue",
-        "propertyID": "ABN",
-        "value": "61 029 803 255"
+        "propertyID": "AUSTRALIAN_BUSINESS_NUMBER",
+        "name": "ABN",
+        "value": "61029803255",
+        "url": "https://abr.business.gov.au/ABN/View?id=61029803255"
       },
       "sameAs": [
+        "https://abr.business.gov.au/ABN/View?id=61029803255",
+        "https://www.crunchbase.com/organization/aeobility",
+        "https://www.cbinsights.com/company/aeobility",
+        "https://www.producthunt.com/@aeobility",
         "https://www.linkedin.com/company/aeobility",
-        "https://www.instagram.com/aeo.bility/",
-        "https://www.facebook.com/profile.php?id=61591781069830",
-        "https://www.youtube.com/channel/UCcQMe3h157C2MDt70lohXpg",
+        "https://dev.to/aeobility",
+        "https://github.com/vinsnt76/aeobilty",
         "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
       ],
       "areaServed": {
@@ -106,15 +120,17 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
     },
     {
       "@type": "Person",
-      "@id": "https://aeobility.com.au/#vince-baker",
-      "name": "Vince Baker",
+      "@id": "https://aeobility.com.au/#vincebaker",
+      "name": "Vincent Baker",
+      "alternateName": "Vince Baker",
       "jobTitle": "Founder & Principal AEO Specialist",
       "worksFor": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
-      "url": "https://aeobility.com.au/about",
+      "url": "https://aeobility.com.au/about/freelance-digital-specialist-perth",
       "sameAs": [
-        "https://www.linkedin.com/in/vincebaker/"
+        "https://www.linkedin.com/in/vincebaker/",
+        "https://github.com/vinsnt76"
       ]
     },
     {
@@ -123,7 +139,7 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
       "url": "https://aeobility.com.au/",
       "name": "AEObility",
       "publisher": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "inLanguage": "en-AU"
     },
@@ -139,7 +155,7 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
       },
       "about": [
         {
-          "@id": "https://aeobility.com.au/#organisation"
+          "@id": "https://aeobility.com.au/#organization"
         },
         {
           "@id": `${pageUrl}#professional-service`
@@ -216,7 +232,7 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
         }
       ],
       "parentOrganization": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "sameAs": [
         "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA",
@@ -229,7 +245,7 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
       "name": `AI Search Marketing & Optimisation ${config.city}`,
       "serviceType": "AI Search Optimisation",
       "provider": {
-        "@id": "https://aeobility.com.au/#organisation"
+        "@id": "https://aeobility.com.au/#organization"
       },
       "areaServed": {
         "@type": "City",

@@ -50,12 +50,20 @@ export default function Home() {
           "AEO Bility",
           "aeo bility",
           "aeo.bility",
-          "AEO.bility"
+          "AEO.bility",
+          "AEObility Perth"
         ],
         "url": "https://aeobility.com.au/",
         "telephone": "+61-480-286-282",
         "foundingDate": "2026-07-21",
         "taxID": "ABN 61 029 803 255",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "AUSTRALIAN_BUSINESS_NUMBER",
+          "name": "ABN",
+          "value": "61029803255",
+          "url": "https://abr.business.gov.au/ABN/View?id=61029803255"
+        },
         "logo": {
           "@type": "ImageObject",
           "@id": "https://aeobility.com.au/#logo",

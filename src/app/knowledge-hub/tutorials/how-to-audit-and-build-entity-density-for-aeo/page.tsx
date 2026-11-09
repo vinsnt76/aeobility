@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -67,7 +67,7 @@ export default function HowToAuditAndBuildEntityDensityPage() {
         },
         "publisher": {
           "@type": "Organization",
-          "@id": "https://aeobility.com.au/#organisation",
+          "@id": "https://aeobility.com.au/#organization",
           "name": "AEObility",
           "url": "https://aeobility.com.au"
         },

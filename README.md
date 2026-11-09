@@ -165,4 +165,4 @@ npx tsx scripts/submit-indexnow.ts
 
 ---
 
-© AEObility. Trekaboutoz trading as AEObility | ABN: 61 029 803 255. Built for Australian local entities.
+© AEObility. AEObility | ABN: 61 029 803 255. Built for Australian local entities.
