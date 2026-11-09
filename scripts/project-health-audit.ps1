@@ -238,8 +238,8 @@ $validAssetsCount = 0
 
 foreach ($f in $allSourceFiles) {
     $txt = [System.IO.File]::ReadAllText($f.FullName)
-    $matches = [regex]::Matches($txt, $assetRegex)
-    foreach ($m in $matches) {
+    $assetMatches = [regex]::Matches($txt, $assetRegex)
+    foreach ($m in $assetMatches) {
         $clean = [System.Uri]::UnescapeDataString($m.Groups[1].Value).TrimStart('/')
         if ($checkedAssets.Add($clean)) {
             $diskPath = Join-Path "public" $clean
