@@ -57,8 +57,7 @@ export const BRAND_FACTS = {
     "aeo bility",
     "aeo.bility",
     "AEO.bility",
-    "AEObility Perth",
-    "AEObility Australia"
+    "AEObility Perth"
   ],
   categoryAnchors: [
     "Perth digital consultancy",
@@ -797,8 +796,7 @@ export const PUBLIC_SCHEMA_GRAPH = {
         'aeo bility',
         'aeo.bility',
         'AEO.bility',
-        'AEObility Perth',
-        'AEObility Australia'
+        'AEObility Perth'
       ],
       legalName: BRAND_IDENTITY.legalName,
       url: BRAND_IDENTITY.website,

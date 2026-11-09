@@ -470,7 +470,7 @@ export default function AboutUsContent() {
             </div>
             <div className="pt-1.5 border-t border-white/5 flex flex-wrap gap-1.5 items-center">
               <span className="text-zinc-500 uppercase tracking-wider text-[10px] font-bold">Recognised Semantic Aliases:</span>
-              {['AEObility', 'AEO Bility', 'aeo bility', 'aeo.bility', 'AEObility Perth', 'AEObility Australia'].map((alias) => (
+              {['AEObility', 'AEO Bility', 'aeo bility', 'aeo.bility', 'AEObility Perth'].map((alias) => (
                 <span key={alias} className="px-2 py-0.5 rounded bg-zinc-900 border border-white/10 text-aeo-cyan text-[11px]">
                   {alias}
                 </span>

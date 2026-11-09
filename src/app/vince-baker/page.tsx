@@ -3,24 +3,77 @@ import { Metadata } from 'next';
 import VinceBakerClientPage from './VinceBakerClientPage';
 
 export const metadata: Metadata = {
-  title: "Vince Baker (Vinnie Baker) | Founder & Lead AEO Specialist Perth | AEObility",
-  description: "Vincent Anthony Baker (known professionally as Vince Baker or Vinnie Baker) is the founder and lead AI Search Specialist at AEObility in Dianella, Perth WA (ABN: 61 029 803 255). Specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and structured entity data architecture.",
+  title: "Vince Baker | Founder & Technical Director at AEObility",
+  description: "Profile of Vince Baker, Perth-based digital specialist and founder of AEObility, specialising in Answer Engine Optimisation (AEO) and entity schema engineering.",
   alternates: {
     canonical: "https://aeobility.com.au/vince-baker",
   },
   keywords: [
-    "Vincent Anthony Baker",
-    "Vinnie Baker",
     "Vince Baker",
+    "Vincent Baker",
+    "Vinnie Baker",
+    "AEObility",
     "AEObility Perth",
-    "AEO Specialist Perth",
-    "AI Search Consultant",
-    "AEObility Founder",
-    "seo specialist perth",
-    "digital search architect"
+    "Perth digital consultancy",
+    "Answer Engine Optimisation",
+    "machine search readability",
+    "Founder and Technical Director"
+  ]
+};
+
+const founderSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://aeobility.com.au/#vincebaker",
+      "name": "Vincent Baker",
+      "alternateName": ["Vince Baker", "Vinnie Baker"],
+      "jobTitle": "Founder and Technical Director",
+      "url": "https://aeobility.com.au/vince-baker",
+      "worksFor": {
+        "@id": "https://aeobility.com.au/#organization"
+      },
+      "knowsAbout": [
+        "Answer Engine Optimisation",
+        "Generative Engine Optimisation",
+        "AI Search Visibility",
+        "Information Architecture",
+        "Entity SEO",
+        "Knowledge Graph Engineering",
+        "Schema Graph Engineering",
+        "Structured Data"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/vincebaker",
+        "https://app.qwoted.com/sources/vince-baker",
+        "https://github.com/vinsnt76"
+      ]
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://aeobility.com.au/vince-baker#webpage",
+      "url": "https://aeobility.com.au/vince-baker",
+      "name": "Vince Baker - Founder Profile",
+      "isPartOf": {
+        "@id": "https://aeobility.com.au/#website"
+      },
+      "about": {
+        "@id": "https://aeobility.com.au/#vincebaker"
+      },
+      "inLanguage": "en-AU"
+    }
   ]
 };
 
 export default function VinceBakerPage() {
-  return <VinceBakerClientPage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(founderSchema) }}
+      />
+      <VinceBakerClientPage />
+    </>
+  );
 }

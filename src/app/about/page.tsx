@@ -59,8 +59,7 @@ export default function AboutPage() {
           "aeo bility",
           "aeo.bility",
           "AEO.bility",
-          "AEObility Perth",
-          "AEObility Australia"
+          "AEObility Perth"
         ],
         "description": "AEObility (pronounced A-E-O-bility) is an independent Australian digital consultancy based in Perth, Western Australia, founded by Vince Baker. The name is a portmanteau of Answer Engine Optimisation (AEO) and ability, reflecting our focus on machine readability, schema graph architecture, and AI search discovery.",
         "disambiguatingDescription": "Independent Perth digital consultancy specialising in Answer Engine Optimisation (AEO) and structured entity data architecture. Strictly distinct from Seobility software and physical mobility equipment suppliers in Western Australia.",

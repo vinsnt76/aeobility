@@ -20,8 +20,7 @@ export const getLocalBusinessAeoSchemaGraph = (faqs?: FaqItem[]) => {
         "aeo bility",
         "aeo.bility",
         "AEO.bility",
-        "AEObility Perth",
-        "AEObility Australia"
+        "AEObility Perth"
       ],
       "url": "https://aeobility.com.au/",
       "telephone": "+61-480-286-282",

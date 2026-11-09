@@ -160,10 +160,6 @@ export default function VinceBakerClientPage() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
-      />
       <Navbar />
       <SubNavPills items={HUB_SUBNAV_MAPS.knowledgeHub} />
       <Breadcrumbs />
@@ -240,7 +236,7 @@ export default function VinceBakerClientPage() {
 
           {/* Bio */}
           <p className="vince-bio font-serif">
-            Specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and LLM knowledge graph reconciliation for Australian small businesses.
+            Founder and technical director at AEObility, a Perth digital consultancy based in Dianella, Western Australia. Specialising in Answer Engine Optimisation (AEO), machine search readability, Generative Engine Optimisation (GEO), and structured entity schema engineering.
           </p>
 
           {/* Action Links Grid */}

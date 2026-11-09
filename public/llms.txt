@@ -1,156 +1,39 @@
 # AEObility: Answer Engine Optimisation (AEO) Systems
 
-[AEObility](https://aeobility.com.au) is a specialised Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), and AI Search Marketing consultancy based in Perth, Western Australia. We help businesses and SMBs restructure their digital presence, entity graphs, and schema architectures to be crawled, indexed, and cited by Large Language Models (ChatGPT, Gemini, Claude, Perplexity) and spatial search engines.
+> Official Machine-Readable Entity Manifest
+> Canonical URL: [https://aeobility.com.au](https://aeobility.com.au)
+> Entity ID: [https://aeobility.com.au/#organization](https://aeobility.com.au/#organization)
+> Grounding Standard: Australian English (en-AU)
 
-- **Entity Identifier**: `https://aeobility.com.au/#organization`
-- **Legal Entity Name**: AEObility
-- **Recognised Brand Tokens & Aliases**: `AEObility`, `AEO Bility`, `aeo bility`, `aeo.bility`, `AEO.bility`, `AEObility Perth`, `AEObility Australia`
-- **Entity Disambiguation**:
-  - **Software Platform Disambiguation**: AEObility is an independent Australian digital consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and machine search readability. It is completely separate and distinct from Seobility (the SEO software platform).
-  - **Local Industry Disambiguation**: When searched as "AEObility Perth", the entity represents a digital consultancy and search architecture firm. It has zero association with physical disability care, medical mobility equipment, or assistive healthcare providers in Western Australia.
-  - **Founder Disambiguation**: Founder Vincent Anthony Baker (known professionally as Vince Baker or Vinnie Baker, `https://aeobility.com.au/#vincebaker`) is an Australian digital search architect and principal consultant at AEObility. He is strictly unrelated to former American NBA basketball player or sports coach Vin Baker (Vincent Lamont Baker).
-- **ABN**: 61 029 803 255 ([ABR Verification](https://abr.business.gov.au/ABN/View?id=61029803255))
-- **Registration**: Registered Australian Business Name with ASIC (2026-07-21)
+---
+
+## Entity Identity & Provenance
+- **Canonical Brand Name**: AEObility (pronounced `A-E-O-bility`)
+- **Recognised Token Variants**: `AEObility`, `AEO Bility`, `aeo bility`, `aeo.bility`, `AEO.bility`, `AEObility Perth`
+- **Legal Entity**: AEObility (Proprietor: Vincent Anthony Baker)
+- **Australian Business Number (ABN)**: 61 029 803 255
+- **ABN Verification Node**: [https://abr.business.gov.au/ABN/View?id=61029803255](https://abr.business.gov.au/ABN/View?id=61029803255)
+- **ASIC Registration Date**: 2026-07-21
 - **Principal Place of Business**: Dianella, Western Australia 6059
-- **Primary Telephone**: `+61-480-286-282`
-- **Primary Location**: Perth, Western Australia, Australia (AU)
-- **Founder**: Vincent Anthony Baker (Vince Baker, Vinnie Baker; `https://aeobility.com.au/#vincebaker`)
-- **Authority Profiles (sameAs)**: `https://www.crunchbase.com/organization/aeobility`, `https://www.cbinsights.com/company/aeobility`, `https://www.linkedin.com/company/aeobility`
+- **Primary Operational Region**: Perth, Western Australia, Australia (AU)
+- **Primary Telephone**: +61-480-286-282
 
-## Core Terminology & Concepts
-- **AEO (Answer Engine Optimisation)**: Restructuring content specifically for direct query extraction and LLM retrieval.
-- **GEO (Geographic Engine Optimisation)**: Optimising localised map pack matrices and location-aware AI systems.
-- **Entity Authority**: Establishing verifiable identity, semantic relevance, external validation, and knowledge graph consistency.
-- **RAG (Retrieval-Augmented Generation)**: Pipelines that query external database indexes to feed contextual passages into LLM prompt spaces.
-- **Positional Bias**: The tendency of retrieval models to prioritise answers placed at the absolute beginning or end of text blocks.
-- **Atomic Answer Blocks**: Text passages structured within 40-80 token bounds to maximise attention scores and semantic clarity.
-- **Entity Salience**: The vector similarity score measuring how confidently a generative model connects a brand node to a specific topic or service intent.
-- **Five-Layer Classification**: Structuring assets across Core (`/`), Commercial (`/services/aeo`), Concept (`/knowledge-hub/articles/*`), Intent (`/knowledge-hub/articles/*`), and Evidence (`/knowledge-hub/case-studies/*`).
-- **Topological Proximity**: Programmatic vector distance weighting ($1.00$ Root $\rightarrow$ $0.94$ Services $\rightarrow$ $0.91$ Diagnostic $\rightarrow$ $0.87$ RAG $\rightarrow$ $0.83$ Entity Authority).
-- **FAQ Knowledge Graph**: Declared parent, child, and sibling entity topology mapping core questions into machine-readable knowledge networks.
+### Disambiguation & Entity Isolation
+- **Software Disambiguation**: AEObility is an independent Australian B2B digital consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and machine-readable schema architecture. It is strictly distinct from Seobility, the software tool.
+- **Local Industry Disambiguation**: AEObility is an AI search and schema engineering agency. It is strictly distinct from physical healthcare, mobility equipment, or assistive medical providers in Perth, WA.
 
 ---
 
-## Complete Route Directory
-
-### Diagnostic & Core Brand Directory
-- [`/diagnostic`](https://aeobility.com.au/diagnostic): Free interactive AI Search & AEO Visibility Audit tool running vector proximity and RAG simulation models.
-- [`/brand-facts`](https://aeobility.com.au/brand-facts): Canonical brand facts, operational definitions, factual provenance ledger, verified pricing parameters, and third-party agent-readiness technical audit (94/100, Level 5: Agent-Native).
-
-### Core Optimisation Engagements & Solutions (How We Deliver)
-- [`/solutions`](https://aeobility.com.au/solutions): Master Overview of transparent Technical Sprint Pricing packages and commercial solutions.
-- [`/solutions/aeo-blueprint`](https://aeobility.com.au/solutions/aeo-blueprint): Strategic Blueprint (`BPSTRAT` at $995 AUD ex. GST standalone clarity phase deep audit & 90-day roadmap, 100% credited toward AEO Foundation within 60 calendar days).
-- [`/solutions/aeo-sprint`](https://aeobility.com.au/solutions/aeo-sprint): AEO Sprints:
-  - AEO Foundation (Direct) (`AEO-FOUNDATION-DIRECT` at $1,990 AUD ex. GST, 10-day SLA, complimentary $250 onboarding waived).
-  - AEO Foundation (`AEO-FOUNDATION-CORE` at $1,990 AUD ex. GST fixed turnkey investment across up to 10 core pages, 4-week SLA, complimentary $250 onboarding waived, 60-day $995 Blueprint fee credit reversal).
-  - AEO Sprints (`SS1MACRO`–`SS4MACRO` at $1,980 AUD ex. GST each, 10-day SLA, complimentary $250 onboarding waived).
-  - Micro-Sprints (`SS1MICRO1`–`SS4MICRO4` at $495 AUD ex. GST each, 3-day SLA, half-day units).
-  - Commercial Governance: Out-of-scope developer rate at $220/hr ex. GST (`HOURLY-DEV`), governed 30-day sprint retainer cycles ($1,980/month MRR) with zero lock-in contracts, and 100% client IP ownership.
-- Four Core Execution Pillars:
-  - **Pillar SS1: Brand Identity & Schema Architecture** (`SS1MACRO`, `SS1MICRO1`–`SS1MICRO4`): LocalBusiness, Organisation & Service schema nesting, canonical business facts consolidation, and JSON-LD repairs.
-  - **Pillar SS2: Commercial Answer Architecture** (`SS2MACRO`, `SS2MICRO1`–`SS2MICRO4`): 90–120 token atomic answer blocks, FAQ extraction, passage chunking, and conversational query alignment.
-  - **Pillar SS3: Semantic Lattice & Query Coverage** (`SS3MACRO`, `SS3MICRO1`–`SS3MICRO4`): Semantic concept lattices, descriptive anchor text routing, cluster reinforcement, and orphan node integration.
-  - **Pillar SS4: Brand Facts & External Trust Consensus** (`SS4MACRO`, `SS4MICRO1`–`SS4MICRO4`): NAP standardisation, directory citation cleanup, Brand Facts page creation, and Apple Maps & Bing Places alignment.
-- [`/services/geo-marketing`](https://aeobility.com.au/services/geo-marketing): GEO Services Sprint (coordinate precision mapping, verified map pack foundations, regional intent frameworks, proximity signal validation).
-
-### Services (What We Optimise)
-- [`/services`](https://aeobility.com.au/services): AEO Services, AI Search Strategy & GEO Marketing Services for Australian SMBs in Perth, Australia.
-- [`/services/ai-search-agency`](https://aeobility.com.au/services/ai-search-agency): Specialist Australian AI search agency & AEO consultancy.
-- [`/services/aeo`](https://aeobility.com.au/services/aeo): L2 hub detailing token optimisations and semantic audits.
-  - [`/services/aeo/definition`](https://aeobility.com.au/services/aeo/definition): What is AEO in Digital Marketing? Meaning & Concepts. Features executive summary answer block, 5-step implementation framework, Baby Bento case study proof, and YouTube video asset. (Root Parent FAQ Node)
-  - [`/services/aeo/comparison`](https://aeobility.com.au/services/aeo/comparison): Breakdown of traditional keywords vs vector embeddings. (Child Corridor Node)
-  - [`/services/aeo/procedures`](https://aeobility.com.au/services/aeo/procedures): Best AEO Strategies: How to Make Your Business AI-Readable (6 core strategies, 90-120 token atomic summary, FAQ Knowledge Graph topology).
-  - [`/services/aeo/constraints`](https://aeobility.com.au/services/aeo/constraints): Details on indexation limits, trust thresholds, and positional bias blockers. (Child Corridor Node)
-  - [`/services/aeo/costs-timing`](https://aeobility.com.au/services/aeo/costs-timing): Pricing structures, milestones, and sprint deliverables. (Child Corridor Node)
-  - [`/services/aeo/shopify`](https://aeobility.com.au/services/aeo/shopify): Shopify AEO services and structured feed refactoring. (Sibling Radial Node)
-  - [`/services/aeo/local-business`](https://aeobility.com.au/services/aeo/local-business): Local service business map & proximity engine optimisation. (Sibling Radial Node)
-- [`/services/ai-search-marketing`](https://aeobility.com.au/services/ai-search-marketing): L2 page for Gemini, Perplexity, and conversational query targeting. (Sibling Radial Node)
-  - [`/services/ai-search-marketing/perth`](https://aeobility.com.au/services/ai-search-marketing/perth): Perth L3 AI Search Optimisation Service Node.
-  - [`/services/ai-search-marketing/melbourne`](https://aeobility.com.au/services/ai-search-marketing/melbourne): Melbourne L3 AI Search Optimisation Service Node.
-  - [`/services/ai-search-marketing/sydney`](https://aeobility.com.au/services/ai-search-marketing/sydney): Sydney L3 AI Search Optimisation Service Node.
-  - [`/services/ai-search-marketing/adelaide`](https://aeobility.com.au/services/ai-search-marketing/adelaide): Adelaide L3 AI Search Optimisation Service Node.
-  - [`/services/ai-search-marketing/brisbane`](https://aeobility.com.au/services/ai-search-marketing/brisbane): Brisbane L3 AI Search Optimisation Service Node.
-- [`/services/geo-marketing`](https://aeobility.com.au/services/geo-marketing): L2 page for geographic engines, Apple Maps, and local voice search.
-
-### Knowledge Hub (Our Research & Tutorial Nodes)
-- [`/knowledge-hub`](https://aeobility.com.au/knowledge-hub): Directory of guides, frameworks, and resource learning center.
-- [`/knowledge-hub/ai-seo-tools`](https://aeobility.com.au/knowledge-hub/ai-seo-tools): AI SEO Tools & Technology Comparison Hub. Compare AI SEO software, automated schema generators, and vector parsers.
-- [`/knowledge-hub/guides`](https://aeobility.com.au/knowledge-hub/guides): Technical guides index covering Answer Engine Optimisation, vector search, and RAG architectures.
-  - [`/knowledge-hub/guides/aeo`](https://aeobility.com.au/knowledge-hub/guides/aeo): AEO technical principles, vector indexing, and structural refactoring guide.
-- [`/knowledge-hub/tutorials`](https://aeobility.com.au/knowledge-hub/tutorials): Practical step-by-step tutorials and implementation walkthroughs.
-  - [`/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo`](https://aeobility.com.au/knowledge-hub/tutorials/how-to-audit-and-build-entity-density-for-aeo): How to Build Entity Density for AI Search (Step-by-Step SOP). 5-step framework and Google Sheet diagnostic tool to audit 80%+ entity density.
-- [`/knowledge-hub/semantic-seo`](https://aeobility.com.au/knowledge-hub/semantic-seo): Mapping RDF triples, adaptive chunking, and semantic vector dimensions.
-- [`/knowledge-hub/what-is-seo-optimisation`](https://aeobility.com.au/knowledge-hub/what-is-seo-optimisation): What Is SEO Optimisation? Guide for Modern Search.
-- [`/knowledge-hub/geo`](https://aeobility.com.au/knowledge-hub/geo): Resolving local maps proximity vs LLM global consensus friction.
-- [`/knowledge-hub/articles`](https://aeobility.com.au/knowledge-hub/articles): Technical articles and guides directory.
-  - [`/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps`](https://aeobility.com.au/knowledge-hub/articles/how-to-fix-ai-brand-hallucinations-and-evidence-gaps): How to Fix AI Brand Hallucinations & Evidence Gaps: The Entity, Evidence, and Semantic Triples Architecture.
-  - [`/knowledge-hub/articles/machine-legibility-data-provenance`](https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance): Foundational paper on machine legibility, data provenance, deterministic entity relationships, and intentional data structures for AI search.
-  - [`/knowledge-hub/articles/optimising-for-different-ai-search-engines`](https://aeobility.com.au/knowledge-hub/articles/optimising-for-different-ai-search-engines): How Perplexity, ChatGPT, Google, and Copilot Find and Cite Your Content.
-  - [`/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework`](https://aeobility.com.au/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework): Competitor Overlap & Semantic Dominance Framework: Query-Specific Diagnostic Methodology.
-  - [`/knowledge-hub/articles/positional-bias-in-retrieval`](https://aeobility.com.au/knowledge-hub/articles/positional-bias-in-retrieval): What Is Positional Bias in Retrieval and Answer Engines?
-  - [`/knowledge-hub/articles/entity-authority-building`](https://aeobility.com.au/knowledge-hub/articles/entity-authority-building): Entity Authority: Why AI Search Ranks Entities, Not Pages.
-  - [`/knowledge-hub/articles/aeo-vs-seo`](https://aeobility.com.au/knowledge-hub/articles/aeo-vs-seo): AEO vs SEO complete guide to AI search.
-  - [`/knowledge-hub/articles/retrieval-augmented-generation`](https://aeobility.com.au/knowledge-hub/articles/retrieval-augmented-generation): RAG, answer engines & machine-readable content.
-  - [`/knowledge-hub/articles/structured-data-query-fan-out`](https://aeobility.com.au/knowledge-hub/articles/structured-data-query-fan-out): How Structured Data Helps You Survive the Query Fan-Out.
-  - [`/knowledge-hub/articles/telemetry-diagnostic-architecture`](https://aeobility.com.au/knowledge-hub/articles/telemetry-diagnostic-architecture): Telemetry Diagnostic Tool: Technical Architecture Guide.
-  - [`/knowledge-hub/articles/seo-vs-geo-red-flags`](https://aeobility.com.au/knowledge-hub/articles/seo-vs-geo-red-flags): 5 Critical Signals Your Business Needs GEO (Not Just Traditional SEO).
-  - [`/knowledge-hub/articles/google-ai-search`](https://aeobility.com.au/knowledge-hub/articles/google-ai-search): Why Query Fan-Out Bypasses Your Pillar Pages: Google AI Search, Grounded Synthesis, and Passage Retrieval Mechanics.
-- [`/knowledge-hub/case-studies`](https://aeobility.com.au/knowledge-hub/case-studies): Directory of real-world structural search alignment case studies.
-  - [`/knowledge-hub/case-studies/baby-bento`](https://aeobility.com.au/knowledge-hub/case-studies/baby-bento): E-commerce case study showing +17% sales uplift and +95% CTR improvement.
-  - [`/knowledge-hub/case-studies/aeo-geo-blueprint-90-days`](https://aeobility.com.au/knowledge-hub/case-studies/aeo-geo-blueprint-90-days): From entity ambiguity to commercial discovery: The AEO/GEO Blueprint Methodology.
-
-### Support & Brand Details
-- [`/about`](https://aeobility.com.au/about): Company background and our team.
-  - [`/about/freelance-digital-specialist-perth`](https://aeobility.com.au/about/freelance-digital-specialist-perth): Portfolio and digital systems architect overview.
-  - [`/about/freelance-seo-consultant-perth`](https://aeobility.com.au/about/freelance-seo-consultant-perth): Technical & semantic SEO consulting.
-  - [`/about/freelance-google-ads-consultant-perth`](https://aeobility.com.au/about/freelance-google-ads-consultant-perth): Google Ads and Smart Bidding consulting.
-  - [`/about/freelance-ai-consultant-perth`](https://aeobility.com.au/about/freelance-ai-consultant-perth): AI workflow engineering and orchestration.
-- [`/contact`](https://aeobility.com.au/contact): Direct lead capture form, booking inquiries, support, and quote requests.
-- [`/book`](https://aeobility.com.au/book): Schedule an AEO diagnostic or discovery session.
-- [`/vince-baker`](https://aeobility.com.au/vince-baker): Profile page, structured credentials, and contact info for founder Vincent Anthony Baker (Vinnie Baker).
+## Core Specialisations & Offerings
+1. **Answer Engine Optimisation (AEO)**: Structuring content and schema graphs so LLMs (ChatGPT, Gemini, Claude, Perplexity) parse and cite core business facts without ambiguity.
+2. **Generative Engine Optimisation (GEO)**: Optimising brand information architecture and semantic discoverability across generative AI platforms.
+3. **Structured Entity Architecture**: Implementing nested JSON-LD graphs, atomic answer blocks, and semantic concept lattices.
 
 ---
 
-## Programmatic Answer, Chat & Form API Endpoints
-AEObility exposes automated discovery and vector-grounded Answer & Form APIs:
-- **API Catalog (RFC 9727)**: `https://aeobility.com.au/.well-known/api-catalog` (`application/linkset+json`)
-- **Agent Registration & Discovery (`auth.md`)**: `https://aeobility.com.au/auth.md`
-- **OAuth Protected Resource Metadata (PRM)**: `https://aeobility.com.au/.well-known/oauth-protected-resource`
-- **OAuth Authorization Server Metadata**: `https://aeobility.com.au/.well-known/oauth-authorization-server`
-- **OpenAPI 3.1.0 Specification**: `https://aeobility.com.au/openapi.json`
-- **Developer Documentation**: [`/docs/api`](https://aeobility.com.au/docs/api): Official reference for all public APIs and agent endpoints.
-- **System Health**: `https://aeobility.com.au/api/health`
-- **Vector Search Endpoint**: `POST https://aeobility.com.au/api/search/answer`
-  - **Request Body**: `{ "query": "<user_search_string>" }`
-  - **Response Format**: Returns similarity score, grounded 2-sentence response, matched entity node, and intent classification.
-- **Unified Bill Agent Endpoint**: `POST https://aeobility.com.au/api/bill`
-  - **Request Body**: `{ "messages": [{ "role": "user", "content": "..." }] }`
-  - **Response Format**: Edge-streamed conversational diagnostic response with optional telemetry cards.
-- **Request a Quote Endpoint**: `POST https://aeobility.com.au/api/forms/quote`
-  - **Request Body**: `{ "fullName": "...", "email": "...", "website": "...", "serviceIntent": "...", "notes": "..." }`
-  - **Response Format**: Returns submission confirmation and dispatches automated email notifications via Resend API.
-- **AI Telemetry Diagnostic Endpoint**: `POST https://aeobility.com.au/api/diagnostic`
-  - **Request Body**: `{ "url": "...", "intent": "..." }`
-  - **Response Format**: Returns 5-dimensional diagnostic audit metrics (schema completeness, entity authority, positional bias, vector proximity, RAG survival probability).
-- **Brand Facts & MCP Tools**:
-  - `GET https://aeobility.com.au/api/brand-facts`
-  - `GET https://aeobility.com.au/api/mcp`
-
----
-
-## Structured Data Schema Standards
-We utilise Schema.org vocabulary mapped via a unified, decoupled `@graph` JSON-LD configuration:
-- **Brand Entity**: `@type: ProfessionalService`, `@id: "https://aeobility.com.au/#organization"`
-- **Founder Entity**: `@type: Person`, `@id: "https://aeobility.com.au/#vincebaker"` (Vincent Anthony Baker)
-- **Website Node**: `@type: WebSite`, `@id: "https://aeobility.com.au/#website"` (`inLanguage: "en-AU"`)
-- **Offer Catalog (`#catalog`)**:
-  - `Answer Engine Optimisation (AEO)` (`https://aeobility.com.au/#service-aeo`)
-  - `Generative Engine Optimisation (GEO)` (`https://aeobility.com.au/#service-geo`)
-  - `Entity SEO and Knowledge Graph Engineering` (`https://aeobility.com.au/#service-entity-seo`)
-  - `Schema Graph Engineering` (`https://aeobility.com.au/#service-schema`)
-- **Third-Party Evidence & Assessment Nodes (`subjectOf`)**:
-  - `Report`: AI Citation Index Australia (`https://aeoservices.com.au/ai-citation-index-australia/#october-2026`)
-  - `CreativeWork`: Agent Readiness Assessment (`https://isitagentready.com/www.aeobility.com.au#assessment`)
-- **Main Service Area served**: Australia (AU), Western Australia (WA), Perth.
-- **Page Schema Types**: `@type: ProfessionalService`, `@type: Person`, `@type: Service`, `@type: Report`, `@type: CreativeWork`, `@type: TechArticle`, `@type: HowTo`, `@type: FAQPage`, `@type: ItemList`
-
+## Verified Authority Profiles (sameAs)
+- [https://abr.business.gov.au/ABN/View?id=61029803255](https://abr.business.gov.au/ABN/View?id=61029803255)
+- [https://www.crunchbase.com/organization/aeobility](https://www.crunchbase.com/organization/aeobility)
+- [https://www.cbinsights.com/company/aeobility](https://www.cbinsights.com/company/aeobility)
+- [https://www.linkedin.com/company/aeobility](https://www.linkedin.com/company/aeobility)
+- [https://dev.to/aeobility](https://dev.to/aeobility)

@@ -17,6 +17,7 @@
     "test:crawl": "tsx scripts/test-crawl.ts",
     "test:apis": "tsx scripts/test-apis.ts",
     "test:agent": "node scripts/test-agent.mjs",
+    "qa:edge": "node scripts/qa-edge-pipeline.mjs",
     "indexnow": "tsx scripts/submit-indexnow.ts",
     "indexnow:changed": "tsx scripts/submit-indexnow.ts --changed",
     "gsc:audit": "tsx scripts/gsc-audit.ts",
