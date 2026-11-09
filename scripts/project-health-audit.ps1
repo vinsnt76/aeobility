@@ -205,6 +205,7 @@ foreach ($f in $allSourceFiles) {
     $content = [System.IO.File]::ReadAllText($f.FullName)
     # Exclude negative disambiguation statements
     $stripped = $content -replace 'zero affiliation with physical mobility equipment', '' `
+                         -replace 'zero relationship to physical mobility equipment', '' `
                          -replace 'Distinct from Seobility software and physical mobility equipment', '' `
                          -replace 'distinctFrom:[^,\n]*mobility equipment', ''
     if ($stripped -match 'wheelchair|mobility equipment') {

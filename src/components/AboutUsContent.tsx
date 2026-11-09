@@ -367,19 +367,25 @@ export default function AboutUsContent() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono text-zinc-300 pt-2 border-t border-white/10">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-aeo-cyan shrink-0" />
-              <span>Legal Entity: AEObility</span>
+              <span>Registered Business Name: AEObility</span>
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-aeo-cyan shrink-0" />
-              <span>ABN: 61 029 803 255</span>
+              <span>
+                ABN:{' '}
+                <Link href="/brand-facts" className="text-aeo-cyan hover:underline">
+                  61 029 803 255
+                </Link>{' '}
+                (Registered with ASIC / ABR)
+              </span>
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-aeo-cyan shrink-0" />
-              <span>Location: Perth, WA (Australia-wide delivery)</span>
+              <span>Principal Place of Business: Dianella, Perth, Western Australia 6059</span>
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-aeo-cyan shrink-0" />
-              <span>Delivery: 100% Founder-Led Consultations</span>
+              <span>Delivery Model: 100% Founder-Led Consultations (Australia-wide)</span>
             </div>
           </div>
         </div>
@@ -449,13 +455,35 @@ export default function AboutUsContent() {
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">About AEObility</h2>
         </div>
-        <div className="p-6 sm:p-8 bg-zinc-950/80 border border-cyan-500/30 rounded-2xl space-y-4 max-w-3xl shadow-xl">
+        <div className="p-6 sm:p-8 bg-zinc-950/80 border border-cyan-500/30 rounded-2xl space-y-5 max-w-3xl shadow-xl">
+          {/* Lexical Breakdown & Pronunciation Block */}
+          <div className="bg-black/50 border border-white/10 rounded-xl p-4 space-y-2 text-xs font-mono text-zinc-300">
+            <div>
+              <span className="text-zinc-500 uppercase tracking-wider text-[10px] block font-bold">Etymology</span>
+              <span className="text-zinc-200 font-serif text-xs">
+                Formed by bridging <strong>AEO</strong> (Answer Engine Optimisation) and the noun <strong>ability</strong> (the operational capability of making business facts legible to machines).
+              </span>
+            </div>
+            <div className="pt-1.5 border-t border-white/5">
+              <span className="text-zinc-500 uppercase tracking-wider text-[10px] block font-bold">Phonetic Guide</span>
+              <span className="text-amber-300 font-bold">/ˌeɪ iː oʊ ˈbɪl ɪ ti/</span> <span className="text-zinc-400 font-serif">(A-E-O-bility)</span>
+            </div>
+            <div className="pt-1.5 border-t border-white/5 flex flex-wrap gap-1.5 items-center">
+              <span className="text-zinc-500 uppercase tracking-wider text-[10px] font-bold">Recognised Semantic Aliases:</span>
+              {['AEObility', 'AEO Bility', 'aeo bility', 'aeo.bility', 'AEObility Perth', 'AEObility Australia'].map((alias) => (
+                <span key={alias} className="px-2 py-0.5 rounded bg-zinc-900 border border-white/10 text-aeo-cyan text-[11px]">
+                  {alias}
+                </span>
+              ))}
+            </div>
+          </div>
+
           <p className="text-sm sm:text-base text-zinc-200 font-serif leading-relaxed">
-            AEObility (pronounced A-E-O-bility) is an independent Australian digital consultancy based in Perth, Western Australia, founded by Vince Baker. The name is a portmanteau of Answer Engine Optimisation (AEO) and ability, reflecting our focus on machine readability, schema graph architecture, and AI search discovery. AEObility is an independent professional services consultancy and is not affiliated with, sponsored by, or related to Seobility, the European SEO software platform.
+            AEObility is an independent Australian B2B professional services consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and structured data architecture. The consultancy is strictly independent and unaffiliated with Seobility (the European SEO software platform), and maintains zero relationship to physical mobility equipment, disability care, or healthcare providers in Western Australia.
           </p>
           <div className="pt-3 border-t border-white/10 text-xs sm:text-sm text-zinc-400 font-serif leading-relaxed">
             <strong className="text-zinc-200">Corporate Identity:</strong>{' '}
-            AEObility is a registered Australian business name (ABN: 61 029 803 255), registered with the Australian Securities and Investments Commission (ASIC) on 21 July 2026. Principal place of business: Dianella, Western Australia 6059.
+            AEObility is a registered Australian business name (ABN: 61 029 803 255), registered with the Australian Securities and Investments Commission (ASIC) on 21 July 2026. Principal place of business: Dianella, Western Australia 6059. Verified on the <Link href="/brand-facts" className="text-aeo-cyan hover:underline">Canonical Brand Facts</Link> ledger.
           </div>
         </div>
       </section>
