@@ -728,7 +728,7 @@ export const PROVENANCE_GRAPH_SCHEMA = {
     'originatedFrom': { '@id': 'https://schema.org/isBasedOn', '@type': '@id' },
     'evolvedFrom': { '@id': 'https://schema.org/isBasedOn', '@type': '@id' },
     'integratedInto': { '@id': 'https://schema.org/isPartOf', '@type': '@id' },
-    'utilisesAgent': { '@id': 'https://schema.org/agent', '@type': '@id' },
+    'utilisesAgent': { '@id': 'https://schema.org/hasPart', '@type': '@id' },
     'comprises': { '@id': 'https://schema.org/hasPart', '@type': '@id' },
     'hasSpecialty': { '@id': 'https://schema.org/knowsAbout', '@type': '@id' }
   },
@@ -753,7 +753,7 @@ export const PROVENANCE_GRAPH_SCHEMA = {
       dateModified: '2026-08-29',
       version: '0.8.4',
       'prov:wasDerivedFrom': { '@id': 'https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance' },
-      'schema:isBasedOn': 'https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance'
+      isBasedOn: 'https://aeobility.com.au/knowledge-hub/articles/machine-legibility-data-provenance'
     },
     {
       '@type': 'SoftwareApplication',
@@ -766,8 +766,8 @@ export const PROVENANCE_GRAPH_SCHEMA = {
       version: '2.4.0',
       sameAs: ['https://github.com/vinsnt76/aeobility'],
       'prov:wasRevisionOf': { '@id': 'https://aeobility.com.au/brand-facts#ag-shapeshifter' },
-      'schema:isBasedOn': 'https://aeobility.com.au/brand-facts#ag-shapeshifter',
-      'schema:isPartOf': 'https://aeobility.com.au/diagnostic#system'
+      isBasedOn: 'https://aeobility.com.au/brand-facts#ag-shapeshifter',
+      isPartOf: 'https://aeobility.com.au/diagnostic#system'
     },
     {
       '@type': 'SoftwareApplication',
@@ -778,7 +778,7 @@ export const PROVENANCE_GRAPH_SCHEMA = {
       dateCreated: '2026-01-15',
       dateModified: '2026-08-29',
       version: '3.1.0',
-      'schema:agent': { '@id': 'https://aeobility.com.au/services/aeo#ai-bill' }
+      hasPart: { '@id': 'https://aeobility.com.au/services/aeo#ai-bill' }
     }
   ]
 };
