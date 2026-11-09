@@ -110,7 +110,7 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
         "https://www.producthunt.com/@aeobility",
         "https://www.linkedin.com/company/aeobility",
         "https://dev.to/aeobility",
-        "https://github.com/vinsnt76/aeobilty",
+        "https://github.com/vinsnt76/aeobility",
         "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
       ],
       "areaServed": {

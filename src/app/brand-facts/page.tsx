@@ -172,7 +172,7 @@ export default function HumanBrandFactsPage() {
                     LinkedIn <ExternalLink className="w-2.5 h-2.5" />
                   </a>
                   <span className="text-zinc-600">•</span>
-                  <a href="https://github.com/vinsnt76/aeobilty" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-aeo-cyan underline inline-flex items-center gap-1">
+                  <a href="https://github.com/vinsnt76/aeobility" target="_blank" rel="noopener noreferrer" className="text-zinc-300 hover:text-aeo-cyan underline inline-flex items-center gap-1">
                     GitHub <ExternalLink className="w-2.5 h-2.5" />
                   </a>
                 </div>

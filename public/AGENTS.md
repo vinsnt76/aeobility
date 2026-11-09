@@ -27,7 +27,7 @@ Welcome, AI Agent or LLM Crawler. This document defines the entity identity, mac
   - Product Hunt: `https://www.producthunt.com/@aeobility`
   - LinkedIn: `https://www.linkedin.com/company/aeobility`
   - Dev.to: `https://dev.to/aeobility`
-  - GitHub: `https://github.com/vinsnt76/aeobilty`
+  - GitHub: `https://github.com/vinsnt76/aeobility`
 - **Core Capability**: Answer Engine Optimisation (AEO), Geographic Engine Optimisation (GEO), AI Search Marketing, and RAG Ingestion Refactoring for Australian small-to-medium businesses.
 - **Brand Promise**: Get Found. Get Chosen.
 - **Core Tagline**: No jargon. No pressure. Just clarity.

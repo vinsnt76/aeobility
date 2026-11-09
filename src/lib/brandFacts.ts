@@ -72,7 +72,7 @@ export const BRAND_FACTS = {
     "https://www.producthunt.com/@aeobility",
     "https://www.linkedin.com/company/aeobility",
     "https://dev.to/aeobility",
-    "https://github.com/vinsnt76/aeobilty"
+    "https://github.com/vinsnt76/aeobility"
   ]
 };
 
@@ -673,7 +673,7 @@ export const PROVENANCE_ENTITIES: ProvenanceEntity[] = [
     dateCreated: '2025-06-10',
     dateModified: '2026-08-29',
     version: '2.4.0',
-    sameAs: ['https://github.com/vinsnt76/aeobilty']
+    sameAs: ['https://github.com/vinsnt76/aeobility']
   },
   {
     id: 'aeobility:diagnostic-system',
@@ -756,7 +756,7 @@ export const PROVENANCE_GRAPH_SCHEMA = {
       dateCreated: '2025-06-10',
       dateModified: '2026-08-29',
       version: '2.4.0',
-      sameAs: ['https://github.com/vinsnt76/aeobilty'],
+      sameAs: ['https://github.com/vinsnt76/aeobility'],
       'prov:wasRevisionOf': { '@id': 'https://aeobility.com.au/brand-facts#ag-shapeshifter' },
       'schema:isBasedOn': 'https://aeobility.com.au/brand-facts#ag-shapeshifter',
       'schema:isPartOf': 'https://aeobility.com.au/diagnostic#system'
@@ -805,7 +805,7 @@ export const PUBLIC_SCHEMA_GRAPH = {
         'https://www.linkedin.com/company/aeobility',
         'https://dev.to/aeobility',
         'https://www.crunchbase.com/organization/aeobility',
-        'https://github.com/vinsnt76/aeobilty'
+        'https://github.com/vinsnt76/aeobility'
       ],
       identifier: [
         {

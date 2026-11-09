@@ -106,7 +106,7 @@ Maps standard web protocol paths to underlying API route handlers:
 
 ### Deployment Platform: Vercel
 * **Platform Target:** **Vercel**
-* **Connected Repository:** `https://github.com/vinsnt76/aeobilty.git` (tracked on branch `main`)
+* **Connected Repository:** `https://github.com/vinsnt76/aeobility.git` (tracked on branch `main`)
 * **Vercel Integrations:**
   * `@vercel/speed-insights` (Real User Monitoring & Core Web Vitals tracking)
   * Vercel Secrets & Environment Variables (e.g., `RESEND_API_KEY`, `VERCEL_AI_OPENAI_API_KEY`)
