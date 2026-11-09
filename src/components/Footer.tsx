@@ -231,6 +231,11 @@ export default function Footer() {
                 Brand Facts
               </Link>
             </li>
+            <li>
+              <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors font-mono text-[11px] text-aeo-cyan/70 hover:text-aeo-cyan">
+                llms.txt
+              </a>
+            </li>
           </ul>
         </div>
 

@@ -90,7 +90,8 @@ export const CANONICAL_URL_LIST: string[] = [
   `https://${HOST}/book`,
   `https://${HOST}/docs/api`,
   `https://${HOST}/privacy`,
-  `https://${HOST}/terms`
+  `https://${HOST}/terms`,
+  `https://${HOST}/llms.txt`
 ];
 
 import { execSync } from 'child_process';

@@ -104,7 +104,8 @@ $CanonicalUrls = @(
     "https://$HostDomain/book",
     "https://$HostDomain/docs/api",
     "https://$HostDomain/privacy",
-    "https://$HostDomain/terms"
+    "https://$HostDomain/terms",
+    "https://$HostDomain/llms.txt"
 )
 
 function Resolve-FileToUrl([string]$filePath) {
