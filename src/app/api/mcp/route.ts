@@ -10,6 +10,16 @@ export async function OPTIONS() {
 export async function GET() {
   const mcpPayload = {
     mcpVersion: '1.0.0',
+    provider: {
+      name: 'AEObility',
+      url: 'https://aeobility.com.au',
+      '@id': 'https://aeobility.com.au/#organization'
+    },
+    publisher: {
+      name: 'AEObility',
+      url: 'https://aeobility.com.au',
+      '@id': 'https://aeobility.com.au/#organization'
+    },
     tools: [
       {
         name: 'get_organization_entity',

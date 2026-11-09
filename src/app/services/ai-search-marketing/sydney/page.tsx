@@ -132,9 +132,12 @@ export default function SydneyAISearchMarketingPage() {
               <MapPin className="w-4 h-4 text-aeo-cyan" />
               <span>Sydney AI Search Marketing &amp; Strategy</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              AI search marketing for <span className="text-gradient-aeo">Sydney businesses</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit text-white">
+              AEObility Sydney: <span className="text-gradient-aeo">AI Search &amp; AEO Digital Consultancy</span>
             </h1>
+            <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              Bespoke Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and structured schema architecture for Sydney enterprises and Australian SMBs.
+            </p>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
                 Sydney is Australia&apos;s most crowded, high-stakes commercial market. From Martin Place boardrooms to fast-moving agency hubs in North Sydney and Surry Hills, businesses face intense competition for client attention. In an environment this saturated, traditional keyword-dense SEO simply cannot keep up. Modern conversational engines such as ChatGPT, Google AI Overviews, Gemini, and Perplexity do not just scan pages for matching phrases; they read, pull apart, and reconstruct verified facts using retrieval-augmented generation (RAG).

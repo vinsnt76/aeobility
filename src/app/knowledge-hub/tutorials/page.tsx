@@ -25,6 +25,7 @@ export default function TutorialsHubPage() {
     "url": "https://aeobility.com.au/knowledge-hub/tutorials",
     "publisher": {
       "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au"
     }

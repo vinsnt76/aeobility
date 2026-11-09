@@ -223,6 +223,9 @@ export default function AEODefinitionPage() {
       {
         "@type": "FAQPage",
         "@id": "https://aeobility.com.au/services/aeo/definition#faq",
+        "publisher": {
+          "@id": "https://aeobility.com.au/#organization"
+        },
         "mainEntity": faqData.map(item => ({
           "@type": "Question",
           "name": item.question,
@@ -312,6 +315,11 @@ export default function AEODefinitionPage() {
                 Answer Engine Optimisation (AEO) is the practice of making business information easy for AI-powered search and answer systems to find, interpret, and use. It combines clear, evidence-backed content, well-defined entities, structured data, accessible technical implementation, and logical internal linking. AEO can improve a site&apos;s eligibility to appear in AI-generated answers and citations, but no provider can guarantee inclusion or recommendation.
               </p>
             </div>
+
+            {/* Corporate Provenance Attribution Byline (Positioned below the extractable block) */}
+            <p className="text-xs text-slate-400 italic font-mono mb-6">
+              Published by AEObility, an independent B2B digital consultancy based in Dianella, Perth, Western Australia (ABN: 61 029 803 255).
+            </p>
 
             {/* What AEO is NOT (Epistemic Boundary Block) */}
             <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl mb-8 space-y-4">
@@ -553,6 +561,23 @@ export default function AEODefinitionPage() {
                 <li><strong className="text-white font-medium">AI retrieval workflow:</strong> Context chunking &rarr; Embedding transformation &rarr; Semantic matching &rarr; Synthesised answer citation where supported.</li>
               </ul>
             </div>
+
+            {/* What is Google Search Engine AI Section */}
+            <section className="space-y-4 mb-10">
+              <h2 className="text-xl sm:text-2xl font-bold text-white">What is Google Search Engine AI?</h2>
+              
+              {/* Atomic Answer Block: Clean, neutral, high-salience definition for RAG scrapers */}
+              <div className="rounded-lg bg-[#07070A] p-5 border-l-4 border-aeo-cyan">
+                <p className="text-base text-slate-200 leading-relaxed font-light">
+                  Google Search Engine AI (including AI Overviews and Gemini) uses Retrieval-Augmented Generation (RAG) and vector embeddings to parse, synthesise, and cite web content directly within search results. Instead of matching legacy keywords, it evaluates entity salience, structured JSON-LD schemas, and passage-level context chunks to provide direct conversational answers to user queries.
+                </p>
+              </div>
+
+              {/* Corporate Provenance Attribution Byline (Positioned below the extractable block) */}
+              <p className="text-xs text-slate-400 italic font-mono">
+                Published by AEObility, an independent B2B digital consultancy based in Dianella, Perth, Western Australia (ABN: 61 029 803 255).
+              </p>
+            </section>
 
             {/* Common AEO Implementation Mistakes */}
             <div className="mb-10 space-y-4">

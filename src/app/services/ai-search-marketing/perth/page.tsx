@@ -133,9 +133,12 @@ export default function PerthAISearchMarketingPage() {
               <MapPin className="w-4 h-4 text-aeo-cyan" />
               <span>Perth AI Search Marketing &amp; Strategy</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              AI search marketing for <span className="text-gradient-aeo">Perth businesses</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit text-white">
+              AEObility Perth: <span className="text-gradient-aeo">AI Search &amp; AEO Digital Consultancy</span>
             </h1>
+            <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              Bespoke Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and structured schema architecture for Perth enterprises and Western Australian SMBs.
+            </p>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
                 WA is unique because of its geographical isolation. That divide means old-school, keyword-dense SEO no longer cuts it. Conversational search engines like ChatGPT and Gemini do not just match words on a page; they read, pull apart, and piece together actual facts using retrieval-augmented generation (RAG).

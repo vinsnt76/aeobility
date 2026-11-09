@@ -132,9 +132,12 @@ export default function BrisbaneAISearchMarketingPage() {
               <MapPin className="w-4 h-4 text-aeo-cyan" />
               <span>Brisbane AI Search Marketing &amp; Strategy</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              AI search marketing for <span className="text-gradient-aeo">Brisbane businesses</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit text-white">
+              AEObility Brisbane: <span className="text-gradient-aeo">AI Search &amp; AEO Digital Consultancy</span>
             </h1>
+            <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              Bespoke Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and structured schema architecture for Brisbane enterprises and Queensland SMBs.
+            </p>
             <div className="space-y-3 max-w-2xl mx-auto">
               <h2 className="text-base sm:text-lg text-white/90 font-medium leading-relaxed font-soehne-breit">
                 Brisbane is experiencing unprecedented commercial expansion across South East Queensland. With new infrastructure, expanding business corridors, and shifting consumer habits, traditional keyword-dense SEO is no longer enough to stay competitive. Modern conversational search engines like ChatGPT, Google AI Overviews, Gemini, and Perplexity do not just match search strings on a webpage. They read, extract, and synthesise verifiable facts using retrieval-augmented generation (RAG).

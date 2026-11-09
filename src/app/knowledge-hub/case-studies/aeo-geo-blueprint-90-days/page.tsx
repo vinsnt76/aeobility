@@ -65,6 +65,7 @@ export default function First90DaysCaseStudy() {
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organization",
       name: "AEObility",
       legalName: "AEObility",
       identifier: "ABN 61 029 803 255",

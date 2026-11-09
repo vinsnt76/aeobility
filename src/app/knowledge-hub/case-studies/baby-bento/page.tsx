@@ -51,6 +51,7 @@ export default function BabyBentoCaseStudyPage() {
 
     "publisher": {
       "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
       "logo": {
         "@type": "ImageObject",

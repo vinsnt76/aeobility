@@ -17,7 +17,16 @@ export interface LocalMetroConfig {
   longitude: number;
   slug: string;
   wikiUrl: string;
+  wikidata?: string;
 }
+
+export const METRO_WIKIDATA_MAP: Record<string, { name: string; wikidata: string }> = {
+  perth: { name: "Perth", wikidata: "https://www.wikidata.org/wiki/Q3183" },
+  sydney: { name: "Sydney", wikidata: "https://www.wikidata.org/wiki/Q3130" },
+  melbourne: { name: "Melbourne", wikidata: "https://www.wikidata.org/wiki/Q34647" },
+  brisbane: { name: "Brisbane", wikidata: "https://www.wikidata.org/wiki/Q34932" },
+  adelaide: { name: "Adelaide", wikidata: "https://www.wikidata.org/wiki/Q5112" },
+};
 
 export const METRO_CONFIGS: Record<string, LocalMetroConfig> = {
   perth: {
@@ -28,7 +37,8 @@ export const METRO_CONFIGS: Record<string, LocalMetroConfig> = {
     latitude: -31.9505,
     longitude: 115.8605,
     slug: "perth",
-    wikiUrl: "https://en.wikipedia.org/wiki/Perth"
+    wikiUrl: "https://en.wikipedia.org/wiki/Perth",
+    wikidata: "https://www.wikidata.org/wiki/Q3183"
   },
   sydney: {
     city: "Sydney",
@@ -38,7 +48,8 @@ export const METRO_CONFIGS: Record<string, LocalMetroConfig> = {
     latitude: -33.8688,
     longitude: 151.2093,
     slug: "sydney",
-    wikiUrl: "https://en.wikipedia.org/wiki/Sydney"
+    wikiUrl: "https://en.wikipedia.org/wiki/Sydney",
+    wikidata: "https://www.wikidata.org/wiki/Q3130"
   },
   melbourne: {
     city: "Melbourne",
@@ -48,7 +59,8 @@ export const METRO_CONFIGS: Record<string, LocalMetroConfig> = {
     latitude: -37.8136,
     longitude: 144.9631,
     slug: "melbourne",
-    wikiUrl: "https://en.wikipedia.org/wiki/Melbourne"
+    wikiUrl: "https://en.wikipedia.org/wiki/Melbourne",
+    wikidata: "https://www.wikidata.org/wiki/Q34647"
   },
   brisbane: {
     city: "Brisbane",
@@ -58,7 +70,8 @@ export const METRO_CONFIGS: Record<string, LocalMetroConfig> = {
     latitude: -27.4698,
     longitude: 153.0251,
     slug: "brisbane",
-    wikiUrl: "https://en.wikipedia.org/wiki/Brisbane"
+    wikiUrl: "https://en.wikipedia.org/wiki/Brisbane",
+    wikidata: "https://www.wikidata.org/wiki/Q34932"
   },
   adelaide: {
     city: "Adelaide",
@@ -68,16 +81,21 @@ export const METRO_CONFIGS: Record<string, LocalMetroConfig> = {
     latitude: -34.9285,
     longitude: 138.6007,
     slug: "adelaide",
-    wikiUrl: "https://en.wikipedia.org/wiki/Adelaide"
+    wikiUrl: "https://en.wikipedia.org/wiki/Adelaide",
+    wikidata: "https://www.wikidata.org/wiki/Q5112"
   }
 };
 
 export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqItem[]) => {
   const pageUrl = `https://aeobility.com.au/services/ai-search-marketing/${config.slug}`;
+  const cityData = METRO_WIKIDATA_MAP[config.slug.toLowerCase()] || {
+    name: config.city,
+    wikidata: config.wikidata || config.wikiUrl,
+  };
 
   const graphNodes: Record<string, unknown>[] = [
     {
-      "@type": "Organization",
+      "@type": "ProfessionalService",
       "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
       "legalName": "AEObility",
@@ -86,8 +104,7 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
         "aeo bility",
         "aeo.bility",
         "AEO.bility",
-        "AEObility Perth",
-        "AEObility Australia"
+        "AEObility Perth"
       ],
       "url": "https://aeobility.com.au/",
       "telephone": "+61-480-286-282",
@@ -114,9 +131,12 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
         "https://github.com/vinsnt76/aeobility",
         "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
       ],
-      "areaServed": {
-        "@type": "Country",
-        "name": "Australia"
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dianella",
+        "addressRegion": "WA",
+        "postalCode": "6059",
+        "addressCountry": "AU"
       }
     },
     {
@@ -227,7 +247,8 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
       "areaServed": [
         {
           "@type": "City",
-          "name": config.city,
+          "@id": cityData.wikidata,
+          "name": cityData.name,
           "sameAs": config.wikiUrl
         },
         {
@@ -246,16 +267,17 @@ export const getLocalMetroSchemaGraph = (config: LocalMetroConfig, faqs?: FaqIte
     {
       "@type": "Service",
       "@id": `${pageUrl}#service`,
-      "name": `AI Search Marketing & Optimisation ${config.city}`,
+      "name": `AEObility ${cityData.name}: AI Search & AEO Digital Consultancy Services`,
       "serviceType": "AI Search Optimisation",
       "provider": {
         "@id": "https://aeobility.com.au/#organization"
       },
       "areaServed": {
         "@type": "City",
-        "name": config.city,
-        "sameAs": config.wikiUrl
+        "@id": cityData.wikidata,
+        "name": cityData.name
       },
+      "description": `Bespoke Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) consultancy services for businesses in ${cityData.name}, ${config.stateFull} and nationwide.`,
       "isRelatedTo": {
         "@id": "https://aeobility.com.au/services/aeo#service"
       },

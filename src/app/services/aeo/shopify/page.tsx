@@ -168,6 +168,23 @@ export default function ShopifyAeoPage() {
               </div>
             </div>
 
+            {/* Bespoke Engineering Consultancy Callout */}
+            <div className="my-6 max-w-2xl mx-auto rounded-xl border border-aeo-cyan/30 bg-[#0D111A] p-6 shadow-2xl text-left">
+              <div className="flex items-start gap-4">
+                <div className="rounded-lg bg-aeo-cyan/10 p-2 text-aeo-cyan flex-shrink-0">
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-white">Bespoke Engineering Consultancy (Not an App)</h3>
+                  <p className="mt-1 text-sm text-slate-300 leading-relaxed font-light">
+                    AEObility provides direct Liquid code refactoring, custom schema architecture, and server-side ingestion rules for Shopify stores. We operate as an independent Australian B2B consultancy, not an automated Shopify App Store plugin or subscription software extension.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Who This Is For Qualification Matrix */}
             <div className="p-5 bg-white/[0.02] border border-white/10 rounded-2xl max-w-2xl mx-auto text-left space-y-3 shadow-lg">
               <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-aeo-cyan flex items-center gap-1.5 font-soehne-breit">

@@ -11,13 +11,56 @@ export interface FaqItem {
 export const getShopifyAeoSchemaGraph = (faqs?: FaqItem[]) => {
   const graphNodes: Record<string, unknown>[] = [
     {
+      "@type": "ProfessionalService",
+      "@id": "https://aeobility.com.au/#organization",
+      "name": "AEObility",
+      "legalName": "AEObility",
+      "alternateName": [
+        "AEO Bility",
+        "aeo bility",
+        "aeo.bility",
+        "AEO.bility",
+        "AEObility Perth"
+      ],
+      "url": "https://aeobility.com.au/",
+      "telephone": "+61-480-286-282",
+      "logo": "https://aeobility.com.au/aeobility-logo-light.svg",
+      "foundingDate": "2026-07-21",
+      "taxID": "ABN 61 029 803 255",
+      "founder": {
+        "@id": "https://aeobility.com.au/#vincebaker"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "AUSTRALIAN_BUSINESS_NUMBER",
+        "name": "ABN",
+        "value": "61029803255",
+        "url": "https://abr.business.gov.au/ABN/View?id=61029803255"
+      },
+      "sameAs": [
+        "https://abr.business.gov.au/ABN/View?id=61029803255",
+        "https://www.crunchbase.com/organization/aeobility",
+        "https://www.cbinsights.com/company/aeobility",
+        "https://www.producthunt.com/@aeobility",
+        "https://www.linkedin.com/company/aeobility",
+        "https://dev.to/aeobility",
+        "https://github.com/vinsnt76/aeobility"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dianella",
+        "addressRegion": "WA",
+        "postalCode": "6059",
+        "addressCountry": "AU"
+      }
+    },
+    {
       "@type": "Service",
       "@id": "https://aeobility.com.au/services/aeo/shopify#service",
       "name": "Shopify AEO Optimisation",
       "serviceType": "Shopify AEO Ingestion Architecture",
       "description": "Platform-specific restructuring of Shopify Liquid templates, Google Merchant Center feeds, and server-side product schema to maximise discovery across AI search and shopping assistants.",
       "provider": {
-        "@type": "ProfessionalService",
         "@id": "https://aeobility.com.au/#organization"
       },
       "areaServed": {

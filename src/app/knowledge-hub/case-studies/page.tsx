@@ -25,6 +25,7 @@ export default function CaseStudiesHubPage() {
     "url": "https://aeobility.com.au/knowledge-hub/case-studies",
     "publisher": {
       "@type": "Organization",
+      "@id": "https://aeobility.com.au/#organization",
       "name": "AEObility",
       "url": "https://aeobility.com.au"
     }

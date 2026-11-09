@@ -12,7 +12,10 @@
     "license": {
       "name": "Open Data / Attribution 4.0",
       "url": "https://creativecommons.org/licenses/by/4.0/"
-    }
+    },
+    "x-organization": "https://aeobility.com.au/#organization",
+    "x-provider": "https://aeobility.com.au/#organization",
+    "x-publisher": "https://aeobility.com.au/#organization"
   },
   "servers": [
     {

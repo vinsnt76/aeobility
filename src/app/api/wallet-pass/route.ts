@@ -109,7 +109,7 @@ export async function GET() {
 
     // Sign JWT using node crypto module
     const header = { alg: "RS256", typ: "JWT" };
-    
+
     const base64UrlEncode = (str: string) => {
       return Buffer.from(str)
         .toString('base64')
@@ -128,7 +128,7 @@ export async function GET() {
     const signer = crypto.createSign('RSA-SHA256');
     signer.update(signInput);
     const signature = signer.sign(formattedPrivateKey, 'base64');
-    
+
     const tokenSignature = signature
       .replace(/=/g, '')
       .replace(/\+/g, '-')
@@ -142,10 +142,10 @@ export async function GET() {
     // Return both the live URL and a ready-to-use QR code image URL
     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}`;
 
-    return NextResponse.json({ 
-      url, 
+    return NextResponse.json({
+      url,
       qrCodeUrl,
-      isMock: false 
+      isMock: false
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";

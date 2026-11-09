@@ -39,16 +39,61 @@ export default function ApiDocumentationPage() {
     '@context': 'https://schema.org',
     '@graph': [
       {
+        '@type': 'ProfessionalService',
+        '@id': 'https://aeobility.com.au/#organization',
+        'name': 'AEObility',
+        'legalName': 'AEObility',
+        'alternateName': [
+          'AEO Bility',
+          'aeo bility',
+          'aeo.bility',
+          'AEO.bility',
+          'AEObility Perth'
+        ],
+        'url': 'https://aeobility.com.au/',
+        'telephone': '+61-480-286-282',
+        'logo': 'https://aeobility.com.au/aeobility-logo-light.svg',
+        'foundingDate': '2026-07-21',
+        'taxID': 'ABN 61 029 803 255',
+        'founder': {
+          '@id': 'https://aeobility.com.au/#vincebaker'
+        },
+        'identifier': {
+          '@type': 'PropertyValue',
+          'propertyID': 'AUSTRALIAN_BUSINESS_NUMBER',
+          'name': 'ABN',
+          'value': '61029803255',
+          'url': 'https://abr.business.gov.au/ABN/View?id=61029803255'
+        },
+        'sameAs': [
+          'https://abr.business.gov.au/ABN/View?id=61029803255',
+          'https://www.crunchbase.com/organization/aeobility',
+          'https://www.cbinsights.com/company/aeobility',
+          'https://www.producthunt.com/@aeobility',
+          'https://www.linkedin.com/company/aeobility',
+          'https://dev.to/aeobility',
+          'https://github.com/vinsnt76/aeobility'
+        ],
+        'address': {
+          '@type': 'PostalAddress',
+          'addressLocality': 'Dianella',
+          'addressRegion': 'WA',
+          'postalCode': '6059',
+          'addressCountry': 'AU'
+        }
+      },
+      {
         '@type': 'WebAPI',
         '@id': 'https://aeobility.com.au/docs/api#webapi',
         'name': 'AEObility Public Telemetry & Discovery APIs',
         'description': 'Automated discovery catalog and REST endpoints for AI search visibility scoring, canonical consensus facts, and Model Context Protocol (MCP) tools.',
         'url': 'https://aeobility.com.au/docs/api',
         'documentation': 'https://aeobility.com.au/docs/api',
+        'publisher': {
+          '@id': 'https://aeobility.com.au/#organization'
+        },
         'provider': {
-          '@type': 'ProfessionalService',
-          '@id': 'https://aeobility.com.au/#organization',
-          'name': 'AEObility'
+          '@id': 'https://aeobility.com.au/#organization'
         },
         'termsOfService': 'https://aeobility.com.au/terms',
         'serviceType': 'Search Engine Optimisation & AI Agent Infrastructure'
