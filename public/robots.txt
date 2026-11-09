@@ -8,6 +8,8 @@ Content-Signal: search=yes, ai-input=yes, ai-train=yes
 User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 # Prevent crawling of compiled Next.js font/media chunks
 Disallow: /_next/static/media/
 Allow: /api/search/answer
