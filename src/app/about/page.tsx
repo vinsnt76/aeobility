@@ -14,7 +14,7 @@ const ABOUT_PILLS = [
 
 export const metadata: Metadata = {
   title: "About Us: Automation Consultants & Architects | AEObility",
-  description: "Meet Vinnie Baker and the technical architects behind AEObility. Founded in 2026 in Perth, WA, Australia. Get found and chosen across ChatGPT, Gemini, and Perplexity.",
+  description: "Meet Vince Baker and the team behind AEObility, a Perth digital consultancy specialising in Answer Engine Optimisation (AEO) and AI search visibility.",
   keywords: [
     "digital marketing specialist perth",
     "automation consultant western australia",
