@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://aeobility.com.au/images/services/ai-search-marketing_AEObility.webp",
+        url: "https://aeobility.com.au/images/services/ai-search-marketing-strategy_AEObility.webp",
         width: 1200,
         height: 800,
         alt: "AEObility AI Search Agency consulting interface mapping entity relationship graphs and AI search retrieval pipelines.",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Search Agency & AEO Consultancy | AEObility Australia",
     description: "Australia's specialist AI search marketing consultancy. Generative Engine Optimisation, nested JSON-LD schema graph engineering, and brand citation strategy.",
-    images: ["https://aeobility.com.au/images/services/ai-search-marketing_AEObility.webp"],
+    images: ["https://aeobility.com.au/images/services/ai-search-marketing-strategy_AEObility.webp"],
   },
   keywords: [
     "ai search agency",

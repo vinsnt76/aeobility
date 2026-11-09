@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, IBM_Plex_Serif } from "next/font/google";
 import Script from "next/script";
@@ -220,8 +221,10 @@ export default function RootLayout({
         </Script>
         {children}
         <GlobalConsentBanner />
-        <BillWidget />
-        <AIModalAssistant />
+        <Suspense fallback={null}>
+          <BillWidget />
+          <AIModalAssistant />
+        </Suspense>
         <SpeedInsights />
       </body>
     </html>

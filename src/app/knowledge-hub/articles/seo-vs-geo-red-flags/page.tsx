@@ -199,7 +199,7 @@ export default function SeoVsGeoRedFlagsPage() {
         },
         "image": {
           "@type": "ImageObject",
-          "@id": "https://aeobility.com.au/images/articles/geo-vs-seo-red-flags-banner.webp"
+          "@id": "https://aeobility.com.au/images/knowledge-hub/geo-vs-seo-red-flags-banner_AEObility.webp"
         },
         "about": [
           {
@@ -223,7 +223,7 @@ export default function SeoVsGeoRedFlagsPage() {
       },
       {
         "@type": "ImageObject",
-        "@id": "https://aeobility.com.au/images/articles/geo-vs-seo-red-flags-banner.webp",
+        "@id": "https://aeobility.com.au/images/knowledge-hub/geo-vs-seo-red-flags-banner_AEObility.webp",
         "contentUrl": "https://aeobility.com.au/images/knowledge-hub/geo-vs-seo-red-flags-banner_AEObility.webp",
         "url": "https://aeobility.com.au/images/knowledge-hub/geo-vs-seo-red-flags-banner_AEObility.webp",
         "name": "Business Discovery Signals Showing the Shift from SEO to GEO",
