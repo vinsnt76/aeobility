@@ -194,7 +194,7 @@ export default function KnowledgeHubPage() {
             <div className="text-center max-w-2xl mx-auto space-y-4">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Technical Guides and Learning Paths</h2>
               <p className="text-white/60 font-light leading-relaxed">
-                Step-by-step training resources detailing machine-readability requirements for local service businesses in Australia.
+                Step-by-step training resources detailing machine-readability requirements for Australian organisations. Access the dedicated <Link href="/knowledge-hub/guides" className="text-aeo-cyan underline hover:text-white font-medium">Technical Guides Directory</Link> for system specifications, RAG architecture, and entity authority frameworks.
               </p>
             </div>
 
@@ -219,6 +219,16 @@ export default function KnowledgeHubPage() {
                   </div>
                 </Link>
               ))}
+
+              <div className="text-center pt-3">
+                <Link
+                  href="/knowledge-hub/guides"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-aeo-cyan/40 hover:bg-white/10 text-white font-mono text-xs font-semibold transition-all group"
+                >
+                  <span>Explore Complete Technical Guides Directory</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </section>
 
@@ -253,6 +263,16 @@ export default function KnowledgeHubPage() {
                   </div>
                 </Link>
               ))}
+
+              <div className="text-center pt-3 md:col-span-3">
+                <Link
+                  href="/knowledge-hub/articles"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-aeo-cyan/40 hover:bg-white/10 text-white font-mono text-xs font-semibold transition-all group"
+                >
+                  <span>Browse All Knowledge Hub Articles</span>
+                  <ArrowRight className="w-4 h-4 text-aeo-cyan group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </section>
 

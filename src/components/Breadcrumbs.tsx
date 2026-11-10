@@ -15,6 +15,10 @@ export default function Breadcrumbs() {
   // Format labels to match the literal lowercase path segments or specific overrides
   const formatLabel = (part: string) => {
     const overrideMap: Record<string, string> = {
+      'knowledge-hub': 'Knowledge Hub',
+      'guides': 'Technical Guides',
+      'articles': 'Articles',
+      'case-studies': 'Case Studies',
       'ai-search-marketing': 'AI Search Marketing Hub',
       'perth': 'AI Search Optimisation Perth',
       'melbourne': 'AI Search Optimisation Melbourne',

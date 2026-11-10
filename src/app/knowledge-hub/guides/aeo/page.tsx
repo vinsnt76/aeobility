@@ -16,6 +16,7 @@ import {
   CheckCircle2, 
   XCircle, 
   ArrowRight, 
+  ArrowLeft, 
   Terminal, 
   Code, 
   Sparkles, 
@@ -248,6 +249,13 @@ export default function AEOGuideWhitepaperPage() {
           <div className="relative z-10 space-y-3.5">
             {/* Consolidated Pill Badge */}
             <div className="flex flex-wrap items-center gap-2">
+              <Link
+                href="/knowledge-hub/guides"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 hover:border-aeo-cyan/40 text-zinc-300 hover:text-aeo-cyan text-xs font-mono transition-colors group"
+              >
+                <ArrowLeft className="w-3.5 h-3.5 shrink-0 group-hover:-translate-x-0.5 transition-transform" />
+                <span>Technical Guides</span>
+              </Link>
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/25 text-aeo-cyan text-xs font-mono">
                 <BookOpen className="w-3.5 h-3.5 shrink-0" />
                 <span>Technical Whitepaper • 12 min read • Peer-Referenced</span>
