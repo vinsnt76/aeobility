@@ -28,6 +28,24 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/.well-known/agent-card.json",
+        headers: [
+          { key: "Content-Type", value: "application/json" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,HEAD" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+        ],
+      },
+      {
+        source: "/.well-known/agent-card",
+        headers: [
+          { key: "Content-Type", value: "application/json" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,HEAD" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=3600" },
+        ],
+      },
+      {
         source: "/auth.md",
         headers: [
           { key: "Content-Type", value: "text/markdown; charset=utf-8" },
@@ -196,6 +214,18 @@ const nextConfig: NextConfig = {
       {
         source: '/.well-known/ucp',
         destination: '/.well-known/ucp.json',
+      },
+      {
+        source: '/.well-known/agent-card',
+        destination: '/.well-known/agent-card.json',
+      },
+      {
+        source: '/.well-known/agent.json',
+        destination: '/.well-known/agent-card.json',
+      },
+      {
+        source: '/api/a2a',
+        destination: '/.well-known/agent-card.json',
       },
       {
         source: '/auth.md',

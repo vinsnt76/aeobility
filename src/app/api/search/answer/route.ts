@@ -205,8 +205,63 @@ export async function GET(req: NextRequest) {
   if (!query) {
     return NextResponse.json(
       {
-        name: "AEObility Grounded Vector Search NLWeb Endpoint",
-        version: "2.4",
+        $schema: "https://a2a-protocol.org/latest/schemas/agent-card.json",
+        name: "aeobility-vector-search-agent",
+        version: "1.0.0",
+        description: "AEObility Grounded Vector Search and Semantic Answer Generation Agent specialising in Answer Engine Optimisation (AEO) and entity disambiguation.",
+        url: "https://aeobility.com.au/api/search/answer",
+        capabilities: {
+          streaming: false,
+          pushNotifications: false,
+          extendedAgentCard: false,
+          features: [
+            "vector-search",
+            "semantic-answer-grounding",
+            "entity-matching",
+            "nlweb"
+          ]
+        },
+        defaultInputModes: [
+          "text/plain",
+          "application/json"
+        ],
+        defaultOutputModes: [
+          "application/json",
+          "text/plain"
+        ],
+        supportedInterfaces: [
+          {
+            url: "https://aeobility.com.au/api/search/answer",
+            protocol: "rest",
+            protocolBinding: "HTTP",
+            protocolVersion: "1.0",
+            methods: ["POST", "GET"],
+            description: "Grounded vector answer generation and entity matching."
+          }
+        ],
+        skills: [
+          {
+            id: "vector-answer",
+            name: "Vector Answer Grounding",
+            description: "Performs cosine similarity searches against the 60-node AEObility Information Architecture and SLM knowledge base.",
+            tags: ["vector-search", "aeo", "semantic-grounding", "slm"],
+            examples: [
+              "What is Answer Engine Optimisation?",
+              "How do LLMs rank brand entities?",
+              "What is the difference between SEO and AEO?"
+            ]
+          },
+          {
+            id: "brand-consensus",
+            name: "Brand Consensus Ledger",
+            description: "Retrieves verified canonical brand facts, pricing parameters, and operational definitions to mitigate AI hallucinations.",
+            tags: ["brand-consensus", "facts", "knowledge-graph", "pricing"],
+            examples: [
+              "What are AEObility's fixed-scope sprint packages?",
+              "Who founded AEObility?"
+            ]
+          }
+        ],
         status: "active",
         methods: ["POST", "GET"],
         protocol: "NLWeb/1.0",

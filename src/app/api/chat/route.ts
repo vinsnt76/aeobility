@@ -18,6 +18,59 @@ export async function OPTIONS() {
   return handleCorsOptions();
 }
 
+export async function GET() {
+  const chatAgentCard = {
+    $schema: "https://a2a-protocol.org/latest/schemas/agent-card.json",
+    name: "aeobility-bill-chat-agent",
+    version: "1.0.0",
+    description: "AEObility AI Bill conversational diagnostic specialist providing real-time AEO, GEO, and search architecture guidance.",
+    url: "https://aeobility.com.au/api/chat",
+    capabilities: {
+      streaming: false,
+      pushNotifications: false,
+      extendedAgentCard: false,
+      features: [
+        "conversational-guidance",
+        "telemetry-explanation",
+        "aeo-advice"
+      ]
+    },
+    defaultInputModes: [
+      "application/json",
+      "text/plain"
+    ],
+    defaultOutputModes: [
+      "application/json",
+      "text/plain"
+    ],
+    supportedInterfaces: [
+      {
+        url: "https://aeobility.com.au/api/chat",
+        protocol: "rest",
+        protocolBinding: "HTTP",
+        protocolVersion: "1.0",
+        methods: ["POST", "GET"],
+        description: "AI Bill conversational diagnostic dialogue endpoint."
+      }
+    ],
+    skills: [
+      {
+        id: "chat-diagnostic",
+        name: "AI Visibility Diagnostic Chat",
+        description: "Explains AEO metrics, gap analyses, and entity optimisation next actions.",
+        tags: ["chat", "aeo-guidance", "telemetry-explanation"],
+        examples: [
+          "How can I fix my brand's AEO blind spot?",
+          "Explain my entity readiness score."
+        ]
+      }
+    ],
+    usage: "Send POST payload { message: string, telemetryContext?: object } to converse with AI Bill."
+  };
+
+  return NextResponse.json(chatAgentCard, { headers: corsHeaders });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { message, telemetryContext } = await req.json();

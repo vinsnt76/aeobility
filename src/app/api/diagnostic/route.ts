@@ -21,6 +21,58 @@ export async function OPTIONS() {
   return handleCorsOptions();
 }
 
+export async function GET() {
+  const diagnosticAgentCard = {
+    $schema: "https://a2a-protocol.org/latest/schemas/agent-card.json",
+    name: "aeobility-diagnostic-agent",
+    version: "1.0.0",
+    description: "AEObility AI Search Visibility and Entity Density Diagnostic Audit Engine specialising in AEO readiness assessments.",
+    url: "https://aeobility.com.au/api/diagnostic",
+    capabilities: {
+      streaming: false,
+      pushNotifications: false,
+      extendedAgentCard: false,
+      features: [
+        "telemetry-auditing",
+        "entity-density-scoring",
+        "schema-validation",
+        "rag-simulation"
+      ]
+    },
+    defaultInputModes: [
+      "application/json"
+    ],
+    defaultOutputModes: [
+      "application/json"
+    ],
+    supportedInterfaces: [
+      {
+        url: "https://aeobility.com.au/api/diagnostic",
+        protocol: "rest",
+        protocolBinding: "HTTP",
+        protocolVersion: "1.0",
+        methods: ["POST", "GET"],
+        description: "AI visibility and entity density diagnostic audit engine."
+      }
+    ],
+    skills: [
+      {
+        id: "aeo-audit",
+        name: "AEO Visibility Audit",
+        description: "Executes a 5-dimensional audit evaluating entity density, structured schema coverage, vector proximity, and RAG survival probability.",
+        tags: ["aeo", "audit", "ai-visibility", "rag-simulation", "schema-validation"],
+        examples: [
+          "Audit my brand's AEO visibility",
+          "Test entity readiness for generative search engines"
+        ]
+      }
+    ],
+    usage: "Send POST payload { intent: string, url?: string, clientText?: string } to run a full diagnostic audit."
+  };
+
+  return NextResponse.json(diagnosticAgentCard, { headers: corsHeaders });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
