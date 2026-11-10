@@ -20,7 +20,7 @@ interface NavbarProps {
 export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLUListElement>(null);
   const pathname = usePathname();
 
   // Close dropdown on click outside
