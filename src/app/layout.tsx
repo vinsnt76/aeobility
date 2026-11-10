@@ -1,16 +1,12 @@
 import React, { Suspense } from "react";
 import type { Metadata, Viewport } from "next";
-import dynamic from "next/dynamic";
 import { Geist, Geist_Mono, IBM_Plex_Serif } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import SSRFallbackNav from "@/components/navigation/SSRFallbackNav";
 import SiteNavigationSchema from "@/components/navigation/SiteNavigationSchema";
+import ClientOverlays from "@/components/ClientOverlays";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
-const GlobalConsentBanner = dynamic(() => import("@/components/GlobalConsentBanner"), { ssr: false });
-const BillWidget = dynamic(() => import("@/components/BillWidget"), { ssr: false });
-const AIModalAssistant = dynamic(() => import("@/components/AIModalAssistant"), { ssr: false });
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-3WVLWVG6VH';
 
@@ -222,11 +218,7 @@ export default function RootLayout({
           `}
         </Script>
         {children}
-        <GlobalConsentBanner />
-        <Suspense fallback={null}>
-          <BillWidget />
-          <AIModalAssistant />
-        </Suspense>
+        <ClientOverlays />
         <SpeedInsights />
       </body>
     </html>
