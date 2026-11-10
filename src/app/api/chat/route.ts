@@ -20,7 +20,7 @@ export async function OPTIONS() {
 
 export async function GET() {
   const chatAgentCard = {
-    $schema: "https://a2a-protocol.org/latest/schemas/agent-card.json",
+    $schema: "https://a2a-registry.org/schemas/a2a/v1.0/agent-card.json",
     name: "aeobility-bill-chat-agent",
     version: "1.0.0",
     description: "AEObility AI Bill conversational diagnostic specialist providing real-time AEO, GEO, and search architecture guidance.",

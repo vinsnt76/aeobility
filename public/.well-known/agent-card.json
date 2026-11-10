@@ -1,5 +1,5 @@
 {
-  "$schema": "https://a2a-protocol.org/latest/schemas/agent-card.json",
+  "$schema": "https://a2a-registry.org/schemas/a2a/v1.0/agent-card.json",
   "name": "aeobility-agent",
   "version": "1.0.0",
   "description": "AEObility Autonomous Agent for Answer Engine Optimisation (AEO), AI Search Visibility Auditing, and Brand Consensus Discovery.",

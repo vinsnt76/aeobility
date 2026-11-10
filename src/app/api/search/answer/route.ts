@@ -205,7 +205,7 @@ export async function GET(req: NextRequest) {
   if (!query) {
     return NextResponse.json(
       {
-        $schema: "https://a2a-protocol.org/latest/schemas/agent-card.json",
+        $schema: "https://a2a-registry.org/schemas/a2a/v1.0/agent-card.json",
         name: "aeobility-vector-search-agent",
         version: "1.0.0",
         description: "AEObility Grounded Vector Search and Semantic Answer Generation Agent specialising in Answer Engine Optimisation (AEO) and entity disambiguation.",
