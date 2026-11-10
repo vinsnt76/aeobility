@@ -1,4 +1,4 @@
-﻿# Template 02: Commercial Solution Sprint (`02-commercial-solution.md`)
+# Template 02: Commercial Solution Sprint (`02-commercial-solution.md`)
 
 > **Archetype:** Productised Solution Sprint & Strategic Roadmap  
 > **Target Routes:** `/solutions/aeo-blueprint`, `/solutions/aeo-sprint`  
@@ -146,15 +146,57 @@ export const metadata: Metadata = {
 
 ---
 
-## 6. Dark Glass Surface Tiering & Solid Breakout Rules
+## 6. Dark Glassmorphism Design Rules (Commercial Solutions)
 
-* **Canvas Root:** Deep Slate / Obsidian Black `#030303` with ambient cyan and purple neon orbs.
-* **Tier 1 (Strong Glass):** Hero CTA banner: `bg-zinc-950/90 backdrop-blur-md border border-white/15 shadow-2xl p-6 rounded-2xl transform translate-z-0`.
-* **Tier 2 (Mid Glass):** Deliverables cards & Decision Strip cards: `bg-zinc-950/80 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:border-cyan-500/40 transition-all`.
-* **The Solid Breakout Rule:**
-  - Primary button: Solid gradient `bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold`.
-  - Comparison table: Solid opaque slate `#080B12` with solid `#334155` cell dividers (eliminates translucent reading glare).
-  - Form input wells: Solid recessed `#080B12` base with solid `#64748B` border.
+### 1. Elevation, Surface Opacity & Visual Hierarchy
+* **Restricted Translucency:** Apply `backdrop-filter: blur()` only to structural backdrops (cards, persistent navs, panels). Interactive CTAs and input fields must remain opaque.
+* **Layer Tiers:**
+  * **L0 (Canvas):** Solid dark base (`#08090C` to `#0D1117` or Deep Slate `#030303`) with slow, muted ambient mesh or gradient orbs.
+  * **L1 (Cards):** `rgba(255, 255, 255, 0.03-0.05)` fill + `backdrop-filter: blur(16px) saturate(140%)` (e.g. `bg-zinc-950/80 backdrop-blur-md border border-white/10 hover:border-cyan-500/40 transition-all`).
+  * **L2 (Modals/Overlays):** `rgba(255, 255, 255, 0.08)` fill + `backdrop-filter: blur(24px)` for forward z-step (e.g. `bg-zinc-950/90 backdrop-blur-md border border-white/15 shadow-2xl p-6 rounded-2xl`).
+* **Specular Edges:** Replace heavy drop shadows with a 1px top-to-bottom directional gradient border (`rgba(255, 255, 255, 0.15-0.20)` fading to `0.02`) to replicate physical edge refraction.
+* **Hardware Layering:** Add `transform: translateZ(0)` or `will-change: transform` to glass wrappers to offload compositor rendering to the GPU. Limit nesting to $\le 2$ blurred surfaces per viewport.
+
+---
+
+### 2. Contrast Engineering & Primary Action Isolation
+* **Opaque Conversion Triggers (Von Restorff Effect):** Primary CTAs must be 100% solid, opaque accents (e.g., cyan `#00E5FF` or solid gradient `bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold`) to visually break the glass plane and direct user attention.
+* **Attention Budget (Hick's Law):** Limit interfaces to one dominant opaque trigger per decision frame.
+* **Action Demotion:** Secondary actions use dark frosted fills (`rgba(255, 255, 255, 0.06-0.08)`) with light strokes (`rgba(255, 255, 255, 0.15)`); tertiary actions are demoted to inline text links.
+
+---
+
+### 3. Typography & Legibility Standards (WCAG 2.2 AA)
+* **Zero Opacity Bleed:** Text must never inherit container transparency.
+  * **Headings:** Solid pure white (`#FFFFFF`) or high-luminance accent tint.
+  * **Body Text:** Light grey (`#E4E4E7` or `rgba(255, 255, 255, 0.75-0.85)`), maintaining $\ge 4.5:1$ contrast against card backs and ambient lighting.
+  * **Eyebrows / Metadata:** Muted text (`rgba(255, 255, 255, 0.50-0.60)`), restricted to short uppercase labels.
+* **Font Weights:** Use medium weights (`font-weight: 450-500`) for body copy $\ge 16\text{px}$ to preserve letterforms over blurred textures.
+* **Contrast Safeguard:** Position heavy text blocks over a stabilising semi-opaque dark backing (`rgba(10, 12, 16, 0.70)`) to neutralise underlying flare variance.
+
+---
+
+### 4. Interactive State Predictability
+* **Luminance Mapping:** Signal state changes via light and border shifts rather than skeuomorphic movement:
+  * **Default:** 1px border (`rgba(255, 255, 255, 0.08)`), surface fill (`0.04`).
+  * **Hover:** Border brightness increases to `rgba(255, 255, 255, 0.22)`, surface fill increases to `0.08`, accompanied by an ambient rim glow.
+  * **Focus:** Unbroken, high-contrast 2px focus ring (`var(--accent)`) with a 2px offset for keyboard accessibility.
+* **Input Wells:** Input fields must use opaque recessed wells (`rgba(0, 0, 0, 0.35-0.50)` or solid `#080B12` base with solid `#64748B` border) with persistent top labels to prevent visual noise during data entry.
+* **Comparison Tables:** Solid opaque slate `#080B12` with solid `#334155` cell dividers (eliminates translucent reading glare).
+
+---
+
+### 5. Implementation Reference Matrix
+
+| Component | Background Fill | Border / Edge | Blur Spec | Contrast Target |
+| :--- | :--- | :--- | :--- | :--- |
+| **Glass Card (L1)** | `rgba(255, 255, 255, 0.04)` | 1px `rgba(255, 255, 255, 0.08)` | `16px-20px` | $> 4.5:1$ text |
+| **Modal / Flyout (L2)** | `rgba(255, 255, 255, 0.08)` | 1px `rgba(255, 255, 255, 0.16)` | `24px` | $> 4.5:1$ text |
+| **Primary CTA** | Solid Accent (Opaque) | None / 1px inner highlight | None (`0px`) | $> 7:1$ vs card |
+| **Secondary CTA** | `rgba(255, 255, 255, 0.07)` | 1px `rgba(255, 255, 255, 0.16)` | `8px-12px` | $> 4.5:1$ text |
+| **Input Fields** | `rgba(0, 0, 0, 0.45)` | 1px `rgba(255, 255, 255, 0.12)` | Optional (`8px`) | $> 3:1$ boundary |
+
+*Fallback:* Wrap backdrop filters in `@supports (backdrop-filter: blur(16px))` and supply solid `#11141C` backings for legacy and low-power rendering contexts.
 
 ---
 
