@@ -1,0 +1,95 @@
+{
+  "identity": {
+    "name": "aeobility-agent",
+    "displayName": "AEObility Autonomous Agent",
+    "version": "1.0.0",
+    "description": "Autonomous agent discovery and execution interface for Answer Engine Optimisation (AEO), AI search visibility diagnostics, and canonical brand knowledge graph retrieval.",
+    "canonicalUrl": "https://aeobility.com.au",
+    "provider": {
+      "name": "AEObility",
+      "legalName": "Vincent Baker",
+      "founder": "Vincent Baker",
+      "founderProfile": "https://aeobility.com.au/vince-baker",
+      "supportContact": "mailto:hello@aeobility.com.au",
+      "location": "Perth, Western Australia"
+    }
+  },
+  "documentation": {
+    "canonicalDocs": "https://aeobility.com.au/docs",
+    "llmsTxt": "https://aeobility.com.au/llms.txt",
+    "llmsFullTxt": "https://aeobility.com.au/llms-full.txt",
+    "brandFacts": "https://aeobility.com.au/brand-facts",
+    "agentsSpec": "https://aeobility.com.au/AGENTS.md",
+    "apiCatalog": "https://aeobility.com.au/.well-known/api-catalog",
+    "openApiSpec": "https://aeobility.com.au/openapi.json"
+  },
+  "capabilities": {
+    "vectorSearch": {
+      "description": "Grounded cosine similarity search against the 60-node AEObility Information Architecture and SLM knowledge base.",
+      "supportedFormats": ["application/json", "text/plain"],
+      "latencyTargetMs": 100
+    },
+    "telemetryDiagnostic": {
+      "description": "5-dimensional technical visibility audit measuring entity density, Schema.org coverage, vector proximity, and RAG survival probability.",
+      "supportedFormats": ["application/json"],
+      "maxDurationSeconds": 60
+    },
+    "brandConsensus": {
+      "description": "Canonical entity verification ledger providing immutable brand facts, founder provenance, and sprint parameters to mitigate AI hallucination.",
+      "supportedFormats": ["application/json", "text/markdown"]
+    },
+    "mcpTools": {
+      "description": "Model Context Protocol tools and Schema.org knowledge graph resources for autonomous tool-calling.",
+      "supportedFormats": ["application/json"]
+    }
+  },
+  "guardrails": {
+    "language": "Strictly enforce Australian English (AU) spelling across text and metadata (e.g. optimisation, specialises, organisation, behaviour).",
+    "grounding": "Zero hallucination tolerance. Every technical claim must be grounded in verified entity graphs, atomic answer blocks, or real-time telemetry.",
+    "conciseness": "Direct answer in the first sentence. Responses restricted to 2-3 sentences unless explicit elaboration is requested.",
+    "typography": "Clean punctuation and standard hyphens only. Never use em dashes.",
+    "commercialTransparency": "Fixed-scope sprint deliverables with upfront pricing. No opaque agency retainers or lock-in contracts.",
+    "rateLimiting": "60 requests per minute per IP address on public search and telemetry endpoints.",
+    "privacy": "No private client crawl data is retained or shared. Ephemeral cache entries expire after 24 hours."
+  },
+  "callableInterfaces": {
+    "a2a": {
+      "type": "agent-card",
+      "protocol": "A2A v1.0",
+      "url": "https://aeobility.com.au/.well-known/agent-card.json",
+      "description": "Official Agent-to-Agent (A2A) protocol discovery manifest and interface registry."
+    },
+    "rest": [
+      {
+        "name": "vector-search-answer",
+        "url": "https://aeobility.com.au/api/search/answer",
+        "methods": ["GET", "POST"],
+        "description": "Grounded vector answer generation and entity matching.",
+        "inputModes": ["text/plain", "application/json"],
+        "outputModes": ["application/json", "text/plain"]
+      },
+      {
+        "name": "visibility-diagnostic",
+        "url": "https://aeobility.com.au/api/diagnostic",
+        "methods": ["GET", "POST"],
+        "description": "AI visibility and entity density diagnostic audit engine.",
+        "inputModes": ["application/json"],
+        "outputModes": ["application/json"]
+      },
+      {
+        "name": "conversational-dialogue",
+        "url": "https://aeobility.com.au/api/chat",
+        "methods": ["GET", "POST"],
+        "description": "AI Bill conversational diagnostic dialogue endpoint.",
+        "inputModes": ["application/json", "text/plain"],
+        "outputModes": ["application/json", "text/plain"]
+      }
+    ],
+    "mcp": {
+      "name": "aeobility-mcp-server",
+      "url": "https://aeobility.com.au/api/mcp",
+      "serverCard": "https://aeobility.com.au/.well-known/mcp/server-card.json",
+      "description": "Model Context Protocol server providing get_organization_entity, get_founder_entity, and query_knowledge_hub_node tools."
+    }
+  }
+}

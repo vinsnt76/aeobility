@@ -17,6 +17,17 @@
       ]
     },
     {
+      "identifier": "urn:air:aeobility.com.au:agent:generic",
+      "displayName": "AEObility AI Agent Discovery Manifest",
+      "type": "application/json",
+      "url": "https://aeobility.com.au/.well-known/ai-agent.json",
+      "representativeQueries": [
+        "discover AEObility agent capabilities and guardrails",
+        "explore AEObility callable interfaces and documentation",
+        "verify AEObility autonomous agent identity"
+      ]
+    },
+    {
       "identifier": "urn:air:aeobility.com.au:agent:diagnostic",
       "displayName": "AEObility A2A Agent",
       "type": "application/agent-card+json",
