@@ -9,7 +9,6 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { getAeoBlueprintSchemaGraph } from '@/lib/schema/aeoBlueprint';
-import FieldNoteCase from '@/components/blueprint/FieldNoteCase';
 import BlueprintOrderForm from '@/components/blueprint/BlueprintOrderForm';
 import { 
   ArrowRight, 
@@ -360,9 +359,6 @@ export default function AEOBlueprintPage() {
               </div>
             </div>
           </section>
-
-          {/* 4. Local WA Commercial Grounding (Balcatta / Osborne Park Case) */}
-          <FieldNoteCase />
 
           {/* 5. Section: The 100% Risk-Reversal Credit Policy & Process */}
           <section id="blueprint-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
