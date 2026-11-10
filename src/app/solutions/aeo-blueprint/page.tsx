@@ -161,12 +161,9 @@ export default function AEOBlueprintPage() {
               STRATEGIC DIAGNOSTIC AUDIT (BPSTRAT)
             </p>
 
-            {/* H1 Storyline */}
-            <h1 id="blueprint-hero" className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 font-soehne-breit">
-              <span className="block text-slate-400 text-lg sm:text-xl font-mono uppercase tracking-wider mb-2 font-normal">
-                90-Day AI Roadmap
-              </span>
-              Make search engines cite your brand
+            {/* H1 Storyline with Headline Formula */}
+            <h1 id="blueprint-hero" className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 font-soehne-breit max-w-3xl mx-auto leading-tight">
+              Make AI Search Engines Cite Your Brand <span className="text-gradient-aeo">in 90 Days Without Monthly Retainers</span>
             </h1>
 
             {/* Banner Container with Image Backdrop & Overlaid Direct Answer Block */}
@@ -184,33 +181,41 @@ export default function AEOBlueprintPage() {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-zinc-950/75 to-black/90" />
               </div>
 
-              {/* Glassmorphic Executive Summary Overlay Card */}
+              {/* Glassmorphic Executive Summary Overlay Card (Layer Tier L2) */}
               <aside 
-                className="relative z-10 p-6 sm:p-8 md:p-10 backdrop-blur-md bg-slate-900/60 border border-cyan-500/20 border-t-2 border-t-cyan-400/50 text-left space-y-6"
+                className="relative z-10 p-6 sm:p-8 md:p-10 backdrop-blur-xl bg-slate-900/70 border border-white/10 border-t-2 border-t-cyan-400/60 text-left space-y-6 shadow-2xl transform translate-z-0 rounded-2xl"
                 aria-label="Executive Summary"
                 data-agent-purpose="direct-answer"
               >
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">
                     <Compass className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span>Executive Summary &amp; Direct Answer</span>
+                    <span>Executive Summary &amp; Atomic Answer Block</span>
                   </div>
-                  <p className="text-base sm:text-lg leading-relaxed text-slate-200 font-normal font-sans">
-                    The <strong className="text-white font-semibold">Strategic Blueprint</strong> is a comprehensive 90-day technical audit and roadmap designed to clarify how ChatGPT, Gemini, Perplexity, and Google AI Overviews discover and parse your brand. Delivered in 5 business days for a fixed fee of $995 AUD ex. GST, 100% of your fee is credited toward implementation sprints.
-                  </p>
+                  <div className="space-y-2.5 text-sm sm:text-base leading-relaxed text-slate-200 font-sans font-normal">
+                    <p>
+                      <strong className="text-white font-semibold">Verdict:</strong> The Strategic Blueprint (BPSTRAT) is a standalone $995 AUD ex. GST deep technical audit and 90-day execution roadmap that identifies entity gaps, schema errors, and LLM answer-retrieval blind spots.
+                    </p>
+                    <p>
+                      <strong className="text-white font-semibold">Mechanism:</strong> Completed within 5-10 business days, the blueprint delivers a site crawl review, knowledge graph audit, and prioritised action plan.
+                    </p>
+                    <p>
+                      <strong className="text-white font-semibold">Risk Reversal:</strong> 100% of your $995 Blueprint fee is credited toward eligible AEO implementation sprints within 60 calendar days.
+                    </p>
+                  </div>
                 </div>
 
                 {/* Von Restorff Isolated SLA & Guarantee Stat Blocks with Oversized Numerals */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-white/10 font-mono">
-                  <div className="p-4 rounded-xl bg-black/50 border border-white/5 space-y-1">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-cyan-300 block tracking-tight">5 Days</span>
+                  <div className="p-4 rounded-xl bg-black/60 border border-white/10 space-y-1">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-cyan-300 block tracking-tight">5-10 Days</span>
                     <span className="text-[11px] font-mono uppercase tracking-wider text-slate-300 block">Delivery Turnaround</span>
                   </div>
-                  <div className="p-4 rounded-xl bg-black/50 border border-white/5 space-y-1">
+                  <div className="p-4 rounded-xl bg-black/60 border border-white/10 space-y-1">
                     <span className="text-3xl sm:text-4xl font-extrabold text-white block tracking-tight">$995</span>
                     <span className="text-[11px] font-mono uppercase tracking-wider text-slate-300 block">Fixed Investment <span className="text-zinc-500 font-sans text-[10px]">(Zero Retainers)</span></span>
                   </div>
-                  <div className="p-4 rounded-xl bg-black/50 border border-white/5 space-y-1">
+                  <div className="p-4 rounded-xl bg-black/60 border border-white/10 space-y-1">
                     <span className="text-3xl sm:text-4xl font-extrabold text-emerald-400 block tracking-tight">100%</span>
                     <span className="text-[11px] font-mono uppercase tracking-wider text-slate-300 block">Fee Credited Toward Sprints</span>
                   </div>
@@ -222,7 +227,7 @@ export default function AEOBlueprintPage() {
             <div className="space-y-3 pt-2 max-w-xl mx-auto">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a 
-                  href="#order-blueprint" 
+                  href="#blueprint-contact-form" 
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.35)] cursor-pointer"
                   data-testid="btn-order-blueprint"
                   data-agent-action="order-blueprint"
