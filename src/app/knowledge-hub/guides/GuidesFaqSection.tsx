@@ -4,7 +4,7 @@ import { HelpCircle, ChevronDown } from 'lucide-react';
 
 export interface FaqItem {
   question: string;
-  answerHtml: React.ReactNode;
+  answer: React.ReactNode;
 }
 
 export interface FaqCluster {
@@ -12,7 +12,7 @@ export interface FaqCluster {
   items: FaqItem[];
 }
 
-export const FAQ_CLUSTERS_DATA = [
+export const FAQ_CLUSTERS_DATA: FaqCluster[] = [
   {
     title: "AEO Fundamentals & Principles",
     items: [
@@ -170,7 +170,7 @@ export default function GuidesFaqSection() {
                     <ChevronDown className="w-4 h-4 text-zinc-400 group-hover:text-aeo-cyan group-open:rotate-180 transition-transform duration-200 shrink-0" />
                   </summary>
                   <div className="mt-3 pt-3 border-t border-white/5 text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed font-light">
-                    {item.answerHtml || item.answer}
+                    {item.answer}
                   </div>
                 </details>
               ))}
@@ -181,4 +181,3 @@ export default function GuidesFaqSection() {
     </section>
   );
 }
-
