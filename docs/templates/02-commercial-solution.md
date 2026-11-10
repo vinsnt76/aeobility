@@ -39,14 +39,34 @@ export const metadata: Metadata = {
 ## 2. AEO & GEO Retrieval Grounding Specifications
 
 * **Intent Family:** *Commercial Commitment & Risk-Reversal Intent* (Prompts: *"AEObility Blueprint cost", "AEO sprint deliverables", "risk-free AEO roadmap", "AEO fee crediting policy"*).
+* **Atomic Answer Block (First-Fold Retrieval Anchor):**
+  - **Position:** Positioned immediately beneath the H1 / hero area and overlaid on the hero banner as an accessible, machine-extractable container (`<aside aria-label="Executive Summary" data-agent-purpose="direct-answer">`).
+  - **Verdict:** The Strategic Blueprint (BPSTRAT) is a standalone $995 AUD ex. GST deep technical audit and 90-day execution roadmap that identifies entity gaps, schema errors, and LLM answer-retrieval blind spots.
+  - **Mechanism:** Completed within 5-10 business days, the blueprint delivers a site crawl review, knowledge graph audit, and prioritised action plan.
+  - **Risk Reversal:** 100% of your $995 Blueprint fee is credited toward eligible AEO implementation sprints within 60 calendar days.
+  - **Token Budget:** ~70 words (~90 tokens), engineered for direct LLM passage extraction and zero-shot retrieval grounding.
+* **Core Conversion & Narrative Architecture Rules:**
+  - **Lead with the problem, not the product:** Frame copy around buyer pain, search engine behavioural shifts, and wasted agency retainer costs rather than self-serving tooling or agency jargon. Lead with the structural failure of legacy retainers before detailing blueprint deliverables.
+  - **Mirror audience language:** Use the exact terminology, frustrations, and phrasing searchers, founders, and marketing directors express when diagnosing lost search visibility (e.g. *"AI search engines cite our competitors"*, *"paying monthly retainers with zero visibility"*, *"disappearing from ChatGPT Search"*).
+  - **One page, one goal:** Keep the core conversion path singular and unified: commit to the diagnostic audit (Primary: `Order $995 Blueprint`) or verify baseline visibility (Secondary: `Run Free Scan` / `View Sample 90-Day Roadmap`). Eliminate competing secondary funnels or distracting off-ramps.
+  - **Headline Formula:** `[End result wanted] + [Time frame] + [Without the thing they fear]`
+    - Structure page headlines to deliver clear, risk-free velocity.
+    - *Example H1:* "Make AI Search Engines Cite Your Brand in 90 Days Without Trapping Your Business in Monthly Agency Retainers"
+    - *Example H2:* "Fix AI Retrieval & Knowledge Graph Gaps in 5 Days Without Paying Open-Ended Retainers"
+  - **Design for scannability:**
+    - *Von Restorff Stat Numerals:* Standalone stat blocks with oversized numerals for SLA, price, and risk-reversal guarantee (`5 Days Delivery Turnaround`, `$995 Fixed Investment`, `100% Fee Credited Back`).
+    - *Asymmetric Card Contrast:* Dim legacy retainer models to muted charcoal (`bg-zinc-950/40 border-white/5 opacity-70`), and illuminate generative synthesis with brand cyan glow (`bg-gradient-to-b from-cyan-950/40 via-slate-900/90 to-zinc-950 border-cyan-400/60 ring-1 ring-cyan-400/30 shadow-[0_0_30px_rgba(0,229,255,0.15)]`).
+    - *Parallel Micro-Layouts in Deliverables:* Re-chunk deliverable cards into parallel schemas: `Scope` (1-line summary), `What We Fix` (2-3 concise bullet points), and `Deliverable:` badge.
+    - *Explicit Calendar Delivery Milestones:* Clear day markers (`Day 1: URL Intake & Scope`, `Days 2-4: Deep Entity Diagnostics`, `Day 5: Executive Walkthrough & Handover`).
+    - *Standardised Comparison Table:* Standardised attribute rows (`Scope`, `Turnaround`, `Deliverable`, `Credit-Back Eligibility`, `Investment`) with the Strategic Blueprint column prominently highlighted as the diagnostic foundation.
 * **Semantic Density Architecture:**
   - 100% Fee-Crediting Guarantee formula explicitly declared in exact figures (`100% of your $995 Blueprint fee is credited toward eligible implementation sprints`).
-  - Step-by-step 4-week execution timeline mapping concrete weekly outputs (Week 1 Baseline Audit $\rightarrow$ Week 2 Entity Mapping $\rightarrow$ Week 3 Scorecard $\rightarrow$ Week 4 90-Day Roadmap Presentation).
+  - Step-by-step 3-step delivery workflow mapping concrete calendar outputs (`Day 1` URL Intake $\rightarrow$ `Days 2-4` Deep Entity Diagnostics $\rightarrow$ `Day 5` 45-Minute Walkthrough & 90-Day Roadmap Presentation).
   - 3-Tier service comparison table comparing Micro-Sprints, Foundation Tier, and Diagnostic Blueprint. Zero vague agency promises.
 * **Positional Bias Mitigation:**
-  - *Page-Level Primacy:* The 100% fee-crediting guarantee and $995 flat rate are placed in the Hero eyebrow and subhead within the first 60 words above the fold.
-  - *Immediate Triage:* The `"Which option fits your current priority?"` decision triage strip sits directly beneath the hero image to capture user intent before long scroll.
-  - *Recency:* The bottom section features the direct order form anchored to the fee-credit reassurance notice.
+  - *Page-Level Primacy:* The 100% fee-crediting guarantee and $995 flat rate are placed in the Hero eyebrow, Atomic Answer Block, and Von Restorff stat blocks above the fold within the first 60 words.
+  - *Immediate Triage:* The `"Which option fits your current priority?"` decision triage strip sits directly beneath the delivery workflow to capture user intent before long scroll.
+  - *Recency:* The bottom section features the direct order form anchored to the 3-point de-risking reassurance notice.
 * **Entity Density & Tri-Graph Architecture:**
   - Core JSON-LD `@graph` defines `Product`, `OfferCatalog`, `FAQPage`.
   - Canonical Tri-Graph Triples:
@@ -75,31 +95,42 @@ export const metadata: Metadata = {
 2. **Breadcrumbs (`<Breadcrumbs />`)**
 3. **Solution Hero Section (`<section id="hero">`)**:
    - Single Geist Mono badge with `Compass` icon (`font-mono text-xs uppercase text-cyan-300`).
-   - Single `<h1>` in Söhne Bold: `The AEObility <span className="text-gradient-aeo">Blueprint</span>`.
+   - Single `<h1>` adhering to formula `[End result wanted] + [Time frame] + [Without the thing they fear]`:
+     `Make AI Search Engines Cite Your Brand <span className="text-gradient-aeo">in 90 Days Without Monthly Retainers</span>`.
    - Subhead with fee credit guarantee line: `Get a deep technical audit and a practical 90-day strategic roadmap. 100% of your $995 Blueprint fee is credited toward eligible implementation sprints.`
-   - Price indicator strip: `Standalone Audit: $995 AUD ex. GST | 100% Fee Credited to Eligible Sprints`.
-   - Featured 1200x800 `.webp` hero banner with overlaid dark glass CTA card:
-     - Left: Delivery commitment (`Typical delivery: 7–10 business days from confirmed access`).
-     - Right: Dual action buttons (Primary: `Order $995 Blueprint`, Secondary: `Run Free Scan`).
-4. **Recommended Decision Strip (`<section id="decision-strip">`)**:
+   - Atomic Answer Block overlaid on featured hero banner:
+     - Machine-extractable container (`<aside aria-label="Executive Summary" data-agent-purpose="direct-answer">`).
+     - Contains exact Verdict, Mechanism, and Risk Reversal.
+     - 3-column micro-metric strip: `Turnaround: 5-10 Business Days`, `Investment: $995 AUD ex. GST`, `Risk Reversal: 100% Fee Credited Back`.
+   - Standalone Von Restorff Stat Numerals:
+     - Oversized numerals for high scannability: `5 Days` Turnaround, `$995` Flat Investment, `100%` Credited Back.
+   - Dual action buttons: Primary `Order $995 Blueprint`, Secondary `View Sample 90-Day Roadmap` / `Run Free Scan`.
+4. **The Agency Retainer Trap vs. One-Time Diagnostic (`<section id="retainer-problem">`)**:
+   - Leads with the problem, not the product. Explains why open-ended monthly contracts fail AI answer engines.
+   - Asymmetric contrast cards: Dimmed legacy retainer model vs. illuminated generative synthesis model.
+5. **Deliverables Breakdown Grid (`<section id="bpstrat-deliverables">`)**:
+   - 4 modular cards rendered in parallel micro-layout:
+     - `Scope`: 1-line summary.
+     - `What We Fix`: 2-3 concise technical bullet points.
+     - `Deliverable:` exact asset handed over (`Raw JSON-LD snippet`, `Scorecard PDF`, `Sprint Matrix`, `Passage Blueprint`).
+     - Proof snippet anchor on the Roadmap card linking to live evidence.
+6. **Sprint Execution Workflow (`<section id="blueprint-process">`)**:
+   - 3-step timeline with explicit calendar markers: `Day 1` URL Intake & Scope $\rightarrow$ `Days 2-4` Deep Entity Diagnostics $\rightarrow$ `Day 5` 45-Minute Walkthrough & Handover.
+   - Prominently elevated 100% Risk-Reversal Implementation Credit callout box.
+7. **Service Fit & Comparison Matrix (`<section id="decision-strip">`, `<div id="blueprint-comparison">`)**:
    - Section heading (`h2`): `Which option fits your current priority?`
    - 3 triage cards mapping business situations to exact solutions:
      - Unsure what limits visibility $\rightarrow$ *Strategic Blueprint ($995)*.
      - Single priority gap identified $\rightarrow$ *Micro-Sprint ($495)*.
      - Connected multi-page overhaul $\rightarrow$ *AEO Foundation ($1,990)*.
-5. **Deliverables Breakdown Grid (`<section id="bpstrat-deliverables">`)**:
-   - 4 modular cards with passage anchors: `1. Complete Digital Presence Review`, `2. Technical & Schema Gap Analysis`, `3. Visibility & Health Scorecard`, `4. 90-Day Execution Roadmap`.
-6. **3-Tier Service Comparison Matrix (`<div id="blueprint-comparison">`)**:
-   - Non-translucent, opaque table comparing Target Scope, Deliverables, Best For, and Price (ex. GST).
-7. **Sprint Execution Timeline (`<section id="blueprint-timeline">`)**:
-   - 4-week milestone progression with Geist Mono step badges (`01`, `02`, `03`, `04`).
-8. **Risk Reversal & Guarantees Callout**:
-   - High-contrast callout detailing the 60-day fee credit eligibility window and fixed-scope pledge.
-9. **FAQ Accordion (`<FaqAccordion faqs={faqs} />`)**:
-   - Minimum 6 solution-specific FAQs wrapped in `FAQPage` schema.
-10. **Blueprint Order & Lead Form (`<section id="blueprint-contact-form">`)**:
-    - Pre-selected service dropdown defaulting to `blueprint`, triggering GA4 `generate_lead`.
-11. **Footer (`<Footer />`)**.
+   - Standardised comparison table with attribute rows: `Scope`, `Turnaround`, `Deliverable`, `Credit-Back Eligibility`, `Investment`.
+   - Strategic Blueprint column prominently highlighted with cyan border framing as the diagnostic foundation.
+8. **Direct Order Form with De-Risking Reassurances (`<section id="blueprint-contact-form">`)**:
+   - 3-field streamlined intake with locked package indicator (`BPSTRAT-995`).
+   - 3 reassurance bullet points directly below submit trigger: scope confirmation within 4 hours before invoicing, 100% credit applied automatically to follow-on sprints, and 100% IP code ownership.
+9. **FAQ Accordion (`<section id="faq-blueprint">`)**:
+   - Minimum 6 solution-specific FAQs wrapped in `FAQPage` schema. Default to collapsed (`null`) for clean initial scan.
+10. **Footer (`<Footer />`)**.
 
 ---
 
@@ -349,10 +380,16 @@ export default function AEOBlueprintPage() {
 
 - [ ] **Server Component Root:** No `'use client'` at root of `page.tsx`; standard `metadata` exported.
 - [ ] **Exact Single Eyebrow:** Exactly one mono pill badge above the hero headline.
-- [ ] **Single H1:** Exactly one `<h1>` in Söhne Bold: `Strategic Blueprint`.
-- [ ] **Reserved Anchors Intact:** Verified `#hero`, `#decision-strip`, `#bpstrat-deliverables`, `#blueprint-comparison`, `#blueprint-timeline`, `#blueprint-contact-form`.
-- [ ] **AU Spelling Verified:** `optimisation`, `specialises`, `organisation`, `behaviour`.
-- [ ] **Fee Crediting Line Present:** `100% of your $995 Blueprint fee is credited toward eligible implementation sprints.`
+- [ ] **Single H1:** Exactly one `<h1>` in Söhne Bold following formula `[End result wanted] + [Time frame] + [Without the thing they fear]`.
+- [ ] **Atomic Answer Block Present:** First-fold `<aside>` contains exact Verdict, Mechanism, and Risk Reversal.
+- [ ] **Lead with Problem, Not Product:** Problem-first framing highlighting retainer model breakdown before blueprint features.
+- [ ] **Mirror Audience Language:** Captures exact buyer search queries, complaints, and citation gap terminology.
+- [ ] **One Page, One Goal:** Clear unified decision path to `$995 Blueprint` order or sample roadmap verification without secondary distraction.
+- [ ] **Scannability Engineered:** Standalone Von Restorff stat numerals, asymmetric card contrast, parallel micro-layouts, and standardised comparison rows.
+- [ ] **Reserved Anchors Intact:** Verified `#hero`, `#decision-strip`, `#bpstrat-deliverables`, `#blueprint-comparison`, `#blueprint-process`, `#blueprint-contact-form`.
+- [ ] **AU Spelling Verified:** `optimisation`, `specialises`, `organisation`, `behaviour`, `prioritised`.
+- [ ] **Zero Em Dashes:** Clean hyphens, commas, or colons only; no em dashes (`—`).
+- [ ] **Fee Crediting Line Present:** `100% of your $995 Blueprint fee is credited toward eligible implementation sprints within 60 calendar days.`
 - [ ] **Button Geometry:** Primary buttons capped at 2–4 words (`Order $995 Blueprint`, `Run Free Scan`).
 - [ ] **Solid Breakout Active:** Primary button is solid/gradient; table is on solid `#080B12` base.
 - [ ] **Body Text $\ge$ 16px:** Continuous reading copy set to Geist Sans Medium 500 at 16px minimum.
