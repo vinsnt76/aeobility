@@ -189,11 +189,7 @@ export default function Hero() {
             {/* Interactive Graph Mount */}
             <div
               id="hero-node-canvas"
-              className="relative z-10 w-full h-full pointer-events-auto"
-              style={{
-                maskImage: 'linear-gradient(to right, transparent, black 15%)',
-                WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%)',
-              }}
+              className="relative z-10 w-full h-full pointer-events-auto [mask-image:linear-gradient(to_right,transparent,black_15%)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_15%)]"
             >
               <GraphVisual />
             </div>
