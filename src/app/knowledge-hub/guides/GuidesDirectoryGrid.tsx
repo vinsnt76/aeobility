@@ -27,7 +27,7 @@ export interface GuideItem {
   type: string;
   readTime: string;
   audience: string;
-  complexity: 'Foundational Primer' | 'Intermediate Architecture' | 'Intermediate Research' | 'Mathematical Spec' | 'Strategic Diagnostic' | 'Advanced RAG';
+  complexity: 'Foundational Primer' | 'Intermediate Architecture' | 'Intermediate Research' | 'Deep Architecture' | 'Strategic Framework' | 'Advanced RAG';
   isFlagship?: boolean;
   flagshipBadge?: string;
   glyph: React.ComponentType<{ className?: string }>;
@@ -40,9 +40,9 @@ const GUIDES_DATA: GuideItem[] = [
     id: 'aeo-core-principles',
     title: 'Answer Engine Optimisation Core Principles',
     category: 'Core AEO',
-    categoryLabel: 'AEO Fundamentals & RAG Mechanics',
+    categoryLabel: 'AEO Fundamentals & Search Architecture',
     description: 'Foundational technical guide on how AI search bots parse web assets for direct citation extraction. Master positional bias heuristics, semantic token density, and atomic answer block engineering.',
-    href: '/knowledge-hub/aeo',
+    href: '/knowledge-hub/guides/aeo',
     type: 'Core Primer',
     readTime: '6 min',
     audience: 'Founders & Technical Growth Leads',
@@ -57,22 +57,22 @@ const GUIDES_DATA: GuideItem[] = [
     id: 'telemetry-diagnostic-architecture',
     title: 'Telemetry Diagnostic Tool: Technical Architecture Guide',
     category: 'Diagnostic Frameworks',
-    categoryLabel: 'System Specification & Vector Math',
+    categoryLabel: 'Search Architecture & Scoring',
     description: 'Deep-dive technical specification detailing vector mapping infrastructure, text-embedding-004 RAG dilution mitigation, 5-tier scoring math, AI Bill ingestion, and NLWeb/MCP protocols.',
     href: '/knowledge-hub/articles/telemetry-diagnostic-architecture',
     type: 'Technical Spec',
     readTime: '8 min',
     audience: 'Data Engineers & System Architects',
-    complexity: 'Mathematical Spec',
+    complexity: 'Deep Architecture',
     glyph: Cpu,
-    dataBadge: 'sim(q, d) = cos(θ) • dim: 768 • MCP RPC',
+    dataBadge: '768-Dim Embeddings • MCP Protocol',
     actionText: 'Explore Architecture'
   },
   {
     id: 'positional-bias-in-retrieval',
     title: 'What Is Positional Bias in Retrieval and Answer Engines?',
     category: 'RAG & Retrieval',
-    categoryLabel: 'Dense Retrieval & LLM Bias',
+    categoryLabel: 'Dense Retrieval & Ranking Bias',
     description: 'Understand positional bias heuristics across LLMs and dense retrieval systems. Learn how chunk position and context degradation impact LLM citation visibility, with practical audit methods.',
     href: '/knowledge-hub/articles/positional-bias-in-retrieval',
     type: 'Research Guide',
@@ -80,14 +80,14 @@ const GUIDES_DATA: GuideItem[] = [
     audience: 'Technical SEOs & AI Engineers',
     complexity: 'Intermediate Research',
     glyph: Target,
-    dataBadge: 'P(cite) ∝ exp(-k · rank) • Top 30% Chunk',
+    dataBadge: 'Chunk Visibility • Ranking Decay',
     actionText: 'Explore Research'
   },
   {
     id: 'structured-data-query-fan-out',
     title: 'How Structured Data Helps You Survive the Query Fan-Out',
     category: 'Core AEO',
-    categoryLabel: 'AEO / Structured Data',
+    categoryLabel: 'Structured Data & Entity Graphs',
     description: 'How decoupled JSON-LD entity graphs prevent entity hallucination when search engines fan out user prompts into parallel sub-queries across disparate vector indexes.',
     href: '/knowledge-hub/articles/structured-data-query-fan-out',
     type: 'Technical Architecture',
@@ -95,14 +95,14 @@ const GUIDES_DATA: GuideItem[] = [
     audience: 'Web Developers & Technical SEOs',
     complexity: 'Intermediate Architecture',
     glyph: GitGraph,
-    dataBadge: 'JSON-LD @graph • RDF Triples • Fan-Out: λ_k',
+    dataBadge: 'Prompt Fan-Out & Schema Mapping',
     actionText: 'Explore Architecture'
   },
   {
     id: 'retrieval-augmented-generation',
     title: 'RAG, Answer Engines & Why Machine‑Readable Content Matters',
     category: 'RAG & Retrieval',
-    categoryLabel: 'RAG Architecture',
+    categoryLabel: 'RAG Architecture & Extraction',
     description: 'Comprehensive architectural guide to Retrieval-Augmented Generation (RAG). Learn why restructuring unstructured prose into deterministic machine-readable units preserves citation fidelity.',
     href: '/knowledge-hub/articles/retrieval-augmented-generation',
     type: 'RAG Architecture',
@@ -110,7 +110,7 @@ const GUIDES_DATA: GuideItem[] = [
     audience: 'Data Architects & Software Engineers',
     complexity: 'Advanced RAG',
     glyph: Layers,
-    dataBadge: 'Chunk: 90t • Cosine Proximity: 0.94 • Zero Drift',
+    dataBadge: 'Chunk Extraction • Cosine: 0.94 • Zero Citation Drift',
     actionText: 'Explore Architecture'
   },
   {
@@ -125,22 +125,22 @@ const GUIDES_DATA: GuideItem[] = [
     audience: 'Founders & Marketing Directors',
     complexity: 'Foundational Primer',
     glyph: Search,
-    dataBadge: 'Hybrid Search: BM25 Lexical + Dense Vectors',
+    dataBadge: 'Hybrid Search • BM25 Lexical + Dense Vectors',
     actionText: 'Explore Guide'
   },
   {
     id: 'competitor-overlap-framework',
     title: 'Competitor Overlap & Semantic Dominance Framework',
     category: 'Diagnostic Frameworks',
-    categoryLabel: 'Diagnostic Methodology',
+    categoryLabel: 'Competitive Diagnostic Methodology',
     description: 'Methodological framework for measuring semantic vector overlap against direct competitors in answer engines, identifying citation gaps, and engineering decisive topical dominance.',
     href: '/knowledge-hub/articles/competitor-overlap-semantic-dominance-framework',
     type: 'Diagnostic Methodology',
     readTime: '7 min',
     audience: 'Technical Directors & Digital Strategists',
-    complexity: 'Strategic Diagnostic',
+    complexity: 'Strategic Framework',
     glyph: Scale,
-    dataBadge: 'Matrix: Δ(E_A, E_B) • Semantic Dominance > 85%',
+    dataBadge: 'Vector Overlap Matrix • Dominance > 85%',
     actionText: 'Explore Methodology'
   }
 ];
@@ -184,7 +184,7 @@ export default function GuidesDirectoryGrid() {
             <SlidersHorizontal className="w-3.5 h-3.5" />
           </div>
           <span className="text-xs font-mono uppercase tracking-wider text-zinc-400 font-semibold">
-            Filter Corridors:
+            Filter by Topic:
           </span>
         </div>
 
@@ -231,7 +231,7 @@ export default function GuidesDirectoryGrid() {
             <Link
               key={guide.id}
               href={guide.href}
-              className={`relative isolate overflow-hidden rounded-2xl p-6 sm:p-7 backdrop-blur-md transition-all duration-300 flex flex-col justify-between group shadow-xl cursor-pointer ${
+              className={`relative isolate overflow-hidden rounded-2xl p-6 sm:p-8 pt-7 sm:pt-9 backdrop-blur-md transition-all duration-300 flex flex-col justify-between group shadow-xl cursor-pointer ${
                 isFlagship
                   ? 'border border-aeo-cyan/50 bg-gradient-to-br from-aeo-cyan/[0.08] via-white/[0.03] to-transparent shadow-[0_0_35px_rgba(0,229,255,0.12)] hover:border-aeo-cyan hover:shadow-[0_0_45px_rgba(0,229,255,0.25)]'
                   : 'border border-white/10 bg-white/[0.03] hover:border-aeo-cyan/40 hover:bg-white/[0.05] hover:shadow-[0_12px_40px_rgba(0,0,0,0.6)]'
@@ -244,27 +244,17 @@ export default function GuidesDirectoryGrid() {
                 }`} 
               />
 
-              {/* Abstract Data Badge Watermark (Mathematical / Architecture Signature) */}
-              <div 
-                className="absolute right-4 bottom-14 font-mono text-[10px] text-zinc-600/20 select-none pointer-events-none tracking-tight group-hover:text-aeo-cyan/20 transition-colors hidden sm:block max-w-[240px] text-right truncate"
-                aria-hidden="true"
-              >
-                {guide.dataBadge}
-              </div>
-
               {/* Card Main Body */}
               <div className="space-y-4">
-                {/* Header Row: Glyph + Category Pill / Flagship Badge */}
-                <div className="flex items-center justify-between gap-3">
+                {/* Header Row: Glyph + Clean Category Pill / Flagship Badge */}
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-aeo-cyan group-hover:scale-105 group-hover:border-aeo-cyan/40 group-hover:bg-aeo-cyan/10 transition-all shrink-0">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <div>
-                      <span className="text-[11px] font-mono font-medium text-zinc-400 uppercase tracking-widest bg-white/5 px-2.5 py-0.5 rounded border border-white/10">
-                        {guide.categoryLabel}
-                      </span>
-                    </div>
+                    <span className="text-[11px] font-mono font-medium text-zinc-300 uppercase tracking-wider bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+                      {guide.categoryLabel}
+                    </span>
                   </div>
 
                   {isFlagship && (
@@ -276,7 +266,7 @@ export default function GuidesDirectoryGrid() {
                 </div>
 
                 {/* Guide Title (Primary Scannable Anchor) */}
-                <h2 className="text-xl font-bold text-white group-hover:text-aeo-cyan transition-colors leading-snug tracking-tight">
+                <h2 className="text-xl sm:text-[22px] font-bold text-white group-hover:text-aeo-cyan transition-colors leading-snug tracking-tight">
                   {guide.title}
                 </h2>
 
@@ -298,13 +288,18 @@ export default function GuidesDirectoryGrid() {
                 </div>
               </div>
 
-              {/* Card Footer: Metadata + Interactive Affordance */}
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between mt-5">
-                <span className="text-xs font-mono text-zinc-400">
-                  Read Time: <strong className="text-zinc-200">{guide.readTime}</strong>
-                </span>
+              {/* Card Footer: Metadata + Spec Pill + Interactive Affordance */}
+              <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 mt-6">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-mono text-zinc-400">
+                    Read Time: <strong className="text-zinc-200">{guide.readTime}</strong>
+                  </span>
+                  <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-mono text-zinc-400 bg-white/[0.04] border border-white/10 truncate max-w-[200px]">
+                    {guide.dataBadge}
+                  </span>
+                </div>
 
-                <span className="text-xs font-mono font-semibold text-aeo-cyan group-hover:text-white transition-colors inline-flex items-center gap-1.5">
+                <span className="text-xs font-mono font-semibold text-aeo-cyan group-hover:text-white transition-colors inline-flex items-center gap-1.5 shrink-0">
                   <span>{guide.actionText || 'Explore Architecture'}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
                 </span>
@@ -316,4 +311,3 @@ export default function GuidesDirectoryGrid() {
     </div>
   );
 }
-

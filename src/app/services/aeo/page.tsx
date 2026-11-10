@@ -118,6 +118,11 @@ export const AEO_CANONICAL_INTERNAL_LINKS = [
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
+    targetSlug: "/knowledge-hub/guides",
+    anchorText: "AEO Technical Guides Directory",
+    entityRelation: "http://schema.org/subjectOf"
+  },
+  {
     targetSlug: "/knowledge-hub/case-studies/aeo-geo-blueprint-90-days",
     anchorText: "first 90 days case study",
     entityRelation: "http://schema.org/subjectOf"
@@ -215,7 +220,7 @@ export default function AEORootPage() {
 
             <div className="space-y-3 max-w-3xl mx-auto">
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
-                Make your business easier for AI search to understand, trust, and cite. AEObility improves the structure, clarity, and verification of your website content for Google AI Overviews, ChatGPT Search, and Perplexity. Clear scope. Fixed pricing. No lock-in contracts.
+                Make your business easier for AI search to understand, trust, and cite. AEObility improves the structure, clarity, and verification of your website content for Google AI Overviews, ChatGPT Search, and Perplexity. Explore our step-by-step <Link href="/knowledge-hub/guides" className="text-teal-400 underline hover:text-teal-300 font-medium">AEO Guides</Link> for self-implementation frameworks, or partner with us for fixed-scope sprints with zero lock-in contracts.
               </p>
 
               {/* Author & Timestamp Provenance Bar */}

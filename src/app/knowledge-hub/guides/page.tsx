@@ -7,6 +7,8 @@ import SubNavPills from '@/components/navigation/SubNavPills';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import GuidesDirectoryGrid from './GuidesDirectoryGrid';
+import GuidesProofLoops from './GuidesProofLoops';
+import GuidesFaqSection from './GuidesFaqSection';
 
 export const metadata = {
   title: "AEO & AI Search Technical Guides | AEObility",
@@ -19,25 +21,102 @@ export const metadata = {
 export default function GuidesHubPage() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "@id": "https://aeobility.com.au/knowledge-hub/guides#webpage",
-    "name": "AEObility AEO & AI Search Technical Guides",
-    "description": "Access industry-standard technical guides on Answer Engine Optimisation (AEO), vector search architecture, RAG dilution mitigation, and entity authority.",
-    "url": "https://aeobility.com.au/knowledge-hub/guides",
-    "isPartOf": {
-      "@id": "https://aeobility.com.au/#website"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "@id": "https://aeobility.com.au/#organization",
-      "name": "AEObility",
-      "url": "https://aeobility.com.au"
-    }
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://aeobility.com.au/knowledge-hub/guides#webpage",
+        "name": "AEObility AEO & AI Search Technical Guides",
+        "description": "Access industry-standard technical guides on Answer Engine Optimisation (AEO), vector search architecture, RAG dilution mitigation, and entity authority.",
+        "url": "https://aeobility.com.au/knowledge-hub/guides",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/#website"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://aeobility.com.au/#organization",
+          "name": "AEObility",
+          "url": "https://aeobility.com.au"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aeobility.com.au/knowledge-hub/guides#faq",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/#website"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which core SEO principle serves as the foundation for AEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "High technical accessibility paired with structured entity architecture. Search bots and LLMs both require crawlable pages, clear hierarchical structure, and unambiguous Schema.org data to verify facts. Where traditional SEO uses this to index links, AEO uses it to synthesise and cite direct answers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the primary difference between SEO and AEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Traditional SEO focuses on ranking pages to generate website clicks. AEO (Answer Engine Optimisation) formats and proves information so conversational engines (Perplexity, ChatGPT Search, Gemini) extract and cite your brand as the definitive source."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do AEO platforms support entity authority building?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By replacing isolated keyword targeting with connected entity data. This involves establishing verified canonical profiles (using sameAs mapping to Wikidata and official registries), building focused topical clusters, and publishing consistent brand facts so AI search models identify your organisation as a verified source."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are semantic relationships critical for AI answer engines?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Large Language Models navigate relationships between entities rather than raw keywords. Clearly linking products, people, and topics via structured data prevents hallucinations and ensures the model retrieves accurate specifications during multi-step comparative searches."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you optimise specifically for Perplexity AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Optimisation for Perplexity prioritises fast indexation, clear entity verification, and concise 'answer-first' text formatting. Because Perplexity cites live web sources in real time, maintaining high factual density directly improves citation frequency."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is included in an AEO audit or diagnostic assessment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An assessment reviews brand entity clarity across public knowledge bases, schema markup integrity, direct answer extractability, citation frequency across AI engines, and technical accessibility for AI web crawlers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does local AEO matter for Australian businesses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI search platforms frequently answer location-based queries directly by recommending local service providers. Local AEO aligns regional schema, directory citations, and geographic entity maps so models accurately surface your business across Australian metropolitan and regional searches."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Answer Engine Optimisation suitable for small businesses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Small businesses often capture AI citations faster than legacy competitors by providing direct, unambiguous answers to specific user questions, paired with clear pricing and verified local business schema."
+            }
+          }
+        ]
+      }
+    ]
   };
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans selection:bg-aeo-cyan selection:text-black">
-      {/* JSON-LD Schema */}
+      {/* JSON-LD Schema (CollectionPage + FAQPage Graph) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -51,7 +130,7 @@ export default function GuidesHubPage() {
       <SubNavPills items={HUB_SUBNAV_MAPS.knowledgeHub} />
       <Breadcrumbs />
 
-      <main className="flex-grow max-w-6xl mx-auto px-6 py-12 w-full flex flex-col gap-10">
+      <main className="flex-grow max-w-6xl mx-auto px-6 py-12 w-full flex flex-col gap-12">
         {/* Header Hero */}
         <header className="space-y-4 border-b border-white/10 pb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aeo-cyan/10 border border-aeo-cyan/30 text-xs text-aeo-cyan font-mono font-semibold">
@@ -66,8 +145,14 @@ export default function GuidesHubPage() {
           </p>
         </header>
 
-        {/* Interactive Guides Grid with Faceted Filtering */}
+        {/* Interactive Guides Grid with Topic Filtering */}
         <GuidesDirectoryGrid />
+
+        {/* Radial Evidence & Validation Loops */}
+        <GuidesProofLoops />
+
+        {/* Search-Console-Driven FAQs */}
+        <GuidesFaqSection />
 
         {/* Consolidated Commercial Transition Banner (Single Dominant CTA) */}
         <section className="p-8 sm:p-10 bg-gradient-to-r from-aeo-cyan/10 via-neutral-900 to-transparent border border-aeo-cyan/30 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative isolate overflow-hidden">

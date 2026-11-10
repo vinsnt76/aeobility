@@ -147,7 +147,7 @@ export default function GeoMarketingPage() {
 
             <div className="space-y-3 max-w-3xl mx-auto text-base text-zinc-300 font-serif leading-relaxed">
               <p>
-                AEObility helps Perth and Australian businesses improve how they are understood across Google AI features, ChatGPT Search, and Perplexity. We test the buyer questions that matter, identify visibility gaps, and fix the structured signals that make your services easy to verify. GEO does not replace SEO. It extends your existing organic foundations for search engines that synthesise answers instead of listing links.
+                AEObility helps Perth and Australian businesses improve how they are understood across Google AI features, ChatGPT Search, and Perplexity. We test the buyer questions that matter, identify visibility gaps, and fix the structured signals that make your services easy to verify. GEO does not replace SEO. It extends your existing organic foundations for search engines that synthesise answers instead of listing links. Explore our <Link href="/knowledge-hub/guides" className="text-aeo-cyan underline hover:text-white font-medium">technical guides on entity optimisation and location signals</Link>, or run an instant readiness scan.
               </p>
             </div>
 
