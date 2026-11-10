@@ -1,26 +1,32 @@
 {
-  "$schema": "https://a2a-registry.org/schemas/a2a/v1.0/agent-card.json",
   "name": "aeobility-agent",
-  "version": "1.0.0",
   "description": "AEObility Autonomous Agent for Answer Engine Optimisation (AEO), AI Search Visibility Auditing, and Brand Consensus Discovery.",
-  "url": "https://aeobility.com.au",
+  "version": "1.0.0",
+  "provider": {
+    "name": "AEObility",
+    "url": "https://aeobility.com.au"
+  },
+  "supportedInterfaces": [
+    {
+      "url": "https://aeobility.com.au/api/search/answer",
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "https://aeobility.com.au/api/diagnostic",
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "https://aeobility.com.au/api/mcp",
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "1.0"
+    }
+  ],
   "capabilities": {
     "streaming": false,
     "pushNotifications": false,
-    "extendedAgentCard": false,
-    "features": [
-      "search-synthesis",
-      "telemetry-auditing",
-      "schema-validation",
-      "vector-answering"
-    ],
-    "extensions": [
-      {
-        "uri": "https://github.com/google-agentic-commerce/ap2/v1",
-        "description": "Supports the Agent Payments Protocol (AP2) for autonomous payment mandates and checkout.",
-        "required": true
-      }
-    ]
+    "extendedAgentCard": false
   },
   "defaultInputModes": [
     "text/plain",
@@ -30,42 +36,18 @@
     "application/json",
     "text/plain"
   ],
-  "supportedInterfaces": [
-    {
-      "url": "https://aeobility.com.au/api/search/answer",
-      "protocol": "rest",
-      "protocolBinding": "HTTP",
-      "protocolVersion": "1.0",
-      "description": "Grounded vector answer generation and entity matching."
-    },
-    {
-      "url": "https://aeobility.com.au/api/diagnostic",
-      "protocol": "rest",
-      "protocolBinding": "HTTP",
-      "protocolVersion": "1.0",
-      "description": "AI visibility and entity density diagnostic audit engine."
-    },
-    {
-      "url": "https://aeobility.com.au/api/mcp",
-      "protocol": "mcp",
-      "protocolBinding": "HTTP",
-      "protocolVersion": "1.0",
-      "description": "Model Context Protocol tools and brand knowledge graph resources."
-    }
-  ],
-  "extensions": [
-    {
-      "uri": "https://github.com/google-agentic-commerce/ap2/v1",
-      "description": "Supports the Agent Payments Protocol (AP2) for autonomous payment mandates and checkout.",
-      "required": true
-    }
-  ],
   "skills": [
     {
       "id": "aeo-audit",
       "name": "AEO Visibility Audit",
       "description": "Executes a 5-dimensional audit evaluating entity density, structured schema coverage, vector proximity, and RAG survival probability.",
-      "tags": ["aeo", "audit", "ai-visibility", "rag-simulation", "schema-validation"],
+      "tags": [
+        "aeo",
+        "audit",
+        "ai-visibility",
+        "rag-simulation",
+        "schema-validation"
+      ],
       "examples": [
         "Audit my brand's AEO visibility",
         "Test entity readiness for generative search engines"
@@ -75,7 +57,12 @@
       "id": "brand-consensus",
       "name": "Brand Consensus Ledger",
       "description": "Retrieves verified canonical brand facts, pricing parameters, and operational definitions to mitigate AI hallucinations.",
-      "tags": ["brand-consensus", "facts", "knowledge-graph", "pricing"],
+      "tags": [
+        "brand-consensus",
+        "facts",
+        "knowledge-graph",
+        "pricing"
+      ],
       "examples": [
         "What are AEObility's fixed-scope sprint packages?",
         "Who is the founder of AEObility?"
@@ -85,7 +72,12 @@
       "id": "vector-answer",
       "name": "Vector Answer Grounding",
       "description": "Performs cosine similarity searches against the 60-node AEObility Information Architecture and SLM knowledge base.",
-      "tags": ["vector-search", "aeo", "semantic-grounding", "slm"],
+      "tags": [
+        "vector-search",
+        "aeo",
+        "semantic-grounding",
+        "slm"
+      ],
       "examples": [
         "What is Answer Engine Optimisation?",
         "How do LLMs rank brand entities?"

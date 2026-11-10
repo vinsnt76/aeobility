@@ -23,21 +23,18 @@ export async function OPTIONS() {
 
 export async function GET() {
   const diagnosticAgentCard = {
-    $schema: "https://a2a-registry.org/schemas/a2a/v1.0/agent-card.json",
     name: "aeobility-diagnostic-agent",
     version: "1.0.0",
     description: "AEObility AI Search Visibility and Entity Density Diagnostic Audit Engine specialising in AEO readiness assessments.",
     url: "https://aeobility.com.au/api/diagnostic",
+    provider: {
+      name: "AEObility",
+      url: "https://aeobility.com.au"
+    },
     capabilities: {
       streaming: false,
       pushNotifications: false,
-      extendedAgentCard: false,
-      features: [
-        "telemetry-auditing",
-        "entity-density-scoring",
-        "schema-validation",
-        "rag-simulation"
-      ]
+      extendedAgentCard: false
     },
     defaultInputModes: [
       "application/json"
@@ -48,11 +45,8 @@ export async function GET() {
     supportedInterfaces: [
       {
         url: "https://aeobility.com.au/api/diagnostic",
-        protocol: "rest",
-        protocolBinding: "HTTP",
-        protocolVersion: "1.0",
-        methods: ["POST", "GET"],
-        description: "AI visibility and entity density diagnostic audit engine."
+        protocolBinding: "HTTP+JSON",
+        protocolVersion: "1.0"
       }
     ],
     skills: [

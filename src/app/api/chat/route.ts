@@ -20,20 +20,18 @@ export async function OPTIONS() {
 
 export async function GET() {
   const chatAgentCard = {
-    $schema: "https://a2a-registry.org/schemas/a2a/v1.0/agent-card.json",
     name: "aeobility-bill-chat-agent",
     version: "1.0.0",
     description: "AEObility AI Bill conversational diagnostic specialist providing real-time AEO, GEO, and search architecture guidance.",
     url: "https://aeobility.com.au/api/chat",
+    provider: {
+      name: "AEObility",
+      url: "https://aeobility.com.au"
+    },
     capabilities: {
       streaming: false,
       pushNotifications: false,
-      extendedAgentCard: false,
-      features: [
-        "conversational-guidance",
-        "telemetry-explanation",
-        "aeo-advice"
-      ]
+      extendedAgentCard: false
     },
     defaultInputModes: [
       "application/json",
@@ -46,11 +44,8 @@ export async function GET() {
     supportedInterfaces: [
       {
         url: "https://aeobility.com.au/api/chat",
-        protocol: "rest",
-        protocolBinding: "HTTP",
-        protocolVersion: "1.0",
-        methods: ["POST", "GET"],
-        description: "AI Bill conversational diagnostic dialogue endpoint."
+        protocolBinding: "HTTP+JSON",
+        protocolVersion: "1.0"
       }
     ],
     skills: [

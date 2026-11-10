@@ -205,21 +205,18 @@ export async function GET(req: NextRequest) {
   if (!query) {
     return NextResponse.json(
       {
-        $schema: "https://a2a-registry.org/schemas/a2a/v1.0/agent-card.json",
         name: "aeobility-vector-search-agent",
         version: "1.0.0",
         description: "AEObility Grounded Vector Search and Semantic Answer Generation Agent specialising in Answer Engine Optimisation (AEO) and entity disambiguation.",
         url: "https://aeobility.com.au/api/search/answer",
+        provider: {
+          name: "AEObility",
+          url: "https://aeobility.com.au"
+        },
         capabilities: {
           streaming: false,
           pushNotifications: false,
-          extendedAgentCard: false,
-          features: [
-            "vector-search",
-            "semantic-answer-grounding",
-            "entity-matching",
-            "nlweb"
-          ]
+          extendedAgentCard: false
         },
         defaultInputModes: [
           "text/plain",
@@ -232,11 +229,8 @@ export async function GET(req: NextRequest) {
         supportedInterfaces: [
           {
             url: "https://aeobility.com.au/api/search/answer",
-            protocol: "rest",
-            protocolBinding: "HTTP",
-            protocolVersion: "1.0",
-            methods: ["POST", "GET"],
-            description: "Grounded vector answer generation and entity matching."
+            protocolBinding: "HTTP+JSON",
+            protocolVersion: "1.0"
           }
         ],
         skills: [
