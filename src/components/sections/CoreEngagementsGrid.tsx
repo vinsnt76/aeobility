@@ -117,7 +117,7 @@ export function CoreEngagementsGrid() {
             <div className="pt-6">
               <PackageSelectLink
                 href={tier1.ctaHref}
-                packageId={bpSku.id}
+                packageId={bpSku.code}
                 packageName={tier1.name}
                 priceExGst={bpSku.priceExGst}
                 className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/20 hover:border-cyan-400/60 hover:bg-zinc-800 text-white font-semibold text-xs transition-all duration-300 shadow-sm text-left cursor-pointer"
@@ -216,7 +216,7 @@ export function CoreEngagementsGrid() {
               <div className="pt-6">
                 <PackageSelectLink
                   href={tier2.ctaHref}
-                  packageId={foundationCore.id}
+                  packageId={foundationCore.code}
                   packageName={tier2.name}
                   priceExGst={foundationCore.priceExGst}
                   className="w-full inline-flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-400 hover:from-cyan-300 hover:to-white text-zinc-950 font-black text-sm transition-all duration-300 shadow-[0_0_25px_rgba(6,182,212,0.45)] text-left cursor-pointer"
@@ -310,7 +310,7 @@ export function CoreEngagementsGrid() {
             <div className="pt-6">
               <PackageSelectLink
                 href={tier3.ctaHref}
-                packageId={macroSku.id}
+                packageId={macroSku.code}
                 packageName={tier3.name}
                 priceExGst={macroSku.priceExGst}
                 className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-purple-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800 text-left cursor-pointer"

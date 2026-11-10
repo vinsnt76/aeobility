@@ -59,3 +59,4 @@ export function FooterNewsletterForm() {
 }
 
 export default FooterNewsletterForm;
+
