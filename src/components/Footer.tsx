@@ -1,26 +1,8 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import FooterNewsletterForm from '@/components/forms/FooterNewsletterForm';
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setLoading(true);
-    
-    // Simulate API registration
-    setTimeout(() => {
-      setLoading(false);
-      setSubscribed(true);
-      setEmail('');
-    }, 1000);
-  };
-
   return (
     <footer className="bg-black border-t border-white/5 text-white/50 py-16 font-sans">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
@@ -245,39 +227,7 @@ export default function Footer() {
           <p className="text-xs text-white/40 leading-relaxed font-light font-serif">
             Subscribe to receive actionable AEO insights, entity mapping updates, and visibility recommendations.
           </p>
-          
-          {subscribed ? (
-            <div className="text-xs text-emerald-400 font-semibold bg-emerald-500/5 border border-emerald-500/10 rounded-xl p-3">
-              Thanks for subscribing! Check your inbox soon.
-            </div>
-          ) : (
-            <form onSubmit={handleSubscribe} className="flex gap-2">
-              <label htmlFor="footer-newsletter-email" className="sr-only">
-                Email address for newsletter
-              </label>
-              <input
-                id="footer-newsletter-email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                aria-label="Email address for newsletter"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                suppressHydrationWarning
-                className="flex-grow px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-xs text-white placeholder-white/30 focus:outline-none focus:border-aeo-cyan transition-all"
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                aria-label="Subscribe to newsletter"
-                className="px-4 py-2.5 bg-aeo-cyan hover:bg-white text-black font-semibold rounded-xl text-xs transition-all disabled:opacity-50 shrink-0"
-              >
-                {loading ? 'Subscribing...' : 'Subscribe'}
-              </button>
-            </form>
-          )}
+          <FooterNewsletterForm />
         </aside>
 
       </div>

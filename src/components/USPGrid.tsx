@@ -10,7 +10,7 @@ interface USPCardProps {
 
 function USPCard({ icon, title, description }: USPCardProps) {
   return (
-    <div className="group relative flex flex-col justify-between p-8 rounded-2xl bg-neutral-900/40 text-white border border-white/5 shadow-2xl hover:border-aeo-cyan/20 hover:bg-neutral-900/60 hover:-translate-y-1 transition-all duration-300">
+    <article className="group relative flex flex-col justify-between p-8 rounded-2xl bg-neutral-900/40 text-white border border-white/5 shadow-2xl hover:border-aeo-cyan/20 hover:bg-neutral-900/60 hover:-translate-y-1 transition-all duration-300">
       <div>
         <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 mb-6 group-hover:scale-105 transition-transform duration-300">
           {icon}
@@ -18,7 +18,7 @@ function USPCard({ icon, title, description }: USPCardProps) {
         <h3 className="text-xl font-bold mb-3 font-soehne-breit">{title}</h3>
         <p className="text-sm text-white/60 font-light leading-relaxed font-serif">{description}</p>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -42,7 +42,7 @@ export default function USPGrid() {
   ];
 
   return (
-    <section id="usp" className="py-20 bg-black relative">
+    <section id="usp" aria-labelledby="usp-heading" className="py-20 bg-black relative">
       {/* Decorative side glow */}
       <div className="absolute right-0 top-1/3 w-64 h-64 rounded-full bg-aeo-cyan glow-blur opacity-10 pointer-events-none"></div>
 
@@ -54,7 +54,7 @@ export default function USPGrid() {
             <span className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase font-mono block">
               Entity Authority
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-soehne-breit">
+            <h2 id="usp-heading" className="text-3xl sm:text-4xl font-extrabold text-white font-soehne-breit">
               Capture High-Intent Demand Across Google, Maps, and AI
             </h2>
             <p className="text-base text-white/60 font-light font-serif">

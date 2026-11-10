@@ -1,40 +1,11 @@
-'use client';
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, BookOpen } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import { trackGaEvent } from '@/lib/gtag';
+import { TelemetryViewTracker } from '@/components/telemetry/TelemetryViewTracker';
 
 export default function HowItWorks() {
-  const router = useRouter();
-  const formRef = useRef<HTMLDivElement>(null);
-
-  // audit_form_view - Triggered when the telemetry sample becomes visible in viewport
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          if (typeof window !== 'undefined') {
-            trackGaEvent('audit_form_view', {
-              form_id: 'how_it_works_preview',
-              page_location: window.location.pathname,
-            });
-          }
-          observer.disconnect(); // Track once per page load
-        }
-      },
-      { threshold: 0.15 }
-    );
-
-    if (formRef.current) {
-      observer.observe(formRef.current);
-    }
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="how-it-works" className="py-20 bg-neutral-50 text-black">
+    <section id="how-it-works" aria-labelledby="steps-heading" className="py-20 bg-neutral-50 text-black">
       <div className="max-w-6xl mx-auto px-6">
         <div className="relative text-center max-w-2xl mx-auto mb-16">
           {/* Geometric Grid Background Motif */}
@@ -43,7 +14,7 @@ export default function HowItWorks() {
             <span className="text-xs font-semibold tracking-widest text-aeo-purple uppercase font-mono block">
               The Telemetry Engine
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 font-soehne-breit">
+            <h2 id="steps-heading" className="text-3xl sm:text-4xl font-extrabold text-neutral-900 font-soehne-breit">
               Four Steps to Machine-Readable Clarity
             </h2>
             <p className="text-base text-neutral-600 font-light font-serif">
@@ -53,10 +24,10 @@ export default function HowItWorks() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Steps */}
-          <div className="lg:col-span-7 space-y-10">
+          {/* Steps ordered list */}
+          <ol className="lg:col-span-7 space-y-10 list-none p-0 m-0">
             {/* Step 1 */}
-            <div className="flex gap-6 items-start">
+            <li className="flex gap-6 items-start">
               <div className="flex-shrink-0 text-3xl font-extrabold text-neutral-300 tracking-tight leading-none pt-1">
                 01
               </div>
@@ -66,10 +37,10 @@ export default function HowItWorks() {
                   Enter your website and your primary customer search intent.
                 </p>
               </div>
-            </div>
+            </li>
 
             {/* Step 2 */}
-            <div className="flex gap-6 items-start">
+            <li className="flex gap-6 items-start">
               <div className="flex-shrink-0 text-3xl font-extrabold text-neutral-300 tracking-tight leading-none pt-1">
                 02
               </div>
@@ -79,10 +50,10 @@ export default function HowItWorks() {
                   Our telemetry engine analyses how AI systems understand, retrieve, and recommend your business.
                 </p>
               </div>
-            </div>
+            </li>
 
             {/* Step 3 */}
-            <div className="flex gap-6 items-start">
+            <li className="flex gap-6 items-start">
               <div className="flex-shrink-0 text-3xl font-extrabold text-neutral-300 tracking-tight leading-none pt-1">
                 03
               </div>
@@ -92,10 +63,10 @@ export default function HowItWorks() {
                   Receive your AI Visibility Score, confidence signals, and the biggest opportunities to improve.
                 </p>
               </div>
-            </div>
+            </li>
 
             {/* Step 4 */}
-            <div className="flex gap-6 items-start">
+            <li className="flex gap-6 items-start">
               <div className="flex-shrink-0 text-3xl font-extrabold text-neutral-300 tracking-tight leading-none pt-1">
                 04
               </div>
@@ -105,10 +76,10 @@ export default function HowItWorks() {
                   Use your findings to identify the highest-priority visibility gaps and decide what to fix next.
                 </p>
               </div>
-            </div>
+            </li>
 
             {/* Inbound Links to Educational Resources */}
-            <div className="pt-4 border-t border-neutral-200 flex flex-wrap gap-4 items-center justify-between">
+            <li className="pt-4 border-t border-neutral-200 flex flex-wrap gap-4 items-center justify-between">
               <Link 
                 href="/knowledge-hub/what-is-aeo" 
                 className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-neutral-800 hover:text-aeo-purple transition-colors"
@@ -124,11 +95,15 @@ export default function HowItWorks() {
                 <span>AI search tools and scraper vector parsers comparison</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
-            </div>
-          </div>
+            </li>
+          </ol>
 
           {/* Sample Telemetry Output Preview Card */}
-          <div id="audit-preview" ref={formRef} className="lg:col-span-5 bg-zinc-950 p-7 sm:p-8 rounded-2xl border border-cyan-500/30 shadow-2xl relative overflow-hidden text-white space-y-5">
+          <TelemetryViewTracker
+            id="audit-preview"
+            formId="how_it_works_preview"
+            className="lg:col-span-5 bg-zinc-950 p-7 sm:p-8 rounded-2xl border border-cyan-500/30 shadow-2xl relative overflow-hidden text-white space-y-5"
+          >
             {/* Top decorative stripe */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple"></div>
 
@@ -203,28 +178,18 @@ export default function HowItWorks() {
 
             {/* Primary Action Button */}
             <div className="pt-2">
-              <button
-                type="button"
-                onClick={() => {
-                  trackGaEvent('audit_cta_clicked', { source: 'how_it_works_preview' });
-                  const el = document.getElementById('hero-url-input');
-                  if (el) {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    el.focus();
-                  } else {
-                    router.push('/diagnostic');
-                  }
-                }}
+              <Link
+                href="/diagnostic"
                 className="w-full group flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-sm transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer"
               >
                 <span>Run Free Live Telemetry Scan</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
+              </Link>
               <p className="text-[11px] text-center text-zinc-400 font-mono mt-2.5">
                 * Real-time vector analysis executed using Gemini &bull; Zero email required upfront
               </p>
             </div>
-          </div>
+          </TelemetryViewTracker>
         </div>
       </div>
     </section>

@@ -15,7 +15,7 @@ export default function VideoExplainer({
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section id="explainer-video" className="py-20 bg-black relative border-t border-white/5">
+    <section id="explainer-video" aria-labelledby="video-heading" className="py-20 bg-black relative border-t border-white/5">
       {/* Background glow effects */}
       <div className="absolute left-1/4 top-1/4 w-[400px] h-[400px] bg-aeo-purple/5 rounded-full filter blur-[100px] pointer-events-none" />
       <div className="absolute right-1/4 bottom-1/4 w-[400px] h-[400px] bg-aeo-cyan/5 rounded-full filter blur-[100px] pointer-events-none" />
@@ -28,7 +28,7 @@ export default function VideoExplainer({
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs text-cyan-300 font-semibold font-mono uppercase tracking-wider">
               <span>Clear Outcomes</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-soehne-breit">
+            <h2 id="video-heading" className="text-3xl sm:text-5xl font-extrabold text-white font-soehne-breit">
               {title}
             </h2>
             <p className="text-base text-slate-300 font-normal max-w-xl leading-relaxed font-sans">

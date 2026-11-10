@@ -1,9 +1,7 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Sparkles, Rocket, Compass, ShieldCheck, Clock, Boxes } from 'lucide-react';
-import { trackGaEvent } from '@/lib/gtag';
+import { PackageSelectLink } from '@/components/sections/PackageSelectLink';
 import { PRICING_TIERS, TECHNICAL_SPRINT_CATALOG, GOVERNANCE_RULES, formatAudCurrency } from '@/lib/pricing';
 
 export function CoreEngagementsGrid() {
@@ -117,14 +115,16 @@ export function CoreEngagementsGrid() {
             </div>
 
             <div className="pt-6">
-              <Link
+              <PackageSelectLink
                 href={tier1.ctaHref}
+                packageId={bpSku.id}
+                packageName={tier1.name}
+                priceExGst={bpSku.priceExGst}
                 className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/20 hover:border-cyan-400/60 hover:bg-zinc-800 text-white font-semibold text-xs transition-all duration-300 shadow-sm text-left cursor-pointer"
-                title="Commission Strategic Blueprint"
               >
                 <span>Commission Strategic Blueprint →</span>
                 <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
-              </Link>
+              </PackageSelectLink>
             </div>
           </article>
 
@@ -214,14 +214,16 @@ export function CoreEngagementsGrid() {
               </div>
 
               <div className="pt-6">
-                <Link
+                <PackageSelectLink
                   href={tier2.ctaHref}
+                  packageId={foundationCore.id}
+                  packageName={tier2.name}
+                  priceExGst={foundationCore.priceExGst}
                   className="w-full inline-flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-400 hover:from-cyan-300 hover:to-white text-zinc-950 font-black text-sm transition-all duration-300 shadow-[0_0_25px_rgba(6,182,212,0.45)] text-left cursor-pointer"
-                  title="Deploy AEO Foundation"
                 >
                   <span>{tier2.ctaText} →</span>
                   <ArrowRight className="w-4 h-4 text-zinc-950 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
-                </Link>
+                </PackageSelectLink>
               </div>
             </div>
           </article>
@@ -306,14 +308,16 @@ export function CoreEngagementsGrid() {
             </div>
 
             <div className="pt-6">
-              <Link
+              <PackageSelectLink
                 href={tier3.ctaHref}
+                packageId={macroSku.id}
+                packageName={tier3.name}
+                priceExGst={macroSku.priceExGst}
                 className="w-full inline-flex items-center justify-between px-5 py-3.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-purple-400 text-white font-bold text-xs transition-all duration-300 shadow-sm group-hover:bg-zinc-800 text-left cursor-pointer"
-                title="Explore AEO Sprints"
               >
                 <span>{tier3.ctaText} →</span>
                 <ArrowRight className="w-4 h-4 text-purple-400 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
-              </Link>
+              </PackageSelectLink>
             </div>
           </article>
         </div>
@@ -330,7 +334,6 @@ export function CoreEngagementsGrid() {
             <li>
               <Link
                 href="/solutions/aeo-blueprint"
-                onClick={() => trackGaEvent('core_solutions_nav_clicked', { tier: 'blueprint', destination: '/solutions/aeo-blueprint' })}
                 className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
               >
                 <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Strategic Blueprint &amp; Roadmap</span>
@@ -340,7 +343,6 @@ export function CoreEngagementsGrid() {
             <li>
               <Link
                 href="/solutions/aeo-sprint"
-                onClick={() => trackGaEvent('core_solutions_nav_clicked', { tier: 'sprint', destination: '/solutions/aeo-sprint' })}
                 className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
               >
                 <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Technical Implementation</span>
@@ -350,7 +352,6 @@ export function CoreEngagementsGrid() {
             <li>
               <Link
                 href="/services/aeo/local-business"
-                onClick={() => trackGaEvent('core_solutions_nav_clicked', { tier: 'local', destination: '/services/aeo/local-business' })}
                 className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
               >
                 <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Local Visibility Support</span>

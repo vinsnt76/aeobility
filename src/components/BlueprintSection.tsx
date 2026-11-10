@@ -95,9 +95,9 @@ export default function BlueprintSection() {
                 <h3 className="text-xs font-mono font-bold uppercase text-cyan-400 tracking-wider block">
                   How The Strategic Blueprint Translates Into Execution
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans">
+                <ol className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans list-none p-0 m-0">
                   {methodologySteps.map((step, idx) => (
-                    <div key={idx} className="p-3.5 rounded-xl bg-zinc-900/60 border border-white/5 space-y-1.5">
+                    <li key={idx} className="p-3.5 rounded-xl bg-zinc-900/60 border border-white/5 space-y-1.5">
                       <div className="flex items-center gap-2">
                         <div className="p-1 rounded-md bg-cyan-500/10 border border-cyan-400/20">
                           {step.icon}
@@ -106,9 +106,9 @@ export default function BlueprintSection() {
                       </div>
                       <h4 className="font-bold text-white text-xs">{step.title}</h4>
                       <p className="text-zinc-400 font-serif leading-relaxed text-[11px]">{step.description}</p>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ol>
               </div>
 
               {/* Commercial Credit Bridge */}
@@ -175,7 +175,7 @@ export default function BlueprintSection() {
                 
                 <div className="space-y-5">
                   {blueprintPhases.map((phase, idx) => (
-                    <div key={idx} className="flex gap-4 items-start">
+                    <article key={idx} className="flex gap-4 items-start">
                       <div className="p-2 rounded-lg bg-white/5 border border-white/10 flex-shrink-0 mt-0.5">
                         {phase.icon}
                       </div>
@@ -186,7 +186,7 @@ export default function BlueprintSection() {
                         <h4 className="text-sm font-bold text-white font-soehne-breit">{phase.title}</h4>
                         <p className="text-xs text-zinc-400 font-light leading-relaxed font-serif">{phase.description}</p>
                       </div>
-                    </div>
+                    </article>
                   ))}
                 </div>
 

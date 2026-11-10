@@ -29,7 +29,7 @@ export function HomepageContactForm() {
   };
 
   return (
-    <section className="w-full bg-zinc-950 py-20 md:py-24 border-t border-white/10 relative overflow-hidden">
+    <section aria-labelledby="contact-heading" className="w-full bg-zinc-950 py-20 md:py-24 border-t border-white/10 relative overflow-hidden">
       {/* Glow background effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] rounded-full bg-radial from-aeo-cyan/15 via-aeo-purple/10 to-transparent glow-blur pointer-events-none" />
 
@@ -39,7 +39,7 @@ export function HomepageContactForm() {
             <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
             <span>Direct Implementation</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
+          <h2 id="contact-heading" className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
             Ready to Clarify Your Search Visibility?
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto font-serif">

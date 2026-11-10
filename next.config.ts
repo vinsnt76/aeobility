@@ -3,9 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Generate browser source maps in production builds for Lighthouse and DevTools debugging
   productionBrowserSourceMaps: true,
-  experimental: {
-    inlineCss: true,
-  },
+  compress: true,
   // 1. Inject Global CORS Headers for all external AI Agents
   async headers() {
     return [
