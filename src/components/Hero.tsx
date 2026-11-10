@@ -205,7 +205,7 @@ export default function Hero() {
             >
               <GraphVisual />
             </div>
-          </div>
+          </aside>
 
         </div>
 
