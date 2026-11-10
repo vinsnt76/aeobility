@@ -59,6 +59,13 @@ export const BRAND_FACTS = {
     "AEO.bility",
     "AEObility Perth"
   ],
+  alternateName: [
+    "AEO Bility",
+    "aeo bility",
+    "aeo.bility",
+    "AEO.bility",
+    "AEObility Perth"
+  ],
   categoryAnchors: [
     "Perth digital consultancy",
     "Answer Engine Optimisation Perth",

@@ -149,7 +149,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero relative w-full overflow-hidden bg-black pt-12 pb-16 md:pb-24">
+    <section aria-labelledby="hero-title" className="hero relative w-full overflow-hidden bg-black pt-12 pb-16 md:pb-24">
       {/* Absolute Radial Gradient Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] rounded-full bg-radial from-aeo-purple/20 via-aeo-cyan/5 to-transparent glow-blur pointer-events-none"></div>
 
@@ -165,7 +165,7 @@ export default function Hero() {
               AI Visibility Telemetry
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
+            <h1 id="hero-title" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
               Get Found.{' '}
               <span className="bg-gradient-to-r from-purple-400 to-indigo-300 bg-clip-text text-transparent">
                 Get Chosen.
@@ -190,7 +190,10 @@ export default function Hero() {
                 </div>
                 <input
                   id="hero-url-input"
-                  type="text"
+                  name="url"
+                  type="url"
+                  autoComplete="url"
+                  data-testid="input-telemetry-url"
                   required
                   value={url}
                   onChange={e => setUrl(e.target.value)}
@@ -212,7 +215,10 @@ export default function Hero() {
                 </div>
                 <input
                   id="hero-intent-input"
+                  name="intent"
                   type="text"
+                  autoComplete="off"
+                  data-testid="input-telemetry-intent"
                   required
                   value={intent}
                   onChange={e => setIntent(e.target.value)}
@@ -227,6 +233,8 @@ export default function Hero() {
               {/* Primary Pill Button (AI Bill Continuity) */}
               <button
                 type="submit"
+                data-agent-action="run-visibility-scan"
+                data-testid="btn-run-scan"
                 disabled={!url.trim() || !intent.trim()}
                 className="hero-primary-cta w-full h-12 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 border border-white/20 text-white font-semibold text-sm tracking-wide shadow-lg shadow-purple-950/50 flex items-center justify-center gap-2 transition-all active:scale-[0.99] cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
               >

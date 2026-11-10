@@ -69,14 +69,18 @@ export function HomepageContactForm() {
         ) : (
           <form
             onSubmit={handleSubmit}
+            data-agent-form="contact-sprint-scope"
             className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-black/60 p-6 md:p-8 rounded-2xl border border-white/10 backdrop-blur-md shadow-2xl"
           >
             <div>
-              <label className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
+              <label htmlFor="contact-name-input" className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
                 Your Name *
               </label>
               <input
+                id="contact-name-input"
+                name="name"
                 type="text"
+                autoComplete="name"
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -86,11 +90,14 @@ export function HomepageContactForm() {
             </div>
 
             <div>
-              <label className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
+              <label htmlFor="contact-email-input" className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
                 Business Email *
               </label>
               <input
+                id="contact-email-input"
+                name="email"
                 type="email"
+                autoComplete="email"
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -100,11 +107,14 @@ export function HomepageContactForm() {
             </div>
 
             <div>
-              <label className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
+              <label htmlFor="contact-phone-input" className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
                 Phone Number
               </label>
               <input
+                id="contact-phone-input"
+                name="phone"
                 type="tel"
+                autoComplete="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="0400 000 000"
@@ -113,23 +123,28 @@ export function HomepageContactForm() {
             </div>
 
             <div>
-              <label className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
+              <label htmlFor="contact-url-input" className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
                 Australian Business URL
               </label>
               <input
+                id="contact-url-input"
+                name="url"
                 type="url"
+                autoComplete="url"
                 value={formData.url}
                 onChange={(e) => setFormData({ ...formData, url: e.target.value })}
-                placeholder="https://example.com.au"
+                placeholder="https://yourbrand.com.au"
                 className="w-full px-4 py-3 rounded-lg bg-zinc-900 border border-white/10 text-white placeholder-zinc-500 text-sm focus:border-cyan-400 focus:outline-none transition-colors"
               />
             </div>
 
             <div className="md:col-span-2">
-              <label className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
+              <label htmlFor="contact-message-input" className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
                 Primary Search Intent or Goals
               </label>
               <textarea
+                id="contact-message-input"
+                name="message"
                 rows={3}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -141,6 +156,7 @@ export function HomepageContactForm() {
             <div className="md:col-span-2 text-center mt-2">
               <button
                 type="submit"
+                data-agent-action="submit-sprint-scope"
                 className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-cyan-400 text-zinc-950 font-bold text-sm hover:bg-cyan-300 transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer"
               >
                 <span>Request Sprint Scope</span>

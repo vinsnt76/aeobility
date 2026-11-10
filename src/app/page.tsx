@@ -373,13 +373,15 @@ export default function Home() {
       />
 
       <Navbar />
-      <Hero />
-      <CoreEngagementsGrid />
-      <VideoExplainer />
-      <USPGrid />
-      <HowItWorks />
-      <BlueprintSection />
-      <HomepageContactForm />
+      <main id="main-content" className="flex-grow w-full">
+        <Hero />
+        <CoreEngagementsGrid />
+        <VideoExplainer />
+        <USPGrid />
+        <HowItWorks />
+        <BlueprintSection />
+        <HomepageContactForm />
+      </main>
       <Footer />
     </div>
   );

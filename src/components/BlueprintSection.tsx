@@ -55,7 +55,7 @@ export default function BlueprintSection() {
   ];
 
   return (
-    <section id="blueprint" className="py-24 relative overflow-hidden bg-black text-white border-t border-white/10">
+    <section id="blueprint" aria-labelledby="roadmap-title" className="py-24 relative overflow-hidden bg-black text-white border-t border-white/10">
       {/* Background gradients */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] rounded-full bg-gradient-to-r from-aeo-purple/20 to-aeo-cyan/20 glow-blur opacity-30 pointer-events-none" />
 
@@ -81,7 +81,7 @@ export default function BlueprintSection() {
 
               {/* Title & Concept */}
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight font-soehne-breit tracking-tight text-white">
+                <h2 id="roadmap-title" className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight font-soehne-breit tracking-tight text-white">
                   The 90-Day Execution Methodology<br />
                   <span className="text-gradient-aeo">From Diagnostic to Generative Dominance</span>
                 </h2>
@@ -92,9 +92,9 @@ export default function BlueprintSection() {
 
               {/* 4-Step Operational Journey */}
               <div className="p-5 rounded-2xl bg-zinc-950/90 border border-white/10 space-y-4">
-                <span className="text-xs font-mono font-bold uppercase text-cyan-400 tracking-wider block">
+                <h3 className="text-xs font-mono font-bold uppercase text-cyan-400 tracking-wider block">
                   How The Strategic Blueprint Translates Into Execution
-                </span>
+                </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans">
                   {methodologySteps.map((step, idx) => (
                     <div key={idx} className="p-3.5 rounded-xl bg-zinc-900/60 border border-white/5 space-y-1.5">

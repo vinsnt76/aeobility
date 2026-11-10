@@ -16,7 +16,7 @@ export function CoreEngagementsGrid() {
   const tier3 = PRICING_TIERS.find((t) => t.id === 'macro-sprints') || PRICING_TIERS[2];
 
   return (
-    <section className="w-full bg-black py-16 md:py-20 border-t border-white/10 relative overflow-hidden">
+    <section aria-labelledby="packages-title" className="w-full bg-black py-16 md:py-20 border-t border-white/10 relative overflow-hidden">
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-radial from-aeo-cyan/10 via-aeo-purple/5 to-transparent glow-blur pointer-events-none" />
 
@@ -27,7 +27,7 @@ export function CoreEngagementsGrid() {
             <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
             <span>Zero Retainer Lock-In</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
+          <h2 id="packages-title" className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
             Fixed-Scope Sprints.
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-2xl font-serif leading-relaxed">
@@ -38,7 +38,7 @@ export function CoreEngagementsGrid() {
         {/* 3-Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch pt-4">
           {/* Card 1: Diagnostic & Planning (Strategic Blueprint) */}
-          <div className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-cyan-500/40 transition-all duration-300 group">
+          <article className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-cyan-500/40 transition-all duration-300 group">
             <div className="space-y-5">
               {/* Eyebrow */}
               <div className="flex items-center justify-between">
@@ -126,10 +126,10 @@ export function CoreEngagementsGrid() {
                 <ArrowRight className="w-4 h-4 text-cyan-400 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
               </Link>
             </div>
-          </div>
+          </article>
 
           {/* Card 2: Core Setup (Recommended) - AEO Foundation */}
-          <div className="relative rounded-2xl bg-gradient-to-b from-cyan-400 via-cyan-500 to-purple-500 p-0.5 shadow-[0_0_45px_rgba(6,182,212,0.3)] md:-translate-y-2 transition-all duration-300 group z-10">
+          <article className="relative rounded-2xl bg-gradient-to-b from-cyan-400 via-cyan-500 to-purple-500 p-0.5 shadow-[0_0_45px_rgba(6,182,212,0.3)] md:-translate-y-2 transition-all duration-300 group z-10">
             {/* Top Recommended Floating Badge */}
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 text-zinc-950 font-black text-[10px] tracking-wider uppercase font-mono shadow-[0_0_20px_rgba(6,182,212,0.5)] z-20 whitespace-nowrap">
               Most Popular • Recommended Foundation
@@ -224,10 +224,10 @@ export function CoreEngagementsGrid() {
                 </Link>
               </div>
             </div>
-          </div>
+          </article>
 
           {/* Card 3: Monthly Improvements (AEO Sprints) */}
-          <div className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-purple-500/40 transition-all duration-300 group">
+          <article className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-purple-500/40 transition-all duration-300 group">
             <div className="space-y-5">
               {/* Eyebrow */}
               <div className="flex items-center justify-between">
@@ -315,7 +315,7 @@ export function CoreEngagementsGrid() {
                 <ArrowRight className="w-4 h-4 text-purple-400 transition-transform group-hover:translate-x-1 shrink-0 ml-2" />
               </Link>
             </div>
-          </div>
+          </article>
         </div>
 
         {/* Semantic Service Architecture Decoupling: Core Solutions Navigation Landmark */}
@@ -323,9 +323,9 @@ export function CoreEngagementsGrid() {
           <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">
             Explore AI Search Support
           </div>
-          <h2 className="text-lg font-bold text-slate-100 mb-4 font-soehne-breit">
+          <h3 className="text-lg font-bold text-slate-100 mb-4 font-soehne-breit">
             Get Expert support and service
-          </h2>
+          </h3>
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <li>
               <Link

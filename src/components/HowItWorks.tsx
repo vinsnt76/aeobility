@@ -40,9 +40,9 @@ export default function HowItWorks() {
           {/* Geometric Grid Background Motif */}
           <div className="absolute inset-0 -m-8 pointer-events-none bg-grid-motif-light opacity-60 z-0" />
           <div className="relative z-10 space-y-4">
-            <h2 className="text-xs font-semibold tracking-widest text-aeo-purple uppercase font-mono">
+            <span className="text-xs font-semibold tracking-widest text-aeo-purple uppercase font-mono block">
               The Telemetry Engine
-            </h2>
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 font-soehne-breit">
               Four Steps to Machine-Readable Clarity
             </h2>
@@ -61,7 +61,7 @@ export default function HowItWorks() {
                 01
               </div>
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Tell Us What You Want To Be Found For</h4>
+                <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">Tell Us What You Want To Be Found For</h3>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
                   Enter your website and your primary customer search intent.
                 </p>
@@ -74,7 +74,7 @@ export default function HowItWorks() {
                 02
               </div>
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Measure Your AI Visibility</h4>
+                <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">Measure Your AI Visibility</h3>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
                   Our telemetry engine analyses how AI systems understand, retrieve, and recommend your business.
                 </p>
@@ -87,7 +87,7 @@ export default function HowItWorks() {
                 03
               </div>
               <div className="space-y-3 w-full">
-                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Discover Your Opportunities</h4>
+                <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">Discover Your Opportunities</h3>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
                   Receive your AI Visibility Score, confidence signals, and the biggest opportunities to improve.
                 </p>
@@ -100,7 +100,7 @@ export default function HowItWorks() {
                 04
               </div>
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-neutral-950 font-soehne-breit">Turn Insights into a 90-Day Plan</h4>
+                <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">Turn Insights into a 90-Day Plan</h3>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
                   Use your findings to identify the highest-priority visibility gaps and decide what to fix next.
                 </p>

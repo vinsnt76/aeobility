@@ -227,12 +227,12 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/brand-facts" className="hover:text-white transition-colors">
+              <Link href="/brand-facts" data-testid="nav-brand-facts" className="hover:text-white transition-colors">
                 Brand Facts
               </Link>
             </li>
             <li>
-              <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors font-mono text-[11px] text-aeo-cyan/70 hover:text-aeo-cyan">
+              <a href="/llms.txt" data-testid="nav-llmstxt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors font-mono text-[11px] text-aeo-cyan/70 hover:text-aeo-cyan">
                 llms.txt
               </a>
             </li>
@@ -240,7 +240,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Signup Column */}
-        <div className="md:col-span-4 space-y-4">
+        <aside aria-label="Newsletter Subscription" className="md:col-span-4 space-y-4">
           <h4 className="text-xs font-bold uppercase tracking-wider text-white">Stay Ahead</h4>
           <p className="text-xs text-white/40 leading-relaxed font-light font-serif">
             Subscribe to receive actionable AEO insights, entity mapping updates, and visibility recommendations.
@@ -257,7 +257,9 @@ export default function Footer() {
               </label>
               <input
                 id="footer-newsletter-email"
+                name="email"
                 type="email"
+                autoComplete="email"
                 required
                 aria-label="Email address for newsletter"
                 placeholder="Enter your email"
@@ -276,7 +278,7 @@ export default function Footer() {
               </button>
             </form>
           )}
-        </div>
+        </aside>
 
       </div>
 
