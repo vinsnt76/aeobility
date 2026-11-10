@@ -16,7 +16,7 @@ export function TelemetryViewTracker({
   className,
   id,
 }: TelemetryViewTrackerProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,9 +41,9 @@ export function TelemetryViewTracker({
   }, [formId]);
 
   return (
-    <div id={id} ref={ref} className={className}>
+    <aside id={id} ref={ref} className={className} aria-label="Diagnostic telemetry sample preview">
       {children}
-    </div>
+    </aside>
   );
 }
 

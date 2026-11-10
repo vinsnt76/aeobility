@@ -35,7 +35,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Column (50%): Value Prop & Conversion Plane */}
-          <div className="relative z-10 space-y-6 text-left hero-card">
+          <header className="relative z-10 space-y-6 text-left hero-card">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-semibold tracking-wide font-mono">
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
               AI Visibility Telemetry
@@ -119,70 +119,82 @@ export default function Hero() {
               </button>
 
               {/* Disclaimer & Reassurance Micro-Row */}
-              <div className="pt-1 text-center space-y-1 font-mono">
+              <footer className="pt-1 text-center space-y-1 font-mono">
                 <p className="text-[11px] text-purple-300/80 font-medium">
                   * The scan executes a real-time vector analysis using Gemini.
                 </p>
                 <p className="text-xs text-slate-400">
                   Free visibility scan &bull; No email required to start &bull; 100% private &amp; secure
                 </p>
-              </div>
+              </footer>
             </form>
 
             {/* Quick-Path Service Hub Links (Full Width Desktop / 2-Column Mobile Stack) */}
-            <div className="pt-2 w-full">
+            <nav aria-label="Explore service hubs" className="pt-2 w-full">
               <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-2 font-mono">
                 Explore Service Hubs
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 w-full">
-                <Link
-                  href="/services/aeo"
-                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AEO & SEO', destination: '/services/aeo' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
-                >
-                  AEO &amp; SEO
-                </Link>
-                <Link
-                  href="/services/ai-search-marketing"
-                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AI Search Marketing', destination: '/services/ai-search-marketing' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
-                >
-                  AI Search Marketing
-                </Link>
-                <Link
-                  href="/services/aeo/local-business"
-                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'Local Business GEO', destination: '/services/aeo/local-business' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
-                >
-                  Local Business GEO
-                </Link>
-                <Link
-                  href="/services/geo-marketing"
-                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'GEO Marketing', destination: '/services/geo-marketing' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
-                >
-                  GEO Marketing
-                </Link>
-                <Link
-                  href="/services/aeo/shopify"
-                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'Ecommerce AEO', destination: '/services/aeo/shopify' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
-                >
-                  Ecommerce AEO
-                </Link>
-                <Link
-                  href="/services/aeo/procedures"
-                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AI Strategy', destination: '/services/aeo/procedures' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
-                >
-                  AI Strategy
-                </Link>
-              </div>
-            </div>
-          </div>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2 w-full list-none p-0 m-0">
+                <li>
+                  <Link
+                    href="/services/aeo"
+                    onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AEO & SEO', destination: '/services/aeo' })}
+                    className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                  >
+                    AEO &amp; SEO
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/ai-search-marketing"
+                    onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AI Search Marketing', destination: '/services/ai-search-marketing' })}
+                    className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                  >
+                    AI Search Marketing
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/aeo/local-business"
+                    onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'Local Business GEO', destination: '/services/aeo/local-business' })}
+                    className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                  >
+                    Local Business GEO
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/geo-marketing"
+                    onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'GEO Marketing', destination: '/services/geo-marketing' })}
+                    className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                  >
+                    GEO Marketing
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/aeo/shopify"
+                    onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'Ecommerce AEO', destination: '/services/aeo/shopify' })}
+                    className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                  >
+                    Ecommerce AEO
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/aeo/procedures"
+                    onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AI Strategy', destination: '/services/aeo/procedures' })}
+                    className="w-full py-2 px-2.5 rounded-full bg-transparent hover:bg-purple-500/10 border border-purple-500/30 hover:border-purple-400/60 text-xs font-medium text-purple-200 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] text-center flex items-center justify-center truncate"
+                  >
+                    AI Strategy
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </header>
 
           {/* Right Column (50%): Contained Node Animation */}
-          <div className="relative w-full h-[480px] lg:h-[580px] rounded-2xl overflow-clip isolate bg-slate-950/40 border border-slate-800/60 flex items-center justify-center hero-visual-canvas-container">
+          <aside aria-label="Interactive entity network visualization" className="relative w-full h-[480px] lg:h-[580px] rounded-2xl overflow-clip isolate bg-slate-950/40 border border-slate-800/60 flex items-center justify-center hero-visual-canvas-container">
             {/* Ambient Canvas Glow Backplate */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.12)_0%,transparent_70%)] pointer-events-none"></div>
             

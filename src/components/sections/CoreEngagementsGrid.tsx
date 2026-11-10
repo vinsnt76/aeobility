@@ -20,7 +20,7 @@ export function CoreEngagementsGrid() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-left mb-12 space-y-3">
+        <header className="text-left mb-12 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-cyan-400 font-medium">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
             <span>Zero Retainer Lock-In</span>
@@ -31,34 +31,33 @@ export function CoreEngagementsGrid() {
           <p className="text-zinc-400 text-sm sm:text-base max-w-2xl font-serif leading-relaxed">
             Work directly with a qualified <Link href="/services/perth/seo-specialist" className="text-cyan-400 underline hover:text-cyan-300 font-medium">Perth SEO specialist &amp; local AEO consultant</Link> to secure top placement across Google Maps, local search, and AI answer engines. All engagements are clearly scoped and transparently priced.
           </p>
-        </div>
+        </header>
 
         {/* 3-Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch pt-4">
           {/* Card 1: Diagnostic & Planning (Strategic Blueprint) */}
           <article className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-cyan-500/40 transition-all duration-300 group">
             <div className="space-y-5">
-              {/* Eyebrow */}
-              <div className="flex items-center justify-between">
+              {/* Card Header: Eyebrow, Title & Pricing Block */}
+              <header className="space-y-4">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider">
                   <Compass className="w-3.5 h-3.5" />
                   <span>Diagnostic &amp; Planning</span>
                 </div>
-              </div>
 
-              {/* Title & Pricing Block */}
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">{tier1.name}</h3>
-                <div className="flex items-baseline gap-2 mt-2">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono">
-                    {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })}
-                  </span>
-                  <span className="text-xs text-zinc-400 font-mono uppercase tracking-wider">ex. GST</span>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">{tier1.name}</h3>
+                  <p className="flex items-baseline gap-2 mt-2">
+                    <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono">
+                      {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })}
+                    </span>
+                    <span className="text-xs text-zinc-400 font-mono uppercase tracking-wider">ex. GST</span>
+                  </p>
+                  <p className="mt-1 text-xs text-zinc-400 font-sans">
+                    Standalone audit &bull; 100% credited toward implementation within 60 days
+                  </p>
                 </div>
-                <p className="mt-1 text-xs text-zinc-400 font-sans">
-                  Standalone audit &bull; 100% credited toward implementation within 60 days
-                </p>
-              </div>
+              </header>
 
               {/* Single-Sentence Scope */}
               <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif pt-1">
@@ -70,48 +69,48 @@ export function CoreEngagementsGrid() {
                 <ul className="space-y-3 text-xs font-sans">
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-bold text-white text-xs">Search &amp; AI Visibility Audit</div>
-                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Checks how Google, Apple Maps, and AI tools extract your business details.</div>
-                    </div>
+                    <p className="space-y-0.5">
+                      <strong className="block font-bold text-white text-xs">Search &amp; AI Visibility Audit</strong>
+                      <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Checks how Google, Apple Maps, and AI tools extract your business details.</span>
+                    </p>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-bold text-white text-xs">Code &amp; Schema Review</div>
-                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Identifies broken structured data, incorrect tags, and indexing errors.</div>
-                    </div>
+                    <p className="space-y-0.5">
+                      <strong className="block font-bold text-white text-xs">Code &amp; Schema Review</strong>
+                      <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Identifies broken structured data, incorrect tags, and indexing errors.</span>
+                    </p>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-bold text-white text-xs">Prioritised 90-Day Plan</div>
-                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">An ordered checklist of required technical fixes and page updates.</div>
-                    </div>
+                    <p className="space-y-0.5">
+                      <strong className="block font-bold text-white text-xs">Prioritised 90-Day Plan</strong>
+                      <span className="block text-[11px] text-zinc-400 font-serif leading-snug">An ordered checklist of required technical fixes and page updates.</span>
+                    </p>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-bold text-white text-xs">45-Minute Review Call</div>
-                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">A direct walkthrough of findings and next steps with your team.</div>
-                    </div>
+                    <p className="space-y-0.5">
+                      <strong className="block font-bold text-white text-xs">45-Minute Review Call</strong>
+                      <span className="block text-[11px] text-zinc-400 font-serif leading-snug">A direct walkthrough of findings and next steps with your team.</span>
+                    </p>
                   </li>
                 </ul>
               </div>
 
               {/* Delivery Details */}
-              <div className="pt-3 border-t border-white/10">
+              <footer className="pt-3 border-t border-white/10">
                 <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-3.5 space-y-2">
-                  <div className="flex items-start gap-2 font-mono text-xs text-white">
+                  <p className="flex items-start gap-2 font-mono text-xs text-white">
                     <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
                     <span><strong>Turnaround:</strong> 5–7 business days</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
+                  </p>
+                  <p className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
                     <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
                     <span><strong className="text-zinc-200 font-sans">Delivery:</strong> Complete report and fix checklist</span>
-                  </div>
+                  </p>
                 </div>
-              </div>
+              </footer>
             </div>
 
             <div className="pt-6">
@@ -131,33 +130,32 @@ export function CoreEngagementsGrid() {
           {/* Card 2: Core Setup (Recommended) - AEO Foundation */}
           <article className="relative rounded-2xl bg-gradient-to-b from-cyan-400 via-cyan-500 to-purple-500 p-0.5 shadow-[0_0_45px_rgba(6,182,212,0.3)] md:-translate-y-2 transition-all duration-300 group z-10">
             {/* Top Recommended Floating Badge */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 text-zinc-950 font-black text-[10px] tracking-wider uppercase font-mono shadow-[0_0_20px_rgba(6,182,212,0.5)] z-20 whitespace-nowrap">
+            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 text-zinc-950 font-black text-[10px] tracking-wider uppercase font-mono shadow-[0_0_20px_rgba(6,182,212,0.5)] z-20 whitespace-nowrap">
               Most Popular • Recommended Foundation
-            </div>
+            </span>
 
             <div className="flex flex-col justify-between h-full p-6 md:p-8 rounded-[15px] bg-zinc-950/95 backdrop-blur-xl">
               <div className="space-y-5">
-                {/* Eyebrow */}
-                <div className="flex items-center justify-between pt-1">
+                {/* Card Header: Eyebrow, Title & Pricing Block */}
+                <header className="space-y-4 pt-1">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider">
                     <Boxes className="w-3.5 h-3.5" />
                     <span>Core Setup (Recommended)</span>
                   </div>
-                </div>
 
-                {/* Title & Pricing Block */}
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">{tier2.name}</h3>
-                  <div className="flex items-baseline gap-2 mt-2">
-                    <span className="text-2xl sm:text-3xl font-extrabold text-cyan-300 font-mono">
-                      {formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })}
-                    </span>
-                    <span className="text-xs text-zinc-400 font-mono uppercase tracking-wider">/ mo ex. GST</span>
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">{tier2.name}</h3>
+                    <p className="flex items-baseline gap-2 mt-2">
+                      <span className="text-2xl sm:text-3xl font-extrabold text-cyan-300 font-mono">
+                        {formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })}
+                      </span>
+                      <span className="text-xs text-zinc-400 font-mono uppercase tracking-wider">/ mo ex. GST</span>
+                    </p>
+                    <p className="mt-1 text-xs text-zinc-400 font-sans">
+                      90 day execution &bull; Covers up to 10 core pages &bull; Includes Strategic Blueprint &amp; $250 onboarding setup
+                    </p>
                   </div>
-                  <p className="mt-1 text-xs text-zinc-400 font-sans">
-                    90 day execution &bull; Covers up to 10 core pages &bull; Includes Strategic Blueprint &amp; $250 onboarding setup
-                  </p>
-                </div>
+                </header>
 
                 {/* Single-Sentence Scope */}
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif pt-1">
@@ -169,48 +167,48 @@ export function CoreEngagementsGrid() {
                   <ul className="space-y-3 text-xs font-sans">
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                      <div>
-                        <div className="font-bold text-white text-xs">Structured Data Installation</div>
-                        <div className="text-[11px] text-zinc-400 font-serif leading-snug">Valid schema markup added directly to your site or supplied as ready-to-paste code.</div>
-                      </div>
+                      <p className="space-y-0.5">
+                        <strong className="block font-bold text-white text-xs">Structured Data Installation</strong>
+                        <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Valid schema markup added directly to your site or supplied as ready-to-paste code.</span>
+                      </p>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                      <div>
-                        <div className="font-bold text-white text-xs">Direct-Answer Content</div>
-                        <div className="text-[11px] text-zinc-400 font-serif leading-snug">Up to 10 priority service pages updated into clear, extractable answer blocks.</div>
-                      </div>
+                      <p className="space-y-0.5">
+                        <strong className="block font-bold text-white text-xs">Direct-Answer Content</strong>
+                        <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Up to 10 priority service pages updated into clear, extractable answer blocks.</span>
+                      </p>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                      <div>
-                        <div className="font-bold text-white text-xs">Internal Page Linking</div>
-                        <div className="text-[11px] text-zinc-400 font-serif leading-snug">Connects core services to relevant proof points and case studies.</div>
-                      </div>
+                      <p className="space-y-0.5">
+                        <strong className="block font-bold text-white text-xs">Internal Page Linking</strong>
+                        <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Connects core services to relevant proof points and case studies.</span>
+                      </p>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                      <div>
-                        <div className="font-bold text-white text-xs">Directory Alignment</div>
-                        <div className="text-[11px] text-zinc-400 font-serif leading-snug">Syncs name, address, phone number, and services across Google, Apple Maps, and Bing.</div>
-                      </div>
+                      <p className="space-y-0.5">
+                        <strong className="block font-bold text-white text-xs">Directory Alignment</strong>
+                        <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Syncs name, address, phone number, and services across Google, Apple Maps, and Bing.</span>
+                      </p>
                     </li>
                   </ul>
                 </div>
 
                 {/* Delivery Details */}
-                <div className="pt-3 border-t border-white/10">
+                <footer className="pt-3 border-t border-white/10">
                   <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-3.5 space-y-2">
-                    <div className="flex items-start gap-2 font-mono text-xs text-white">
+                    <p className="flex items-start gap-2 font-mono text-xs text-white">
                       <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
                       <span><strong>Turnaround:</strong> 90 days in staged milestones</span>
-                    </div>
-                    <div className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
+                    </p>
+                    <p className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
                       <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
                       <span><strong className="text-zinc-200 font-sans">Delivery:</strong> Direct CMS installation or code files for your developer</span>
-                    </div>
+                    </p>
                   </div>
-                </div>
+                </footer>
               </div>
 
               <div className="pt-6">
@@ -231,27 +229,26 @@ export function CoreEngagementsGrid() {
           {/* Card 3: Monthly Improvements (AEO Sprints) */}
           <article className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl hover:border-purple-500/40 transition-all duration-300 group">
             <div className="space-y-5">
-              {/* Eyebrow */}
-              <div className="flex items-center justify-between">
+              {/* Card Header: Eyebrow, Title & Pricing Block */}
+              <header className="space-y-4">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/30 text-[11px] font-mono font-bold text-purple-300 uppercase tracking-wider">
                   <Rocket className="w-3.5 h-3.5" />
                   <span>Monthly Improvements</span>
                 </div>
-              </div>
 
-              {/* Title & Pricing Block */}
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">{tier3.name}</h3>
-                <div className="flex items-baseline gap-2 mt-2">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono">
-                    From $495 AUD
-                  </span>
-                  <span className="text-xs text-zinc-400 font-mono">ex. GST (or $1,980/mo bundle)</span>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight font-soehne-breit">{tier3.name}</h3>
+                  <p className="flex items-baseline gap-2 mt-2">
+                    <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono">
+                      From $495 AUD
+                    </span>
+                    <span className="text-xs text-zinc-400 font-mono">ex. GST (or $1,980/mo bundle)</span>
+                  </p>
+                  <p className="mt-1 text-xs text-zinc-400 font-sans">
+                    Monthly technical cycles &bull; No lock-in contracts &bull; Pause anytime
+                  </p>
                 </div>
-                <p className="mt-1 text-xs text-zinc-400 font-sans">
-                  Monthly technical cycles &bull; No lock-in contracts &bull; Pause anytime
-                </p>
-              </div>
+              </header>
 
               {/* Single-Sentence Scope */}
               <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif pt-1">
@@ -263,48 +260,48 @@ export function CoreEngagementsGrid() {
                 <ul className="space-y-3 text-xs font-sans">
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-bold text-white text-xs">Monthly Work Focus</div>
-                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Dedicated execution across code fixes, content updates, or directory cleanup.</div>
-                    </div>
+                    <p className="space-y-0.5">
+                      <strong className="block font-bold text-white text-xs">Monthly Work Focus</strong>
+                      <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Dedicated execution across code fixes, content updates, or directory cleanup.</span>
+                    </p>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-bold text-white text-xs">Flexible 30-Day Cycles</div>
-                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Clear scope agreed upon each month with zero long-term commitments.</div>
-                    </div>
+                    <p className="space-y-0.5">
+                      <strong className="block font-bold text-white text-xs">Flexible 30-Day Cycles</strong>
+                      <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Clear scope agreed upon each month with zero long-term commitments.</span>
+                    </p>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-bold text-white text-xs">Progress Verification</div>
-                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Verification checks on indexing health, search appearance, and data accuracy.</div>
-                    </div>
+                    <p className="space-y-0.5">
+                      <strong className="block font-bold text-white text-xs">Progress Verification</strong>
+                      <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Verification checks on indexing health, search appearance, and data accuracy.</span>
+                    </p>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-bold text-white text-xs">Documentation &amp; Handoff</div>
-                      <div className="text-[11px] text-zinc-400 font-serif leading-snug">Plain-English summary and review call for all completed updates.</div>
-                    </div>
+                    <p className="space-y-0.5">
+                      <strong className="block font-bold text-white text-xs">Documentation &amp; Handoff</strong>
+                      <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Plain-English summary and review call for all completed updates.</span>
+                    </p>
                   </li>
                 </ul>
               </div>
 
               {/* Delivery Details */}
-              <div className="pt-3 border-t border-white/10">
+              <footer className="pt-3 border-t border-white/10">
                 <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-3.5 space-y-2">
-                  <div className="flex items-start gap-2 font-mono text-xs text-white">
+                  <p className="flex items-start gap-2 font-mono text-xs text-white">
                     <Clock className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
                     <span><strong>Turnaround:</strong> 10 business days per sprint cycle</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
+                  </p>
+                  <p className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
                     <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
                     <span><strong className="text-zinc-200 font-sans">Flexibility:</strong> Adjust priorities monthly or cancel at the end of any cycle</span>
-                  </div>
+                  </p>
                 </div>
-              </div>
+              </footer>
             </div>
 
             <div className="pt-6">

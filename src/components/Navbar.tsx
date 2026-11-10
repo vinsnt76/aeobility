@@ -67,13 +67,13 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
 
           {/* Desktop Menu links */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-            <div className="flex items-center gap-4 xl:gap-8 text-sm font-semibold text-black/80" ref={dropdownRef}>
+            <ul className="flex items-center gap-4 xl:gap-8 text-sm font-semibold text-black/80 list-none p-0 m-0" ref={dropdownRef}>
               {NAVIGATION_DATA.map((link) => {
                 if (link.children) {
                   const isAnySubActive = link.children.some(sub => pathname === sub.href) || (link.href && pathname === link.href);
                   const isCurrentDropdownOpen = activeDropdown === link.title;
                   return (
-                    <div
+                    <li
                       key={link.title}
                       className="relative group"
                       onMouseEnter={() => setActiveDropdown(link.title)}
@@ -90,8 +90,8 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                       </Link>
 
                       {/* Dropdown Menu */}
-                      <div
-                        className={`absolute left-0 mt-1 w-64 bg-white/95 backdrop-blur-xl border border-black/10 rounded-xl p-2 shadow-2xl transition-all duration-200 origin-top-left z-50 ${
+                      <ul
+                        className={`absolute left-0 mt-1 w-64 bg-white/95 backdrop-blur-xl border border-black/10 rounded-xl p-2 shadow-2xl transition-all duration-200 origin-top-left z-50 list-none m-0 ${
                           isCurrentDropdownOpen
                             ? 'opacity-100 scale-100 translate-y-0 visible'
                             : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'
@@ -100,38 +100,40 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                         {link.children.map((subItem) => {
                           const isSubActive = pathname === subItem.href;
                           return (
-                            <Link
-                              key={subItem.title}
-                              href={subItem.href}
-                              className={`block px-4 py-2.5 rounded-lg text-sm transition-all ${
-                                isSubActive
-                                  ? 'bg-aeo-cyan/10 text-aeo-cyan font-bold'
-                                  : 'hover:bg-black/5 text-black/80 hover:text-black font-medium'
-                              }`}
-                            >
-                              <span>{subItem.title}</span>
-                            </Link>
+                            <li key={subItem.title}>
+                              <Link
+                                href={subItem.href}
+                                className={`block px-4 py-2.5 rounded-lg text-sm transition-all ${
+                                  isSubActive
+                                    ? 'bg-aeo-cyan/10 text-aeo-cyan font-bold'
+                                    : 'hover:bg-black/5 text-black/80 hover:text-black font-medium'
+                                }`}
+                              >
+                                <span>{subItem.title}</span>
+                              </Link>
+                            </li>
                           );
                         })}
-                      </div>
-                    </div>
+                      </ul>
+                    </li>
                   );
                 }
 
                 const isActive = link.href ? pathname === link.href : false;
                 return (
-                  <Link
-                    key={link.title}
-                    href={link.href || '#'}
-                    className={`hover:text-aeo-cyan transition-colors py-2 ${
-                      isActive ? 'text-aeo-cyan' : ''
-                    }`}
-                  >
-                    {link.title}
-                  </Link>
+                  <li key={link.title}>
+                    <Link
+                      href={link.href || '#'}
+                      className={`hover:text-aeo-cyan transition-colors py-2 block ${
+                        isActive ? 'text-aeo-cyan' : ''
+                      }`}
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
 
             {/* Desktop CTA Action Buttons */}
             <div className="flex items-center gap-2.5">

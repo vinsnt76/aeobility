@@ -11,13 +11,13 @@ interface USPCardProps {
 function USPCard({ icon, title, description }: USPCardProps) {
   return (
     <article className="group relative flex flex-col justify-between p-8 rounded-2xl bg-neutral-900/40 text-white border border-white/5 shadow-2xl hover:border-aeo-cyan/20 hover:bg-neutral-900/60 hover:-translate-y-1 transition-all duration-300">
-      <div>
+      <header>
         <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 mb-6 group-hover:scale-105 transition-transform duration-300">
           {icon}
         </div>
         <h3 className="text-xl font-bold mb-3 font-soehne-breit">{title}</h3>
-        <p className="text-sm text-white/60 font-light leading-relaxed font-serif">{description}</p>
-      </div>
+      </header>
+      <p className="text-sm text-white/60 font-light leading-relaxed font-serif">{description}</p>
     </article>
   );
 }
@@ -47,7 +47,7 @@ export default function USPGrid() {
       <div className="absolute right-0 top-1/3 w-64 h-64 rounded-full bg-aeo-cyan glow-blur opacity-10 pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto px-6">
-        <div className="relative text-left max-w-2xl mb-16">
+        <header className="relative text-left max-w-2xl mb-16">
           {/* Geometric Grid Background Motif */}
           <div className="absolute inset-0 -m-8 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
           <div className="relative z-10 space-y-4">
@@ -61,7 +61,7 @@ export default function USPGrid() {
               We structure business data into machine-readable knowledge graphs. Explore our <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-cyan hover:underline font-semibold">entity authority building framework for AI search</Link> to understand how conversational models evaluate brand salience. Read our <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-aeo-cyan hover:underline font-semibold">90-Day AEO Blueprint Case Study</Link> for an empirical look at commercial query visibility.
             </p>
           </div>
-        </div>
+        </header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {usps.map((usp, idx) => (

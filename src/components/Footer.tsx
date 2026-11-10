@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
         
         {/* Brand & Social Column */}
-        <div className="md:col-span-4 space-y-6">
+        <section aria-label="AEObility organisation details" className="md:col-span-4 space-y-6">
           <div className="flex items-center gap-2">
             <svg
               className="w-6 h-6 text-aeo-cyan"
@@ -120,10 +120,10 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-        </div>
+        </section>
 
         {/* Quick Links Column */}
-        <div className="md:col-span-2 space-y-4">
+        <nav aria-label="Services &amp; Blueprint navigation" className="md:col-span-2 space-y-4">
           <h4 className="text-xs font-bold uppercase tracking-wider text-white">Services &amp; Blueprint</h4>
           <ul className="space-y-2 text-xs font-medium">
             <li>
@@ -167,10 +167,10 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
+        </nav>
 
         {/* Helpful Info Column */}
-        <div className="md:col-span-2 space-y-4">
+        <nav aria-label="Helpful info navigation" className="md:col-span-2 space-y-4">
           <h4 className="text-xs font-bold uppercase tracking-wider text-white">Helpful Info</h4>
           <ul className="space-y-2 text-xs font-medium">
             <li>
@@ -219,7 +219,7 @@ export default function Footer() {
               </a>
             </li>
           </ul>
-        </div>
+        </nav>
 
         {/* Newsletter Signup Column */}
         <aside aria-label="Newsletter Subscription" className="md:col-span-4 space-y-4">
@@ -234,15 +234,15 @@ export default function Footer() {
 
       {/* Copyright row */}
       <div className="max-w-6xl mx-auto px-6 border-t border-white/5 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-white/30 font-light">
-        <div className="space-y-1">
-          <div>© {new Date().getFullYear()} AEObility. All rights reserved.</div>
-          <div>
+        <address className="space-y-1 not-italic">
+          <p>© {new Date().getFullYear()} AEObility. All rights reserved.</p>
+          <p>
             AEObility is a registered Australian business name (ABN: 61 029 803 255), registered with the Australian Securities and Investments Commission (ASIC) on 21 July 2026. Principal place of business: Dianella, Western Australia 6059.
-          </div>
-        </div>
-        <div>
+          </p>
+        </address>
+        <p>
           Built for Australian local entities.
-        </div>
+        </p>
       </div>
     </footer>
   );

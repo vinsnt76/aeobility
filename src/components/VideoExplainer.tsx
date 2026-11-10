@@ -21,7 +21,7 @@ export default function VideoExplainer({
       <div className="absolute right-1/4 bottom-1/4 w-[400px] h-[400px] bg-aeo-cyan/5 rounded-full filter blur-[100px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 text-left space-y-10">
-        <div className="relative py-4">
+        <header className="relative py-4">
           {/* Geometric Grid Background Motif */}
           <div className="absolute inset-0 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
           <div className="relative z-10 space-y-4">
@@ -35,10 +35,10 @@ export default function VideoExplainer({
               Search behaviour has shifted from blue links to direct answers. We engineer your digital presence so Search, Maps, and AI engines retrieve and recommend your business first. Read our <Link href="/services/aeo/definition" className="text-cyan-400 font-semibold hover:underline">AEO Definition &amp; Concepts guide</Link> or watch the overview below.
             </p>
           </div>
-        </div>
+        </header>
 
-        {/* Video Player Container / Media Showcase */}
-        <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-cyan-500/30 bg-neutral-950 shadow-[0_0_30px_rgba(0,205,216,0.15)]">
+        {/* Video Player Container / Media Showcase Figure */}
+        <figure className="relative aspect-video w-full rounded-2xl overflow-hidden border border-cyan-500/30 bg-neutral-950 shadow-[0_0_30px_rgba(0,205,216,0.15)] m-0">
           {isPlaying ? (
             <iframe
               src={embedUrl}
@@ -59,7 +59,7 @@ export default function VideoExplainer({
                 alt="Why Aussie Businesses Partner with AEObility - AEO & GEO Marketing"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-between p-6 sm:p-8">
+              <figcaption className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-between p-6 sm:p-8 pointer-events-none">
                 <div className="flex justify-between items-start">
                   <span className="px-3 py-1 rounded-full bg-black/70 border border-cyan-500/30 backdrop-blur-md text-[11px] font-mono text-cyan-300 uppercase tracking-wider">
                     Platform Overview &bull; 2 Min
@@ -76,10 +76,10 @@ export default function VideoExplainer({
                     <p className="text-xs text-slate-300 font-normal">See how AEO &amp; GEO Marketing drive Australian business visibility</p>
                   </div>
                 </div>
-              </div>
+              </figcaption>
             </button>
           )}
-        </div>
+        </figure>
       </div>
     </section>
   );

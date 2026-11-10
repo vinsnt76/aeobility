@@ -34,7 +34,7 @@ export function HomepageContactForm() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] rounded-full bg-radial from-aeo-cyan/15 via-aeo-purple/10 to-transparent glow-blur pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-10 space-y-3">
+        <header className="text-center mb-10 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-cyan-400 font-medium font-mono">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
             <span>Direct Implementation</span>
@@ -45,10 +45,10 @@ export function HomepageContactForm() {
           <p className="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto font-serif">
             Speak directly with an AEO specialist or request a custom sprint scope.
           </p>
-        </div>
+        </header>
 
         {submitted ? (
-          <div className="bg-black/60 p-8 md:p-12 rounded-2xl border border-cyan-500/30 text-center space-y-4 backdrop-blur-xl max-w-2xl mx-auto shadow-2xl">
+          <aside aria-label="Enquiry confirmation" className="bg-black/60 p-8 md:p-12 rounded-2xl border border-cyan-500/30 text-center space-y-4 backdrop-blur-xl max-w-2xl mx-auto shadow-2xl">
             <div className="w-12 h-12 rounded-full bg-cyan-500/20 text-cyan-300 flex items-center justify-center mx-auto border border-cyan-400/40">
               <CheckCircle2 className="w-6 h-6" />
             </div>
@@ -65,17 +65,17 @@ export function HomepageContactForm() {
                 <Mail className="w-3.5 h-3.5" /> vince@aeobility.com.au
               </a>
             </div>
-          </div>
+          </aside>
         ) : (
           <form
             onSubmit={handleSubmit}
             data-agent-form="contact-sprint-scope"
             className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-black/60 p-6 md:p-8 rounded-2xl border border-white/10 backdrop-blur-md shadow-2xl"
           >
-            <div>
-              <label htmlFor="contact-name-input" className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
+            <label className="block">
+              <span className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
                 Your Name *
-              </label>
+              </span>
               <input
                 id="contact-name-input"
                 name="name"
@@ -87,12 +87,12 @@ export function HomepageContactForm() {
                 placeholder="Jane Doe"
                 className="w-full px-4 py-3 rounded-lg bg-zinc-900 border border-white/10 text-white placeholder-zinc-500 text-sm focus:border-cyan-400 focus:outline-none transition-colors"
               />
-            </div>
+            </label>
 
-            <div>
-              <label htmlFor="contact-email-input" className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
+            <label className="block">
+              <span className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
                 Business Email *
-              </label>
+              </span>
               <input
                 id="contact-email-input"
                 name="email"
@@ -104,12 +104,12 @@ export function HomepageContactForm() {
                 placeholder="jane@company.com.au"
                 className="w-full px-4 py-3 rounded-lg bg-zinc-900 border border-white/10 text-white placeholder-zinc-500 text-sm focus:border-cyan-400 focus:outline-none transition-colors"
               />
-            </div>
+            </label>
 
-            <div>
-              <label htmlFor="contact-phone-input" className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
+            <label className="block">
+              <span className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
                 Phone Number
-              </label>
+              </span>
               <input
                 id="contact-phone-input"
                 name="phone"
@@ -120,12 +120,12 @@ export function HomepageContactForm() {
                 placeholder="0400 000 000"
                 className="w-full px-4 py-3 rounded-lg bg-zinc-900 border border-white/10 text-white placeholder-zinc-500 text-sm focus:border-cyan-400 focus:outline-none transition-colors"
               />
-            </div>
+            </label>
 
-            <div>
-              <label htmlFor="contact-url-input" className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
+            <label className="block">
+              <span className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
                 Australian Business URL
-              </label>
+              </span>
               <input
                 id="contact-url-input"
                 name="url"
@@ -136,12 +136,12 @@ export function HomepageContactForm() {
                 placeholder="https://yourbrand.com.au"
                 className="w-full px-4 py-3 rounded-lg bg-zinc-900 border border-white/10 text-white placeholder-zinc-500 text-sm focus:border-cyan-400 focus:outline-none transition-colors"
               />
-            </div>
+            </label>
 
-            <div className="md:col-span-2">
-              <label htmlFor="contact-message-input" className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
+            <label className="block md:col-span-2">
+              <span className="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1 font-mono">
                 Primary Search Intent or Goals
-              </label>
+              </span>
               <textarea
                 id="contact-message-input"
                 name="message"
@@ -151,9 +151,9 @@ export function HomepageContactForm() {
                 placeholder="Tell us about your primary search intent or goals..."
                 className="w-full px-4 py-3 rounded-lg bg-zinc-900 border border-white/10 text-white placeholder-zinc-500 text-sm focus:border-cyan-400 focus:outline-none transition-colors"
               />
-            </div>
+            </label>
 
-            <div className="md:col-span-2 text-center mt-2">
+            <footer className="md:col-span-2 text-center mt-2">
               <button
                 type="submit"
                 data-agent-action="submit-sprint-scope"
@@ -162,7 +162,7 @@ export function HomepageContactForm() {
                 <span>Request Sprint Scope</span>
                 <Send className="w-4 h-4" />
               </button>
-            </div>
+            </footer>
           </form>
         )}
       </div>

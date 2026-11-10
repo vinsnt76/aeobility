@@ -62,7 +62,7 @@ export default function BlueprintSection() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Methodology & Strategic Process */}
-          <div className="lg:col-span-7 relative">
+          <article aria-labelledby="roadmap-title" className="lg:col-span-7 relative">
             {/* Geometric Grid Background Motif */}
             <div className="absolute inset-y-0 -inset-x-8 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
             
@@ -79,8 +79,8 @@ export default function BlueprintSection() {
                 </div>
               </div>
 
-              {/* Title & Concept */}
-              <div>
+              {/* Title & Concept Header */}
+              <header className="space-y-3">
                 <h2 id="roadmap-title" className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight font-soehne-breit tracking-tight text-white">
                   The 90-Day Execution Methodology<br />
                   <span className="text-gradient-aeo">From Diagnostic to Generative Dominance</span>
@@ -88,7 +88,7 @@ export default function BlueprintSection() {
                 <p className="mt-3 text-sm sm:text-base text-zinc-300 leading-relaxed font-serif">
                   The Strategic Blueprint is not a static PDF audit. It is the operational master plan that powers your 90-day technical sprint execution. We diagnose missing business entities, broken citations, and schema errors across your digital footprint, translating them into an actionable sprint backlog for your engineering team or our turnkey deployment.
                 </p>
-              </div>
+              </header>
 
               {/* 4-Step Operational Journey */}
               <div className="p-5 rounded-2xl bg-zinc-950/90 border border-white/10 space-y-4">
@@ -99,9 +99,9 @@ export default function BlueprintSection() {
                   {methodologySteps.map((step, idx) => (
                     <li key={idx} className="p-3.5 rounded-xl bg-zinc-900/60 border border-white/5 space-y-1.5">
                       <div className="flex items-center gap-2">
-                        <div className="p-1 rounded-md bg-cyan-500/10 border border-cyan-400/20">
+                        <span className="p-1 rounded-md bg-cyan-500/10 border border-cyan-400/20 inline-flex">
                           {step.icon}
-                        </div>
+                        </span>
                         <span className="font-mono text-[10px] font-bold uppercase text-cyan-300">{step.step}</span>
                       </div>
                       <h4 className="font-bold text-white text-xs">{step.title}</h4>
@@ -112,7 +112,7 @@ export default function BlueprintSection() {
               </div>
 
               {/* Commercial Credit Bridge */}
-              <div className="p-4 rounded-xl bg-gradient-to-r from-cyan-950/50 via-zinc-950 to-purple-950/40 border border-cyan-500/30 flex items-start gap-3">
+              <aside aria-label="Commercial Guarantee" className="p-4 rounded-xl bg-gradient-to-r from-cyan-950/50 via-zinc-950 to-purple-950/40 border border-cyan-500/30 flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                 <div className="space-y-1 text-xs">
                   <span className="font-mono font-bold text-cyan-300 block uppercase tracking-wider">
@@ -122,10 +122,10 @@ export default function BlueprintSection() {
                     100% of your {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })} Blueprint fee is credited directly toward AEO Foundation when activated within {GOVERNANCE_RULES.creditWindowDays} days of findings delivery.
                   </p>
                 </div>
-              </div>
+              </aside>
 
               {/* Action Button & Proximity Reassurance Cluster */}
-              <div className="pt-2 space-y-3">
+              <footer className="pt-2 space-y-3">
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/contact?tier=blueprint"
@@ -144,34 +144,34 @@ export default function BlueprintSection() {
                 </div>
 
                 {/* Immediate Proximity Reassurance Row */}
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono pt-1">
-                  <div className="flex items-center gap-1.5 text-cyan-300 font-bold">
+                <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono pt-1 list-none p-0 m-0">
+                  <li className="flex items-center gap-1.5 text-cyan-300 font-bold">
                     <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
                     <span>100% Credited (60 Days)</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-zinc-300">
+                  </li>
+                  <li className="flex items-center gap-1.5 text-zinc-300">
                     <Clock className="w-4 h-4 text-cyan-400 shrink-0" />
                     <span>5–7 Business Day Turnaround SLA</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-zinc-300">
+                  </li>
+                  <li className="flex items-center gap-1.5 text-zinc-300">
                     <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
                     <span>100% Client IP Ownership</span>
-                  </div>
-                </div>
-              </div>
+                  </li>
+                </ul>
+              </footer>
             </div>
-          </div>
+          </article>
 
           {/* Right Column: 90-Day Execution Plan & Governance */}
-          <div className="lg:col-span-5 space-y-6">
+          <aside aria-label="90-Day Execution Roadmap" className="lg:col-span-5 space-y-6">
             <div className="p-1 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-2xl">
               <div className="p-6 sm:p-8 space-y-6 bg-neutral-950/90 rounded-xl">
-                <div className="border-b border-white/10 pb-4 flex items-center justify-between">
+                <header className="border-b border-white/10 pb-4 flex items-center justify-between">
                   <h3 className="text-lg font-bold font-soehne-breit text-white">
                     90-Day Execution Roadmap
                   </h3>
                   <span className="text-xs font-mono text-cyan-400 font-semibold">Staged Sprints</span>
-                </div>
+                </header>
                 
                 <div className="space-y-5">
                   {blueprintPhases.map((phase, idx) => (
@@ -195,29 +195,29 @@ export default function BlueprintSection() {
                   <span className="text-xs font-mono font-bold text-cyan-300 block uppercase tracking-wider">
                     Governed Delivery Principles:
                   </span>
-                  <div className="space-y-1.5 text-xs text-zinc-300 font-serif">
-                    <div className="flex items-center gap-2">
+                  <ul className="space-y-1.5 text-xs text-zinc-300 font-serif list-none p-0 m-0">
+                    <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                       <span>Deterministic milestone sign-off for every deployed sprint</span>
-                    </div>
-                    <div className="flex items-center gap-2">
+                    </li>
+                    <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                       <span>Zero locked-in monthly retainers or long-term contracts</span>
-                    </div>
-                    <div className="flex items-center gap-2">
+                    </li>
+                    <li className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                       <span>Open-book code PRs, schema mapping logs &amp; full IP transfer</span>
-                    </div>
-                  </div>
+                    </li>
+                  </ul>
                 </div>
 
-                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-zinc-400 font-mono">
+                <footer className="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-zinc-400 font-mono">
                   <span>Cadence: 30-Day Governed Cycles</span>
                   <span>Turnaround: 5–7 Business Days</span>
-                </div>
+                </footer>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
