@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FieldNoteCase() {
   return (
-    <section 
+    <section
       aria-labelledby="case-heading"
       className="my-20 max-w-4xl mx-auto px-6 scroll-mt-24"
     >
@@ -17,7 +17,7 @@ export default function FieldNoteCase() {
           </p>
         </div>
 
-        <h2 
+        <h2
           id="case-heading"
           className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-6 font-soehne-breit"
         >
@@ -36,12 +36,29 @@ export default function FieldNoteCase() {
           </p>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-white/5 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-slate-400">
-          <span>Target Sector: Commercial Trade &amp; Engineering</span>
-          <span>Resolution Time: 5-Day Sprint</span>
-          <span className="text-cyan-400">Outcome: Verified Entity Citation</span>
+        <div className="mt-8 pt-6 border-t border-white/10 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-xl bg-cyan-950/30 border border-cyan-500/30 shadow-lg">
+            <div>
+              <span className="text-[11px] font-mono uppercase tracking-wider text-cyan-400 block font-semibold mb-1">
+                Verified Client Outcome
+              </span>
+              <span className="text-xl sm:text-2xl font-extrabold text-white font-mono tracking-tight">
+                Verified Entity Citation in 5 Days
+              </span>
+            </div>
+            <div className="text-xs font-mono text-cyan-300 font-semibold px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 w-fit shrink-0">
+              100% Fee Credited Back
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-slate-400 pt-1">
+            <span>Target Sector: Commercial Trade &amp; Engineering</span>
+            <span>Location: Balcatta &amp; Osborne Park, WA</span>
+            <span>Prior Retainer: $2,200/mo Displaced</span>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+

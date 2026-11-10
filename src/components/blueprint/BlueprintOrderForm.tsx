@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { trackGaEvent } from '@/lib/gtag';
+import { ShieldCheck } from 'lucide-react';
 
 export default function BlueprintOrderForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -175,13 +176,31 @@ export default function BlueprintOrderForm() {
               </button>
             </div>
 
-            {/* Reassurance Guarantee */}
-            <p className="text-center text-xs text-slate-400 font-mono pt-1">
-              Zero retainers. 5-day delivery SLA. 100% credited to eligible sprints.
-            </p>
+            {/* Reassurance Guarantee (De-Risking Direct Order) */}
+            <div className="pt-3 space-y-2 text-center text-xs text-slate-400 font-serif border-t border-white/5">
+              <p className="flex items-center justify-center gap-1.5 text-slate-300 font-mono text-[11px] font-semibold">
+                <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                <span>Zero retainers. 5-day delivery SLA.</span>
+              </p>
+              <ul className="text-[11px] text-slate-400 space-y-1 font-serif list-none text-left max-w-md mx-auto">
+                <li className="flex items-start gap-1.5">
+                  <span className="text-cyan-400 font-bold shrink-0">•</span>
+                  <span>No immediate charge: We confirm entity scope within 4 business hours before invoicing.</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="text-cyan-400 font-bold shrink-0">•</span>
+                  <span>100% credit applied automatically to any follow-on sprint.</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="text-cyan-400 font-bold shrink-0">•</span>
+                  <span>You retain full IP and code ownership of all deliverable files.</span>
+                </li>
+              </ul>
+            </div>
           </form>
         )}
       </div>
     </section>
   );
 }
+
