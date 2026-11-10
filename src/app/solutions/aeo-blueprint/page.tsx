@@ -97,7 +97,7 @@ export default function AEOBlueprintPage() {
     },
     {
       question: "How long does the Blueprint take to deliver?",
-      answer: "Most Blueprints are completed within 7–10 business days once we have confirmed the required information and access. Larger or multi-location businesses may require a custom scope, which we will confirm before work begins."
+      answer: "Most Blueprints are completed within 5 business days once we have confirmed the required information and access. Larger or multi-location businesses may require a custom scope, which we will confirm before work begins."
     },
     {
       question: "Can I implement the Blueprint myself or give it to my developer?",
@@ -121,7 +121,7 @@ export default function AEOBlueprintPage() {
     },
     {
       question: "How do I run an AEO pilot with a 90-day plan and clear success criteria?",
-      answer: "The $995 AUD Strategic Blueprint is engineered specifically as the entry point for a 90-day AEO pilot. Days 1 to 10 establish your baseline visibility scorecard and lock in a prioritised 90-day execution roadmap. In Weeks 2 to 6, you can apply your 100% $995 fee credit toward AEO Foundation or targeted Micro-Sprints to deploy connected JSON-LD schema and self-contained answer passages. Weeks 7 to 12 measure pilot performance against clear success criteria: zero-error schema validation, verified AI crawler access, direct passage extraction on target buyer queries, and brand citation growth across ChatGPT Search, Perplexity, and Google AI Overviews."
+      answer: "The $995 AUD Strategic Blueprint is engineered specifically as the entry point for a 90-day AEO pilot. Days 1 to 5 establish your baseline visibility scorecard and lock in a prioritised 90-day execution roadmap. In Weeks 2 to 6, you can apply your 100% $995 fee credit toward AEO Foundation or targeted Micro-Sprints to deploy connected JSON-LD schema and self-contained answer passages. Weeks 7 to 12 measure pilot performance against clear success criteria: zero-error schema validation, verified AI crawler access, direct passage extraction on target buyer queries, and brand citation growth across ChatGPT Search, Perplexity, and Google AI Overviews."
     }
   ];
 
@@ -165,27 +165,75 @@ export default function AEOBlueprintPage() {
       <main className="flex-grow w-full py-12 pb-24 sm:pb-16">
         <div className="max-w-5xl mx-auto px-6 space-y-16">
 
-          {/* 1. Hero Block with Clean Featured WebP Image Backdrop & Overlaid CTAs */}
+          {/* 1. Hero Block with Direct Answer Block & Dominant Single CTA */}
           <section id="hero" className="text-center max-w-4xl mx-auto space-y-6 scroll-mt-24">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono font-semibold uppercase tracking-wider text-cyan-300">
               <Compass className="w-4 h-4 text-cyan-400" />
               <span>Strategic Diagnostic Audit &amp; 90-Day Roadmap</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit">
-              Strategic <span className="text-gradient-aeo">Blueprint</span>
+            
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight font-soehne-breit text-white">
+              Get a clear 90-day roadmap to make AI search engines cite your business
             </h1>
-            <div className="space-y-3 max-w-2xl mx-auto">
-              <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed font-sans">
-                Get a deep technical audit and a practical 90-day strategic roadmap for your business. Read our <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-cyan-400 hover:underline font-semibold">blueprint execution timeline</Link> to see this in action. 100% of your $995 Blueprint fee is credited toward eligible implementation sprints.
+
+            {/* Direct Answer Block (Autonomous Ingestion + Executive Summary) */}
+            <aside
+              aria-label="Executive Summary"
+              data-agent-purpose="direct-answer"
+              className="text-left bg-white/[0.03] backdrop-blur-md border border-white/10 border-t-2 border-t-cyan-400/80 shadow-2xl rounded-2xl p-6 sm:p-8 my-8 space-y-6"
+            >
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">
+                  <Info className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <span>Executive Summary &amp; Direct Answer</span>
+                </div>
+                <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-sans">
+                  The Strategic Blueprint is a fixed-scope technical audit that diagnoses entity clarity, schema gaps, and AI retrieval barriers across your digital presence within 5 business days, delivering an actionable 90-day execution roadmap backed by a 100% fee credit toward implementation.
+                </p>
+              </div>
+
+              {/* Micro-Data Key-Value Strip */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10">
+                <div className="p-3.5 bg-black/50 border border-white/5 rounded-xl">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 block mb-1">Turnaround</span>
+                  <span className="text-sm sm:text-base font-bold font-mono text-cyan-300">5 Business Days</span>
+                </div>
+                <div className="p-3.5 bg-black/50 border border-white/5 rounded-xl">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 block mb-1">Investment</span>
+                  <span className="text-sm sm:text-base font-bold font-mono text-white">$995 AUD <span className="text-xs text-zinc-400 font-normal">ex. GST</span></span>
+                </div>
+                <div className="p-3.5 bg-black/50 border border-white/5 rounded-xl">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 block mb-1">Risk Reversal</span>
+                  <span className="text-sm sm:text-base font-bold font-mono text-cyan-300">100% Fee Credited Back</span>
+                </div>
+              </div>
+            </aside>
+
+            {/* Focal Point CTA (Hick's Law - Single Dominant CTA + Tertiary Scan Link) */}
+            <div className="space-y-4 max-w-md mx-auto pt-2">
+              <a
+                href="#blueprint-contact-form"
+                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(0,205,216,0.35)] cursor-pointer"
+              >
+                <Calendar className="w-4 h-4 text-black shrink-0" />
+                <span>Order $995 Blueprint</span>
+                <ArrowRight className="w-4 h-4 text-black shrink-0" />
+              </a>
+              <p className="text-xs text-zinc-400 font-serif">
+                Zero retainers. Delivered in 5 business days. 100% credited to sprints.
               </p>
-              <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-cyan-300 pt-1">
-                <span>Standalone Audit: $995 AUD ex. GST</span>
-                <span className="text-zinc-600">|</span>
-                <span>100% Fee Credited to Eligible Sprints</span>
+              <div className="pt-1">
+                <Link
+                  href="/diagnostic"
+                  className="text-xs text-cyan-400 hover:text-cyan-300 hover:underline font-medium inline-flex items-center gap-1.5 transition"
+                >
+                  <span>Not ready for a full audit? Run a free 60-second visibility scan</span>
+                  <span>&rarr;</span>
+                </Link>
               </div>
             </div>
 
-            {/* Featured 1200x800 WebP Image Hero Banner with Overlaid CTAs */}
+            {/* Featured 1200x800 WebP Image Hero Banner */}
             <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] my-8 group min-h-[360px] sm:min-h-[420px]">
               <Image
                 src="/images/solutions/aeo-blueprint-strategic-audit_AEObility.webp"
@@ -195,31 +243,7 @@ export default function AEOBlueprintPage() {
                 className="w-full h-[360px] sm:h-[420px] object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-90"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/60 to-transparent" />
-
-              {/* Overlaid Hero CTAs */}
-              <div className="absolute bottom-3 sm:bottom-6 inset-x-3 sm:inset-x-6 z-20 p-3.5 sm:p-6 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-md flex flex-col md:flex-row items-stretch sm:items-center justify-between gap-3 shadow-2xl">
-                <div className="text-left space-y-0.5 sm:space-y-1">
-                  <span className="text-[11px] sm:text-xs font-mono text-cyan-300 font-bold block uppercase tracking-wider">Audit your digital footprint &amp; get a 90-day roadmap</span>
-                  <span className="text-[11px] sm:text-xs text-zinc-300 font-serif block">Typical delivery: 7–10 business days from confirmed access.</span>
-                </div>
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto shrink-0">
-                  <a
-                    href="#blueprint-contact-form"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-xs transition-transform hover:scale-[1.02] shadow-[0_0_15px_rgba(0,205,216,0.4)] cursor-pointer whitespace-nowrap shrink-0"
-                  >
-                    <Calendar className="w-4 h-4 text-black shrink-0" />
-                    <span>Order $995 Blueprint</span>
-                  </a>
-                  <Link
-                    href="/diagnostic"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-zinc-900/90 border border-white/20 hover:border-cyan-400 text-white font-semibold text-xs transition-all duration-300 hover:bg-zinc-800 cursor-pointer whitespace-nowrap shrink-0"
-                  >
-                    <span>Run a free visibility scan</span>
-                    <ArrowRight className="w-4 h-4 text-cyan-400 shrink-0" />
-                  </Link>
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-zinc-950/40 to-transparent" />
             </div>
 
             <p className="text-xs text-zinc-400 font-serif">
@@ -227,37 +251,51 @@ export default function AEOBlueprintPage() {
             </p>
           </section>
 
-          {/* 2. Recommended Decision Strip */}
-          <section id="decision-strip" className="bg-zinc-950/80 border border-white/10 rounded-2xl p-6 space-y-3 scroll-mt-24">
-            <div className="flex items-center gap-2">
-              <HelpCircle className="w-5 h-5 text-cyan-400" />
-              <h2 className="text-base font-bold text-white font-soehne-breit">Which option fits your current priority?</h2>
+          {/* 2. Section: The Retainer Problem vs. Fixed Deliverables */}
+          <section id="retainer-problem" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">The Retainer Problem vs. Fixed Deliverables</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit leading-snug">
+                Legacy SEO agencies leave you paying monthly retainers with zero AI visibility
+              </h2>
+              <p className="text-xs sm:text-sm text-zinc-300 font-serif leading-relaxed">
+                Traditional agencies charge ongoing monthly retainers for keyword rankings and link schemes that generative search engines ignore. AI models like ChatGPT Search, Perplexity, and Google AI Overviews do not browse links; they retrieve verifiable entity facts from structured knowledge graphs.
+              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-serif pt-1">
-              <div className="p-4 bg-black/60 border border-cyan-500/40 rounded-xl space-y-1">
-                <span className="text-cyan-300 font-bold block font-mono">Unsure what limits search visibility?</span>
-                <span className="text-zinc-300 block">Start with the standalone Strategic Blueprint ($995 ex. GST).</span>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto text-xs font-serif">
+              <div className="p-6 bg-zinc-950/80 border border-red-500/20 rounded-2xl space-y-3">
+                <span className="text-red-400 font-mono font-bold text-xs uppercase tracking-wider block">The Legacy SEO Trap</span>
+                <ul className="space-y-2.5 text-zinc-300 list-disc list-inside">
+                  <li>Locked into open-ended monthly contracts ($2,000 to $5,000+ every month).</li>
+                  <li>Opaque vanity metrics like impressions and keyword ranks that fail to convert.</li>
+                  <li>No machine-readable schema or entity identity grounding for AI answer engines.</li>
+                  <li>Slow execution cycles hidden behind recurring agency retainer hours.</li>
+                </ul>
               </div>
-              <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
-                <span className="text-purple-300 font-bold block font-mono">Know the single priority issue?</span>
-                <span className="text-zinc-300 block">
-                  Choose a <Link href="/solutions/aeo-sprint" className="text-purple-400 hover:underline font-medium">Micro-Sprint from $495 ex. GST</Link>.
-                </span>
-              </div>
-              <div className="p-4 bg-black/60 border border-white/10 rounded-xl space-y-1">
-                <span className="text-cyan-300 font-bold block font-mono">Need connected implementation?</span>
-                <span className="text-zinc-300 block">
-                  Discuss <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">AEO Foundation ($1,990 ex. GST)</Link>.
-                </span>
+
+              <div className="p-6 bg-zinc-950/80 border border-cyan-500/40 rounded-2xl space-y-3 shadow-[0_0_20px_rgba(6,182,212,0.1)]">
+                <span className="text-cyan-300 font-mono font-bold text-xs uppercase tracking-wider block">The AEObility Blueprint Model</span>
+                <ul className="space-y-2.5 text-zinc-200 list-disc list-inside">
+                  <li>Transparent one-time fixed investment ($995 AUD ex. GST) with zero lock-in.</li>
+                  <li>Guaranteed 5-business-day turnaround with a concrete 90-day execution roadmap.</li>
+                  <li>Deep diagnostic of schema markup, entity clarity, and AI engine retrieval gaps.</li>
+                  <li>100% of your audit fee credited back toward eligible implementation sprints.</li>
+                </ul>
               </div>
             </div>
           </section>
 
-          {/* 3. Deliverables Grid (4 Self-Contained Cards with Passage @id Anchors) */}
+          {/* 3. Section: The 4 Core Audit Deliverables */}
           <section id="bpstrat-deliverables" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">What is included in your Blueprint</h2>
-              <p className="text-xs sm:text-sm text-white/60 font-serif">Every Blueprint provides four core audit deliverables to guide your next 90 days.</p>
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">The 4 Core Audit Deliverables</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit leading-snug">
+                Our 5-day blueprint audits entity clarity and identifies exact AI answer gaps
+              </h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">
+                Every Blueprint provides four core audit deliverables to guide your next 90 days. Read our <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-cyan-400 hover:underline font-semibold">blueprint execution timeline</Link> to see how client findings turn into live citations.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -272,6 +310,48 @@ export default function AEOBlueprintPage() {
                   </p>
                 </div>
               ))}
+            </div>
+
+            {/* Deliverables Ownership Statement */}
+            <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
+              <div className="flex items-start gap-3">
+                <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white font-semibold block mb-0.5">You own the agreed audit deliverables</strong>
+                  <span>Use your completed 90-day roadmap with your internal developer or agency partner, or ask AEObility to implement the agreed changes.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 4. Section: Comparative Matrix & Exit-Ramp Selector */}
+          <section id="decision-strip" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <div className="flex items-center justify-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider font-bold">
+                <HelpCircle className="w-4 h-4 text-cyan-400" />
+                <span>Service Fit &amp; Comparison</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Which option fits your current priority?</h2>
+              <p className="text-xs text-white/60 font-serif">Compare our standalone diagnostic audit against targeted micro-sprints and full foundations.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-serif">
+              <div className="p-4 bg-zinc-950/80 border border-cyan-500/40 rounded-xl space-y-1">
+                <span className="text-cyan-300 font-bold block font-mono">Unsure what limits search visibility?</span>
+                <span className="text-zinc-300 block">Start with the standalone Strategic Blueprint ($995 ex. GST).</span>
+              </div>
+              <div className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl space-y-1">
+                <span className="text-purple-300 font-bold block font-mono">Know the single priority issue?</span>
+                <span className="text-zinc-300 block">
+                  Choose a <Link href="/solutions/aeo-sprint" className="text-purple-400 hover:underline font-medium">Micro-Sprint from $495 ex. GST</Link>.
+                </span>
+              </div>
+              <div className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl space-y-1">
+                <span className="text-cyan-300 font-bold block font-mono">Need connected implementation?</span>
+                <span className="text-zinc-300 block">
+                  Discuss <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">AEO Foundation ($1,990 ex. GST)</Link>.
+                </span>
+              </div>
             </div>
 
             {/* Clean 3-Tier Service Comparison Matrix Table */}
@@ -307,6 +387,19 @@ export default function AEOBlueprintPage() {
                 </tbody>
               </table>
             </div>
+          </section>
+
+          {/* 5. Section: The 100% Risk-Reversal Credit Policy & Process */}
+          <section id="blueprint-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">The 100% Risk-Reversal Credit Policy</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit leading-snug">
+                Implement the strategic plan yourself or credit 100% of the cost toward delivery
+              </h2>
+              <p className="text-xs sm:text-sm text-white/60 font-serif">
+                A transparent 3-step delivery workflow engineered to de-risk your investment completely.
+              </p>
+            </div>
 
             {/* Prominently Elevated Blueprint Credit Callout Box */}
             <div id="blueprint-credit-terms" className="p-6 bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-cyan-500/30 rounded-2xl text-xs text-zinc-300 font-serif leading-relaxed space-y-2 shadow-lg scroll-mt-24">
@@ -319,26 +412,6 @@ export default function AEOBlueprintPage() {
               </p>
             </div>
 
-            {/* Deliverables Ownership Statement */}
-            <div className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-300 font-serif leading-relaxed">
-              <div className="flex items-start gap-3">
-                <Code className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white font-semibold block mb-0.5">You own the agreed audit deliverables</strong>
-                  <span>Use your completed 90-day roadmap with your internal developer or agency partner, or ask AEObility to implement the agreed changes.</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* 4. Operational 3-Step Process Flow Pipeline Graphic */}
-          <section id="blueprint-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Simple 3-Step Operational Delivery</span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">How the Blueprint audit works</h2>
-              <p className="text-xs text-white/60 font-serif">Clear sequence from initial digital presence review to strategic walkthrough.</p>
-            </div>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-cyan-500/40 transition">
                 <div className="w-10 h-10 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(6,182,212,0.2)]">1</div>
@@ -348,7 +421,7 @@ export default function AEOBlueprintPage() {
 
               <div className="p-6 bg-zinc-950/90 border border-white/10 rounded-2xl space-y-3 relative hover:border-purple-500/40 transition">
                 <div className="w-10 h-10 rounded-full bg-purple-950 border border-purple-500/40 text-purple-300 font-mono font-bold text-sm flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(168,85,247,0.2)]">2</div>
-                <h3 className="text-base font-bold text-white font-soehne-breit">7–10 day audit &amp; roadmap</h3>
+                <h3 className="text-base font-bold text-white font-soehne-breit">5-day audit &amp; roadmap</h3>
                 <p className="text-xs text-zinc-300 font-serif leading-relaxed">We audit your structured data, content clarity, local signals, and technical gap analysis.</p>
               </div>
 
@@ -360,7 +433,7 @@ export default function AEOBlueprintPage() {
             </div>
           </section>
 
-          {/* 5. Streamlined 12-Column Responsive Form & Enquiry Module */}
+          {/* 6. Section: Dedicated Intake Form */}
           <section id="blueprint-contact-form" className="border-t border-white/10 pt-16 scroll-mt-24">
             <div className="relative isolate max-w-3xl mx-auto bg-slate-900/80 border border-purple-500/25 p-6 sm:p-10 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-md">
               {/* Top Specular Light Catch */}
@@ -372,7 +445,9 @@ export default function AEOBlueprintPage() {
                   <Compass className="w-3.5 h-3.5 text-cyan-400" />
                   <span>Order Strategic Audit</span>
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Order your Strategic Blueprint ($995 ex. GST)</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit leading-snug">
+                  Claim your audit blueprint for a transparent fixed fee of $995 AUD ex. GST
+                </h2>
                 <p className="text-xs sm:text-sm text-slate-300 font-serif max-w-xl mx-auto leading-relaxed">
                   Enter your business details below to request your standalone Strategic Blueprint and 90-day execution roadmap.
                 </p>

@@ -84,6 +84,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
         "sku": bpStrat.code,
         "price": bpStrat.priceExGst,
         "priceCurrency": "AUD",
+        "eligibleDuration": "P5D",
         "availability": "https://schema.org/InStock",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",

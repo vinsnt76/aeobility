@@ -110,7 +110,7 @@ export const TECHNICAL_SPRINT_CATALOG: Record<string, SprintSKU> = {
     name: 'Strategic Blueprint',
     priceExGst: 995,
     handsOnEffort: '4–6 Hours',
-    deliverySla: '5–7 Business Days',
+    deliverySla: '5 Business Days',
     category: 'blueprint',
     purpose: 'De-risk technical execution through comprehensive diagnostic discovery. Identify missing business entities, broken citation links, and outdated schema across your digital footprint so search engines and AI models accurately recognise your services before deploying code.',
     deliverables: [
