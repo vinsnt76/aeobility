@@ -93,6 +93,16 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
         }
       },
       {
+        "@type": "CollectionPage",
+        "@id": "https://aeobility.com.au/solutions#collection",
+        "url": "https://aeobility.com.au/solutions",
+        "name": "AEObility Solutions",
+        "description": "Fixed-scope Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) services and sprint packages.",
+        "isPartOf": {
+          "@id": "https://aeobility.com.au/#website"
+        }
+      },
+      {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/solutions/aeo-blueprint#webpage",
         "url": "https://aeobility.com.au/solutions/aeo-blueprint",
@@ -100,7 +110,7 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
         "description": `Get a deep technical audit and an actionable 90-day strategic roadmap for ${formatAudCurrency(bpStrat.priceExGst)} ex. GST. 100% of your ${formatAudCurrency(bpStrat.priceExGst)} Blueprint fee is credited toward AEO Foundation within ${GOVERNANCE_RULES.creditWindowDays} days.`,
         "inLanguage": "en-AU",
         "isPartOf": {
-          "@id": "https://aeobility.com.au/#website"
+          "@id": "https://aeobility.com.au/solutions#collection"
         },
         "breadcrumb": {
           "@id": "https://aeobility.com.au/solutions/aeo-blueprint#breadcrumb"
@@ -148,14 +158,12 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
         "sku": bpStrat.code,
         "image": "https://aeobility.com.au/images/solutions/aeo-blueprint-strategic-audit_AEObility.webp",
         "description": "Comprehensive digital presence audit, technical entity gap analysis, AI visibility scorecard, and 90-day action plan for Australian businesses.",
+        "category": "AEO Strategic Diagnostic",
         "brand": {
           "@id": "https://aeobility.com.au/#organization"
         },
         "provider": {
           "@id": "https://aeobility.com.au/#organization"
-        },
-        "isPartOf": {
-          "@id": "https://aeobility.com.au/solutions#collection"
         },
         "subjectOf": {
           "@type": "CreativeWork",
@@ -183,7 +191,6 @@ export const getAeoBlueprintSchemaGraph = (faqs?: FaqItem[]) => {
           "price": String(bpStrat.priceExGst),
           "priceCurrency": "AUD",
           "priceValidUntil": "2027-12-31",
-          "eligibleDuration": "P5D",
           "availability": "https://schema.org/InStock",
           "description": `100% of the ${formatAudCurrency(bpStrat.priceExGst)} audit fee is credited toward eligible AEO Foundation implementation sprints within ${GOVERNANCE_RULES.creditWindowDays} days.`,
           "seller": {
