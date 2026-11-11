@@ -229,14 +229,14 @@ export default function ClarityEngineStaging() {
           box-shadow: 0 18px 36px rgba(0, 0, 0, 0.75);
         }
 
-        /* Reference Image Specular Frosted Glass Container */
+        /* Reference Image Specular Frosted Glass Container - Translucent so 3D spheres refract through */
         .glass-poster-card {
           background:
-            linear-gradient(155deg, rgba(18, 23, 35, 0.76) 0%, rgba(10, 13, 20, 0.88) 55%, rgba(14, 18, 29, 0.78) 100%) padding-box,
-            linear-gradient(135deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 38%, rgba(255, 255, 255, 0.04) 70%, rgba(255, 255, 255, 0.28) 100%) border-box;
+            linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(15, 18, 30, 0.52) 42%, rgba(10, 12, 22, 0.64) 75%, rgba(60, 40, 220, 0.12) 100%) padding-box,
+            linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.14) 38%, rgba(255, 255, 255, 0.05) 70%, rgba(255, 255, 255, 0.35) 100%) border-box;
           border: 1px solid transparent;
-          backdrop-filter: blur(26px) saturate(150%);
-          -webkit-backdrop-filter: blur(26px) saturate(150%);
+          backdrop-filter: blur(28px) saturate(160%);
+          -webkit-backdrop-filter: blur(28px) saturate(160%);
           box-shadow: 0 32px 70px -12px rgba(0, 0, 0, 0.78);
         }
 
@@ -478,32 +478,32 @@ export default function ClarityEngineStaging() {
             {/* Top-Left Warm Orange 3D Sphere */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -top-10 -left-10 w-44 h-44 rounded-full sphere-orange-3d z-0"
+              className="pointer-events-none absolute -top-12 -left-12 w-52 h-52 sm:w-60 sm:h-60 rounded-full sphere-orange-3d z-0"
             />
             {/* Top-Center Small Ultramarine Satellite Orb */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -top-6 left-[42%] w-7 h-7 rounded-full sphere-violet-3d z-0"
+              className="pointer-events-none absolute -top-7 left-[40%] w-8 h-8 rounded-full sphere-violet-3d z-0"
             />
             {/* Left Floating 3D Metallic Gold Torus Ring */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute top-[26%] -left-8 w-16 h-16 rounded-full gold-torus-3d animate-torus-left z-20"
+              className="pointer-events-none absolute top-[24%] -left-9 w-16 h-16 sm:w-20 sm:h-20 rounded-full gold-torus-3d animate-torus-left z-20"
             />
             {/* Right Floating 3D Metallic Gold Torus Ring */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute bottom-[22%] -right-7 w-16 h-16 rounded-full gold-torus-3d animate-torus-right z-20"
+              className="pointer-events-none absolute bottom-[24%] -right-8 w-16 h-16 sm:w-20 sm:h-20 rounded-full gold-torus-3d animate-torus-right z-20"
             />
             {/* Bottom-Right Deep Ultramarine/Violet 3D Sphere */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -bottom-12 -right-10 w-48 h-48 rounded-full sphere-violet-3d z-0"
+              className="pointer-events-none absolute -bottom-14 -right-12 w-56 h-56 sm:w-64 sm:h-64 rounded-full sphere-violet-3d z-0"
             />
             {/* Bottom-Center Small Warm Orange Satellite Orb */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -bottom-7 left-[46%] w-6 h-6 rounded-full sphere-orange-3d z-20"
+              className="pointer-events-none absolute -bottom-8 left-[46%] w-7 h-7 rounded-full sphere-orange-3d z-20"
             />
 
             {/* --- FROSTED REFRACTIVE GLASS INSTRUMENT CARD --- */}
@@ -520,23 +520,23 @@ export default function ClarityEngineStaging() {
 
               {/* Instrument Header */}
               <div className="space-y-2 mb-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#08090C]/90 border border-white/20">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#08090C]/75 border border-white/25">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00]" />
                   <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-white font-semibold">
                     AI VISIBILITY SNAPSHOT • LIVE V4.2
                   </span>
                 </div>
 
-                <h2 className="text-2xl sm:text-[26px] font-bold text-white tracking-tight leading-snug">
+                <h2 className="text-2xl sm:text-[26px] font-bold text-white tracking-tight leading-snug drop-shadow-sm">
                   Can conversational AI{' '}
                   <span className="italic font-extrabold text-[#D4FF00]">recommend</span> your business?
                 </h2>
               </div>
 
-              {/* Dark High-Contrast Form Backing for strict WCAG 2.2 AA legibility */}
+              {/* Dark Semi-Translucent Form Backing for WCAG 2.2 AA legibility + Warm/Cool Sphere Refraction */}
               <form
                 onSubmit={handleScanSubmit}
-                className="p-4 sm:p-5 rounded-2xl bg-[#08090C]/90 border border-white/10 space-y-4"
+                className="p-4 sm:p-5 rounded-2xl bg-[#08090C]/65 backdrop-blur-md border border-white/15 space-y-4"
               >
                 <div>
                   <label
