@@ -123,6 +123,28 @@ function Resolve-FileToUrl([string]$filePath) {
         return "https://$HostDomain/$route"
     }
 
+    if ($norm -match "^src/app/(.+)/layout\.(tsx|jsx|js|ts)$") {
+        $route = $matches[1]
+        $route = ($route -split '/' | Where-Object { $_ -notmatch '^\(.*\)$' }) -join '/'
+        return "https://$HostDomain/$route"
+    }
+
+    if ($norm -eq "src/lib/schema/aeoBlueprint.ts" -or $norm -match "^src/components/blueprint/") {
+        return "https://$HostDomain/solutions/aeo-blueprint"
+    }
+
+    if ($norm -eq "src/lib/schema/aeoSprint.ts") {
+        return "https://$HostDomain/solutions/aeo-sprint"
+    }
+
+    if ($norm -eq "src/lib/schema/solutions.ts") {
+        return "https://$HostDomain/solutions"
+    }
+
+    if ($norm -match "^src/components/(Hero|HowItWorks|USPGrid|VideoExplainer|BlueprintSection)\.tsx$" -or $norm -match "^src/components/sections/Homepage") {
+        return "https://$HostDomain"
+    }
+
     if ($norm -eq "src/lib/brandFacts.ts" -or $norm -eq "src/app/api/brand-facts/route.ts" -or $norm -eq "public/brand-facts.json") {
         return "https://$HostDomain/brand-facts"
     }

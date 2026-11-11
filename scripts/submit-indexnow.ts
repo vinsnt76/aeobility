@@ -109,6 +109,29 @@ function mapFileToUrl(filePath: string): string | null {
       .join('/');
     return `https://${HOST}/${route}`;
   }
+  const layoutMatch = norm.match(/^src\/app\/(.+)\/layout\.(tsx|jsx|js|ts)$/);
+  if (layoutMatch) {
+    const route = layoutMatch[1]
+      .split('/')
+      .filter((segment) => !segment.startsWith('(') || !segment.endsWith(')'))
+      .join('/');
+    return `https://${HOST}/${route}`;
+  }
+  if (norm === 'src/lib/schema/aeoBlueprint.ts' || /^src\/components\/blueprint\//.test(norm)) {
+    return `https://${HOST}/solutions/aeo-blueprint`;
+  }
+  if (norm === 'src/lib/schema/aeoSprint.ts') {
+    return `https://${HOST}/solutions/aeo-sprint`;
+  }
+  if (norm === 'src/lib/schema/solutions.ts') {
+    return `https://${HOST}/solutions`;
+  }
+  if (
+    /^src\/components\/(Hero|HowItWorks|USPGrid|VideoExplainer|BlueprintSection)\.tsx$/.test(norm) ||
+    /^src\/components\/sections\/Homepage/.test(norm)
+  ) {
+    return `https://${HOST}`;
+  }
   if (
     norm === 'src/lib/brandFacts.ts' ||
     norm === 'src/app/api/brand-facts/route.ts' ||
