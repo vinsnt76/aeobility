@@ -123,6 +123,18 @@ export default function BillWidget() {
   }, [isOpen, viewMode]);
 
 
+  // Viewport suppression (e.g. when hero diagnostic or final conversion panel is active)
+  const [isSuppressedByViewport, setIsSuppressedByViewport] = useState(false);
+
+  useEffect(() => {
+    const handleSuppress = (e: Event) => {
+      const customEvent = e as CustomEvent<{ suppress: boolean }>;
+      setIsSuppressedByViewport(!!customEvent.detail?.suppress);
+    };
+    window.addEventListener('aeo:suppress-bill', handleSuppress);
+    return () => window.removeEventListener('aeo:suppress-bill', handleSuppress);
+  }, []);
+
   // 0. Gated Lead-Capture State (Triggers on 4th User Turn)
   const [isLeadCaptured, setIsLeadCaptured] = useState(false);
   const [isGateDismissed, setIsGateDismissed] = useState(false);
@@ -612,7 +624,14 @@ export default function BillWidget() {
 
   if (viewMode === 'MINIMISED') {
     return createPortal(
-      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[9999] pointer-events-auto animate-fadeIn">
+      <div 
+        id="bill-widget-floating-container"
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[9999] pointer-events-auto transition-all duration-300 ${
+          isSuppressedByViewport 
+            ? 'opacity-0 pointer-events-none translate-y-4' 
+            : 'opacity-100 pointer-events-auto translate-y-0 animate-fadeIn'
+        }`}
+      >
         <button
           type="button"
           onClick={() => updateViewMode('DRAWER')}
