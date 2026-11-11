@@ -313,15 +313,17 @@ export default function ClarityEngineStaging() {
           box-shadow: 0 18px 36px rgba(0, 0, 0, 0.75);
         }
 
-        /* Translucent Frosted Glass Card */
+        /* Translucent Frosted Glass Card with Top & Left Specular Edge Illumination */
         .glass-poster-card {
           background:
-            linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(13, 17, 28, 0.54) 42%, rgba(9, 12, 22, 0.66) 75%, rgba(124, 42, 232, 0.14) 100%) padding-box,
-            linear-gradient(135deg, rgba(0, 229, 255, 0.55) 0%, rgba(139, 61, 255, 0.25) 45%, rgba(230, 0, 103, 0.25) 80%, rgba(255, 255, 255, 0.35) 100%) border-box;
+            linear-gradient(145deg, rgba(20, 26, 42, 0.72) 0%, rgba(11, 15, 25, 0.84) 52%, rgba(8, 11, 19, 0.90) 100%) padding-box,
+            linear-gradient(135deg, rgba(255, 255, 255, 0.52) 0%, rgba(0, 229, 255, 0.38) 28%, rgba(139, 61, 255, 0.16) 65%, rgba(230, 0, 103, 0.22) 100%) border-box;
           border: 1px solid transparent;
-          backdrop-filter: blur(28px) saturate(160%);
-          -webkit-backdrop-filter: blur(28px) saturate(160%);
-          box-shadow: 0 32px 70px -12px rgba(0, 0, 0, 0.82);
+          backdrop-filter: blur(28px) saturate(150%);
+          -webkit-backdrop-filter: blur(28px) saturate(150%);
+          box-shadow:
+            inset 1px 1px 0 0 rgba(255, 255, 255, 0.22),
+            0 24px 60px -16px rgba(0, 0, 0, 0.75);
         }
 
         .glass-cyan-card {
@@ -549,76 +551,56 @@ export default function ClarityEngineStaging() {
               AEObility re-architects your commercial offerings, entities, and citations into deterministic data triples so ChatGPT, Gemini, and Perplexity choose your brand.
             </p>
 
-            {/* Frictionless Pathway + Reassurance Micro-Copy */}
+            {/* Frictionless Pathway (Muted Secondary Ghost Action for Von Restorff Isolation) + Reassurance Micro-Copy */}
             <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-5">
               <a
                 href="#commercial-pathways"
-                className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full btn-brand-violet font-semibold text-sm transition-all group w-fit"
+                className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/20 hover:border-[#00E5FF]/50 text-white font-semibold text-sm transition-all group w-fit"
               >
                 <span>Explore The 90-Day Blueprint</span>
-                <span className="w-6 h-6 rounded-full bg-black/30 border border-white/40 flex items-center justify-center text-xs">
+                <span className="w-6 h-6 rounded-full bg-black/40 border border-white/30 flex items-center justify-center text-xs text-[#00E5FF]">
                   ↓
                 </span>
               </a>
 
-              <div className="text-xs sm:text-sm font-mono text-[#94A3B8] tracking-wide">
+              <div className="text-xs sm:text-sm font-mono text-[#CBD5E1] tracking-wide">
                 Fixed scope · Australian specialist · Zero retainer lock-in
               </div>
             </div>
 
-            {/* Mini Telemetry Bar Preview with Brand Sheet Colours */}
-            <div className="pt-5 grid grid-cols-3 gap-4 max-w-lg border-t border-white/[0.08]">
+            {/* Mini Telemetry Bar Preview with High-Contrast Labels */}
+            <div className="pt-5 grid grid-cols-3 gap-4 max-w-lg border-t border-white/[0.10]">
               <div>
-                <div className="font-mono text-[11px] text-[#94A3B8] uppercase">Sales Uplift [AEO]</div>
+                <div className="font-mono text-[11px] text-[#CBD5E1] uppercase">Sales Uplift [AEO]</div>
                 <div className="text-xl font-extrabold text-[#00E5FF] mt-0.5">+17% Verified</div>
               </div>
               <div>
-                <div className="font-mono text-[11px] text-[#94A3B8] uppercase">Salience Lift</div>
-                <div className="text-xl font-extrabold text-[#E60067] mt-0.5">11.9% → 83.7%</div>
+                <div className="font-mono text-[11px] text-[#CBD5E1] uppercase">Salience Lift</div>
+                <div className="text-xl font-extrabold text-[#FF2E88] mt-0.5">11.9% → 83.7%</div>
               </div>
               <div>
-                <div className="font-mono text-[11px] text-[#94A3B8] uppercase">Fee Credit-Back</div>
+                <div className="font-mono text-[11px] text-[#CBD5E1] uppercase">Fee Credit-Back</div>
                 <div className="text-xl font-extrabold text-[#00E660] mt-0.5">100% Applied</div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: The Live Diagnostic Instrument with Brand Sheet Duotone Orbs (5 cols) */}
+          {/* Right Column: The Live Diagnostic Instrument with Soft Neon-Cyan & Magenta Backlights (5 cols) */}
           <div
             className="lg:col-span-5 relative"
             id="hero-diagnostic-instrument"
             ref={heroInstrumentRef}
           >
-            {/* --- BRAND SHEET 3D DUOTONE SPHERES & TORUSES --- */}
-            {/* Top-Left Cyan -> Cobalt -> Violet 3D Sphere */}
+            {/* --- DISCIPLINED SOFT NEON-CYAN & MAGENTA BACKLIGHTS --- */}
+            {/* Top-Left Neon-Cyan & Cobalt Backlight Sphere */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -top-12 -left-12 w-52 h-52 sm:w-60 sm:h-60 rounded-full sphere-cyan-violet-3d z-0"
+              className="pointer-events-none absolute -top-10 -left-10 w-48 h-48 sm:w-56 sm:h-56 rounded-full sphere-cyan-violet-3d opacity-75 blur-[6px] z-0"
             />
-            {/* Top-Center Small Emerald-Cyan Satellite Orb */}
+            {/* Bottom-Right Magenta & Violet Backlight Sphere */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -top-7 left-[40%] w-8 h-8 rounded-full sphere-emerald-cyan-3d z-0"
-            />
-            {/* Left Floating 3D Brand Spectrum Torus Ring */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute top-[24%] -left-9 w-16 h-16 sm:w-20 sm:h-20 rounded-full torus-brand-cyan-violet animate-torus-left z-20"
-            />
-            {/* Right Floating 3D Brand Amber-Magenta Torus Ring */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute bottom-[24%] -right-8 w-16 h-16 sm:w-20 sm:h-20 rounded-full torus-brand-amber-magenta animate-torus-right z-20"
-            />
-            {/* Bottom-Right Magenta -> Electric Violet 3D Sphere */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -bottom-14 -right-12 w-56 h-56 sm:w-64 sm:h-64 rounded-full sphere-magenta-violet-3d z-0"
-            />
-            {/* Bottom-Center Small Emerald Orb */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -bottom-8 left-[46%] w-7 h-7 rounded-full sphere-emerald-cyan-3d z-20"
+              className="pointer-events-none absolute -bottom-12 -right-10 w-52 h-52 sm:w-60 sm:h-60 rounded-full sphere-magenta-violet-3d opacity-75 blur-[8px] z-0"
             />
 
             {/* --- FROSTED REFRACTIVE GLASS INSTRUMENT CARD --- */}
@@ -635,9 +617,9 @@ export default function ClarityEngineStaging() {
 
               {/* Instrument Header */}
               <div className="space-y-2 mb-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#06080E]/80 border border-[#00E5FF]/40">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00E660]" />
-                  <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-[#00E5FF] font-semibold">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#05070C]/90 border border-[#00E5FF]/45">
+                  <span className="w-2 h-2 rounded-full bg-[#00E660] animate-pulse" />
+                  <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-[#00E5FF] font-semibold">
                     GET AI READY • LIVE DIAGNOSTIC
                   </span>
                 </div>
@@ -648,15 +630,15 @@ export default function ClarityEngineStaging() {
                 </h2>
               </div>
 
-              {/* Form Backing */}
+              {/* Crisp Input Geometries with >= 4.5:1 WCAG AA Label & Placeholder Contrast */}
               <form
                 onSubmit={handleScanSubmit}
-                className="p-4 sm:p-5 rounded-2xl bg-[#06080E]/75 backdrop-blur-md border border-white/15 space-y-4"
+                className="p-4 sm:p-5 rounded-2xl bg-[#06080E]/85 border border-white/15 space-y-4"
               >
                 <div>
                   <label
                     htmlFor="domain-input"
-                    className="block font-mono text-[11px] uppercase tracking-wider text-[#D4D4D8] mb-1.5"
+                    className="block font-mono text-xs uppercase tracking-wider text-[#F1F5F9] font-semibold mb-2"
                   >
                     Australian Business Domain
                   </label>
@@ -667,14 +649,14 @@ export default function ClarityEngineStaging() {
                     value={domainInput}
                     onChange={(e) => setDomainInput(e.target.value)}
                     placeholder="e.g., yourcompany.com.au"
-                    className="w-full px-3.5 py-3 rounded-xl bg-[#06080E] border border-white/20 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] transition-all"
+                    className="w-full px-4 py-3 rounded-full bg-[#05070C] border border-white/25 hover:border-white/40 text-white text-sm placeholder:text-[#94A3B8] shadow-[inset_0_2px_6px_rgba(0,0,0,0.8)] focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] transition-all"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="query-input"
-                    className="block font-mono text-[11px] uppercase tracking-wider text-[#D4D4D8] mb-1.5"
+                    className="block font-mono text-xs uppercase tracking-wider text-[#F1F5F9] font-semibold mb-2"
                   >
                     Primary Customer Query / Intent
                   </label>
@@ -684,11 +666,11 @@ export default function ClarityEngineStaging() {
                     value={queryInput}
                     onChange={(e) => setQueryInput(e.target.value)}
                     placeholder="e.g., best commercial solar installer Perth"
-                    className="w-full px-3.5 py-3 rounded-xl bg-[#06080E] border border-white/20 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-[#8B3DFF] focus:ring-1 focus:ring-[#8B3DFF] transition-all"
+                    className="w-full px-4 py-3 rounded-full bg-[#05070C] border border-white/25 hover:border-white/40 text-white text-sm placeholder:text-[#94A3B8] shadow-[inset_0_2px_6px_rgba(0,0,0,0.8)] focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] transition-all"
                   />
                 </div>
 
-                {/* Bar 1 Gradient CTA: "Get AI Ready - Free Scan" */}
+                {/* Von Restorff Isolated Primary Conversion Action */}
                 <button
                   type="submit"
                   disabled={isScanning}
@@ -755,21 +737,21 @@ export default function ClarityEngineStaging() {
 
               {/* 4 Compact Telemetry Pills using Brand Sheet Swatches (Cyan, Violet, Magenta, Emerald) */}
               <div className="mt-5 pt-4 border-t border-white/15 grid grid-cols-2 gap-2.5">
-                <div className="px-3 py-2 rounded-xl bg-[#06080E]/85 border border-[#00E5FF]/40 flex items-center justify-between">
-                  <span className="font-mono text-[10px] text-[#94A3B8]">Entity Salience</span>
+                <div className="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#00E5FF]/40 flex items-center justify-between">
+                  <span className="font-mono text-[11px] text-[#CBD5E1]">Entity Salience</span>
                   <span className="font-mono text-xs font-bold text-[#00E5FF]">88%</span>
                 </div>
-                <div className="px-3 py-2 rounded-xl bg-[#06080E]/85 border border-[#E60067]/45 flex items-center justify-between">
-                  <span className="font-mono text-[10px] text-[#94A3B8]">Answer Coverage</span>
+                <div className="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#E60067]/45 flex items-center justify-between">
+                  <span className="font-mono text-[11px] text-[#CBD5E1]">Answer Coverage</span>
                   <span className="font-mono text-xs font-bold text-[#FF2E88]">91%</span>
                 </div>
-                <div className="px-3 py-2 rounded-xl bg-[#06080E]/85 border border-[#8B3DFF]/45 flex items-center justify-between">
-                  <span className="font-mono text-[10px] text-[#94A3B8]">Provenance</span>
+                <div className="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#8B3DFF]/45 flex items-center justify-between">
+                  <span className="font-mono text-[11px] text-[#CBD5E1]">Provenance</span>
                   <span className="font-mono text-xs font-bold text-[#B485FF]">100% Parity</span>
                 </div>
-                <div className="px-3 py-2 rounded-xl bg-[#06080E]/85 border border-[#00E660]/45 flex items-center justify-between">
-                  <span className="font-mono text-[10px] text-[#94A3B8]">AI State</span>
-                  <span className="font-mono text-xs font-bold text-[#00E660]">AI Fluent</span>
+                <div className="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#00E660]/45 flex items-center justify-between">
+                  <span className="font-mono text-[11px] text-[#CBD5E1]">AI State</span>
+                  <span className="font-mono text-xs font-bold text-[#00E660]">Active Foundation</span>
                 </div>
               </div>
             </div>
@@ -1140,7 +1122,7 @@ export default function ClarityEngineStaging() {
               <div className="pt-4 border-t border-white/[0.08]">
                 <Link
                   href="/solutions"
-                  className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bar-gradient-cobalt text-xs font-mono font-semibold text-white transition-all hover:brightness-110"
+                  className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/15 hover:border-[#00E5FF]/40 text-xs font-mono font-semibold text-[#D4D4D8] hover:text-white transition-all"
                 >
                   <span>Learn More · Foundation Scope</span>
                   <ChevronRight className="w-4 h-4 text-[#00E5FF]" />
@@ -1155,7 +1137,7 @@ export default function ClarityEngineStaging() {
                   <span className="font-mono text-xs text-[#94A3B8] uppercase">
                     MODULAR EXECUTION
                   </span>
-                  <span className="font-mono text-xs text-[#FF2E88]">3–5 DAYS SLA</span>
+                  <span className="font-mono text-xs text-[#FF2E88]">3-5 DAYS SLA</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white">
                   AEO Sprints
@@ -1171,10 +1153,10 @@ export default function ClarityEngineStaging() {
               <div className="pt-4 border-t border-white/[0.08]">
                 <Link
                   href="/solutions/aeo-sprint"
-                  className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bar-gradient-magenta text-xs font-mono font-semibold text-white transition-all hover:brightness-110"
+                  className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/15 hover:border-[#00E5FF]/40 text-xs font-mono font-semibold text-[#D4D4D8] hover:text-white transition-all"
                 >
                   <span>Get Visible · Sprint Catalog</span>
-                  <ChevronRight className="w-4 h-4 text-white" />
+                  <ChevronRight className="w-4 h-4 text-[#00E5FF]" />
                 </Link>
               </div>
             </div>
@@ -1397,35 +1379,14 @@ export default function ClarityEngineStaging() {
           ref={finalPosterRef}
           className="relative max-w-2xl mx-auto"
         >
-          {/* Top-Left Cyan-Violet 3D Sphere */}
+          {/* Disciplined Soft Neon-Cyan & Magenta Backlight Spheres */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -top-14 -left-14 w-48 h-48 sm:w-56 sm:h-56 rounded-full sphere-cyan-violet-3d z-0"
+            className="pointer-events-none absolute -top-12 -left-12 w-48 h-48 sm:w-56 sm:h-56 rounded-full sphere-cyan-violet-3d opacity-75 blur-[6px] z-0"
           />
-          {/* Top-Center Small Emerald Orb */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -top-8 left-[43%] w-8 h-8 rounded-full sphere-emerald-cyan-3d z-0"
-          />
-          {/* Left Floating Brand Torus Ring */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute top-[28%] -left-9 w-16 h-16 sm:w-20 sm:h-20 rounded-full torus-brand-cyan-violet animate-torus-left z-20"
-          />
-          {/* Right Floating Brand Torus Ring */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-[25%] -right-9 w-16 h-16 sm:w-20 sm:h-20 rounded-full torus-brand-amber-magenta animate-torus-right z-20"
-          />
-          {/* Bottom-Right Magenta-Violet 3D Sphere */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-14 -right-14 w-52 h-52 sm:w-60 sm:h-60 rounded-full sphere-magenta-violet-3d z-0"
-          />
-          {/* Bottom-Center Small Emerald Orb */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-8 left-[48%] w-7 h-7 rounded-full sphere-emerald-cyan-3d z-20"
+            className="pointer-events-none absolute -bottom-12 -right-12 w-52 h-52 sm:w-60 sm:h-60 rounded-full sphere-magenta-violet-3d opacity-75 blur-[8px] z-0"
           />
 
           {/* Refractive Glass Poster Card */}
@@ -1464,10 +1425,10 @@ export default function ClarityEngineStaging() {
 
               <Link
                 href="/book"
-                className="w-full sm:w-auto px-6 py-4 rounded-full btn-brand-violet font-semibold text-sm transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-4 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/20 hover:border-[#00E5FF]/50 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2"
               >
                 <span>Book a 15-Minute Diagnostic Briefing</span>
-                <span className="w-5 h-5 rounded-full bg-black/30 border border-white/50 flex items-center justify-center text-[10px]">
+                <span className="w-5 h-5 rounded-full bg-black/40 border border-white/30 flex items-center justify-center text-[10px] text-[#00E5FF]">
                   ›
                 </span>
               </Link>
