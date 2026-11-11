@@ -6,6 +6,7 @@ import VideoExplainer from '@/components/VideoExplainer';
 import USPGrid from '@/components/USPGrid';
 import HowItWorks from '@/components/HowItWorks';
 import BlueprintSection from '@/components/BlueprintSection';
+import { HomepageFaqSection } from '@/components/sections/HomepageFaqSection';
 import HomepageContactForm from '@/components/forms/HomepageContactForm';
 import Footer from '@/components/Footer';
 import { Metadata } from 'next';
@@ -144,38 +145,6 @@ export default function Home() {
           "https://dev.to/aeobility",
           "https://github.com/vinsnt76/aeobility",
           "https://maps.app.goo.gl/zWC3RxsLV9JMBoGRA"
-        ],
-        "subjectOf": [
-          {
-            "@type": "Report",
-            "@id": "https://aeoservices.com.au/ai-citation-index-australia/#october-2026",
-            "name": "AI Citation Index Australia: October 2026",
-            "url": "https://aeoservices.com.au/ai-citation-index-australia/",
-            "description": "A monthly Australian AI-citation study measuring the domains cited by Perplexity Sonar across a fixed set of 29 AEO-related questions. The October 2026 edition recorded 587 citations across 343 domains. AEObility was cited in 2 of 29 questions, receiving 5 citations, and was listed among the domains that joined the 15 most-cited domains since September 2026.",
-            "datePublished": "2026-10-17",
-            "inLanguage": "en-AU",
-            "license": "https://creativecommons.org/licenses/by/4.0/",
-            "author": {
-              "@type": "Organization",
-              "name": "AEO Services",
-              "url": "https://aeoservices.com.au/"
-            },
-            "keywords": [
-              "AI Citation Index",
-              "Australian AI Search",
-              "Perplexity Sonar",
-              "Answer Engine Optimisation",
-              "Generative Engine Optimisation",
-              "AI Search Visibility"
-            ]
-          },
-          {
-            "@type": "CreativeWork",
-            "@id": "https://isitagentready.com/www.aeobility.com.au#assessment",
-            "name": "AEObility Agent Readiness Assessment",
-            "url": "https://isitagentready.com/www.aeobility.com.au",
-            "description": "External agent-readiness assessment of the AEObility website, reporting a score of 94 out of 100 and Level 5 Agent-Native classification according to the assessment result."
-          }
         ]
       },
       {
@@ -219,9 +188,7 @@ export default function Home() {
         "name": "AEObility",
         "description": "The official website of AEObility, an Australian Answer Engine Optimisation and Generative Engine Optimisation consultancy.",
         "publisher": {
-          "@type": "Organization",
-          "name": "AEObility",
-          "url": "https://aeobility.com.au/"
+          "@id": "https://aeobility.com.au/#organization"
         },
         "inLanguage": "en-AU",
         "potentialAction": {
@@ -302,64 +269,6 @@ export default function Home() {
           "@type": "Country",
           "name": "Australia"
         }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://aeobility.com.au/#ai-bill",
-        "name": "AI Bill",
-        "alternateName": "AEObility AI Bill",
-        "description": "A web-based AI diagnostic assistant from AEObility that analyses AEO, GEO, local search, and AI visibility signals using grounded site knowledge and telemetry audit context.",
-        "applicationCategory": "BusinessApplication",
-        "applicationSubCategory": "AI visibility diagnostic assistant",
-        "operatingSystem": "Web",
-        "url": "https://aeobility.com.au/diagnostic",
-        "featureList": [
-          "Grounded conversational answers about AEObility services and methodologies",
-          "AI visibility telemetry audit analysis",
-          "Citation share, clarity score, and hallucination risk interpretation",
-          "Provenance and entity graph explanations"
-        ],
-        "creator": {
-          "@id": "https://aeobility.com.au/#vincebaker"
-        },
-        "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
-        },
-        "isAccessibleForFree": true,
-        "potentialAction": [
-          {
-            "@type": "CommunicateAction",
-            "name": "Chat with AI Bill",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "https://aeobility.com.au/api/bill",
-              "actionPlatform": [
-                "https://schema.org/DesktopWebPlatform",
-                "https://schema.org/MobileWebPlatform"
-              ],
-              "httpMethod": "POST",
-              "contentType": "application/json"
-            }
-          }
-        ]
-      },
-      {
-        "@type": "VideoObject",
-        "@id": "https://aeobility.com.au/#video-explainer",
-        "name": "Our Approach to Answer Engine Search",
-        "description": "Learn how AEObility refactors digital content to rank and get cited inside conversational AI systems and map interfaces.",
-        "thumbnailUrl": [
-          "https://aeobility.com.au/images/brand/aeobility-video-explainer.webp"
-        ],
-        "uploadDate": "2026-07-05T00:00:00+08:00",
-        "contentUrl": "https://aeobility.com.au/videos/explainer.mp4",
-        "embedUrl": "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/preview",
-        "creator": {
-          "@id": "https://aeobility.com.au/#vincebaker"
-        },
-        "publisher": {
-          "@id": "https://aeobility.com.au/#organization"
-        }
       }
     ]
   };
@@ -380,6 +289,7 @@ export default function Home() {
         <USPGrid />
         <HowItWorks />
         <BlueprintSection />
+        <HomepageFaqSection />
         <HomepageContactForm />
       </main>
       <Footer />

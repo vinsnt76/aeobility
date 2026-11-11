@@ -1,8 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Sparkles, Rocket, Compass, ShieldCheck, Clock, Boxes } from 'lucide-react';
+import { ArrowRight, Sparkles, Rocket, Compass, Clock, Boxes } from 'lucide-react';
 import { PackageSelectLink } from '@/components/sections/PackageSelectLink';
-import { PRICING_TIERS, TECHNICAL_SPRINT_CATALOG, GOVERNANCE_RULES, formatAudCurrency } from '@/lib/pricing';
+import { PRICING_TIERS, TECHNICAL_SPRINT_CATALOG, formatAudCurrency } from '@/lib/pricing';
+
+function CheckBadge({ color = 'cyan' }: { color?: 'cyan' | 'purple' }) {
+  const isPurple = color === 'purple';
+  return (
+    <span
+      className={`w-4 h-4 rounded-full ${
+        isPurple ? 'bg-purple-950/80 border-purple-400/50 text-purple-300' : 'bg-cyan-950/80 border-cyan-400/50 text-cyan-300'
+      } border inline-flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5 select-none`}
+      aria-hidden="true"
+    >
+      ✓
+    </span>
+  );
+}
 
 export function CoreEngagementsGrid() {
   const bpSku = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
@@ -68,28 +82,28 @@ export function CoreEngagementsGrid() {
               <div className="pt-3 border-t border-white/10 space-y-3">
                 <ul className="space-y-3 text-xs font-sans">
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <CheckBadge color="cyan" />
                     <p className="space-y-0.5">
                       <strong className="block font-bold text-white text-xs">Search &amp; AI Visibility Audit</strong>
                       <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Checks how Google, Apple Maps, and AI tools extract your business details.</span>
                     </p>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <CheckBadge color="cyan" />
                     <p className="space-y-0.5">
                       <strong className="block font-bold text-white text-xs">Code &amp; Schema Review</strong>
                       <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Identifies broken structured data, incorrect tags, and indexing errors.</span>
                     </p>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <CheckBadge color="cyan" />
                     <p className="space-y-0.5">
                       <strong className="block font-bold text-white text-xs">Prioritised 90-Day Plan</strong>
                       <span className="block text-[11px] text-zinc-400 font-serif leading-snug">An ordered checklist of required technical fixes and page updates.</span>
                     </p>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <CheckBadge color="cyan" />
                     <p className="space-y-0.5">
                       <strong className="block font-bold text-white text-xs">45-Minute Review Call</strong>
                       <span className="block text-[11px] text-zinc-400 font-serif leading-snug">A direct walkthrough of findings and next steps with your team.</span>
@@ -106,7 +120,7 @@ export function CoreEngagementsGrid() {
                     <span><strong>Turnaround:</strong> 5–7 business days</span>
                   </p>
                   <p className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                    <CheckBadge color="cyan" />
                     <span><strong className="text-zinc-200 font-sans">Delivery:</strong> Complete report and fix checklist</span>
                   </p>
                 </div>
@@ -166,28 +180,28 @@ export function CoreEngagementsGrid() {
                 <div className="pt-3 border-t border-white/10 space-y-3">
                   <ul className="space-y-3 text-xs font-sans">
                     <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <CheckBadge color="cyan" />
                       <p className="space-y-0.5">
                         <strong className="block font-bold text-white text-xs">Structured Data Installation</strong>
                         <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Valid schema markup added directly to your site or supplied as ready-to-paste code.</span>
                       </p>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <CheckBadge color="cyan" />
                       <p className="space-y-0.5">
                         <strong className="block font-bold text-white text-xs">Direct-Answer Content</strong>
                         <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Up to 10 priority service pages updated into clear, extractable answer blocks.</span>
                       </p>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <CheckBadge color="cyan" />
                       <p className="space-y-0.5">
                         <strong className="block font-bold text-white text-xs">Internal Page Linking</strong>
                         <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Connects core services to relevant proof points and case studies.</span>
                       </p>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <CheckBadge color="cyan" />
                       <p className="space-y-0.5">
                         <strong className="block font-bold text-white text-xs">Directory Alignment</strong>
                         <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Syncs name, address, phone number, and services across Google, Apple Maps, and Bing.</span>
@@ -204,7 +218,7 @@ export function CoreEngagementsGrid() {
                       <span><strong>Turnaround:</strong> 90 days in staged milestones</span>
                     </p>
                     <p className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                      <CheckBadge color="cyan" />
                       <span><strong className="text-zinc-200 font-sans">Delivery:</strong> Direct CMS installation or code files for your developer</span>
                     </p>
                   </div>
@@ -259,28 +273,28 @@ export function CoreEngagementsGrid() {
               <div className="pt-3 border-t border-white/10 space-y-3">
                 <ul className="space-y-3 text-xs font-sans">
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                    <CheckBadge color="purple" />
                     <p className="space-y-0.5">
                       <strong className="block font-bold text-white text-xs">Monthly Work Focus</strong>
                       <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Dedicated execution across code fixes, content updates, or directory cleanup.</span>
                     </p>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                    <CheckBadge color="purple" />
                     <p className="space-y-0.5">
                       <strong className="block font-bold text-white text-xs">Flexible 30-Day Cycles</strong>
                       <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Clear scope agreed upon each month with zero long-term commitments.</span>
                     </p>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                    <CheckBadge color="purple" />
                     <p className="space-y-0.5">
                       <strong className="block font-bold text-white text-xs">Progress Verification</strong>
                       <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Verification checks on indexing health, search appearance, and data accuracy.</span>
                     </p>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                    <CheckBadge color="purple" />
                     <p className="space-y-0.5">
                       <strong className="block font-bold text-white text-xs">Documentation &amp; Handoff</strong>
                       <span className="block text-[11px] text-zinc-400 font-serif leading-snug">Plain-English summary and review call for all completed updates.</span>
@@ -297,7 +311,7 @@ export function CoreEngagementsGrid() {
                     <span><strong>Turnaround:</strong> 10 business days per sprint cycle</span>
                   </p>
                   <p className="flex items-start gap-2 text-[11px] text-zinc-300 font-serif leading-relaxed">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
+                    <CheckBadge color="purple" />
                     <span><strong className="text-zinc-200 font-sans">Flexibility:</strong> Adjust priorities monthly or cancel at the end of any cycle</span>
                   </p>
                 </div>

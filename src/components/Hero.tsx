@@ -52,6 +52,31 @@ export default function Hero() {
               AEObility is a Perth digital consultancy dedicated to Answer Engine Optimisation (AEO) and machine search readability. Position your business across Google, Maps, and AI answer engines with zero guesswork.
             </p>
 
+            {/* Direct Answer Block / Executive Summary */}
+            <aside 
+              aria-label="Executive Summary" 
+              data-agent-purpose="direct-answer"
+              className="p-4 rounded-xl bg-white/[0.03] border-t border-cyan-400/40 border-b border-x border-white/10 backdrop-blur-md space-y-3"
+            >
+              <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
+                <strong className="text-white font-sans">AEObility</strong> provides technical Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) for Australian businesses. We engineer web architectures, structured schema graphs, and entity profiles to ensure artificial intelligence search engines, including ChatGPT Search, Perplexity, and Google AI Overviews, accurately identify, understand, and cite your business offerings.
+              </p>
+              <div className="grid grid-cols-3 gap-2 pt-2 border-t border-white/10 text-center font-mono">
+                <div className="p-2 rounded-lg bg-black/40 border border-white/5">
+                  <span className="block text-[10px] text-zinc-400 uppercase tracking-wider">Focus</span>
+                  <span className="text-xs font-bold text-cyan-400">AEO &amp; GEO</span>
+                </div>
+                <div className="p-2 rounded-lg bg-black/40 border border-white/5">
+                  <span className="block text-[10px] text-zinc-400 uppercase tracking-wider">Model</span>
+                  <span className="text-xs font-bold text-white">Fixed-Scope</span>
+                </div>
+                <div className="p-2 rounded-lg bg-black/40 border border-white/5">
+                  <span className="block text-[10px] text-zinc-400 uppercase tracking-wider">Audits From</span>
+                  <span className="text-xs font-bold text-cyan-400">$995 AUD</span>
+                </div>
+              </div>
+            </aside>
+
             {/* Embedded Telemetry Form Card with Sprint Glow */}
             <form onSubmit={handleHeroScanSubmit} className="hero-conversion-card p-6 rounded-2xl relative space-y-4">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/50 to-transparent pointer-events-none"></div>
