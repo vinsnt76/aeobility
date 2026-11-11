@@ -26,6 +26,14 @@ export function HomepageFaqSection() {
     {
       question: "How quickly can an Australian business expect to see results from AEO implementation?",
       answer: "Unlike legacy SEO campaigns that require six to twelve months of recurring retainer spend, technical AEO fixes produce measurable validation within days. Once validated JSON-LD schema graphs and atomic answer blocks are deployed to production, search engine bots re-index structured markup within 3 to 10 business days. Brand citation improvements in conversational engines like Perplexity and ChatGPT Search typically register within two to four weeks as model indexes refresh."
+    },
+    {
+      question: "How do Schema.org Tri-Graphs prevent generative AI hallucination?",
+      answer: "Generative search models hallucinate when a business website lacks deterministic, verifiable data about its offerings, locations, or pricing. AEObility constructs connected Tri-Graphs linking what exists (Entity Graph), how concepts relate (Semantic Intent Graph), and where claims are proven (Evidence Graph). By mapping every commercial offering to explicit Schema.org entities anchored to the Australian Business Register (ABN) and regulatory directories, we give AI answer engines unambiguous ground truth, eliminating factual distortion and ensuring accurate citations."
+    },
+    {
+      question: "How can Perth and Australian businesses measure generative AI citations and search share?",
+      answer: "Measuring AI search visibility requires tracking passage-level citations, brand co-occurrence frequency, and answer sentiment across conversational engines rather than desktop ranking positions. AEObility monitors live query responses across ChatGPT Search, Perplexity Sonar, Google AI Overviews, and Microsoft Copilot. We benchmark your citation share against direct local competitors, quantify answer accuracy, and verify whether the model directs buyers to your high-converting service pages."
     }
   ];
 

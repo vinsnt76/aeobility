@@ -80,6 +80,38 @@ export default function VideoExplainer({
             </button>
           )}
         </figure>
+
+        {/* Executive Takeaways & Core Concepts Strip */}
+        <aside aria-label="AEO Executive Takeaways" className="p-6 sm:p-8 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-5">
+          <div className="space-y-1">
+            <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold block">
+              Executive Summary
+            </span>
+            <h3 className="text-lg sm:text-xl font-bold text-white font-soehne-breit">
+              Why Answer Engine Optimisation Replaces Legacy SEO
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-serif pt-2 border-t border-white/5">
+            <div className="space-y-2">
+              <h4 className="font-bold text-white text-xs font-sans">Passage Synthesis Over Keyword Density</h4>
+              <p className="text-zinc-300 leading-relaxed font-light">
+                Generative answer engines evaluate self-contained 150-character answer blocks rather than page-wide keyword repetition. Content must provide direct, verifiable solutions to customer queries under structured H2 and H3 headings to qualify for citation.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h4 className="font-bold text-white text-xs font-sans">Connected Schema Graphs Over Standalone Tags</h4>
+              <p className="text-zinc-300 leading-relaxed font-light">
+                Modern search crawlers map machine-readable JSON-LD entity graphs. Standalone meta tags and unlinked markup fail to establish entity provenance. Linking your organisation to verified government registries including the Australian Business Register (ABN) validates authenticity.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h4 className="font-bold text-white text-xs font-sans">Fixed-Scope Sprints Over Monthly Retainers</h4>
+              <p className="text-zinc-300 leading-relaxed font-light">
+                AEO challenges are deterministic code and data structure problems with clear milestones. Shifting away from open-ended monthly hours to fixed-scope sprints guarantees measurable code improvements within 5 to 10 business days.
+              </p>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
   );

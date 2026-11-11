@@ -88,24 +88,15 @@ export default function Home() {
         "areaServed": [
           {
             "@type": "City",
-            "name": "Perth",
-            "sameAs": [
-              "https://www.wikidata.org/wiki/Q3183",
-              "https://en.wikipedia.org/wiki/Perth"
-            ]
+            "name": "Perth"
           },
           {
             "@type": "AdministrativeArea",
-            "name": "Western Australia",
-            "sameAs": [
-              "https://www.wikidata.org/wiki/Q3205",
-              "https://en.wikipedia.org/wiki/Western_Australia"
-            ]
+            "name": "Western Australia"
           },
           {
             "@type": "Country",
-            "name": "Australia",
-            "sameAs": "https://www.wikidata.org/wiki/Q408"
+            "name": "Australia"
           }
         ],
         "founder": {
@@ -158,23 +149,11 @@ export default function Home() {
           "Vinnie Baker"
         ],
         "jobTitle": "Founder and Technical Director",
-        "disambiguatingDescription": "Australian B2B digital search architect, founder and principal AI Search Specialist at AEObility (Dianella, Perth, Western Australia; ABN 61 029 803 255). Specialises in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and structured entity data architecture. Strictly distinct and unrelated to former American NBA basketball player or sports coach Vin Baker.",
+        "disambiguatingDescription": "Australian B2B digital search architect, founder and principal AI search specialist at AEObility (Dianella, Perth, Western Australia; ABN 61 029 803 255). Distinct from former American NBA basketball player Vin Baker.",
         "url": "https://aeobility.com.au/vince-baker",
         "worksFor": {
           "@id": "https://aeobility.com.au/#organization"
         },
-        "knowsAbout": [
-          "Answer Engine Optimisation",
-          "Generative Engine Optimisation",
-          "AI Search Visibility",
-          "Information Architecture",
-          "Entity SEO",
-          "Knowledge Graph Engineering",
-          "Schema Graph Engineering",
-          "Schema.org",
-          "JSON-LD",
-          "Structured Data"
-        ],
         "sameAs": [
           "https://www.linkedin.com/in/vince-baker/",
           "https://app.qwoted.com/sources/vince-baker",

@@ -1,7 +1,21 @@
 import React from 'react';
-import { ArrowRight, Compass, Milestone, Layers, CheckCircle2, ShieldCheck, Clock, Rocket, Zap, FileCode, Users } from 'lucide-react';
+import { ArrowRight, Compass, Milestone, Layers, ShieldCheck, Clock, Rocket, Zap, FileCode, Users } from 'lucide-react';
 import Link from 'next/link';
 import { TECHNICAL_SPRINT_CATALOG, GOVERNANCE_RULES, formatAudCurrency } from '@/lib/pricing';
+
+function CheckBadge({ color = 'cyan' }: { color?: 'cyan' | 'purple' }) {
+  const isPurple = color === 'purple';
+  return (
+    <span
+      className={`w-4 h-4 rounded-full ${
+        isPurple ? 'bg-purple-950/80 border-purple-400/50 text-purple-300' : 'bg-cyan-950/80 border-cyan-400/50 text-cyan-300'
+      } border inline-flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5 select-none`}
+      aria-hidden="true"
+    >
+      ✓
+    </span>
+  );
+}
 
 export default function BlueprintSection() {
   const bpSku = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
@@ -113,7 +127,7 @@ export default function BlueprintSection() {
 
               {/* Commercial Credit Bridge */}
               <aside aria-label="Commercial Guarantee" className="p-4 rounded-xl bg-gradient-to-r from-cyan-950/50 via-zinc-950 to-purple-950/40 border border-cyan-500/30 flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                <CheckBadge color="cyan" />
                 <div className="space-y-1 text-xs">
                   <span className="font-mono font-bold text-cyan-300 block uppercase tracking-wider">
                     Commercial Guarantee: 100% Credit-Back Corridor ({GOVERNANCE_RULES.creditWindowDays} Days)
@@ -146,12 +160,12 @@ export default function BlueprintSection() {
                 {/* Immediate Proximity Reassurance Row */}
                 <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono pt-1 list-none p-0 m-0">
                   <li className="flex items-center gap-1.5 text-cyan-300 font-bold">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <CheckBadge color="cyan" />
                     <span>100% Credited (60 Days)</span>
                   </li>
                   <li className="flex items-center gap-1.5 text-zinc-300">
                     <Clock className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span>5–7 Business Day Turnaround SLA</span>
+                    <span>5-7 Business Day Turnaround SLA</span>
                   </li>
                   <li className="flex items-center gap-1.5 text-zinc-300">
                     <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
@@ -197,15 +211,15 @@ export default function BlueprintSection() {
                   </span>
                   <ul className="space-y-1.5 text-xs text-zinc-300 font-serif list-none p-0 m-0">
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      <CheckBadge color="cyan" />
                       <span>Deterministic milestone sign-off for every deployed sprint</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      <CheckBadge color="cyan" />
                       <span>Zero locked-in monthly retainers or long-term contracts</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      <CheckBadge color="cyan" />
                       <span>Open-book code PRs, schema mapping logs &amp; full IP transfer</span>
                     </li>
                   </ul>

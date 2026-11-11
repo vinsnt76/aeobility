@@ -34,7 +34,7 @@ export default function HowItWorks() {
               <div className="space-y-2">
                 <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">Tell Us What You Want To Be Found For</h3>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
-                  Enter your website and your primary customer search intent.
+                  Enter your Australian business URL and primary customer search intent. Our crawler ingests your public document object model, existing Schema.org structured data, and service area declarations to benchmark baseline machine readability.
                 </p>
               </div>
             </li>
@@ -47,7 +47,7 @@ export default function HowItWorks() {
               <div className="space-y-2">
                 <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">Measure Your AI Visibility</h3>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
-                  Our telemetry engine analyses how AI systems understand, retrieve, and recommend your business.
+                  Our telemetry engine analyses how conversational AI systems like ChatGPT Search, Perplexity, Gemini, and Google AI Overviews retrieve and recommend your business. We measure passage retrieval depth, entity confidence scoring, citation provenance, and brand co-occurrence.
                 </p>
               </div>
             </li>
@@ -60,7 +60,7 @@ export default function HowItWorks() {
               <div className="space-y-3 w-full">
                 <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">Discover Your Opportunities</h3>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
-                  Receive your AI Visibility Score, confidence signals, and the biggest opportunities to improve.
+                  Receive your comprehensive AI Visibility Score and diagnostic telemetry report. Uncover critical retrieval blind spots where search engines hallucinate details, misattribute service locations, or recommend competitors because your structured schema is incomplete or disconnected.
                 </p>
               </div>
             </li>
@@ -73,7 +73,7 @@ export default function HowItWorks() {
               <div className="space-y-2">
                 <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">Turn Insights into a 90-Day Plan</h3>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed font-serif">
-                  Use your findings to identify the highest-priority visibility gaps and decide what to fix next.
+                  Transform diagnostic telemetry into an actionable 90-day technical execution roadmap. Prioritise high-impact fixes, from entity node reconciliation and canonical linking to structured FAQ passages and Google Business Profile alignment, with zero ongoing agency contract lock-in.
                 </p>
               </div>
             </li>

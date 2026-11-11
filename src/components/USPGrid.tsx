@@ -27,17 +27,17 @@ export default function USPGrid() {
     {
       icon: <Eye className="w-6 h-6 text-aeo-cyan drop-shadow-[0_0_8px_rgba(0,205,216,0.4)]" />,
       title: 'Engineered Direct-Answer Discovery',
-      description: 'Improve how Search, Maps, and AI platforms interpret and choose your business facts so relevant local customers find you when they search.',
+      description: 'Modern conversational search systems no longer rely on keyword frequency or external link volume. Answer Engine Optimisation (AEO) re-architects your commercial offerings into discrete, verifiable answer passages that large language models extract during live retrieval. By structuring your core business capabilities, operating suburbs, and service credentials into deterministic data triples, we ensure conversational models like ChatGPT Search, Perplexity, and Google AI Overviews cite your brand as the primary authority.',
     },
     {
       icon: <Target className="w-6 h-6 text-aeo-purple drop-shadow-[0_0_8px_rgba(157,78,221,0.5)]" />,
-      title: 'Strengthen Visibility Signals',
-      description: 'Strengthen the structured signals and answer-ready content that support your relevant local search visibility and ongoing discovery.',
+      title: 'Deterministic Entity Authority',
+      description: 'Search engines and AI crawler agents evaluate businesses across connected knowledge graphs rather than disconnected web pages. We link your digital assets directly to verified official sources, Australian Business Register (ABN) filings, and relevant professional registries. This eliminates AI hallucination, grounds your organisational identity across LLM training sets, and cements local search visibility across Perth and national markets.',
     },
     {
       icon: <MessageSquare className="w-6 h-6 text-pink-500 drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]" />,
-      title: 'Build a Machine-Readable Foundation',
-      description: 'Build a clean, verified data foundation that makes it easier for customers to assess your services and connect directly with your day-to-day pipeline.',
+      title: 'Machine-Readable Schema Architecture',
+      description: 'Generative systems require unambiguous structured markup to confirm who you are, what you deliver, and where you operate. We deploy connected Schema.org JSON-LD Tri-Graphs connecting Organization, LocalBusiness, ProfessionalService, and OfferCatalog types. This programmatic transparency gives answer engines the mathematical confidence needed to recommend your services for complex buyer queries.',
     },
   ];
 
