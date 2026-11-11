@@ -89,7 +89,14 @@ export default function AEOBlueprintPage() {
     }
   ];
 
-  const deliverables = [
+  const deliverables: Array<{
+    icon: React.ReactNode;
+    title: string;
+    scope: string;
+    whatWeFix: string[];
+    artifact: string;
+    proofSnippet?: React.ReactNode;
+  }> = [
     {
       icon: <Layers className="w-5 h-5 text-cyan-400" />,
       title: "Website & structured-data review",
@@ -122,7 +129,11 @@ export default function AEOBlueprintPage() {
         "Lack of measurable 30-, 60-, and 90-day milestone verification criteria"
       ],
       artifact: "Prioritised 90-Day Sprint Matrix with step-by-step technical tickets",
-      proofSnippet: "Evidence in Action: See how schema injection restored a Balcatta contractor's citations in 5 days."
+      proofSnippet: (
+        <span>
+          Evidence in Action: Explore <Link href="/knowledge-hub/case-studies" className="underline hover:text-white font-semibold">AEObility&apos;s own 90-Day AEO Case Study</Link> to see verified citation growth.
+        </span>
+      )
     },
     {
       icon: <FileText className="w-5 h-5 text-purple-400" />,
@@ -157,7 +168,7 @@ export default function AEOBlueprintPage() {
           {/* 1. Hero Block with Web Banner & Glassmorphic Executive Summary Overlay */}
           <section id="hero" className="relative pt-6 pb-4 max-w-4xl mx-auto space-y-6 scroll-mt-24 text-center">
             {/* Eyebrow */}
-            <p className="text-xs font-mono uppercase tracking-widest text-cyan-400">
+            <p className="text-xs font-mono uppercase tracking-wider text-white/50 font-semibold">
               STRATEGIC DIAGNOSTIC AUDIT (BPSTRAT)
             </p>
 
@@ -188,16 +199,16 @@ export default function AEOBlueprintPage() {
                 data-agent-purpose="direct-answer"
               >
                 <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">
-                    <Compass className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span>Executive Summary &amp; Atomic Answer Block</span>
+                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-white/50 font-semibold">
+                    <Compass className="w-4 h-4 text-white/50 shrink-0" />
+                    <span>What is an AEO Blueprint?</span>
                   </div>
                   <div className="space-y-2.5 text-sm sm:text-base leading-relaxed text-slate-200 font-sans font-normal">
                     <p>
-                      <strong className="text-white font-semibold">Verdict:</strong> The Strategic Blueprint (BPSTRAT) is a standalone $995 AUD ex. GST deep technical audit and 90-day execution roadmap that identifies entity gaps, schema errors, and LLM answer-retrieval blind spots.
+                      <strong className="text-white font-semibold">Why we recommend:</strong> The Strategic Blueprint (BPSTRAT) is a standalone $995 AUD ex. GST deep technical audit and 90-day execution roadmap that identifies entity gaps, schema errors, and LLM answer-retrieval blind spots.
                     </p>
                     <p>
-                      <strong className="text-white font-semibold">Mechanism:</strong> Completed within 5-10 business days, the blueprint delivers a site crawl review, knowledge graph audit, and prioritised action plan.
+                      <strong className="text-white font-semibold">Understand the bottlenecks before investing further:</strong> Completed within 5-10 business days, the blueprint delivers a site crawl review, knowledge graph audit, and prioritised action plan.
                     </p>
                     <p>
                       <strong className="text-white font-semibold">Risk Reversal:</strong> 100% of your $995 Blueprint fee is credited toward eligible AEO implementation sprints within 60 calendar days.
@@ -217,7 +228,7 @@ export default function AEOBlueprintPage() {
                   </div>
                   <div className="p-4 rounded-xl bg-black/60 border border-white/10 space-y-1">
                     <span className="text-3xl sm:text-4xl font-extrabold text-emerald-400 block tracking-tight">100%</span>
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-slate-300 block">Fee Credited Toward Sprints</span>
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-slate-300 block">Fee Credited Toward AEO Foundation</span>
                   </div>
                 </div>
               </aside>
@@ -245,7 +256,7 @@ export default function AEOBlueprintPage() {
                 </Link>
               </div>
               <p className="text-xs text-slate-400 font-mono">
-                Zero retainers. 5-day delivery SLA. 100% credited to sprints.
+                Zero retainers. 5-day delivery SLA. 100% credited toward AEO Foundation.
               </p>
               <div className="pt-1">
                 <Link 
@@ -265,7 +276,7 @@ export default function AEOBlueprintPage() {
           {/* 2. Section: Why open-ended contracts fail AI search */}
           <section id="retainer-problem" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <p className="text-xs font-mono uppercase tracking-widest text-cyan-400">
+              <p className="text-xs font-mono uppercase tracking-wider text-white/50 font-semibold">
                 THE AGENCY RETAINER TRAP VS. ONE-TIME DIAGNOSTIC
               </p>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit leading-snug">
@@ -277,9 +288,9 @@ export default function AEOBlueprintPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto text-xs font-serif">
-              <div className="p-6 bg-zinc-950/40 border border-white/5 rounded-2xl space-y-3 opacity-70 hover:opacity-100 transition duration-300">
-                <span className="text-slate-400 font-mono font-bold text-xs uppercase tracking-wider block">The Positional Ranking Model</span>
-                <ul className="space-y-2.5 text-zinc-400 list-disc list-inside">
+              <div className="p-6 bg-zinc-950/80 border border-white/10 rounded-2xl space-y-3 transition duration-300">
+                <span className="text-white/70 font-mono font-bold text-xs uppercase tracking-wider block">The Positional Ranking Model</span>
+                <ul className="space-y-2.5 text-white/75 list-disc list-inside leading-relaxed">
                   <li>Open-ended monthly retainers ($2,000 to $5,000+ each month) built for tracking 10 blue links.</li>
                   <li>Success measured by ranking positions and impression metrics that often fail to trigger citations.</li>
                   <li>Content written for keyword density rather than structured passage extraction.</li>
@@ -288,8 +299,8 @@ export default function AEOBlueprintPage() {
               </div>
 
               <div className="p-6 bg-gradient-to-b from-cyan-950/40 via-slate-900/90 to-zinc-950 border border-cyan-400/60 shadow-[0_0_30px_rgba(0,229,255,0.15)] ring-1 ring-cyan-400/30 rounded-2xl space-y-3">
-                <span className="text-cyan-300 font-mono font-bold text-xs uppercase tracking-wider block">The Generative Synthesis Model</span>
-                <ul className="space-y-2.5 text-zinc-200 list-disc list-inside">
+                <span className="text-cyan-300 font-mono font-bold text-xs uppercase tracking-wider block">Why the Blueprint Works</span>
+                <ul className="space-y-2.5 text-white/90 list-disc list-inside leading-relaxed">
                   <li>Transparent one-time fixed investment ($995 AUD ex. GST) with zero ongoing contract lock-in.</li>
                   <li>Guaranteed 5-business-day turnaround with a concrete 90-day execution roadmap.</li>
                   <li>Deep diagnostic of schema markup, entity clarity, and AI engine retrieval gaps.</li>
@@ -302,7 +313,7 @@ export default function AEOBlueprintPage() {
           {/* 3. Section: The 4 Core Audit Deliverables */}
           <section id="bpstrat-deliverables" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <p className="text-xs font-mono uppercase tracking-widest text-cyan-400">
+              <p className="text-xs font-mono uppercase tracking-wider text-white/50 font-semibold">
                 CONCRETE AUDIT DELIVERABLES
               </p>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit leading-snug">
@@ -368,7 +379,7 @@ export default function AEOBlueprintPage() {
           {/* 5. Section: The 100% Risk-Reversal Credit Policy & Process */}
           <section id="blueprint-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <p className="text-xs font-mono uppercase tracking-widest text-cyan-400">
+              <p className="text-xs font-mono uppercase tracking-wider text-white/50 font-semibold">
                 100% AUDIT-FEE CREDIT POLICY
               </p>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit leading-snug">
@@ -414,15 +425,15 @@ export default function AEOBlueprintPage() {
           {/* 6. Section: Comparative Matrix & Exit-Ramp Selector */}
           <section id="decision-strip" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <div className="flex items-center justify-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider font-bold">
-                <HelpCircle className="w-4 h-4 text-cyan-400" />
+              <div className="flex items-center justify-center gap-2 text-white/50 font-mono text-xs uppercase tracking-wider font-semibold">
+                <HelpCircle className="w-4 h-4 text-white/50" />
                 <span>SERVICE FIT &amp; COMPARISON</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit">Which option fits your current priority?</h2>
               <p className="text-xs text-white/60 font-serif">Compare our standalone diagnostic audit against targeted micro-sprints and full foundations.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-serif">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-serif">
               <div className="p-4 bg-cyan-950/20 border border-cyan-500/50 rounded-xl space-y-1">
                 <span className="text-cyan-300 font-bold block font-mono">Unsure what limits search visibility?</span>
                 <span className="text-zinc-300 block">Start with the standalone Strategic Blueprint ($995 ex. GST).</span>
@@ -434,67 +445,97 @@ export default function AEOBlueprintPage() {
                 </span>
               </div>
               <div className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl space-y-1">
-                <span className="text-cyan-300 font-bold block font-mono">Need connected implementation?</span>
+                <span className="text-purple-300 font-bold block font-mono">Need a bundled macro pillar?</span>
                 <span className="text-zinc-300 block">
-                  Discuss <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">AEO Foundation ($1,990 ex. GST)</Link>.
+                  Select a <Link href="/solutions" className="text-purple-400 hover:underline font-medium">Macro-Sprint Bundle ($1,980 ex. GST)</Link>.
+                </span>
+              </div>
+              <div className="p-4 bg-zinc-950/80 border border-white/10 rounded-xl space-y-1">
+                <span className="text-cyan-300 font-bold block font-mono">Need full 90-day implementation?</span>
+                <span className="text-zinc-300 block">
+                  Discuss <Link href="/solutions" className="text-cyan-400 hover:underline font-medium">AEO Foundation ($1,990/mo ex. GST)</Link>.
                 </span>
               </div>
             </div>
 
-            {/* Clean 3-Tier Service Comparison Matrix Table */}
+            {/* Clean 4-Tier Service Comparison Matrix Table */}
             <div id="blueprint-comparison" className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-950/80 shadow-md scroll-mt-24">
-              <table className="w-full text-left text-xs font-serif border-collapse min-w-[640px]">
+              <table className="w-full text-left text-xs font-serif border-collapse min-w-[760px]">
                 <thead>
                   <tr className="bg-white/5 border-b border-white/10 text-white font-mono text-[11px] font-bold uppercase tracking-wider">
-                    <th className="p-3.5 sm:p-4 w-1/4">Specification</th>
-                    <th className="p-3.5 sm:p-4 w-1/3 bg-cyan-950/40 border-x border-cyan-400/40 text-cyan-300 font-bold">
+                    <th className="p-3.5 sm:p-4 w-1/5">Specification</th>
+                    <th className="p-3.5 sm:p-4 w-1/4 bg-cyan-950/40 border-x border-cyan-400/40 text-cyan-300 font-bold">
                       Strategic Blueprint
-                      <span className="block text-[10px] font-mono font-normal text-cyan-400/80 mt-0.5">Primary Diagnostic Foundation</span>
+                      <span className="block text-[10px] font-mono font-normal text-cyan-400/80 mt-0.5">Diagnostic Foundation</span>
                     </th>
-                    <th className="p-3.5 sm:p-4 w-1/4">Micro-Sprint Tier</th>
-                    <th className="p-3.5 sm:p-4 w-1/4">AEO Foundation</th>
+                    <th className="p-3.5 sm:p-4 w-1/5">Micro-Sprint Tier</th>
+                    <th className="p-3.5 sm:p-4 w-1/5">Macro-Sprint Tier</th>
+                    <th className="p-3.5 sm:p-4 w-1/5">AEO Foundation (90-Day)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5 text-zinc-300">
                   <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-mono font-bold text-white text-[11px] uppercase tracking-wider">Scope</td>
+                    <td className="p-3.5 sm:p-4 font-mono font-bold text-white text-[11px] uppercase tracking-wider">Category</td>
                     <td className="p-3.5 sm:p-4 bg-cyan-950/20 border-x border-cyan-400/30 text-white font-sans font-medium">
-                      Full site entity audit, knowledge graph gap analysis, and 90-day prioritised action plan
+                      Diagnostic Foundation
                     </td>
-                    <td className="p-3.5 sm:p-4">1 defined priority page, schema injection, or local entity profile fix</td>
-                    <td className="p-3.5 sm:p-4">Multi-page entity graph deployment and content passage structure across up to 10 pages</td>
+                    <td className="p-3.5 sm:p-4">Discrete Sprint</td>
+                    <td className="p-3.5 sm:p-4">Pillar Bundle (4x Micro)</td>
+                    <td className="p-3.5 sm:p-4">Turnkey Retainer</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-mono font-bold text-white text-[11px] uppercase tracking-wider">Turnaround</td>
+                    <td className="p-3.5 sm:p-4 font-mono font-bold text-white text-[11px] uppercase tracking-wider">Scope Cap</td>
+                    <td className="p-3.5 sm:p-4 bg-cyan-950/20 border-x border-cyan-400/30 text-white font-sans font-medium">
+                      Full site entity audit &amp; 90-day roadmap
+                    </td>
+                    <td className="p-3.5 sm:p-4">1 priority page or local schema fix</td>
+                    <td className="p-3.5 sm:p-4">Up to 5 pages across 1 macro pillar</td>
+                    <td className="p-3.5 sm:p-4">Up to 10 pages across full entity graph</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition">
+                    <td className="p-3.5 sm:p-4 font-mono font-bold text-white text-[11px] uppercase tracking-wider">Delivery SLA</td>
                     <td className="p-3.5 sm:p-4 bg-cyan-950/20 border-x border-cyan-400/30 font-mono font-bold text-cyan-300">
                       5 Business Days
                     </td>
                     <td className="p-3.5 sm:p-4 font-mono">3 to 5 Business Days</td>
-                    <td className="p-3.5 sm:p-4 font-mono">2 to 3 Weeks</td>
+                    <td className="p-3.5 sm:p-4 font-mono">4-Week Cycle</td>
+                    <td className="p-3.5 sm:p-4 font-mono">12-Week Cycle (3 Months)</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-mono font-bold text-white text-[11px] uppercase tracking-wider">Deliverable</td>
-                    <td className="p-3.5 sm:p-4 bg-cyan-950/20 border-x border-cyan-400/30 text-zinc-200">
-                      Actionable 90-day sprint matrix, validated JSON-LD schema snippet, and entity scorecard
+                    <td className="p-3.5 sm:p-4 font-mono font-bold text-white text-[11px] uppercase tracking-wider">Technical Onboarding</td>
+                    <td className="p-3.5 sm:p-4 bg-cyan-950/20 border-x border-cyan-400/30 text-zinc-300 font-mono">
+                      Complimentary ($0.00)
                     </td>
-                    <td className="p-3.5 sm:p-4">Deployed, validated JSON-LD schema snippet or structured copy rewrite</td>
-                    <td className="p-3.5 sm:p-4">Full production deployment, connected tri-graph schema, and verified citation report</td>
+                    <td className="p-3.5 sm:p-4 font-mono text-zinc-300">$250 AUD ex. GST</td>
+                    <td className="p-3.5 sm:p-4 font-mono text-zinc-300">Complimentary ($0.00)</td>
+                    <td className="p-3.5 sm:p-4 font-mono text-zinc-300">Complimentary ($0.00)</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-mono font-bold text-white text-[11px] uppercase tracking-wider">Credit-Back Eligibility</td>
+                    <td className="p-3.5 sm:p-4 font-mono font-bold text-white text-[11px] uppercase tracking-wider">Credit-Back Terms</td>
                     <td className="p-3.5 sm:p-4 bg-cyan-950/20 border-x border-cyan-400/30 text-cyan-300 font-sans font-medium">
-                      100% of $995 credited toward eligible follow-on implementation sprints within 60 days
+                      100% credited toward eligible sprints within 60 days
                     </td>
-                    <td className="p-3.5 sm:p-4 text-zinc-400">Standalone pricing per sprint; eligible for Blueprint credit application</td>
-                    <td className="p-3.5 sm:p-4 text-zinc-200">Accepts full $995 Blueprint fee credit toward project total</td>
+                    <td className="p-3.5 sm:p-4 text-zinc-400">Standalone; not eligible for Blueprint credit</td>
+                    <td className="p-3.5 sm:p-4 text-zinc-400">Standalone; not eligible for Blueprint credit</td>
+                    <td className="p-3.5 sm:p-4 text-zinc-200">100% ($995) deducted against Month 3 invoice</td>
                   </tr>
                   <tr className="hover:bg-white/[0.02] transition">
-                    <td className="p-3.5 sm:p-4 font-mono font-bold text-white text-[11px] uppercase tracking-wider">Investment (ex. GST)</td>
+                    <td className="p-3.5 sm:p-4 font-mono font-bold text-white text-[11px] uppercase tracking-wider">Base Price (ex. GST)</td>
                     <td className="p-3.5 sm:p-4 bg-cyan-950/20 border-x border-cyan-400/30 font-mono font-extrabold text-cyan-300 text-sm">
                       $995 AUD
                     </td>
                     <td className="p-3.5 sm:p-4 font-mono font-bold text-zinc-200">From $495 AUD</td>
-                    <td className="p-3.5 sm:p-4 font-mono font-bold text-zinc-200">$1,990 AUD</td>
+                    <td className="p-3.5 sm:p-4 font-mono font-bold text-zinc-200">$1,980 AUD</td>
+                    <td className="p-3.5 sm:p-4 font-mono font-bold text-zinc-200">$5,970 AUD ($1,990/mo)</td>
+                  </tr>
+                  <tr className="hover:bg-white/[0.02] transition">
+                    <td className="p-3.5 sm:p-4 font-mono font-bold text-white text-[11px] uppercase tracking-wider">Net Implementation</td>
+                    <td className="p-3.5 sm:p-4 bg-cyan-950/20 border-x border-cyan-400/30 font-mono font-extrabold text-cyan-300 text-sm">
+                      $995 AUD
+                    </td>
+                    <td className="p-3.5 sm:p-4 font-mono text-zinc-200">$495 AUD</td>
+                    <td className="p-3.5 sm:p-4 font-mono text-zinc-200">$1,980 AUD</td>
+                    <td className="p-3.5 sm:p-4 font-mono text-cyan-300 font-semibold">$4,975 AUD <span className="text-[10px] text-zinc-400 block font-normal">(after $995 credit)</span></td>
                   </tr>
                 </tbody>
               </table>
