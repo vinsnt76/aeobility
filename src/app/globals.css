@@ -25,6 +25,7 @@
 @utility text-gradient-aeo {
   background-image: linear-gradient(135deg, #00cdd8, #bd00ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
