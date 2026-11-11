@@ -16,18 +16,6 @@
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            canvas: {
-              deep: '#08090C',
-              surface: '#0D1117',
-            },
-            aeo: {
-              cyan: '#00E5FF',
-              magenta: '#E91E63',
-              lime: '#D4FF00',
-              violet: '#5338FF',
-            }
           }
         }
       }
@@ -35,96 +23,165 @@
   </script>
   <style>
     :root {
-      /* Canvas & Foundations */
-      --canvas-deep: #08090C;
-      --canvas-surface: #0D1117;
-      --canvas-card: rgba(14, 18, 26, 0.78);
-      --card-border-glow: rgba(255, 255, 255, 0.12);
-
-      /* Reference Image Spheres & Gradients */
-      --orb-orange: radial-gradient(circle at 32% 28%, #FFAD5C 0%, #FF7315 36%, #C63600 72%, #3E0E00 100%);
-      --orb-violet: radial-gradient(circle at 30% 28%, #8F7BFF 0%, #4E33FF 38%, #230B9E 74%, #07012C 100%);
-      --orb-blue: radial-gradient(circle at 35% 35%, #00B4D8 0%, #0077B6 60%, #03045E 100%);
-      --gold-torus: conic-gradient(from 160deg at 50% 50%, #FFF3B0 0deg, #D49B27 55deg, #5C3D00 115deg, #FFD56B 175deg, #FFF6CC 215deg, #9E6B08 280deg, #422B00 325deg, #FFF3B0 360deg);
-
-      /* High-Contrast Interactive & Data Palette (Dashboard) */
+      --canvas-deep: #06080E;
+      --canvas-surface: #0D111A;
       --aeo-cyan: #00E5FF;
-      --aeo-magenta: #E91E63;
-      --aeo-lime: #D4FF00;
-      --text-primary: #FFFFFF;
-      --text-secondary: #D4D4D8;
-      --text-muted: #94A3B8;
-
-      /* Frosted Glass Layers (Reference Image Refractive Core) */
-      --glass-frosted: rgba(16, 20, 30, 0.72);
-      --glass-specular-border: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.48) 0%,
-        rgba(255, 255, 255, 0.12) 38%,
-        rgba(255, 255, 255, 0.04) 70%,
-        rgba(255, 255, 255, 0.28) 100%
-      );
+      --aeo-violet: #8B3DFF;
+      --aeo-magenta: #E60067;
+      --aeo-emerald: #00E660;
+      --aeo-cobalt: #264ECA;
+      --aeo-amber: #E59500;
+      --aeo-coral: #DC4236;
+      --aeo-slate: #333B48;
     }
 
     body {
       background-color: var(--canvas-deep);
-      color: var(--text-secondary);
+      color: #D4D4D8;
       overflow-x: hidden;
     }
 
-    /* 3D Tactile Spheres from Reference Image */
-    .sphere-orange-3d {
-      background: var(--orb-orange);
+    /* 8 Brand Sheet Gradient Ramps */
+    .bar-gradient-cyan {
+      background: linear-gradient(90deg, #074F57 0%, #00B4C8 45%, #00E5FF 100%);
+    }
+    .bar-gradient-violet {
+      background: linear-gradient(90deg, #3B1C71 0%, #6828D6 45%, #8B3DFF 100%);
+    }
+    .bar-gradient-magenta {
+      background: linear-gradient(90deg, #590A31 0%, #B80052 45%, #E60067 100%);
+    }
+    .bar-gradient-emerald {
+      background: linear-gradient(90deg, #085428 0%, #00B84C 45%, #00E660 100%);
+    }
+    .bar-gradient-cobalt {
+      background: linear-gradient(90deg, #0B1536 0%, #193282 45%, #264ECA 100%);
+    }
+    .bar-gradient-amber {
+      background: linear-gradient(90deg, #573706 0%, #B87400 45%, #E59500 100%);
+    }
+    .bar-gradient-coral {
+      background: linear-gradient(90deg, #591914 0%, #B02E24 45%, #DC4236 100%);
+    }
+
+    /* 3D Shaded Pill Buttons from Brand Sheet */
+    .btn-brand-cyan {
+      background: linear-gradient(180deg, #26ECFF 0%, #00C4DB 52%, #075963 100%);
+      box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.65),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.45),
+        0 10px 28px -4px rgba(0, 229, 255, 0.4);
+      color: #05080C;
+    }
+    .btn-brand-cyan:hover {
+      filter: brightness(1.08);
+    }
+
+    .btn-brand-violet {
+      background: linear-gradient(180deg, #9E5BFF 0%, #7C2AE8 55%, #3B1C71 100%);
+      box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.45),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+        0 10px 25px -4px rgba(139, 61, 255, 0.35);
+      color: #FFFFFF;
+    }
+
+    /* 3D Duotone Spheres using Brand Sheet Swatches */
+    .sphere-cyan-violet-3d {
+      background: radial-gradient(circle at 30% 28%, #00E5FF 0%, #264ECA 44%, #7C2AE8 76%, #1B073B 100%);
       box-shadow:
         inset -12px -16px 28px rgba(0, 0, 0, 0.65),
-        inset 6px 8px 18px rgba(255, 210, 160, 0.35),
-        0 24px 60px rgba(255, 109, 0, 0.28);
+        inset 6px 8px 18px rgba(180, 248, 255, 0.45),
+        0 24px 60px rgba(0, 229, 255, 0.28);
     }
 
-    .sphere-violet-3d {
-      background: var(--orb-violet);
+    .sphere-magenta-violet-3d {
+      background: radial-gradient(circle at 30% 28%, #FF2E88 0%, #E60067 38%, #7C2AE8 74%, #1A0536 100%);
       box-shadow:
         inset -14px -18px 30px rgba(0, 0, 0, 0.7),
-        inset 6px 8px 18px rgba(190, 180, 255, 0.35),
-        0 28px 65px rgba(73, 54, 255, 0.35);
+        inset 6px 8px 18px rgba(255, 180, 215, 0.4),
+        0 28px 65px rgba(230, 0, 103, 0.32);
     }
 
-    /* 3D Metallic Gold Orbital Torus Ring */
-    .gold-torus-3d {
-      background: var(--gold-torus);
+    .sphere-emerald-cyan-3d {
+      background: radial-gradient(circle at 32% 28%, #00E660 0%, #00B4C8 55%, #0B1536 100%);
+      box-shadow:
+        inset -8px -10px 20px rgba(0, 0, 0, 0.65),
+        0 16px 40px rgba(0, 230, 96, 0.28);
+    }
+
+    /* 3D Brand Torus Rings */
+    .torus-brand-cyan-violet {
+      background: conic-gradient(
+        from 160deg at 50% 50%,
+        #00E5FF 0deg,
+        #8B3DFF 95deg,
+        #1D1040 165deg,
+        #E60067 235deg,
+        #00E660 305deg,
+        #00E5FF 360deg
+      );
       -webkit-mask: radial-gradient(transparent 53%, #000 55%);
       mask: radial-gradient(transparent 53%, #000 55%);
       box-shadow: 0 18px 36px rgba(0, 0, 0, 0.75);
     }
 
-    /* Specular Frosted Glass Poster Card - Translucent so 3D spheres refract through */
+    .torus-brand-amber-magenta {
+      background: conic-gradient(
+        from 180deg at 50% 50%,
+        #FFE082 0deg,
+        #E59500 80deg,
+        #590A31 155deg,
+        #E60067 230deg,
+        #8B3DFF 300deg,
+        #FFE082 360deg
+      );
+      -webkit-mask: radial-gradient(transparent 53%, #000 55%);
+      mask: radial-gradient(transparent 53%, #000 55%);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.75);
+    }
+
+    /* Translucent Frosted Glass Card */
     .glass-poster-card {
       background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(15, 18, 30, 0.52) 42%, rgba(10, 12, 22, 0.64) 75%, rgba(60, 40, 220, 0.12) 100%) padding-box,
-        var(--glass-specular-border) border-box;
+        linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(13, 17, 28, 0.54) 42%, rgba(9, 12, 22, 0.66) 75%, rgba(124, 42, 232, 0.14) 100%) padding-box,
+        linear-gradient(135deg, rgba(0, 229, 255, 0.55) 0%, rgba(139, 61, 255, 0.25) 45%, rgba(230, 0, 103, 0.25) 80%, rgba(255, 255, 255, 0.35) 100%) border-box;
       border: 1px solid transparent;
       backdrop-filter: blur(28px) saturate(160%);
       -webkit-backdrop-filter: blur(28px) saturate(160%);
-      box-shadow: 0 32px 70px -12px rgba(0, 0, 0, 0.78);
+      box-shadow: 0 32px 70px -12px rgba(0, 0, 0, 0.82);
     }
 
-    /* Elevated Cyan Specular Card (Glass L2) */
     .glass-cyan-card {
       background:
-        linear-gradient(160deg, rgba(13, 19, 30, 0.90) 0%, rgba(9, 12, 18, 0.95) 100%) padding-box,
-        linear-gradient(135deg, rgba(0, 229, 255, 0.65) 0%, rgba(212, 255, 0, 0.25) 40%, rgba(255, 255, 255, 0.06) 100%) border-box;
-      border: 1px solid transparent;
+        linear-gradient(160deg, rgba(11, 21, 54, 0.85) 0%, rgba(8, 11, 18, 0.94) 100%) padding-box,
+        linear-gradient(135deg, #00E5FF 0%, #8B3DFF 50%, #E60067 100%) border-box;
+      border: 1.5px solid transparent;
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
-      box-shadow: 0 28px 60px -15px rgba(0, 229, 255, 0.15), 0 20px 45px -10px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 28px 60px -15px rgba(0, 229, 255, 0.18), 0 20px 45px -10px rgba(0, 0, 0, 0.85);
     }
 
-    /* Reference Image Pill Border */
     .reference-pill {
-      border: 1px solid rgba(255, 255, 255, 0.42);
-      background: rgba(8, 9, 12, 0.65);
+      border: 1px solid rgba(0, 229, 255, 0.4);
+      background: rgba(11, 21, 54, 0.55);
       backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .aeo-cyan-glow {
+      color: #00E5FF;
+      text-shadow: 0 0 18px rgba(0, 229, 255, 0.45);
+    }
+
+    .text-brand-spectrum {
+      background: linear-gradient(90deg, #00E5FF 0%, #8B3DFF 52%, #FF1476 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .spectrum-bottom-bar {
+      background: linear-gradient(90deg, #FF007F 0%, #8B3DFF 38%, #264ECA 70%, #00E5FF 100%);
     }
 
     @keyframes floatSlow {
@@ -137,70 +194,62 @@
       50% { transform: translateY(7px) rotate(23deg); }
     }
 
-    .animate-torus-left {
-      animation: floatSlow 7s ease-in-out infinite;
-    }
-
-    .animate-torus-right {
-      animation: floatSlowReverse 8s ease-in-out infinite;
-    }
+    .animate-torus-left { animation: floatSlow 7s ease-in-out infinite; }
+    .animate-torus-right { animation: floatSlowReverse 8s ease-in-out infinite; }
   </style>
 </head>
-<body class="selection:bg-[#D4FF00] selection:text-[#08090C]">
+<body class="selection:bg-[#00E5FF] selection:text-[#06080E]">
 
-  <!-- =========================================================================
-       1. HEADER & GLOBAL NAVIGATION
-       ========================================================================= -->
-  <header class="sticky top-0 z-50 w-full bg-[#08090C]/85 backdrop-blur-[20px] border-b border-white/[0.06]">
+  <!-- Top Brand Spectrum Bar -->
+  <div class="w-full h-1 spectrum-bottom-bar"></div>
+
+  <!-- 1. HEADER & GLOBAL NAVIGATION -->
+  <header class="sticky top-0 z-50 w-full bg-[#06080E]/88 backdrop-blur-[20px] border-b border-white/[0.08]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <!-- Brand Mark -->
-      <a href="#" class="flex items-center gap-3 focus:outline-none">
-        <div class="w-9 h-9 rounded-xl bg-[#0D1117] border border-white/15 flex items-center justify-center">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <circle cx="6" cy="6" r="2.5" fill="#00E5FF" />
-            <circle cx="18" cy="6" r="2.5" fill="#D4FF00" />
-            <circle cx="12" cy="18" r="3" fill="#00E5FF" />
-            <path d="M8 7.2L11 15.5M16 7.2L13 15.5M8.5 6H15.5" stroke="#FFFFFF" stroke-width="1.4" stroke-opacity="0.6" />
+      <a href="#" class="flex items-center gap-3.5 focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-[#0B101B] border border-white/15 flex items-center justify-center">
+          <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none">
+            <path d="M16 4L27 10.5L16 17L5 10.5L16 4Z" stroke="#00E5FF" stroke-width="2.2" stroke-linejoin="round" />
+            <circle cx="9" cy="16" r="1.3" fill="#FFFFFF" />
+            <circle cx="13.5" cy="18.5" r="1.3" fill="#FFFFFF" />
+            <circle cx="18.5" cy="18.5" r="1.3" fill="#FFFFFF" />
+            <circle cx="23" cy="16" r="1.3" fill="#FFFFFF" />
+            <path d="M5 20.5L16 27L27 20.5" stroke="#8B3DFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
-        <div class="flex items-baseline gap-2">
-          <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-white">
-            AEO<span class="text-[#00E5FF]">bility</span>
+        <div class="flex items-baseline gap-2.5">
+          <span class="font-extrabold text-2xl tracking-tight text-white">
+            AEO<span class="aeo-cyan-glow">bility</span>
           </span>
-          <span class="hidden sm:inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-[#D4FF00] bg-white/[0.04] border border-white/10 px-2 py-0.5 rounded-full">
+          <span class="hidden sm:inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-[#00E5FF] bg-[#0B1536]/80 border border-[#00E5FF]/30 px-2.5 py-0.5 rounded-full">
             CLARITY ENGINE
           </span>
         </div>
       </a>
 
-      <!-- Center Plain Text Links -->
       <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-[#D4D4D8]">
-        <a href="/services" class="hover:text-white transition-colors">Services</a>
-        <a href="#operational-pipeline" class="hover:text-white transition-colors">How AEO Works</a>
-        <a href="#empirical-evidence" class="hover:text-white transition-colors">Evidence (Case Studies)</a>
-        <a href="#commercial-pathways" class="hover:text-white transition-colors">Pricing &amp; Sprints</a>
-        <a href="/knowledge-hub" class="hover:text-white transition-colors">Knowledge Hub</a>
+        <a href="/services" class="hover:text-[#00E5FF] transition-colors">Services</a>
+        <a href="#operational-pipeline" class="hover:text-[#00E5FF] transition-colors">How AEO Works</a>
+        <a href="#empirical-evidence" class="hover:text-[#00E5FF] transition-colors">Evidence (Case Studies)</a>
+        <a href="#commercial-pathways" class="hover:text-[#00E5FF] transition-colors">Pricing &amp; Sprints</a>
+        <a href="/knowledge-hub" class="hover:text-[#00E5FF] transition-colors">Knowledge Hub</a>
       </nav>
 
-      <!-- Right Single High-Contrast Button -->
       <div class="hidden lg:flex items-center">
-        <a href="#hero-diagnostic-instrument" class="px-5 py-2.5 rounded-lg bg-[#00E5FF] text-[#08090C] font-bold text-sm tracking-wide hover:brightness-110 active:scale-95 transition-all shadow-[0_0_24px_rgba(0,229,255,0.28)]">
-          Start Free Scan
+        <a href="#hero-diagnostic-instrument" class="px-6 py-2.5 rounded-full btn-brand-cyan font-extrabold text-sm tracking-wide">
+          Free Scan
         </a>
       </div>
     </div>
   </header>
 
-  <!-- =========================================================================
-       2. HERO SECTION: "THE CLARITY ENGINE" (Asymmetric 2-Column Grid)
-       ========================================================================= -->
+  <!-- 2. HERO SECTION -->
   <section class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10 items-center">
       
-      <!-- Left Column: Orientation & Cognitive Anchoring -->
       <div class="lg:col-span-7 space-y-7 relative z-10">
         <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full reference-pill">
-          <span class="w-2 h-2 rounded-full bg-[#00E5FF] shadow-[0_0_10px_#00E5FF] animate-pulse"></span>
+          <span class="w-2 h-2 rounded-full bg-[#00E660] shadow-[0_0_10px_#00E660] animate-pulse"></span>
           <span class="font-mono text-xs tracking-wide text-white font-medium">
             Answer Engine Optimisation for Australian Entities
           </span>
@@ -208,7 +257,7 @@
 
         <h1 class="text-4xl sm:text-6xl lg:text-[66px] xl:text-[72px] font-bold tracking-tight text-white leading-[1.06]">
           Get your business
-          <span class="font-extrabold italic text-[#D4FF00] drop-shadow-[0_0_28px_rgba(212,255,0,0.22)]">found and chosen</span>
+          <span class="font-extrabold italic text-brand-spectrum">found and chosen</span>
           in AI search.
         </h1>
 
@@ -217,9 +266,9 @@
         </p>
 
         <div class="pt-2 flex flex-col sm:flex-row sm:items-center gap-5">
-          <a href="#commercial-pathways" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full reference-pill text-white font-semibold text-sm hover:border-[#D4FF00] transition-all group w-fit">
+          <a href="#commercial-pathways" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full btn-brand-violet font-semibold text-sm w-fit">
             <span>Explore The 90-Day Blueprint</span>
-            <span class="w-6 h-6 rounded-full border border-white/50 flex items-center justify-center group-hover:border-[#D4FF00] group-hover:text-[#D4FF00] transition-colors text-xs">↓</span>
+            <span class="w-6 h-6 rounded-full bg-black/30 border border-white/40 flex items-center justify-center text-xs">↓</span>
           </a>
           <div class="text-xs sm:text-sm font-mono text-[#94A3B8] tracking-wide">
             Fixed scope · Australian specialist · Zero retainer lock-in
@@ -227,78 +276,75 @@
         </div>
       </div>
 
-      <!-- Right Column: The Live Diagnostic Instrument -->
+      <!-- Right Column: Hero Diagnostic Instrument -->
       <div class="lg:col-span-5 relative" id="hero-diagnostic-instrument">
-        <!-- Reference 3D Spheres & Gold Toruses -->
-        <div aria-hidden="true" class="pointer-events-none absolute -top-10 -left-10 w-44 h-44 rounded-full sphere-orange-3d z-0"></div>
-        <div aria-hidden="true" class="pointer-events-none absolute -top-6 left-[42%] w-7 h-7 rounded-full sphere-violet-3d z-0"></div>
-        <div aria-hidden="true" class="pointer-events-none absolute top-[26%] -left-8 w-16 h-16 rounded-full gold-torus-3d animate-torus-left z-20"></div>
-        <div aria-hidden="true" class="pointer-events-none absolute bottom-[22%] -right-7 w-16 h-16 rounded-full gold-torus-3d animate-torus-right z-20"></div>
-        <div aria-hidden="true" class="pointer-events-none absolute -bottom-12 -right-10 w-48 h-48 rounded-full sphere-violet-3d z-0"></div>
-        <div aria-hidden="true" class="pointer-events-none absolute -bottom-7 left-[46%] w-6 h-6 rounded-full sphere-orange-3d z-20"></div>
+        <div aria-hidden="true" class="pointer-events-none absolute -top-12 -left-12 w-52 h-52 sm:w-60 sm:h-60 rounded-full sphere-cyan-violet-3d z-0"></div>
+        <div aria-hidden="true" class="pointer-events-none absolute -top-7 left-[40%] w-8 h-8 rounded-full sphere-emerald-cyan-3d z-0"></div>
+        <div aria-hidden="true" class="pointer-events-none absolute top-[24%] -left-9 w-16 h-16 sm:w-20 sm:h-20 rounded-full torus-brand-cyan-violet animate-torus-left z-20"></div>
+        <div aria-hidden="true" class="pointer-events-none absolute bottom-[24%] -right-8 w-16 h-16 sm:w-20 sm:h-20 rounded-full torus-brand-amber-magenta animate-torus-right z-20"></div>
+        <div aria-hidden="true" class="pointer-events-none absolute -bottom-14 -right-12 w-56 h-56 sm:w-64 sm:h-64 rounded-full sphere-magenta-violet-3d z-0"></div>
+        <div aria-hidden="true" class="pointer-events-none absolute -bottom-8 left-[46%] w-7 h-7 rounded-full sphere-emerald-cyan-3d z-20"></div>
 
-        <!-- Frosted Glass Instrument Card -->
         <div class="glass-poster-card rounded-[26px] p-6 sm:p-8 relative z-10">
           <div class="flex items-center justify-between mb-5">
-            <div class="w-24 h-[1.5px] bg-white/60 rounded-full"></div>
+            <div class="w-24 h-[2px] spectrum-bottom-bar rounded-full"></div>
             <div class="flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full border border-white/75"></span>
-              <span class="w-2 h-2 rounded-full border border-white/75"></span>
-              <span class="w-2 h-2 rounded-full border border-white/75"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#00E5FF]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#8B3DFF]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#E60067]"></span>
             </div>
           </div>
 
           <div class="space-y-2 mb-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#08090C]/90 border border-white/20">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D4FF00]"></span>
-              <span class="font-mono text-[10px] tracking-[0.16em] uppercase text-white font-semibold">
-                AI VISIBILITY SNAPSHOT • LIVE V4.2
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#06080E]/80 border border-[#00E5FF]/40">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#00E660]"></span>
+              <span class="font-mono text-[10px] tracking-[0.16em] uppercase text-[#00E5FF] font-semibold">
+                GET AI READY • LIVE DIAGNOSTIC
               </span>
             </div>
             <h2 class="text-2xl sm:text-[26px] font-bold text-white tracking-tight leading-snug">
-              Can conversational AI <span class="italic font-extrabold text-[#D4FF00]">recommend</span> your business?
+              Can conversational AI <span class="italic font-extrabold aeo-cyan-glow">recommend</span> your business?
             </h2>
           </div>
 
-          <form id="diagnostic-form" class="p-4 sm:p-5 rounded-2xl bg-[#08090C]/90 border border-white/10 space-y-4">
+          <form id="diagnostic-form" class="p-4 sm:p-5 rounded-2xl bg-[#06080E]/75 backdrop-blur-md border border-white/15 space-y-4">
             <div>
               <label for="domain-field" class="block font-mono text-[11px] uppercase tracking-wider text-[#D4D4D8] mb-1.5">
                 Australian Business Domain
               </label>
-              <input id="domain-field" type="text" required placeholder="e.g., yourcompany.com.au" class="w-full px-3.5 py-3 rounded-xl bg-[#08090C] border border-white/20 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] transition-all" />
+              <input id="domain-field" type="text" required placeholder="e.g., yourcompany.com.au" class="w-full px-3.5 py-3 rounded-xl bg-[#06080E] border border-white/20 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] transition-all" />
             </div>
 
             <div>
               <label for="query-field" class="block font-mono text-[11px] uppercase tracking-wider text-[#D4D4D8] mb-1.5">
                 Primary Customer Query / Intent
               </label>
-              <input id="query-field" type="text" placeholder="e.g., best commercial solar installer Perth" class="w-full px-3.5 py-3 rounded-xl bg-[#08090C] border border-white/20 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] transition-all" />
+              <input id="query-field" type="text" placeholder="e.g., best commercial solar installer Perth" class="w-full px-3.5 py-3 rounded-xl bg-[#06080E] border border-white/20 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-[#8B3DFF] focus:ring-1 focus:ring-[#8B3DFF] transition-all" />
             </div>
 
-            <button type="submit" id="scan-btn" class="w-full py-3.5 px-5 rounded-xl bg-[#00E5FF] hover:bg-[#33ECFF] active:scale-[0.99] text-[#08090C] font-extrabold text-sm tracking-wide transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_25px_rgba(0,229,255,0.35)]">
-              <span>Analyse My AI Visibility →</span>
+            <button type="submit" class="w-full py-3.5 px-5 rounded-full btn-brand-cyan font-extrabold text-sm tracking-wide transition-all flex items-center justify-center gap-2 cursor-pointer">
+              <span>Get AI Ready · Free Scan →</span>
             </button>
           </form>
 
-          <div id="scan-feedback" class="hidden mt-4 p-4 rounded-xl bg-[#08090C]/95 border border-[#D4FF00]/50 font-mono text-xs text-white space-y-2"></div>
+          <div id="scan-feedback" class="hidden mt-4 p-4 rounded-xl bg-[#06080E]/95 border border-[#00E660]/50 font-mono text-xs text-white space-y-2"></div>
 
-          <!-- 4 Compact Telemetry Tiles -->
           <div class="mt-5 pt-4 border-t border-white/15 grid grid-cols-2 gap-2.5">
-            <div class="px-3 py-2 rounded-xl bg-[#08090C]/85 border border-[#00E5FF]/35 flex items-center justify-between">
+            <div class="px-3 py-2 rounded-xl bg-[#06080E]/85 border border-[#00E5FF]/40 flex items-center justify-between">
               <span class="font-mono text-[10px] text-[#94A3B8]">Entity Salience</span>
               <span class="font-mono text-xs font-bold text-[#00E5FF]">88%</span>
             </div>
-            <div class="px-3 py-2 rounded-xl bg-[#08090C]/85 border border-[#E91E63]/40 flex items-center justify-between">
+            <div class="px-3 py-2 rounded-xl bg-[#06080E]/85 border border-[#E60067]/45 flex items-center justify-between">
               <span class="font-mono text-[10px] text-[#94A3B8]">Answer Coverage</span>
-              <span class="font-mono text-xs font-bold text-[#E91E63]">91%</span>
+              <span class="font-mono text-xs font-bold text-[#FF2E88]">91%</span>
             </div>
-            <div class="px-3 py-2 rounded-xl bg-[#08090C]/85 border border-[#5338FF]/45 flex items-center justify-between">
+            <div class="px-3 py-2 rounded-xl bg-[#06080E]/85 border border-[#8B3DFF]/45 flex items-center justify-between">
               <span class="font-mono text-[10px] text-[#94A3B8]">Provenance</span>
-              <span class="font-mono text-xs font-bold text-[#A594FF]">100% Parity</span>
+              <span class="font-mono text-xs font-bold text-[#B485FF]">100% Parity</span>
             </div>
-            <div class="px-3 py-2 rounded-xl bg-[#08090C]/85 border border-[#D4FF00]/40 flex items-center justify-between">
+            <div class="px-3 py-2 rounded-xl bg-[#06080E]/85 border border-[#00E660]/45 flex items-center justify-between">
               <span class="font-mono text-[10px] text-[#94A3B8]">AI State</span>
-              <span class="font-mono text-xs font-bold text-[#D4FF00]">Optimised</span>
+              <span class="font-mono text-xs font-bold text-[#00E660]">AI Fluent</span>
             </div>
           </div>
         </div>
@@ -307,263 +353,8 @@
     </div>
   </section>
 
-  <!-- =========================================================================
-       3. SECTION 2: RECOGNITION & SURFACE STRIP
-       ========================================================================= -->
-  <section class="bg-[#08090C] border-y border-white/[0.07] py-7">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-6">
-      <span class="font-mono text-xs uppercase tracking-[0.15em] text-[#94A3B8]">
-        ENGINEERED FOR DETERMINISTIC RETRIEVAL ACROSS:
-      </span>
-      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 font-mono text-xs sm:text-sm font-semibold tracking-wider text-[#94A3B8]">
-        <span class="hover:text-white transition-colors">ChatGPT Search</span>
-        <span class="text-white/20">/</span>
-        <span class="hover:text-white transition-colors">Perplexity Sonar</span>
-        <span class="text-white/20">/</span>
-        <span class="hover:text-white transition-colors">Google AI Overviews</span>
-        <span class="text-white/20">/</span>
-        <span class="hover:text-white transition-colors">Gemini Flash</span>
-        <span class="text-white/20">/</span>
-        <span class="hover:text-white transition-colors">Apple Intelligence</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       4. SECTION 3: DIAGNOSTIC GAPS
-       ========================================================================= -->
-  <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mb-14">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full reference-pill mb-4">
-        <span class="font-mono text-[11px] uppercase tracking-widest text-[#00E5FF]">DIAGNOSTIC FAILURE MODES</span>
-      </div>
-      <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
-        AI cannot choose what it <span class="italic font-extrabold text-[#D4FF00]">cannot verify.</span>
-      </h2>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
-      <div class="glass-poster-card rounded-2xl p-7">
-        <div class="flex items-center justify-between mb-5">
-          <div class="w-16 h-[1.5px] bg-white/50"></div>
-          <span class="font-mono text-[11px] text-[#E91E63] font-bold">GAP 01 // IDENTITY</span>
-        </div>
-        <div class="p-4 rounded-xl bg-[#08090C]/90 border border-white/10 mb-6 space-y-2.5">
-          <div class="flex justify-between text-[11px] font-mono"><span class="text-[#94A3B8]">Unverified Entity</span><span class="text-[#E91E63]">24%</span></div>
-          <div class="w-full h-2 bg-white/5 rounded-full"><div class="h-full bg-[#E91E63] w-[24%] rounded-full"></div></div>
-          <div class="flex justify-between text-[11px] font-mono pt-1"><span class="text-white">Tri-Graph @id</span><span class="text-[#00E5FF]">94%</span></div>
-          <div class="w-full h-2 bg-white/5 rounded-full"><div class="h-full bg-[#00E5FF] w-[94%] rounded-full"></div></div>
-        </div>
-        <h3 class="text-xl font-bold text-white mb-2">Identity &amp; Entity Gaps</h3>
-        <p class="text-sm text-[#D4D4D8] leading-relaxed">Unconnected ABN/ASIC registry nodes and missing canonical @id anchors force LLMs to guess who you are.</p>
-      </div>
-
-      <div class="glass-poster-card rounded-2xl p-7">
-        <div class="flex items-center justify-between mb-5">
-          <div class="w-16 h-[1.5px] bg-white/50"></div>
-          <span class="font-mono text-[11px] text-[#00E5FF] font-bold">GAP 02 // PASSAGES</span>
-        </div>
-        <div class="p-4 rounded-xl bg-[#08090C]/90 border border-white/10 mb-6 space-y-2.5">
-          <div class="flex justify-between text-[11px] font-mono"><span class="text-[#94A3B8]">Bloated Keyword Prose</span><span class="text-[#E91E63]">18%</span></div>
-          <div class="w-full h-2 bg-white/5 rounded-full"><div class="h-full bg-[#E91E63] w-[18%] rounded-full"></div></div>
-          <div class="flex justify-between text-[11px] font-mono pt-1"><span class="text-white">90-Token Atomic Blocks</span><span class="text-[#D4FF00]">91%</span></div>
-          <div class="w-full h-2 bg-white/5 rounded-full"><div class="h-full bg-[#D4FF00] w-[91%] rounded-full"></div></div>
-        </div>
-        <h3 class="text-xl font-bold text-white mb-2">Atomic Passage Gaps</h3>
-        <p class="text-sm text-[#D4D4D8] leading-relaxed">RAG pipelines require concise, self-contained 90-token answer blocks for direct conversational synthesis.</p>
-      </div>
-
-      <div class="glass-poster-card rounded-2xl p-7">
-        <div class="flex items-center justify-between mb-5">
-          <div class="w-16 h-[1.5px] bg-white/50"></div>
-          <span class="font-mono text-[11px] text-[#A594FF] font-bold">GAP 03 // PROVENANCE</span>
-        </div>
-        <div class="p-4 rounded-xl bg-[#08090C]/90 border border-white/10 mb-6 space-y-2.5">
-          <div class="flex justify-between text-[11px] font-mono"><span class="text-[#94A3B8]">Unverified Claims</span><span class="text-[#E91E63]">12%</span></div>
-          <div class="w-full h-2 bg-white/5 rounded-full"><div class="h-full bg-[#E91E63] w-[12%] rounded-full"></div></div>
-          <div class="flex justify-between text-[11px] font-mono pt-1"><span class="text-white">SameAs &amp; Case Parity</span><span class="text-[#5338FF]">100%</span></div>
-          <div class="w-full h-2 bg-white/5 rounded-full"><div class="h-full bg-[#5338FF] w-full rounded-full"></div></div>
-        </div>
-        <h3 class="text-xl font-bold text-white mb-2">Provenance &amp; Citation Gaps</h3>
-        <p class="text-sm text-[#D4D4D8] leading-relaxed">Missing local entity parity across maps, directories, and LLM indexes prevents high-confidence citation.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       5. SECTION 4: OPERATIONAL TECHNICAL PIPELINE
-       ========================================================================= -->
-  <section id="operational-pipeline" class="py-24 bg-[#0D1117]/70 border-y border-white/[0.07]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight mb-12">
-        01 Define → 02 Connect → 03 Prove → <span class="italic font-extrabold text-[#00E5FF]">04 Measure</span>
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div class="glass-cyan-card rounded-2xl p-6">
-          <span class="font-mono text-xs font-bold px-2.5 py-1 rounded bg-[#00E5FF] text-[#08090C]">STAGE 01</span>
-          <h3 class="text-2xl font-extrabold text-white mt-4">01 Define</h3>
-          <div class="text-xs font-mono text-[#D4FF00] mb-3">Entity Tri-Graphs</div>
-          <p class="text-sm text-[#D4D4D8]">Establish canonical @id URI nodes and map official ABN/ASIC records.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-[#08090C]/90 border border-white/10">
-          <span class="font-mono text-xs font-bold px-2.5 py-1 rounded bg-white/5 text-[#94A3B8]">STAGE 02</span>
-          <h3 class="text-2xl font-extrabold text-white mt-4">02 Connect</h3>
-          <div class="text-xs font-mono text-[#00E5FF] mb-3">Schema Lattice</div>
-          <p class="text-sm text-[#D4D4D8]">Bind commercial services to Australian geographic catchment corridors.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-[#08090C]/90 border border-white/10">
-          <span class="font-mono text-xs font-bold px-2.5 py-1 rounded bg-white/5 text-[#94A3B8]">STAGE 03</span>
-          <h3 class="text-2xl font-extrabold text-white mt-4">03 Prove</h3>
-          <div class="text-xs font-mono text-[#00E5FF] mb-3">Citation Grounding</div>
-          <p class="text-sm text-[#D4D4D8]">Inject empirical subjectOf case proof loops and sameAs registry parity.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-[#08090C]/90 border border-white/10">
-          <span class="font-mono text-xs font-bold px-2.5 py-1 rounded bg-white/5 text-[#94A3B8]">STAGE 04</span>
-          <h3 class="text-2xl font-extrabold text-white mt-4">04 Measure</h3>
-          <div class="text-xs font-mono text-[#00E5FF] mb-3">AI Retrieval Salience</div>
-          <p class="text-sm text-[#D4D4D8]">Track passage extraction share across ChatGPT, Gemini, and Perplexity.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       6. SECTION 5: COMMERCIAL PATHWAYS (Hick's Law Enforced)
-       ========================================================================= -->
-  <section id="commercial-pathways" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-      <div class="lg:col-span-7 glass-cyan-card rounded-[26px] p-8 sm:p-10 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-6">
-            <span class="px-3.5 py-1 rounded-full bg-[#D4FF00] text-[#08090C] font-mono text-xs font-extrabold uppercase">RECOMMENDED FOUNDATION</span>
-            <span class="font-mono text-xs text-[#00E5FF]">5 BUSINESS DAYS SLA</span>
-          </div>
-          <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Strategic Blueprint</h3>
-          <div class="mt-4 mb-6 flex items-baseline gap-2.5">
-            <span class="text-5xl font-extrabold text-white">$995</span>
-            <span class="text-sm font-mono text-[#94A3B8]">AUD ex. GST</span>
-          </div>
-          <p class="text-base text-[#D4D4D8] mb-6">Deep technical crawl, Knowledge Graph audit, and 90-day execution roadmap. 100% of your fee is credited toward implementation within 60 days.</p>
-        </div>
-        <a href="/solutions/aeo-blueprint" class="w-full py-4 px-6 rounded-xl bg-[#00E5FF] text-[#08090C] font-extrabold text-base text-center block shadow-[0_0_30px_rgba(0,229,255,0.3)]">
-          Commission Strategic Blueprint →
-        </a>
-      </div>
-
-      <div class="lg:col-span-5 flex flex-col gap-6">
-        <div class="p-7 rounded-2xl bg-[#0D1117]/80 border border-white/[0.08] flex-1 flex flex-col justify-between">
-          <div>
-            <span class="font-mono text-xs text-[#94A3B8]">TURNKEY IMPLEMENTATION</span>
-            <h3 class="text-2xl font-bold text-white mt-1">AEO Foundation ($1,980 AUD / mo)</h3>
-            <p class="text-sm text-[#D4D4D8] mt-2">90-day full-graph implementation across up to 10 core commercial pages.</p>
-          </div>
-          <a href="/solutions" class="mt-4 inline-block font-mono text-xs text-[#00E5FF] hover:underline">Explore Foundation Scope →</a>
-        </div>
-        <div class="p-7 rounded-2xl bg-[#0D1117]/80 border border-white/[0.08] flex-1 flex flex-col justify-between">
-          <div>
-            <span class="font-mono text-xs text-[#94A3B8]">MODULAR EXECUTION</span>
-            <h3 class="text-2xl font-bold text-white mt-1">AEO Sprints (From $495 AUD)</h3>
-            <p class="text-sm text-[#D4D4D8] mt-2">Surgical micro-sprints targeting discrete schema and entity fixes.</p>
-          </div>
-          <a href="/solutions/aeo-sprint" class="mt-4 inline-block font-mono text-xs text-[#E91E63] hover:underline">Browse Sprint Catalog →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       7. SECTION 6: EMPIRICAL CASE STUDY PROOF (Baby Bento Dashboard)
-       ========================================================================= -->
-  <section id="empirical-evidence" class="py-24 bg-[#0D1117]/60 border-y border-white/[0.07]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-poster-card rounded-[26px] p-8 sm:p-10">
-        <h2 class="text-3xl font-bold text-white mb-6">
-          Empirical Case Study: <span class="italic font-extrabold text-[#D4FF00]">Baby Bento</span> Telemetry
-        </h2>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-5 space-y-4">
-            <div class="p-5 rounded-2xl bg-[#08090C]/90 border border-white/10">
-              <div class="font-mono text-xs text-[#94A3B8]">SALIENCE SHARE SHIFT</div>
-              <div class="text-4xl font-extrabold text-[#00E5FF] mt-1">11.89% → 83.69%</div>
-            </div>
-            <div class="p-5 rounded-2xl bg-[#08090C]/90 border border-white/10">
-              <div class="font-mono text-xs text-[#94A3B8]">AVERAGE POSITION SHIFT</div>
-              <div class="text-3xl font-extrabold text-white mt-1">Pos 64.6 → Top-Tier #1.4</div>
-            </div>
-          </div>
-          <div class="lg:col-span-7 p-6 rounded-2xl bg-[#08090C]/90 border border-white/10 space-y-4">
-            <div class="space-y-1">
-              <div class="flex justify-between text-xs font-mono"><span class="text-white">Product Entity Grounding</span><span class="text-[#00E5FF]">92%</span></div>
-              <div class="w-full h-3 bg-white/5 rounded-full"><div class="h-full bg-[#00E5FF] w-[92%] rounded-full"></div></div>
-            </div>
-            <div class="space-y-1">
-              <div class="flex justify-between text-xs font-mono"><span class="text-white">Material Specification Queries</span><span class="text-[#E91E63]">86%</span></div>
-              <div class="w-full h-3 bg-white/5 rounded-full"><div class="h-full bg-[#E91E63] w-[86%] rounded-full"></div></div>
-            </div>
-            <div class="space-y-1">
-              <div class="flex justify-between text-xs font-mono"><span class="text-white">Category Comparison Prompts</span><span class="text-[#A594FF]">79%</span></div>
-              <div class="w-full h-3 bg-white/5 rounded-full"><div class="h-full bg-[#5338FF] w-[79%] rounded-full"></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       8. SECTION 7: FINAL POSTER CONVERSION (Reference Image Composition)
-       ========================================================================= -->
-  <section class="py-28 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-    <div class="flex justify-center mb-12">
-      <div class="px-6 py-2 rounded-full reference-pill text-xs font-mono text-white tracking-wider">
-        AEObility Clarity Engine • Ready To Deploy
-      </div>
-    </div>
-
-    <div id="final-conversion-panel" class="relative max-w-2xl mx-auto">
-      <div aria-hidden="true" class="pointer-events-none absolute -top-14 -left-14 w-52 h-52 rounded-full sphere-orange-3d z-0"></div>
-      <div aria-hidden="true" class="pointer-events-none absolute -top-8 left-[43%] w-8 h-8 rounded-full sphere-violet-3d z-0"></div>
-      <div aria-hidden="true" class="pointer-events-none absolute top-[28%] -left-9 w-18 h-18 rounded-full gold-torus-3d animate-torus-left z-20"></div>
-      <div aria-hidden="true" class="pointer-events-none absolute bottom-[25%] -right-9 w-18 h-18 rounded-full gold-torus-3d animate-torus-right z-20"></div>
-      <div aria-hidden="true" class="pointer-events-none absolute -bottom-14 -right-14 w-56 h-56 rounded-full sphere-violet-3d z-0"></div>
-      <div aria-hidden="true" class="pointer-events-none absolute -bottom-8 left-[48%] w-7 h-7 rounded-full sphere-orange-3d z-20"></div>
-
-      <div class="glass-poster-card rounded-[28px] p-8 sm:p-14 relative z-10 text-center space-y-8">
-        <div class="flex items-center justify-between">
-          <div class="w-32 h-[1.5px] bg-white/65 rounded-full"></div>
-          <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full border border-white/80"></span>
-            <span class="w-2.5 h-2.5 rounded-full border border-white/80"></span>
-            <span class="w-2.5 h-2.5 rounded-full border border-white/80"></span>
-          </div>
-        </div>
-
-        <div class="py-5 px-6 rounded-2xl bg-[#08090C]/80 border border-white/10 space-y-4">
-          <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-[1.15]">
-            &ldquo;Find out what conversational models
-            <span class="font-extrabold italic text-[#D4FF00]">truly understand</span>
-            about your business.&rdquo;
-          </h2>
-          <p class="text-sm font-medium text-[#D4D4D8]">- AEObility Diagnostic Architecture</p>
-        </div>
-
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#hero-diagnostic-instrument" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#00E5FF] text-[#08090C] font-extrabold text-sm sm:text-base shadow-[0_0_28px_rgba(0,229,255,0.35)]">
-            Start Your Free AI Visibility Scan
-          </a>
-          <a href="/book" class="w-full sm:w-auto px-6 py-4 rounded-xl bg-[#08090C]/90 text-white border border-white/25 font-semibold text-sm">
-            Book a 15-Minute Diagnostic Briefing
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex justify-center mt-14">
-      <div class="px-6 py-2 rounded-full reference-pill text-xs font-mono text-white tracking-widest uppercase">
-        Fixed Scope &nbsp;|&nbsp; Zero Retainer Lock-In
-      </div>
-    </div>
-  </section>
+  <!-- Bottom Brand Spectrum Bar -->
+  <div class="w-full h-2 spectrum-bottom-bar"></div>
 
   <script>
     const form = document.getElementById('diagnostic-form');
@@ -574,7 +365,7 @@
       feedback.classList.remove('hidden');
       feedback.innerHTML = '<div>[TELEMETRY ACTIVE] Analysing entity salience and JSON-LD triples for <strong>' + domain + '</strong>...</div>';
       setTimeout(() => {
-        feedback.innerHTML = '<div class="text-[#D4FF00] font-bold">SCAN COMPLETE: ' + domain + '</div><div class="mt-1 text-[#D4D4D8]">Entity Salience: 88% | Answer Coverage: 91% | Citation Parity: 100%</div>';
+        feedback.innerHTML = '<div class="text-[#00E660] font-bold">SCAN COMPLETE: ' + domain + '</div><div class="mt-1 text-[#D4D4D8]">Entity Salience: 88% | Answer Coverage: 91% | Citation Parity: 100%</div>';
       }, 1200);
     });
   </script>
