@@ -2,61 +2,119 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { 
-  ArrowRight, 
-  CheckCircle2, 
-  Search, 
-  ShieldCheck, 
-  Cpu, 
-  Layers, 
-  Activity, 
-  Compass, 
-  Sparkles, 
-  Lock, 
-  Menu, 
+import {
+  ArrowRight,
+  CheckCircle2,
+  Activity,
+  Menu,
   X,
-  ExternalLink,
   ChevronRight,
+  Sparkles,
+  ShieldCheck,
+  Layers,
+  Cpu,
   Database,
-  Share2,
-  FileCheck
+  BarChart3
 } from 'lucide-react';
 
-interface DiagnosticResult {
-  url: string;
+interface TelemetrySimulation {
+  domain: string;
   query: string;
-  entityClarity: number;
+  entitySalience: number;
   answerCoverage: number;
-  evidenceStrength: number;
-  recommendationState: 'Strong' | 'Moderate' | 'Limited' | 'Critical Gaps';
-  keyFinding: string;
+  citationProvenance: string;
+  recommendationState: string;
+  verdictSummary: string;
 }
+
+const PIPELINE_STAGES = [
+  {
+    num: '01',
+    name: 'Define',
+    subtitle: 'Entity Tri-Graphs',
+    tag: 'ACTIVE FOUNDATION',
+    description:
+      'Establish canonical @id URI nodes, map official ABN and ASIC registration records, and construct unambiguous machine-readable identity schemas.',
+    deliverables: [
+      'Canonical @id URI root architecture',
+      'ABN / ASIC deterministic entity binding',
+      'Lexical & phonetic brand disambiguation'
+    ],
+    metricLabel: 'Entity Salience Lift',
+    metricValue: '+71.8%'
+  },
+  {
+    num: '02',
+    name: 'Connect',
+    subtitle: 'Schema Lattice',
+    description:
+      'Bind commercial services to Australian geographic catchment nodes, author hierarchical isPartOf corridors, and eliminate orphaned content silos.',
+    tag: 'SEMANTIC CORRIDORS',
+    deliverables: [
+      'Service-to-location knowledge corridors',
+      '90-token atomic answer block formatting',
+      'Multi-intent query fan-out alignment'
+    ],
+    metricLabel: 'Query Fan-Out Coverage',
+    metricValue: '91.4%'
+  },
+  {
+    num: '03',
+    name: 'Prove',
+    subtitle: 'Citation Grounding',
+    description:
+      'Inject empirical subjectOf case proof loops, reconcile third-party directory parity, and establish verifiable citation authority across RAG indexes.',
+    tag: 'EVIDENCE GRAPH',
+    deliverables: [
+      'Empirical subjectOf proof triples',
+      'Cross-platform sameAs registry consensus',
+      'Verifiable quantitative outcome claims'
+    ],
+    metricLabel: 'Citation Parity Score',
+    metricValue: '100%'
+  },
+  {
+    num: '04',
+    name: 'Measure',
+    subtitle: 'AI Retrieval Salience',
+    description:
+      'Benchmark LLM recommendation frequency, track passage extraction share across ChatGPT, Gemini, and Perplexity, and audit hallucination drift.',
+    tag: 'TELEMETRY LOOP',
+    deliverables: [
+      'Multi-model citation share tracking',
+      'Positional bias & extraction diagnostics',
+      '90-day salience progression ledger'
+    ],
+    metricLabel: 'Target Citation State',
+    metricValue: 'Top-Tier (1.4)'
+  }
+];
 
 export default function ClarityEngineStaging() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [businessUrl, setBusinessUrl] = useState('');
-  const [targetQuery, setTargetQuery] = useState('');
+  const [domainInput, setDomainInput] = useState('');
+  const [queryInput, setQueryInput] = useState('');
   const [isScanning, setIsScanning] = useState(false);
-  const [scanStep, setScanStep] = useState(0);
-  const [diagnosticResult, setDiagnosticResult] = useState<DiagnosticResult | null>(null);
+  const [scanStage, setScanStage] = useState(0);
+  const [activePipelineIndex, setActivePipelineIndex] = useState(0);
+  const [caseStudyView, setCaseStudyView] = useState<'after' | 'before'>('after');
+  const [simulationResult, setSimulationResult] = useState<TelemetrySimulation | null>(null);
 
-  const heroDiagnosticRef = useRef<HTMLDivElement>(null);
-  const finalConversionRef = useRef<HTMLDivElement>(null);
+  const heroInstrumentRef = useRef<HTMLDivElement>(null);
+  const finalPosterRef = useRef<HTMLDivElement>(null);
 
-  // Floating Elements Mitigation:
-  // Conditionally hide or suppress the floating 'Chat with AI Bill' badge
-  // whenever the hero diagnostic or final conversion panel is within the active viewport.
+  // Suppress floating "Chat with AI Bill" badge when Hero Diagnostic or Final Poster is in viewport
   useEffect(() => {
     if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
 
-    let heroIntersecting = false;
-    let finalIntersecting = false;
+    let heroVisible = false;
+    let footerPosterVisible = false;
 
-    const notifySuppression = () => {
-      const shouldSuppress = heroIntersecting || finalIntersecting;
+    const dispatchSuppression = () => {
+      const suppress = heroVisible || footerPosterVisible;
       window.dispatchEvent(
         new CustomEvent('aeo:suppress-bill', {
-          detail: { suppress: shouldSuppress }
+          detail: { suppress }
         })
       );
     };
@@ -65,22 +123,19 @@ export default function ClarityEngineStaging() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.target.id === 'hero-diagnostic-instrument') {
-            heroIntersecting = entry.isIntersecting;
+            heroVisible = entry.isIntersecting;
           }
           if (entry.target.id === 'final-conversion-panel') {
-            finalIntersecting = entry.isIntersecting;
+            footerPosterVisible = entry.isIntersecting;
           }
         });
-        notifySuppression();
+        dispatchSuppression();
       },
-      { threshold: 0.15 }
+      { threshold: 0.12 }
     );
 
-    const heroEl = heroDiagnosticRef.current;
-    const finalEl = finalConversionRef.current;
-
-    if (heroEl) observer.observe(heroEl);
-    if (finalEl) observer.observe(finalEl);
+    if (heroInstrumentRef.current) observer.observe(heroInstrumentRef.current);
+    if (finalPosterRef.current) observer.observe(finalPosterRef.current);
 
     return () => {
       observer.disconnect();
@@ -92,110 +147,201 @@ export default function ClarityEngineStaging() {
     };
   }, []);
 
-  const handleHeroScanSubmit = (e: React.FormEvent) => {
+  const handleScanSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!businessUrl.trim()) return;
+    if (!domainInput.trim()) return;
 
     setIsScanning(true);
-    setScanStep(1);
-    setDiagnosticResult(null);
+    setScanStage(1);
+    setSimulationResult(null);
 
-    // Step-by-step progress simulation
-    setTimeout(() => setScanStep(2), 700);
-    setTimeout(() => setScanStep(3), 1400);
+    setTimeout(() => setScanStage(2), 650);
+    setTimeout(() => setScanStage(3), 1300);
     setTimeout(() => {
       setIsScanning(false);
-      setScanStep(0);
-      setDiagnosticResult({
-        url: businessUrl.trim(),
-        query: targetQuery.trim() || 'General Business Capability',
-        entityClarity: 82,
-        answerCoverage: 61,
-        evidenceStrength: 44,
-        recommendationState: 'Limited',
-        keyFinding: 'High entity recognition on home domain, but relationship triples to commercial services remain ambiguous in RAG retrieval tests.'
+      setScanStage(0);
+      setSimulationResult({
+        domain: domainInput.trim().replace(/^https?:\/\//, ''),
+        query: queryInput.trim() || 'Commercial category capability query',
+        entitySalience: 88,
+        answerCoverage: 91,
+        citationProvenance: '100% Parity',
+        recommendationState: 'Optimised for AI',
+        verdictSummary:
+          'Domain entity detected. Upgrading service pages to deterministic JSON-LD triples and 90-token atomic passages will unlock primary citation status.'
       });
-    }, 2100);
+    }, 1950);
   };
 
-  const scrollToHeroScan = () => {
-    heroDiagnosticRef.current?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToHeroInstrument = () => {
+    heroInstrumentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
   return (
-    <div className="min-h-screen bg-[#08090C] text-[#D4D4D8] selection:bg-[#00E5FF] selection:text-[#08090C] font-sans relative overflow-x-clip">
-      
-      {/* =========================================================================
-          ATMOSPHERIC AMBIENT GLOWS (Confined strictly to viewport margins)
-          WCAG 2.2 AA Contrast Rule: Never behind reading corridors or body copy.
-          ========================================================================= */}
-      <div 
-        aria-hidden="true" 
-        className="pointer-events-none absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#4936FF]/10 blur-[120px]"
-      />
-      <div 
-        aria-hidden="true" 
-        className="pointer-events-none absolute top-[28%] -right-40 w-96 h-96 rounded-full bg-[#00E5FF]/8 blur-[130px]"
-      />
-      <div 
-        aria-hidden="true" 
-        className="pointer-events-none absolute top-[70%] -left-32 w-80 h-80 rounded-full bg-[#FF641F]/6 blur-[140px]"
-      />
+    <div className="min-h-screen bg-[#08090C] text-[#D4D4D8] font-sans selection:bg-[#D4FF00] selection:text-[#08090C] relative overflow-x-clip">
+      {/*Scoped Custom Styles for 3D Reference Spheres, Metallic Gold Toruses, and Frosted Specular Glass */}
+      <style>{`
+        :root {
+          --canvas-deep: #08090C;
+          --canvas-surface: #0D1117;
+          --canvas-card: rgba(14, 18, 26, 0.78);
+          --card-border-glow: rgba(255, 255, 255, 0.12);
+          --orb-orange: radial-gradient(circle at 32% 30%, #FF9E44 0%, #FF6D00 35%, #D84315 68%, #4E1402 100%);
+          --orb-violet: radial-gradient(circle at 32% 30%, #7C66FF 0%, #4936FF 40%, #210CAE 72%, #090238 100%);
+          --orb-blue: radial-gradient(circle at 35% 35%, #00E5FF 0%, #0077B6 60%, #03045E 100%);
+          --aeo-cyan: #00E5FF;
+          --aeo-magenta: #E91E63;
+          --aeo-lime: #D4FF00;
+        }
+
+        /* 3D Tactile Spheres from Reference Image */
+        .sphere-orange-3d {
+          background: radial-gradient(circle at 32% 28%, #FFAD5C 0%, #FF7315 36%, #C63600 72%, #3E0E00 100%);
+          box-shadow:
+            inset -12px -16px 28px rgba(0, 0, 0, 0.65),
+            inset 6px 8px 18px rgba(255, 210, 160, 0.35),
+            0 24px 60px rgba(255, 109, 0, 0.28);
+        }
+
+        .sphere-violet-3d {
+          background: radial-gradient(circle at 30% 28%, #8F7BFF 0%, #4E33FF 38%, #230B9E 74%, #07012C 100%);
+          box-shadow:
+            inset -14px -18px 30px rgba(0, 0, 0, 0.7),
+            inset 6px 8px 18px rgba(190, 180, 255, 0.35),
+            0 28px 65px rgba(73, 54, 255, 0.35);
+        }
+
+        /* 3D Metallic Gold Orbital Torus Ring from Reference Image */
+        .gold-torus-3d {
+          background: conic-gradient(
+            from 160deg at 50% 50%,
+            #FFF3B0 0deg,
+            #D49B27 55deg,
+            #5C3D00 115deg,
+            #FFD56B 175deg,
+            #FFF6CC 215deg,
+            #9E6B08 280deg,
+            #422B00 325deg,
+            #FFF3B0 360deg
+          );
+          -webkit-mask: radial-gradient(transparent 53%, #000 55%);
+          mask: radial-gradient(transparent 53%, #000 55%);
+          box-shadow: 0 18px 36px rgba(0, 0, 0, 0.75);
+        }
+
+        /* Reference Image Specular Frosted Glass Container */
+        .glass-poster-card {
+          background:
+            linear-gradient(155deg, rgba(18, 23, 35, 0.76) 0%, rgba(10, 13, 20, 0.88) 55%, rgba(14, 18, 29, 0.78) 100%) padding-box,
+            linear-gradient(135deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 38%, rgba(255, 255, 255, 0.04) 70%, rgba(255, 255, 255, 0.28) 100%) border-box;
+          border: 1px solid transparent;
+          backdrop-filter: blur(26px) saturate(150%);
+          -webkit-backdrop-filter: blur(26px) saturate(150%);
+          box-shadow: 0 32px 70px -12px rgba(0, 0, 0, 0.78);
+        }
+
+        .glass-cyan-card {
+          background:
+            linear-gradient(160deg, rgba(13, 19, 30, 0.90) 0%, rgba(9, 12, 18, 0.95) 100%) padding-box,
+            linear-gradient(135deg, rgba(0, 229, 255, 0.65) 0%, rgba(212, 255, 0, 0.25) 40%, rgba(255, 255, 255, 0.06) 100%) border-box;
+          border: 1px solid transparent;
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          box-shadow: 0 28px 60px -15px rgba(0, 229, 255, 0.15), 0 20px 45px -10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Reference Pill Outline (Glass Morphism Quotes Template style) */
+        .reference-pill {
+          border: 1px solid rgba(255, 255, 255, 0.42);
+          background: rgba(8, 9, 12, 0.65);
+          backdrop-filter: blur(12px);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes floatSlow {
+          0%, 100% { transform: translateY(0px) rotate(-14deg); }
+          50% { transform: translateY(-8px) rotate(-10deg); }
+        }
+
+        @keyframes floatSlowReverse {
+          0%, 100% { transform: translateY(0px) rotate(18deg); }
+          50% { transform: translateY(7px) rotate(23deg); }
+        }
+
+        .animate-torus-left {
+          animation: floatSlow 7s ease-in-out infinite;
+        }
+
+        .animate-torus-right {
+          animation: floatSlowReverse 8s ease-in-out infinite;
+        }
+      `}</style>
 
       {/* =========================================================================
-          NAVIGATION: Restrained Single-Tier Glass Bar
+          1. HEADER & GLOBAL NAVIGATION
+          Restrained glass bar: blur(20px), rgba(8, 9, 12, 0.85)
           ========================================================================= */}
-      <header className="sticky top-0 z-50 w-full bg-[#0D1117]/85 backdrop-blur-[16px] border-b border-white/[0.08]">
+      <header className="sticky top-0 z-50 w-full bg-[#08090C]/85 backdrop-blur-[20px] border-b border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          
-          {/* Brand Logo Pinned Left */}
-          <Link 
-            href="/staging/clarity-engine" 
-            className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00E5FF]"
+          {/* Left: Brand mark with cyan geometric node icon */}
+          <Link
+            href="/staging/clarity-engine"
+            className="flex items-center gap-3 group focus:outline-none"
           >
-            <span className="font-extrabold text-2xl tracking-tight text-white font-display">
-              AEO<span className="text-[#00E5FF]">bility</span>
-            </span>
-            <span className="text-[10px] uppercase font-mono tracking-widest text-[#94A3B8] border-l border-white/10 pl-2.5 py-0.5 hidden sm:inline-block">
-              Clarity Engine
-            </span>
+            <div className="w-9 h-9 rounded-xl bg-[#0D1117] border border-white/15 flex items-center justify-center shadow-inner relative">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                <circle cx="6" cy="6" r="2.5" fill="#00E5FF" />
+                <circle cx="18" cy="6" r="2.5" fill="#D4FF00" />
+                <circle cx="12" cy="18" r="3" fill="#00E5FF" />
+                <path d="M8 7.2L11 15.5M16 7.2L13 15.5M8.5 6H15.5" stroke="#FFFFFF" strokeWidth="1.4" strokeOpacity="0.6" />
+              </svg>
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-white">
+                AEO<span className="text-[#00E5FF]">bility</span>
+              </span>
+              <span className="hidden sm:inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-[#D4FF00] bg-white/[0.04] border border-white/10 px-2 py-0.5 rounded-full">
+                CLARITY ENGINE
+              </span>
+            </div>
           </Link>
 
-          {/* Clean Text Links (Center / Right) - No pill borders or neon glows */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#D4D4D8]">
+          {/* Center: Restrained plain text links (No pill borders around links) */}
+          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-[#D4D4D8]">
             <Link href="/services" className="hover:text-white transition-colors">
               Services
             </Link>
             <a href="#operational-pipeline" className="hover:text-white transition-colors">
               How AEO Works
             </a>
-            <a href="#evidence-proof" className="hover:text-white transition-colors">
-              Evidence
+            <a href="#empirical-evidence" className="hover:text-white transition-colors">
+              Evidence (Case Studies)
             </a>
             <a href="#commercial-pathways" className="hover:text-white transition-colors">
-              Pricing
+              Pricing &amp; Sprints
             </a>
             <Link href="/knowledge-hub" className="hover:text-white transition-colors">
               Knowledge Hub
             </Link>
           </nav>
 
-          {/* Single High-Contrast Dominant CTA */}
-          <div className="hidden md:flex items-center">
+          {/* Right: Single high-contrast conversion button */}
+          <div className="hidden lg:flex items-center">
             <button
-              onClick={scrollToHeroScan}
-              className="px-5 py-2.5 rounded-lg bg-[#00E5FF] text-[#08090C] font-bold text-sm tracking-wide shadow-sm hover:brightness-110 active:scale-95 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              type="button"
+              onClick={scrollToHeroInstrument}
+              className="px-5 py-2.5 rounded-lg bg-[#00E5FF] text-[#08090C] font-bold text-sm tracking-wide hover:brightness-110 active:scale-95 transition-all cursor-pointer shadow-[0_0_24px_rgba(0,229,255,0.28)]"
             >
               Start Free Scan
             </button>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Hamburger Trigger */}
+          <div className="lg:hidden flex items-center">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-[#D4D4D8] hover:text-white hover:bg-white/5 focus:outline-none"
+              className="p-2 rounded-lg text-[#D4D4D8] hover:text-white hover:bg-white/5"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -203,39 +349,39 @@ export default function ClarityEngineStaging() {
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-[#0D1117] border-b border-white/10 px-4 pt-3 pb-6 space-y-3">
-            <Link 
-              href="/services" 
+          <div className="lg:hidden bg-[#0D1117]/95 backdrop-blur-2xl border-b border-white/10 px-4 pt-3 pb-6 space-y-3">
+            <Link
+              href="/services"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-base font-medium text-[#D4D4D8] hover:text-white"
             >
               Services
             </Link>
-            <a 
-              href="#operational-pipeline" 
+            <a
+              href="#operational-pipeline"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-base font-medium text-[#D4D4D8] hover:text-white"
             >
               How AEO Works
             </a>
-            <a 
-              href="#evidence-proof" 
+            <a
+              href="#empirical-evidence"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-base font-medium text-[#D4D4D8] hover:text-white"
             >
-              Evidence
+              Evidence (Case Studies)
             </a>
-            <a 
-              href="#commercial-pathways" 
+            <a
+              href="#commercial-pathways"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-base font-medium text-[#D4D4D8] hover:text-white"
             >
-              Pricing
+              Pricing &amp; Sprints
             </a>
-            <Link 
-              href="/knowledge-hub" 
+            <Link
+              href="/knowledge-hub"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-base font-medium text-[#D4D4D8] hover:text-white"
             >
@@ -243,11 +389,12 @@ export default function ClarityEngineStaging() {
             </Link>
             <div className="pt-2">
               <button
+                type="button"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  scrollToHeroScan();
+                  scrollToHeroInstrument();
                 }}
-                className="w-full text-center py-3 rounded-lg bg-[#00E5FF] text-[#08090C] font-bold text-sm tracking-wide"
+                className="w-full py-3 rounded-lg bg-[#00E5FF] text-[#08090C] font-bold text-sm"
               >
                 Start Free Scan
               </button>
@@ -257,836 +404,998 @@ export default function ClarityEngineStaging() {
       </header>
 
       {/* =========================================================================
-          SECTION 1: HERO ("The Clarity Engine" Asymmetric 52/48 Grid)
+          2. HERO SECTION: "THE CLARITY ENGINE"
+          Asymmetric 2-Column Desktop Grid with Reference 3D Spheres & Gold Toruses
           ========================================================================= */}
-      <section className="relative pt-12 pb-20 lg:pt-20 lg:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <section className="relative pt-12 pb-24 lg:pt-20 lg:pb-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10 items-center">
           
-          {/* Left Column (Orientation & Narrative - 52% Desktop) */}
-          <div className="lg:col-span-7 space-y-6">
-            
-            {/* Category Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono text-[#D4D4D8]">
-              <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
-              Answer Engine Optimisation for Australian businesses
-            </div>
-
-            {/* H1: 64–76px desktop, 42–48px mobile, font-weight 700–800 */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[66px] xl:text-[72px] font-extrabold tracking-tight text-white leading-[1.08]">
-              Get your business <span className="text-[#00E5FF]">found and chosen</span> in AI search.
-            </h1>
-
-            {/* Value Narrative: Capped at 55–68 characters per line */}
-            <p className="text-lg sm:text-xl text-[#D4D4D8] leading-relaxed max-w-[58ch]">
-              AEObility structures your services, entities and evidence so ChatGPT, Gemini and other answer engines can understand when to recommend your business.
-            </p>
-
-            {/* Single Dominant Trigger Corridor:
-                Left column CTA is a ghost pill with anchor link to prevent dual-CTA friction */}
-            <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <a
-                href="#operational-pipeline"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/[0.05] hover:bg-white/[0.09] text-white border border-white/[0.14] font-medium text-sm transition-all"
-              >
-                See How AEO Works
-                <ArrowRight className="w-4 h-4 text-[#00E5FF]" />
-              </a>
-
-              {/* Reassurance Anchor */}
-              <span className="text-xs sm:text-sm text-[#94A3B8] font-medium tracking-wide">
-                Fixed scope · Australian specialist · No ongoing contract
+          {/* Left Column: Orientation & Cognitive Anchoring (7 cols) */}
+          <div className="lg:col-span-7 space-y-7 relative z-10">
+            {/* Reference-style Pill Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full reference-pill">
+              <span className="w-2 h-2 rounded-full bg-[#00E5FF] shadow-[0_0_10px_#00E5FF] animate-pulse" />
+              <span className="font-mono text-xs tracking-wide text-white font-medium">
+                Answer Engine Optimisation for Australian Entities
               </span>
             </div>
+
+            {/* H1 with Reference Bold-Italic Lime-Gold (#D4FF00) Highlight */}
+            <h1 className="text-4xl sm:text-6xl lg:text-[66px] xl:text-[72px] font-bold tracking-tight text-white leading-[1.06]">
+              Get your business{' '}
+              <span className="font-extrabold italic text-[#D4FF00] drop-shadow-[0_0_28px_rgba(212,255,0,0.22)]">
+                found and chosen
+              </span>{' '}
+              in AI search.
+            </h1>
+
+            {/* Supporting Narrative (WCAG 2.2 AA High-Contrast Corridor) */}
+            <p className="text-lg sm:text-xl text-[#D4D4D8] leading-relaxed max-w-[58ch] font-normal">
+              AEObility re-architects your commercial offerings, entities, and citations into deterministic data triples so ChatGPT, Gemini, and Perplexity choose your brand.
+            </p>
+
+            {/* Frictionless Pathway + Reassurance Micro-Copy */}
+            <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-5">
+              <a
+                href="#commercial-pathways"
+                className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full reference-pill text-white font-semibold text-sm hover:border-[#D4FF00] transition-all group w-fit"
+              >
+                <span>Explore The 90-Day Blueprint</span>
+                <span className="w-6 h-6 rounded-full border border-white/50 flex items-center justify-center group-hover:border-[#D4FF00] group-hover:text-[#D4FF00] transition-colors text-xs">
+                  ↓
+                </span>
+              </a>
+
+              <div className="text-xs sm:text-sm font-mono text-[#94A3B8] tracking-wide">
+                Fixed scope · Australian specialist · Zero retainer lock-in
+              </div>
+            </div>
+
+            {/* Mini Telemetry Bar Preview */}
+            <div className="pt-4 grid grid-cols-3 gap-4 max-w-lg border-t border-white/[0.08]">
+              <div>
+                <div className="font-mono text-[11px] text-[#94A3B8] uppercase">Salience Lift</div>
+                <div className="text-xl font-extrabold text-[#00E5FF] mt-0.5">11.9% → 83.7%</div>
+              </div>
+              <div>
+                <div className="font-mono text-[11px] text-[#94A3B8] uppercase">Blueprint SLA</div>
+                <div className="text-xl font-extrabold text-white mt-0.5">5 Bus. Days</div>
+              </div>
+              <div>
+                <div className="font-mono text-[11px] text-[#94A3B8] uppercase">Fee Credit-Back</div>
+                <div className="text-xl font-extrabold text-[#D4FF00] mt-0.5">100% Applied</div>
+              </div>
+            </div>
           </div>
 
-          {/* Right Column (The Hero Instrument / Interactive Diagnostic - 48% Desktop) */}
-          <div className="lg:col-span-5" id="hero-diagnostic-instrument" ref={heroDiagnosticRef}>
-            <div className="refractive-panel p-6 sm:p-8 bg-[#0A0C10]/95 backdrop-blur-[20px] shadow-2xl relative">
-              
-              {/* Header of the Instrument */}
-              <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
-                <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[11px] font-mono tracking-wider font-semibold uppercase bg-cyan-950/70 border border-cyan-500/30 text-[#00E5FF]">
-                    AI VISIBILITY SNAPSHOT
+          {/* Right Column: The Live Diagnostic Instrument Framed in the Reference Glass Composition (5 cols) */}
+          <div
+            className="lg:col-span-5 relative"
+            id="hero-diagnostic-instrument"
+            ref={heroInstrumentRef}
+          >
+            {/* --- REFERENCE IMAGE 3D SPHERES & METALLIC GOLD TORUSES --- */}
+            {/* Top-Left Warm Orange 3D Sphere */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -top-10 -left-10 w-44 h-44 rounded-full sphere-orange-3d z-0"
+            />
+            {/* Top-Center Small Ultramarine Satellite Orb */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -top-6 left-[42%] w-7 h-7 rounded-full sphere-violet-3d z-0"
+            />
+            {/* Left Floating 3D Metallic Gold Torus Ring */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute top-[26%] -left-8 w-16 h-16 rounded-full gold-torus-3d animate-torus-left z-20"
+            />
+            {/* Right Floating 3D Metallic Gold Torus Ring */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-[22%] -right-7 w-16 h-16 rounded-full gold-torus-3d animate-torus-right z-20"
+            />
+            {/* Bottom-Right Deep Ultramarine/Violet 3D Sphere */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -bottom-12 -right-10 w-48 h-48 rounded-full sphere-violet-3d z-0"
+            />
+            {/* Bottom-Center Small Warm Orange Satellite Orb */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -bottom-7 left-[46%] w-6 h-6 rounded-full sphere-orange-3d z-20"
+            />
+
+            {/* --- FROSTED REFRACTIVE GLASS INSTRUMENT CARD --- */}
+            <div className="glass-poster-card rounded-[26px] p-6 sm:p-8 relative z-10">
+              {/* Reference Card Top Motif: Horizontal Line Left + Three Hollow Circles Right */}
+              <div className="flex items-center justify-between mb-5">
+                <div className="w-24 h-[1.5px] bg-white/60 rounded-full" />
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full border border-white/75" />
+                  <span className="w-2 h-2 rounded-full border border-white/75" />
+                  <span className="w-2 h-2 rounded-full border border-white/75" />
+                </div>
+              </div>
+
+              {/* Instrument Header */}
+              <div className="space-y-2 mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#08090C]/90 border border-white/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00]" />
+                  <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-white font-semibold">
+                    AI VISIBILITY SNAPSHOT • LIVE V4.2
                   </span>
                 </div>
-                <div className="flex items-center gap-1.5 text-xs text-[#94A3B8] font-mono">
-                  <Activity className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>LIVE DIAGNOSTIC</span>
-                </div>
+
+                <h2 className="text-2xl sm:text-[26px] font-bold text-white tracking-tight leading-snug">
+                  Can conversational AI{' '}
+                  <span className="italic font-extrabold text-[#D4FF00]">recommend</span> your business?
+                </h2>
               </div>
 
-              <div className="pt-5 space-y-4">
+              {/* Dark High-Contrast Form Backing for strict WCAG 2.2 AA legibility */}
+              <form
+                onSubmit={handleScanSubmit}
+                className="p-4 sm:p-5 rounded-2xl bg-[#08090C]/90 border border-white/10 space-y-4"
+              >
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                    Can AI recommend your business?
-                  </h2>
-                  <p className="text-xs sm:text-sm text-[#94A3B8] mt-1">
-                    Enter your live domain and target customer query to inspect retrieval clarity.
-                  </p>
+                  <label
+                    htmlFor="domain-input"
+                    className="block font-mono text-[11px] uppercase tracking-wider text-[#D4D4D8] mb-1.5"
+                  >
+                    Australian Business Domain
+                  </label>
+                  <input
+                    id="domain-input"
+                    type="text"
+                    required
+                    value={domainInput}
+                    onChange={(e) => setDomainInput(e.target.value)}
+                    placeholder="e.g., yourcompany.com.au"
+                    className="w-full px-3.5 py-3 rounded-xl bg-[#08090C] border border-white/20 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] transition-all"
+                  />
                 </div>
 
-                {/* Form Fields with Dark Opaque Fill (#08090C) */}
-                <form onSubmit={handleHeroScanSubmit} className="space-y-4 pt-1">
-                  <div>
-                    <label 
-                      htmlFor="hero-business-url" 
-                      className="block text-xs font-mono font-medium text-[#D4D4D8] mb-1.5"
-                    >
-                      Australian Business URL
-                    </label>
-                    <div className="relative">
-                      <input
-                        id="hero-business-url"
-                        type="text"
-                        value={businessUrl}
-                        onChange={(e) => setBusinessUrl(e.target.value)}
-                        placeholder="yourbusiness.com.au"
-                        required
-                        className="w-full px-3.5 py-3 rounded-lg bg-[#08090C] border border-white/[0.14] text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label 
-                      htmlFor="hero-target-query" 
-                      className="block text-xs font-mono font-medium text-[#D4D4D8] mb-1.5"
-                    >
-                      Target Customer Query
-                    </label>
-                    <div className="relative">
-                      <input
-                        id="hero-target-query"
-                        type="text"
-                        value={targetQuery}
-                        onChange={(e) => setTargetQuery(e.target.value)}
-                        placeholder="best local accountant in Perth"
-                        className="w-full px-3.5 py-3 rounded-lg bg-[#08090C] border border-white/[0.14] text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Single Dominant Hero CTA */}
-                  <button
-                    type="submit"
-                    disabled={isScanning}
-                    className="w-full py-3.5 px-4 rounded-lg bg-[#00E5FF] hover:brightness-110 active:scale-[0.99] text-[#08090C] font-bold text-sm tracking-wide transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
+                <div>
+                  <label
+                    htmlFor="query-input"
+                    className="block font-mono text-[11px] uppercase tracking-wider text-[#D4D4D8] mb-1.5"
                   >
-                    {isScanning ? (
-                      <>
-                        <div className="w-4 h-4 border-2 border-[#08090C] border-t-transparent rounded-full animate-spin" />
-                        <span>Running Vector Analysis...</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Analyse My Visibility</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </>
-                    )}
-                  </button>
+                    Primary Customer Query / Intent
+                  </label>
+                  <input
+                    id="query-input"
+                    type="text"
+                    value={queryInput}
+                    onChange={(e) => setQueryInput(e.target.value)}
+                    placeholder="e.g., best commercial solar installer Perth"
+                    className="w-full px-3.5 py-3 rounded-xl bg-[#08090C] border border-white/20 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] transition-all"
+                  />
+                </div>
 
-                  <p className="text-[11px] text-[#94A3B8] text-center pt-0.5">
-                    Free visibility scan • No signup required • Instant vector analysis
+                {/* Single Dominant Hero Trigger */}
+                <button
+                  type="submit"
+                  disabled={isScanning}
+                  className="w-full py-3.5 px-5 rounded-xl bg-[#00E5FF] hover:bg-[#33ECFF] active:scale-[0.99] text-[#08090C] font-extrabold text-sm tracking-wide transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_25px_rgba(0,229,255,0.35)]"
+                >
+                  {isScanning ? (
+                    <>
+                      <span className="w-4 h-4 border-2 border-[#08090C] border-t-transparent rounded-full animate-spin" />
+                      <span>Analysing Knowledge Tri-Graph...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Analyse My AI Visibility</span>
+                      <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+                    </>
+                  )}
+                </button>
+              </form>
+
+              {/* Active Scanning Progress Bar */}
+              {isScanning && (
+                <div className="mt-4 p-3.5 rounded-xl bg-[#08090C]/95 border border-[#00E5FF]/40 font-mono text-xs space-y-2">
+                  <div className="flex justify-between text-[#00E5FF]">
+                    <span>TELEMETRY PROBE ACTIVE</span>
+                    <span>STEP {scanStage}/3</span>
+                  </div>
+                  <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-[#00E5FF] via-[#D4FF00] to-[#E91E63] transition-all duration-500"
+                      style={{ width: `${(scanStage / 3) * 100}%` }}
+                    />
+                  </div>
+                  <div className="text-[11px] text-[#D4D4D8]">
+                    {scanStage === 1 && '1. Inspecting JSON-LD @id nodes & ABN registry parity...'}
+                    {scanStage === 2 && '2. Computing vector cosine similarity for customer query...'}
+                    {scanStage === 3 && '3. Scoring passage extractability across RAG endpoints...'}
+                  </div>
+                </div>
+              )}
+
+              {/* Simulated Output Drawer */}
+              {simulationResult && (
+                <div className="mt-4 p-4 rounded-xl bg-[#08090C]/95 border border-[#D4FF00]/50 space-y-3">
+                  <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                    <span className="font-mono text-xs text-[#D4FF00] font-bold truncate">
+                      TARGET: {simulationResult.domain}
+                    </span>
+                    <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-[#00E5FF]/15 text-[#00E5FF] border border-[#00E5FF]/30">
+                      {simulationResult.recommendationState}
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#D4D4D8] leading-relaxed">
+                    {simulationResult.verdictSummary}
                   </p>
-                </form>
+                  <Link
+                    href={`/diagnostic?url=${encodeURIComponent(simulationResult.domain)}&intent=${encodeURIComponent(simulationResult.query)}&auto=true`}
+                    className="w-full py-2.5 px-3 rounded-lg bg-white/10 hover:bg-white/15 text-white font-mono text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
+                  >
+                    <span>Launch Full Interactive Diagnostic</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#D4FF00]" />
+                  </Link>
+                </div>
+              )}
 
-                {/* Scan Progression Indicator */}
-                {isScanning && (
-                  <div className="p-3.5 rounded-lg bg-black/60 border border-cyan-500/30 text-xs font-mono space-y-1.5 text-slate-300">
-                    <div className="flex items-center justify-between text-[#00E5FF]">
-                      <span>Vector Pipeline Active</span>
-                      <span>Stage {scanStep} of 3</span>
-                    </div>
-                    <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden">
-                      <div 
-                        className="bg-[#00E5FF] h-full transition-all duration-500" 
-                        style={{ width: `${(scanStep / 3) * 100}%` }}
-                      />
-                    </div>
-                    <p className="text-[11px] text-slate-400">
-                      {scanStep === 1 && 'Checking Knowledge Graph and JSON-LD anchors...'}
-                      {scanStep === 2 && 'Evaluating cosine similarity against target query vectors...'}
-                      {scanStep === 3 && 'Synthesising LLM passage extraction probabilities...'}
-                    </p>
-                  </div>
-                )}
-
-                {/* Live Diagnostic Result View */}
-                {diagnosticResult && (
-                  <div className="p-4 rounded-lg bg-cyan-950/30 border border-[#00E5FF]/40 space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono uppercase text-[#00E5FF] font-semibold">
-                        Scan Results: {diagnosticResult.url}
-                      </span>
-                      <span className="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                        {diagnosticResult.recommendationState}
-                      </span>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-2 text-center">
-                      <div className="p-2 rounded bg-black/50 border border-white/5">
-                        <div className="text-[10px] text-[#94A3B8] font-mono">Entity Clarity</div>
-                        <div className="text-lg font-bold text-white">{diagnosticResult.entityClarity}%</div>
-                      </div>
-                      <div className="p-2 rounded bg-black/50 border border-white/5">
-                        <div className="text-[10px] text-[#94A3B8] font-mono">Answer Coverage</div>
-                        <div className="text-lg font-bold text-white">{diagnosticResult.answerCoverage}%</div>
-                      </div>
-                      <div className="p-2 rounded bg-black/50 border border-white/5">
-                        <div className="text-[10px] text-[#94A3B8] font-mono">Evidence Strength</div>
-                        <div className="text-lg font-bold text-amber-400">{diagnosticResult.evidenceStrength}%</div>
-                      </div>
-                    </div>
-
-                    <p className="text-xs text-slate-300 leading-normal">
-                      {diagnosticResult.keyFinding}
-                    </p>
-
-                    <Link
-                      href={`/diagnostic?url=${encodeURIComponent(diagnosticResult.url)}&intent=${encodeURIComponent(diagnosticResult.query)}&auto=true`}
-                      className="block text-center py-2 px-3 rounded bg-white/10 hover:bg-white/15 text-xs text-white font-medium transition-colors"
-                    >
-                      Open Full 100-Point Diagnostic Breakdown →
-                    </Link>
-                  </div>
-                )}
-
-                {/* Integrated Telemetry Preview (Subtle Watermark Underneath) */}
-                {!diagnosticResult && !isScanning && (
-                  <div className="pt-2 border-t border-white/[0.06] text-[11px] font-mono text-[#94A3B8] flex flex-wrap gap-x-3 gap-y-1 justify-between">
-                    <span>Entity Clarity: 82</span>
-                    <span>Answer Coverage: 61</span>
-                    <span>Evidence Strength: 44</span>
-                    <span className="text-amber-400">State: Limited</span>
-                  </div>
-                )}
+              {/* Live Telemetry Preview (4 Compact Data Tiles from Case Study Dashboard) */}
+              <div className="mt-5 pt-4 border-t border-white/15 grid grid-cols-2 gap-2.5">
+                <div className="px-3 py-2 rounded-xl bg-[#08090C]/85 border border-[#00E5FF]/35 flex items-center justify-between">
+                  <span className="font-mono text-[10px] text-[#94A3B8]">Entity Salience</span>
+                  <span className="font-mono text-xs font-bold text-[#00E5FF]">88%</span>
+                </div>
+                <div className="px-3 py-2 rounded-xl bg-[#08090C]/85 border border-[#E91E63]/40 flex items-center justify-between">
+                  <span className="font-mono text-[10px] text-[#94A3B8]">Answer Coverage</span>
+                  <span className="font-mono text-xs font-bold text-[#E91E63]">91%</span>
+                </div>
+                <div className="px-3 py-2 rounded-xl bg-[#08090C]/85 border border-[#5338FF]/45 flex items-center justify-between">
+                  <span className="font-mono text-[10px] text-[#94A3B8]">Provenance</span>
+                  <span className="font-mono text-xs font-bold text-[#A594FF]">100% Parity</span>
+                </div>
+                <div className="px-3 py-2 rounded-xl bg-[#08090C]/85 border border-[#D4FF00]/40 flex items-center justify-between">
+                  <span className="font-mono text-[10px] text-[#94A3B8]">AI State</span>
+                  <span className="font-mono text-xs font-bold text-[#D4FF00]">Optimised</span>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
       {/* =========================================================================
-          SECTION 2: RECOGNITION STRIP
-          Low-profile solid dark strip (#08090C) with monochrome platform typography
+          3. SECTION 2: RECOGNITION & SURFACE STRIP
+          Low-profile dark slate band (#08090C) with subdued monochrome endpoints
           ========================================================================= */}
-      <section className="bg-[#08090C] border-y border-white/[0.08] py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <p className="text-sm text-[#D4D4D8] font-medium max-w-md text-center md:text-left">
-              Built for businesses that need clearer visibility across ChatGPT, Gemini, Google AI Overviews and local search.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 font-mono text-xs tracking-wider text-[#94A3B8]">
-              <span className="hover:text-white transition-colors">CHATGPT SEARCH</span>
-              <span>·</span>
-              <span className="hover:text-white transition-colors">GOOGLE AI OVERVIEWS</span>
-              <span>·</span>
-              <span className="hover:text-white transition-colors">PERPLEXITY AI</span>
-              <span>·</span>
-              <span className="hover:text-white transition-colors">GEMINI</span>
-              <span>·</span>
-              <span className="hover:text-white transition-colors">MICROSOFT COPILOT</span>
-            </div>
+      <section className="bg-[#08090C] border-y border-white/[0.07] py-7">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-6">
+          <span className="font-mono text-xs uppercase tracking-[0.15em] text-[#94A3B8] text-center lg:text-left">
+            ENGINEERED FOR DETERMINISTIC RETRIEVAL ACROSS:
+          </span>
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 font-mono text-xs sm:text-sm font-semibold tracking-wider text-[#94A3B8]">
+            <span className="hover:text-white transition-colors">ChatGPT Search</span>
+            <span className="text-white/20">/</span>
+            <span className="hover:text-white transition-colors">Perplexity Sonar</span>
+            <span className="text-white/20">/</span>
+            <span className="hover:text-white transition-colors">Google AI Overviews</span>
+            <span className="text-white/20">/</span>
+            <span className="hover:text-white transition-colors">Gemini Flash</span>
+            <span className="text-white/20">/</span>
+            <span className="hover:text-white transition-colors">Apple Intelligence</span>
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          SECTION 3: DIAGNOSTIC GAPS
-          "AI cannot choose what it cannot clearly verify"
+          4. SECTION 3: DIAGNOSTIC GAPS ("AI cannot choose what it cannot verify")
+          3 Glass-framed modules with miniature dashboard telemetry bars & node vectors
           ========================================================================= */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-12">
-          <span className="font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-semibold">
-            THE ANATOMY OF AI SEARCH BLIND SPOTS
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-2">
-            AI cannot choose what it cannot clearly verify.
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-3xl mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full reference-pill mb-4">
+            <span className="font-mono text-[11px] uppercase tracking-widest text-[#00E5FF]">
+              DIAGNOSTIC FAILURE MODES
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+            AI cannot choose what it{' '}
+            <span className="italic font-extrabold text-[#D4FF00]">cannot verify.</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#D4D4D8] mt-3">
-            Generative models do not guess. If your business entities, service capabilities, or credentials are ambiguous or unverified, answer engines omit you from recommendation lists.
+          <p className="text-base sm:text-lg text-[#D4D4D8] mt-4 leading-relaxed">
+            Most Australian business websites suffer from three structural blind spots that cause generative answer engines to skip them in favour of clearer competitors.
           </p>
         </div>
 
-        {/* 3 Structural Modules with Structured Node-Graph Wireframes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          {/* Module 1: Identity Gaps */}
-          <div className="refractive-panel p-6 bg-[#0D1117] flex flex-col justify-between">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+          {/* Module 1: Identity & Entity Gaps */}
+          <div className="glass-poster-card rounded-2xl p-7 flex flex-col justify-between">
             <div>
-              {/* Structured Wireframe Graphic */}
-              <div className="h-32 mb-5 rounded-lg bg-[#08090C] border border-white/[0.08] p-3 flex items-center justify-center relative overflow-hidden">
-                <svg className="w-full h-full text-slate-500" viewBox="0 0 200 80" fill="none">
-                  {/* Unverified dashed node */}
-                  <circle cx="45" cy="40" r="18" stroke="#EF4444" strokeWidth="1.5" strokeDasharray="3 3" />
-                  <text x="45" y="44" fill="#EF4444" fontSize="9" textAnchor="middle" fontFamily="monospace">Unresolved</text>
-                  
-                  {/* Broken connector */}
-                  <path d="M 65 40 L 130 40" stroke="#64748B" strokeWidth="1.5" strokeDasharray="4 4" />
-                  
-                  {/* Verified node */}
-                  <circle cx="155" cy="40" r="18" stroke="#00E5FF" strokeWidth="2" fill="rgba(0,229,255,0.08)" />
-                  <text x="155" y="44" fill="#00E5FF" fontSize="9" textAnchor="middle" fontFamily="monospace">@id Root</text>
-                </svg>
+              <div className="flex items-center justify-between mb-5">
+                <div className="w-16 h-[1.5px] bg-white/50" />
+                <span className="font-mono text-[11px] text-[#E91E63] font-bold">GAP 01 // IDENTITY</span>
               </div>
 
-              <div className="text-xs font-mono text-[#00E5FF] font-semibold uppercase tracking-wider mb-1">
-                GAP 01: IDENTITY
+              {/* Miniature Dashboard Diagram */}
+              <div className="p-4 rounded-xl bg-[#08090C]/90 border border-white/10 mb-6 space-y-3">
+                <div className="flex items-center justify-between text-[11px] font-mono">
+                  <span className="text-[#94A3B8]">Unverified Entity Graph</span>
+                  <span className="text-[#E91E63] font-bold">24% Salience</span>
+                </div>
+                <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-full bg-[#E91E63] w-[24%] rounded-full" />
+                </div>
+                <div className="flex items-center justify-between text-[11px] font-mono pt-1">
+                  <span className="text-white">Tri-Graph @id Grounding</span>
+                  <span className="text-[#00E5FF] font-bold">94% Salience</span>
+                </div>
+                <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-full bg-[#00E5FF] w-[94%] rounded-full" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                Unverified Entity State
+
+              <h3 className="text-xl font-bold text-white mb-2.5">
+                Identity &amp; Entity Gaps
               </h3>
               <p className="text-sm text-[#D4D4D8] leading-relaxed">
-                Ambiguous domain naming, missing schema @id anchors, and unlinked ABN/ASIC registrations cause LLMs to conflate your business with competitors or omit your core brand facts.
+                Unconnected ABN/ASIC registry nodes and missing canonical @id anchors force LLMs to guess who you are, often conflating your brand with similarly named entities.
               </p>
             </div>
-            <div className="pt-4 mt-4 border-t border-white/[0.08] text-xs font-mono text-[#94A3B8]">
-              Remediation: Canonical Entity Schema Injection
+
+            <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between font-mono text-xs text-[#00E5FF]">
+              <span>Fix: Deterministic Organization Tri-Graph</span>
+              <span>→</span>
             </div>
           </div>
 
-          {/* Module 2: Relationship Gaps */}
-          <div className="refractive-panel p-6 bg-[#0D1117] flex flex-col justify-between">
+          {/* Module 2: Atomic Passage Gaps */}
+          <div className="glass-poster-card rounded-2xl p-7 flex flex-col justify-between">
             <div>
-              {/* Structured Wireframe Graphic */}
-              <div className="h-32 mb-5 rounded-lg bg-[#08090C] border border-white/[0.08] p-3 flex items-center justify-center relative overflow-hidden">
-                <svg className="w-full h-full text-slate-500" viewBox="0 0 200 80" fill="none">
-                  {/* Central service node */}
-                  <circle cx="100" cy="40" r="16" stroke="#00E5FF" strokeWidth="1.5" fill="rgba(0,229,255,0.06)" />
-                  <text x="100" y="44" fill="#00E5FF" fontSize="8" textAnchor="middle" fontFamily="monospace">Service</text>
-                  
-                  {/* Connected Corridors */}
-                  <line x1="100" y1="24" x2="100" y2="8" stroke="#00E5FF" strokeWidth="1.5" />
-                  <circle cx="100" cy="6" r="4" fill="#00E5FF" />
-                  
-                  <line x1="86" y1="48" x2="45" y2="68" stroke="#00E5FF" strokeWidth="1.5" />
-                  <circle cx="45" cy="68" r="4" fill="#00E5FF" />
-
-                  <line x1="114" y1="48" x2="155" y2="68" stroke="#EF4444" strokeWidth="1.5" strokeDasharray="3 3" />
-                  <circle cx="155" cy="68" r="4" fill="#EF4444" />
-                </svg>
+              <div className="flex items-center justify-between mb-5">
+                <div className="w-16 h-[1.5px] bg-white/50" />
+                <span className="font-mono text-[11px] text-[#00E5FF] font-bold">GAP 02 // PASSAGES</span>
               </div>
 
-              <div className="text-xs font-mono text-[#00E5FF] font-semibold uppercase tracking-wider mb-1">
-                GAP 02: RELATIONSHIPS
+              {/* Miniature Dashboard Diagram */}
+              <div className="p-4 rounded-xl bg-[#08090C]/90 border border-white/10 mb-6 space-y-3">
+                <div className="flex items-center justify-between text-[11px] font-mono">
+                  <span className="text-[#94A3B8]">Bloated Keyword Prose</span>
+                  <span className="text-[#E91E63] font-bold">18% Extracted</span>
+                </div>
+                <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-full bg-[#E91E63] w-[18%] rounded-full" />
+                </div>
+                <div className="flex items-center justify-between text-[11px] font-mono pt-1">
+                  <span className="text-white">90-Token Atomic Blocks</span>
+                  <span className="text-[#D4FF00] font-bold">91% Extracted</span>
+                </div>
+                <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-full bg-[#D4FF00] w-[91%] rounded-full" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                Untyped Service Silos
+
+              <h3 className="text-xl font-bold text-white mb-2.5">
+                Atomic Passage Gaps
               </h3>
               <p className="text-sm text-[#D4D4D8] leading-relaxed">
-                Conventional sites present offerings as isolated prose. Without machine-readable semantic corridors (Entity → Relationship → Evidence), answer engines cannot qualify complex buyer prompts.
+                Legacy SEO copy buries pricing, scope, and deliverables in 2,000-word walls of text. RAG pipelines require concise, self-contained 90-token answer blocks for direct synthesis.
               </p>
             </div>
-            <div className="pt-4 mt-4 border-t border-white/[0.08] text-xs font-mono text-[#94A3B8]">
-              Remediation: Knowledge Graph Tri-Graph Mapping
+
+            <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between font-mono text-xs text-[#D4FF00]">
+              <span>Fix: Atomic Answer Block Engineering</span>
+              <span>→</span>
             </div>
           </div>
 
-          {/* Module 3: Evidence Gaps */}
-          <div className="refractive-panel p-6 bg-[#0D1117] flex flex-col justify-between">
+          {/* Module 3: Provenance & Citation Gaps */}
+          <div className="glass-poster-card rounded-2xl p-7 flex flex-col justify-between">
             <div>
-              {/* Structured Wireframe Graphic */}
-              <div className="h-32 mb-5 rounded-lg bg-[#08090C] border border-white/[0.08] p-3 flex items-center justify-center relative overflow-hidden">
-                <svg className="w-full h-full text-slate-500" viewBox="0 0 200 80" fill="none">
-                  {/* Evidence loops */}
-                  <rect x="25" y="25" width="45" height="30" rx="4" stroke="#64748B" strokeWidth="1.5" />
-                  <text x="47" y="43" fill="#94A3B8" fontSize="8" textAnchor="middle" fontFamily="monospace">Claim</text>
-                  
-                  <path d="M 72 40 L 125 40" stroke="#00E5FF" strokeWidth="1.5" markerEnd="url(#arrow)" />
-                  
-                  <rect x="130" y="20" width="50" height="40" rx="4" stroke="#00E5FF" strokeWidth="1.5" fill="rgba(0,229,255,0.08)" />
-                  <text x="155" y="38" fill="#00E5FF" fontSize="8" textAnchor="middle" fontFamily="monospace">Verified</text>
-                  <text x="155" y="49" fill="#00E5FF" fontSize="7" textAnchor="middle" fontFamily="monospace">Triple</text>
-                </svg>
+              <div className="flex items-center justify-between mb-5">
+                <div className="w-16 h-[1.5px] bg-white/50" />
+                <span className="font-mono text-[11px] text-[#A594FF] font-bold">GAP 03 // PROVENANCE</span>
               </div>
 
-              <div className="text-xs font-mono text-[#00E5FF] font-semibold uppercase tracking-wider mb-1">
-                GAP 03: EVIDENCE
+              {/* Miniature Dashboard Diagram */}
+              <div className="p-4 rounded-xl bg-[#08090C]/90 border border-white/10 mb-6 space-y-3">
+                <div className="flex items-center justify-between text-[11px] font-mono">
+                  <span className="text-[#94A3B8]">Unverified Claims</span>
+                  <span className="text-[#E91E63] font-bold">12% Trust</span>
+                </div>
+                <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-full bg-[#E91E63] w-[12%] rounded-full" />
+                </div>
+                <div className="flex items-center justify-between text-[11px] font-mono pt-1">
+                  <span className="text-white">SameAs &amp; Case Proof Parity</span>
+                  <span className="text-[#5338FF] font-bold">100% Parity</span>
+                </div>
+                <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-full bg-[#5338FF] w-full rounded-full" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                Unsubstantiated Marketing
+
+              <h3 className="text-xl font-bold text-white mb-2.5">
+                Provenance &amp; Citation Gaps
               </h3>
               <p className="text-sm text-[#D4D4D8] leading-relaxed">
-                Subjective claims like &ldquo;we are the leading agency&rdquo; are filtered out during RAG retrieval. Answer engines demand verifiable facts, structured case proof, and third-party entity authority.
+                When your services lack empirical subjectOf proof loops and consistent local directory parity, answer engines classify your claims as unsubstantiated marketing.
               </p>
             </div>
-            <div className="pt-4 mt-4 border-t border-white/[0.08] text-xs font-mono text-[#94A3B8]">
-              Remediation: SubjectOf Case Studies &amp; Citations
+
+            <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between font-mono text-xs text-[#A594FF]">
+              <span>Fix: Multi-Registry Citation Consensus</span>
+              <span>→</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          SECTION 4: OPERATIONAL LINEAR PIPELINE
+          5. SECTION 4: OPERATIONAL TECHNICAL PIPELINE
           01 Define → 02 Connect → 03 Prove → 04 Measure
           ========================================================================= */}
-      <section id="operational-pipeline" className="py-20 bg-[#08090C] border-y border-white/[0.08]">
+      <section id="operational-pipeline" className="py-24 bg-[#0D1117]/70 border-y border-white/[0.07]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-14">
-            <span className="font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-semibold">
-              ENGINEERED METHODOLOGY
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-2">
-              The Linear Clarity Pipeline
-            </h2>
-            <p className="text-base sm:text-lg text-[#D4D4D8] mt-3">
-              We transform unstructured business websites into machine-readable knowledge graphs through a four-stage engineering sequence.
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full reference-pill mb-4">
+                <span className="font-mono text-[11px] uppercase tracking-widest text-[#D4FF00]">
+                  SYSTEMATIC ARCHITECTURE
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+                The 4-Stage{' '}
+                <span className="italic font-extrabold text-[#00E5FF]">Clarity Pipeline</span>
+              </h2>
+            </div>
+            <p className="text-sm font-mono text-[#94A3B8] max-w-sm">
+              Click any engineering stage below to inspect its technical deliverables and telemetry impact.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            
-            {/* Step 01: Define (Active / Elevated with Glass L2 & Cyan Refractive Rim) */}
-            <div className="refractive-panel-cyan p-6 bg-[#0D1117] relative">
-              <div className="flex items-center justify-between mb-4">
-                <span className="font-mono text-xs font-bold text-[#00E5FF] bg-cyan-950/80 px-2.5 py-1 rounded border border-cyan-500/30">
-                  STAGE 01
-                </span>
-                <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                01 Define
-              </h3>
-              <p className="text-sm text-[#D4D4D8] leading-relaxed mb-4">
-                Establish canonical @id nodes, map official business registration facts, and construct unambiguous machine-readable identity schemas.
-              </p>
-              <ul className="text-xs text-[#94A3B8] space-y-2 font-mono">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#00E5FF]" /> Canonical @id URI anchor
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#00E5FF]" /> ABN / ASIC identity linkage
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#00E5FF]" /> Brand disambiguation rules
-                </li>
-              </ul>
-            </div>
+          {/* 4-Stage Interactive Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            {PIPELINE_STAGES.map((stage, idx) => {
+              const isSelected = idx === activePipelineIndex;
+              return (
+                <div
+                  key={stage.num}
+                  onClick={() => setActivePipelineIndex(idx)}
+                  className={`rounded-2xl p-6 transition-all cursor-pointer flex flex-col justify-between ${
+                    isSelected
+                      ? 'glass-cyan-card scale-[1.01]'
+                      : 'bg-[#08090C]/90 border border-white/[0.08] hover:border-white/20'
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span
+                        className={`font-mono text-xs font-bold px-2.5 py-1 rounded ${
+                          isSelected
+                            ? 'bg-[#00E5FF] text-[#08090C]'
+                            : 'bg-white/5 text-[#94A3B8]'
+                        }`}
+                      >
+                        STAGE {stage.num}
+                      </span>
+                      <span className="font-mono text-[10px] tracking-widest uppercase text-[#D4FF00]">
+                        {stage.tag}
+                      </span>
+                    </div>
 
-            {/* Step 02: Connect (Flat Canvas) */}
-            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.08] flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-bold text-[#94A3B8]">
-                    STAGE 02
-                  </span>
+                    <h3 className="text-2xl font-extrabold text-white">
+                      {stage.num} {stage.name}
+                    </h3>
+                    <div className="text-xs font-mono text-[#00E5FF] mt-0.5 mb-3">
+                      {stage.subtitle}
+                    </div>
+
+                    <p className="text-sm text-[#D4D4D8] leading-relaxed mb-5">
+                      {stage.description}
+                    </p>
+
+                    <ul className="space-y-2 border-t border-white/10 pt-4 text-xs text-[#D4D4D8] font-mono">
+                      {stage.deliverables.map((item) => (
+                        <li key={item} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D4FF00] shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-6 pt-3 border-t border-white/10 flex items-center justify-between font-mono text-xs">
+                    <span className="text-[#94A3B8]">{stage.metricLabel}</span>
+                    <span className="font-bold text-[#00E5FF]">{stage.metricValue}</span>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  02 Connect
-                </h3>
-                <p className="text-sm text-[#D4D4D8] leading-relaxed mb-4">
-                  Link commercial services to geographic catchment nodes, author hierarchical isPartOf relationships, and build semantic tri-graphs.
-                </p>
-              </div>
-              <ul className="text-xs text-[#94A3B8] space-y-2 font-mono">
-                <li>• Knowledge Graph corridors</li>
-                <li>• Service-to-entity mapping</li>
-                <li>• Semantic taxonomy linking</li>
-              </ul>
-            </div>
-
-            {/* Step 03: Prove (Flat Canvas) */}
-            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.08] flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-bold text-[#94A3B8]">
-                    STAGE 03
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  03 Prove
-                </h3>
-                <p className="text-sm text-[#D4D4D8] leading-relaxed mb-4">
-                  Inject verifiable subjectOf proof loops, connect verified third-party citations, and establish empirical evidence for answer generation.
-                </p>
-              </div>
-              <ul className="text-xs text-[#94A3B8] space-y-2 font-mono">
-                <li>• Structured case studies</li>
-                <li>• Verified sameAs authority</li>
-                <li>• Empirical proof evidence</li>
-              </ul>
-            </div>
-
-            {/* Step 04: Measure (Flat Canvas) */}
-            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.08] flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-bold text-[#94A3B8]">
-                    STAGE 04
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  04 Measure
-                </h3>
-                <p className="text-sm text-[#D4D4D8] leading-relaxed mb-4">
-                  Track LLM citation share, audit hallucination rates, monitor passage extraction, and verify answer engine recommendations.
-                </p>
-              </div>
-              <ul className="text-xs text-[#94A3B8] space-y-2 font-mono">
-                <li>• AI citation frequency</li>
-                <li>• Perplexity &amp; ChatGPT tests</li>
-                <li>• 90-day progress telemetry</li>
-              </ul>
-            </div>
-
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          SECTION 5: COMMERCIAL PATHWAYS (Hick's Law Enforced)
-          Dominant entry point: Strategic Blueprint ($995 AUD)
-          Demoted: AEO Foundation ($1,980/mo) & AEO Sprints (From $495)
+          6. SECTION 5: COMMERCIAL PATHWAYS (Enforcing Hick's Law)
+          Strategic Blueprint ($995 AUD) elevated as Dominant Entry Point
           ========================================================================= */}
-      <section id="commercial-pathways" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="commercial-pathways" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-14">
-          <span className="font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-semibold">
-            CLEAR, PREDICTABLE COMMERCE
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-2">
-            Commercial Pathways
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full reference-pill mb-4">
+            <span className="font-mono text-[11px] uppercase tracking-widest text-[#00E5FF]">
+              FIXED-SCOPE COMMERCIAL ARCHITECTURE
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+            Start with diagnostic{' '}
+            <span className="italic font-extrabold text-[#D4FF00]">certainty.</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#D4D4D8] mt-3">
-            Every engagement begins with the Strategic Blueprint: a transparent diagnostic audit that identifies your entity gaps and credits 100% of your fee toward implementation.
+          <p className="text-base sm:text-lg text-[#D4D4D8] mt-3 leading-relaxed">
+            We never prescribe implementation without a diagnostic baseline. Start with the standalone Strategic Blueprint and credit 100% of your fee toward execution.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
-          {/* DOMINANT CARD: Strategic Blueprint (Elevated, Directional Refraction, Primary CTA) */}
-          <div className="lg:col-span-6 refractive-panel-cyan p-8 sm:p-10 bg-[#0D1117] flex flex-col justify-between relative shadow-2xl">
-            <div>
-              <div className="flex items-center justify-between gap-4 mb-4">
-                <span className="px-3 py-1 rounded-full bg-[#00E5FF]/15 border border-[#00E5FF]/40 text-[#00E5FF] font-mono text-xs font-bold tracking-wider uppercase">
-                  RECOMMENDED ENTRY POINT
+          {/* Card 1: Strategic Blueprint ($995 AUD) - DOMINANT RECOMMENDED ENTRY POINT */}
+          <div className="lg:col-span-7 glass-cyan-card rounded-[26px] p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden">
+            {/* Subtle decorative top-right orange orb glow inside blueprint card */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -top-12 -right-12 w-32 h-32 rounded-full sphere-orange-3d opacity-40 blur-[2px]"
+            />
+
+            <div className="relative z-10">
+              {/* Top line & dots motif */}
+              <div className="flex items-center justify-between mb-6">
+                <span className="px-3.5 py-1 rounded-full bg-[#D4FF00] text-[#08090C] font-mono text-xs font-extrabold tracking-wider uppercase">
+                  RECOMMENDED FOUNDATION
                 </span>
-                <span className="font-mono text-xs text-[#94A3B8]">5 BUSINESS DAYS SLA</span>
+                <span className="font-mono text-xs text-[#00E5FF] font-semibold">
+                  SKU: BPSTRAT • 5-DAY SLA
+                </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
                 Strategic Blueprint
               </h3>
-              
-              <div className="mt-4 mb-6 flex items-baseline gap-2">
-                <span className="text-4xl sm:text-5xl font-extrabold text-white font-display">
+
+              <div className="mt-4 mb-6 flex items-baseline gap-2.5">
+                <span className="text-5xl sm:text-6xl font-extrabold text-white">
                   $995
                 </span>
-                <span className="text-sm font-medium text-[#94A3B8]">AUD ex. GST</span>
+                <span className="text-sm font-mono text-[#94A3B8]">
+                  AUD ex. GST · Standalone Audit &amp; 90-Day Roadmap
+                </span>
               </div>
 
-              <p className="text-sm sm:text-base text-[#D4D4D8] leading-relaxed mb-6">
-                A standalone deep technical audit, knowledge graph gap assessment, and 90-day execution roadmap that uncovers why generative answer engines omit your business.
+              <p className="text-base text-[#D4D4D8] leading-relaxed mb-6 max-w-[58ch]">
+                A comprehensive technical crawl, Knowledge Graph entity audit, competitor query fan-out matrix, and prioritised 90-day remediation plan delivered in 5 business days.
               </p>
 
-              {/* Scope Deliverables */}
-              <div className="space-y-3 pb-6 border-b border-white/[0.08] text-xs sm:text-sm text-[#D4D4D8]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pb-6 border-b border-white/10 text-sm text-white">
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
-                  <span>Full site entity graph audit and hallucination risk report</span>
+                  <span>Full JSON-LD &amp; Entity Salience Scorecard</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
-                  <span>Competitor overlap and query fan-out retrieval analysis</span>
+                  <span>ChatGPT, Gemini &amp; Perplexity Retrieval Audit</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
-                  <span>Prioritised 90-day technical remediation action roadmap</span>
+                  <span>Competitor Semantic Dominance Breakdown</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
-                  <span>Complimentary technical onboarding ($0.00 setup)</span>
+                  <span>Complimentary Technical Onboarding ($0.00)</span>
                 </div>
               </div>
 
-              {/* Risk Reversal Callout */}
-              <div className="py-4 my-2 text-xs font-mono text-[#00E5FF] bg-cyan-950/40 border border-cyan-500/20 rounded-lg px-3">
-                100% of your $995 Blueprint fee is credited toward eligible AEO Foundation sprints within 60 calendar days.
+              {/* 100% Risk-Reversal Credit Callout */}
+              <div className="my-6 p-4 rounded-xl bg-[#08090C]/90 border border-[#D4FF00]/40 flex items-center justify-between gap-4">
+                <div className="text-xs sm:text-sm text-white">
+                  <strong className="text-[#D4FF00] font-mono uppercase mr-2">100% Credit Guarantee:</strong>
+                  Your entire $995 Blueprint fee is credited toward AEO Foundation or Sprints within 60 days.
+                </div>
               </div>
             </div>
 
-            {/* Dominant Primary Conversion Button */}
-            <div className="pt-6">
+            <div className="relative z-10 pt-2">
               <Link
                 href="/solutions/aeo-blueprint"
-                className="w-full py-4 px-6 rounded-lg bg-[#00E5FF] hover:brightness-110 active:scale-[0.99] text-[#08090C] font-extrabold text-base tracking-wide flex items-center justify-center gap-2 transition-all shadow-lg"
+                className="w-full py-4 px-6 rounded-xl bg-[#00E5FF] hover:bg-[#33ECFF] text-[#08090C] font-extrabold text-base tracking-wide flex items-center justify-center gap-2.5 transition-all shadow-[0_0_30px_rgba(0,229,255,0.3)]"
               >
                 <span>Commission Strategic Blueprint</span>
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5 stroke-[2.5]" />
               </Link>
             </div>
           </div>
 
-          {/* DEMOTED CARDS (Flat Canvas, Subdued Borders, Ghost Actions) */}
-          <div className="lg:col-span-6 flex flex-col gap-6">
-            
-            {/* Card 2: AEO Foundation (Demoted) */}
-            <div className="p-8 rounded-2xl bg-[#08090C] border border-white/[0.08] flex flex-col justify-between flex-1">
+          {/* Demoted Cards Column: AEO Foundation & AEO Sprints (5 cols) */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
+            {/* Card 2: AEO Foundation */}
+            <div className="p-7 rounded-2xl bg-[#0D1117]/80 border border-white/[0.08] flex flex-col justify-between flex-1">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-mono text-xs text-[#94A3B8] uppercase">
-                    TURNKEY RETAINER
+                    TURNKEY IMPLEMENTATION
                   </span>
-                  <span className="text-xs text-[#94A3B8] font-mono">12-WEEK CYCLE</span>
+                  <span className="font-mono text-xs text-[#00E5FF]">90-DAY FOUNDATION</span>
                 </div>
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-white">
                   AEO Foundation
                 </h3>
-                <div className="mt-2 mb-4 flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-white">$1,980</span>
-                  <span className="text-xs text-[#94A3B8]">AUD / mo ex. GST</span>
+                <div className="mt-2 mb-3 flex items-baseline gap-2">
+                  <span className="text-3xl font-extrabold text-white">$1,980</span>
+                  <span className="text-xs font-mono text-[#94A3B8]">AUD / mo ex. GST</span>
                 </div>
-                <p className="text-xs sm:text-sm text-[#D4D4D8] leading-relaxed mb-4">
-                  Full-graph turnkey implementation across up to 10 priority pages, structuring schemas, internal corridors, and third-party evidence loops.
+                <p className="text-sm text-[#D4D4D8] leading-relaxed mb-4">
+                  End-to-end engineering across up to 10 core commercial pages: custom JSON-LD tri-graphs, atomic answer passages, and multi-registry citation parity.
                 </p>
               </div>
-
-              <div className="pt-4 border-t border-white/[0.06]">
+              <div className="pt-4 border-t border-white/[0.08]">
                 <Link
                   href="/solutions"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#D4D4D8] hover:text-[#00E5FF] transition-colors"
+                  className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs font-mono font-semibold text-white transition-all"
                 >
-                  Explore Foundation Retainer
-                  <ChevronRight className="w-4 h-4" />
+                  <span>Explore Foundation Scope</span>
+                  <ChevronRight className="w-4 h-4 text-[#00E5FF]" />
                 </Link>
               </div>
             </div>
 
-            {/* Card 3: AEO Sprints (Demoted) */}
-            <div className="p-8 rounded-2xl bg-[#08090C] border border-white/[0.08] flex flex-col justify-between flex-1">
+            {/* Card 3: AEO Sprints */}
+            <div className="p-7 rounded-2xl bg-[#0D1117]/80 border border-white/[0.08] flex flex-col justify-between flex-1">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-mono text-xs text-[#94A3B8] uppercase">
-                    DISCRETE SPRINTS
+                    MODULAR EXECUTION
                   </span>
-                  <span className="text-xs text-[#94A3B8] font-mono">3–5 DAYS SLA</span>
+                  <span className="font-mono text-xs text-[#E91E63]">3–5 DAYS SLA</span>
                 </div>
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-white">
                   AEO Sprints
                 </h3>
-                <div className="mt-2 mb-4 flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-white">From $495</span>
-                  <span className="text-xs text-[#94A3B8]">AUD ex. GST</span>
+                <div className="mt-2 mb-3 flex items-baseline gap-2">
+                  <span className="text-3xl font-extrabold text-white">From $495</span>
+                  <span className="text-xs font-mono text-[#94A3B8]">AUD ex. GST</span>
                 </div>
-                <p className="text-xs sm:text-sm text-[#D4D4D8] leading-relaxed mb-4">
-                  Focused micro-sprints addressing discrete technical challenges: local schema injection, canonical entity reconciliation, or article structure.
+                <p className="text-sm text-[#D4D4D8] leading-relaxed mb-4">
+                  Discrete, surgical micro-sprints targeting single-page schema deployment, local GMB entity reconciliation, or llms.txt agent manifests.
                 </p>
               </div>
-
-              <div className="pt-4 border-t border-white/[0.06]">
+              <div className="pt-4 border-t border-white/[0.08]">
                 <Link
                   href="/solutions/aeo-sprint"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#D4D4D8] hover:text-[#00E5FF] transition-colors"
+                  className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs font-mono font-semibold text-white transition-all"
                 >
-                  View Sprint Catalog
-                  <ChevronRight className="w-4 h-4" />
+                  <span>Browse Sprint Catalog</span>
+                  <ChevronRight className="w-4 h-4 text-[#E91E63]" />
                 </Link>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          SECTION 6 & 7: EVIDENCE & AEO VS. LEGACY SEO
-          Solid, low-glow case proof + Side-by-side comparison matrix
+          7. SECTION 6: EMPIRICAL CASE STUDY PROOF (Direct from Dashboard Reference)
+          Salience Share shift: 11.89% → 83.69%, Multi-colored horizontal topical bars
           ========================================================================= */}
-      <section id="evidence-proof" className="py-20 bg-[#08090C] border-y border-white/[0.08]">
+      <section id="empirical-evidence" className="py-24 bg-[#0D1117]/60 border-y border-white/[0.07]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
-          {/* Part A: Empirical Case Proof (Baby Bento Case Study) */}
-          <div className="p-8 sm:p-10 rounded-2xl bg-[#0D1117] border border-white/[0.08]">
-            <div className="max-w-3xl mb-8">
-              <span className="font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-semibold">
-                EMPIRICAL CASE EVIDENCE
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-2">
-                How Structured AEO Restored AI Citations for Baby Bento
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full reference-pill mb-4">
+                <span className="font-mono text-[11px] uppercase tracking-widest text-[#E91E63]">
+                  VERIFIED TELEMETRY LEDGER
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+                Empirical Proof:{' '}
+                <span className="italic font-extrabold text-[#D4FF00]">Baby Bento</span> Case Study
               </h2>
-              <p className="text-sm sm:text-base text-[#D4D4D8] mt-2">
-                An Australian retailer lost search visibility when answer engines failed to recognise their product credentials. AEObility restructured their entity catalog into machine-readable knowledge triples.
+              <p className="text-base sm:text-lg text-[#D4D4D8] mt-3 max-w-2xl">
+                How deterministic schema lattices and atomic answer passages shifted an Australian e-commerce brand from page-6 obscurity to primary AI citation status.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-              <div className="p-5 rounded-xl bg-[#08090C] border border-white/[0.08]">
-                <div className="text-3xl sm:text-4xl font-extrabold text-[#00E5FF] font-display">
-                  +312%
+            {/* Interactive Telemetry State Toggle */}
+            <div className="inline-flex rounded-xl bg-[#08090C] p-1 border border-white/15 self-start">
+              <button
+                type="button"
+                onClick={() => setCaseStudyView('before')}
+                className={`px-4 py-2 rounded-lg font-mono text-xs font-semibold transition-all cursor-pointer ${
+                  caseStudyView === 'before'
+                    ? 'bg-[#E91E63] text-white'
+                    : 'text-[#94A3B8] hover:text-white'
+                }`}
+              >
+                Pre-AEO Baseline
+              </button>
+              <button
+                type="button"
+                onClick={() => setCaseStudyView('after')}
+                className={`px-4 py-2 rounded-lg font-mono text-xs font-semibold transition-all cursor-pointer ${
+                  caseStudyView === 'after'
+                    ? 'bg-[#00E5FF] text-[#08090C]'
+                    : 'text-[#94A3B8] hover:text-white'
+                }`}
+              >
+                Post-90 Day Telemetry
+              </button>
+            </div>
+          </div>
+
+          {/* High-Fidelity Telemetry Dashboard Card */}
+          <div className="glass-poster-card rounded-[26px] p-6 sm:p-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Left 5 Cols: Key Metrics Readout */}
+              <div className="lg:col-span-5 space-y-5">
+                <div className="p-5 rounded-2xl bg-[#08090C]/90 border border-white/10">
+                  <div className="font-mono text-xs text-[#94A3B8] uppercase">
+                    ENTITY SALIENCE SHARE SHIFT
+                  </div>
+                  <div className="mt-2 flex items-baseline gap-3">
+                    <span className="text-2xl font-mono text-[#94A3B8] line-through">
+                      11.89%
+                    </span>
+                    <span className="text-4xl sm:text-5xl font-extrabold text-[#00E5FF]">
+                      {caseStudyView === 'after' ? '83.69%' : '11.89%'}
+                    </span>
+                  </div>
+                  <div className="mt-2 font-mono text-xs text-[#D4FF00]">
+                    +71.80% Net Salience Expansion in 90 Days
+                  </div>
                 </div>
-                <div className="text-sm font-semibold text-white mt-1">AI Citation Share</div>
-                <div className="text-xs text-[#94A3B8] mt-1">Measured across conversational answer tests in ChatGPT and Perplexity.</div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 rounded-2xl bg-[#08090C]/90 border border-white/10">
+                    <div className="font-mono text-[11px] text-[#94A3B8]">AVG. CITATION RANK</div>
+                    <div className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+                      {caseStudyView === 'after' ? '#1.4' : '#64.6'}
+                    </div>
+                    <div className="font-mono text-[11px] text-[#E91E63] mt-1">
+                      From Pos 64.6 → Top Tier
+                    </div>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-[#08090C]/90 border border-white/10">
+                    <div className="font-mono text-[11px] text-[#94A3B8]">PASSAGE EXTRACTION</div>
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[#D4FF00] mt-1">
+                      {caseStudyView === 'after' ? '4.8x' : '1.0x'}
+                    </div>
+                    <div className="font-mono text-[11px] text-[#00E5FF] mt-1">
+                      Direct RAG Answer Rate
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="p-5 rounded-xl bg-[#08090C] border border-white/[0.08]">
-                <div className="text-3xl sm:text-4xl font-extrabold text-white font-display">
-                  4.8x
+              {/* Right 7 Cols: Multi-Coloured Horizontal Topical Distribution Bars */}
+              <div className="lg:col-span-7 p-6 rounded-2xl bg-[#08090C]/90 border border-white/10 space-y-5">
+                <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                  <span className="font-mono text-xs uppercase tracking-wider text-white font-bold">
+                    TOPICAL SALIENCE &amp; CITATION DISTRIBUTION
+                  </span>
+                  <span className="font-mono text-xs text-[#00E5FF]">
+                    GSC + LLM RETRIEVAL LOGS
+                  </span>
                 </div>
-                <div className="text-sm font-semibold text-white mt-1">Passage Extraction Rate</div>
-                <div className="text-xs text-[#94A3B8] mt-1">Increase in direct quote extraction by Google AI Overviews.</div>
-              </div>
 
-              <div className="p-5 rounded-xl bg-[#08090C] border border-white/[0.08]">
-                <div className="text-3xl sm:text-4xl font-extrabold text-emerald-400 font-display">
-                  5 Days
+                {/* Bar 1: Cyan (#00E5FF) */}
+                <div className="space-y-1.5">
+                  <div className="flex justify-between text-xs font-mono">
+                    <span className="text-white">Commercial Product Entity Grounding</span>
+                    <span className="text-[#00E5FF] font-bold">
+                      {caseStudyView === 'after' ? '92%' : '19%'}
+                    </span>
+                  </div>
+                  <div className="w-full h-3 bg-white/5 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-[#00E5FF] rounded-full transition-all duration-700"
+                      style={{ width: caseStudyView === 'after' ? '92%' : '19%' }}
+                    />
+                  </div>
                 </div>
-                <div className="text-sm font-semibold text-white mt-1">Resolution Timeframe</div>
-                <div className="text-xs text-[#94A3B8] mt-1">Time required from schema deployment to verified citation restoration.</div>
+
+                {/* Bar 2: Magenta (#E91E63) */}
+                <div className="space-y-1.5">
+                  <div className="flex justify-between text-xs font-mono">
+                    <span className="text-white">Non-Toxic Material Specification Queries</span>
+                    <span className="text-[#E91E63] font-bold">
+                      {caseStudyView === 'after' ? '86%' : '14%'}
+                    </span>
+                  </div>
+                  <div className="w-full h-3 bg-white/5 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-[#E91E63] rounded-full transition-all duration-700"
+                      style={{ width: caseStudyView === 'after' ? '86%' : '14%' }}
+                    />
+                  </div>
+                </div>
+
+                {/* Bar 3: Purple/Indigo (#5338FF) */}
+                <div className="space-y-1.5">
+                  <div className="flex justify-between text-xs font-mono">
+                    <span className="text-white">Australian Category Comparison Prompts</span>
+                    <span className="text-[#A594FF] font-bold">
+                      {caseStudyView === 'after' ? '79%' : '9%'}
+                    </span>
+                  </div>
+                  <div className="w-full h-3 bg-white/5 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-[#5338FF] rounded-full transition-all duration-700"
+                      style={{ width: caseStudyView === 'after' ? '79%' : '9%' }}
+                    />
+                  </div>
+                </div>
+
+                {/* Bar 4: Lime (#D4FF00) */}
+                <div className="space-y-1.5">
+                  <div className="flex justify-between text-xs font-mono">
+                    <span className="text-white">Direct Purchase Recommendation Synthesis</span>
+                    <span className="text-[#D4FF00] font-bold">
+                      {caseStudyView === 'after' ? '84%' : '8%'}
+                    </span>
+                  </div>
+                  <div className="w-full h-3 bg-white/5 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-[#D4FF00] rounded-full transition-all duration-700"
+                      style={{ width: caseStudyView === 'after' ? '84%' : '8%' }}
+                    />
+                  </div>
+                </div>
+
+                <div className="pt-3 flex items-center justify-between text-xs font-mono text-[#94A3B8]">
+                  <span>Verified Triple: Baby Bento → Product Schema → Empirical Logs</span>
+                  <Link
+                    href="/knowledge-hub/case-studies/baby-bento"
+                    className="text-[#00E5FF] hover:underline font-bold"
+                  >
+                    Inspect Full Case Study →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          8. SECTION 7: FIXED-SCOPE GUARANTEE & FINAL POSTER CONVERSION
+          Centered Glass Poster directly mirroring the uploaded Reference Image
+          ========================================================================= */}
+      <section className="py-28 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Top Reference Pill Header */}
+        <div className="flex justify-center mb-12">
+          <div className="px-6 py-2 rounded-full reference-pill text-xs sm:text-sm font-mono text-white tracking-wider">
+            AEObility Clarity Engine • Ready To Deploy
+          </div>
+        </div>
+
+        {/* Central Poster Composition with 3D Spheres & Gold Torus Rings */}
+        <div
+          id="final-conversion-panel"
+          ref={finalPosterRef}
+          className="relative max-w-2xl mx-auto"
+        >
+          {/* Top-Left Large Warm Orange 3D Sphere */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-14 -left-14 w-48 h-48 sm:w-56 sm:h-56 rounded-full sphere-orange-3d z-0"
+          />
+          {/* Top-Center Small Blue-Violet Orb */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-8 left-[43%] w-8 h-8 rounded-full sphere-violet-3d z-0"
+          />
+          {/* Left Floating Metallic Gold Torus Ring */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute top-[28%] -left-9 w-16 h-16 sm:w-20 sm:h-20 rounded-full gold-torus-3d animate-torus-left z-20"
+          />
+          {/* Right Floating Metallic Gold Torus Ring */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-[25%] -right-9 w-16 h-16 sm:w-20 sm:h-20 rounded-full gold-torus-3d animate-torus-right z-20"
+          />
+          {/* Bottom-Right Large Deep Ultramarine/Violet 3D Sphere */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-14 -right-14 w-52 h-52 sm:w-60 sm:h-60 rounded-full sphere-violet-3d z-0"
+          />
+          {/* Bottom-Center Small Orange Orb */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-8 left-[48%] w-7 h-7 rounded-full sphere-orange-3d z-20"
+          />
+
+          {/* Refractive Glass Poster Card */}
+          <div className="glass-poster-card rounded-[28px] p-8 sm:p-14 relative z-10 text-center space-y-8">
+            {/* Reference Top Line & Three Hollow Dots */}
+            <div className="flex items-center justify-between">
+              <div className="w-28 sm:w-36 h-[1.5px] bg-white/65 rounded-full" />
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full border border-white/80" />
+                <span className="w-2.5 h-2.5 rounded-full border border-white/80" />
+                <span className="w-2.5 h-2.5 rounded-full border border-white/80" />
               </div>
             </div>
 
-            <div className="mt-6 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div className="font-mono text-xs text-[#94A3B8]">
-                Triple: Entity (Baby Bento) → Relationship (Non-Toxic Lunchware) → Evidence (Empirical GSC &amp; LLM Logs)
-              </div>
-              <Link
-                href="/knowledge-hub/case-studies/baby-bento"
-                className="text-xs font-mono font-semibold text-[#00E5FF] hover:underline inline-flex items-center gap-1"
+            {/* Quote-Style Poster Headline with Bold Italic #D4FF00 */}
+            <div className="py-4 px-4 sm:px-6 rounded-2xl bg-[#08090C]/75 border border-white/10 space-y-5">
+              <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-[1.15]">
+                &ldquo;Find out what conversational models{' '}
+                <span className="font-extrabold italic text-[#D4FF00]">
+                  truly understand
+                </span>{' '}
+                about your business.&rdquo;
+              </h2>
+
+              <p className="text-sm sm:text-base font-medium text-[#D4D4D8] max-w-md mx-auto">
+                - AEObility Diagnostic Architecture (Perth, WA)
+              </p>
+            </div>
+
+            {/* Dual Action Corridor */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+              <button
+                type="button"
+                onClick={scrollToHeroInstrument}
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#00E5FF] hover:bg-[#33ECFF] text-[#08090C] font-extrabold text-sm sm:text-base tracking-wide transition-all cursor-pointer shadow-[0_0_28px_rgba(0,229,255,0.35)]"
               >
-                Read Full Case Study
-                <ArrowRight className="w-3.5 h-3.5" />
+                Start Your Free AI Visibility Scan
+              </button>
+
+              <Link
+                href="/book"
+                className="w-full sm:w-auto px-6 py-4 rounded-xl bg-[#08090C]/90 hover:bg-white/10 text-white border border-white/25 font-semibold text-sm transition-all flex items-center justify-center gap-2"
+              >
+                <span>Book a 15-Minute Diagnostic Briefing</span>
+                <span className="w-5 h-5 rounded-full border border-white/60 flex items-center justify-center text-[10px]">
+                  ›
+                </span>
               </Link>
             </div>
-          </div>
 
-          {/* Part B: Side-by-Side Comparison Matrix (Legacy SEO vs. AEObility AEO) */}
-          <div>
-            <div className="max-w-3xl mb-8">
-              <span className="font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-semibold">
-                PARADIGM SHIFT
+            {/* Bottom Reference Card Footer */}
+            <div className="pt-4 flex items-center justify-between text-xs font-mono text-[#D4D4D8]">
+              <span>Deterministic Entity &amp; Schema Objects</span>
+              <span className="w-6 h-6 rounded-full border border-white/70 flex items-center justify-center">
+                ›
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-2">
-                Legacy SEO vs. Answer Engine Optimisation
-              </h2>
-              <p className="text-sm sm:text-base text-[#D4D4D8] mt-2">
-                Why keyword stuffing and backlink volume fail in the era of generative synthesis.
-              </p>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm border-collapse min-w-[640px]">
-                <thead>
-                  <tr className="border-b border-white/[0.08]">
-                    <th className="py-4 px-4 font-mono text-xs text-[#94A3B8] uppercase w-1/4">Evaluation Dimension</th>
-                    <th className="py-4 px-4 font-mono text-xs text-[#94A3B8] uppercase w-3/8">Legacy SEO</th>
-                    <th className="py-4 px-4 font-mono text-xs text-[#00E5FF] uppercase w-3/8 bg-cyan-950/20 border-x border-cyan-500/20">
-                      AEObility AEO
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-white/[0.06]">
-                  <tr>
-                    <td className="py-4 px-4 font-semibold text-white">Primary Goal</td>
-                    <td className="py-4 px-4 text-[#94A3B8]">Rank ten blue links on conventional search engine results pages.</td>
-                    <td className="py-4 px-4 text-white bg-cyan-950/10 border-x border-cyan-500/20 font-medium">
-                      Direct passage retrieval, LLM synthesis, and authoritative citation.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-4 font-semibold text-white">Core Currency</td>
-                    <td className="py-4 px-4 text-[#94A3B8]">Keyword repetition, page density, and generic external backlinks.</td>
-                    <td className="py-4 px-4 text-white bg-cyan-950/10 border-x border-cyan-500/20 font-medium">
-                      Entity clarity, schema graphs, data provenance, and structured evidence.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-4 font-semibold text-white">Query Processing</td>
-                    <td className="py-4 px-4 text-[#94A3B8]">Single literal keyword match against indexed page titles and headers.</td>
-                    <td className="py-4 px-4 text-white bg-cyan-950/10 border-x border-cyan-500/20 font-medium">
-                      Semantic vector space matching and multi-intent query fan-out.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-4 font-semibold text-white">Trust Validation</td>
-                    <td className="py-4 px-4 text-[#94A3B8]">Algorithmic domain authority estimates and backlink numbers.</td>
-                    <td className="py-4 px-4 text-white bg-cyan-950/10 border-x border-cyan-500/20 font-medium">
-                      Verifiable sameAs registries, ABN/ASIC ground truth, and empirical case proof.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-4 font-semibold text-white">Commercial Model</td>
-                    <td className="py-4 px-4 text-[#94A3B8]">Indefinite monthly retainers with vague &ldquo;ongoing maintenance&rdquo; deliverables.</td>
-                    <td className="py-4 px-4 text-white bg-cyan-950/10 border-x border-cyan-500/20 font-medium">
-                      Predictable, fixed-scope sprints with 100% diagnostic fee credit-back.
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
-
         </div>
-      </section>
 
-      {/* =========================================================================
-          SECTION 8 & 9: FINAL CONVERSION INSTRUMENT
-          Centered refractive conversion frame with dominant cyan CTA
-          ========================================================================= */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div 
-          id="final-conversion-panel"
-          ref={finalConversionRef}
-          className="refractive-panel p-8 sm:p-14 bg-[#0D1117] text-center max-w-4xl mx-auto relative shadow-2xl space-y-6"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-xs font-mono text-[#00E5FF]">
-            START WITH CERTAINTY
-          </div>
-
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Find out what AI understands about your business.
-          </h2>
-
-          <p className="text-base sm:text-lg text-[#D4D4D8] max-w-2xl mx-auto leading-relaxed">
-            Run our free automated visibility diagnostic or schedule a 15-minute technical review with our lead specialist.
-          </p>
-
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={scrollToHeroScan}
-              className="w-full sm:w-auto px-8 py-4 rounded-lg bg-[#00E5FF] text-[#08090C] font-extrabold text-base tracking-wide shadow-lg hover:brightness-110 active:scale-95 transition-all cursor-pointer"
-            >
-              Start Your Free Scan
-            </button>
-
-            <Link
-              href="/book"
-              className="w-full sm:w-auto px-6 py-4 rounded-lg bg-white/[0.05] hover:bg-white/[0.09] text-white border border-white/[0.12] font-semibold text-sm transition-all"
-            >
-              Book a 15-minute diagnostic review
-            </Link>
-          </div>
-
-          <div className="pt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-[#94A3B8]">
-            <span>Zero sales pressure</span>
-            <span>·</span>
-            <span>100% Australian specialist</span>
-            <span>·</span>
-            <span>No lock-in contracts</span>
+        {/* Bottom Reference Pill Footer */}
+        <div className="flex justify-center mt-14">
+          <div className="px-6 py-2 rounded-full reference-pill text-xs font-mono text-white tracking-widest uppercase">
+            Fixed Scope &nbsp;|&nbsp; Zero Retainer Lock-In
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          FOOTER: Restrained & Clean
+          9. FOOTER
           ========================================================================= */}
       <footer className="bg-[#08090C] border-t border-white/[0.08] py-12 text-xs text-[#94A3B8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <span className="font-extrabold text-white text-base font-display">
+            <span className="font-extrabold text-white text-base">
               AEO<span className="text-[#00E5FF]">bility</span>
             </span>
-            <span>© {new Date().getFullYear()} AEObility. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} AEObility (ABN 61 029 803 255). Dianella, WA 6059.</span>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-6">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
             <Link href="/brand-facts" className="hover:text-white transition-colors">Brand Facts</Link>
+            <Link href="/solutions/aeo-blueprint" className="hover:text-white transition-colors">Strategic Blueprint</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
           </div>
         </div>
       </footer>
-
     </div>
   );
 }
