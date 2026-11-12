@@ -62,8 +62,8 @@ const PIPELINE_STAGES = [
     name: 'Prove',
     subtitle: 'Citation Grounding',
     tag: 'EVIDENCE GRAPH',
-    barClass: 'bar-gradient-magenta',
-    accentColor: '#E60067',
+    barClass: 'bar-gradient-amber',
+    accentColor: '#F59E0B',
     description:
       'Inject empirical subjectOf case proof loops, reconcile third-party directory parity, and establish verifiable citation authority across RAG indexes.',
     deliverables: [
@@ -106,8 +106,9 @@ export default function ClarityEngineStaging() {
   const heroInstrumentRef = useRef<HTMLDivElement>(null);
   const finalPosterRef = useRef<HTMLDivElement>(null);
   const howItWorksRef = useRef<HTMLElement>(null);
+  const commercialRef = useRef<HTMLElement>(null);
 
-  // Load AOS (Animate On Scroll) library + smooth 60fps scroll parallax for "How It Works"
+  // Load AOS (Animate On Scroll) library + smooth 60fps scroll parallax for "How It Works" & "Commercial Pathways"
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -154,19 +155,30 @@ export default function ClarityEngineStaging() {
       document.body.appendChild(script);
     }
 
-    // 3. Continuous scroll parallax for the frosted #E5E7EB depth planes
+    // 3. Continuous scroll parallax for the frosted #E5E7EB and Commercial Architecture depth planes
     let rafId = 0;
 
     const updateParallax = () => {
-      const el = howItWorksRef.current;
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
       const viewportHeight = window.innerHeight || 800;
-      const sectionCenter = rect.top + rect.height / 2;
       const viewportCenter = viewportHeight / 2;
-      const normalized = Math.max(-1.25, Math.min(1.25, (viewportCenter - sectionCenter) / viewportHeight));
-      const shiftPx = Math.round(normalized * 56);
-      el.style.setProperty('--hiw-parallax', `${shiftPx}px`);
+
+      const hiwEl = howItWorksRef.current;
+      if (hiwEl) {
+        const rect = hiwEl.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const normalized = Math.max(-1.25, Math.min(1.25, (viewportCenter - sectionCenter) / viewportHeight));
+        const shiftPx = Math.round(normalized * 56);
+        hiwEl.style.setProperty('--hiw-parallax', `${shiftPx}px`);
+      }
+
+      const commEl = commercialRef.current;
+      if (commEl) {
+        const rect = commEl.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const normalized = Math.max(-1.25, Math.min(1.25, (viewportCenter - sectionCenter) / viewportHeight));
+        const shiftPx = Math.round(normalized * 52);
+        commEl.style.setProperty('--comm-parallax', `${shiftPx}px`);
+      }
     };
 
     const onScroll = () => {
@@ -287,7 +299,7 @@ export default function ClarityEngineStaging() {
           background: linear-gradient(90deg, #3B1C71 0%, #6828D6 45%, #8B3DFF 100%);
         }
         .bar-gradient-magenta {
-          background: linear-gradient(90deg, #590A31 0%, #B80052 45%, #E60067 100%);
+          background: linear-gradient(90deg, #573706 0%, #D97706 45%, #F59E0B 100%);
         }
         .bar-gradient-emerald {
           background: linear-gradient(90deg, #085428 0%, #00B84C 45%, #00E660 100%);
@@ -296,7 +308,7 @@ export default function ClarityEngineStaging() {
           background: linear-gradient(90deg, #0B1536 0%, #193282 45%, #264ECA 100%);
         }
         .bar-gradient-amber {
-          background: linear-gradient(90deg, #573706 0%, #B87400 45%, #E59500 100%);
+          background: linear-gradient(90deg, #573706 0%, #D97706 45%, #F59E0B 100%);
         }
         .bar-gradient-coral {
           background: linear-gradient(90deg, #591914 0%, #B02E24 45%, #DC4236 100%);
@@ -305,20 +317,16 @@ export default function ClarityEngineStaging() {
           background: linear-gradient(90deg, #161920 0%, #242A34 50%, #333B48 100%);
         }
 
-        /* 3D Shaded Pill Buttons from Right Column of Brand Sheet */
+        /* #E5E7EB Pill Buttons with Dark Text */
         .btn-brand-cyan {
-          background: linear-gradient(180deg, #26ECFF 0%, #00C4DB 52%, #075963 100%);
-          box-shadow:
-            inset 0 1px 1px rgba(255, 255, 255, 0.65),
-            inset 0 -2px 4px rgba(0, 0, 0, 0.45),
-            0 10px 28px -4px rgba(0, 229, 255, 0.4);
+          background: #E5E7EB;
+          border: 1px solid #E5E7EB;
+          box-shadow: 0 8px 24px rgba(229, 231, 235, 0.14);
           color: #05080C;
         }
         .btn-brand-cyan:hover {
-          filter: brightness(1.08);
-          box-shadow:
-            inset 0 1px 1px rgba(255, 255, 255, 0.8),
-            0 14px 34px -4px rgba(0, 229, 255, 0.55);
+          background: #D1D5DB;
+          border-color: #D1D5DB;
         }
 
         .btn-brand-violet {
@@ -349,11 +357,11 @@ export default function ClarityEngineStaging() {
         }
 
         .sphere-magenta-violet-3d {
-          background: radial-gradient(circle at 30% 28%, #FF2E88 0%, #E60067 38%, #7C2AE8 74%, #1A0536 100%);
+          background: radial-gradient(circle at 30% 28%, #FCD34D 0%, #F59E0B 38%, #7C2AE8 74%, #1A0536 100%);
           box-shadow:
             inset -14px -18px 30px rgba(0, 0, 0, 0.7),
-            inset 6px 8px 18px rgba(255, 180, 215, 0.4),
-            0 28px 65px rgba(230, 0, 103, 0.32);
+            inset 6px 8px 18px rgba(254, 243, 199, 0.4),
+            0 28px 65px rgba(245, 158, 11, 0.32);
         }
 
         .sphere-emerald-cyan-3d {
@@ -363,14 +371,14 @@ export default function ClarityEngineStaging() {
             0 16px 40px rgba(0, 230, 96, 0.28);
         }
 
-        /* 3D Brand Torus Rings (Cyan-Violet & Amber-Magenta) */
+        /* 3D Brand Torus Rings */
         .torus-brand-cyan-violet {
           background: conic-gradient(
             from 160deg at 50% 50%,
             #00E5FF 0deg,
             #8B3DFF 95deg,
             #1D1040 165deg,
-            #E60067 235deg,
+            #F59E0B 235deg,
             #00E660 305deg,
             #00E5FF 360deg
           );
@@ -383,9 +391,9 @@ export default function ClarityEngineStaging() {
           background: conic-gradient(
             from 180deg at 50% 50%,
             #FFE082 0deg,
-            #E59500 80deg,
-            #590A31 155deg,
-            #E60067 230deg,
+            #F59E0B 80deg,
+            #573706 155deg,
+            #D97706 230deg,
             #8B3DFF 300deg,
             #FFE082 360deg
           );
@@ -398,7 +406,7 @@ export default function ClarityEngineStaging() {
         .glass-poster-card {
           background:
             linear-gradient(145deg, rgba(20, 26, 42, 0.72) 0%, rgba(11, 15, 25, 0.84) 52%, rgba(8, 11, 19, 0.90) 100%) padding-box,
-            linear-gradient(135deg, rgba(255, 255, 255, 0.52) 0%, rgba(0, 229, 255, 0.38) 28%, rgba(139, 61, 255, 0.16) 65%, rgba(230, 0, 103, 0.22) 100%) border-box;
+            linear-gradient(135deg, rgba(255, 255, 255, 0.52) 0%, rgba(0, 229, 255, 0.38) 28%, rgba(139, 61, 255, 0.16) 65%, rgba(245, 158, 11, 0.25) 100%) border-box;
           border: 1px solid transparent;
           backdrop-filter: blur(28px) saturate(150%);
           -webkit-backdrop-filter: blur(28px) saturate(150%);
@@ -410,7 +418,7 @@ export default function ClarityEngineStaging() {
         .glass-cyan-card {
           background:
             linear-gradient(160deg, rgba(11, 21, 54, 0.85) 0%, rgba(8, 11, 18, 0.94) 100%) padding-box,
-            linear-gradient(135deg, #00E5FF 0%, #8B3DFF 50%, #E60067 100%) border-box;
+            linear-gradient(135deg, #00E5FF 0%, #8B3DFF 50%, #F59E0B 100%) border-box;
           border: 1.5px solid transparent;
           backdrop-filter: blur(24px);
           -webkit-backdrop-filter: blur(24px);
@@ -431,14 +439,14 @@ export default function ClarityEngineStaging() {
         }
 
         .text-brand-spectrum {
-          background: linear-gradient(90deg, #00E5FF 0%, #8B3DFF 52%, #FF1476 100%);
+          background: linear-gradient(90deg, #00E5FF 0%, #8B3DFF 52%, #F59E0B 100%);
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
         }
 
         .spectrum-bottom-bar {
-          background: linear-gradient(90deg, #FF007F 0%, #8B3DFF 38%, #264ECA 70%, #00E5FF 100%);
+          background: linear-gradient(90deg, #F59E0B 0%, #8B3DFF 38%, #264ECA 70%, #00E5FF 100%);
         }
 
         @keyframes floatSlow {
@@ -500,6 +508,30 @@ export default function ClarityEngineStaging() {
 
         .parallax-hiw-card {
           transform: translate3d(0, calc(var(--hiw-parallax, 0px) * 0.65), 0);
+          will-change: transform;
+          transition: transform 0.08s linear;
+        }
+
+        .parallax-comm-bg {
+          transform: translate3d(0, calc(var(--comm-parallax, 0px) * -1.2), 0);
+          will-change: transform;
+          transition: transform 0.08s linear;
+        }
+
+        .parallax-comm-header {
+          transform: translate3d(0, calc(var(--comm-parallax, 0px) * -0.25), 0);
+          will-change: transform;
+          transition: transform 0.08s linear;
+        }
+
+        .parallax-comm-primary {
+          transform: translate3d(0, calc(var(--comm-parallax, 0px) * -0.45), 0);
+          will-change: transform;
+          transition: transform 0.08s linear;
+        }
+
+        .parallax-comm-secondary {
+          transform: translate3d(0, calc(var(--comm-parallax, 0px) * 0.55), 0);
           will-change: transform;
           transition: transform 0.08s linear;
         }
@@ -706,7 +738,7 @@ export default function ClarityEngineStaging() {
               </div>
               <div>
                 <div className="font-mono text-[11px] text-[#CBD5E1] uppercase">Salience Lift</div>
-                <div className="text-xl font-extrabold text-[#FF2E88] mt-0.5">11.9% → 83.7%</div>
+                <div className="text-xl font-extrabold text-[#F59E0B] mt-0.5">11.9% → 83.7%</div>
               </div>
               <div>
                 <div className="font-mono text-[11px] text-[#CBD5E1] uppercase">Fee Credit-Back</div>
@@ -715,19 +747,19 @@ export default function ClarityEngineStaging() {
             </div>
           </div>
 
-          {/* Right Column: The Live Diagnostic Instrument with Soft Neon-Cyan & Magenta Backlights (5 cols) */}
+          {/* Right Column: The Live Diagnostic Instrument with Soft Neon-Cyan & Amber-Violet Backlights (5 cols) */}
           <div
             className="lg:col-span-5 relative"
             id="hero-diagnostic-instrument"
             ref={heroInstrumentRef}
           >
-            {/* --- DISCIPLINED SOFT NEON-CYAN & MAGENTA BACKLIGHTS --- */}
+            {/* --- DISCIPLINED SOFT NEON-CYAN & AMBER-VIOLET BACKLIGHTS --- */}
             {/* Top-Left Neon-Cyan & Cobalt Backlight Sphere */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -top-10 -left-10 w-48 h-48 sm:w-56 sm:h-56 rounded-full sphere-cyan-violet-3d opacity-75 blur-[6px] z-0"
             />
-            {/* Bottom-Right Magenta & Violet Backlight Sphere */}
+            {/* Bottom-Right Amber (#F59E0B) & Violet Backlight Sphere */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -bottom-12 -right-10 w-52 h-52 sm:w-60 sm:h-60 rounded-full sphere-magenta-violet-3d opacity-75 blur-[8px] z-0"
@@ -741,7 +773,7 @@ export default function ClarityEngineStaging() {
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#00E5FF]" />
                   <span className="w-2.5 h-2.5 rounded-full bg-[#8B3DFF]" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#E60067]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]" />
                 </div>
               </div>
 
@@ -867,15 +899,15 @@ export default function ClarityEngineStaging() {
                 </div>
               )}
 
-              {/* 4 Compact Telemetry Pills using Brand Sheet Swatches (Cyan, Violet, Magenta, Emerald) */}
+              {/* 4 Compact Telemetry Pills using Brand Sheet Swatches (Cyan, Amber #F59E0B, Violet, Emerald) */}
               <div className="mt-5 pt-4 border-t border-white/15 grid grid-cols-2 gap-2.5">
                 <div className="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#00E5FF]/40 flex items-center justify-between">
                   <span className="font-mono text-[11px] text-[#CBD5E1]">Entity Salience</span>
                   <span className="font-mono text-xs font-bold text-[#00E5FF]">88%</span>
                 </div>
-                <div className="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#E60067]/45 flex items-center justify-between">
+                <div className="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#F59E0B]/45 flex items-center justify-between">
                   <span className="font-mono text-[11px] text-[#CBD5E1]">Answer Coverage</span>
-                  <span className="font-mono text-xs font-bold text-[#FF2E88]">91%</span>
+                  <span className="font-mono text-xs font-bold text-[#F59E0B]">91%</span>
                 </div>
                 <div className="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#8B3DFF]/45 flex items-center justify-between">
                   <span className="font-mono text-[11px] text-[#CBD5E1]">Provenance</span>
@@ -1275,14 +1307,14 @@ export default function ClarityEngineStaging() {
           <div className="glass-poster-card rounded-2xl p-7 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-5">
-                <div className="w-16 h-1 bar-gradient-magenta rounded-full" />
-                <span className="font-mono text-[11px] text-[#FF2E88] font-bold">GAP 02 // PASSAGES</span>
+                <div className="w-16 h-1 bar-gradient-amber rounded-full" />
+                <span className="font-mono text-[11px] text-[#F59E0B] font-bold">GAP 02 // PASSAGES</span>
               </div>
 
               <div className="p-4 rounded-xl bg-[#06080E]/90 border border-white/10 mb-6 space-y-3">
                 <div className="flex items-center justify-between text-[11px] font-mono">
                   <span className="text-[#94A3B8]">Bloated Keyword Prose</span>
-                  <span className="text-[#E59500] font-bold">18% Extracted</span>
+                  <span className="text-[#F59E0B] font-bold">18% Extracted</span>
                 </div>
                 <div className="w-full h-2.5 bg-white/5 rounded-full overflow-hidden">
                   <div className="h-full bar-gradient-amber w-[18%] rounded-full" />
@@ -1304,7 +1336,7 @@ export default function ClarityEngineStaging() {
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between font-mono text-xs text-[#00E660]">
+            <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between font-mono text-xs text-[#F59E0B]">
               <span>Become AI Fluent: Atomic Passages</span>
               <span>→</span>
             </div>
@@ -1321,10 +1353,10 @@ export default function ClarityEngineStaging() {
               <div className="p-4 rounded-xl bg-[#06080E]/90 border border-white/10 mb-6 space-y-3">
                 <div className="flex items-center justify-between text-[11px] font-mono">
                   <span className="text-[#94A3B8]">Unverified Claims</span>
-                  <span className="text-[#E60067] font-bold">12% Trust</span>
+                  <span className="text-[#F59E0B] font-bold">12% Trust</span>
                 </div>
                 <div className="w-full h-2.5 bg-white/5 rounded-full overflow-hidden">
-                  <div className="h-full bar-gradient-magenta w-[12%] rounded-full" />
+                  <div className="h-full bar-gradient-amber w-[12%] rounded-full" />
                 </div>
                 <div className="flex items-center justify-between text-[11px] font-mono pt-1">
                   <span className="text-white">SameAs &amp; Case Proof Parity</span>
@@ -1392,7 +1424,10 @@ export default function ClarityEngineStaging() {
                     <div className="flex items-center justify-between mb-4">
                       <span
                         className="font-mono text-xs font-bold px-2.5 py-1 rounded text-white"
-                        style={{ backgroundColor: isSelected ? stage.accentColor : 'rgba(255,255,255,0.06)', color: isSelected && stage.accentColor === '#00E5FF' ? '#05080C' : '#FFFFFF' }}
+                        style={{
+                          backgroundColor: isSelected ? stage.accentColor : 'rgba(255,255,255,0.06)',
+                          color: isSelected && (stage.accentColor === '#00E5FF' || stage.accentColor === '#F59E0B') ? '#05080C' : '#FFFFFF'
+                        }}
                       >
                         STAGE {stage.num}
                       </span>
@@ -1434,101 +1469,131 @@ export default function ClarityEngineStaging() {
       </section>
 
       {/* =========================================================================
-          6. SECTION 5: COMMERCIAL PATHWAYS (Enforcing Hick's Law)
+          6. SECTION 5: COMMERCIAL PATHWAYS (Enforcing Hick's Law + Scroll Parallax & AOS)
           Uses the 8-Bar Gradient System for Clear Visual Hierarchy
           ========================================================================= */}
-      <section id="commercial-pathways" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full reference-pill mb-4">
-            <span className="font-mono text-[11px] uppercase tracking-widest text-[#00E5FF]">
-              FIXED-SCOPE COMMERCIAL ARCHITECTURE
-            </span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
-            Start with diagnostic{' '}
-            <span className="italic font-extrabold text-brand-spectrum">certainty.</span>
-          </h2>
-          <p className="text-base sm:text-lg text-[#D4D4D8] mt-3 leading-relaxed">
-            We never prescribe implementation without a diagnostic baseline. Start with the standalone Strategic Blueprint and credit 100% of your fee toward execution.
-          </p>
+      <section
+        id="commercial-pathways"
+        ref={commercialRef}
+        className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      >
+        {/* Parallax Depth Plane 0: Ambient Refraction Orbs behind Commercial Architecture */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 overflow-hidden z-0 parallax-comm-bg"
+        >
+          <div className="absolute top-8 left-[4%] w-64 h-64 rounded-full sphere-cyan-violet-3d opacity-25 blur-2xl" />
+          <div className="absolute bottom-6 right-[6%] w-72 h-72 rounded-full sphere-magenta-violet-3d opacity-25 blur-2xl" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Card 1: Strategic Blueprint ($995 AUD) */}
-          <div className="lg:col-span-7 glass-cyan-card rounded-[26px] p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -top-12 -right-12 w-36 h-36 rounded-full sphere-cyan-violet-3d opacity-40"
-            />
-
-            <div className="relative z-10">
-              <div className="flex items-center justify-between mb-6">
-                <span className="px-4 py-1 rounded-full bar-gradient-emerald text-[#05080C] font-mono text-xs font-extrabold tracking-wider uppercase">
-                  RECOMMENDED FOUNDATION
-                </span>
-                <span className="font-mono text-xs text-[#00E5FF] font-semibold">
-                  SKU: BPSTRAT • 5-DAY SLA
-                </span>
-              </div>
-
-              <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                Strategic Blueprint
-              </h3>
-
-              <div className="mt-4 mb-6 flex items-baseline gap-2.5">
-                <span className="text-5xl sm:text-6xl font-extrabold text-white">
-                  $995
-                </span>
-                <span className="text-sm font-mono text-[#94A3B8]">
-                  AUD ex. GST · Standalone Audit &amp; 90-Day Roadmap
-                </span>
-              </div>
-
-              <p className="text-base text-[#D4D4D8] leading-relaxed mb-6 max-w-[58ch]">
-                A comprehensive technical crawl, Knowledge Graph entity audit, competitor query fan-out matrix, and prioritised 90-day remediation plan delivered in 5 business days.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pb-6 border-b border-white/10 text-sm text-white">
-                <div className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
-                  <span>Full JSON-LD &amp; Entity Salience Scorecard</span>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#00E660] shrink-0 mt-0.5" />
-                  <span>ChatGPT, Gemini &amp; Perplexity Retrieval Audit</span>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#8B3DFF] shrink-0 mt-0.5" />
-                  <span>Competitor Semantic Dominance Breakdown</span>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#E60067] shrink-0 mt-0.5" />
-                  <span>Complimentary Technical Onboarding ($0.00)</span>
-                </div>
-              </div>
-
-              <div className="my-6 p-4 rounded-xl bg-[#06080E]/90 border border-[#00E660]/40 flex items-center justify-between gap-4">
-                <div className="text-xs sm:text-sm text-white">
-                  <strong className="text-[#00E660] font-mono uppercase mr-2">100% Credit Guarantee:</strong>
-                  Your entire $995 Blueprint fee is credited toward AEO Foundation or Sprints within 60 days.
-                </div>
-              </div>
+        {/* Parallax Depth Plane 1: Section Header */}
+        <div className="max-w-3xl mb-14 relative z-10 parallax-comm-header">
+          <div data-aos="fade-up" data-aos-duration="800">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full reference-pill mb-4">
+              <span className="font-mono text-[11px] uppercase tracking-widest text-[#00E5FF]">
+                FIXED-SCOPE COMMERCIAL ARCHITECTURE
+              </span>
             </div>
+            <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+              Start with diagnostic{' '}
+              <span className="italic font-extrabold text-brand-spectrum">certainty.</span>
+            </h2>
+            <p className="text-base sm:text-lg text-[#D4D4D8] mt-3 leading-relaxed">
+              We never prescribe implementation without a diagnostic baseline. Start with the standalone Strategic Blueprint and credit 100% of your fee toward execution.
+            </p>
+          </div>
+        </div>
 
-            <div className="relative z-10 pt-2">
-              <Link
-                href="/solutions/aeo-blueprint"
-                className="w-full py-4 px-6 rounded-full btn-brand-cyan font-extrabold text-base tracking-wide flex items-center justify-center gap-2.5 transition-all"
-              >
-                <span>Commission Strategic Blueprint</span>
-                <ArrowRight className="w-5 h-5 stroke-[2.5]" />
-              </Link>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch relative z-10">
+          {/* Parallax Depth Plane 2: Card 1 - Strategic Blueprint ($995 AUD) */}
+          <div className="lg:col-span-7 flex parallax-comm-primary">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="900"
+              data-aos-delay="100"
+              className="w-full glass-cyan-card rounded-[26px] p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden"
+            >
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -top-12 -right-12 w-36 h-36 rounded-full sphere-cyan-violet-3d opacity-40"
+              />
+
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="px-4 py-1 rounded-full bar-gradient-emerald text-[#05080C] font-mono text-xs font-extrabold tracking-wider uppercase">
+                    RECOMMENDED FOUNDATION
+                  </span>
+                  <span className="font-mono text-xs text-[#00E5FF] font-semibold">
+                    SKU: BPSTRAT • 5-DAY SLA
+                  </span>
+                </div>
+
+                <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                  Strategic Blueprint
+                </h3>
+
+                <div className="mt-4 mb-6 flex items-baseline gap-2.5">
+                  <span className="text-5xl sm:text-6xl font-extrabold text-white">
+                    $995
+                  </span>
+                  <span className="text-sm font-mono text-[#94A3B8]">
+                    AUD ex. GST · Standalone Audit &amp; 90-Day Roadmap
+                  </span>
+                </div>
+
+                <p className="text-base text-[#D4D4D8] leading-relaxed mb-6 max-w-[58ch]">
+                  A comprehensive technical crawl, Knowledge Graph entity audit, competitor query fan-out matrix, and prioritised 90-day remediation plan delivered in 5 business days.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pb-6 border-b border-white/10 text-sm text-white">
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
+                    <span>Full JSON-LD &amp; Entity Salience Scorecard</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#00E660] shrink-0 mt-0.5" />
+                    <span>ChatGPT, Gemini &amp; Perplexity Retrieval Audit</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#8B3DFF] shrink-0 mt-0.5" />
+                    <span>Competitor Semantic Dominance Breakdown</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#F59E0B] shrink-0 mt-0.5" />
+                    <span>Complimentary Technical Onboarding ($0.00)</span>
+                  </div>
+                </div>
+
+                <div className="my-6 p-4 rounded-xl bg-[#06080E]/90 border border-[#00E660]/40 flex items-center justify-between gap-4">
+                  <div className="text-xs sm:text-sm text-white">
+                    <strong className="text-[#00E660] font-mono uppercase mr-2">100% Credit Guarantee:</strong>
+                    Your entire $995 Blueprint fee is credited toward AEO Foundation or Sprints within 60 days.
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative z-10 pt-2">
+                <Link
+                  href="/solutions/aeo-blueprint"
+                  className="w-full py-4 px-6 rounded-full bg-[#E5E7EB] hover:bg-[#D1D5DB] border border-[#E5E7EB] text-black font-semibold text-base shadow-[0_8px_24px_rgba(229,231,235,0.14)] flex items-center justify-center gap-3 transition-all"
+                >
+                  <span>Commission Strategic Blueprint</span>
+                  <span className="w-6 h-6 rounded-full bg-black/10 border border-black/20 flex items-center justify-center text-xs text-black">
+                    →
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* Demoted Cards Column: AEO Foundation & AEO Sprints */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="p-7 rounded-2xl bg-[#0D111A]/90 border border-white/[0.08] flex flex-col justify-between flex-1">
+          {/* Parallax Depth Plane 3: Demoted Cards Column - AEO Foundation & AEO Sprints */}
+          <div className="lg:col-span-5 flex flex-col gap-6 parallax-comm-secondary">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="850"
+              data-aos-delay="180"
+              className="p-7 rounded-2xl bg-[#0D111A]/90 border border-white/[0.08] flex flex-col justify-between flex-1"
+            >
               <div>
                 <div className="w-full h-1.5 bar-gradient-violet rounded-full mb-4" />
                 <div className="flex items-center justify-between mb-2">
@@ -1559,14 +1624,19 @@ export default function ClarityEngineStaging() {
               </div>
             </div>
 
-            <div className="p-7 rounded-2xl bg-[#0D111A]/90 border border-white/[0.08] flex flex-col justify-between flex-1">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="950"
+              data-aos-delay="280"
+              className="p-7 rounded-2xl bg-[#0D111A]/90 border border-white/[0.08] flex flex-col justify-between flex-1"
+            >
               <div>
-                <div className="w-full h-1.5 bar-gradient-magenta rounded-full mb-4" />
+                <div className="w-full h-1.5 bar-gradient-amber rounded-full mb-4" />
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-mono text-xs text-[#94A3B8] uppercase">
                     MODULAR EXECUTION
                   </span>
-                  <span className="font-mono text-xs text-[#FF2E88]">3-5 DAYS SLA</span>
+                  <span className="font-mono text-xs text-[#F59E0B]">3-5 DAYS SLA</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white">
                   AEO Sprints
@@ -1602,7 +1672,7 @@ export default function ClarityEngineStaging() {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full reference-pill mb-4">
-                <span className="font-mono text-[11px] uppercase tracking-widest text-[#FF2E88]">
+                <span className="font-mono text-[11px] uppercase tracking-widest text-[#F59E0B]">
                   VERIFIED TELEMETRY LEDGER
                 </span>
               </div>
@@ -1622,7 +1692,7 @@ export default function ClarityEngineStaging() {
                 onClick={() => setCaseStudyView('before')}
                 className={`px-4 py-2 rounded-full font-mono text-xs font-semibold transition-all cursor-pointer ${
                   caseStudyView === 'before'
-                    ? 'bar-gradient-magenta text-white'
+                    ? 'bar-gradient-amber text-[#05080C] font-bold'
                     : 'text-[#94A3B8] hover:text-white'
                 }`}
               >
@@ -1633,7 +1703,7 @@ export default function ClarityEngineStaging() {
                 onClick={() => setCaseStudyView('after')}
                 className={`px-4 py-2 rounded-full font-mono text-xs font-semibold transition-all cursor-pointer ${
                   caseStudyView === 'after'
-                    ? 'bar-gradient-cyan text-[#05080C] font-bold'
+                    ? 'bg-[#E5E7EB] text-black font-bold'
                     : 'text-[#94A3B8] hover:text-white'
                 }`}
               >
@@ -1669,7 +1739,7 @@ export default function ClarityEngineStaging() {
                     <div className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
                       {caseStudyView === 'after' ? '#1.4' : '#64.6'}
                     </div>
-                    <div className="font-mono text-[11px] text-[#FF2E88] mt-1">
+                    <div className="font-mono text-[11px] text-[#F59E0B] mt-1">
                       From Pos 64.6 → Top Tier
                     </div>
                   </div>
@@ -1729,17 +1799,17 @@ export default function ClarityEngineStaging() {
                   </div>
                 </div>
 
-                {/* Bar 3: Magenta Gradient */}
+                {/* Bar 3: Amber (#F59E0B) Gradient */}
                 <div className="space-y-1">
                   <div className="flex justify-between text-xs font-mono">
                     <span className="text-white">Get Visible · Non-Toxic Specification Queries</span>
-                    <span className="text-[#FF2E88] font-bold">
+                    <span className="text-[#F59E0B] font-bold">
                       {caseStudyView === 'after' ? '86%' : '14%'}
                     </span>
                   </div>
                   <div className="w-full h-4 bg-white/5 rounded-full overflow-hidden p-0.5">
                     <div
-                      className="h-full bar-gradient-magenta rounded-full transition-all duration-700"
+                      className="h-full bar-gradient-amber rounded-full transition-all duration-700"
                       style={{ width: caseStudyView === 'after' ? '86%' : '14%' }}
                     />
                   </div>
@@ -1765,7 +1835,7 @@ export default function ClarityEngineStaging() {
                 <div className="space-y-1">
                   <div className="flex justify-between text-xs font-mono">
                     <span className="text-white">Get Visible · Commercial Purchase Intent</span>
-                    <span className="text-[#E59500] font-bold">
+                    <span className="text-[#F59E0B] font-bold">
                       {caseStudyView === 'after' ? '79%' : '11%'}
                     </span>
                   </div>
@@ -1794,7 +1864,7 @@ export default function ClarityEngineStaging() {
 
       {/* =========================================================================
           8. SECTION 7: FIXED-SCOPE GUARANTEE & FINAL POSTER CONVERSION
-          Uses the Brand Sheet Cyan-Violet and Magenta-Violet 3D Spheres
+          Uses the Brand Sheet Cyan-Violet and Amber-Violet 3D Spheres
           ========================================================================= */}
       <section className="py-28 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-center mb-12">
@@ -1808,7 +1878,7 @@ export default function ClarityEngineStaging() {
           ref={finalPosterRef}
           className="relative max-w-2xl mx-auto"
         >
-          {/* Disciplined Soft Neon-Cyan & Magenta Backlight Spheres */}
+          {/* Disciplined Soft Neon-Cyan & Amber-Violet Backlight Spheres */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -top-12 -left-12 w-48 h-48 sm:w-56 sm:h-56 rounded-full sphere-cyan-violet-3d opacity-75 blur-[6px] z-0"
@@ -1825,7 +1895,7 @@ export default function ClarityEngineStaging() {
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#00E5FF]" />
                 <span className="w-2.5 h-2.5 rounded-full bg-[#8B3DFF]" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#00E660]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]" />
               </div>
             </div>
 
@@ -1847,9 +1917,12 @@ export default function ClarityEngineStaging() {
               <button
                 type="button"
                 onClick={scrollToHeroInstrument}
-                className="w-full sm:w-auto px-8 py-4 rounded-full btn-brand-cyan font-extrabold text-sm sm:text-base tracking-wide transition-all cursor-pointer"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#E5E7EB] hover:bg-[#D1D5DB] border border-[#E5E7EB] text-black font-semibold text-sm sm:text-base shadow-[0_8px_24px_rgba(229,231,235,0.14)] flex items-center justify-center gap-3 transition-all cursor-pointer"
               >
-                Get AI Ready · Start Free Scan
+                <span>Get AI Ready · Start Free Scan</span>
+                <span className="w-6 h-6 rounded-full bg-black/10 border border-black/20 flex items-center justify-center text-xs text-black">
+                  →
+                </span>
               </button>
 
               <Link

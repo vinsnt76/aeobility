@@ -50,7 +50,7 @@
       background: linear-gradient(90deg, #3B1C71 0%, #6828D6 45%, #8B3DFF 100%);
     }
     .bar-gradient-magenta {
-      background: linear-gradient(90deg, #590A31 0%, #B80052 45%, #E60067 100%);
+      background: linear-gradient(90deg, #573706 0%, #D97706 45%, #F59E0B 100%);
     }
     .bar-gradient-emerald {
       background: linear-gradient(90deg, #085428 0%, #00B84C 45%, #00E660 100%);
@@ -59,7 +59,7 @@
       background: linear-gradient(90deg, #0B1536 0%, #193282 45%, #264ECA 100%);
     }
     .bar-gradient-amber {
-      background: linear-gradient(90deg, #573706 0%, #B87400 45%, #E59500 100%);
+      background: linear-gradient(90deg, #573706 0%, #D97706 45%, #F59E0B 100%);
     }
     .bar-gradient-coral {
       background: linear-gradient(90deg, #591914 0%, #B02E24 45%, #DC4236 100%);
@@ -67,15 +67,13 @@
 
     /* 3D Shaded Pill Buttons from Brand Sheet */
     .btn-brand-cyan {
-      background: linear-gradient(180deg, #26ECFF 0%, #00C4DB 52%, #075963 100%);
-      box-shadow:
-        inset 0 1px 1px rgba(255, 255, 255, 0.65),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.45),
-        0 10px 28px -4px rgba(0, 229, 255, 0.4);
+      background: #E5E7EB;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 8px 24px rgba(229, 231, 235, 0.14);
       color: #05080C;
     }
     .btn-brand-cyan:hover {
-      filter: brightness(1.08);
+      background: #D1D5DB;
     }
 
     .btn-brand-violet {
@@ -97,11 +95,11 @@
     }
 
     .sphere-magenta-violet-3d {
-      background: radial-gradient(circle at 30% 28%, #FF2E88 0%, #E60067 38%, #7C2AE8 74%, #1A0536 100%);
+      background: radial-gradient(circle at 30% 28%, #FCD34D 0%, #F59E0B 38%, #7C2AE8 74%, #1A0536 100%);
       box-shadow:
         inset -14px -18px 30px rgba(0, 0, 0, 0.7),
-        inset 6px 8px 18px rgba(255, 180, 215, 0.4),
-        0 28px 65px rgba(230, 0, 103, 0.32);
+        inset 6px 8px 18px rgba(254, 243, 199, 0.4),
+        0 28px 65px rgba(245, 158, 11, 0.32);
     }
 
     .sphere-emerald-cyan-3d {
@@ -118,7 +116,7 @@
         #00E5FF 0deg,
         #8B3DFF 95deg,
         #1D1040 165deg,
-        #E60067 235deg,
+        #F59E0B 235deg,
         #00E660 305deg,
         #00E5FF 360deg
       );
@@ -132,8 +130,8 @@
         from 180deg at 50% 50%,
         #FFE082 0deg,
         #E59500 80deg,
-        #590A31 155deg,
-        #E60067 230deg,
+        #573706 155deg,
+        #F59E0B 230deg,
         #8B3DFF 300deg,
         #FFE082 360deg
       );
@@ -146,7 +144,7 @@
     .glass-poster-card {
       background:
         linear-gradient(145deg, rgba(255, 255, 255, 0.09) 0%, rgba(13, 17, 28, 0.72) 45%, rgba(8, 11, 20, 0.86) 100%) padding-box,
-        linear-gradient(135deg, rgba(255, 255, 255, 0.42) 0%, rgba(0, 229, 255, 0.48) 28%, rgba(139, 61, 255, 0.18) 65%, rgba(230, 0, 103, 0.22) 100%) border-box;
+        linear-gradient(135deg, rgba(255, 255, 255, 0.42) 0%, rgba(0, 229, 255, 0.48) 28%, rgba(139, 61, 255, 0.18) 65%, rgba(245, 158, 11, 0.25) 100%) border-box;
       border: 1px solid transparent;
       backdrop-filter: blur(28px) saturate(160%);
       -webkit-backdrop-filter: blur(28px) saturate(160%);
@@ -158,7 +156,7 @@
     .glass-cyan-card {
       background:
         linear-gradient(160deg, rgba(11, 21, 54, 0.85) 0%, rgba(8, 11, 18, 0.94) 100%) padding-box,
-        linear-gradient(135deg, #00E5FF 0%, #8B3DFF 50%, #E60067 100%) border-box;
+        linear-gradient(135deg, #00E5FF 0%, #8B3DFF 50%, #F59E0B 100%) border-box;
       border: 1.5px solid transparent;
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
@@ -178,14 +176,14 @@
     }
 
     .text-brand-spectrum {
-      background: linear-gradient(90deg, #00E5FF 0%, #8B3DFF 52%, #FF1476 100%);
+      background: linear-gradient(90deg, #00E5FF 0%, #8B3DFF 52%, #F59E0B 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .spectrum-bottom-bar {
-      background: linear-gradient(90deg, #FF007F 0%, #8B3DFF 38%, #264ECA 70%, #00E5FF 100%);
+      background: linear-gradient(90deg, #F59E0B 0%, #8B3DFF 38%, #264ECA 70%, #00E5FF 100%);
     }
 
     @keyframes floatSlow {
@@ -339,7 +337,7 @@
             <div class="flex items-center gap-1.5">
               <span class="w-2.5 h-2.5 rounded-full bg-[#00E5FF]"></span>
               <span class="w-2.5 h-2.5 rounded-full bg-[#8B3DFF]"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#E60067]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#F59E0B]"></span>
             </div>
           </div>
 
@@ -383,9 +381,9 @@
               <span class="font-mono text-[11px] text-[#CBD5E1]">Entity Salience</span>
               <span class="font-mono text-xs font-bold text-[#00E5FF]">88%</span>
             </div>
-            <div class="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#E60067]/45 flex items-center justify-between">
+            <div class="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#F59E0B]/45 flex items-center justify-between">
               <span class="font-mono text-[11px] text-[#CBD5E1]">Answer Coverage</span>
-              <span class="font-mono text-xs font-bold text-[#FF2E88]">91%</span>
+              <span class="font-mono text-xs font-bold text-[#F59E0B]">91%</span>
             </div>
             <div class="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#8B3DFF]/45 flex items-center justify-between">
               <span class="font-mono text-[11px] text-[#CBD5E1]">Provenance</span>
