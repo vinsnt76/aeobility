@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import HowItWorks from '@/components/HowItWorks';
 import {
   ArrowRight,
   CheckCircle2,
@@ -417,9 +418,6 @@ export default function ClarityEngineStaging() {
               <span className="font-extrabold text-2xl tracking-tight text-white">
                 AEO<span className="aeo-cyan-glow">bility</span>
               </span>
-              <span className="hidden sm:inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-[#00E5FF] bg-[#0B1536]/80 border border-[#00E5FF]/30 px-2.5 py-0.5 rounded-full">
-                CLARITY ENGINE
-              </span>
             </div>
           </Link>
 
@@ -428,7 +426,7 @@ export default function ClarityEngineStaging() {
             <Link href="/services" className="hover:text-[#00E5FF] transition-colors">
               Services
             </Link>
-            <a href="#operational-pipeline" className="hover:text-[#00E5FF] transition-colors">
+            <a href="#how-it-works" className="hover:text-[#00E5FF] transition-colors">
               How AEO Works
             </a>
             <a href="#empirical-evidence" className="hover:text-[#00E5FF] transition-colors">
@@ -479,7 +477,7 @@ export default function ClarityEngineStaging() {
               Services
             </Link>
             <a
-              href="#operational-pipeline"
+              href="#how-it-works"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-base font-medium text-[#D4D4D8] hover:text-white"
             >
@@ -785,6 +783,11 @@ export default function ClarityEngineStaging() {
           </div>
         </div>
       </section>
+
+      {/* =========================================================================
+          3B. PRODUCTION "HOW IT WORKS" MODULE (PLACED DIRECTLY BENEATH THE FOLD)
+          ========================================================================= */}
+      <HowItWorks />
 
       {/* =========================================================================
           4. SECTION 3: DIAGNOSTIC GAPS
