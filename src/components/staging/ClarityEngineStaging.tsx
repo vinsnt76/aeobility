@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import HowItWorks from '@/components/HowItWorks';
+import { TelemetryViewTracker } from '@/components/telemetry/TelemetryViewTracker';
 import {
   ArrowRight,
+  BookOpen,
   CheckCircle2,
   Menu,
   X,
@@ -104,6 +105,41 @@ export default function ClarityEngineStaging() {
 
   const heroInstrumentRef = useRef<HTMLDivElement>(null);
   const finalPosterRef = useRef<HTMLDivElement>(null);
+  const howItWorksRef = useRef<HTMLElement>(null);
+
+  // Smooth 60fps scroll parallax for the frosted #E5E7EB "How It Works" section
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    let rafId = 0;
+
+    const updateParallax = () => {
+      const el = howItWorksRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || 800;
+      // Compute relative distance from viewport centre (-1 to +1)
+      const sectionCenter = rect.top + rect.height / 2;
+      const viewportCenter = viewportHeight / 2;
+      const normalized = Math.max(-1.25, Math.min(1.25, (viewportCenter - sectionCenter) / viewportHeight));
+      const shiftPx = Math.round(normalized * 56);
+      el.style.setProperty('--hiw-parallax', `${shiftPx}px`);
+    };
+
+    const onScroll = () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(updateParallax);
+    };
+
+    updateParallax();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, []);
 
   // Suppress floating "Chat with AI Bill" badge when Hero Diagnostic or Final Poster is in viewport
   useEffect(() => {
@@ -373,6 +409,56 @@ export default function ClarityEngineStaging() {
 
         .animate-torus-left { animation: floatSlow 7s ease-in-out infinite; }
         .animate-torus-right { animation: floatSlowReverse 8s ease-in-out infinite; }
+
+        /* Frosted #E5E7EB Glass Surface & Scroll Parallax Classes for How It Works */
+        .frosted-hiw-sheet {
+          background: linear-gradient(
+            135deg,
+            rgba(229, 231, 235, 0.90) 0%,
+            rgba(229, 231, 235, 0.80) 50%,
+            rgba(229, 231, 235, 0.92) 100%
+          );
+          backdrop-filter: blur(28px) saturate(165%);
+          -webkit-backdrop-filter: blur(28px) saturate(165%);
+          box-shadow:
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+            inset 0 -1px 0 0 rgba(255, 255, 255, 0.65),
+            0 28px 60px -12px rgba(0, 0, 0, 0.55);
+        }
+
+        .frosted-hiw-step {
+          background: rgba(255, 255, 255, 0.46);
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+          border: 1px solid rgba(255, 255, 255, 0.72);
+          box-shadow:
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+            0 10px 26px -8px rgba(15, 23, 42, 0.08);
+        }
+
+        .parallax-bg-orbs {
+          transform: translate3d(0, calc(var(--hiw-parallax, 0px) * -1.35), 0);
+          will-change: transform;
+          transition: transform 0.08s linear;
+        }
+
+        .parallax-hiw-header {
+          transform: translate3d(0, calc(var(--hiw-parallax, 0px) * -0.25), 0);
+          will-change: transform;
+          transition: transform 0.08s linear;
+        }
+
+        .parallax-hiw-steps {
+          transform: translate3d(0, calc(var(--hiw-parallax, 0px) * -0.45), 0);
+          will-change: transform;
+          transition: transform 0.08s linear;
+        }
+
+        .parallax-hiw-card {
+          transform: translate3d(0, calc(var(--hiw-parallax, 0px) * 0.65), 0);
+          will-change: transform;
+          transition: transform 0.08s linear;
+        }
       `}</style>
 
       {/* Top Full-Width Brand Spectrum Hairline (from bottom of Brand Sheet) */}
@@ -785,9 +871,236 @@ export default function ClarityEngineStaging() {
       </section>
 
       {/* =========================================================================
-          3B. PRODUCTION "HOW IT WORKS" MODULE (PLACED DIRECTLY BENEATH THE FOLD)
+          3B. PRODUCTION "HOW IT WORKS" MODULE (FROSTED #E5E7EB + SCROLL PARALLAX)
           ========================================================================= */}
-      <HowItWorks />
+      <section
+        id="how-it-works"
+        ref={howItWorksRef}
+        aria-labelledby="steps-heading"
+        className="relative py-24 overflow-hidden text-black frosted-hiw-sheet"
+      >
+        {/* Parallax Depth Plane 0: Ambient Refraction Orbs & Grid Motif behind Frosted #E5E7EB */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 overflow-hidden z-0 parallax-bg-orbs"
+        >
+          <div className="absolute -top-20 left-[8%] w-72 h-72 rounded-full sphere-cyan-violet-3d opacity-20 blur-2xl" />
+          <div className="absolute bottom-[-10%] right-[10%] w-80 h-80 rounded-full sphere-magenta-violet-3d opacity-20 blur-2xl" />
+          <div className="absolute inset-0 bg-grid-motif-light opacity-50" />
+        </div>
+
+        <div className="relative z-10 max-w-6xl mx-auto px-6">
+          {/* Parallax Depth Plane 1: Section Header */}
+          <header className="relative text-center max-w-2xl mx-auto mb-16 parallax-hiw-header">
+            <div className="relative z-10 space-y-4">
+              <span className="text-xs font-semibold tracking-widest text-aeo-purple uppercase font-mono block">
+                The Telemetry Engine
+              </span>
+              <h2
+                id="steps-heading"
+                className="text-3xl sm:text-4xl font-extrabold text-neutral-900 font-soehne-breit"
+              >
+                Four Steps to Machine-Readable Clarity
+              </h2>
+              <p className="text-base text-neutral-700 font-light font-serif">
+                Measure, understand, and activate your AI search visibility.
+              </p>
+            </div>
+          </header>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            {/* Parallax Depth Plane 2: Frosted Step Cards */}
+            <ol className="lg:col-span-7 space-y-6 list-none p-0 m-0 parallax-hiw-steps">
+              {/* Step 1 */}
+              <li className="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
+                <span className="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">
+                  01
+                </span>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">
+                    Tell Us What You Want To Be Found For
+                  </h3>
+                  <p className="text-sm text-neutral-700 font-light leading-relaxed font-serif">
+                    Enter your Australian business URL and primary customer search intent. Our crawler ingests your public document object model, existing Schema.org structured data, and service area declarations to benchmark baseline machine readability.
+                  </p>
+                </div>
+              </li>
+
+              {/* Step 2 */}
+              <li className="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
+                <span className="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">
+                  02
+                </span>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">
+                    Measure Your AI Visibility
+                  </h3>
+                  <p className="text-sm text-neutral-700 font-light leading-relaxed font-serif">
+                    Our telemetry engine analyses how conversational AI systems like ChatGPT Search, Perplexity, Gemini, and Google AI Overviews retrieve and recommend your business. We measure passage retrieval depth, entity confidence scoring, citation provenance, and brand co-occurrence.
+                  </p>
+                </div>
+              </li>
+
+              {/* Step 3 */}
+              <li className="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
+                <span className="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">
+                  03
+                </span>
+                <div className="space-y-3 w-full">
+                  <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">
+                    Discover Your Opportunities
+                  </h3>
+                  <p className="text-sm text-neutral-700 font-light leading-relaxed font-serif">
+                    Receive your comprehensive AI Visibility Score and diagnostic telemetry report. Uncover critical retrieval blind spots where search engines hallucinate details, misattribute service locations, or recommend competitors because your structured schema is incomplete or disconnected.
+                  </p>
+                </div>
+              </li>
+
+              {/* Step 4 */}
+              <li className="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
+                <span className="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">
+                  04
+                </span>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold text-neutral-950 font-soehne-breit">
+                    Turn Insights into a 90-Day Plan
+                  </h3>
+                  <p className="text-sm text-neutral-700 font-light leading-relaxed font-serif">
+                    Transform diagnostic telemetry into an actionable 90-day technical execution roadmap. Prioritise high-impact fixes, from entity node reconciliation and canonical linking to structured FAQ passages and Google Business Profile alignment, with zero ongoing agency contract lock-in.
+                  </p>
+                </div>
+              </li>
+
+              {/* Inbound Links to Educational Resources */}
+              <li className="pt-4 border-t border-neutral-300/80">
+                <nav
+                  aria-label="AEO definitions and tools"
+                  className="flex flex-wrap gap-4 items-center justify-between"
+                >
+                  <Link
+                    href="/knowledge-hub/what-is-aeo"
+                    className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-neutral-800 hover:text-aeo-purple transition-colors"
+                  >
+                    <BookOpen className="w-4 h-4 text-aeo-purple" />
+                    <span>What is AEO? Read our comprehensive definition guide</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                  <Link
+                    href="/knowledge-hub/ai-seo-tools"
+                    className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-neutral-700 hover:text-aeo-purple transition-colors"
+                  >
+                    <span>AI search tools and scraper vector parsers comparison</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </nav>
+              </li>
+            </ol>
+
+            {/* Parallax Depth Plane 3: Sample Telemetry Output Preview Card */}
+            <TelemetryViewTracker
+              id="audit-preview"
+              formId="how_it_works_preview"
+              className="lg:col-span-5 bg-zinc-950 p-7 sm:p-8 rounded-2xl border border-cyan-500/30 shadow-[0_28px_60px_-12px_rgba(0,0,0,0.65)] relative overflow-hidden text-white space-y-5 parallax-hiw-card"
+            >
+              {/* Top decorative stripe */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple" />
+
+              <header className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-[11px] font-mono font-bold text-cyan-300">
+                    <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>Telemetry Preview</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">
+                    Live Sample v4.2
+                  </span>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-white font-soehne-breit">
+                    Diagnostic Telemetry Sample
+                  </h3>
+                  <p className="text-xs text-zinc-400 font-light mt-1 font-serif leading-relaxed">
+                    Empirical signals measured across your brand footprint during a live visibility scan.
+                  </p>
+                </div>
+              </header>
+
+              {/* Score Showcase Gauge */}
+              <figure className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 flex items-center justify-between m-0">
+                <figcaption className="space-y-0.5">
+                  <span className="text-[10px] uppercase font-mono font-bold text-zinc-400 tracking-wider">
+                    AI Visibility Index
+                  </span>
+                  <div className="text-2xl sm:text-3xl font-extrabold font-mono text-white">
+                    88 <span className="text-sm text-cyan-400 font-sans font-normal">/ 100</span>
+                  </div>
+                </figcaption>
+                <div className="px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-mono text-xs font-bold">
+                  Optimised for AI
+                </div>
+              </figure>
+
+              {/* 4 Diagnostic Signals */}
+              <ul className="space-y-2.5 text-xs font-sans list-none p-0 m-0">
+                <li className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <strong className="block font-semibold text-white">Entity Graph Alignment</strong>
+                    <span className="block text-[11px] text-zinc-400 font-serif">
+                      Multi-source registry &amp; Schema alignment
+                    </span>
+                  </div>
+                  <span className="font-mono text-cyan-300 text-[11px] font-bold">94% Verified</span>
+                </li>
+
+                <li className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <strong className="block font-semibold text-white">Atomic Answer Extraction</strong>
+                    <span className="block text-[11px] text-zinc-400 font-serif">
+                      Direct-answer passage density
+                    </span>
+                  </div>
+                  <span className="font-mono text-cyan-300 text-[11px] font-bold">91% Salience</span>
+                </li>
+
+                <li className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <strong className="block font-semibold text-white">Semantic Lattice Topology</strong>
+                    <span className="block text-[11px] text-zinc-400 font-serif">
+                      Core services linked to proof assets
+                    </span>
+                  </div>
+                  <span className="font-mono text-purple-300 text-[11px] font-bold">Connected</span>
+                </li>
+
+                <li className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <strong className="block font-semibold text-white">Citation Provenance (NAP)</strong>
+                    <span className="block text-[11px] text-zinc-400 font-serif">
+                      GBP, Apple Maps &amp; Bing consistency
+                    </span>
+                  </div>
+                  <span className="font-mono text-cyan-300 text-[11px] font-bold">100% Parity</span>
+                </li>
+              </ul>
+
+              {/* Primary Action Button */}
+              <footer className="pt-2">
+                <Link
+                  href="/diagnostic"
+                  className="w-full group flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-sm transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer"
+                >
+                  <span>Run Free Live Telemetry Scan</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <p className="text-[11px] text-center text-zinc-400 font-mono mt-2.5">
+                  * Real-time vector analysis executed using Gemini &bull; Zero email required upfront
+                </p>
+              </footer>
+            </TelemetryViewTracker>
+          </div>
+        </div>
+      </section>
 
       {/* =========================================================================
           4. SECTION 3: DIAGNOSTIC GAPS

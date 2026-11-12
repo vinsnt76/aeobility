@@ -199,6 +199,56 @@
 
     .animate-torus-left { animation: floatSlow 7s ease-in-out infinite; }
     .animate-torus-right { animation: floatSlowReverse 8s ease-in-out infinite; }
+
+    /* Frosted #E5E7EB Glass Surface & Scroll Parallax Classes for How It Works */
+    .frosted-hiw-sheet {
+      background: linear-gradient(
+        135deg,
+        rgba(229, 231, 235, 0.90) 0%,
+        rgba(229, 231, 235, 0.80) 50%,
+        rgba(229, 231, 235, 0.92) 100%
+      );
+      backdrop-filter: blur(28px) saturate(165%);
+      -webkit-backdrop-filter: blur(28px) saturate(165%);
+      box-shadow:
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+        inset 0 -1px 0 0 rgba(255, 255, 255, 0.65),
+        0 28px 60px -12px rgba(0, 0, 0, 0.55);
+    }
+
+    .frosted-hiw-step {
+      background: rgba(255, 255, 255, 0.46);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      box-shadow:
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+        0 10px 26px -8px rgba(15, 23, 42, 0.08);
+    }
+
+    .parallax-bg-orbs {
+      transform: translate3d(0, calc(var(--hiw-parallax, 0px) * -1.35), 0);
+      will-change: transform;
+      transition: transform 0.08s linear;
+    }
+
+    .parallax-hiw-header {
+      transform: translate3d(0, calc(var(--hiw-parallax, 0px) * -0.25), 0);
+      will-change: transform;
+      transition: transform 0.08s linear;
+    }
+
+    .parallax-hiw-steps {
+      transform: translate3d(0, calc(var(--hiw-parallax, 0px) * -0.45), 0);
+      will-change: transform;
+      transition: transform 0.08s linear;
+    }
+
+    .parallax-hiw-card {
+      transform: translate3d(0, calc(var(--hiw-parallax, 0px) * 0.65), 0);
+      will-change: transform;
+      transition: transform 0.08s linear;
+    }
   </style>
 </head>
 <body class="selection:bg-[#00E5FF] selection:text-[#06080E]">
@@ -351,10 +401,16 @@
     </div>
   </section>
 
-  <!-- 2B. PRODUCTION "HOW IT WORKS" MODULE (PLACED DIRECTLY BENEATH THE FOLD) -->
-  <section id="how-it-works" aria-labelledby="steps-heading" class="py-20 bg-neutral-50 text-black">
-    <div class="max-w-6xl mx-auto px-6">
-      <header class="relative text-center max-w-2xl mx-auto mb-16">
+  <!-- 2B. PRODUCTION "HOW IT WORKS" MODULE (FROSTED #E5E7EB + SCROLL PARALLAX) -->
+  <section id="how-it-works" aria-labelledby="steps-heading" class="relative py-24 overflow-hidden text-black frosted-hiw-sheet">
+    <!-- Parallax Depth Plane 0: Ambient Refraction Orbs behind Frosted #E5E7EB -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden z-0 parallax-bg-orbs">
+      <div class="absolute -top-20 left-[8%] w-72 h-72 rounded-full sphere-cyan-violet-3d opacity-20 blur-2xl"></div>
+      <div class="absolute bottom-[-10%] right-[10%] w-80 h-80 rounded-full sphere-magenta-violet-3d opacity-20 blur-2xl"></div>
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <header class="relative text-center max-w-2xl mx-auto mb-16 parallax-hiw-header">
         <div class="relative z-10 space-y-4">
           <span class="text-xs font-semibold tracking-widest text-[#8B3DFF] uppercase font-mono block">
             The Telemetry Engine
@@ -362,61 +418,61 @@
           <h2 id="steps-heading" class="text-3xl sm:text-4xl font-extrabold text-neutral-900">
             Four Steps to Machine-Readable Clarity
           </h2>
-          <p class="text-base text-neutral-600 font-light font-serif">
+          <p class="text-base text-neutral-700 font-light font-serif">
             Measure, understand, and activate your AI search visibility.
           </p>
         </div>
       </header>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        <!-- Steps ordered list -->
-        <ol class="lg:col-span-7 space-y-10 list-none p-0 m-0">
+        <!-- Steps ordered list (Parallax Depth Plane 2) -->
+        <ol class="lg:col-span-7 space-y-6 list-none p-0 m-0 parallax-hiw-steps">
           <!-- Step 1 -->
-          <li class="flex gap-6 items-start">
-            <span class="flex-shrink-0 text-3xl font-extrabold text-neutral-300 tracking-tight leading-none pt-1">01</span>
+          <li class="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
+            <span class="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">01</span>
             <div class="space-y-2">
               <h3 class="text-lg font-bold text-neutral-950">Tell Us What You Want To Be Found For</h3>
-              <p class="text-sm text-neutral-600 font-light leading-relaxed font-serif">
+              <p class="text-sm text-neutral-700 font-light leading-relaxed font-serif">
                 Enter your Australian business URL and primary customer search intent. Our crawler ingests your public document object model, existing Schema.org structured data, and service area declarations to benchmark baseline machine readability.
               </p>
             </div>
           </li>
 
           <!-- Step 2 -->
-          <li class="flex gap-6 items-start">
-            <span class="flex-shrink-0 text-3xl font-extrabold text-neutral-300 tracking-tight leading-none pt-1">02</span>
+          <li class="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
+            <span class="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">02</span>
             <div class="space-y-2">
               <h3 class="text-lg font-bold text-neutral-950">Measure Your AI Visibility</h3>
-              <p class="text-sm text-neutral-600 font-light leading-relaxed font-serif">
+              <p class="text-sm text-neutral-700 font-light leading-relaxed font-serif">
                 Our telemetry engine analyses how conversational AI systems like ChatGPT Search, Perplexity, Gemini, and Google AI Overviews retrieve and recommend your business. We measure passage retrieval depth, entity confidence scoring, citation provenance, and brand co-occurrence.
               </p>
             </div>
           </li>
 
           <!-- Step 3 -->
-          <li class="flex gap-6 items-start">
-            <span class="flex-shrink-0 text-3xl font-extrabold text-neutral-300 tracking-tight leading-none pt-1">03</span>
+          <li class="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
+            <span class="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">03</span>
             <div class="space-y-3 w-full">
               <h3 class="text-lg font-bold text-neutral-950">Discover Your Opportunities</h3>
-              <p class="text-sm text-neutral-600 font-light leading-relaxed font-serif">
+              <p class="text-sm text-neutral-700 font-light leading-relaxed font-serif">
                 Receive your comprehensive AI Visibility Score and diagnostic telemetry report. Uncover critical retrieval blind spots where search engines hallucinate details, misattribute service locations, or recommend competitors because your structured schema is incomplete or disconnected.
               </p>
             </div>
           </li>
 
           <!-- Step 4 -->
-          <li class="flex gap-6 items-start">
-            <span class="flex-shrink-0 text-3xl font-extrabold text-neutral-300 tracking-tight leading-none pt-1">04</span>
+          <li class="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
+            <span class="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">04</span>
             <div class="space-y-2">
               <h3 class="text-lg font-bold text-neutral-950">Turn Insights into a 90-Day Plan</h3>
-              <p class="text-sm text-neutral-600 font-light leading-relaxed font-serif">
+              <p class="text-sm text-neutral-700 font-light leading-relaxed font-serif">
                 Transform diagnostic telemetry into an actionable 90-day technical execution roadmap. Prioritise high-impact fixes, from entity node reconciliation and canonical linking to structured FAQ passages and Google Business Profile alignment, with zero ongoing agency contract lock-in.
               </p>
             </div>
           </li>
 
           <!-- Inbound Links to Educational Resources -->
-          <li class="pt-4 border-t border-neutral-200">
+          <li class="pt-4 border-t border-neutral-300/80">
             <nav aria-label="AEO definitions and tools" class="flex flex-wrap gap-4 items-center justify-between">
               <a href="/knowledge-hub/what-is-aeo" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-neutral-800 hover:text-[#8B3DFF] transition-colors">
                 <span>What is AEO? Read our comprehensive definition guide</span>
@@ -430,8 +486,8 @@
           </li>
         </ol>
 
-        <!-- Sample Telemetry Output Preview Card -->
-        <div id="audit-preview" class="lg:col-span-5 bg-zinc-950 p-7 sm:p-8 rounded-2xl border border-cyan-500/30 shadow-2xl relative overflow-hidden text-white space-y-5">
+        <!-- Sample Telemetry Output Preview Card (Parallax Depth Plane 3) -->
+        <div id="audit-preview" class="lg:col-span-5 bg-zinc-950 p-7 sm:p-8 rounded-2xl border border-cyan-500/30 shadow-[0_28px_60px_-12px_rgba(0,0,0,0.65)] relative overflow-hidden text-white space-y-5 parallax-hiw-card">
           <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#00E5FF] to-[#8B3DFF]"></div>
 
           <header class="space-y-4">
@@ -530,6 +586,27 @@
         feedback.innerHTML = '<div class="text-[#00E660] font-bold">SCAN COMPLETE: ' + domain + '</div><div class="mt-1 text-[#D4D4D8]">Entity Salience: 88% | Answer Coverage: 91% | Citation Parity: 100%</div>';
       }, 1200);
     });
+
+    // Smooth 60fps scroll parallax for the frosted #E5E7EB "How It Works" section
+    const hiwSection = document.getElementById('how-it-works');
+    let rafId = 0;
+    const updateHiwParallax = () => {
+      if (!hiwSection) return;
+      const rect = hiwSection.getBoundingClientRect();
+      const vh = window.innerHeight || 800;
+      const sectionCenter = rect.top + rect.height / 2;
+      const viewportCenter = vh / 2;
+      const normalized = Math.max(-1.25, Math.min(1.25, (viewportCenter - sectionCenter) / vh));
+      const shiftPx = Math.round(normalized * 56);
+      hiwSection.style.setProperty('--hiw-parallax', shiftPx + 'px');
+    };
+    const onScrollParallax = () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(updateHiwParallax);
+    };
+    updateHiwParallax();
+    window.addEventListener('scroll', onScrollParallax, { passive: true });
+    window.addEventListener('resize', onScrollParallax, { passive: true });
   </script>
 </body>
 </html>
