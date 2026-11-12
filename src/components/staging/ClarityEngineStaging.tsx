@@ -107,9 +107,54 @@ export default function ClarityEngineStaging() {
   const finalPosterRef = useRef<HTMLDivElement>(null);
   const howItWorksRef = useRef<HTMLElement>(null);
 
-  // Smooth 60fps scroll parallax for the frosted #E5E7EB "How It Works" section
+  // Load AOS (Animate On Scroll) library + smooth 60fps scroll parallax for "How It Works"
   useEffect(() => {
     if (typeof window === 'undefined') return;
+
+    // 1. Inject AOS stylesheet if not already present
+    const aosCssId = 'aos-cdn-stylesheet';
+    if (!document.getElementById(aosCssId)) {
+      const link = document.createElement('link');
+      link.id = aosCssId;
+      link.rel = 'stylesheet';
+      link.href = 'https://unpkg.com/aos@2.3.4/dist/aos.css';
+      document.head.appendChild(link);
+    }
+
+    // 2. Inject AOS script and initialise with mirror/parallax settings
+    const initAos = () => {
+      const win = window as unknown as {
+        AOS?: {
+          init: (opts: Record<string, unknown>) => void;
+          refresh: () => void;
+        };
+      };
+      if (win.AOS) {
+        win.AOS.init({
+          duration: 850,
+          easing: 'ease-out-cubic',
+          once: false,
+          mirror: true,
+          offset: 70
+        });
+        win.AOS.refresh();
+      }
+    };
+
+    const aosScriptId = 'aos-cdn-script';
+    const existingScript = document.getElementById(aosScriptId) as HTMLScriptElement | null;
+    if (existingScript) {
+      initAos();
+    } else {
+      const script = document.createElement('script');
+      script.id = aosScriptId;
+      script.src = 'https://unpkg.com/aos@2.3.4/dist/aos.js';
+      script.async = true;
+      script.onload = initAos;
+      document.body.appendChild(script);
+    }
+
+    // 3. Continuous scroll parallax for the frosted #E5E7EB depth planes
     let rafId = 0;
 
     const updateParallax = () => {
@@ -117,7 +162,6 @@ export default function ClarityEngineStaging() {
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const viewportHeight = window.innerHeight || 800;
-      // Compute relative distance from viewport centre (-1 to +1)
       const sectionCenter = rect.top + rect.height / 2;
       const viewportCenter = viewportHeight / 2;
       const normalized = Math.max(-1.25, Math.min(1.25, (viewportCenter - sectionCenter) / viewportHeight));
@@ -890,9 +934,13 @@ export default function ClarityEngineStaging() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6">
-          {/* Parallax Depth Plane 1: Section Header */}
+          {/* Parallax Depth Plane 1: Section Header + AOS Fade-Up */}
           <header className="relative text-center max-w-2xl mx-auto mb-16 parallax-hiw-header">
-            <div className="relative z-10 space-y-4">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="800"
+              className="relative z-10 space-y-4"
+            >
               <span className="text-xs font-semibold tracking-widest text-aeo-purple uppercase font-mono block">
                 The Telemetry Engine
               </span>
@@ -909,10 +957,15 @@ export default function ClarityEngineStaging() {
           </header>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Parallax Depth Plane 2: Frosted Step Cards */}
+            {/* Parallax Depth Plane 2: Frosted Step Cards with Staggered AOS Animations */}
             <ol className="lg:col-span-7 space-y-6 list-none p-0 m-0 parallax-hiw-steps">
               {/* Step 1 */}
-              <li className="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
+              <li
+                data-aos="fade-right"
+                data-aos-duration="800"
+                data-aos-delay="50"
+                className="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step"
+              >
                 <span className="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">
                   01
                 </span>
@@ -927,7 +980,12 @@ export default function ClarityEngineStaging() {
               </li>
 
               {/* Step 2 */}
-              <li className="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
+              <li
+                data-aos="fade-right"
+                data-aos-duration="850"
+                data-aos-delay="150"
+                className="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step"
+              >
                 <span className="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">
                   02
                 </span>
@@ -942,7 +1000,12 @@ export default function ClarityEngineStaging() {
               </li>
 
               {/* Step 3 */}
-              <li className="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
+              <li
+                data-aos="fade-right"
+                data-aos-duration="900"
+                data-aos-delay="250"
+                className="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step"
+              >
                 <span className="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">
                   03
                 </span>
@@ -957,7 +1020,12 @@ export default function ClarityEngineStaging() {
               </li>
 
               {/* Step 4 */}
-              <li className="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
+              <li
+                data-aos="fade-right"
+                data-aos-duration="950"
+                data-aos-delay="350"
+                className="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step"
+              >
                 <span className="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">
                   04
                 </span>
@@ -972,7 +1040,12 @@ export default function ClarityEngineStaging() {
               </li>
 
               {/* Inbound Links to Educational Resources */}
-              <li className="pt-4 border-t border-neutral-300/80">
+              <li
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="420"
+                className="pt-4 border-t border-neutral-300/80"
+              >
                 <nav
                   aria-label="AEO definitions and tools"
                   className="flex flex-wrap gap-4 items-center justify-between"
@@ -996,108 +1069,144 @@ export default function ClarityEngineStaging() {
               </li>
             </ol>
 
-            {/* Parallax Depth Plane 3: Sample Telemetry Output Preview Card */}
-            <TelemetryViewTracker
-              id="audit-preview"
-              formId="how_it_works_preview"
-              className="lg:col-span-5 bg-zinc-950 p-7 sm:p-8 rounded-2xl border border-cyan-500/30 shadow-[0_28px_60px_-12px_rgba(0,0,0,0.65)] relative overflow-hidden text-white space-y-5 parallax-hiw-card"
-            >
-              {/* Top decorative stripe */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple" />
-
-              <header className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-[11px] font-mono font-bold text-cyan-300">
-                    <BookOpen className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Telemetry Preview</span>
-                  </div>
-                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">
-                    Live Sample v4.2
-                  </span>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-white font-soehne-breit">
-                    Diagnostic Telemetry Sample
-                  </h3>
-                  <p className="text-xs text-zinc-400 font-light mt-1 font-serif leading-relaxed">
-                    Empirical signals measured across your brand footprint during a live visibility scan.
-                  </p>
-                </div>
-              </header>
-
-              {/* Score Showcase Gauge */}
-              <figure className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 flex items-center justify-between m-0">
-                <figcaption className="space-y-0.5">
-                  <span className="text-[10px] uppercase font-mono font-bold text-zinc-400 tracking-wider">
-                    AI Visibility Index
-                  </span>
-                  <div className="text-2xl sm:text-3xl font-extrabold font-mono text-white">
-                    88 <span className="text-sm text-cyan-400 font-sans font-normal">/ 100</span>
-                  </div>
-                </figcaption>
-                <div className="px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-mono text-xs font-bold">
-                  Optimised for AI
-                </div>
-              </figure>
-
-              {/* 4 Diagnostic Signals */}
-              <ul className="space-y-2.5 text-xs font-sans list-none p-0 m-0">
-                <li className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
-                  <div className="space-y-0.5">
-                    <strong className="block font-semibold text-white">Entity Graph Alignment</strong>
-                    <span className="block text-[11px] text-zinc-400 font-serif">
-                      Multi-source registry &amp; Schema alignment
-                    </span>
-                  </div>
-                  <span className="font-mono text-cyan-300 text-[11px] font-bold">94% Verified</span>
-                </li>
-
-                <li className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
-                  <div className="space-y-0.5">
-                    <strong className="block font-semibold text-white">Atomic Answer Extraction</strong>
-                    <span className="block text-[11px] text-zinc-400 font-serif">
-                      Direct-answer passage density
-                    </span>
-                  </div>
-                  <span className="font-mono text-cyan-300 text-[11px] font-bold">91% Salience</span>
-                </li>
-
-                <li className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
-                  <div className="space-y-0.5">
-                    <strong className="block font-semibold text-white">Semantic Lattice Topology</strong>
-                    <span className="block text-[11px] text-zinc-400 font-serif">
-                      Core services linked to proof assets
-                    </span>
-                  </div>
-                  <span className="font-mono text-purple-300 text-[11px] font-bold">Connected</span>
-                </li>
-
-                <li className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
-                  <div className="space-y-0.5">
-                    <strong className="block font-semibold text-white">Citation Provenance (NAP)</strong>
-                    <span className="block text-[11px] text-zinc-400 font-serif">
-                      GBP, Apple Maps &amp; Bing consistency
-                    </span>
-                  </div>
-                  <span className="font-mono text-cyan-300 text-[11px] font-bold">100% Parity</span>
-                </li>
-              </ul>
-
-              {/* Primary Action Button */}
-              <footer className="pt-2">
-                <Link
-                  href="/diagnostic"
-                  className="w-full group flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-zinc-950 font-bold text-sm transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] cursor-pointer"
+            {/* Parallax Depth Plane 3 Wrapper + AOS Animated Sample Telemetry Card */}
+            <div className="lg:col-span-5 parallax-hiw-card">
+              <div
+                data-aos="fade-left"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+                data-aos-anchor-placement="top-bottom"
+              >
+                <TelemetryViewTracker
+                  id="audit-preview"
+                  formId="how_it_works_preview"
+                  className="bg-zinc-950 p-7 sm:p-8 rounded-2xl border border-cyan-500/30 shadow-[0_28px_60px_-12px_rgba(0,0,0,0.65)] relative overflow-hidden text-white space-y-5"
                 >
-                  <span>Run Free Live Telemetry Scan</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-                <p className="text-[11px] text-center text-zinc-400 font-mono mt-2.5">
-                  * Real-time vector analysis executed using Gemini &bull; Zero email required upfront
-                </p>
-              </footer>
-            </TelemetryViewTracker>
+                  {/* Top decorative stripe */}
+                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-aeo-cyan to-aeo-purple" />
+
+                  <header className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/20 text-[11px] font-mono font-bold text-white">
+                        <BookOpen className="w-3.5 h-3.5 text-[#00E5FF]" />
+                        <span>Telemetry Preview</span>
+                      </div>
+                      <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">
+                        Live Sample v4.2
+                      </span>
+                    </div>
+
+                    <div>
+                      <h3 className="text-xl font-bold text-white font-soehne-breit">
+                        Diagnostic Telemetry Sample
+                      </h3>
+                      <p className="text-xs text-zinc-400 font-light mt-1 font-serif leading-relaxed">
+                        Empirical signals measured across your brand footprint during a live visibility scan.
+                      </p>
+                    </div>
+                  </header>
+
+                  {/* Score Showcase Gauge */}
+                  <figure
+                    data-aos="zoom-in"
+                    data-aos-duration="750"
+                    data-aos-delay="300"
+                    className="p-4 rounded-xl bg-zinc-900/80 border border-white/10 flex items-center justify-between m-0"
+                  >
+                    <figcaption className="space-y-0.5">
+                      <span className="text-[10px] uppercase font-mono font-bold text-zinc-400 tracking-wider">
+                        AI Visibility Index
+                      </span>
+                      <div className="text-2xl sm:text-3xl font-extrabold font-mono text-white">
+                        88 <span className="text-sm text-cyan-400 font-sans font-normal">/ 100</span>
+                      </div>
+                    </figcaption>
+                    <div className="px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-mono text-xs font-bold">
+                      Optimised for AI
+                    </div>
+                  </figure>
+
+                  {/* 4 Diagnostic Signals */}
+                  <ul className="space-y-2.5 text-xs font-sans list-none p-0 m-0">
+                    <li
+                      data-aos="fade-up"
+                      data-aos-duration="700"
+                      data-aos-delay="350"
+                      className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between"
+                    >
+                      <div className="space-y-0.5">
+                        <strong className="block font-semibold text-white">Entity Graph Alignment</strong>
+                        <span className="block text-[11px] text-zinc-400 font-serif">
+                          Multi-source registry &amp; Schema alignment
+                        </span>
+                      </div>
+                      <span className="font-mono text-cyan-300 text-[11px] font-bold">94% Verified</span>
+                    </li>
+
+                    <li
+                      data-aos="fade-up"
+                      data-aos-duration="700"
+                      data-aos-delay="420"
+                      className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between"
+                    >
+                      <div className="space-y-0.5">
+                        <strong className="block font-semibold text-white">Atomic Answer Extraction</strong>
+                        <span className="block text-[11px] text-zinc-400 font-serif">
+                          Direct-answer passage density
+                        </span>
+                      </div>
+                      <span className="font-mono text-cyan-300 text-[11px] font-bold">91% Salience</span>
+                    </li>
+
+                    <li
+                      data-aos="fade-up"
+                      data-aos-duration="700"
+                      data-aos-delay="490"
+                      className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between"
+                    >
+                      <div className="space-y-0.5">
+                        <strong className="block font-semibold text-white">Semantic Lattice Topology</strong>
+                        <span className="block text-[11px] text-zinc-400 font-serif">
+                          Core services linked to proof assets
+                        </span>
+                      </div>
+                      <span className="font-mono text-purple-300 text-[11px] font-bold">Connected</span>
+                    </li>
+
+                    <li
+                      data-aos="fade-up"
+                      data-aos-duration="700"
+                      data-aos-delay="560"
+                      className="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between"
+                    >
+                      <div className="space-y-0.5">
+                        <strong className="block font-semibold text-white">Citation Provenance (NAP)</strong>
+                        <span className="block text-[11px] text-zinc-400 font-serif">
+                          GBP, Apple Maps &amp; Bing consistency
+                        </span>
+                      </div>
+                      <span className="font-mono text-cyan-300 text-[11px] font-bold">100% Parity</span>
+                    </li>
+                  </ul>
+
+                  {/* Primary Action Button (Dark with white text pill, same styling as 'Explore The 90-Day Blueprint') */}
+                  <footer className="pt-2">
+                    <Link
+                      href="/diagnostic"
+                      className="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/20 hover:border-[#00E5FF]/50 text-white font-semibold text-sm transition-all group cursor-pointer"
+                    >
+                      <span>Run Free Live Telemetry Scan</span>
+                      <span className="w-6 h-6 rounded-full bg-black/40 border border-white/30 flex items-center justify-center text-xs text-[#00E5FF]">
+                        →
+                      </span>
+                    </Link>
+                    <p className="text-[11px] text-center text-zinc-400 font-mono mt-2.5">
+                      * Real-time vector analysis executed using Gemini &bull; Zero email required upfront
+                    </p>
+                  </footer>
+                </TelemetryViewTracker>
+              </div>
+            </div>
           </div>
         </div>
       </section>
