@@ -52,8 +52,14 @@ export interface AIModalAssistantProps {
 }
 
 export default function AIModalAssistant({
-  highIntentSelectors = ['#hero-cta', '#diagnostic-scanner', '.diagnostic-input'],
-  formSelector = '#diagnostic-scanner form',
+  highIntentSelectors = [
+    '#hero-cta',
+    '#diagnostic-scanner',
+    '.diagnostic-input',
+    '#hero-diagnostic-instrument',
+    '#final-conversion-panel'
+  ],
+  formSelector = '#diagnostic-scanner form, #hero-diagnostic-instrument form',
   initialOpen = false
 }: AIModalAssistantProps) {
   const [isOpen, setIsOpen] = useState(initialOpen);
@@ -63,9 +69,19 @@ export default function AIModalAssistant({
   const [isLoading, setIsLoading] = useState(false);
   const [activePillId, setActivePillId] = useState<string | null>(null);
   const [hasEngaged, setHasEngaged] = useState(false);
+  const [isEventSuppressed, setIsEventSuppressed] = useState(false);
 
   const pathname = usePathname();
   const isDiagnosticRoute = pathname?.startsWith('/diagnostic');
+
+  useEffect(() => {
+    const handleSuppress = (e: Event) => {
+      const customEvent = e as CustomEvent<{ suppress: boolean }>;
+      setIsEventSuppressed(!!customEvent.detail?.suppress);
+    };
+    window.addEventListener('aeo:suppress-bill', handleSuppress);
+    return () => window.removeEventListener('aeo:suppress-bill', handleSuppress);
+  }, []);
 
   const { isSuppressed } = useAssistantSuppression({
     highIntentSelectors,
@@ -73,7 +89,7 @@ export default function AIModalAssistant({
     threshold: 0.15
   });
 
-  const shouldSuppressLauncher = isSuppressed || isDiagnosticRoute;
+  const shouldSuppressLauncher = isSuppressed || isEventSuppressed || isDiagnosticRoute;
 
   const modalRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -334,12 +350,12 @@ export default function AIModalAssistant({
             aria-label="Chat with AI Bill (Press Control K)"
             aria-haspopup="dialog"
             aria-expanded={isOpen}
-            className="group flex items-center gap-3 px-4 py-2.5 bg-[#0A0F1D]/90 hover:bg-[#0E1528] text-slate-100 rounded-full border border-cyan-500/30 shadow-[0_0_20px_rgba(0,229,255,0.15)] hover:shadow-[0_0_25px_rgba(0,229,255,0.3)] transition-all cursor-pointer backdrop-blur-md"
+            className="group flex items-center gap-2.5 p-2 sm:px-4 sm:py-2.5 bg-[#0F172A]/95 hover:bg-[#1E293B] text-slate-100 rounded-full border border-slate-700/80 shadow-lg transition-all cursor-pointer backdrop-blur-md"
           >
-            <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 text-[#00E5FF] border border-cyan-500/40 group-hover:scale-110 transition-transform">
+            <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 text-[#22D3EE] border border-cyan-500/40 group-hover:scale-105 transition-transform">
               <Command className="w-4 h-4" />
             </div>
-            <span className="text-xs sm:text-sm font-semibold tracking-wide text-slate-200 pr-1">
+            <span className="hidden sm:inline text-xs sm:text-sm font-semibold tracking-wide text-slate-200 pr-1">
               Chat with AI Bill
             </span>
           </button>

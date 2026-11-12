@@ -3,395 +3,192 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>AEObility | The Clarity Engine - AI Search & Answer Engine Optimisation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <title>AEObility — The Clarity Engine | Answer Engine Optimisation (AEO)</title>
+  <meta name="description" content="Get your business found and chosen in AI search. AEObility structures your services, entity identity, and citations so ChatGPT, Gemini, and Perplexity recommend your brand." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet" />
+
+  <!-- AOS (Animate On Scroll) Library CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
           }
         }
       }
-    }
+    };
   </script>
-  <style>
-    :root {
-      --canvas-deep: #06080E;
-      --canvas-surface: #0D111A;
-      --aeo-cyan: #00E5FF;
-      --aeo-violet: #8B3DFF;
-      --aeo-magenta: #E60067;
-      --aeo-emerald: #00E660;
-      --aeo-cobalt: #264ECA;
-      --aeo-amber: #E59500;
-      --aeo-coral: #DC4236;
-      --aeo-slate: #333B48;
-    }
 
+  <style>
     body {
-      background-color: var(--canvas-deep);
-      color: #D4D4D8;
+      background-color: #0B0D12;
+      color: #CBD5E1;
       overflow-x: hidden;
     }
 
-    /* 8 Brand Sheet Gradient Ramps */
-    .bar-gradient-cyan {
-      background: linear-gradient(90deg, #074F57 0%, #00B4C8 45%, #00E5FF 100%);
-    }
-    .bar-gradient-violet {
-      background: linear-gradient(90deg, #3B1C71 0%, #6828D6 45%, #8B3DFF 100%);
-    }
-    .bar-gradient-magenta {
-      background: linear-gradient(90deg, #573706 0%, #D97706 45%, #F59E0B 100%);
-    }
-    .bar-gradient-emerald {
-      background: linear-gradient(90deg, #085428 0%, #00B84C 45%, #00E660 100%);
-    }
-    .bar-gradient-cobalt {
-      background: linear-gradient(90deg, #0B1536 0%, #193282 45%, #264ECA 100%);
-    }
-    .bar-gradient-amber {
-      background: linear-gradient(90deg, #573706 0%, #D97706 45%, #F59E0B 100%);
-    }
-    .bar-gradient-coral {
-      background: linear-gradient(90deg, #591914 0%, #B02E24 45%, #DC4236 100%);
-    }
-
-    /* 3D Shaded Pill Buttons from Brand Sheet */
-    .btn-brand-cyan {
-      background: #E5E7EB;
-      border: 1px solid #E5E7EB;
-      box-shadow: 0 8px 24px rgba(229, 231, 235, 0.14);
-      color: #05080C;
-    }
-    .btn-brand-cyan:hover {
-      background: #D1D5DB;
-    }
-
-    .btn-brand-violet {
-      background: linear-gradient(180deg, #9E5BFF 0%, #7C2AE8 55%, #3B1C71 100%);
-      box-shadow:
-        inset 0 1px 1px rgba(255, 255, 255, 0.45),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.5),
-        0 10px 25px -4px rgba(139, 61, 255, 0.35);
-      color: #FFFFFF;
-    }
-
-    /* 3D Duotone Spheres using Brand Sheet Swatches */
-    .sphere-cyan-violet-3d {
-      background: radial-gradient(circle at 30% 28%, #00E5FF 0%, #264ECA 44%, #7C2AE8 76%, #1B073B 100%);
-      box-shadow:
-        inset -12px -16px 28px rgba(0, 0, 0, 0.65),
-        inset 6px 8px 18px rgba(180, 248, 255, 0.45),
-        0 24px 60px rgba(0, 229, 255, 0.28);
-    }
-
-    .sphere-magenta-violet-3d {
-      background: radial-gradient(circle at 30% 28%, #FCD34D 0%, #F59E0B 38%, #7C2AE8 74%, #1A0536 100%);
-      box-shadow:
-        inset -14px -18px 30px rgba(0, 0, 0, 0.7),
-        inset 6px 8px 18px rgba(254, 243, 199, 0.4),
-        0 28px 65px rgba(245, 158, 11, 0.32);
-    }
-
-    .sphere-emerald-cyan-3d {
-      background: radial-gradient(circle at 32% 28%, #00E660 0%, #00B4C8 55%, #0B1536 100%);
-      box-shadow:
-        inset -8px -10px 20px rgba(0, 0, 0, 0.65),
-        0 16px 40px rgba(0, 230, 96, 0.28);
-    }
-
-    /* 3D Brand Torus Rings */
-    .torus-brand-cyan-violet {
-      background: conic-gradient(
-        from 160deg at 50% 50%,
-        #00E5FF 0deg,
-        #8B3DFF 95deg,
-        #1D1040 165deg,
-        #F59E0B 235deg,
-        #00E660 305deg,
-        #00E5FF 360deg
-      );
-      -webkit-mask: radial-gradient(transparent 53%, #000 55%);
-      mask: radial-gradient(transparent 53%, #000 55%);
-      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.75);
-    }
-
-    .torus-brand-amber-magenta {
-      background: conic-gradient(
-        from 180deg at 50% 50%,
-        #FFE082 0deg,
-        #E59500 80deg,
-        #573706 155deg,
-        #F59E0B 230deg,
-        #8B3DFF 300deg,
-        #FFE082 360deg
-      );
-      -webkit-mask: radial-gradient(transparent 53%, #000 55%);
-      mask: radial-gradient(transparent 53%, #000 55%);
-      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.75);
-    }
-
-    /* Translucent Frosted Glass Card with Top & Left Specular Edge Illumination */
-    .glass-poster-card {
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.09) 0%, rgba(13, 17, 28, 0.72) 45%, rgba(8, 11, 20, 0.86) 100%) padding-box,
-        linear-gradient(135deg, rgba(255, 255, 255, 0.42) 0%, rgba(0, 229, 255, 0.48) 28%, rgba(139, 61, 255, 0.18) 65%, rgba(245, 158, 11, 0.25) 100%) border-box;
-      border: 1px solid transparent;
-      backdrop-filter: blur(28px) saturate(160%);
-      -webkit-backdrop-filter: blur(28px) saturate(160%);
-      box-shadow:
-        inset 1px 1px 0 0 rgba(255, 255, 255, 0.22),
-        0 28px 64px -12px rgba(0, 0, 0, 0.78);
-    }
-
-    .glass-cyan-card {
-      background:
-        linear-gradient(160deg, rgba(11, 21, 54, 0.85) 0%, rgba(8, 11, 18, 0.94) 100%) padding-box,
-        linear-gradient(135deg, #00E5FF 0%, #8B3DFF 50%, #F59E0B 100%) border-box;
-      border: 1.5px solid transparent;
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      box-shadow: 0 28px 60px -15px rgba(0, 229, 255, 0.18), 0 20px 45px -10px rgba(0, 0, 0, 0.85);
-    }
-
-    .reference-pill {
-      border: 1px solid rgba(0, 229, 255, 0.4);
-      background: rgba(11, 21, 54, 0.55);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
-    }
-
-    .aeo-cyan-glow {
-      color: #00E5FF;
-      text-shadow: 0 0 18px rgba(0, 229, 255, 0.45);
-    }
-
-    .text-brand-spectrum {
-      background: linear-gradient(90deg, #00E5FF 0%, #8B3DFF 52%, #F59E0B 100%);
+    /* Single Focal Gradient: Cyan (#22D3EE) -> Purple (#A855F7) */
+    .text-focal-gradient {
+      background: linear-gradient(90deg, #22D3EE 0%, #A855F7 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .spectrum-bottom-bar {
-      background: linear-gradient(90deg, #F59E0B 0%, #8B3DFF 38%, #264ECA 70%, #00E5FF 100%);
-    }
-
-    @keyframes floatSlow {
-      0%, 100% { transform: translateY(0px) rotate(-14deg); }
-      50% { transform: translateY(-8px) rotate(-10deg); }
-    }
-
-    @keyframes floatSlowReverse {
-      0%, 100% { transform: translateY(0px) rotate(18deg); }
-      50% { transform: translateY(7px) rotate(23deg); }
-    }
-
-    .animate-torus-left { animation: floatSlow 7s ease-in-out infinite; }
-    .animate-torus-right { animation: floatSlowReverse 8s ease-in-out infinite; }
-
-    /* Frosted #E5E7EB Glass Surface & Scroll Parallax Classes for How It Works */
-    .frosted-hiw-sheet {
-      background: linear-gradient(
-        135deg,
-        rgba(229, 231, 235, 0.90) 0%,
-        rgba(229, 231, 235, 0.80) 50%,
-        rgba(229, 231, 235, 0.92) 100%
-      );
-      backdrop-filter: blur(28px) saturate(165%);
-      -webkit-backdrop-filter: blur(28px) saturate(165%);
-      box-shadow:
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
-        inset 0 -1px 0 0 rgba(255, 255, 255, 0.65),
-        0 28px 60px -12px rgba(0, 0, 0, 0.55);
-    }
-
-    .frosted-hiw-step {
-      background: rgba(255, 255, 255, 0.46);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.72);
-      box-shadow:
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
-        0 10px 26px -8px rgba(15, 23, 42, 0.08);
-    }
-
-    .parallax-bg-orbs {
-      transform: translate3d(0, calc(var(--hiw-parallax, 0px) * -1.35), 0);
-      will-change: transform;
-      transition: transform 0.08s linear;
-    }
-
-    .parallax-hiw-header {
-      transform: translate3d(0, calc(var(--hiw-parallax, 0px) * -0.25), 0);
-      will-change: transform;
-      transition: transform 0.08s linear;
-    }
-
-    .parallax-hiw-steps {
-      transform: translate3d(0, calc(var(--hiw-parallax, 0px) * -0.45), 0);
-      will-change: transform;
-      transition: transform 0.08s linear;
-    }
-
-    .parallax-hiw-card {
-      transform: translate3d(0, calc(var(--hiw-parallax, 0px) * 0.65), 0);
-      will-change: transform;
-      transition: transform 0.08s linear;
+    .bg-focal-gradient {
+      background: linear-gradient(90deg, #22D3EE 0%, #A855F7 100%);
     }
   </style>
 </head>
-<body class="selection:bg-[#00E5FF] selection:text-[#06080E]">
+<body class="selection:bg-[#22D3EE] selection:text-[#090D16]">
 
-  <!-- Top Brand Spectrum Bar -->
-  <div class="w-full h-1 spectrum-bottom-bar"></div>
-
-  <!-- 1. HEADER & GLOBAL NAVIGATION -->
-  <header class="sticky top-0 z-50 w-full bg-[#06080E]/88 backdrop-blur-[20px] border-b border-white/[0.08]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3.5 focus:outline-none">
-        <div class="w-10 h-10 rounded-xl bg-[#0B101B] border border-white/15 flex items-center justify-center">
-          <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none">
-            <path d="M16 4L27 10.5L16 17L5 10.5L16 4Z" stroke="#00E5FF" stroke-width="2.2" stroke-linejoin="round" />
+  <!-- ADAPTIVE FLOATING PILL NAVBAR (sticky top-4) -->
+  <header class="sticky top-4 z-50 px-4">
+    <nav aria-label="Primary Navigation" class="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-slate-700/70 bg-[#0F172A]/90 px-5 sm:px-6 py-3 shadow-lg backdrop-blur-md">
+      <a href="#" class="flex items-center gap-2.5 font-bold tracking-tight text-white focus:outline-none">
+        <div class="w-8 h-8 rounded-lg bg-[#0B0D12] border border-slate-700/80 flex items-center justify-center">
+          <svg class="w-5 h-5" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M16 4L27 10.5L16 17L5 10.5L16 4Z" stroke="#22D3EE" stroke-width="2.3" stroke-linejoin="round" />
             <circle cx="9" cy="16" r="1.3" fill="#FFFFFF" />
             <circle cx="13.5" cy="18.5" r="1.3" fill="#FFFFFF" />
             <circle cx="18.5" cy="18.5" r="1.3" fill="#FFFFFF" />
             <circle cx="23" cy="16" r="1.3" fill="#FFFFFF" />
-            <path d="M5 20.5L16 27L27 20.5" stroke="#8B3DFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M5 20.5L16 27L27 20.5" stroke="#A855F7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
-        <div class="flex items-baseline gap-2.5">
-          <span class="font-extrabold text-2xl tracking-tight text-white">
-            AEO<span class="aeo-cyan-glow">bility</span>
-          </span>
-        </div>
+        <span class="text-lg sm:text-xl font-extrabold tracking-tight text-white">
+          AEO<span class="text-[#22D3EE]">bility</span>
+        </span>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-[#D4D4D8]">
-        <a href="/services" class="hover:text-[#00E5FF] transition-colors">Services</a>
-        <a href="#how-it-works" class="hover:text-[#00E5FF] transition-colors">How AEO Works</a>
-        <a href="#empirical-evidence" class="hover:text-[#00E5FF] transition-colors">Evidence (Case Studies)</a>
-        <a href="#commercial-pathways" class="hover:text-[#00E5FF] transition-colors">Pricing &amp; Sprints</a>
-        <a href="/knowledge-hub" class="hover:text-[#00E5FF] transition-colors">Knowledge Hub</a>
-      </nav>
-
-      <div class="hidden lg:flex items-center">
-        <a href="#commercial-pathways" class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-[#E5E7EB] hover:bg-[#D1D5DB] border border-[#E5E7EB] text-black font-semibold text-sm shadow-[0_8px_24px_rgba(229,231,235,0.14)] transition-all">
-          <span>Explore Solutions</span>
-          <span class="w-6 h-6 rounded-full bg-black/10 border border-black/20 flex items-center justify-center text-xs text-black">→</span>
-        </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#how-it-works" class="transition hover:text-white">Telemetry</a>
+        <a href="#operational-pipeline" class="transition hover:text-white">4-Stage Pipeline</a>
+        <a href="#commercial-pathways" class="transition hover:text-white">Packages</a>
+        <a href="#empirical-evidence" class="transition hover:text-white">Case Study</a>
       </div>
-    </div>
+
+      <a href="#hero-diagnostic-instrument" class="rounded-full bg-[#22D3EE] px-4 py-2 text-xs font-semibold text-[#090D16] transition hover:bg-cyan-300">
+        Free AI Scan →
+      </a>
+    </nav>
   </header>
 
-  <!-- 2. HERO SECTION -->
-  <section class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10 items-center">
+  <!-- SECTION 01: HERO & LIVE DIAGNOSTIC (#0B0D12 Obsidian Dark) -->
+  <section class="relative pt-10 pb-24 lg:pt-16 lg:pb-28 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
       
-      <div class="lg:col-span-7 space-y-7 relative z-10">
-        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full reference-pill">
-          <span class="w-2 h-2 rounded-full bg-[#00E660] shadow-[0_0_10px_#00E660] animate-pulse"></span>
-          <span class="font-mono text-xs tracking-wide text-white font-medium">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#111622] border border-[#1E293B]">
+          <span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+          <span class="font-mono text-xs tracking-wide text-[#CBD5E1] font-medium">
             Answer Engine Optimisation for Australian Entities
           </span>
         </div>
 
-        <h1 class="text-4xl sm:text-6xl lg:text-[66px] xl:text-[72px] font-bold tracking-tight text-white leading-[1.06]">
+        <h1 class="text-4xl sm:text-6xl lg:text-[62px] font-bold tracking-tight text-white leading-[1.08]">
           Get your business
-          <span class="font-extrabold italic text-brand-spectrum">found and chosen</span>
+          <span class="font-extrabold text-focal-gradient">found and chosen</span>
           in AI search.
         </h1>
 
-        <p class="text-lg sm:text-xl text-[#D4D4D8] leading-relaxed max-w-[58ch]">
-          AEObility re-architects your commercial offerings, entities, and citations into deterministic data triples so ChatGPT, Gemini, and Perplexity choose your brand.
+        <p class="text-lg sm:text-xl text-[#CBD5E1] leading-relaxed max-w-[56ch]">
+          We structure your services, business credentials, and customer proof so ChatGPT, Gemini, and Perplexity recommend your brand instead of guessing.
         </p>
 
-        <div class="pt-2 flex flex-col sm:flex-row sm:items-center gap-5">
-          <a href="#commercial-pathways" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/20 hover:border-[#00E5FF]/50 text-white font-semibold text-sm transition-all w-fit">
-            <span>Explore The 90-Day Blueprint</span>
-            <span class="w-6 h-6 rounded-full bg-black/40 border border-white/30 flex items-center justify-center text-xs text-[#00E5FF]">↓</span>
+        <div class="pt-2 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+          <a href="#commercial-pathways" class="inline-flex items-center gap-2 text-sm font-semibold text-[#CBD5E1] hover:text-white underline decoration-[#1E293B] hover:decoration-[#22D3EE] underline-offset-8 transition-all w-fit">
+            <span>Explore the $995 Strategic Blueprint</span>
+            <span class="text-[#22D3EE]">↓</span>
           </a>
-          <div class="text-xs sm:text-sm font-mono text-[#CBD5E1] tracking-wide">
+          <span class="text-xs font-mono text-[#94A3B8]">
             Fixed scope · Australian specialist · Zero retainer lock-in
+          </span>
+        </div>
+
+        <div class="pt-6 grid grid-cols-3 gap-4 max-w-lg border-t border-[#1E293B]">
+          <div>
+            <div class="font-mono text-[11px] text-[#94A3B8] uppercase">Sales Uplift [AEO]</div>
+            <div class="text-xl font-extrabold text-white mt-0.5">+17% Verified</div>
+          </div>
+          <div>
+            <div class="font-mono text-[11px] text-[#94A3B8] uppercase">Salience Lift</div>
+            <div class="text-xl font-extrabold text-[#F59E0B] mt-0.5">11.9% → 83.7%</div>
+          </div>
+          <div>
+            <div class="font-mono text-[11px] text-[#94A3B8] uppercase">Blueprint Credit</div>
+            <div class="text-xl font-extrabold text-white mt-0.5">100% Applied</div>
           </div>
         </div>
       </div>
 
-      <!-- Right Column: Hero Diagnostic Instrument -->
-      <div class="lg:col-span-5 relative" id="hero-diagnostic-instrument">
-        <div aria-hidden="true" class="pointer-events-none absolute -top-10 -left-10 w-48 h-48 sm:w-56 sm:h-56 rounded-full sphere-cyan-violet-3d opacity-75 blur-[6px] z-0"></div>
-        <div aria-hidden="true" class="pointer-events-none absolute -bottom-12 -right-10 w-52 h-52 sm:w-60 sm:h-60 rounded-full sphere-magenta-violet-3d opacity-75 blur-[8px] z-0"></div>
-
-        <div class="glass-poster-card rounded-[26px] p-6 sm:p-8 relative z-10">
-          <div class="flex items-center justify-between mb-5">
-            <div class="w-24 h-[2px] spectrum-bottom-bar rounded-full"></div>
-            <div class="flex items-center gap-1.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#00E5FF]"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#8B3DFF]"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#F59E0B]"></span>
-            </div>
-          </div>
-
+      <!-- Right Column: Hero Diagnostic Instrument (#111622 fill + #1E293B border) -->
+      <div class="lg:col-span-5" id="hero-diagnostic-instrument">
+        <div class="rounded-2xl bg-[#111622] border border-[#1E293B] p-6 sm:p-8 shadow-2xl">
           <div class="space-y-2 mb-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#05070C]/90 border border-[#00E5FF]/45">
-              <span class="w-2 h-2 rounded-full bg-[#00E660] animate-pulse"></span>
-              <span class="font-mono text-[11px] tracking-[0.14em] uppercase text-[#00E5FF] font-semibold">
+            <div class="inline-flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#22D3EE]"></span>
+              <span class="font-mono text-xs tracking-wider uppercase text-[#94A3B8] font-semibold">
                 GET AI READY • LIVE DIAGNOSTIC
               </span>
             </div>
-            <h2 class="text-2xl sm:text-[26px] font-bold text-white tracking-tight leading-snug">
-              Can conversational AI <span class="italic font-extrabold aeo-cyan-glow">recommend</span> your business?
+            <h2 class="text-2xl font-bold text-white tracking-tight leading-snug">
+              Can conversational AI recommend your business?
             </h2>
           </div>
 
-          <form id="diagnostic-form" class="p-4 sm:p-5 rounded-2xl bg-[#06080E]/85 border border-white/15 space-y-4">
+          <form id="diagnostic-form" class="space-y-4">
             <div>
-              <label for="domain-field" class="block font-mono text-xs uppercase tracking-wider text-[#F1F5F9] font-semibold mb-2">
+              <label for="domain-field" class="block font-mono text-xs uppercase tracking-wider text-[#CBD5E1] font-semibold mb-2">
                 Australian Business Domain
               </label>
-              <input id="domain-field" type="text" required placeholder="e.g., yourcompany.com.au" class="w-full px-4 py-3 rounded-full bg-[#05070C] border border-white/25 hover:border-white/40 text-white text-sm placeholder:text-[#94A3B8] shadow-[inset_0_2px_6px_rgba(0,0,0,0.8)] focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] transition-all" />
+              <input id="domain-field" type="text" required placeholder="yourcompany.com.au" class="w-full px-4 py-3 rounded-xl bg-[#0B0D12] border border-[#1E293B] hover:border-slate-600 text-white text-sm placeholder:text-[#94A3B8] not-italic focus:outline-none focus:border-[#22D3EE] focus:ring-1 focus:ring-[#22D3EE] transition-all" />
             </div>
 
             <div>
-              <label for="query-field" class="block font-mono text-xs uppercase tracking-wider text-[#F1F5F9] font-semibold mb-2">
+              <label for="query-field" class="block font-mono text-xs uppercase tracking-wider text-[#CBD5E1] font-semibold mb-2">
                 Primary Customer Query / Intent
               </label>
-              <input id="query-field" type="text" placeholder="e.g., best commercial solar installer Perth" class="w-full px-4 py-3 rounded-full bg-[#05070C] border border-white/25 hover:border-white/40 text-white text-sm placeholder:text-[#94A3B8] shadow-[inset_0_2px_6px_rgba(0,0,0,0.8)] focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] transition-all" />
+              <input id="query-field" type="text" placeholder="best commercial solar installer Perth" class="w-full px-4 py-3 rounded-xl bg-[#0B0D12] border border-[#1E293B] hover:border-slate-600 text-white text-sm placeholder:text-[#94A3B8] not-italic focus:outline-none focus:border-[#22D3EE] focus:ring-1 focus:ring-[#22D3EE] transition-all" />
             </div>
 
-            <button type="submit" class="w-full py-3.5 px-6 rounded-full bg-[#E5E7EB] hover:bg-[#D1D5DB] border border-[#E5E7EB] text-black font-semibold text-sm shadow-[0_8px_24px_rgba(229,231,235,0.14)] transition-all flex items-center justify-center gap-3 cursor-pointer">
+            <button type="submit" class="w-full py-3.5 px-6 rounded-full bg-[#22D3EE] hover:bg-cyan-300 text-[#090D16] font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
               <span>Get AI Ready · Free Scan</span>
-              <span class="w-6 h-6 rounded-full bg-black/10 border border-black/20 flex items-center justify-center text-xs text-black">→</span>
+              <span aria-hidden="true">→</span>
             </button>
+
+            <p class="text-xs text-center font-mono text-[#94A3B8] pt-1">
+              Instant baseline scan • Zero email required upfront
+            </p>
           </form>
 
-          <div id="scan-feedback" class="hidden mt-4 p-4 rounded-xl bg-[#06080E]/95 border border-[#00E660]/50 font-mono text-xs text-white space-y-2"></div>
+          <div id="scan-feedback" class="hidden mt-4 p-4 rounded-xl bg-[#0B0D12] border border-[#1E293B] font-mono text-xs text-white space-y-2"></div>
 
-          <div class="mt-5 pt-4 border-t border-white/15 grid grid-cols-2 gap-2.5">
-            <div class="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#00E5FF]/40 flex items-center justify-between">
-              <span class="font-mono text-[11px] text-[#CBD5E1]">Entity Salience</span>
-              <span class="font-mono text-xs font-bold text-[#00E5FF]">88%</span>
+          <div class="mt-5 pt-4 border-t border-[#1E293B] grid grid-cols-2 gap-2.5">
+            <div class="px-3 py-2 rounded-xl bg-[#0B0D12] border border-[#1E293B] flex items-center justify-between">
+              <span class="font-mono text-xs text-[#94A3B8]">Entity Salience</span>
+              <span class="font-mono text-xs font-bold text-white">88%</span>
             </div>
-            <div class="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#F59E0B]/45 flex items-center justify-between">
-              <span class="font-mono text-[11px] text-[#CBD5E1]">Answer Coverage</span>
+            <div class="px-3 py-2 rounded-xl bg-[#0B0D12] border border-[#F59E0B]/45 flex items-center justify-between">
+              <span class="font-mono text-xs text-[#94A3B8]">Answer Coverage</span>
               <span class="font-mono text-xs font-bold text-[#F59E0B]">91%</span>
             </div>
-            <div class="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#8B3DFF]/45 flex items-center justify-between">
-              <span class="font-mono text-[11px] text-[#CBD5E1]">Provenance</span>
-              <span class="font-mono text-xs font-bold text-[#B485FF]">100% Parity</span>
+            <div class="px-3 py-2 rounded-xl bg-[#0B0D12] border border-[#1E293B] flex items-center justify-between">
+              <span class="font-mono text-xs text-[#94A3B8]">Provenance</span>
+              <span class="font-mono text-xs font-bold text-white">100% Parity</span>
             </div>
-            <div class="px-3 py-2 rounded-xl bg-[#05070C]/90 border border-[#00E660]/45 flex items-center justify-between">
-              <span class="font-mono text-[11px] text-[#CBD5E1]">AI State</span>
-              <span class="font-mono text-xs font-bold text-[#00E660]">Active Foundation</span>
+            <div class="px-3 py-2 rounded-xl bg-[#0B0D12] border border-[#1E293B] flex items-center justify-between">
+              <span class="font-mono text-xs text-[#94A3B8]">AI State</span>
+              <span class="font-mono text-xs font-bold text-[#10B981]">Active</span>
             </div>
           </div>
         </div>
@@ -400,170 +197,134 @@
     </div>
   </section>
 
-  <!-- 2B. PRODUCTION "HOW IT WORKS" MODULE (FROSTED #E5E7EB + SCROLL PARALLAX) -->
-  <section id="how-it-works" aria-labelledby="steps-heading" class="relative py-24 overflow-hidden text-black frosted-hiw-sheet">
-    <!-- Parallax Depth Plane 0: Ambient Refraction Orbs behind Frosted #E5E7EB -->
-    <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden z-0 parallax-bg-orbs">
-      <div class="absolute -top-20 left-[8%] w-72 h-72 rounded-full sphere-cyan-violet-3d opacity-20 blur-2xl"></div>
-      <div class="absolute bottom-[-10%] right-[10%] w-80 h-80 rounded-full sphere-magenta-violet-3d opacity-20 blur-2xl"></div>
-    </div>
-
-    <div class="relative z-10 max-w-6xl mx-auto px-6">
-      <header class="relative text-center max-w-2xl mx-auto mb-16 parallax-hiw-header">
-        <div data-aos="fade-up" data-aos-duration="800" class="relative z-10 space-y-4">
-          <span class="text-xs font-semibold tracking-widest text-[#8B3DFF] uppercase font-mono block">
-            The Telemetry Engine
-          </span>
-          <h2 id="steps-heading" class="text-3xl sm:text-4xl font-extrabold text-neutral-900">
-            Four Steps to Machine-Readable Clarity
-          </h2>
-          <p class="text-base text-neutral-700 font-light font-serif">
-            Measure, understand, and activate your AI search visibility.
-          </p>
-        </div>
+  <!-- SECTION 02: FOUR STEPS TO CLARITY (#FFFFFF Crisp White + #E5E7EB Borders + Steel Grey) -->
+  <section id="how-it-works" aria-labelledby="steps-heading" class="border-y border-[#E5E7EB] bg-white py-24 text-[#0F172A]">
+    <div class="max-w-6xl mx-auto px-6">
+      <header class="max-w-2xl mb-16">
+        <span class="inline-block rounded-full border border-[#E5E7EB] bg-[#F8FAFC] px-3 py-1 text-xs font-mono font-semibold tracking-wider text-[#64748B] uppercase">
+          The Telemetry Engine
+        </span>
+        <h2 id="steps-heading" class="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A]">
+          Four Steps to Machine-Readable Clarity
+        </h2>
+        <p class="mt-3 text-base leading-relaxed text-[#475569]">
+          Measure, understand, and activate your AI search visibility with zero agency lock-in.
+        </p>
       </header>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        <!-- Steps ordered list (Parallax Depth Plane 2 + Staggered AOS) -->
-        <ol class="lg:col-span-7 space-y-6 list-none p-0 m-0 parallax-hiw-steps">
-          <!-- Step 1 -->
-          <li data-aos="fade-right" data-aos-duration="800" data-aos-delay="50" class="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
-            <span class="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">01</span>
-            <div class="space-y-2">
-              <h3 class="text-lg font-bold text-neutral-950">Tell Us What You Want To Be Found For</h3>
-              <p class="text-sm text-neutral-700 font-light leading-relaxed font-serif">
-                Enter your Australian business URL and primary customer search intent. Our crawler ingests your public document object model, existing Schema.org structured data, and service area declarations to benchmark baseline machine readability.
-              </p>
+      <div class="relative">
+        <div aria-hidden="true" class="hidden lg:block absolute top-10 left-8 right-8 h-[2px] bg-focal-gradient opacity-60 z-0"></div>
+
+        <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 list-none p-0 m-0 relative z-10">
+          <li class="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-xs">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-3xl font-extrabold font-mono text-[#94A3B8]">01</span>
+              <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B]">Benchmark</span>
             </div>
+            <h3 class="text-lg font-bold text-[#0F172A] mb-2">Tell Us What You Want To Be Found For</h3>
+            <p class="text-sm text-[#475569] leading-relaxed">
+              Enter your Australian business domain and primary customer query. Our crawler inspects your page structure, Schema.org data, and service location signals.
+            </p>
           </li>
 
-          <!-- Step 2 -->
-          <li data-aos="fade-right" data-aos-duration="850" data-aos-delay="150" class="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
-            <span class="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">02</span>
-            <div class="space-y-2">
-              <h3 class="text-lg font-bold text-neutral-950">Measure Your AI Visibility</h3>
-              <p class="text-sm text-neutral-700 font-light leading-relaxed font-serif">
-                Our telemetry engine analyses how conversational AI systems like ChatGPT Search, Perplexity, Gemini, and Google AI Overviews retrieve and recommend your business. We measure passage retrieval depth, entity confidence scoring, citation provenance, and brand co-occurrence.
-              </p>
+          <li class="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-xs">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-3xl font-extrabold font-mono text-[#94A3B8]">02</span>
+              <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B]">Measure</span>
             </div>
+            <h3 class="text-lg font-bold text-[#0F172A] mb-2">Measure Your AI Visibility</h3>
+            <p class="text-sm text-[#475569] leading-relaxed">
+              We test how ChatGPT Search, Perplexity, Gemini, and Google AI Overviews retrieve and cite your business across entity confidence and passage clarity.
+            </p>
           </li>
 
-          <!-- Step 3 -->
-          <li data-aos="fade-right" data-aos-duration="900" data-aos-delay="250" class="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
-            <span class="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">03</span>
-            <div class="space-y-3 w-full">
-              <h3 class="text-lg font-bold text-neutral-950">Discover Your Opportunities</h3>
-              <p class="text-sm text-neutral-700 font-light leading-relaxed font-serif">
-                Receive your comprehensive AI Visibility Score and diagnostic telemetry report. Uncover critical retrieval blind spots where search engines hallucinate details, misattribute service locations, or recommend competitors because your structured schema is incomplete or disconnected.
-              </p>
+          <li class="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-xs">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-3xl font-extrabold font-mono text-[#94A3B8]">03</span>
+              <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B]">Diagnose</span>
             </div>
+            <h3 class="text-lg font-bold text-[#0F172A] mb-2">Discover Your Opportunities</h3>
+            <p class="text-sm text-[#475569] leading-relaxed">
+              Receive your AI Visibility Score and uncover exact blind spots where AI engines misread your services, miss your locations, or favour competitors.
+            </p>
           </li>
 
-          <!-- Step 4 -->
-          <li data-aos="fade-right" data-aos-duration="950" data-aos-delay="350" class="flex gap-6 items-start p-5 rounded-2xl frosted-hiw-step">
-            <span class="flex-shrink-0 text-3xl font-extrabold text-neutral-400 tracking-tight leading-none pt-1">04</span>
-            <div class="space-y-2">
-              <h3 class="text-lg font-bold text-neutral-950">Turn Insights into a 90-Day Plan</h3>
-              <p class="text-sm text-neutral-700 font-light leading-relaxed font-serif">
-                Transform diagnostic telemetry into an actionable 90-day technical execution roadmap. Prioritise high-impact fixes, from entity node reconciliation and canonical linking to structured FAQ passages and Google Business Profile alignment, with zero ongoing agency contract lock-in.
-              </p>
+          <li class="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-xs">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-3xl font-extrabold font-mono text-[#94A3B8]">04</span>
+              <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B]">Activate</span>
             </div>
-          </li>
-
-          <!-- Inbound Links to Educational Resources -->
-          <li data-aos="fade-up" data-aos-duration="800" data-aos-delay="420" class="pt-4 border-t border-neutral-300/80">
-            <nav aria-label="AEO definitions and tools" class="flex flex-wrap gap-4 items-center justify-between">
-              <a href="/knowledge-hub/what-is-aeo" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-neutral-800 hover:text-[#8B3DFF] transition-colors">
-                <span>What is AEO? Read our comprehensive definition guide</span>
-                <span>→</span>
-              </a>
-              <a href="/knowledge-hub/ai-seo-tools" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-neutral-700 hover:text-[#8B3DFF] transition-colors">
-                <span>AI search tools and scraper vector parsers comparison</span>
-                <span>→</span>
-              </a>
-            </nav>
+            <h3 class="text-lg font-bold text-[#0F172A] mb-2">Turn Insights into a 90-Day Plan</h3>
+            <p class="text-sm text-[#475569] leading-relaxed">
+              Follow a prioritised 90-day engineering roadmap covering entity schema, direct-answer passages, and directory alignment with zero retainer lock-in.
+            </p>
           </li>
         </ol>
 
-        <!-- Sample Telemetry Output Preview Card (Parallax Depth Plane 3 + AOS Fade-Left) -->
-        <div class="lg:col-span-5 parallax-hiw-card">
-          <div id="audit-preview" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor-placement="top-bottom" class="bg-zinc-950 p-7 sm:p-8 rounded-2xl border border-cyan-500/30 shadow-[0_28px_60px_-12px_rgba(0,0,0,0.65)] relative overflow-hidden text-white space-y-5">
-            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#00E5FF] to-[#8B3DFF]"></div>
+        <nav aria-label="AEO definitions and tools" class="mt-10 pt-6 border-t border-[#E5E7EB] flex flex-wrap gap-6 items-center justify-between">
+          <a href="/knowledge-hub/what-is-aeo" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0284C7] hover:text-[#0369A1] transition-colors">
+            <span>What is AEO? Read our comprehensive definition guide</span>
+            <span>→</span>
+          </a>
+          <a href="/knowledge-hub/ai-seo-tools" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0284C7] hover:text-[#0369A1] transition-colors">
+            <span>Compare AI search crawlers and vector parsers</span>
+            <span>→</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </section>
 
-            <header class="space-y-4">
-              <div class="flex items-center justify-between">
-                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/20 text-[11px] font-mono font-bold text-white">
-                  <span>Telemetry Preview</span>
-                </div>
-                <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">
-                  Live Sample v4.2
-                </span>
-              </div>
+  <!-- SECTION 03: DIAGNOSTIC TELEMETRY SAMPLE (#0B0D12 Obsidian Dark) -->
+  <section class="bg-[#0B0D12] py-24 text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 space-y-5">
+          <span class="inline-block rounded-full border border-[#1E293B] bg-[#111622] px-3 py-1 text-xs font-mono font-semibold tracking-wider text-[#94A3B8] uppercase">
+            Live Telemetry Output
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+            See exactly what AI engines read on your site.
+          </h2>
+          <p class="text-base text-[#CBD5E1] leading-relaxed">
+            Every scan evaluates four verifiable signals across your domain: entity identity, direct-answer passage density, service-to-proof connections, and local directory consistency.
+          </p>
+        </div>
 
+        <div class="lg:col-span-7">
+          <div id="audit-preview" class="rounded-2xl bg-[#111622] border border-[#1E293B] p-6 sm:p-8 shadow-2xl space-y-6">
+            <header class="flex flex-wrap items-center justify-between gap-2 border-b border-[#1E293B] pb-4">
               <div>
-                <h3 class="text-xl font-bold text-white">Diagnostic Telemetry Sample</h3>
-                <p class="text-xs text-zinc-400 font-light mt-1 font-serif leading-relaxed">
-                  Empirical signals measured across your brand footprint during a live visibility scan.
-                </p>
+                <h3 class="text-lg font-bold text-white">Diagnostic Telemetry Sample</h3>
+                <p class="text-xs text-[#94A3B8] mt-0.5">Empirical signals measured during a live domain visibility scan</p>
               </div>
+              <span class="text-xs font-mono text-[#94A3B8] uppercase px-2.5 py-1 rounded bg-[#0B0D12] border border-[#1E293B]">Sample v4.2</span>
             </header>
 
-            <!-- Score Showcase Gauge -->
-            <figure data-aos="zoom-in" data-aos-duration="750" data-aos-delay="300" class="p-4 rounded-xl bg-zinc-900/80 border border-white/10 flex items-center justify-between m-0">
-              <figcaption class="space-y-0.5">
-                <span class="text-[10px] uppercase font-mono font-bold text-zinc-400 tracking-wider">AI Visibility Index</span>
-                <div class="text-2xl sm:text-3xl font-extrabold font-mono text-white">
-                  88 <span class="text-sm text-cyan-400 font-sans font-normal">/ 100</span>
-                </div>
-              </figcaption>
-              <div class="px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-mono text-xs font-bold">
-                Optimised for AI
+            <figure class="p-5 rounded-xl bg-[#0B0D12] border border-[#1E293B] space-y-3 m-0">
+              <div class="flex items-center justify-between">
+                <figcaption class="space-y-0.5">
+                  <span class="text-xs uppercase font-mono font-semibold text-[#94A3B8] tracking-wider">AI Visibility Index</span>
+                  <div class="text-3xl font-extrabold font-mono text-white">
+                    88 <span class="text-sm text-[#94A3B8] font-sans font-normal">/ 100</span>
+                  </div>
+                </figcaption>
+                <span class="px-3 py-1 rounded-full bg-[#111622] border border-[#1E293B] text-[#22D3EE] font-mono text-xs font-semibold">
+                  Optimised for AI
+                </span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-[#1E293B] overflow-hidden">
+                <div class="h-full w-[88%] bg-focal-gradient rounded-full"></div>
               </div>
             </figure>
 
-            <!-- 4 Diagnostic Signals -->
-            <ul class="space-y-2.5 text-xs font-sans list-none p-0 m-0">
-              <li data-aos="fade-up" data-aos-duration="700" data-aos-delay="350" class="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
-                <div class="space-y-0.5">
-                  <strong class="block font-semibold text-white">Entity Graph Alignment</strong>
-                  <span class="block text-[11px] text-zinc-400 font-serif">Multi-source registry &amp; Schema alignment</span>
-                </div>
-                <span class="font-mono text-cyan-300 text-[11px] font-bold">94% Verified</span>
-              </li>
-
-              <li data-aos="fade-up" data-aos-duration="700" data-aos-delay="420" class="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
-                <div class="space-y-0.5">
-                  <strong class="block font-semibold text-white">Atomic Answer Extraction</strong>
-                  <span class="block text-[11px] text-zinc-400 font-serif">Direct-answer passage density</span>
-                </div>
-                <span class="font-mono text-cyan-300 text-[11px] font-bold">91% Salience</span>
-              </li>
-
-              <li data-aos="fade-up" data-aos-duration="700" data-aos-delay="490" class="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
-                <div class="space-y-0.5">
-                  <strong class="block font-semibold text-white">Semantic Lattice Topology</strong>
-                  <span class="block text-[11px] text-zinc-400 font-serif">Core services linked to proof assets</span>
-                </div>
-                <span class="font-mono text-purple-300 text-[11px] font-bold">Connected</span>
-              </li>
-
-              <li data-aos="fade-up" data-aos-duration="700" data-aos-delay="560" class="p-3 rounded-lg bg-zinc-900/60 border border-white/5 flex items-center justify-between">
-                <div class="space-y-0.5">
-                  <strong class="block font-semibold text-white">Citation Provenance (NAP)</strong>
-                  <span class="block text-[11px] text-zinc-400 font-serif">GBP, Apple Maps &amp; Bing consistency</span>
-                </div>
-                <span class="font-mono text-cyan-300 text-[11px] font-bold">100% Parity</span>
-              </li>
-            </ul>
-
-            <!-- Primary Action Button (Dark with white text pill matching 'Explore The 90-Day Blueprint') -->
             <footer class="pt-2">
-              <a href="/diagnostic" class="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/20 hover:border-[#00E5FF]/50 text-white font-semibold text-sm transition-all cursor-pointer">
+              <a href="/diagnostic" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#22D3EE] hover:bg-cyan-300 text-[#090D16] font-bold text-sm transition-all shadow-md">
                 <span>Run Free Live Telemetry Scan</span>
-                <span class="w-6 h-6 rounded-full bg-black/40 border border-white/30 flex items-center justify-center text-xs text-[#00E5FF]">→</span>
+                <span aria-hidden="true">→</span>
               </a>
-              <p class="text-[11px] text-center text-zinc-400 font-mono mt-2.5">
-                * Real-time vector analysis executed using Gemini &bull; Zero email required upfront
+              <p class="text-xs text-center text-[#94A3B8] font-mono mt-2.5">
+                Real-time vector analysis executed using Gemini • Zero email required upfront
               </p>
             </footer>
           </div>
@@ -572,18 +333,103 @@
     </div>
   </section>
 
-  <!-- Bottom Brand Spectrum Bar -->
-  <div class="w-full h-2 spectrum-bottom-bar"></div>
+  <!-- SECTION 06: COMMERCIAL ARCHITECTURE (#F8FAFC + #FFFFFF + #E5E7EB + Steel Grey) -->
+  <section id="commercial-pathways" class="border-y border-[#E5E7EB] bg-[#F8FAFC] py-24 text-[#0F172A]">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-16 max-w-2xl">
+        <span class="inline-block rounded-full border border-[#E5E7EB] bg-white px-3 py-1 text-xs font-mono font-semibold tracking-wider text-[#64748B] uppercase">
+          Fixed-Scope Commercial Architecture
+        </span>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight text-[#0F172A] sm:text-5xl">
+          Start with diagnostic certainty.
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-[#475569]">
+          We never prescribe implementation without a diagnostic baseline. Start with the standalone Strategic Blueprint and credit 100% of your fee toward execution.
+        </p>
+      </div>
+
+      <div class="grid gap-8 lg:grid-cols-3">
+        <!-- Featured ($995): #FFFFFF card with 2px solid #0891B2 border -->
+        <div class="rounded-2xl border-2 border-[#0891B2] bg-white p-8 shadow-lg flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-mono font-semibold tracking-wider text-[#64748B] uppercase">
+              SKU: BPSTRAT • 5-Day SLA
+            </div>
+            <h3 class="mt-2 text-2xl font-bold text-[#0F172A]">Strategic Blueprint</h3>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class="text-4xl font-extrabold text-[#0F172A]">$995</span>
+              <span class="text-sm text-[#475569]">AUD ex. GST</span>
+            </div>
+            <hr class="my-6 border-[#E5E7EB]" />
+            <p class="text-sm leading-relaxed text-[#475569] mb-6">
+              A comprehensive technical crawl, Knowledge Graph entity audit, and prioritised 90-day remediation plan.
+            </p>
+            <div class="p-3.5 rounded-xl bg-[#F8FAFC] border border-[#E5E7EB] text-xs text-[#475569] mb-6">
+              <strong class="text-[#0F172A]">100% Credit Guarantee:</strong> Credited in full toward Foundation or Sprints within 60 days.
+            </div>
+          </div>
+          <a href="/solutions/aeo-blueprint" class="w-full py-3.5 px-6 rounded-full bg-[#0F172A] hover:bg-[#1E293B] text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+            <span>Commission Blueprint</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- Secondary Tier: AEO Foundation -->
+        <div class="rounded-2xl border border-[#E5E7EB] bg-white p-8 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-mono font-semibold tracking-wider text-[#64748B] uppercase">
+              TURNKEY • 90-Day Foundation
+            </div>
+            <h3 class="mt-2 text-2xl font-bold text-[#0F172A]">AEO Foundation</h3>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class="text-4xl font-extrabold text-[#0F172A]">$1,980</span>
+              <span class="text-sm text-[#475569]">AUD / mo ex. GST</span>
+            </div>
+            <hr class="my-6 border-[#E5E7EB]" />
+            <p class="text-sm leading-relaxed text-[#475569] mb-6">
+              End-to-end engineering across up to 10 core commercial pages: custom JSON-LD entity graphs, direct-answer passages, and directory citation parity.
+            </p>
+          </div>
+          <a href="/solutions" class="w-full py-3.5 px-6 rounded-full bg-[#E5E7EB] hover:bg-[#D1D5DB] text-[#0F172A] font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+            <span>Foundation Scope</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- Secondary Tier: AEO Sprints -->
+        <div class="rounded-2xl border border-[#E5E7EB] bg-white p-8 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-mono font-semibold tracking-wider text-[#F59E0B] uppercase">
+              MODULAR • 3-5 Days SLA
+            </div>
+            <h3 class="mt-2 text-2xl font-bold text-[#0F172A]">AEO Sprints</h3>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class="text-4xl font-extrabold text-[#0F172A]">From $495</span>
+              <span class="text-sm text-[#475569]">AUD ex. GST</span>
+            </div>
+            <hr class="my-6 border-[#E5E7EB]" />
+            <p class="text-sm leading-relaxed text-[#475569] mb-6">
+              Discrete, surgical micro-sprints targeting single-page schema deployment, Google Business Profile reconciliation, or llms.txt agent manifests.
+            </p>
+          </div>
+          <a href="/solutions/aeo-sprint" class="w-full py-3.5 px-6 rounded-full bg-[#E5E7EB] hover:bg-[#D1D5DB] text-[#0F172A] font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+            <span>Explore Sprints</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     if (window.AOS) {
       window.AOS.init({
-        duration: 850,
+        duration: 800,
         easing: 'ease-out-cubic',
         once: false,
         mirror: true,
-        offset: 70
+        offset: 60
       });
     }
 
@@ -595,30 +441,9 @@
       feedback.classList.remove('hidden');
       feedback.innerHTML = '<div>[TELEMETRY ACTIVE] Analysing entity salience and JSON-LD triples for <strong>' + domain + '</strong>...</div>';
       setTimeout(() => {
-        feedback.innerHTML = '<div class="text-[#00E660] font-bold">SCAN COMPLETE: ' + domain + '</div><div class="mt-1 text-[#D4D4D8]">Entity Salience: 88% | Answer Coverage: 91% | Citation Parity: 100%</div>';
+        feedback.innerHTML = '<div class="text-[#22D3EE] font-bold">SCAN COMPLETE: ' + domain + '</div><div class="mt-1 text-[#CBD5E1]">Entity Salience: 88% | Answer Coverage: 91% | Citation Parity: 100%</div>';
       }, 1200);
     });
-
-    // Smooth 60fps scroll parallax for the frosted #E5E7EB "How It Works" section
-    const hiwSection = document.getElementById('how-it-works');
-    let rafId = 0;
-    const updateHiwParallax = () => {
-      if (!hiwSection) return;
-      const rect = hiwSection.getBoundingClientRect();
-      const vh = window.innerHeight || 800;
-      const sectionCenter = rect.top + rect.height / 2;
-      const viewportCenter = vh / 2;
-      const normalized = Math.max(-1.25, Math.min(1.25, (viewportCenter - sectionCenter) / vh));
-      const shiftPx = Math.round(normalized * 56);
-      hiwSection.style.setProperty('--hiw-parallax', shiftPx + 'px');
-    };
-    const onScrollParallax = () => {
-      cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(updateHiwParallax);
-    };
-    updateHiwParallax();
-    window.addEventListener('scroll', onScrollParallax, { passive: true });
-    window.addEventListener('resize', onScrollParallax, { passive: true });
   </script>
 </body>
 </html>
