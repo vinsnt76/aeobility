@@ -442,11 +442,11 @@ export default function ClarityEngineStaging() {
             </Link>
           </nav>
 
-          {/* Right: Explore Solutions CTA (White background, black text, pill + circular badge) */}
+          {/* Right: Explore Solutions CTA (#E5E7EB pill background, black text, circular badge) */}
           <div className="hidden lg:flex items-center">
             <a
               href="#commercial-pathways"
-              className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white hover:bg-[#E2E8F0] border border-white text-black font-semibold text-sm shadow-[0_8px_24px_rgba(255,255,255,0.15)] active:scale-95 transition-all group cursor-pointer"
+              className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-[#E5E7EB] hover:bg-[#D1D5DB] border border-[#E5E7EB] text-black font-semibold text-sm shadow-[0_8px_24px_rgba(229,231,235,0.14)] active:scale-95 transition-all group cursor-pointer"
             >
               <span>Explore Solutions</span>
               <span className="w-6 h-6 rounded-full bg-black/10 border border-black/20 flex items-center justify-center text-xs text-black">
@@ -510,7 +510,7 @@ export default function ClarityEngineStaging() {
               <a
                 href="#commercial-pathways"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-white hover:bg-[#E2E8F0] border border-white text-black font-semibold text-sm transition-all"
+                className="w-full inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-[#E5E7EB] hover:bg-[#D1D5DB] border border-[#E5E7EB] text-black font-semibold text-sm transition-all"
               >
                 <span>Explore Solutions</span>
                 <span className="w-6 h-6 rounded-full bg-black/10 border border-black/20 flex items-center justify-center text-xs text-black">
@@ -672,11 +672,11 @@ export default function ClarityEngineStaging() {
                   />
                 </div>
 
-                {/* Primary Conversion Action (White background, black text, pill + circular badge) */}
+                {/* Primary Conversion Action (#E5E7EB pill background, black text, circular badge) */}
                 <button
                   type="submit"
                   disabled={isScanning}
-                  className="w-full py-3.5 px-6 rounded-full bg-white hover:bg-[#E2E8F0] border border-white text-black font-semibold text-sm shadow-[0_8px_24px_rgba(255,255,255,0.15)] transition-all flex items-center justify-center gap-3 cursor-pointer"
+                  className="w-full py-3.5 px-6 rounded-full bg-[#E5E7EB] hover:bg-[#D1D5DB] border border-[#E5E7EB] text-black font-semibold text-sm shadow-[0_8px_24px_rgba(229,231,235,0.14)] transition-all flex items-center justify-center gap-3 cursor-pointer"
                 >
                   {isScanning ? (
                     <>
