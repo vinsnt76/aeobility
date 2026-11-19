@@ -68,7 +68,7 @@ export default function Hero() {
               className="max-w-xl p-5 sm:p-6 rounded-xl bg-[#0D1117]/80 border-t border-[#00E5FF]/40 border-b border-x border-slate-800 backdrop-blur-md space-y-4"
             >
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                <strong className="font-semibold text-white">AEObility</strong> is a Perth digital consultancy engineering Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) for Australian businesses. We structure your web architecture, schema graphs, and entity profiles so Google, Maps, ChatGPT Search, Perplexity, and Google AI Overviews accurately identify, understand, and recommend your business with zero guesswork.
+                Stop leaving AI recommendations to guesswork. <strong className="font-semibold text-white">AEObility</strong> is a Perth digital consultancy engineering Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) for Australian businesses. We structure your web architecture, schema graphs, and entity profiles so Google, Maps, ChatGPT Search, Perplexity, and Google AI Overviews verify who you are and recommend your business first.
               </p>
 
               {/* Scope/Trust Pills: 3-column metric strip aligned at bottom of left column */}
@@ -98,22 +98,21 @@ export default function Hero() {
                 <div className="inline-flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#00E5FF]"></span>
                   <span className="font-mono text-xs tracking-wider uppercase text-slate-400 font-semibold">
-                    GET AI READY &bull; LIVE DIAGNOSTIC
+                    LIVE AI VISIBILITY CHECK
                   </span>
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
-                  Can conversational AI recommend your business?
+                  See how AI models read your business
                 </h2>
               </div>
 
               <form onSubmit={handleHeroScanSubmit} className="space-y-4">
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
+                  <div className="mb-1.5">
                     <label htmlFor="hero-url-input" className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono flex items-center gap-1.5">
                       <Globe className="w-3.5 h-3.5 text-[#00E5FF]" />
                       <span>Australian Business URL</span>
                     </label>
-                    <span className="text-[11px] text-slate-400 font-sans">e.g. yourbrand.com.au</span>
                   </div>
                   <input
                     id="hero-url-input"
@@ -133,12 +132,11 @@ export default function Hero() {
                 </div>
 
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
+                  <div className="mb-1.5">
                     <label htmlFor="hero-intent-input" className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono flex items-center gap-1.5">
                       <Search className="w-3.5 h-3.5 text-[#00E5FF]" />
                       <span>Primary Search Intent</span>
                     </label>
-                    <span className="text-[11px] text-slate-400 font-sans">e.g. Physiotherapist Near Me</span>
                   </div>
                   <input
                     id="hero-intent-input"
@@ -150,33 +148,30 @@ export default function Hero() {
                     value={intent}
                     onChange={e => setIntent(e.target.value)}
                     onFocus={() => trackGaEvent('form_field_focused', { field: 'intent', source: 'hero_direct_embed' })}
-                    placeholder="e.g. Physiotherapist Near Me"
+                    placeholder="Physiotherapist in Perth"
                     className="w-full h-11 px-3.5 rounded-xl bg-[#08090C] border border-[#1E293B] hover:border-slate-600 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-2 focus:ring-[#00E5FF]/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                     spellCheck={false}
                     suppressHydrationWarning
                   />
                 </div>
 
-                {/* Primary Pill Button (High-Contrast Opaque AEO Cyan CTA) */}
-                <button
-                  type="submit"
-                  data-agent-action="run-visibility-scan"
-                  data-testid="btn-run-scan"
-                  className="hero-primary-cta w-full h-12 rounded-full bg-[#00E5FF] hover:bg-cyan-300 text-slate-950 font-bold text-sm tracking-wide shadow-lg shadow-cyan-950/50 flex items-center justify-center gap-2 transition-all active:scale-[0.99] cursor-pointer"
-                >
-                  <span>Run Free Visibility Scan</span>
-                  <ArrowRight className="w-4 h-4 text-slate-950" />
-                </button>
+                {/* Primary Pill Button (Elevated Dark Glassmorphic Pill with #A080FE to #fd799f Gradient Border) */}
+                <div className="p-[1.5px] rounded-full bg-gradient-to-r from-[#A080FE] to-[#fd799f] shadow-[0_8px_24px_rgba(160,128,254,0.18)]">
+                  <button
+                    type="submit"
+                    data-agent-action="run-visibility-scan"
+                    data-testid="btn-run-scan"
+                    className="group hero-primary-cta bg-[#141927]/95 hover:bg-[#1B2236] backdrop-blur-md text-white font-semibold text-sm tracking-wide rounded-full w-full py-3.5 px-6 transition-all flex items-center justify-center gap-2 active:scale-[0.99] cursor-pointer"
+                  >
+                    <span>Run Free Visibility Scan</span>
+                    <ArrowRight className="w-4 h-4 text-[#A080FE] group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
 
-                {/* Disclaimer & Reassurance Micro-Row */}
-                <footer className="pt-1 text-center space-y-1 font-mono">
-                  <p className="text-[11px] text-slate-300 font-medium">
-                    * The scan executes a real-time vector analysis using Gemini.
-                  </p>
-                  <p className="text-xs text-slate-400">
-                    Free visibility scan &bull; No email required to start &bull; 100% private &amp; secure
-                  </p>
-                </footer>
+                {/* Condensed Footer Reassurance Copy */}
+                <p className="mt-3 text-center text-xs text-slate-400">
+                  Instant baseline scan &bull; Zero email required upfront
+                </p>
               </form>
             </div>
           </div>
