@@ -29,19 +29,34 @@ import {
   Users
 } from 'lucide-react';
 
-export const metadata = {
-  title: "Local GEO vs Local SEO Guide | AEObility",
-  description: "Determine if your local business needs Generative Engine Optimisation (GEO). Evaluate AI Overviews, competitor LLM citations, and machine-readable entity signals.",
-  alternates: {
-    canonical: "https://aeobility.com.au/knowledge-hub/geo",
-  },
-};
+import { Metadata } from 'next';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "What is GEO? Generative Engine Optimisation Guide | AEObility",
+    description: "Understand Generative Engine Optimisation (GEO) vs local SEO. Learn how AI search platforms verify, synthesise, and recommend local and national businesses.",
+    alternates: {
+      canonical: "https://www.aeobility.com.au/knowledge-hub/geo",
+    },
+    openGraph: {
+      title: "What is GEO? Generative Engine Optimisation Guide | AEObility",
+      description: "Understand Generative Engine Optimisation (GEO) vs local SEO. Learn how AI search platforms verify, synthesise, and recommend local and national businesses.",
+      url: "https://www.aeobility.com.au/knowledge-hub/geo",
+      type: "article",
+      siteName: "AEObility",
+    },
+  };
+}
 
 export default function GEOKnowledgeNodePage() {
   const faqList = [
     {
-      question: "What is the difference between Local SEO and GEO for local businesses?",
-      answer: "Local SEO focuses on improving visibility within established Google Search and Map interfaces through relevance, prominence, reviews, and proximity signals. GEO shapes how AI models learn about, synthesise, and recommend your brand across conversational interfaces, AI Overviews, and multi-brand roundups."
+      question: "Can I perform GEO myself or should I hire a specialist agency?",
+      answer: "Basic GEO tasks, such as updating Google Business Profiles and publishing structured FAQs, can be managed internally. However, advanced GEO requires technical schema graph repair, semantic lattice internal linking, and IndexNow API integration, which typically require dedicated engineering support."
+    },
+    {
+      question: "How does GEO differ from local SEO?",
+      answer: "Local SEO optimises web pages and directories for traditional Google Maps and localised SERP listings. GEO structures underlying business facts into machine-readable JSON-LD graphs, enabling conversational AI engines like ChatGPT and Perplexity to recommend your business in regional answers."
     },
     {
       question: "How does traditional geolocation SEO differ from Generative Engine Optimisation?",
@@ -58,10 +73,6 @@ export default function GEOKnowledgeNodePage() {
     {
       question: "How should local businesses handle location pages without creating thin duplicate content?",
       answer: "Avoid creating templated suburb pages that lack distinct substance. Publish location-specific landing pages only where you have genuine local value, original evidence, unique customer proofs, and distinct service context. Quality location pages with authentic regional proof support local discovery without risking thin-content penalties."
-    },
-    {
-      question: "Can I do GEO myself or do I need to hire someone, and what does a good GEO engagement actually include?",
-      answer: "In-house teams can successfully perform basic GEO tasks: claiming your Google Business Profile, updating operating hours, eliminating NAP discrepancies on local directories, and writing direct answers to frequently asked customer queries. Hiring an outside specialist becomes necessary when dealing with technical schema architecture, such as building connected JSON-LD graphs with GeoCoordinates and areaServed definitions, setting up semantic chunking for passage retrieval, and reconciling entity confusion across AI knowledge bases. A legitimate GEO engagement provides a multi-platform baseline audit, nested schema deployment, atomic content structuring, citation reconciliation, and full IP handover with zero lock-in retainers."
     },
     {
       question: "How do I evaluate a GEO agency?",
@@ -124,8 +135,8 @@ export default function GEOKnowledgeNodePage() {
       {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/knowledge-hub/geo",
-        "name": "Does My Business Need GEO? A Guide to Local GEO vs Local SEO",
-        "description": "Learn how local SEO improves visibility in Google Search and Maps, while GEO strengthens the entity, location, and service-boundary signals AI search systems need to identify and recommend a local business accurately.",
+        "name": "What is GEO? Generative Engine Optimisation Guide | AEObility",
+        "description": "Understand Generative Engine Optimisation (GEO) vs local SEO. Learn how AI search platforms verify, synthesise, and recommend local and national businesses.",
         "isPartOf": {
           "@id": "https://aeobility.com.au/knowledge-hub"
         },
@@ -414,19 +425,19 @@ export default function GEOKnowledgeNodePage() {
               Does My Business Need GEO? <span className="text-gradient-aeo">A Guide to Local GEO vs Local SEO</span>
             </h1>
 
-            {/* 2. Consolidated Quick Answer Block */}
-            <div className="relative isolate overflow-hidden p-6 bg-slate-900/60 backdrop-blur-xl border border-white/10 border-l-4 border-l-aeo-cyan rounded-2xl space-y-3 shadow-2xl">
-              {/* Top Specular Light Catch */}
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aeo-cyan/50 to-transparent pointer-events-none" />
-              
-              <div className="text-xs font-mono font-bold uppercase text-aeo-cyan tracking-wider flex items-center gap-2">
-                <Cpu className="w-4 h-4" />
-                <span>The Quick Answer</span>
-              </div>
-              <p className="text-sm sm:text-base text-white/90 leading-relaxed font-light">
-                Generative Engine Optimisation (GEO) bridges local operational facts, like your address, trading hours, and service radius, with how AI models synthesise your brand. While Local SEO targets traditional map packs and blue links, GEO ensures platforms like ChatGPT, Gemini, and Google AI Overviews cite you accurately in conversational searches.
+            {/* 2. Atomic Answer Block */}
+            <section
+              data-entity-id="aeobility:knowledge:geo-definition"
+              data-monotopical="true"
+              className="atomic-answer-block relative isolate overflow-hidden p-6 bg-slate-900/60 backdrop-blur-xl border border-white/10 border-l-4 border-l-[#00E5FF] rounded-2xl space-y-3 shadow-2xl"
+            >
+              <h2 className="font-display text-2xl font-bold text-white">
+                Does My Business Need Generative Engine Optimisation (GEO)?
+              </h2>
+              <p className="font-sans text-base text-slate-300 leading-relaxed">
+                <strong>Generative Engine Optimisation (GEO)</strong> is essential for businesses competing for recommendations inside conversational AI engines and Google AI Overviews. While traditional local SEO targets map packs and ten-blue-link rankings, GEO structures your underlying brand facts, service boundaries (via Schema.org <code>GeoCoordinates</code> and <code>areaServed</code>), and verified credentials into machine-readable entity graphs. Implementing GEO ensures large language models accurately verify and cite your business when buyers ask for regional or category recommendations.
               </p>
-            </div>
+            </section>
 
             {/* 3. Hero Banner Image Graphic */}
             <div className="relative aspect-[16/9] w-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden shadow-2xl my-4">
@@ -639,6 +650,39 @@ export default function GEOKnowledgeNodePage() {
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            {/* Commercial Conversion Corridor CTA Block */}
+            <div className="my-8 rounded-xl border border-purple-500/30 bg-slate-900/80 p-6 backdrop-blur-md">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#00E5FF]">
+                Commercial Service Corridor
+              </span>
+              <h3 className="mt-2 font-display text-xl font-bold text-white">
+                Looking for Australian GEO &amp; Local AEO Engineering?
+              </h3>
+              <p className="mt-2 font-sans text-sm text-slate-300">
+                AEObility delivers productised, fixed-scope technical implementation sprints for local trade and clinic service businesses across Australia. Eliminate contract lock-in with our $995 Standalone Strategic Blueprint, fully credited back against implementation sprints within 60 days.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a
+                  href="/solutions/aeo-blueprint"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#00E5FF] px-4 py-2 font-sans text-sm font-medium text-slate-950 hover:bg-cyan-400"
+                >
+                  Explore the $995 Strategic Blueprint
+                </a>
+                <a
+                  href="/services/geo-marketing"
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-700 bg-slate-800 px-4 py-2 font-sans text-sm font-medium text-white hover:bg-slate-700"
+                >
+                  View GEO Marketing Services
+                </a>
+                <a
+                  href="/services/aeo/local-business"
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-700 bg-slate-800 px-4 py-2 font-sans text-sm font-medium text-white hover:bg-slate-700"
+                >
+                  Local Business AEO
+                </a>
+              </div>
             </div>
           </div>
 

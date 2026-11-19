@@ -72,9 +72,9 @@ export default function KnowledgeHubPage() {
       icon: <Compass className="w-5 h-5 text-aeo-cyan" />
     },
     {
-      name: "GEO and SEO: Local Discovery Matrix",
+      name: "What is GEO? Generative Engine Optimisation vs Local SEO",
       href: "/knowledge-hub/geo",
-      description: "Advanced techniques balancing localized map rankings and systemic generative visibility rules without focus dilution.",
+      description: "Understand Generative Engine Optimisation (GEO) vs local SEO, and learn how AI search platforms verify, synthesise, and recommend local and national businesses.",
       icon: <BookOpenCheck className="w-5 h-5 text-aeo-cyan" />
     },
     {
@@ -143,7 +143,7 @@ export default function KnowledgeHubPage() {
             <div className="lg:col-span-6 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-aeo-cyan font-medium">
                 <GraduationCap className="w-3.5 h-3.5" />
-                <span>AI Search Marketing Course & Resource Center</span>
+                <span>AI Search Marketing Course &amp; Resource Centre</span>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
                 The AEObility <br />
@@ -327,7 +327,10 @@ export default function KnowledgeHubPage() {
               <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-3">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-aeo-cyan">Australia Local Targeting</h4>
                 <p className="text-xs text-white/60 font-light leading-relaxed">
-                  Learn how Google Maps, Apple Maps, and immediate regional voice query systems parse physical coordinates alongside website entity signals.
+                  Learn how Google Maps, Apple Maps, and immediate regional voice query systems parse physical coordinates alongside website entity signals. Explore our complete guide on{' '}
+                  <Link href="/knowledge-hub/geo" className="text-aeo-cyan hover:underline font-semibold">
+                    What is GEO and Generative Engine Optimisation vs Local SEO
+                  </Link>.
                 </p>
               </div>
             </div>
