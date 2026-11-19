@@ -10,9 +10,9 @@ interface USPCardProps {
 
 function USPCard({ icon, title, lead, bullets }: USPCardProps) {
   return (
-    <article className="group relative flex flex-col h-full p-7 sm:p-8 rounded-2xl bg-[#111622] text-white border border-[#1E293B] shadow-2xl hover:border-[#00E5FF]/40 hover:-translate-y-1 transition-all duration-300">
+    <article className="group relative flex flex-col justify-between h-full bg-[#111622] border border-[#1E293B] hover:border-[#00E5FF]/40 rounded-2xl p-6 sm:p-7 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] transition-colors duration-200 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-500 ease-out text-white">
       <header className="space-y-3 mb-5">
-        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#08090C] border border-[#1E293B] mb-5 group-hover:scale-105 transition-transform duration-300">
+        <div className="w-11 h-11 flex items-center justify-center rounded-xl bg-[#08090C] border border-[#1E293B] mb-4">
           {icon}
         </div>
         <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">
@@ -23,7 +23,7 @@ function USPCard({ icon, title, lead, bullets }: USPCardProps) {
         </p>
       </header>
 
-      <ul className="space-y-2 text-sm text-slate-300 leading-relaxed pt-4 border-t border-[#1E293B] list-none p-0 m-0 mt-auto">
+      <ul className="space-y-2.5 text-sm text-slate-300 leading-relaxed pt-4 border-t border-[#1E293B] list-none p-0 m-0">
         {bullets.map((bullet, i) => (
           <li key={i} className="flex items-start gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
@@ -38,7 +38,7 @@ function USPCard({ icon, title, lead, bullets }: USPCardProps) {
 export default function USPGrid() {
   const usps = [
     {
-      icon: <Eye className="w-6 h-6 text-[#00E5FF] drop-shadow-[0_0_8px_rgba(0,229,255,0.35)]" />,
+      icon: <Eye className="w-5 h-5 text-[#00E5FF]" />,
       title: 'Direct-Answer Service Pages',
       lead: 'Turn your service pages into trusted answers AI platforms can verify, cite, and recommend.',
       bullets: [
@@ -48,7 +48,7 @@ export default function USPGrid() {
       ],
     },
     {
-      icon: <Target className="w-6 h-6 text-aeo-purple drop-shadow-[0_0_8px_rgba(157,78,221,0.5)]" />,
+      icon: <Target className="w-5 h-5 text-[#00E5FF]" />,
       title: 'Verified Business Authority',
       lead: 'Prove your business is legitimate and trustworthy wherever AI systems validate businesses.',
       bullets: [
@@ -58,7 +58,7 @@ export default function USPGrid() {
       ],
     },
     {
-      icon: <MessageSquare className="w-6 h-6 text-pink-500 drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]" />,
+      icon: <MessageSquare className="w-5 h-5 text-[#00E5FF]" />,
       title: 'AI-Ready Structured Data',
       lead: 'Convert your website into machine-readable data that search engines and AI platforms can understand with confidence.',
       bullets: [
@@ -71,9 +71,6 @@ export default function USPGrid() {
 
   return (
     <section id="usp" aria-labelledby="usp-heading" className="py-20 bg-[#08090C] relative border-t border-[#1E293B]">
-      {/* Decorative side glow */}
-      <div className="absolute right-0 top-1/3 w-64 h-64 rounded-full bg-aeo-cyan glow-blur opacity-10 pointer-events-none"></div>
-
       <div className="max-w-6xl mx-auto px-6">
         <header className="relative text-left max-w-2xl mb-16">
           {/* Geometric Grid Background Motif */}

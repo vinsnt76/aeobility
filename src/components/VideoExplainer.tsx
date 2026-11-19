@@ -15,14 +15,10 @@ export default function VideoExplainer({
 
   return (
     <section id="explainer-video" aria-labelledby="video-heading" className="py-20 bg-[#0D1117] relative border-t border-[#1E293B]">
-      {/* Background glow effects */}
-      <div className="absolute left-1/4 top-1/4 w-[400px] h-[400px] bg-aeo-purple/5 rounded-full filter blur-[100px] pointer-events-none" />
-      <div className="absolute right-1/4 bottom-1/4 w-[400px] h-[400px] bg-aeo-cyan/5 rounded-full filter blur-[100px] pointer-events-none" />
-
       <div className="max-w-4xl mx-auto px-6 text-left space-y-10">
         <header className="relative py-4">
           {/* Geometric Grid Background Motif */}
-          <div className="absolute inset-0 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
+          <div className="absolute inset-0 pointer-events-none bg-grid-motif-dark opacity-50 z-0" />
           <div className="relative z-10 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#111622] border border-[#1E293B] font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-semibold">
               <span>Clear Outcomes</span>
@@ -37,7 +33,7 @@ export default function VideoExplainer({
         </header>
 
         {/* Video Player Container / Media Showcase Figure */}
-        <figure className="relative aspect-video w-full rounded-2xl overflow-hidden border border-[#1E293B] bg-[#08090C] shadow-[0_0_30px_rgba(0,229,255,0.12)] m-0">
+        <figure className="relative aspect-video w-full rounded-2xl overflow-hidden border border-[#1E293B] bg-[#08090C] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] m-0">
           {isPlaying ? (
             <iframe
               src={embedUrl}
@@ -81,8 +77,8 @@ export default function VideoExplainer({
         </figure>
 
         {/* Key Takeaways Summary Block (Cleanly Separated from Video Container) */}
-        <div className="mt-14 pt-12 border-t border-[#1E293B]/70">
-          <aside aria-label="Key Takeaways" className="p-6 sm:p-8 rounded-2xl bg-[#111622] border border-[#1E293B] space-y-6">
+        <div className="mt-14 pt-12 border-t border-[#1E293B]/70 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-500 ease-out">
+          <aside aria-label="Key Takeaways" className="p-6 sm:p-8 rounded-2xl bg-[#111622] border border-[#1E293B] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] space-y-6">
             <div className="space-y-1.5">
               <span className="font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-bold block">
                 KEY TAKEAWAYS
@@ -97,7 +93,7 @@ export default function VideoExplainer({
                 <h3 className="text-base sm:text-lg font-bold text-white leading-snug tracking-tight">
                   Answers First, Rankings Second
                 </h3>
-                <ul className="space-y-2 text-sm text-slate-300 leading-relaxed list-none p-0 m-0">
+                <ul className="space-y-2.5 text-sm text-slate-300 leading-relaxed list-none p-0 m-0">
                   <li className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
                     <span>AI search engines extract short, self-contained answers rather than counting repeated keywords.</span>
@@ -117,7 +113,7 @@ export default function VideoExplainer({
                 <h3 className="text-base sm:text-lg font-bold text-white leading-snug tracking-tight">
                   Verified Identity Over Generic Listings
                 </h3>
-                <ul className="space-y-2 text-sm text-slate-300 leading-relaxed list-none p-0 m-0">
+                <ul className="space-y-2.5 text-sm text-slate-300 leading-relaxed list-none p-0 m-0">
                   <li className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
                     <span>Search engines and AI tools cross-check your website against official records before recommending you.</span>
@@ -137,7 +133,7 @@ export default function VideoExplainer({
                 <h3 className="text-base sm:text-lg font-bold text-white leading-snug tracking-tight">
                   Fixed-Scope Sprints Over Monthly Retainers
                 </h3>
-                <ul className="space-y-2 text-sm text-slate-300 leading-relaxed list-none p-0 m-0">
+                <ul className="space-y-2.5 text-sm text-slate-300 leading-relaxed list-none p-0 m-0">
                   <li className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
                     <span>Fixing how AI reads your website is a clear technical job, not an endless monthly retainer.</span>
