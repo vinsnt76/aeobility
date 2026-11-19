@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import { TelemetryViewTracker } from '@/components/telemetry/TelemetryViewTracker';
 
 export default function HowItWorks() {
@@ -24,81 +23,62 @@ export default function HowItWorks() {
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Steps ordered list */}
-          <ol className="lg:col-span-7 space-y-10 list-none p-0 m-0">
-            {/* Step 1 */}
-            <li className="flex gap-6 items-start">
-              <span className="flex-shrink-0 text-3xl font-extrabold font-mono text-slate-500 tracking-tight leading-none pt-1">
-                01
-              </span>
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">Tell Us What You Want To Be Found For</h3>
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  Enter your Australian business URL and primary customer search intent. Our crawler ingests your public document object model, existing Schema.org structured data, and service area declarations to benchmark baseline machine readability.
-                </p>
-              </div>
-            </li>
+          {/* Steps ordered list + Inbound Resource Navigation */}
+          <div className="lg:col-span-7 space-y-10">
+            <ol className="space-y-10 list-none p-0 m-0">
+              {/* Step 1 */}
+              <li className="flex gap-6 items-start">
+                <span className="flex-shrink-0 text-3xl font-extrabold font-mono text-slate-500 tracking-tight leading-none pt-1">
+                  01
+                </span>
+                <div className="space-y-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">Tell Us What You Want To Be Found For</h3>
+                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    Enter your Australian business URL and primary customer search intent. Our crawler ingests your public document object model, existing Schema.org structured data, and service area declarations to benchmark baseline machine readability.
+                  </p>
+                </div>
+              </li>
 
-            {/* Step 2 */}
-            <li className="flex gap-6 items-start">
-              <span className="flex-shrink-0 text-3xl font-extrabold font-mono text-slate-500 tracking-tight leading-none pt-1">
-                02
-              </span>
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">Measure Your AI Visibility</h3>
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  Our telemetry engine analyses how conversational AI systems like ChatGPT Search, Perplexity, Gemini, and Google AI Overviews retrieve and recommend your business. We measure passage retrieval depth, entity confidence scoring, citation provenance, and brand co-occurrence.
-                </p>
-              </div>
-            </li>
+              {/* Step 2 */}
+              <li className="flex gap-6 items-start">
+                <span className="flex-shrink-0 text-3xl font-extrabold font-mono text-slate-500 tracking-tight leading-none pt-1">
+                  02
+                </span>
+                <div className="space-y-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">Measure Your AI Visibility</h3>
+                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    Our telemetry engine analyses how conversational AI systems like ChatGPT Search, Perplexity, Gemini, and Google AI Overviews retrieve and recommend your business. We measure passage retrieval depth, entity confidence scoring, citation provenance, and brand co-occurrence.
+                  </p>
+                </div>
+              </li>
 
-            {/* Step 3 */}
-            <li className="flex gap-6 items-start">
-              <span className="flex-shrink-0 text-3xl font-extrabold font-mono text-slate-500 tracking-tight leading-none pt-1">
-                03
-              </span>
-              <div className="space-y-3 w-full">
-                <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">Discover Your Opportunities</h3>
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  Receive your comprehensive AI Visibility Score and diagnostic telemetry report. Uncover critical retrieval blind spots where search engines hallucinate details, misattribute service locations, or recommend competitors because your structured schema is incomplete or disconnected.
-                </p>
-              </div>
-            </li>
+              {/* Step 3 */}
+              <li className="flex gap-6 items-start">
+                <span className="flex-shrink-0 text-3xl font-extrabold font-mono text-slate-500 tracking-tight leading-none pt-1">
+                  03
+                </span>
+                <div className="space-y-3 w-full">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">Discover Your Opportunities</h3>
+                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    Receive your comprehensive AI Visibility Score and diagnostic telemetry report. Uncover critical retrieval blind spots where search engines hallucinate details, misattribute service locations, or recommend competitors because your structured schema is incomplete or disconnected.
+                  </p>
+                </div>
+              </li>
 
-            {/* Step 4 */}
-            <li className="flex gap-6 items-start">
-              <span className="flex-shrink-0 text-3xl font-extrabold font-mono text-slate-500 tracking-tight leading-none pt-1">
-                04
-              </span>
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">Turn Insights into a 90-Day Plan</h3>
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  Transform diagnostic telemetry into an actionable 90-day technical execution roadmap. Prioritise high-impact fixes, from entity node reconciliation and canonical linking to structured FAQ passages and Google Business Profile alignment, with zero ongoing agency contract lock-in.
-                </p>
-              </div>
-            </li>
-
-            {/* Inbound Links to Educational Resources */}
-            <li className="pt-4 border-t border-[#1E293B]">
-              <nav aria-label="AEO definitions and tools" className="flex flex-wrap gap-4 items-center justify-between">
-                <Link 
-                  href="/knowledge-hub/what-is-aeo" 
-                  className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-300 hover:text-[#00E5FF] transition-colors"
-                >
-                  <BookOpen className="w-4 h-4 text-[#00E5FF]" />
-                  <span>What is AEO? Read our comprehensive definition guide</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-                <Link 
-                  href="/knowledge-hub/ai-seo-tools" 
-                  className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-300 hover:text-[#00E5FF] transition-colors"
-                >
-                  <span>AI search tools and scraper vector parsers comparison</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </nav>
-            </li>
-          </ol>
+              {/* Step 4 */}
+              <li className="flex gap-6 items-start">
+                <span className="flex-shrink-0 text-3xl font-extrabold font-mono text-slate-500 tracking-tight leading-none pt-1">
+                  04
+                </span>
+                <div className="space-y-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">Turn Insights into a 90-Day Plan</h3>
+                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    Transform diagnostic telemetry into an actionable 90-day technical execution roadmap. Prioritise high-impact fixes, from entity node reconciliation and canonical linking to structured FAQ passages and Google Business Profile alignment, with zero ongoing agency contract lock-in.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
 
           {/* Sample Telemetry Output Preview Card */}
           <TelemetryViewTracker
@@ -179,20 +159,6 @@ export default function HowItWorks() {
                 <span className="font-mono text-[#00E5FF] text-[11px] font-bold">100% Parity</span>
               </li>
             </ul>
-
-            {/* Primary Action Button */}
-            <footer className="pt-2">
-              <Link
-                href="/diagnostic"
-                className="w-full group flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#00E5FF] hover:bg-[#33ECFF] text-[#08090C] font-bold text-sm transition-all shadow-[0_0_20px_rgba(0,229,255,0.25)] cursor-pointer"
-              >
-                <span>Run Free Live Telemetry Scan</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <p className="text-xs text-center text-slate-400 font-mono mt-2.5">
-                * Real-time vector analysis executed using Gemini &bull; Zero email required upfront
-              </p>
-            </footer>
           </TelemetryViewTracker>
         </div>
       </div>

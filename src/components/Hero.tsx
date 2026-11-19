@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { Sparkles, ArrowRight, Globe, Search } from 'lucide-react';
-import Link from 'next/link';
+import { ArrowRight, Globe, Search } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { trackGaEvent } from '@/lib/gtag';
 
@@ -89,159 +88,94 @@ export default function Hero() {
             </aside>
           </header>
 
-          {/* Right Column: Hero Diagnostic Instrument (#111622 fill + #1E293B border) */}
+          {/* Right Column: Hero Diagnostic Instrument (Unified Directional Glassmorphic Edge Refraction) */}
           <div className="lg:col-span-5 relative z-10">
-            <div className="bg-[#111622] border border-[#1E293B] rounded-2xl p-6 sm:p-8 shadow-2xl relative z-10 space-y-5">
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#00E5FF]/50 to-transparent pointer-events-none"></div>
-
-              <div className="space-y-1.5">
-                <div className="inline-flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#00E5FF]"></span>
-                  <span className="font-mono text-xs tracking-wider uppercase text-slate-400 font-semibold">
-                    LIVE AI VISIBILITY CHECK
-                  </span>
+            <div className="p-[1px] rounded-2xl bg-gradient-to-br from-[#00E5FF]/80 via-[#A080FE]/60 to-[#1E293B] shadow-2xl relative z-10">
+              <div className="bg-[#111622] rounded-[15px] p-6 sm:p-8 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] space-y-5">
+                <div className="space-y-1.5">
+                  <div className="inline-flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#00E5FF]"></span>
+                    <span className="font-mono text-xs tracking-wider uppercase text-slate-400 font-semibold">
+                      LIVE AI VISIBILITY CHECK
+                    </span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                    See how AI models read your business
+                  </h3>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
-                  See how AI models read your business
-                </h3>
+
+                <form onSubmit={handleHeroScanSubmit} className="space-y-4">
+                  <div>
+                    <div className="mb-1.5">
+                      <label htmlFor="hero-url-input" className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono flex items-center gap-1.5">
+                        <Globe className="w-3.5 h-3.5 text-[#00E5FF]" />
+                        <span>Australian Business URL</span>
+                      </label>
+                    </div>
+                    <input
+                      id="hero-url-input"
+                      name="url"
+                      type="url"
+                      autoComplete="url"
+                      data-testid="input-telemetry-url"
+                      required
+                      value={url}
+                      onChange={e => setUrl(e.target.value)}
+                      onFocus={() => trackGaEvent('form_field_focused', { field: 'url', source: 'hero_direct_embed' })}
+                      placeholder="https://yourbrand.com.au"
+                      className="w-full h-11 px-3.5 rounded-xl bg-[#08090C] border border-[#1E293B] hover:border-slate-600 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-2 focus:ring-[#00E5FF]/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
+                      spellCheck={false}
+                      suppressHydrationWarning
+                    />
+                  </div>
+
+                  <div>
+                    <div className="mb-1.5">
+                      <label htmlFor="hero-intent-input" className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono flex items-center gap-1.5">
+                        <Search className="w-3.5 h-3.5 text-[#00E5FF]" />
+                        <span>Primary Search Intent</span>
+                      </label>
+                    </div>
+                    <input
+                      id="hero-intent-input"
+                      name="intent"
+                      type="text"
+                      autoComplete="off"
+                      data-testid="input-telemetry-intent"
+                      required
+                      value={intent}
+                      onChange={e => setIntent(e.target.value)}
+                      onFocus={() => trackGaEvent('form_field_focused', { field: 'intent', source: 'hero_direct_embed' })}
+                      placeholder="Physiotherapist in Perth"
+                      className="w-full h-11 px-3.5 rounded-xl bg-[#08090C] border border-[#1E293B] hover:border-slate-600 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-2 focus:ring-[#00E5FF]/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
+                      spellCheck={false}
+                      suppressHydrationWarning
+                    />
+                  </div>
+
+                  {/* Unified Primary Pill Button (Directional Glassmorphic Gradient Border + Top Specular Highlight) */}
+                  <div className="p-[1px] rounded-full bg-gradient-to-br from-[#A080FE] via-[#fd799f] to-[#1E293B] shadow-[0_8px_24px_rgba(160,128,254,0.18)]">
+                    <button
+                      type="submit"
+                      data-agent-action="run-visibility-scan"
+                      data-testid="btn-run-scan"
+                      className="group hero-primary-cta bg-[#141927]/95 hover:bg-[#1B2236] backdrop-blur-md text-white font-semibold text-sm tracking-wide rounded-full w-full py-3.5 px-6 transition-all flex items-center justify-center gap-2 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)] active:scale-[0.99] cursor-pointer"
+                    >
+                      <span>Run Free Visibility Scan</span>
+                      <ArrowRight className="w-4 h-4 text-[#A080FE] group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+
+                  {/* Condensed Footer Reassurance Copy */}
+                  <p className="mt-3 text-center text-xs text-slate-400">
+                    Instant baseline scan &bull; Zero email required upfront
+                  </p>
+                </form>
               </div>
-
-              <form onSubmit={handleHeroScanSubmit} className="space-y-4">
-                <div>
-                  <div className="mb-1.5">
-                    <label htmlFor="hero-url-input" className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono flex items-center gap-1.5">
-                      <Globe className="w-3.5 h-3.5 text-[#00E5FF]" />
-                      <span>Australian Business URL</span>
-                    </label>
-                  </div>
-                  <input
-                    id="hero-url-input"
-                    name="url"
-                    type="url"
-                    autoComplete="url"
-                    data-testid="input-telemetry-url"
-                    required
-                    value={url}
-                    onChange={e => setUrl(e.target.value)}
-                    onFocus={() => trackGaEvent('form_field_focused', { field: 'url', source: 'hero_direct_embed' })}
-                    placeholder="https://yourbrand.com.au"
-                    className="w-full h-11 px-3.5 rounded-xl bg-[#08090C] border border-[#1E293B] hover:border-slate-600 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-2 focus:ring-[#00E5FF]/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
-                    spellCheck={false}
-                    suppressHydrationWarning
-                  />
-                </div>
-
-                <div>
-                  <div className="mb-1.5">
-                    <label htmlFor="hero-intent-input" className="text-xs font-semibold uppercase tracking-wider text-slate-200 font-mono flex items-center gap-1.5">
-                      <Search className="w-3.5 h-3.5 text-[#00E5FF]" />
-                      <span>Primary Search Intent</span>
-                    </label>
-                  </div>
-                  <input
-                    id="hero-intent-input"
-                    name="intent"
-                    type="text"
-                    autoComplete="off"
-                    data-testid="input-telemetry-intent"
-                    required
-                    value={intent}
-                    onChange={e => setIntent(e.target.value)}
-                    onFocus={() => trackGaEvent('form_field_focused', { field: 'intent', source: 'hero_direct_embed' })}
-                    placeholder="Physiotherapist in Perth"
-                    className="w-full h-11 px-3.5 rounded-xl bg-[#08090C] border border-[#1E293B] hover:border-slate-600 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-2 focus:ring-[#00E5FF]/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
-                    spellCheck={false}
-                    suppressHydrationWarning
-                  />
-                </div>
-
-                {/* Primary Pill Button (Elevated Dark Glassmorphic Pill with 1px #A080FE to #fd799f Gradient Border) */}
-                <div className="p-[1px] rounded-full bg-gradient-to-r from-[#A080FE] to-[#fd799f] shadow-[0_8px_24px_rgba(160,128,254,0.18)]">
-                  <button
-                    type="submit"
-                    data-agent-action="run-visibility-scan"
-                    data-testid="btn-run-scan"
-                    className="group hero-primary-cta bg-[#141927]/95 hover:bg-[#1B2236] backdrop-blur-md text-white font-semibold text-sm tracking-wide rounded-full w-full py-3.5 px-6 transition-all flex items-center justify-center gap-2 active:scale-[0.99] cursor-pointer"
-                  >
-                    <span>Run Free Visibility Scan</span>
-                    <ArrowRight className="w-4 h-4 text-[#A080FE] group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-
-                {/* Condensed Footer Reassurance Copy */}
-                <p className="mt-3 text-center text-xs text-slate-400">
-                  Instant baseline scan &bull; Zero email required upfront
-                </p>
-              </form>
             </div>
           </div>
 
         </div>
-
-        {/* Quick-Path Service Hub Links Strip Below Split Hero */}
-        <nav aria-label="Explore service hubs" className="mt-10 pt-6 border-t border-[#1E293B]/80 w-full relative z-10">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-400 shrink-0">
-              Explore Service Hubs
-            </div>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 w-full list-none p-0 m-0">
-              <li>
-                <Link
-                  href="/services/aeo"
-                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AEO & SEO', destination: '/services/aeo' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-[#111622]/90 hover:bg-slate-800 border border-[#1E293B] hover:border-[#00E5FF]/50 text-xs font-medium text-slate-200 hover:text-white transition-all text-center flex items-center justify-center truncate"
-                >
-                  AEO &amp; SEO
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/ai-search-marketing"
-                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AI Search Marketing', destination: '/services/ai-search-marketing' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-[#111622]/90 hover:bg-slate-800 border border-[#1E293B] hover:border-[#00E5FF]/50 text-xs font-medium text-slate-200 hover:text-white transition-all text-center flex items-center justify-center truncate"
-                >
-                  AI Search Marketing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/aeo/local-business"
-                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'Local Business GEO', destination: '/services/aeo/local-business' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-[#111622]/90 hover:bg-slate-800 border border-[#1E293B] hover:border-[#00E5FF]/50 text-xs font-medium text-slate-200 hover:text-white transition-all text-center flex items-center justify-center truncate"
-                >
-                  Local Business GEO
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/geo-marketing"
-                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'GEO Marketing', destination: '/services/geo-marketing' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-[#111622]/90 hover:bg-slate-800 border border-[#1E293B] hover:border-[#00E5FF]/50 text-xs font-medium text-slate-200 hover:text-white transition-all text-center flex items-center justify-center truncate"
-                >
-                  GEO Marketing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/aeo/shopify"
-                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'Ecommerce AEO', destination: '/services/aeo/shopify' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-[#111622]/90 hover:bg-slate-800 border border-[#1E293B] hover:border-[#00E5FF]/50 text-xs font-medium text-slate-200 hover:text-white transition-all text-center flex items-center justify-center truncate"
-                >
-                  Ecommerce AEO
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/aeo/procedures"
-                  onClick={() => trackGaEvent('hero_hub_pill_clicked', { hub: 'AI Strategy', destination: '/services/aeo/procedures' })}
-                  className="w-full py-2 px-2.5 rounded-full bg-[#111622]/90 hover:bg-slate-800 border border-[#1E293B] hover:border-[#00E5FF]/50 text-xs font-medium text-slate-200 hover:text-white transition-all text-center flex items-center justify-center truncate"
-                >
-                  AI Strategy
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
 
       </div>
     </section>

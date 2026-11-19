@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 
 interface VideoExplainerProps {
   embedUrl?: string;
@@ -32,7 +31,7 @@ export default function VideoExplainer({
               {title}
             </h2>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch]">
-              Search behaviour has shifted from blue links to direct answers. We engineer your digital presence so Search, Maps, and AI engines retrieve and recommend your business first. Read our <Link href="/services/aeo/definition" className="text-[#00E5FF] font-semibold hover:underline">AEO Definition &amp; Concepts guide</Link> or watch the overview below.
+              Search behaviour has shifted from blue links to direct answers. We engineer your digital presence so Search, Maps, and AI engines retrieve and recommend your business first.
             </p>
           </div>
         </header>
@@ -88,7 +87,7 @@ export default function VideoExplainer({
               Executive Summary
             </span>
             <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">
-              Why Answer Engine Optimisation Replaces Legacy SEO
+              How Answer Engine Optimisation Extends Legacy SEO
             </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm sm:text-base text-slate-300 leading-relaxed pt-2 border-t border-[#1E293B]">

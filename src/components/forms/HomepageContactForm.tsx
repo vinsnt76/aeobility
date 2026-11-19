@@ -9,7 +9,6 @@ export function HomepageContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     url: '',
     message: '',
   });
@@ -70,11 +69,11 @@ export function HomepageContactForm() {
           <form
             onSubmit={handleSubmit}
             data-agent-form="contact-sprint-scope"
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#111622] p-6 md:p-8 rounded-2xl border border-[#1E293B] shadow-2xl"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-[#111622] p-6 md:p-8 rounded-2xl border border-[#1E293B] shadow-2xl"
           >
             <label className="block">
               <span className="font-mono text-xs uppercase tracking-wider text-slate-300 font-semibold block mb-1.5">
-                Your Name *
+                Name *
               </span>
               <input
                 id="contact-name-input"
@@ -91,7 +90,7 @@ export function HomepageContactForm() {
 
             <label className="block">
               <span className="font-mono text-xs uppercase tracking-wider text-slate-300 font-semibold block mb-1.5">
-                Business Email *
+                Work Email *
               </span>
               <input
                 id="contact-email-input"
@@ -108,23 +107,7 @@ export function HomepageContactForm() {
 
             <label className="block">
               <span className="font-mono text-xs uppercase tracking-wider text-slate-300 font-semibold block mb-1.5">
-                Phone Number
-              </span>
-              <input
-                id="contact-phone-input"
-                name="phone"
-                type="tel"
-                autoComplete="tel"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                placeholder="0400 000 000"
-                className="w-full px-4 py-3 rounded-lg bg-[#08090C] border border-[#1E293B] text-white placeholder-slate-500 text-sm focus:border-[#00E5FF] focus:outline-none transition-colors"
-              />
-            </label>
-
-            <label className="block">
-              <span className="font-mono text-xs uppercase tracking-wider text-slate-300 font-semibold block mb-1.5">
-                Australian Business URL
+                Website URL
               </span>
               <input
                 id="contact-url-input"
@@ -138,22 +121,22 @@ export function HomepageContactForm() {
               />
             </label>
 
-            <label className="block md:col-span-2">
+            <label className="block md:col-span-3">
               <span className="font-mono text-xs uppercase tracking-wider text-slate-300 font-semibold block mb-1.5">
-                Primary Search Intent or Goals
+                Search Intent or Goal (Optional)
               </span>
               <textarea
                 id="contact-message-input"
                 name="message"
-                rows={3}
+                rows={2}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder="Tell us about your primary search intent or goals..."
+                placeholder="e.g. Improve AI visibility for commercial solar in Perth"
                 className="w-full px-4 py-3 rounded-lg bg-[#08090C] border border-[#1E293B] text-white placeholder-slate-500 text-sm focus:border-[#00E5FF] focus:outline-none transition-colors"
               />
             </label>
 
-            <footer className="md:col-span-2 text-center mt-2">
+            <footer className="md:col-span-3 text-center mt-2">
               <button
                 type="submit"
                 data-agent-action="submit-sprint-scope"

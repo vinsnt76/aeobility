@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import { Sparkles, Rocket, Compass, Clock, Boxes, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Sparkles, Rocket, Compass, Clock, Boxes, ShieldCheck } from 'lucide-react';
 import { PackageSelectLink } from '@/components/sections/PackageSelectLink';
 import { PRICING_TIERS, TECHNICAL_SPRINT_CATALOG, formatAudCurrency } from '@/lib/pricing';
 
@@ -45,100 +44,105 @@ export function CoreEngagementsGrid() {
             Fixed-Scope Sprints.
           </h2>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch]">
-            Work directly with a qualified <Link href="/services/perth/seo-specialist" className="text-[#00E5FF] underline hover:text-cyan-300 font-medium">Perth SEO specialist &amp; local AEO consultant</Link> to secure top placement across Google Maps, local search, and AI answer engines. All engagements are clearly scoped and transparently priced.
+            Work directly with an Australian AEO specialist to secure top placement across Google Maps, local search, and AI answer engines. All engagements are clearly scoped and transparently priced.
           </p>
         </header>
 
         {/* Asymmetric 12-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-4">
-          {/* Left Column (lg:col-span-7): Featured Primary Card - Strategic Blueprint */}
-          <article className="lg:col-span-7 flex flex-col justify-between bg-[#111622] border border-[#00E5FF]/60 rounded-2xl p-7 sm:p-9 shadow-[0_0_32px_rgba(0,229,255,0.08)] transition-all duration-300 group">
-            <div className="space-y-6">
-              {/* Card Header: Eyebrow + 5-DAY SLA Badge, Title & Pricing Block */}
-              <header className="space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[11px] font-mono font-bold text-[#00E5FF] uppercase tracking-wider">
-                    <Compass className="w-3.5 h-3.5" />
-                    <span>DIAGNOSTIC &amp; PLANNING</span>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#08090C] border border-[#00E5FF]/40 text-[11px] font-mono font-bold text-[#00E5FF] uppercase tracking-wider">
-                    <Clock className="w-3 h-3 text-[#00E5FF]" />
-                    <span>5-DAY SLA</span>
-                  </span>
-                </div>
-
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">{tier1.name}</h3>
-                  <p className="flex items-baseline gap-2 mt-2">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-white font-mono">
-                      {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })}
+          {/* Left Column (lg:col-span-7): Featured Primary Card - Strategic Blueprint (Unified Directional Glassmorphic Edge Refraction) */}
+          <div className="lg:col-span-7 p-[1px] rounded-2xl bg-gradient-to-br from-[#00E5FF]/80 via-[#A080FE]/60 to-[#1E293B] shadow-[0_0_32px_rgba(0,229,255,0.08)] transition-all duration-300">
+            <article className="flex flex-col justify-between bg-[#111622] rounded-[15px] p-7 sm:p-9 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+              <div className="space-y-6">
+                {/* Card Header: Eyebrow + 5-DAY SLA Badge, Title & Pricing Block */}
+                <header className="space-y-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 text-[11px] font-mono font-bold text-[#00E5FF] uppercase tracking-wider">
+                      <Compass className="w-3.5 h-3.5" />
+                      <span>DIAGNOSTIC &amp; PLANNING</span>
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#08090C] border border-[#00E5FF]/40 text-[11px] font-mono font-bold text-[#00E5FF] uppercase tracking-wider">
+                      <Clock className="w-3 h-3 text-[#00E5FF]" />
+                      <span>5-DAY SLA</span>
                     </span>
-                    <span className="font-mono text-xs text-slate-400 uppercase tracking-wider">EX. GST</span>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">{tier1.name}</h3>
+                    <p className="flex items-baseline gap-2 mt-2">
+                      <span className="text-3xl sm:text-4xl font-extrabold text-white font-mono">
+                        {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })}
+                      </span>
+                      <span className="font-mono text-xs text-slate-400 uppercase tracking-wider">EX. GST</span>
+                    </p>
+                  </div>
+                </header>
+
+                {/* Concise Description */}
+                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                  Find the data errors, missing business facts, and structured code issues preventing search engines and AI models from recommending your business.
+                </p>
+
+                {/* 4 Core Deliverables Checklist */}
+                <div className="pt-5 border-t border-[#1E293B]">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans list-none p-0 m-0">
+                    <li className="flex items-start gap-3 p-3.5 rounded-xl bg-[#08090C]/70 border border-[#1E293B]">
+                      <CheckBadge color="cyan" />
+                      <p className="space-y-1">
+                        <strong className="block font-bold text-white text-xs sm:text-sm">Search &amp; AI Visibility Audit</strong>
+                        <span className="block text-xs text-slate-400 font-serif leading-snug">Checks how Google, Apple Maps, and AI tools extract your business details.</span>
+                      </p>
+                    </li>
+                    <li className="flex items-start gap-3 p-3.5 rounded-xl bg-[#08090C]/70 border border-[#1E293B]">
+                      <CheckBadge color="cyan" />
+                      <p className="space-y-1">
+                        <strong className="block font-bold text-white text-xs sm:text-sm">Code &amp; Schema Review</strong>
+                        <span className="block text-xs text-slate-400 font-serif leading-snug">Identifies broken structured data, incorrect tags, and indexing errors.</span>
+                      </p>
+                    </li>
+                    <li className="flex items-start gap-3 p-3.5 rounded-xl bg-[#08090C]/70 border border-[#1E293B]">
+                      <CheckBadge color="cyan" />
+                      <p className="space-y-1">
+                        <strong className="block font-bold text-white text-xs sm:text-sm">Prioritised 90-Day Plan</strong>
+                        <span className="block text-xs text-slate-400 font-serif leading-snug">An ordered checklist of required technical fixes and page updates.</span>
+                      </p>
+                    </li>
+                    <li className="flex items-start gap-3 p-3.5 rounded-xl bg-[#08090C]/70 border border-[#1E293B]">
+                      <CheckBadge color="cyan" />
+                      <p className="space-y-1">
+                        <strong className="block font-bold text-white text-xs sm:text-sm">45-Minute Review Call</strong>
+                        <span className="block text-xs text-slate-400 font-serif leading-snug">A direct walkthrough of findings and next steps with your team.</span>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-[#1E293B]">
+                {/* Law of Proximity Risk-Reversal Callout */}
+                <div className="bg-[#08090C]/90 border border-[#00E5FF]/30 rounded-xl p-4 mb-6 flex items-start gap-3">
+                  <ShieldCheck className="w-5 h-5 text-[#00E5FF] shrink-0 mt-0.5" />
+                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                    <strong className="font-bold text-white">100% Credit Guarantee:</strong> Your full $995 AUD Strategic Blueprint fee is credited directly toward AEO Foundation implementation when activated within 60 days.
                   </p>
                 </div>
-              </header>
 
-              {/* Concise Description */}
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Find the data errors, missing business facts, and structured code issues preventing search engines and AI models from recommending your business.
-              </p>
-
-              {/* 4 Core Deliverables Checklist */}
-              <div className="pt-5 border-t border-[#1E293B]">
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans list-none p-0 m-0">
-                  <li className="flex items-start gap-3 p-3.5 rounded-xl bg-[#08090C]/70 border border-[#1E293B]">
-                    <CheckBadge color="cyan" />
-                    <p className="space-y-1">
-                      <strong className="block font-bold text-white text-xs sm:text-sm">Search &amp; AI Visibility Audit</strong>
-                      <span className="block text-xs text-slate-400 font-serif leading-snug">Checks how Google, Apple Maps, and AI tools extract your business details.</span>
-                    </p>
-                  </li>
-                  <li className="flex items-start gap-3 p-3.5 rounded-xl bg-[#08090C]/70 border border-[#1E293B]">
-                    <CheckBadge color="cyan" />
-                    <p className="space-y-1">
-                      <strong className="block font-bold text-white text-xs sm:text-sm">Code &amp; Schema Review</strong>
-                      <span className="block text-xs text-slate-400 font-serif leading-snug">Identifies broken structured data, incorrect tags, and indexing errors.</span>
-                    </p>
-                  </li>
-                  <li className="flex items-start gap-3 p-3.5 rounded-xl bg-[#08090C]/70 border border-[#1E293B]">
-                    <CheckBadge color="cyan" />
-                    <p className="space-y-1">
-                      <strong className="block font-bold text-white text-xs sm:text-sm">Prioritised 90-Day Plan</strong>
-                      <span className="block text-xs text-slate-400 font-serif leading-snug">An ordered checklist of required technical fixes and page updates.</span>
-                    </p>
-                  </li>
-                  <li className="flex items-start gap-3 p-3.5 rounded-xl bg-[#08090C]/70 border border-[#1E293B]">
-                    <CheckBadge color="cyan" />
-                    <p className="space-y-1">
-                      <strong className="block font-bold text-white text-xs sm:text-sm">45-Minute Review Call</strong>
-                      <span className="block text-xs text-slate-400 font-serif leading-snug">A direct walkthrough of findings and next steps with your team.</span>
-                    </p>
-                  </li>
-                </ul>
+                {/* Unified Dominant Primary CTA (Directional Glassmorphic Gradient Border + Top Specular Highlight) */}
+                <div className="p-[1px] rounded-full bg-gradient-to-br from-[#A080FE] via-[#fd799f] to-[#1E293B] shadow-[0_8px_24px_rgba(160,128,254,0.18)]">
+                  <PackageSelectLink
+                    href={tier1.ctaHref}
+                    packageId={bpSku.code}
+                    packageName={tier1.name}
+                    priceExGst={bpSku.priceExGst}
+                    className="group bg-[#141927]/95 hover:bg-[#1B2236] backdrop-blur-md text-white font-semibold text-sm tracking-wide rounded-full w-full py-3.5 px-6 transition-all flex items-center justify-center gap-2 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)] cursor-pointer"
+                  >
+                    <span>Commission Strategic Blueprint</span>
+                    <ArrowRight className="w-4 h-4 text-[#A080FE] group-hover:translate-x-1 transition-transform" />
+                  </PackageSelectLink>
+                </div>
               </div>
-            </div>
-
-            <div className="pt-6 mt-6 border-t border-[#1E293B]">
-              {/* Law of Proximity Risk-Reversal Callout */}
-              <div className="bg-[#08090C]/90 border border-[#00E5FF]/30 rounded-xl p-4 mb-6 flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#00E5FF] shrink-0 mt-0.5" />
-                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-                  <strong className="font-bold text-white">100% Credit Guarantee:</strong> Your full $995 AUD Strategic Blueprint fee is credited directly toward AEO Foundation implementation when activated within 60 days.
-                </p>
-              </div>
-
-              {/* Dominant Primary CTA */}
-              <PackageSelectLink
-                href={tier1.ctaHref}
-                packageId={bpSku.code}
-                packageName={tier1.name}
-                priceExGst={bpSku.priceExGst}
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#00E5FF] text-[#08090C] font-bold hover:bg-[#33ECFF] py-4 px-6 rounded-xl transition-all duration-300 shadow-[0_0_25px_rgba(0,229,255,0.25)] text-sm cursor-pointer"
-              >
-                <span>Commission Strategic Blueprint →</span>
-              </PackageSelectLink>
-            </div>
-          </article>
+            </article>
+          </div>
 
           {/* Right Column (lg:col-span-5): Secondary Stacked Sidebar */}
           <div className="lg:col-span-5 flex flex-col gap-6">
@@ -263,45 +267,6 @@ export function CoreEngagementsGrid() {
             </article>
           </div>
         </div>
-
-        {/* Semantic Service Architecture Decoupling: Core Solutions Navigation Landmark */}
-        <nav aria-label="Core solutions" className="mt-14 w-full max-w-5xl mx-auto text-left relative z-10 border-t border-white/10 pt-8">
-          <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">
-            Explore AI Search Support
-          </div>
-          <h3 className="text-lg font-bold text-slate-100 mb-4 font-soehne-breit">
-            Get Expert support and service
-          </h3>
-          <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <li>
-              <Link
-                href="/services/ai-search-agency"
-                className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
-              >
-                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">AI search agency and AEO consultancy</span>
-                <span className="text-xs text-slate-400">Specialist enterprise &amp; SMB AI search engineering</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services/aeo/local-business"
-                className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
-              >
-                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Answer Engine Optimisation for Australian small businesses</span>
-                <span className="text-xs text-slate-400">Local entity schemas, directory parity &amp; map visibility</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services/geo-marketing"
-                className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
-              >
-                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Generative Engine Optimisation (GEO) services</span>
-                <span className="text-xs text-slate-400">Coordinate precision, regional intent &amp; AI citation share</span>
-              </Link>
-            </li>
-          </ul>
-        </nav>
       </div>
     </section>
   );

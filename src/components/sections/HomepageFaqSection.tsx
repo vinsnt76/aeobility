@@ -1,35 +1,22 @@
 import React from 'react';
-import Link from 'next/link';
 
 export function HomepageFaqSection() {
   const faqs = [
     {
       question: "What is Answer Engine Optimisation (AEO) and how does it differ from traditional SEO?",
-      answer: "Traditional Search Engine Optimisation focuses on ranking ten blue links on search engine results pages through keyword frequency and backlink volume. Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) engineer your digital assets so conversational AI systems like ChatGPT Search, Perplexity, Google AI Overviews, and Gemini understand your core business facts and cite you as an authoritative direct source. Instead of counting clicks, AEO optimises for passage retrieval, entity clarity, and machine-readable data provenance."
+      answer: "Traditional Search Engine Optimisation focuses on ranking ten blue links through keyword frequency and backlink volume. Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) extend your search foundation by structuring your digital assets into connected Schema.org Tri-Graphs (Entity, Semantic Intent, and Evidence graphs) anchored to the Australian Business Register (ABN). This reduces the risk of AI hallucination and improves retrieval conditions so ChatGPT Search, Perplexity, Google AI Overviews, and Gemini can verify and cite your brand."
     },
     {
-      question: "Why do monthly SEO agency retainers fail with modern AI search engines?",
-      answer: "Monthly retainers were designed for manual keyword tracking and open-ended link building cycles across desktop search engines. Modern generative answer engines do not browse pages like humans or count monthly agency hours. They evaluate verifiable entity facts, structured JSON-LD schemas, and licensing credentials in real time. AEObility replaces speculative monthly retainers with transparent, fixed-scope sprints from $495 AUD ex. GST and a $995 Strategic Blueprint where 100% of your audit fee is credited toward follow-on implementation."
-    },
-    {
-      question: "How does AEObility structure business entities and knowledge graphs for AI citation?",
-      answer: "We build connected Tri-Graphs linking what exists (Entity Graph), how concepts relate (Semantic Intent Graph), and where claims are proven (Evidence Graph). Every commercial offering is mapped using Schema.org types (Organization, LocalBusiness, ProfessionalService, Product, Offer) anchored to authoritative government registries including the Australian Business Register (ABN) and official regulatory directories. This eliminates AI hallucination and ensures search engines cite your brand with high confidence."
-    },
-    {
-      question: "What is the difference between AEO and GEO (Generative Engine Optimisation)?",
-      answer: "AEO focuses on engineering structured answers, schema markup, and deterministic facts so search engines can extract direct answers for specific user queries. GEO (Generative Engine Optimisation) expands on this by optimising multi-modal brand authority, semantic citations, and knowledge graph relationships across large language models during multi-step synthesis and comparison queries. Both work together to ensure your brand is chosen when buyers ask AI engines for recommendations."
+      question: "Why do fixed-scope sprints beat monthly SEO agency retainers for AI search?",
+      answer: "Monthly retainers were designed for manual keyword tracking and open-ended link building cycles across desktop search engines. Modern generative answer engines do not count monthly agency hours; they evaluate verifiable entity facts, structured JSON-LD schemas, and licensing credentials in real time. AEObility replaces speculative monthly retainers with transparent, fixed-scope sprints from $495 AUD ex. GST and a $995 Strategic Blueprint where 100% of your audit fee is credited toward follow-on implementation."
     },
     {
       question: "What deliverables are included in the $995 Strategic Blueprint and how does the fee credit work?",
-      answer: "The Strategic Blueprint is a standalone 5-business-day diagnostic audit. It includes a complete digital footprint assessment, Schema.org code review, AI visibility scorecard across ChatGPT and Perplexity, and a prioritised 90-day action roadmap. If you proceed with eligible implementation sprints within 60 calendar days of receiving your blueprint, 100% of your $995 audit fee is credited directly toward your implementation sprint total."
+      answer: "The Strategic Blueprint is a standalone 5-business-day diagnostic audit. It includes a complete digital footprint assessment, Schema.org code review, AI visibility scorecard across ChatGPT and Perplexity, and a prioritised 90-day action roadmap. If you proceed with AEO Foundation implementation within 60 calendar days of receiving your blueprint, 100% of your $995 audit fee is credited directly toward your implementation total."
     },
     {
       question: "How quickly can an Australian business expect to see results from AEO implementation?",
       answer: "Unlike legacy SEO campaigns that require six to twelve months of recurring retainer spend, technical AEO fixes produce measurable validation within days. Once validated JSON-LD schema graphs and atomic answer blocks are deployed to production, search engine bots re-index structured markup within 3 to 10 business days. Brand citation improvements in conversational engines like Perplexity and ChatGPT Search typically register within two to four weeks as model indexes refresh."
-    },
-    {
-      question: "How do Schema.org Tri-Graphs prevent generative AI hallucination?",
-      answer: "Generative search models hallucinate when a business website lacks deterministic, verifiable data about its offerings, locations, or pricing. AEObility constructs connected Tri-Graphs linking what exists (Entity Graph), how concepts relate (Semantic Intent Graph), and where claims are proven (Evidence Graph). By mapping every commercial offering to explicit Schema.org entities anchored to the Australian Business Register (ABN) and regulatory directories, we give AI answer engines unambiguous ground truth, eliminating factual distortion and ensuring accurate citations."
     },
     {
       question: "How can Perth and Australian businesses measure generative AI citations and search share?",
@@ -58,7 +45,7 @@ export function HomepageFaqSection() {
             Answer Engine Optimisation &amp; AI Search FAQs
           </h2>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch] mx-auto">
-            Everything you need to know about preparing your Australian business for ChatGPT, Perplexity, and Google AI Overviews. Read our full <Link href="/knowledge-hub/what-is-aeo" className="text-[#00E5FF] hover:underline font-medium">comprehensive AEO guide</Link>.
+            Everything you need to know about preparing your Australian business for ChatGPT, Perplexity, and Google AI Overviews.
           </p>
         </header>
 
