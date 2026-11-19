@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, Calendar, ArrowRight, X, Phone, Search } from 'lucide-react';
 import SubNavPills, { PillItem } from '@/components/navigation/SubNavPills';
@@ -43,28 +42,27 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
           aria-label="Primary Navigation"
           className="relative z-50 pointer-events-auto max-w-6xl mx-auto rounded-2xl bg-[#111622]/75 backdrop-blur-xl border border-[#1E293B] shadow-[0_12px_32px_rgba(0,0,0,0.55),inset_0_1px_0_0_rgba(255,255,255,0.08)] px-4 sm:px-6 py-2.5 flex items-center justify-between overflow-visible"
         >
-          {/* Brand Logo */}
-          <Link href="/" aria-label="AEObility Home" className="flex items-center group">
-            {/* Desktop Full Logo */}
-            <Image
-              src="/images/brand/aeobility-logo-dark.svg"
-              alt="AEObility Logo"
-              width={168}
-              height={36}
-              className="h-9 w-auto object-contain hidden lg:block group-hover:scale-105 transition-transform"
-              priority
-            />
-            {/* Mobile Standalone Circular Logo Badge */}
-            <div className="flex lg:hidden h-9 w-9 items-center justify-center rounded-full bg-[#08090C] border border-[#1E293B] group-hover:border-[#00E5FF]/60 active:scale-95 transition-all shrink-0 overflow-hidden">
-              <Image
-                src="/images/brand/aeobility-icon-dark.svg"
-                alt="AEObility Icon"
-                width={26}
-                height={26}
-                className="h-[26px] w-[26px] object-contain group-hover:scale-105 transition-transform"
-                priority
-              />
+          {/* Brand Logo: Geometric Square Icon Badge + Two-Tone Wordmark */}
+          <Link href="/" aria-label="AEObility Home" className="flex items-center gap-2.5 group focus:outline-none">
+            <div className="w-8 h-8 rounded-lg bg-[#161B26] border border-slate-700/80 group-hover:border-[#00E5FF]/50 flex items-center justify-center shrink-0 transition-colors">
+              <svg className="w-5 h-5" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="nav-logo-grad" x1="5" y1="4" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#00E5FF" />
+                    <stop offset="100%" stopColor="#A855F7" />
+                  </linearGradient>
+                </defs>
+                <path d="M16 4L27 10.5L16 17L5 10.5L16 4Z" stroke="url(#nav-logo-grad)" strokeWidth="2.3" strokeLinejoin="round" />
+                <circle cx="9" cy="16" r="1.3" fill="#FFFFFF" />
+                <circle cx="13.5" cy="18.5" r="1.3" fill="#FFFFFF" />
+                <circle cx="18.5" cy="18.5" r="1.3" fill="#FFFFFF" />
+                <circle cx="23" cy="16" r="1.3" fill="#FFFFFF" />
+                <path d="M5 20.5L16 27L27 20.5" stroke="url(#nav-logo-grad)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </div>
+            <span className="text-lg sm:text-xl font-extrabold tracking-tight text-white font-sans">
+              AEO<span className="text-[#00E5FF]">bility</span>
+            </span>
           </Link>
 
           {/* Desktop Menu links */}
@@ -213,15 +211,26 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
       <MobileMenuOverlay isOpen={isOpen} onClose={() => setIsOpen(false)}>
         {/* Mobile Header */}
         <div className="flex justify-between items-center border-b border-white/10 pb-4">
-          <Link href="/" onClick={() => setIsOpen(false)} aria-label="AEObility Home" className="flex items-center">
-            <Image
-              src="/images/brand/aeobility-logo-dark.svg"
-              alt="AEObility Logo"
-              width={140}
-              height={32}
-              className="h-8 w-auto object-contain"
-              priority
-            />
+          <Link href="/" onClick={() => setIsOpen(false)} aria-label="AEObility Home" className="flex items-center gap-2.5 focus:outline-none">
+            <div className="w-8 h-8 rounded-lg bg-[#161B26] border border-slate-700/80 flex items-center justify-center shrink-0">
+              <svg className="w-5 h-5" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="drawer-logo-grad" x1="5" y1="4" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#00E5FF" />
+                    <stop offset="100%" stopColor="#A855F7" />
+                  </linearGradient>
+                </defs>
+                <path d="M16 4L27 10.5L16 17L5 10.5L16 4Z" stroke="url(#drawer-logo-grad)" strokeWidth="2.3" strokeLinejoin="round" />
+                <circle cx="9" cy="16" r="1.3" fill="#FFFFFF" />
+                <circle cx="13.5" cy="18.5" r="1.3" fill="#FFFFFF" />
+                <circle cx="18.5" cy="18.5" r="1.3" fill="#FFFFFF" />
+                <circle cx="23" cy="16" r="1.3" fill="#FFFFFF" />
+                <path d="M5 20.5L16 27L27 20.5" stroke="url(#drawer-logo-grad)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <span className="text-lg font-extrabold tracking-tight text-white font-sans">
+              AEO<span className="text-[#00E5FF]">bility</span>
+            </span>
           </Link>
           <button
             onClick={() => setIsOpen(false)}
