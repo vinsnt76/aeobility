@@ -29,7 +29,7 @@ export default function Hero() {
       {/* Absolute Radial Gradient Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] rounded-full bg-radial from-aeo-purple/20 via-aeo-cyan/5 to-transparent glow-blur pointer-events-none z-0"></div>
 
-      {/* Decorative Floating Background Nodes Layer (Lower z-index behind content and diagnostic instrument) */}
+      {/* Decorative Floating Background Nodes Layer (Masked away from left H1 text corridor) */}
       <aside
         aria-label="Interactive entity network visualisation"
         className="hero-visual-canvas-container absolute inset-0 z-0 overflow-clip pointer-events-none opacity-55"
@@ -37,7 +37,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.10)_0%,transparent_70%)] pointer-events-none"></div>
         <div
           id="hero-node-canvas"
-          className="relative z-0 w-full h-full pointer-events-none [mask-image:linear-gradient(to_right,transparent,black_20%)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_20%)]"
+          className="relative z-0 w-full h-full pointer-events-none [mask-image:linear-gradient(to_right,transparent_0%,transparent_52%,black_75%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,transparent_52%,black_75%)]"
         >
           <GraphVisual />
         </div>
@@ -56,23 +56,19 @@ export default function Hero() {
             </div>
 
             <h1 id="hero-title" className="text-4xl sm:text-6xl lg:text-[52px] xl:text-[62px] font-bold tracking-tight text-white leading-[1.08]">
-              Get your business{' '}
-              <span className="font-extrabold text-focal-gradient">found and chosen</span>{' '}
-              in AI search.
+              <span className="block">Get your business</span>
+              <span className="block font-extrabold text-focal-gradient">found and chosen</span>
+              <span className="block">in AI search.</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-300 max-w-xl leading-relaxed font-serif">
-              AEObility is a Perth digital consultancy dedicated to Answer Engine Optimisation (AEO) and machine search readability. Position your business across Google, Maps, and AI answer engines with zero guesswork.
-            </p>
-
-            {/* Direct Answer Block / Executive Summary */}
+            {/* Direct Answer Block / Consolidated Entity Definition & Proof Pills */}
             <aside 
               aria-label="Executive Summary" 
               data-agent-purpose="direct-answer"
-              className="max-w-xl p-4 sm:p-5 rounded-xl bg-[#0D1117]/90 border-t border-[#00E5FF]/40 border-b border-x border-[#1E293B] backdrop-blur-md space-y-4"
+              className="max-w-xl p-5 sm:p-6 rounded-xl bg-[#0D1117]/80 border-t border-[#00E5FF]/40 border-b border-x border-slate-800 backdrop-blur-md space-y-4"
             >
-              <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-serif">
-                <strong className="text-white font-sans">AEObility</strong> provides technical Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) for Australian businesses. We engineer web architectures, structured schema graphs, and entity profiles to ensure artificial intelligence search engines, including ChatGPT Search, Perplexity, and Google AI Overviews, accurately identify, understand, and cite your business offerings.
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                <strong className="font-semibold text-white">AEObility</strong> is a Perth digital consultancy engineering Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) for Australian businesses. We structure your web architecture, schema graphs, and entity profiles so Google, Maps, ChatGPT Search, Perplexity, and Google AI Overviews accurately identify, understand, and recommend your business with zero guesswork.
               </p>
 
               {/* Scope/Trust Pills: 3-column metric strip aligned at bottom of left column */}
@@ -161,16 +157,15 @@ export default function Hero() {
                   />
                 </div>
 
-                {/* Primary Pill Button (High-Contrast Opaque Primary CTA) */}
+                {/* Primary Pill Button (High-Contrast Opaque AEO Cyan CTA) */}
                 <button
                   type="submit"
                   data-agent-action="run-visibility-scan"
                   data-testid="btn-run-scan"
-                  disabled={!url.trim() || !intent.trim()}
-                  className="hero-primary-cta w-full h-12 rounded-full bg-[#00E5FF] hover:bg-cyan-300 text-slate-950 font-bold text-sm tracking-wide shadow-lg shadow-cyan-950/50 flex items-center justify-center gap-2 transition-all active:scale-[0.99] cursor-pointer disabled:bg-slate-800 disabled:text-slate-300 disabled:border disabled:border-slate-700 disabled:cursor-not-allowed"
+                  className="hero-primary-cta w-full h-12 rounded-full bg-[#00E5FF] hover:bg-cyan-300 text-slate-950 font-bold text-sm tracking-wide shadow-lg shadow-cyan-950/50 flex items-center justify-center gap-2 transition-all active:scale-[0.99] cursor-pointer"
                 >
                   <span>Run Free Visibility Scan</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 text-slate-950" />
                 </button>
 
                 {/* Disclaimer & Reassurance Micro-Row */}
