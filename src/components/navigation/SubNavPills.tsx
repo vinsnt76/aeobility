@@ -28,8 +28,8 @@ export function SubNavPills({ sectionTitle, items, isEmbedded = false }: SubNavP
   return (
     <nav
       aria-label={sectionTitle ? `${sectionTitle} Sub-navigation` : 'Page section navigation'}
-      className={`w-full border-b border-white/10 bg-neutral-950/90 backdrop-blur-md py-2 sm:py-2.5 px-3 sm:px-6 relative shadow-md ${
-        isEmbedded ? 'relative' : 'sticky top-16 z-30'
+      className={`w-full border border-[#1E293B] bg-[#08090C]/85 backdrop-blur-md py-2 sm:py-2.5 px-3 sm:px-6 shadow-md z-30 ${
+        isEmbedded ? 'relative rounded-xl' : 'sticky top-20'
       }`}
     >
       {/* Subtle Right Edge Fade for Mobile Horizontal Scroll Discovery */}
