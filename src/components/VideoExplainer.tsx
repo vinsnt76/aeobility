@@ -51,8 +51,8 @@ export default function VideoExplainer({
               className="relative w-full h-full text-left group cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00E5FF] focus:ring-offset-2 focus:ring-offset-[#08090C] rounded-2xl overflow-hidden block"
             >
               <img
-                src="/images/brand/aeobility-video-explainer.webp"
-                alt="Why Aussie Businesses Partner with AEObility - AEO & GEO Marketing"
+                src="/images/brand/aeobility-ai-search-optimisation-video.webp"
+                alt="AEObility AI Search Optimisation video overview showing how Australian businesses structure data for Google, Maps, ChatGPT, and Gemini."
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <figcaption className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-between p-6 sm:p-8 pointer-events-none">
