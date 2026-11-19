@@ -31,15 +31,15 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Generative Engine Optimisation (GEO) Services Perth | AEObility",
-  description: "AEObility helps Perth and Australian businesses improve visibility across Google AI Overviews, ChatGPT Search, and Perplexity. Scoped micro-sprints from $495 AUD ex. GST.",
+  title: "Generative Engine Optimisation (GEO) Services | AEObility",
+  description: "Structured GEO services for Australian businesses. Align brand entities across ChatGPT, Perplexity, and Google AI Overviews with zero agency lock-in.",
   alternates: {
-    canonical: "https://aeobility.com.au/services/geo-marketing",
+    canonical: "https://www.aeobility.com.au/services/geo-marketing",
   },
   openGraph: {
-    title: "Generative Engine Optimisation (GEO) Services Perth | AEObility",
-    description: "Fix structured signals, business facts, and entity architecture to improve discovery across Google AI features, ChatGPT Search, and Perplexity.",
-    url: "https://aeobility.com.au/services/geo-marketing",
+    title: "Generative Engine Optimisation (GEO) Services | AEObility",
+    description: "Structured GEO services for Australian businesses. Align brand entities across ChatGPT, Perplexity, and Google AI Overviews with zero agency lock-in.",
+    url: "https://www.aeobility.com.au/services/geo-marketing",
     siteName: "AEObility",
     locale: "en_AU",
     type: "website",

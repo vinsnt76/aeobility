@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "intent matching"
   ],
   alternates: {
-    canonical: 'https://aeobility.com.au',
+    canonical: 'https://www.aeobility.com.au/',
   }
 };
 

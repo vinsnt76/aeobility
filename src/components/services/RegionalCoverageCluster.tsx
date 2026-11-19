@@ -48,7 +48,7 @@ interface RegionalCoverageClusterProps {
 
 export default function RegionalCoverageCluster({
   title = "Australian Regional AI Search Coverage",
-  subtitle = "Direct crawlable links to localized Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) service hubs across major Australian metro markets.",
+  subtitle = "Direct crawlable links to localised Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) service hubs across major Australian metro markets.",
 }: RegionalCoverageClusterProps) {
   return (
     <section className="my-12 p-6 sm:p-8 bg-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-3xl space-y-6 shadow-2xl">

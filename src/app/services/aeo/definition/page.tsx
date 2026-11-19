@@ -8,10 +8,10 @@ import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { ArrowRight, AlertTriangle, CheckCircle2, Cpu, ShieldCheck, FileText, HelpCircle, XCircle } from 'lucide-react';
 
 export const metadata = {
-  title: "What is AEO in Digital Marketing? Meaning & Concepts | AEObility",
-  description: "Discover the definition of Answer Engine Optimisation (AEO) and learn how machine learning models read, index, and cite business information.",
+  title: "What is Google Search Engine AI? AEO & RAG Explained | AEObility",
+  description: "Google Search AI and RAG service explainer. Learn how Google search engine AI features parse, synthesise, and cite machine-readable business facts.",
   alternates: {
-    canonical: "https://aeobility.com.au/services/aeo/definition",
+    canonical: "https://www.aeobility.com.au/services/aeo/definition",
   },
 };
 
@@ -302,17 +302,20 @@ export default function AEODefinitionPage() {
             </div>
 
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
-              What is AEO in Digital Marketing? <span className="text-gradient-aeo">Meaning & Concepts</span>
+              What is AEO in Digital Marketing? <span className="text-gradient-aeo">Google Search AI &amp; RAG Architecture</span>
             </h1>
 
             {/* Primacy Token Density Direct-Answer Hero Block */}
-            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border-l-4 border-aeo-cyan rounded-r-2xl mb-6 shadow-lg">
+            <div className="p-6 bg-gradient-to-r from-aeo-cyan/10 via-white/[0.02] to-aeo-purple/10 border-l-4 border-aeo-cyan rounded-r-2xl mb-6 shadow-lg space-y-3">
               <p className="text-xs font-mono font-bold uppercase text-aeo-cyan tracking-wider mb-2 flex items-center gap-1.5">
                 <Cpu className="w-4 h-4 text-aeo-cyan" />
-                <span>Executive Summary &bull; Core Definition</span>
+                <span>Executive Summary &bull; Digital Marketing &amp; Search Architecture</span>
               </p>
               <p className="text-sm sm:text-base text-white/90 leading-relaxed font-light">
-                Answer Engine Optimisation (AEO) is the practice of making business information easy for AI-powered search and answer systems to find, interpret, and use. It combines clear, evidence-backed content, well-defined entities, structured data, accessible technical implementation, and logical internal linking. AEO can improve a site&apos;s eligibility to appear in AI-generated answers and citations, but no provider can guarantee inclusion or recommendation.
+                In modern digital marketing, Answer Engine Optimisation (AEO) is the technical discipline of structuring business information so Google AI Overviews, Retrieval-Augmented Generation (RAG) pipelines, and conversational search architectures can find, verify, and cite your brand. It combines self-contained passage blocks, explicit entity definitions, Schema.org structured data, and logical internal linking. For a foundational top-of-funnel primer on{' '}
+                <Link href="/knowledge-hub/what-is-aeo" className="text-[#00E5FF] font-semibold hover:underline">
+                  what is AEO
+                </Link>, explore our Knowledge Hub definition hub.
               </p>
             </div>
 

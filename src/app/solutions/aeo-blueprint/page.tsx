@@ -376,6 +376,106 @@ export default function AEOBlueprintPage() {
             </div>
           </section>
 
+          {/* 4. Section: How to Run a 90-Day AEO Pilot with Measurable Success Criteria */}
+          <section id="aeo-pilot-90-days" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <p className="text-xs font-mono uppercase tracking-wider text-[#00E5FF] font-semibold">
+                90-DAY PILOT EXECUTION FRAMEWORK
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white font-soehne-breit leading-snug">
+                How to Run a 90-Day AEO Pilot with Measurable Success Criteria
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
+                Start your 90-day pilot with the $995 AUD ex. GST Strategic Blueprint (100% credited toward implementation sprints within 60 days) and measure progress across three structured 30-day execution milestones:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Phase 1: Days 1 to 30 */}
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 backdrop-blur-md space-y-3 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <span className="inline-flex px-3 py-1 rounded-full bg-cyan-950 border border-cyan-500/40 text-[#00E5FF] font-mono font-bold text-xs">
+                    PHASE 01 · DAYS 1 TO 30
+                  </span>
+                  <h3 className="text-base sm:text-lg font-bold text-white font-soehne-breit leading-snug">
+                    Days 1 to 30: Technical Audit, Entity Disambiguation &amp; Schema Graph Repair
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
+                    Complete the $995 Strategic Blueprint baseline crawl, resolve ABN and directory entity conflicts, repair disconnected JSON-LD nodes, and verify zero-error Schema.org validation across core commercial URLs.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-slate-800 text-xs font-mono text-[#00E5FF]">
+                  Success Criteria: 100% Schema Validation &amp; Entity Parity
+                </div>
+              </div>
+
+              {/* Phase 2: Days 31 to 60 */}
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 backdrop-blur-md space-y-3 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <span className="inline-flex px-3 py-1 rounded-full bg-purple-950 border border-purple-500/40 text-purple-300 font-mono font-bold text-xs">
+                    PHASE 02 · DAYS 31 TO 60
+                  </span>
+                  <h3 className="text-base sm:text-lg font-bold text-white font-soehne-breit leading-snug">
+                    Days 31 to 60: Atomic Passage Refactoring &amp; Semantic Lattice Internal Linking
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
+                    Apply your 100% $995 Blueprint fee credit toward implementation sprints. Refactor priority service pages into 90 to 120 token atomic answer blocks and build bidirectional semantic lattice internal links between service hubs and proof assets.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-slate-800 text-xs font-mono text-purple-300">
+                  Success Criteria: 90%+ Passage Extraction Readiness
+                </div>
+              </div>
+
+              {/* Phase 3: Days 61 to 90 */}
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 backdrop-blur-md space-y-3 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <span className="inline-flex px-3 py-1 rounded-full bg-emerald-950 border border-emerald-500/40 text-emerald-300 font-mono font-bold text-xs">
+                    PHASE 03 · DAYS 61 TO 90
+                  </span>
+                  <h3 className="text-base sm:text-lg font-bold text-white font-soehne-breit leading-snug">
+                    Days 61 to 90: Multi-Engine Citation Telemetry &amp; Conversion Attribution
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
+                    Dispatch IndexNow API updates, benchmark live query fan-out performance across ChatGPT Search, Perplexity, and Google AI Overviews, and track verified brand citation lift and qualified organic conversions.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-slate-800 text-xs font-mono text-emerald-300">
+                  Success Criteria: Verified AI Citation &amp; Salience Lift
+                </div>
+              </div>
+            </div>
+
+            {/* Pilot Lead-Capture CTA Box */}
+            <div className="rounded-2xl border border-purple-500/30 bg-slate-900/80 p-6 sm:p-8 backdrop-blur-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="space-y-2 max-w-2xl">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] block">
+                  90-Day Pilot Checklist &amp; Scoping
+                </span>
+                <h3 className="font-display text-xl font-bold text-white">
+                  Ready to Launch a 90-Day AEO Pilot?
+                </h3>
+                <p className="font-sans text-sm text-slate-300 leading-relaxed">
+                  Commission the standalone $995 Strategic Blueprint (100% credited toward implementation sprints within 60 days) or book a complimentary 15-minute clarity call to scope your 90-day pilot criteria.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3 shrink-0">
+                <a
+                  href="#blueprint-contact-form"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#00E5FF] px-5 py-2.5 font-sans text-sm font-bold text-slate-950 hover:bg-cyan-400 transition-colors"
+                >
+                  Commission $995 Strategic Blueprint
+                </a>
+                <Link
+                  href="/book"
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-700 bg-slate-800 px-5 py-2.5 font-sans text-sm font-medium text-white hover:bg-slate-700 transition-colors"
+                >
+                  Book a 15-Minute Clarity Call
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* 5. Section: The 100% Risk-Reversal Credit Policy & Process */}
           <section id="blueprint-process" className="border-t border-white/10 pt-16 space-y-8 scroll-mt-24">
             <div className="text-center max-w-3xl mx-auto space-y-3">

@@ -32,7 +32,7 @@ import {
 export const SOLUTIONS_INTERNAL_LINKS = [
   {
     targetSlug: "/solutions/aeo-blueprint",
-    anchorText: "Strategic Blueprint",
+    anchorText: "90-day AEO pilot and Strategic Blueprint",
     entityRelation: "http://schema.org/isRelatedTo"
   },
   {
@@ -337,7 +337,7 @@ export default function SolutionsPage() {
             </div>
 
             <p className="text-xs text-zinc-400 font-serif">
-              Looking for detailed technical sprint specs? Visit our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">Technical Sprints Portal</Link> or review <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">Strategic Blueprint</Link>.
+              Looking for detailed technical sprint specs? Visit our <Link href="/solutions/aeo-sprint" className="text-cyan-400 hover:underline font-medium">Technical Sprints Portal</Link> or review our <Link href="/solutions/aeo-blueprint" className="text-cyan-400 hover:underline font-medium">90-day AEO pilot and Strategic Blueprint</Link>.
             </p>
           </section>
 

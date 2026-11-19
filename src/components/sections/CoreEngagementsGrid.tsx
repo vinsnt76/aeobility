@@ -344,20 +344,11 @@ export function CoreEngagementsGrid() {
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <li>
               <Link
-                href="/solutions/aeo-blueprint"
+                href="/services/ai-search-agency"
                 className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
               >
-                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Strategic Blueprint &amp; Roadmap</span>
-                <span className="text-xs text-slate-400">Diagnostic gap analysis &amp; engineering plan</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/solutions/aeo-sprint"
-                className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
-              >
-                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Technical Implementation</span>
-                <span className="text-xs text-slate-400">Deterministic schema &amp; knowledge node deployment</span>
+                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">AI search agency and AEO consultancy</span>
+                <span className="text-xs text-slate-400">Specialist enterprise &amp; SMB AI search engineering</span>
               </Link>
             </li>
             <li>
@@ -365,8 +356,17 @@ export function CoreEngagementsGrid() {
                 href="/services/aeo/local-business"
                 className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
               >
-                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Local Visibility Support</span>
-                <span className="text-xs text-slate-400">GEO optimisation &amp; citation integrity</span>
+                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Answer Engine Optimisation for Australian small businesses</span>
+                <span className="text-xs text-slate-400">Local entity schemas, directory parity &amp; map visibility</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/services/geo-marketing"
+                className="block p-4 rounded-xl bg-slate-900/60 border border-slate-700/50 hover:border-purple-400/50 hover:bg-slate-900/90 transition-all group"
+              >
+                <span className="block text-sm font-semibold text-slate-200 group-hover:text-purple-300 transition-colors">Generative Engine Optimisation (GEO) services</span>
+                <span className="text-xs text-slate-400">Coordinate precision, regional intent &amp; AI citation share</span>
               </Link>
             </li>
           </ul>

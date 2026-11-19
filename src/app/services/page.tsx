@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import QuoteFormSection from '@/components/QuoteFormSection';
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "AI Search Strategy & GEO Marketing Consultancy | AEObility",
   description: "Explore custom AEO, GEO, and AI search strategy services for Australian SMBs. Optimise your digital presence across Search, Maps, and AI answer engines.",
   alternates: {
-    canonical: "https://aeobility.com.au/services",
+    canonical: "https://www.aeobility.com.au/services",
   },
   keywords: [
     "Digital Marketing Specialist for Australian SMBs in Perth, Australia",
@@ -320,10 +320,10 @@ export default function ServicesPage() {
               </h1>
               <div className="space-y-4 text-slate-300 font-normal leading-relaxed max-w-xl">
                 <p className="text-base sm:text-lg">
-                  AEObility is an Australian AEO consultancy providing <Link href="/services/aeo" className="text-aeo-cyan hover:underline font-normal">AEO Services for Australian SMBs</Link> to help local service businesses become discoverable, understandable and recommended across Search, Maps and AI.
+                  AEObility is an Australian AEO consultancy providing <Link href="/services/aeo/local-business" className="text-aeo-cyan hover:underline font-normal">Answer Engine Optimisation for Australian small businesses</Link> and <Link href="/services/geo-marketing" className="text-aeo-cyan hover:underline font-normal">Generative Engine Optimisation (GEO) services</Link> to help local service operators become discoverable, understandable, and recommended across Search, Maps, and AI.
                 </p>
                 <p className="text-sm sm:text-base text-slate-400">
-                  We optimise your digital footprint so modern LLMs including ChatGPT, Claude and Perplexity can extract, cite and recommend your services with confidence. Evaluate software options in our <Link href="/knowledge-hub/ai-seo-tools" className="text-aeo-cyan hover:underline font-normal">AI SEO tools and technology comparison hub</Link> or review our technical guide on <Link href="/knowledge-hub/guides/aeo" className="text-aeo-cyan hover:underline font-normal">Answer Engine Optimisation Core Principles</Link> to explore our RAG retrieval architecture.
+                  Partner directly with our <Link href="/services/ai-search-agency" className="text-aeo-cyan hover:underline font-normal">AI search agency and AEO consultancy</Link> so modern LLMs including ChatGPT, Claude, and Perplexity can extract, cite, and recommend your services with confidence. Evaluate software options in our <Link href="/knowledge-hub/ai-seo-tools" className="text-aeo-cyan hover:underline font-normal">AI SEO tools and technology comparison hub</Link> or review our technical guide on <Link href="/knowledge-hub/guides/aeo" className="text-aeo-cyan hover:underline font-normal">Answer Engine Optimisation Core Principles</Link> to explore our RAG retrieval architecture.
                 </p>
               </div>
               <div className="pt-4">
