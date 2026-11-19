@@ -37,14 +37,14 @@ export function CoreEngagementsGrid() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
         <header className="text-left mb-12 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#111622] border border-[#1E293B] text-xs text-[#00E5FF] font-medium font-mono">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#111622] border border-[#1E293B] font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-medium">
             <Sparkles className="w-3.5 h-3.5 text-[#00E5FF] animate-pulse" />
             <span>Zero Retainer Lock-In</span>
           </div>
-          <h2 id="packages-title" className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit">
+          <h2 id="packages-title" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
             Fixed-Scope Sprints.
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl font-serif leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch]">
             Work directly with a qualified <Link href="/services/perth/seo-specialist" className="text-[#00E5FF] underline hover:text-cyan-300 font-medium">Perth SEO specialist &amp; local AEO consultant</Link> to secure top placement across Google Maps, local search, and AI answer engines. All engagements are clearly scoped and transparently priced.
           </p>
         </header>
@@ -52,7 +52,7 @@ export function CoreEngagementsGrid() {
         {/* Asymmetric 12-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-4">
           {/* Left Column (lg:col-span-7): Featured Primary Card - Strategic Blueprint */}
-          <article className="lg:col-span-7 flex flex-col justify-between bg-[#111622] border-2 border-[#00E5FF] rounded-2xl p-7 sm:p-9 shadow-[0_0_40px_rgba(0,229,255,0.12)] transition-all duration-300 group">
+          <article className="lg:col-span-7 flex flex-col justify-between bg-[#111622] border border-[#00E5FF]/60 rounded-2xl p-7 sm:p-9 shadow-[0_0_32px_rgba(0,229,255,0.08)] transition-all duration-300 group">
             <div className="space-y-6">
               {/* Card Header: Eyebrow + 5-DAY SLA Badge, Title & Pricing Block */}
               <header className="space-y-4">
@@ -68,18 +68,18 @@ export function CoreEngagementsGrid() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-soehne-breit">{tier1.name}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">{tier1.name}</h3>
                   <p className="flex items-baseline gap-2 mt-2">
                     <span className="text-3xl sm:text-4xl font-extrabold text-white font-mono">
                       {formatAudCurrency(bpSku.priceExGst, { includeTaxSuffix: false })}
                     </span>
-                    <span className="text-xs text-slate-400 font-mono uppercase tracking-wider">EX. GST</span>
+                    <span className="font-mono text-xs text-slate-400 uppercase tracking-wider">EX. GST</span>
                   </p>
                 </div>
               </header>
 
               {/* Concise Description */}
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-serif">
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
                 Find the data errors, missing business facts, and structured code issues preventing search engines and AI models from recommending your business.
               </p>
 
@@ -150,23 +150,23 @@ export function CoreEngagementsGrid() {
                     <Boxes className="w-3 h-3 text-slate-300" />
                     <span>Core Implementation</span>
                   </div>
-                  <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+                  <span className="font-mono text-xs text-slate-400 uppercase tracking-wider">
                     90-DAY EXECUTION
                   </span>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-white tracking-tight font-soehne-breit">{tier2.name}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">{tier2.name}</h3>
                   <p className="flex items-baseline gap-1.5 mt-1">
                     <span className="text-2xl font-extrabold text-white font-mono">
                       {formatAudCurrency(foundationCore.priceExGst, { includeTaxSuffix: false })}
                     </span>
-                    <span className="text-xs text-slate-400 font-mono uppercase tracking-wider">/ MO EX. GST</span>
+                    <span className="font-mono text-xs text-slate-400 uppercase tracking-wider">/ MO EX. GST</span>
                   </p>
                 </div>
               </header>
 
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-serif">
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
                 Hands-on technical implementation to resolve code errors, rewrite up to 10 core pages for direct-answer search, and align your business listings.
               </p>
 
@@ -210,23 +210,23 @@ export function CoreEngagementsGrid() {
                     <Rocket className="w-3 h-3 text-slate-300" />
                     <span>Modular Execution</span>
                   </div>
-                  <span className="bg-[#F59E0B]/10 text-[#F59E0B] border border-[#F59E0B]/30 text-xs font-semibold px-2.5 py-0.5 rounded-full font-mono">
+                  <span className="bg-[#F59E0B]/10 text-[#F59E0B] border border-[#F59E0B]/30 text-xs font-semibold px-2.5 py-0.5 rounded-full font-mono uppercase tracking-wider">
                     10-DAY CYCLES
                   </span>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-white tracking-tight font-soehne-breit">{tier3.name}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">{tier3.name}</h3>
                   <p className="flex items-baseline gap-1.5 mt-1">
                     <span className="text-2xl font-extrabold text-white font-mono">
                       From $495 AUD
                     </span>
-                    <span className="text-xs text-slate-400 font-mono">ex. GST</span>
+                    <span className="font-mono text-xs text-slate-400">ex. GST</span>
                   </p>
                 </div>
               </header>
 
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-serif">
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
                 Focused technical work blocks to clear site bottlenecks, expand service pages, and adapt to search updates with zero long-term contracts.
               </p>
 

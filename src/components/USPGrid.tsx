@@ -10,14 +10,14 @@ interface USPCardProps {
 
 function USPCard({ icon, title, description }: USPCardProps) {
   return (
-    <article className="group relative flex flex-col justify-between p-8 rounded-2xl bg-neutral-900/40 text-white border border-white/5 shadow-2xl hover:border-aeo-cyan/20 hover:bg-neutral-900/60 hover:-translate-y-1 transition-all duration-300">
+    <article className="group relative flex flex-col justify-between p-8 rounded-2xl bg-[#111622] text-white border border-[#1E293B] shadow-2xl hover:border-[#00E5FF]/40 hover:-translate-y-1 transition-all duration-300">
       <header>
-        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 mb-6 group-hover:scale-105 transition-transform duration-300">
+        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#08090C] border border-[#1E293B] mb-6 group-hover:scale-105 transition-transform duration-300">
           {icon}
         </div>
-        <h3 className="text-xl font-bold mb-3 font-soehne-breit">{title}</h3>
+        <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight mb-3">{title}</h3>
       </header>
-      <p className="text-sm text-white/60 font-light leading-relaxed font-serif">{description}</p>
+      <p className="text-sm sm:text-base text-slate-300 leading-relaxed">{description}</p>
     </article>
   );
 }
@@ -42,7 +42,7 @@ export default function USPGrid() {
   ];
 
   return (
-    <section id="usp" aria-labelledby="usp-heading" className="py-20 bg-black relative">
+    <section id="usp" aria-labelledby="usp-heading" className="py-20 bg-[#08090C] relative border-t border-[#1E293B]">
       {/* Decorative side glow */}
       <div className="absolute right-0 top-1/3 w-64 h-64 rounded-full bg-aeo-cyan glow-blur opacity-10 pointer-events-none"></div>
 
@@ -51,14 +51,14 @@ export default function USPGrid() {
           {/* Geometric Grid Background Motif */}
           <div className="absolute inset-0 -m-8 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
           <div className="relative z-10 space-y-4">
-            <span className="text-xs font-semibold tracking-widest text-aeo-cyan uppercase font-mono block">
+            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#00E5FF] block">
               Entity Authority
             </span>
-            <h2 id="usp-heading" className="text-3xl sm:text-4xl font-extrabold text-white font-soehne-breit">
+            <h2 id="usp-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
               Capture High-Intent Demand Across Google, Maps, and AI
             </h2>
-            <p className="text-base text-white/60 font-light font-serif">
-              We structure business data into machine-readable knowledge graphs. Explore our <Link href="/knowledge-hub/articles/entity-authority-building" className="text-aeo-cyan hover:underline font-semibold">entity authority building framework for AI search</Link> to understand how conversational models evaluate brand salience. Read our <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-aeo-cyan hover:underline font-semibold">90-Day AEO Blueprint Case Study</Link> for an empirical look at commercial query visibility.
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch]">
+              We structure business data into machine-readable knowledge graphs. Explore our <Link href="/knowledge-hub/articles/entity-authority-building" className="text-[#00E5FF] hover:underline font-semibold">entity authority building framework for AI search</Link> to understand how conversational models evaluate brand salience. Read our <Link href="/knowledge-hub/case-studies/aeo-geo-blueprint-90-days" className="text-[#00E5FF] hover:underline font-semibold">90-Day AEO Blueprint Case Study</Link> for an empirical look at commercial query visibility.
             </p>
           </div>
         </header>

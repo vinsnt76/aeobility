@@ -41,24 +41,24 @@ export function HomepageFaqSection() {
     <section 
       id="faq" 
       aria-labelledby="faq-heading" 
-      className="w-full bg-black py-20 md:py-24 border-t border-white/10 relative overflow-hidden"
+      className="w-full bg-[#0D1117] py-20 md:py-24 border-t border-[#1E293B] relative overflow-hidden"
     >
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] rounded-full bg-radial from-aeo-purple/10 via-aeo-cyan/5 to-transparent glow-blur pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 space-y-12">
         <header className="text-center space-y-3 max-w-2xl mx-auto">
-          <p className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-semibold">
+          <p className="font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-semibold">
             FREQUENTLY ASKED QUESTIONS
           </p>
           <h2 
             id="faq-heading" 
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-soehne-breit"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight"
           >
             Answer Engine Optimisation &amp; AI Search FAQs
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base font-serif leading-relaxed">
-            Everything you need to know about preparing your Australian business for ChatGPT, Perplexity, and Google AI Overviews. Read our full <Link href="/knowledge-hub/what-is-aeo" className="text-cyan-400 hover:underline font-medium">comprehensive AEO guide</Link>.
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch] mx-auto">
+            Everything you need to know about preparing your Australian business for ChatGPT, Perplexity, and Google AI Overviews. Read our full <Link href="/knowledge-hub/what-is-aeo" className="text-[#00E5FF] hover:underline font-medium">comprehensive AEO guide</Link>.
           </p>
         </header>
 
@@ -67,20 +67,20 @@ export function HomepageFaqSection() {
           {faqs.map((faq, idx) => (
             <details
               key={idx}
-              className="group p-6 rounded-2xl bg-zinc-950/80 border border-white/10 hover:border-cyan-500/40 transition-all duration-300"
+              className="group p-6 rounded-2xl bg-[#111622] border border-[#1E293B] hover:border-[#00E5FF]/40 transition-all duration-300"
             >
               <summary className="flex items-center justify-between gap-4 cursor-pointer list-none select-none">
-                <span className="text-base sm:text-lg font-bold text-white font-soehne-breit group-open:text-cyan-300 transition-colors">
+                <span className="text-base sm:text-lg font-bold text-white group-open:text-[#00E5FF] transition-colors">
                   {faq.question}
                 </span>
                 <span 
-                  className="w-6 h-6 rounded-full bg-white/5 border border-white/10 text-cyan-400 flex items-center justify-center font-mono text-sm shrink-0 group-open:rotate-45 transition-transform duration-200"
+                  className="w-6 h-6 rounded-full bg-[#08090C] border border-[#1E293B] text-[#00E5FF] flex items-center justify-center font-mono text-sm shrink-0 group-open:rotate-45 transition-transform duration-200"
                   aria-hidden="true"
                 >
                   +
                 </span>
               </summary>
-              <div className="mt-4 pt-4 border-t border-white/5 text-sm sm:text-base text-zinc-300 font-serif leading-relaxed">
+              <div className="mt-4 pt-4 border-t border-[#1E293B] text-sm sm:text-base text-slate-300 leading-relaxed">
                 <p>{faq.answer}</p>
               </div>
             </details>

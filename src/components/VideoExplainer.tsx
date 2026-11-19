@@ -15,7 +15,7 @@ export default function VideoExplainer({
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section id="explainer-video" aria-labelledby="video-heading" className="py-20 bg-black relative border-t border-white/5">
+    <section id="explainer-video" aria-labelledby="video-heading" className="py-20 bg-[#0D1117] relative border-t border-[#1E293B]">
       {/* Background glow effects */}
       <div className="absolute left-1/4 top-1/4 w-[400px] h-[400px] bg-aeo-purple/5 rounded-full filter blur-[100px] pointer-events-none" />
       <div className="absolute right-1/4 bottom-1/4 w-[400px] h-[400px] bg-aeo-cyan/5 rounded-full filter blur-[100px] pointer-events-none" />
@@ -25,20 +25,20 @@ export default function VideoExplainer({
           {/* Geometric Grid Background Motif */}
           <div className="absolute inset-0 pointer-events-none bg-grid-motif-dark opacity-60 z-0" />
           <div className="relative z-10 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs text-cyan-300 font-semibold font-mono uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#111622] border border-[#1E293B] font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-semibold">
               <span>Clear Outcomes</span>
             </div>
-            <h2 id="video-heading" className="text-3xl sm:text-5xl font-extrabold text-white font-soehne-breit">
+            <h2 id="video-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
               {title}
             </h2>
-            <p className="text-base text-slate-300 font-normal max-w-xl leading-relaxed font-sans">
-              Search behaviour has shifted from blue links to direct answers. We engineer your digital presence so Search, Maps, and AI engines retrieve and recommend your business first. Read our <Link href="/services/aeo/definition" className="text-cyan-400 font-semibold hover:underline">AEO Definition &amp; Concepts guide</Link> or watch the overview below.
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch]">
+              Search behaviour has shifted from blue links to direct answers. We engineer your digital presence so Search, Maps, and AI engines retrieve and recommend your business first. Read our <Link href="/services/aeo/definition" className="text-[#00E5FF] font-semibold hover:underline">AEO Definition &amp; Concepts guide</Link> or watch the overview below.
             </p>
           </div>
         </header>
 
         {/* Video Player Container / Media Showcase Figure */}
-        <figure className="relative aspect-video w-full rounded-2xl overflow-hidden border border-cyan-500/30 bg-neutral-950 shadow-[0_0_30px_rgba(0,205,216,0.15)] m-0">
+        <figure className="relative aspect-video w-full rounded-2xl overflow-hidden border border-[#1E293B] bg-[#08090C] shadow-[0_0_30px_rgba(0,229,255,0.12)] m-0">
           {isPlaying ? (
             <iframe
               src={embedUrl}
@@ -52,7 +52,7 @@ export default function VideoExplainer({
               type="button"
               onClick={() => setIsPlaying(true)}
               aria-label="Play AEObility overview video"
-              className="relative w-full h-full text-left group cursor-pointer focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black rounded-2xl overflow-hidden block"
+              className="relative w-full h-full text-left group cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00E5FF] focus:ring-offset-2 focus:ring-offset-[#08090C] rounded-2xl overflow-hidden block"
             >
               <img
                 src="/images/brand/aeobility-video-explainer.webp"
@@ -61,18 +61,18 @@ export default function VideoExplainer({
               />
               <figcaption className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-between p-6 sm:p-8 pointer-events-none">
                 <div className="flex justify-between items-start">
-                  <span className="px-3 py-1 rounded-full bg-black/70 border border-cyan-500/30 backdrop-blur-md text-[11px] font-mono text-cyan-300 uppercase tracking-wider">
+                  <span className="px-3 py-1 rounded-full bg-[#08090C]/85 border border-[#00E5FF]/40 backdrop-blur-md text-[11px] font-mono text-[#00E5FF] uppercase tracking-wider">
                     Platform Overview &bull; 2 Min
                   </span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-aeo-cyan text-black flex items-center justify-center shadow-[0_0_20px_rgba(0,205,216,0.4)] group-hover:scale-110 group-hover:bg-white transition-all">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#00E5FF] text-[#08090C] flex items-center justify-center shadow-[0_0_20px_rgba(0,229,255,0.4)] group-hover:scale-110 group-hover:bg-white transition-all">
                     <svg className="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>
                   <div className="text-left space-y-0.5">
-                    <p className="text-sm sm:text-base font-bold text-white font-soehne-breit group-hover:text-cyan-300 transition-colors">Watch AEObility Overview</p>
+                    <p className="text-sm sm:text-base font-bold text-white group-hover:text-[#00E5FF] transition-colors">Watch AEObility Overview</p>
                     <p className="text-xs text-slate-300 font-normal">See how AEO &amp; GEO Marketing drive Australian business visibility</p>
                   </div>
                 </div>
@@ -82,31 +82,31 @@ export default function VideoExplainer({
         </figure>
 
         {/* Executive Takeaways & Core Concepts Strip */}
-        <aside aria-label="AEO Executive Takeaways" className="p-6 sm:p-8 rounded-2xl bg-zinc-950/80 border border-white/10 space-y-5">
+        <aside aria-label="AEO Executive Takeaways" className="p-6 sm:p-8 rounded-2xl bg-[#111622] border border-[#1E293B] space-y-5">
           <div className="space-y-1">
-            <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold block">
+            <span className="font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-bold block">
               Executive Summary
             </span>
-            <h3 className="text-lg sm:text-xl font-bold text-white font-soehne-breit">
+            <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">
               Why Answer Engine Optimisation Replaces Legacy SEO
             </h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs font-serif pt-2 border-t border-white/5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm sm:text-base text-slate-300 leading-relaxed pt-2 border-t border-[#1E293B]">
             <div className="space-y-2">
-              <h4 className="font-bold text-white text-xs font-sans">Passage Synthesis Over Keyword Density</h4>
-              <p className="text-zinc-300 leading-relaxed font-light">
+              <h4 className="font-bold text-white text-sm">Passage Synthesis Over Keyword Density</h4>
+              <p className="text-sm text-slate-300 leading-relaxed">
                 Generative answer engines evaluate self-contained 150-character answer blocks rather than page-wide keyword repetition. Content must provide direct, verifiable solutions to customer queries under structured H2 and H3 headings to qualify for citation.
               </p>
             </div>
             <div className="space-y-2">
-              <h4 className="font-bold text-white text-xs font-sans">Connected Schema Graphs Over Standalone Tags</h4>
-              <p className="text-zinc-300 leading-relaxed font-light">
+              <h4 className="font-bold text-white text-sm">Connected Schema Graphs Over Standalone Tags</h4>
+              <p className="text-sm text-slate-300 leading-relaxed">
                 Modern search crawlers map machine-readable JSON-LD entity graphs. Standalone meta tags and unlinked markup fail to establish entity provenance. Linking your organisation to verified government registries including the Australian Business Register (ABN) validates authenticity.
               </p>
             </div>
             <div className="space-y-2">
-              <h4 className="font-bold text-white text-xs font-sans">Fixed-Scope Sprints Over Monthly Retainers</h4>
-              <p className="text-zinc-300 leading-relaxed font-light">
+              <h4 className="font-bold text-white text-sm">Fixed-Scope Sprints Over Monthly Retainers</h4>
+              <p className="text-sm text-slate-300 leading-relaxed">
                 AEO challenges are deterministic code and data structure problems with clear milestones. Shifting away from open-ended monthly hours to fixed-scope sprints guarantees measurable code improvements within 5 to 10 business days.
               </p>
             </div>

@@ -336,28 +336,24 @@ export default function AIModalAssistant({
 
   return (
     <>
-      {/* Floating Assistant Launcher with iOS Safe-Area Inset Handling */}
+      {/* Floating Assistant Launcher with Compact 48x48 Circular Icon Trigger */}
       {!shouldSuppressLauncher && (
         <aside
           aria-label="AI Assistant Quick Launch"
-          className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom,0px))] right-[calc(1.5rem+env(safe-area-inset-right,0px))] z-40 transition-all duration-300"
+          className="fixed bottom-5 right-5 z-40 transition-all duration-300"
         >
           <button
             type="button"
             id="ai-assistant-trigger"
             data-testid="ai-assistant-trigger"
             onClick={openModal}
-            aria-label="Chat with AI Bill (Press Control K)"
+            aria-label="Chat with AI Bill"
+            title="Chat with AI Bill (Ctrl+K)"
             aria-haspopup="dialog"
             aria-expanded={isOpen}
-            className="group flex items-center gap-2.5 p-2 sm:px-4 sm:py-2.5 bg-[#0F172A]/95 hover:bg-[#1E293B] text-slate-100 rounded-full border border-slate-700/80 shadow-lg transition-all cursor-pointer backdrop-blur-md"
+            className="group flex items-center justify-center w-12 h-12 rounded-full bg-[#111622]/90 backdrop-blur-md border border-[#1E293B] hover:border-[#00E5FF]/60 text-[#00E5FF] shadow-lg transition-all cursor-pointer"
           >
-            <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 text-[#22D3EE] border border-cyan-500/40 group-hover:scale-105 transition-transform">
-              <Command className="w-4 h-4" />
-            </div>
-            <span className="hidden sm:inline text-xs sm:text-sm font-semibold tracking-wide text-slate-200 pr-1">
-              Chat with AI Bill
-            </span>
+            <Command className="w-5 h-5 group-hover:scale-105 transition-transform" />
           </button>
         </aside>
       )}

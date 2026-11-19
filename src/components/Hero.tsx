@@ -55,7 +55,7 @@ export default function Hero() {
               Answer Engine Optimisation for Australian Entities
             </div>
 
-            <h1 id="hero-title" className="text-4xl sm:text-6xl lg:text-[52px] xl:text-[62px] font-bold tracking-tight text-white leading-[1.08]">
+            <h1 id="hero-title" className="text-4xl sm:text-6xl lg:text-[62px] font-bold tracking-tight text-white leading-[1.08]">
               <span className="block">Get your business</span>
               <span className="block font-extrabold text-focal-gradient">found and chosen</span>
               <span className="block">in AI search.</span>
@@ -65,24 +65,24 @@ export default function Hero() {
             <aside 
               aria-label="Executive Summary" 
               data-agent-purpose="direct-answer"
-              className="max-w-xl p-5 sm:p-6 rounded-xl bg-[#0D1117]/80 border-t border-[#00E5FF]/40 border-b border-x border-slate-800 backdrop-blur-md space-y-4"
+              className="max-w-[56ch] p-5 sm:p-6 rounded-xl bg-[#0D1117]/80 border-t border-[#00E5FF]/40 border-b border-x border-slate-800 backdrop-blur-md space-y-4"
             >
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch]">
                 Stop leaving AI recommendations to guesswork. <strong className="font-semibold text-white">AEObility</strong> is a Perth digital consultancy engineering Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) for Australian businesses. We structure your web architecture, schema graphs, and entity profiles so Google, Maps, ChatGPT Search, Perplexity, and Google AI Overviews verify who you are and recommend your business first.
               </p>
 
               {/* Scope/Trust Pills: 3-column metric strip aligned at bottom of left column */}
               <div className="grid grid-cols-3 gap-2.5 pt-3 border-t border-[#1E293B] text-center font-mono">
                 <div className="p-2.5 rounded-lg bg-[#08090C] border border-[#1E293B]">
-                  <span className="block text-[10px] text-zinc-400 uppercase tracking-wider">Focus</span>
+                  <span className="block text-xs text-slate-400 uppercase tracking-wider">Focus</span>
                   <span className="text-xs font-bold text-[#00E5FF]">AEO &amp; GEO</span>
                 </div>
                 <div className="p-2.5 rounded-lg bg-[#08090C] border border-[#1E293B]">
-                  <span className="block text-[10px] text-zinc-400 uppercase tracking-wider">Model</span>
+                  <span className="block text-xs text-slate-400 uppercase tracking-wider">Model</span>
                   <span className="text-xs font-bold text-white">Fixed-Scope</span>
                 </div>
                 <div className="p-2.5 rounded-lg bg-[#08090C] border border-[#1E293B]">
-                  <span className="block text-[10px] text-zinc-400 uppercase tracking-wider">Audits From</span>
+                  <span className="block text-xs text-slate-400 uppercase tracking-wider">Audits From</span>
                   <span className="text-xs font-bold text-[#00E5FF]">$995 AUD</span>
                 </div>
               </div>
@@ -101,9 +101,9 @@ export default function Hero() {
                     LIVE AI VISIBILITY CHECK
                   </span>
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
                   See how AI models read your business
-                </h2>
+                </h3>
               </div>
 
               <form onSubmit={handleHeroScanSubmit} className="space-y-4">
@@ -155,8 +155,8 @@ export default function Hero() {
                   />
                 </div>
 
-                {/* Primary Pill Button (Elevated Dark Glassmorphic Pill with #A080FE to #fd799f Gradient Border) */}
-                <div className="p-[1.5px] rounded-full bg-gradient-to-r from-[#A080FE] to-[#fd799f] shadow-[0_8px_24px_rgba(160,128,254,0.18)]">
+                {/* Primary Pill Button (Elevated Dark Glassmorphic Pill with 1px #A080FE to #fd799f Gradient Border) */}
+                <div className="p-[1px] rounded-full bg-gradient-to-r from-[#A080FE] to-[#fd799f] shadow-[0_8px_24px_rgba(160,128,254,0.18)]">
                   <button
                     type="submit"
                     data-agent-action="run-visibility-scan"
@@ -181,7 +181,7 @@ export default function Hero() {
         {/* Quick-Path Service Hub Links Strip Below Split Hero */}
         <nav aria-label="Explore service hubs" className="mt-10 pt-6 border-t border-[#1E293B]/80 w-full relative z-10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 font-mono shrink-0">
+            <div className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-400 shrink-0">
               Explore Service Hubs
             </div>
             <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 w-full list-none p-0 m-0">

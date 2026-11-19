@@ -253,7 +253,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="min-h-screen bg-[#08090C] text-slate-300 flex flex-col">
       {/* Consolidated Root Schema Graph */}
       <script
         type="application/ld+json"

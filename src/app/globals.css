@@ -8,10 +8,10 @@
   --shadow-card: 0 4px 30px rgba(0, 205, 216, 0.08);
   --border-accent: #00cdd8;
   
-  --font-display: "Söhne Breit", "Söhne", var(--font-geist-sans), "Inter", system-ui, sans-serif;
-  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
-  --font-serif: var(--font-ibm-plex-serif), "Georgia", serif;
+  --font-display: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+  --font-serif: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", system-ui, sans-serif;
 
   --tracking-tighter: -0.04em;
   --tracking-tight: -0.02em;
@@ -37,13 +37,51 @@
 }
 
 @utility font-display {
-  font-family: "Söhne Breit", "Söhne", var(--font-geist-sans), "Inter", system-ui, sans-serif;
+  font-family: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", system-ui, sans-serif;
   letter-spacing: -0.02em;
 }
 
 @utility font-soehne-breit {
-  font-family: "Söhne Breit", "Söhne", var(--font-geist-sans), "Inter", system-ui, sans-serif;
-  letter-spacing: -0.015em;
+  font-family: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+@utility typo-h1 {
+  @apply text-4xl sm:text-6xl lg:text-[62px] font-bold tracking-tight text-white leading-[1.08];
+}
+
+@utility typo-h2 {
+  @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight;
+}
+
+@utility typo-h3 {
+  @apply text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight;
+}
+
+@utility typo-lead {
+  @apply text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch];
+}
+
+@utility typo-body {
+  @apply text-sm sm:text-base text-slate-300 leading-relaxed;
+}
+
+@utility typo-eyebrow {
+  @apply font-mono text-xs uppercase tracking-wider;
+}
+
+@layer base {
+  h1 {
+    @apply font-sans font-bold tracking-tight text-white leading-[1.08];
+  }
+
+  h2 {
+    @apply font-sans font-bold tracking-tight text-white leading-tight;
+  }
+
+  h3 {
+    @apply font-sans font-bold tracking-tight text-white leading-snug;
+  }
 }
 
 @utility btn-primary {
@@ -68,15 +106,15 @@
 }
 
 :root {
-  --background: #030303;
-  --foreground: #ffffff;
+  --background: #08090C;
+  --foreground: #CBD5E1;
   --bg-base: #08090C;
   --bg-elevated: #0D1117;
   --bg-solid-text-corridor: rgba(10, 12, 16, 0.92);
   --glass-l1: rgba(255, 255, 255, 0.04);
   --glass-l2: rgba(255, 255, 255, 0.08);
   --text-primary: #FFFFFF;
-  --text-body: #D4D4D8;
+  --text-body: #CBD5E1;
   --text-muted: #94A3B8;
   --accent-cyan: #00E5FF;
   --ambient-violet: #4936FF;

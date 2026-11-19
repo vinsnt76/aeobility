@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, IBM_Plex_Serif } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import SSRFallbackNav from "@/components/navigation/SSRFallbackNav";
@@ -15,27 +15,20 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
   fallback: ["system-ui", "sans-serif"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   fallback: ["monospace"],
-});
-
-const ibmPlexSerif = IBM_Plex_Serif({
-  variable: "--font-ibm-plex-serif",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-  fallback: ["serif"],
 });
 
 export const metadata: Metadata = {
@@ -86,7 +79,7 @@ export default function RootLayout({
     <html
       lang="en-AU"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexSerif.variable} h-full antialiased`}
+      className={`${plusJakartaSans.variable} ${jetBrainsMono.variable} h-full antialiased`}
     >
       <head>
         <meta name="google-site-verification" content="TlRAYGi_c4DdLtiNq7_LpYCCS7XE-OInAQaOxQJ66QY" />
@@ -103,7 +96,7 @@ export default function RootLayout({
         <link rel="mcp" href="https://aeobility.com.au/api/mcp" />
         <script id="webmcp-registration" src="/webmcp.js" defer />
       </head>
-      <body className="min-h-full flex flex-col overflow-x-clip">
+      <body className="min-h-full flex flex-col overflow-x-clip bg-[#08090C] text-slate-300 font-sans antialiased leading-relaxed">
         <SiteNavigationSchema />
         <SSRFallbackNav />
         {/* Direct GA4 Script Loading via next/script */}
