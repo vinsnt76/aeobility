@@ -80,37 +80,81 @@ export default function VideoExplainer({
           )}
         </figure>
 
-        {/* Executive Takeaways & Core Concepts Strip */}
-        <aside aria-label="AEO Executive Takeaways" className="p-6 sm:p-8 rounded-2xl bg-[#111622] border border-[#1E293B] space-y-5">
-          <div className="space-y-1">
-            <span className="font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-bold block">
-              Executive Summary
-            </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">
-              How Answer Engine Optimisation Extends Legacy SEO
-            </h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm sm:text-base text-slate-300 leading-relaxed pt-2 border-t border-[#1E293B]">
-            <div className="space-y-2">
-              <h4 className="font-bold text-white text-sm">Passage Synthesis Over Keyword Density</h4>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Generative answer engines evaluate self-contained 150-character answer blocks rather than page-wide keyword repetition. Content must provide direct, verifiable solutions to customer queries under structured H2 and H3 headings to qualify for citation.
-              </p>
+        {/* Key Takeaways Summary Block (Cleanly Separated from Video Container) */}
+        <div className="mt-14 pt-12 border-t border-[#1E293B]/70">
+          <aside aria-label="Key Takeaways" className="p-6 sm:p-8 rounded-2xl bg-[#111622] border border-[#1E293B] space-y-6">
+            <div className="space-y-1.5">
+              <span className="font-mono text-xs uppercase tracking-wider text-[#00E5FF] font-bold block">
+                KEY TAKEAWAYS
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white leading-snug tracking-tight">
+                How Answer Engine Optimisation Extends Legacy SEO
+              </h2>
             </div>
-            <div className="space-y-2">
-              <h4 className="font-bold text-white text-sm">Connected Schema Graphs Over Standalone Tags</h4>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Modern search crawlers map machine-readable JSON-LD entity graphs. Standalone meta tags and unlinked markup fail to establish entity provenance. Linking your organisation to verified government registries including the Australian Business Register (ABN) validates authenticity.
-              </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-5 border-t border-[#1E293B]">
+              <div className="space-y-3">
+                <h3 className="text-base sm:text-lg font-bold text-white leading-snug tracking-tight">
+                  Answers First, Rankings Second
+                </h3>
+                <ul className="space-y-2 text-sm text-slate-300 leading-relaxed list-none p-0 m-0">
+                  <li className="flex items-start gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
+                    <span>AI search engines extract short, self-contained answers rather than counting repeated keywords.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
+                    <span>Structure service pages around real customer questions and verifiable facts.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
+                    <span>Clear headings help models quote your business directly.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-3">
+                <h3 className="text-base sm:text-lg font-bold text-white leading-snug tracking-tight">
+                  Verified Identity Over Generic Listings
+                </h3>
+                <ul className="space-y-2 text-sm text-slate-300 leading-relaxed list-none p-0 m-0">
+                  <li className="flex items-start gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
+                    <span>Search engines and AI tools cross-check your website against official records before recommending you.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
+                    <span>Connect your site to your Australian Business Register (ABN) details and professional licences.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
+                    <span>Consistent business data proves your organisation is legitimate.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-3">
+                <h3 className="text-base sm:text-lg font-bold text-white leading-snug tracking-tight">
+                  Fixed-Scope Sprints Over Monthly Retainers
+                </h3>
+                <ul className="space-y-2 text-sm text-slate-300 leading-relaxed list-none p-0 m-0">
+                  <li className="flex items-start gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
+                    <span>Fixing how AI reads your website is a clear technical job, not an endless monthly retainer.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
+                    <span>Every sprint targets specific code, schema, and content gaps with clear milestones.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
+                    <span>Delivered in 5 to 10 business days with zero ongoing contract lock-in.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="space-y-2">
-              <h4 className="font-bold text-white text-sm">Fixed-Scope Sprints Over Monthly Retainers</h4>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                AEO challenges are deterministic code and data structure problems with clear milestones. Shifting away from open-ended monthly hours to fixed-scope sprints guarantees measurable code improvements within 5 to 10 business days.
-              </p>
-            </div>
-          </div>
-        </aside>
+          </aside>
+        </div>
       </div>
     </section>
   );
