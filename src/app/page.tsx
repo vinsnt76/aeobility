@@ -29,7 +29,33 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: 'https://www.aeobility.com.au/',
-  }
+  },
+  openGraph: {
+    title: "AEObility Perth | Answer Engine Optimisation & AI SEO Consultancy",
+    description: "Australia's premier AEO & AI SEO agency. Optimise your brand for ChatGPT, Perplexity & Google AI Overviews. Claim your free AI visibility audit.",
+    url: "https://www.aeobility.com.au/",
+    type: "website",
+    images: [
+      {
+        url: "/images/brand/aeobility-ai-search-visibility.webp",
+        width: 1024,
+        height: 1024,
+        type: "image/webp",
+        alt: "AEObility AI Search Visibility Network illustrating interconnected business entities, structured data graphs, and AI search signals across Google, Maps, ChatGPT, and Gemini.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AEObility Perth | Answer Engine Optimisation & AI SEO Consultancy",
+    description: "Australia's premier AEO & AI SEO agency. Optimise your brand for ChatGPT, Perplexity & Google AI Overviews. Claim your free AI visibility audit.",
+    images: [
+      {
+        url: "/images/brand/aeobility-ai-search-visibility.webp",
+        alt: "AEObility AI Search Visibility Network illustrating interconnected business entities, structured data graphs, and AI search signals across Google, Maps, ChatGPT, and Gemini.",
+      },
+    ],
+  },
 };
 
 export default function Home() {
@@ -70,7 +96,9 @@ export default function Home() {
           "@id": "https://aeobility.com.au/#logo",
           "url": "https://aeobility.com.au/aeobility-logo-light.svg"
         },
-        "image": "https://aeobility.com.au/images/about/Profile-Picture-Vinnie.png",
+        "image": {
+          "@id": "https://www.aeobility.com.au/#primaryimage"
+        },
         "description": "AEObility is a Perth-based Australian consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), AI search visibility, entity SEO and schema graph engineering. AEObility helps businesses improve how their digital information, services and expertise are structured and understood by search engines and AI-powered discovery systems.",
         "disambiguatingDescription": "AEObility is an independent Australian digital consultancy specialising in AEO, GEO and machine search readability. It is distinct from Seobility, the SEO software platform.",
         "address": {
@@ -180,6 +208,34 @@ export default function Home() {
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://www.aeobility.com.au/#primaryimage",
+        "url": "https://www.aeobility.com.au/images/brand/aeobility-ai-search-visibility.webp",
+        "contentUrl": "https://www.aeobility.com.au/images/brand/aeobility-ai-search-visibility.webp",
+        "width": 1024,
+        "height": 1024,
+        "encodingFormat": "image/webp",
+        "name": "AEObility AI Search Visibility Network",
+        "caption": "AEObility AI Search Visibility Network illustrating interconnected business entities, structured data graphs, and AI search signals across Google, Maps, ChatGPT, and Gemini.",
+        "description": "AEObility AI Search Visibility Network illustrating interconnected business entities, structured data graphs, and AI search signals across Google, Maps, ChatGPT, and Gemini.",
+        "creator": {
+          "@type": "Person",
+          "name": "Vince Baker"
+        },
+        "creditText": "AEObility",
+        "copyrightNotice": "Copyright AEObility. All Rights Reserved.",
+        "acquireLicensePage": "https://www.aeobility.com.au",
+        "contentLocation": {
+          "@type": "Place",
+          "name": "Perth, Western Australia, Australia",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -31.8946,
+            "longitude": 115.8777
+          }
+        }
+      },
+      {
         "@type": "WebPage",
         "@id": "https://aeobility.com.au/#webpage",
         "url": "https://aeobility.com.au/",
@@ -190,6 +246,9 @@ export default function Home() {
         },
         "about": {
           "@id": "https://aeobility.com.au/#organization"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://www.aeobility.com.au/#primaryimage"
         },
         "inLanguage": "en-AU"
       },

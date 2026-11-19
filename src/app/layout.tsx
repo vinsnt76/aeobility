@@ -45,10 +45,22 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/brand/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "AEObility | Get Found. Get Chosen.",
+        url: "/images/brand/aeobility-ai-search-visibility.webp",
+        width: 1024,
+        height: 1024,
+        type: "image/webp",
+        alt: "AEObility AI Search Visibility Network illustrating interconnected business entities, structured data graphs, and AI search signals across Google, Maps, ChatGPT, and Gemini.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AEObility | Get Found. Get Chosen.",
+    description: "Show up across Search, Maps, and AI. Free audit + 15-minute call.",
+    images: [
+      {
+        url: "/images/brand/aeobility-ai-search-visibility.webp",
+        alt: "AEObility AI Search Visibility Network illustrating interconnected business entities, structured data graphs, and AI search signals across Google, Maps, ChatGPT, and Gemini.",
       },
     ],
   },
