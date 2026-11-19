@@ -28,8 +28,8 @@ Traditional SEO focuses on keyword stuffing and backlinks. AEO focuses on entity
 - Maximising positional bias, entity salience, and citation likelihood in generative AI answers.
 - Canonical URL: https://aeobility.com.au/services/aeo
 
-### 2. Geographic Engine Optimisation (GEO)
-- Location-aware optimisation rules, coordinate precision mapping, and regional intent frameworks.
+### 2. Generative Engine Optimisation (GEO) Services
+- Structured GEO services for Australian businesses: location-aware entity alignment, coordinate precision mapping, and regional intent frameworks across ChatGPT, Perplexity, and Google AI Overviews.
 - Optimising local service business map packs and proximity matrices for Apple Maps, Google Maps, and local voice queries.
 - Canonical URL: https://aeobility.com.au/services/geo-marketing
 
@@ -48,10 +48,8 @@ Traditional SEO focuses on keyword stuffing and backlinks. AEO focuses on entity
 
 1. **The Strategic Blueprint Method**: $995 AUD standalone Clarity Phase deep technical audit and 90-day strategic roadmap (100% credited into implementation).
    - Canonical URL: https://aeobility.com.au/solutions/aeo-blueprint
-2. **AEO Technical Sprints**: Programmatic schema graph nesting, code refactoring, passage extraction, and atomic block rewrites with zero lock-in contracts.
+2. **AEO Technical Sprints**: Productised sprint execution covering programmatic schema graph nesting, code refactoring, passage extraction, and atomic block rewrites with zero lock-in contracts.
    - Canonical URL: https://aeobility.com.au/solutions/aeo-sprint
-3. **GEO Services Sprint**: Coordinate precision mapping, verified map pack foundations, and regional intent frameworks.
-   - Canonical URL: https://aeobility.com.au/services/geo-marketing
 
 ---
 

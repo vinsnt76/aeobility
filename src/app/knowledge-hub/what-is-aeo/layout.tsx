@@ -1,26 +1,29 @@
 import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: "What is AEO? Answer Engine Optimisation Guide | AEObility",
-  description: "Discover what Answer Engine Optimisation (AEO) means in digital marketing. Learn how machine learning models ingest, verify, & cite facts.",
-  alternates: {
-    canonical: "https://aeobility.com.au/knowledge-hub/what-is-aeo",
-  },
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  return {
     title: "What is AEO? Answer Engine Optimisation Guide | AEObility",
-    description: "Discover what Answer Engine Optimisation (AEO) means in digital marketing. Learn how machine learning models ingest, verify, & cite facts.",
-    url: "https://aeobility.com.au/knowledge-hub/what-is-aeo",
-    type: "article",
-    siteName: "AEObility",
-  },
-  keywords: [
-    "what is aeo",
-    "aeo meaning",
-    "what is aeo in digital marketing",
-    "answer engine optimisation guide",
-    "AEO vs SEO"
-  ]
-};
+    description: "Learn what Answer Engine Optimisation (AEO) is and how it differs from traditional SEO. Discover how AI search engines extract brand facts and citations.",
+    alternates: {
+      canonical: "https://www.aeobility.com.au/knowledge-hub/what-is-aeo",
+    },
+    openGraph: {
+      title: "What is AEO? Answer Engine Optimisation Guide | AEObility",
+      description: "Learn what Answer Engine Optimisation (AEO) is and how it differs from traditional SEO. Discover how AI search engines extract brand facts and citations.",
+      url: "https://www.aeobility.com.au/knowledge-hub/what-is-aeo",
+      type: "article",
+      siteName: "AEObility",
+    },
+    keywords: [
+      "what is aeo",
+      "what does aeo mean",
+      "aeo meaning",
+      "what is aeo in digital marketing",
+      "answer engine optimisation guide",
+      "AEO vs SEO"
+    ]
+  };
+}
 
 export default function WhatIsAeoLayout({
   children,

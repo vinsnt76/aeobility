@@ -43,12 +43,12 @@ export default function WhatIsAeoPage() {
 
   const faqs = [
     {
-      question: "What does AEO stand for in digital marketing?",
-      answer: "AEO stands for Answer Engine Optimisation. Unlike traditional SEO which focuses on web page ranking positions in blue-link search results, AEO structures business data for direct passage retrieval across conversational AI surfaces like ChatGPT, Google AI Overviews, Perplexity, and Gemini."
+      question: "What is the difference between AEO and traditional SEO?",
+      answer: "Traditional SEO optimises full web pages for keyword rankings in conventional search engine result pages (SERPs). AEO structures business data into atomic passage blocks and entity graphs, allowing generative AI engines to extract direct answers and attribute citations."
     },
     {
-      question: "How is AEO different from traditional SEO?",
-      answer: "Traditional SEO relies on keyword matching, backlinks, and ranking web page URLs in search engine result pages (SERPs). AEO builds on SEO foundations by formatting content into machine-readable JSON-LD entity graphs, atomic passage blocks, and verified proof triples so AI models can cite your brand."
+      question: "What does AEO stand for in digital marketing?",
+      answer: "AEO stands for Answer Engine Optimisation. It is a specialised branch of digital marketing designed to make brand facts understandable, verifiable, and retrieval-ready for conversational AI assistants and digital maps."
     },
     {
       question: "Why is Answer Engine Optimisation important for Australian businesses?",
@@ -56,7 +56,7 @@ export default function WhatIsAeoPage() {
     },
     {
       question: "What are the core principles of AEO?",
-      answer: "The core principles of AEO include establishing unambiguous brand identity signals (JSON-LD schema), building topical entity authority, structuring content into 90–120 token atomic answer blocks, ensuring multi-platform citation consistency, and verifying claims with evidence triples."
+      answer: "The core principles of AEO include establishing unambiguous brand identity signals (JSON-LD schema), building topical entity authority, structuring content into 90 to 120 token atomic answer blocks, ensuring multi-platform citation consistency, and verifying claims with evidence triples."
     }
   ];
 
@@ -68,7 +68,7 @@ export default function WhatIsAeoPage() {
         "@id": "https://aeobility.com.au/knowledge-hub/what-is-aeo#webpage",
         "url": "https://aeobility.com.au/knowledge-hub/what-is-aeo",
         "name": "What is AEO? Answer Engine Optimisation Guide | AEObility",
-        "description": "Discover what Answer Engine Optimisation (AEO) means in digital marketing. Learn how machine learning models ingest, verify, and cite business information.",
+        "description": "Learn what Answer Engine Optimisation (AEO) is and how it differs from traditional SEO. Discover how AI search engines extract brand facts and citations.",
         "inLanguage": "en-AU",
         "primaryImageOfPage": {
           "@id": "https://aeobility.com.au/images/knowledge-hub/ai-engine-optimization-visibility-scanner-AEObility.webp#primaryimage"
@@ -262,16 +262,31 @@ export default function WhatIsAeoPage() {
               </div>
             </div>
 
-            {/* Core Atomic Direct Answer Passage (80–120 tokens) */}
-            <div className="space-y-3 text-left w-full max-w-4xl pt-2">
-              <p className="text-base sm:text-lg text-slate-100 font-medium leading-relaxed text-left">
-                <strong>Answer Engine Optimisation (AEO)</strong> is the process of structuring business facts so AI engines like ChatGPT, Perplexity, and Google AI Overviews can discover, verify, and recommend your brand.
+            {/* Above-the-Fold Atomic Answer Block (90 to 120 tokens) */}
+            <section
+              data-entity-id="aeobility:knowledge:what-is-aeo"
+              data-monotopical="true"
+              className="atomic-answer-block rounded-2xl border border-slate-800/80 bg-slate-900/50 p-6 sm:p-8 backdrop-blur-md space-y-3 text-left w-full max-w-4xl shadow-lg"
+            >
+              <h2 className="font-display text-2xl font-bold text-white">
+                What is Answer Engine Optimisation (AEO)?
+              </h2>
+              <p className="font-sans text-base text-slate-300 leading-relaxed">
+                <strong>Answer Engine Optimisation (AEO)</strong> is the technical discipline of structuring web content, entity graphs, and schema data so generative search engines (such as ChatGPT, Perplexity, and Google AI Overviews) can accurately parse, verify, and cite a business. While traditional SEO focuses on keyword density and backlink acquisition to rank web pages, AEO formats business information into machine-readable atomic passage blocks (90 to 120 tokens) and JSON-LD triples. This ensures AI scrapers reconstruct brand facts with high entity salience and zero hallucination risk.
               </p>
+            </section>
 
-              <p className="text-sm sm:text-base text-slate-200 font-serif leading-relaxed text-left">
-                While SEO focuses on winning keyword rankings in standard search results, AEO formats your data into <strong>verified entity graphs</strong> and direct answer passages that AI models cite with confidence.
-              </p>
-            </div>
+            {/* Directional Internal Links */}
+            <p className="text-sm sm:text-base text-slate-300 font-sans leading-relaxed text-left max-w-4xl">
+              To explore the retrieval architecture in greater detail, read our breakdown of{' '}
+              <Link href="/services/aeo/definition" className="text-[#00E5FF] font-semibold hover:underline">
+                how Google Search AI and RAG systems process content
+              </Link>{' '}
+              or follow our step-by-step{' '}
+              <Link href="/knowledge-hub/guides/aeo" className="text-[#00E5FF] font-semibold hover:underline">
+                technical AEO implementation guide
+              </Link>.
+            </p>
           </section>
 
           {/* SECTION 2: COMMERCIAL CONTEXT & SHIFTS IN SEARCH BEHAVIOUR */}
@@ -654,7 +669,7 @@ export default function WhatIsAeoPage() {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                   <button
                     type="submit"
-                    className="w-full md:w-auto rounded-xl bg-gradient-to-r from-cyan-400 to-teal-400 px-7 py-3.5 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all hover:brightness-110 active:scale-[0.99] cursor-pointer flex items-center justify-center gap-2"
+                    className="w-full md:w-auto rounded-xl bg-[#00E5FF] hover:bg-cyan-300 px-7 py-3.5 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all active:scale-[0.99] cursor-pointer flex items-center justify-center gap-2"
                   >
                     <span>Run Free 45-Second AI Scan →</span>
                   </button>
@@ -826,7 +841,7 @@ export default function WhatIsAeoPage() {
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
                 <Link
                   href="/solutions/aeo-blueprint"
-                  className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-teal-400 text-slate-950 font-bold text-sm transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,205,216,0.3)] whitespace-nowrap flex items-center justify-center gap-2"
+                  className="px-6 py-3.5 rounded-xl bg-[#00E5FF] hover:bg-cyan-300 text-slate-950 font-bold text-sm transition-transform hover:scale-105 shadow-[0_0_20px_rgba(0,229,255,0.3)] whitespace-nowrap flex items-center justify-center gap-2"
                 >
                   <span>See How the $995 Blueprint Works</span>
                   <ArrowRight className="w-4 h-4" />
@@ -834,7 +849,7 @@ export default function WhatIsAeoPage() {
 
                 <Link
                   href="/solutions/aeo-sprint"
-                  className="px-6 py-3.5 rounded-xl bg-zinc-900 border border-white/20 hover:border-cyan-400 text-white font-bold text-sm transition-all whitespace-nowrap text-center"
+                  className="px-6 py-3.5 rounded-xl bg-slate-800 border border-slate-700 hover:border-[#00E5FF] text-white font-bold text-sm transition-all whitespace-nowrap text-center"
                 >
                   Explore Fixed-Scope Micro-Sprints
                 </Link>

@@ -76,14 +76,22 @@ AEObility refactors digital content and schema graphs so AI search engines (Chat
 - **Out-of-Scope Developer Rate**: Standard $220 AUD ex. GST per hour (`HOURLY-DEV`) for custom edge routing, CMS modifications, or bespoke API integration.
 - **Monthly Retainer Cadence**: Governed 30-day sprint cycles ($1,980/month MRR) with zero lock-in contracts.
 - **Intellectual Property Ownership**: Clients own 100% of all schemas, content, and code upon final invoice settlement.
-
-### Tier 5: GEO Services Sprint (`/services/geo-marketing`)
-- **Focus**: Location Domination (Map Focus)
-- **Deliverables**: Coordinate precision mapping, verified map pack foundations, regional intent frameworks, proximity signal validation.
-
 ---
 
 # 4. Primary Service Playbook & Node Topologies
+
+### 4-Node Self-Canonicalised AEO Boundary Matrix
+- **Node 1: `/knowledge-hub/what-is-aeo` (`L2` / `Knowledge`)**: Focus Keyphrase `what is aeo` | Self-canonical | Primary educational definition hub.
+- **Node 2: `/services/aeo/definition` (`L3` / `Service Sub`)**: Focus Keyphrase `google search engine ai` | Self-canonical | Google Search AI & RAG service explainer.
+- **Node 3: `/knowledge-hub/guides/aeo` (`L3` / `Knowledge Sub`)**: Focus Keyphrase `AEO Guide` | Self-canonical | Step-by-step technical execution guide.
+- **Node 4: `/knowledge-hub/aeo` (`L2` / `Knowledge`)**: Focus Keyphrase `Answer Engine Optimisation Principles` | Self-canonical | Theoretical & machine mechanics.
+
+### Node: `/services/geo-marketing`
+- **Title**: Generative Engine Optimisation (GEO) Services | AEObility
+- **H1**: Generative Engine Optimisation (GEO) Services
+- **Focus Keyphrase**: `generative engine optimisation services`
+- **GeoTargets**: Australia, Western Australia, Perth
+- **Summary**: Structured GEO services for Australian businesses. Align brand entities across ChatGPT, Perplexity, and Google AI Overviews with zero agency lock-in. Productised sprint execution is scoped to `/solutions/aeo-sprint`.
 
 ### Node: `/brand-facts`
 - **Title**: Brand Facts & Canonical Entity Directory

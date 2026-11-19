@@ -66,8 +66,8 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       {
         "title": "GEO Marketing",
         "href": "/services/geo-marketing",
-        "description": "Optimise your brand for GEO Google search, Maps, and AI Overviews. Schema graph engineering for ChatGPT, Gemini, and Google local discovery.",
-        "entityName": "GEO Google Marketing Services",
+        "description": "Structured GEO services for Australian businesses. Align brand entities across ChatGPT, Perplexity, and Google AI Overviews with zero agency lock-in.",
+        "entityName": "Generative Engine Optimisation (GEO) Services",
         "isServicePillar": true,
         "isKnowledgeCapsule": false,
         "corridors": [
@@ -136,7 +136,7 @@ export const NAVIGATION_DATA: NavItemL1[] = [
       {
         "title": "AEO Sprints",
         "href": "/solutions/aeo-sprint",
-        "description": "Accelerate your machine discovery with intensive execution sprints: custom nesting graphs, code refactoring, and atomic block rewrites.",
+        "description": "Accelerate your machine discovery with productised execution sprints: custom nesting graphs, code refactoring, and atomic block rewrites.",
         "entityName": "AEO Sprints",
         "isServicePillar": false,
         "isKnowledgeCapsule": false,

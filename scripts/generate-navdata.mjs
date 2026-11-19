@@ -212,7 +212,7 @@ export function generateNavData() {
     hubs['/knowledge-hub'].children.push({
       title: 'Tutorials',
       href: '/knowledge-hub/tutorials',
-      description: 'Step-by-step technical tutorials for schema and entity optimization.',
+      description: 'Step-by-step technical tutorials for schema and entity optimisation.',
       entityName: 'Tutorials',
       isKnowledgeCapsule: true,
       corridors: ['scan', 'contact']
