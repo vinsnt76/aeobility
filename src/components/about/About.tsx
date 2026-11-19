@@ -339,7 +339,7 @@ const About: React.FC = () => {
               <div className="p-4 bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-800">
                 <h4 className="text-base font-bold text-aeo-cyan mb-1">1. SEO (Technical + Content Architecture)</h4>
                 <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed font-sans">
-                  Began with SEO fundamentals — audits, keyword research, content briefs — before gravitating toward the technical layer. SEMrush, Google Search Console, Bing Webmaster Tools, and structured data became my daily toolkit to diagnose exact code blocks, crawl bottlenecks, and semantic gaps holding sites back.
+                  Began with SEO fundamentals (audits, keyword research, and content briefs) before gravitating toward the technical layer. SEMrush, Google Search Console, Bing Webmaster Tools, and structured data became my daily toolkit to diagnose exact code blocks, crawl bottlenecks, and semantic gaps holding sites back.
                 </p>
               </div>
 
@@ -651,7 +651,7 @@ const About: React.FC = () => {
             {[
               {
                 title: "Launched AEObility",
-                date: "Jul 2026 — AEObility",
+                date: "Jul 2026 · AEObility",
                 summary: "Engineered AEObility using AEO best practices including Information Architecture and Semantic Lattice Mapping. Built a telemetry dashboard for real-time site auditing with an AI chatbot handover for intelligent data analysis.",
                 subNodes: [
                   { label: "Information Architecture", highlight: true },
@@ -662,8 +662,8 @@ const About: React.FC = () => {
                 imageSrc: "/images/brand/aeobility-logo-dark.svg"
               },
               {
-                title: "Baby Bento — Structural Search Alignment",
-                date: "Jul 2026 — Case Study",
+                title: "Baby Bento · Structural Search Alignment",
+                date: "Jul 2026 · Case Study",
                 summary: "Rebuilt structural search clarity and intent alignment for Baby Bento ecommerce. Replaced discount dependency with schema injection and conversational AEO content alignment, reversing organic momentum drop.",
                 outcomes: ["Sales Uplift +17-18%", "CTR Lift +95%", "Qualified Clicks +55%"],
                 subNodes: [
@@ -675,9 +675,9 @@ const About: React.FC = () => {
                 imageSrc: "/images/knowledge-hub/case-study-aeo-lifts-traffic.webp"
               },
               {
-                title: "Baby Bento — Brand Book & Messaging Framework",
-                date: "Apr 2026 — Baby Bento",
-                summary: "Mission and purpose to support parents and kids with engaging, healthy mealtime solutions. Origin story of the founder, brand values (Creative Partner, Love Made Visible, Inspiring Prep, Confident Eating), visual identity standards (typography & color palettes), and key messaging pillars (durability, safety, ease of use).",
+                title: "Baby Bento · Brand Book & Messaging Framework",
+                date: "Apr 2026 · Baby Bento",
+                summary: "Mission and purpose to support parents and kids with engaging, healthy mealtime solutions. Origin story of the founder, brand values (Creative Partner, Love Made Visible, Inspiring Prep, Confident Eating), visual identity standards (typography & colour palettes), and key messaging pillars (durability, safety, ease of use).",
                 subNodes: [
                   { label: "MCP", highlight: true },
                   { label: "AI Studio", highlight: true },

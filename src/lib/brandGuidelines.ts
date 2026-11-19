@@ -152,7 +152,7 @@ export const AEOBILITY_TONE_OF_VOICE: AEObilityToneOfVoiceSpec = {
     "Maintain visual consistency with Inter/Söhne and AEO Cyan (#00E5FF)"
   ],
   brandDonts: [
-    "Avoid em dashes (—); use commas, periods, or standard hyphens",
+    "Avoid em dashes; use commas, colons, periods, or standard hyphens",
     "Avoid legacy SEO buzzwords",
     "Avoid agency jargon or upsell traps",
     "Avoid hedging or uncertain phrasing",

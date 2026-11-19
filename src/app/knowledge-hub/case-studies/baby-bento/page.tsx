@@ -26,10 +26,10 @@ export default function BabyBentoCaseStudyPage() {
       "@id": "https://aeobility.com.au/knowledge-hub/case-studies/baby-bento"
     },
 
-    "headline": "Case Study: Baby Bento — Structural Search Alignment & AI Visibility Recovery",
+    "headline": "Case Study: Baby Bento - Structural Search Alignment & AI Visibility Recovery",
     "alternativeHeadline": "How AEObility Rebuilt Clarity and Drove a +17% Sales Uplift",
 
-    "description": "Discover how AEObility restored structural clarity, rebuilt intent alignment, and lifted Baby Bento’s AI search visibility — resulting in a 17–18% sales uplift, 95% CTR improvement, and reduced discount dependency.",
+    "description": "Discover how AEObility restored structural clarity, rebuilt intent alignment, and lifted Baby Bento’s AI search visibility, resulting in a 17–18% sales uplift, 95% CTR improvement, and reduced discount dependency.",
 
     "keywords": [
       "Baby Bento case study",
@@ -190,7 +190,7 @@ export default function BabyBentoCaseStudyPage() {
               In the second half of the year, everything changed.
             </p>
             <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
-              After implementing AEObility’s structural optimisation framework, Baby Bento recorded a 17–18% uplift in core sales, a 95% CTR improvement, and a clear reduction in discount dependency. This wasn’t achieved through more content, more keywords, or more ads. It was achieved by rebuilding clarity — the thing modern AI search engines rely on most.
+              After implementing AEObility’s structural optimisation framework, Baby Bento recorded a 17–18% uplift in core sales, a 95% CTR improvement, and a clear reduction in discount dependency. This wasn’t achieved through more content, more keywords, or more ads. It was achieved by rebuilding clarity, the thing modern AI search engines rely on most.
             </p>
           </div>
 
@@ -250,7 +250,7 @@ export default function BabyBentoCaseStudyPage() {
           <div className="space-y-4">
             <h2 className="text-xl sm:text-2xl font-bold text-white">The Pivot: Structural Alignment Over Keyword Volume</h2>
             <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
-              Baby Bento replaced legacy SEO tactics with AEObility’s structural optimisation pillars — a clarity‑first rebuild designed for modern AI engines:
+              Baby Bento replaced legacy SEO tactics with AEObility’s structural optimisation pillars, a clarity‑first rebuild designed for modern AI engines:
             </p>
             <ul className="space-y-4 pl-4 pt-2">
               <li className="flex gap-3 text-sm text-white/70 font-serif font-light">
@@ -274,7 +274,7 @@ export default function BabyBentoCaseStudyPage() {
               <li className="flex gap-3 text-sm text-white/70 font-serif font-light">
                 <span className="text-aeo-cyan font-bold">4.</span>
                 <div>
-                  <strong className="text-white">Intent‑Driven Content Alignment:</strong> Unhelpful content nodes were pruned. Product copy was aligned to conversational search criteria — the way AI actually evaluates relevance.
+                  <strong className="text-white">Intent‑Driven Content Alignment:</strong> Unhelpful content nodes were pruned. Product copy was aligned to conversational search criteria, matching the way AI actually evaluates relevance.
                 </div>
               </li>
             </ul>
@@ -417,7 +417,7 @@ export default function BabyBentoCaseStudyPage() {
               &ldquo;When search engines understand your business value, customers find you without needing a constant discount.&rdquo;
             </blockquote>
             <p className="text-sm text-white/70 font-light leading-relaxed font-serif">
-              Returns rose in H2, but only in proportion to increased sales volume — normal scaling behaviour, not a regression.
+              Returns rose in H2, but only in proportion to increased sales volume: normal scaling behaviour, not a regression.
             </p>
           </div>
 

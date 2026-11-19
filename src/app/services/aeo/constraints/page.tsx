@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 
 export const metadata = {
-  title: "What stops my business from showing up? — AEObility",
+  title: "What stops my business from showing up? | AEObility",
   description: "FAQ on eligibility criteria for Answer Engine Optimisation (AEO) and what blockers stop your business from showing up in AI search engines.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/constraints",

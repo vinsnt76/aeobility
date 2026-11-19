@@ -316,13 +316,13 @@ export default function AeoVsSeoArticlePage() {
           <div className="space-y-6 text-white/80 font-serif font-light leading-relaxed">
             <h2 className="text-2xl font-bold text-white font-sans mt-8 mb-4">1. The Shifting Search Landscape: From Clicks to Answers</h2>
             <p>
-              For years, <Link href="/knowledge-hub/what-is-seo-optimisation" className="text-aeo-cyan font-medium hover:underline">SEO optimisation</Link> ran on a pretty simple deal: you publish helpful content, Google crawls it, and—if you’ve done a decent job—you earn clicks. That old “ten blue links” model shaped how every business built its website.
+              For years, <Link href="/knowledge-hub/what-is-seo-optimisation" className="text-aeo-cyan font-medium hover:underline">SEO optimisation</Link> ran on a pretty simple deal: you publish helpful content, Google crawls it, and, if you’ve done a decent job, you earn clicks. That old “ten blue links” model shaped how every business built its website.
             </p>
             <p>
               But that world is disappearing fast.
             </p>
             <p>
-              With AI Overviews, Gemini, ChatGPT Search, and Perplexity, search has shifted from <strong>“find websites”</strong> to <strong>“give me the answer now.”</strong> Instead of sending people to your site, AI systems summarise the web and deliver the answer directly on the results page. It’s a zero‑click environment, and the numbers back it up—when an AI summary appears, organic clicks drop by roughly a third.
+              With AI Overviews, Gemini, ChatGPT Search, and Perplexity, search has shifted from <strong>“find websites”</strong> to <strong>“give me the answer now.”</strong> Instead of sending people to your site, AI systems summarise the web and deliver the answer directly on the results page. It’s a zero‑click environment, and the numbers back it up: when an AI summary appears, organic clicks drop by roughly a third.
             </p>
             <p>
               This is the new reality:<br />
@@ -334,10 +334,10 @@ export default function AeoVsSeoArticlePage() {
 
             <h2 className="text-2xl font-bold text-white font-sans mt-12 mb-4">2. What SEO Actually Does (The Old Model)</h2>
             <p>
-              SEO is built on <strong>lexical retrieval</strong>—a fancy way of saying “keyword matching.” Search engines scan your pages for exact words, check your backlinks, and decide where your URL should rank.
+              SEO is built on <strong>lexical retrieval</strong>, a fancy way of saying “keyword matching.” Search engines scan your pages for exact words, check your backlinks, and decide where your URL should rank.
             </p>
             <p>
-              It’s still important. Technical health, page speed, sitemaps, internal linking—none of that goes away.
+              It’s still important. Technical health, page speed, sitemaps, and internal linking: none of that goes away.
             </p>
             <p>
               But SEO’s job is clear:<br />
@@ -345,12 +345,12 @@ export default function AeoVsSeoArticlePage() {
             </p>
             <p>
               The problem?<br />
-              AI search doesn’t care about ranking. It cares about <strong>meaning</strong>, <strong>context</strong>, and <strong>intent</strong>—not keywords.
+              AI search doesn’t care about ranking. It cares about <strong>meaning</strong>, <strong>context</strong>, and <strong>intent</strong>, not keywords.
             </p>
 
             <h2 className="text-2xl font-bold text-white font-sans mt-12 mb-4">3. What AEO Does (The New Model)</h2>
             <p>
-              AEO—<Link href="/services/aeo" className="text-aeo-cyan hover:underline font-semibold">Answer Engine Optimisation</Link>—is built for AI systems that don’t “read” like humans or traditional crawlers. Instead of scanning for keywords, they use <strong>semantic retrieval</strong> and <strong>vector embeddings</strong> to understand concepts.
+              AEO (<Link href="/services/aeo" className="text-aeo-cyan hover:underline font-semibold">Answer Engine Optimisation</Link>) is built for AI systems that don’t “read” like humans or traditional crawlers. Instead of scanning for keywords, they use <strong>semantic retrieval</strong> and <strong>vector embeddings</strong> to understand concepts.
             </p>
             <p>
               In simple terms:<br />

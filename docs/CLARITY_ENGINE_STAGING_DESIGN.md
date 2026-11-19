@@ -147,3 +147,4 @@ flowchart TD
   - Centered `#111622` container (`border border-[#1E293B] p-8 sm:p-14`).
   - Headline: *"Find out what conversational AI **truly understands** about your business."*
   - Primary CTA in solid `#22D3EE` with `#090D16` text (`Start Free Scan →`), paired with a secondary text link (`Book a 15-Minute Diagnostic Briefing →`).
+

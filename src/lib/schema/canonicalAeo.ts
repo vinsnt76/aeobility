@@ -96,7 +96,7 @@ export const getCanonicalAeoSchemaGraph = (faqs?: FaqItem[]) => {
           "@id": "https://aeobility.com.au/services/aeo#service"
         }
       ],
-      "transcript": "Why AEObility framework works for all engines — Multi-modal corroboration: We synchronised video transcripts directly with VideoObject metadata, giving retrieval bots explicit text targets to cross-verify against media assets."
+      "transcript": "Why AEObility framework works for all engines - Multi-modal corroboration: We synchronised video transcripts directly with VideoObject metadata, giving retrieval bots explicit text targets to cross-verify against media assets."
     },
     {
       "@type": "WebPage",

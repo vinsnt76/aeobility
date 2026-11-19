@@ -14,3 +14,4 @@ export const metadata: Metadata = {
 export default function StagingIndexPage() {
   return <ClarityEngineStaging />;
 }
+

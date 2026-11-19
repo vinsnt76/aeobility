@@ -424,7 +424,7 @@ export default function GEOKnowledgeNodePage() {
                 <span>The Quick Answer</span>
               </div>
               <p className="text-sm sm:text-base text-white/90 leading-relaxed font-light">
-                Generative Engine Optimisation (GEO) bridges local operational facts—like your address, trading hours, and service radius—with how AI models synthesise your brand. While Local SEO targets traditional map packs and blue links, GEO ensures platforms like ChatGPT, Gemini, and Google AI Overviews cite you accurately in conversational searches.
+                Generative Engine Optimisation (GEO) bridges local operational facts, like your address, trading hours, and service radius, with how AI models synthesise your brand. While Local SEO targets traditional map packs and blue links, GEO ensures platforms like ChatGPT, Gemini, and Google AI Overviews cite you accurately in conversational searches.
               </p>
             </div>
 
@@ -448,7 +448,7 @@ export default function GEOKnowledgeNodePage() {
                 <span>Clarifying &quot;GEO SEO&quot; and Geolocation in the AI Era</span>
               </h3>
               <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
-                For years, &quot;geolocation SEO&quot; and &quot;geo-targeting&quot; meant adding suburb keywords to title tags and setting up radius targeting in ad platforms. In Generative Engine Optimisation (GEO), <strong>Local GEO</strong> is fundamentally different: it is the process of structuring your business entity—address, service areas, credentials, and real-world proof—so that generative AI models (ChatGPT, Gemini, Perplexity, and AI Overviews) can verify, cite, and recommend you in conversational local queries.
+                For years, &quot;geolocation SEO&quot; and &quot;geo-targeting&quot; meant adding suburb keywords to title tags and setting up radius targeting in ad platforms. In Generative Engine Optimisation (GEO), <strong>Local GEO</strong> is fundamentally different: it is the process of structuring your business entity (address, service areas, credentials, and real-world proof) so that generative AI models (ChatGPT, Gemini, Perplexity, and AI Overviews) can verify, cite, and recommend you in conversational local queries.
               </p>
             </div>
 
