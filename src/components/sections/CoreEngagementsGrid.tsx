@@ -44,7 +44,7 @@ export function CoreEngagementsGrid() {
             Fixed-Scope Sprints.
           </h2>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch]">
-            Work directly with an Australian AEO specialist to secure top placement across Google Maps, local search, and AI answer engines. All engagements are clearly scoped and transparently priced.
+            Work directly with an Australian AEO specialist to improve your visibility across Google, Maps, and AI search. Every sprint has a clear scope and fixed price.
           </p>
         </header>
 
@@ -80,7 +80,7 @@ export function CoreEngagementsGrid() {
 
                 {/* Concise Description */}
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  Find the data errors, missing business facts, and structured code issues preventing search engines and AI models from recommending your business.
+                  Uncover the data gaps and code errors stopping Search, Maps, and AI search from recommending you.
                 </p>
 
                 {/* 4 Core Deliverables Checklist */}
@@ -90,7 +90,7 @@ export function CoreEngagementsGrid() {
                       <CheckBadge color="cyan" />
                       <p className="space-y-1">
                         <strong className="block font-bold text-white text-xs sm:text-sm">Search &amp; AI Visibility Audit</strong>
-                        <span className="block text-xs text-slate-400 font-serif leading-snug">Checks how Google, Apple Maps, and AI tools extract your business details.</span>
+                        <span className="block text-xs text-slate-400 font-serif leading-snug">Checks how Google, Apple Maps, and AI search systems extract your business details.</span>
                       </p>
                     </li>
                     <li className="flex items-start gap-3 p-3.5 rounded-xl bg-[#08090C]/70 border border-[#1E293B]">

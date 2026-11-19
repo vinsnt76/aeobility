@@ -18,20 +18,20 @@ export default function BlueprintSection() {
     {
       icon: <Compass className="w-5 h-5 text-[#00E5FF]" />,
       phase: 'Phase 1 • Days 1 to 30',
-      title: 'Foundation & Entity Disambiguation',
-      description: 'Analyse existing assets and organise business details so Google, map services, and modern AI engines can resolve your business identity with zero ambiguity.',
+      title: 'Foundation & Business Identity',
+      description: 'Audit existing pages and align your core business facts so Search, Maps, and AI systems identify you without confusion.',
     },
     {
       icon: <Milestone className="w-5 h-5 text-[#00E5FF]" />,
       phase: 'Phase 2 • Days 31 to 60',
-      title: 'Atomic Answers & Positional Optimisation',
-      description: 'Optimise local listings, Google Business Profile attributes, and structure targeted question-and-answer atomic passages that capture high-intent search queries.',
+      title: 'Direct Answers & Local Signals',
+      description: 'Update Google Business Profile attributes and publish clear question-and-answer blocks for high-intent local searches.',
     },
     {
       icon: <Layers className="w-5 h-5 text-[#00E5FF]" />,
       phase: 'Phase 3 • Days 61 to 90',
-      title: 'Semantic Lattice & Authority Scaling',
-      description: 'Acquire high-quality local mentions and directory citations while connecting pages with structured internal link lattices to solidify ongoing generative visibility.',
+      title: 'Authority & Internal Linking',
+      description: 'Build local directory citations and connect service pages with structured internal links to strengthen ongoing AI search visibility.',
     },
   ];
 

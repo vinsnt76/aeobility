@@ -34,7 +34,7 @@ export default function HowItWorks() {
                 <div className="space-y-2">
                   <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">Tell Us What You Want To Be Found For</h3>
                   <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    Enter your Australian business URL and primary customer search intent. Our crawler ingests your public document object model, existing Schema.org structured data, and service area declarations to benchmark baseline machine readability.
+                    Enter your Australian website URL and main customer search term. Our scanner checks your site code, Schema.org data, and service areas.
                   </p>
                 </div>
               </li>
@@ -47,7 +47,7 @@ export default function HowItWorks() {
                 <div className="space-y-2">
                   <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">Measure Your AI Visibility</h3>
                   <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    Our telemetry engine analyses how conversational AI systems like ChatGPT Search, Perplexity, Gemini, and Google AI Overviews retrieve and recommend your business. We measure passage retrieval depth, entity confidence scoring, citation provenance, and brand co-occurrence.
+                    We test how ChatGPT Search, Perplexity, Gemini, and Google AI Overviews read and recommend your business against local competitors.
                   </p>
                 </div>
               </li>
@@ -60,7 +60,7 @@ export default function HowItWorks() {
                 <div className="space-y-3 w-full">
                   <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">Discover Your Opportunities</h3>
                   <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    Receive your comprehensive AI Visibility Score and diagnostic telemetry report. Uncover critical retrieval blind spots where search engines hallucinate details, misattribute service locations, or recommend competitors because your structured schema is incomplete or disconnected.
+                    Get your AI Visibility Score and diagnostic report. Pinpoint missing facts, broken Schema.org markup, and blind spots where AI search skips your business.
                   </p>
                 </div>
               </li>
@@ -73,7 +73,7 @@ export default function HowItWorks() {
                 <div className="space-y-2">
                   <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug tracking-tight">Turn Insights into a 90-Day Plan</h3>
                   <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    Transform diagnostic telemetry into an actionable 90-day technical execution roadmap. Prioritise high-impact fixes, from entity node reconciliation and canonical linking to structured FAQ passages and Google Business Profile alignment, with zero ongoing agency contract lock-in.
+                    Turn your audit into an ordered 90-day fix list covering structured data, FAQ answer blocks, and Google Business Profile alignment with zero retainer lock-in.
                   </p>
                 </div>
               </li>

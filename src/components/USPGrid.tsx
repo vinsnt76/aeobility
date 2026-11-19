@@ -40,31 +40,31 @@ export default function USPGrid() {
     {
       icon: <Eye className="w-5 h-5 text-[#00E5FF]" />,
       title: 'Direct-Answer Service Pages',
-      lead: 'Turn your service pages into trusted answers AI platforms can verify, cite, and recommend.',
+      lead: 'Turn service pages into trusted answers AI search systems can verify, cite, and recommend.',
       bullets: [
-        'Format core services, operating suburbs, and credentials into self-contained answer blocks.',
-        'Give ChatGPT Search, Perplexity, and Google AI Overviews clear facts to cite.',
-        'Increase the likelihood that AI tools recommend your business for local buyer queries.',
+        'Format core services, suburbs, and credentials into self-contained answer blocks.',
+        'Give AI search systems clear facts they can cite and reference.',
+        'Increase the likelihood of being recommended for local buyer searches.',
       ],
     },
     {
       icon: <Target className="w-5 h-5 text-[#00E5FF]" />,
       title: 'Verified Business Authority',
-      lead: 'Prove your business is legitimate and trustworthy wherever AI systems validate businesses.',
+      lead: 'Prove your business is legitimate wherever AI search systems check your facts.',
       bullets: [
-        'Link your website directly to your Australian Business Register (ABN) filings and industry licences.',
-        'Align your business name, address, and services across Google, Maps, and key directories.',
-        'Reduce the risk of AI platforms displaying outdated or incorrect business information.',
+        'Connect your website to your Australian Business Register (ABN) details and industry licences.',
+        'Align your name, address, and services across Google, Maps, and directories.',
+        'Reduce the risk of AI search displaying outdated or incorrect business details.',
       ],
     },
     {
       icon: <MessageSquare className="w-5 h-5 text-[#00E5FF]" />,
       title: 'AI-Ready Structured Data',
-      lead: 'Convert your website into machine-readable data that search engines and AI platforms can understand with confidence.',
+      lead: 'Help Google and AI search understand exactly who you are, where you work, and what services you provide.',
       bullets: [
-        'Install connected Schema.org data defining who you are, what you charge, and where you operate.',
-        'Replace disconnected meta tags with clean, validated business markup.',
-        'Remove guesswork when buyers ask AI engines for local recommendations.',
+        'Install connected Schema.org data defining your business, pricing, and service areas.',
+        'Replace disconnected tags with clean, validated business markup.',
+        'Remove guesswork when buyers use AI search for local recommendations.',
       ],
     },
   ];
@@ -83,7 +83,7 @@ export default function USPGrid() {
               Capture High-Intent Demand Across Google, Maps, and AI
             </h2>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch]">
-              We structure business data into machine-readable knowledge graphs so conversational models evaluate your brand salience and commercial offerings with verifiable confidence.
+              We organise your business facts and website code so Google, Maps, and AI search systems can verify what you offer and recommend you.
             </p>
           </div>
         </header>

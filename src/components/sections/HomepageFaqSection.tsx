@@ -4,23 +4,23 @@ export function HomepageFaqSection() {
   const faqs = [
     {
       question: "What is Answer Engine Optimisation (AEO) and how does it differ from traditional SEO?",
-      answer: "Traditional Search Engine Optimisation focuses on ranking ten blue links through keyword frequency and backlink volume. Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) extend your search foundation by structuring your digital assets into connected Schema.org Tri-Graphs (Entity, Semantic Intent, and Evidence graphs) anchored to the Australian Business Register (ABN). This reduces the risk of AI hallucination and improves retrieval conditions so ChatGPT Search, Perplexity, Google AI Overviews, and Gemini can verify and cite your brand."
+      answer: "Traditional SEO focuses on ranking web pages through keywords and backlinks. Answer Engine Optimisation (AEO) extends that foundation by structuring your services into clear answers and connected Schema.org data linked to your Australian Business Register (ABN). This reduces the risk of AI hallucination and helps ChatGPT Search, Perplexity, Gemini, and Google AI Overviews verify and recommend you."
     },
     {
       question: "Why do fixed-scope sprints beat monthly SEO agency retainers for AI search?",
-      answer: "Monthly retainers were designed for manual keyword tracking and open-ended link building cycles across desktop search engines. Modern generative answer engines do not count monthly agency hours; they evaluate verifiable entity facts, structured JSON-LD schemas, and licensing credentials in real time. AEObility replaces speculative monthly retainers with transparent, fixed-scope sprints from $495 AUD ex. GST and a $995 Strategic Blueprint where 100% of your audit fee is credited toward follow-on implementation."
+      answer: "Monthly retainers were built for ongoing manual link building and open-ended agency hours. AI search systems evaluate verifiable business facts, connected Schema.org data, and clear service pages in real time. AEObility delivers targeted fixes through fixed-scope sprints from $495 AUD ex. GST and a $995 Strategic Blueprint with zero contract lock-in."
     },
     {
       question: "What deliverables are included in the $995 Strategic Blueprint and how does the fee credit work?",
-      answer: "The Strategic Blueprint is a standalone 5-business-day diagnostic audit. It includes a complete digital footprint assessment, Schema.org code review, AI visibility scorecard across ChatGPT and Perplexity, and a prioritised 90-day action roadmap. If you proceed with AEO Foundation implementation within 60 calendar days of receiving your blueprint, 100% of your $995 audit fee is credited directly toward your implementation total."
+      answer: "The Strategic Blueprint is a 5-business-day audit covering your website footprint, Schema.org code review, AI search visibility scorecard, and a prioritised 90-day fix plan. If you proceed with AEO Foundation implementation within 60 days, 100% of your $995 AUD fee is credited directly toward your implementation total."
     },
     {
       question: "How quickly can an Australian business expect to see results from AEO implementation?",
-      answer: "Unlike legacy SEO campaigns that require six to twelve months of recurring retainer spend, technical AEO fixes produce measurable validation within days. Once validated JSON-LD schema graphs and atomic answer blocks are deployed to production, search engine bots re-index structured markup within 3 to 10 business days. Brand citation improvements in conversational engines like Perplexity and ChatGPT Search typically register within two to four weeks as model indexes refresh."
+      answer: "Technical AEO improvements can be verified far faster than traditional 6-to-12-month SEO retainers. Once clean Schema.org markup and direct-answer service blocks are live, search crawlers typically re-index updates within 3 to 10 business days, with AI search citation improvements registering across ChatGPT Search and Perplexity within two to four weeks."
     },
     {
       question: "How can Perth and Australian businesses measure generative AI citations and search share?",
-      answer: "Measuring AI search visibility requires tracking passage-level citations, brand co-occurrence frequency, and answer sentiment across conversational engines rather than desktop ranking positions. AEObility monitors live query responses across ChatGPT Search, Perplexity Sonar, Google AI Overviews, and Microsoft Copilot. We benchmark your citation share against direct local competitors, quantify answer accuracy, and verify whether the model directs buyers to your high-converting service pages."
+      answer: "Measuring AI visibility tracks how often AI search systems cite and recommend your business for local buyer queries, rather than counting desktop ranking positions alone. AEObility benchmarks your responses across ChatGPT Search, Perplexity, Gemini, and Google AI Overviews against local competitors to verify answer accuracy and service-page recommendations."
     }
   ];
 

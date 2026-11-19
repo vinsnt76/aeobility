@@ -8,7 +8,7 @@ interface VideoExplainerProps {
 }
 
 export default function VideoExplainer({
-  embedUrl = "https://drive.google.com/file/d/18D0_A6T5Xikp7wvAg0AGcDDXRtdQKlG1/preview",
+  embedUrl = "https://www.youtube.com/embed/ghX_txnK7WU?si=Z-F_Lnw3hUPvG-Pq&autoplay=1",
   title = "Why Australian Businesses Choose AEObility"
 }: VideoExplainerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -27,7 +27,7 @@ export default function VideoExplainer({
               {title}
             </h2>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch]">
-              Search behaviour has shifted from blue links to direct answers. We engineer your digital presence so Search, Maps, and AI engines retrieve and recommend your business first.
+              Search behaviour is shifting to direct answers. We structure your business data and website content so Search, Maps, and AI systems can verify who you are, what you do, and where you operate.
             </p>
           </div>
         </header>
@@ -39,7 +39,8 @@ export default function VideoExplainer({
               src={embedUrl}
               title="AEObility Video Overview"
               className="w-full h-full border-0 rounded-2xl"
-              allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             />
           ) : (
@@ -96,15 +97,15 @@ export default function VideoExplainer({
                 <ul className="space-y-2.5 text-sm text-slate-300 leading-relaxed list-none p-0 m-0">
                   <li className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
-                    <span>AI search engines extract short, self-contained answers rather than counting repeated keywords.</span>
+                    <span>AI search systems extract short answers rather than long passages of text.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
-                    <span>Structure service pages around real customer questions and verifiable facts.</span>
+                    <span>Structure service pages around real customer questions and clear facts.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
-                    <span>Clear headings help models quote your business directly.</span>
+                    <span>Plain headings help systems quote your business directly.</span>
                   </li>
                 </ul>
               </div>
@@ -116,15 +117,15 @@ export default function VideoExplainer({
                 <ul className="space-y-2.5 text-sm text-slate-300 leading-relaxed list-none p-0 m-0">
                   <li className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
-                    <span>Search engines and AI tools cross-check your website against official records before recommending you.</span>
+                    <span>AI systems compare information from your website, business profiles, and trusted sources before recommending a business.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
-                    <span>Connect your site to your Australian Business Register (ABN) details and professional licences.</span>
+                    <span>Connect your site to your Australian Business Register (ABN) details and industry licences.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
-                    <span>Consistent business data proves your organisation is legitimate.</span>
+                    <span>Consistent records across directories prove your business is legitimate.</span>
                   </li>
                 </ul>
               </div>
@@ -136,15 +137,15 @@ export default function VideoExplainer({
                 <ul className="space-y-2.5 text-sm text-slate-300 leading-relaxed list-none p-0 m-0">
                   <li className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
-                    <span>Fixing how AI reads your website is a clear technical job, not an endless monthly retainer.</span>
+                    <span>Most AEO improvements can be delivered through focused implementation sprints rather than long-term retainers.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
-                    <span>Every sprint targets specific code, schema, and content gaps with clear milestones.</span>
+                    <span>Each sprint targets specific code, Schema.org, and content gaps.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shrink-0 mt-2" aria-hidden="true" />
-                    <span>Delivered in 5 to 10 business days with zero ongoing contract lock-in.</span>
+                    <span>Delivered in 5 to 10 business days with zero contract lock-in.</span>
                   </li>
                 </ul>
               </div>
