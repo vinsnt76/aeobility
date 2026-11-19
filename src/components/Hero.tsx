@@ -24,7 +24,7 @@ export default function Hero() {
   };
 
   return (
-    <section aria-labelledby="hero-title" className="hero relative w-full overflow-hidden bg-[#08090C] pt-12 pb-16 md:pb-24">
+    <section aria-labelledby="hero-title" className="hero relative w-full overflow-hidden bg-[#08090C] pt-24 sm:pt-28 pb-12 md:pb-24">
       {/* Absolute Radial Gradient Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] rounded-full bg-radial from-aeo-purple/20 via-aeo-cyan/5 to-transparent glow-blur pointer-events-none z-0"></div>
 
@@ -45,11 +45,11 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
         {/* Balanced 2-Column Desktop Split Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 xl:gap-14 items-center">
           
           {/* Left Column (Value Proposition & Proof Pills) */}
-          <header className="lg:col-span-7 relative z-10 space-y-6 text-left hero-card">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111622] border border-[#1E293B] text-slate-200 text-xs font-semibold tracking-wide font-mono">
+          <header className="lg:col-span-7 relative z-10 text-left hero-card">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111622] border border-[#1E293B] text-slate-200 text-xs font-semibold tracking-wide font-mono mb-3 sm:mb-4">
               <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse"></span>
               Answer Engine Optimisation for Australian Entities
             </div>
@@ -64,23 +64,23 @@ export default function Hero() {
             <aside 
               aria-label="Executive Summary" 
               data-agent-purpose="direct-answer"
-              className="max-w-[56ch] p-5 sm:p-6 rounded-xl bg-[#0D1117]/80 border-t border-[#00E5FF]/40 border-b border-x border-slate-800 backdrop-blur-md space-y-4"
+              className="mt-4 sm:mt-6 max-w-[56ch] p-4 sm:p-6 rounded-xl bg-[#0D1117]/80 border-t border-[#00E5FF]/40 border-b border-x border-slate-800 backdrop-blur-md"
             >
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-[56ch]">
+              <p className="text-sm sm:text-lg text-slate-300 leading-relaxed max-w-[56ch]">
                 Stop leaving AI recommendations to guesswork. <strong className="font-semibold text-white">AEObility</strong> is a Perth digital consultancy engineering Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) for Australian businesses. We structure your web architecture, schema graphs, and entity profiles so Google, Maps, ChatGPT Search, Perplexity, and Google AI Overviews verify who you are and recommend your business first.
               </p>
 
               {/* Scope/Trust Pills: 3-column metric strip aligned at bottom of left column */}
-              <div className="grid grid-cols-3 gap-2.5 pt-3 border-t border-[#1E293B] text-center font-mono">
-                <div className="p-2.5 rounded-lg bg-[#08090C] border border-[#1E293B]">
+              <div className="grid grid-cols-3 gap-2 sm:gap-2.5 mt-3 sm:mt-5 pt-3 border-t border-[#1E293B] text-center font-mono">
+                <div className="py-2.5 sm:py-3.5 px-2 rounded-lg bg-[#08090C] border border-[#1E293B]">
                   <span className="block text-xs text-slate-400 uppercase tracking-wider">Focus</span>
                   <span className="text-xs font-bold text-[#00E5FF]">AEO &amp; GEO</span>
                 </div>
-                <div className="p-2.5 rounded-lg bg-[#08090C] border border-[#1E293B]">
+                <div className="py-2.5 sm:py-3.5 px-2 rounded-lg bg-[#08090C] border border-[#1E293B]">
                   <span className="block text-xs text-slate-400 uppercase tracking-wider">Model</span>
                   <span className="text-xs font-bold text-white">Fixed-Scope</span>
                 </div>
-                <div className="p-2.5 rounded-lg bg-[#08090C] border border-[#1E293B]">
+                <div className="py-2.5 sm:py-3.5 px-2 rounded-lg bg-[#08090C] border border-[#1E293B]">
                   <span className="block text-xs text-slate-400 uppercase tracking-wider">Audits From</span>
                   <span className="text-xs font-bold text-[#00E5FF]">$995 AUD</span>
                 </div>

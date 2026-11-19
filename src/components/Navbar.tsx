@@ -38,28 +38,30 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
 
   return (
     <>
-      <header className="w-full sticky top-0 z-50 transition-all duration-300">
-        <nav className="w-full bg-[#08090C]/85 backdrop-blur-md border-b border-[#1E293B]/60">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <header className="fixed top-4 inset-x-0 z-50 px-4 sm:px-6 pointer-events-none transition-all duration-300">
+        <nav
+          aria-label="Primary Navigation"
+          className="pointer-events-auto max-w-6xl mx-auto rounded-full bg-white/95 backdrop-blur-md border border-slate-200/80 px-4 sm:px-6 py-2.5 shadow-[0_12px_32px_rgba(0,0,0,0.45)] flex items-center justify-between"
+        >
           {/* Brand Logo */}
           <Link href="/" aria-label="AEObility Home" className="flex items-center group">
             {/* Desktop Full Logo */}
             <Image
-              src="/images/brand/aeobility-logo-dark.svg"
+              src="/images/brand/aeobility-logo-light.svg"
               alt="AEObility Logo"
-              width={180}
-              height={40}
-              className="h-10 w-auto object-contain hidden lg:block group-hover:scale-105 transition-transform"
+              width={168}
+              height={36}
+              className="h-9 w-auto object-contain hidden lg:block group-hover:scale-105 transition-transform"
               priority
             />
-            {/* Mobile Standalone Circular Logo Badge (32px x 32px) */}
-            <div className="flex lg:hidden h-[32px] w-[32px] items-center justify-center rounded-full bg-[#111622] backdrop-blur-md border border-[#1E293B] group-hover:border-[#00E5FF] active:scale-95 transition-all shadow-[0_0_10px_rgba(0,229,255,0.15)] shrink-0 overflow-hidden">
+            {/* Mobile Standalone Circular Logo Badge */}
+            <div className="flex lg:hidden h-9 w-9 items-center justify-center rounded-full bg-[#0F172A] border border-slate-700 group-hover:border-cyan-500 active:scale-95 transition-all shrink-0 overflow-hidden">
               <Image
                 src="/images/brand/aeobility-icon-dark.svg"
                 alt="AEObility Icon"
-                width={28}
-                height={28}
-                className="h-[28px] w-[28px] object-contain group-hover:scale-105 transition-transform"
+                width={26}
+                height={26}
+                className="h-[26px] w-[26px] object-contain group-hover:scale-105 transition-transform"
                 priority
               />
             </div>
@@ -67,7 +69,7 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
 
           {/* Desktop Menu links */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-            <ul className="flex items-center gap-4 xl:gap-8 text-sm font-semibold text-slate-200 list-none p-0 m-0" ref={dropdownRef}>
+            <ul className="flex items-center gap-4 xl:gap-7 text-sm font-semibold text-[#0F172A] list-none p-0 m-0" ref={dropdownRef}>
               {NAVIGATION_DATA.map((link) => {
                 if (link.children) {
                   const isAnySubActive = link.children.some(sub => pathname === sub.href) || (link.href && pathname === link.href);
@@ -81,8 +83,8 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                     >
                       <Link
                         href={link.href || '#'}
-                        className={`flex items-center gap-1.5 py-2 hover:text-[#00E5FF] transition-colors focus:outline-none cursor-pointer ${
-                          isAnySubActive ? 'text-[#00E5FF]' : ''
+                        className={`flex items-center gap-1.5 py-1.5 hover:text-cyan-600 transition-colors focus:outline-none cursor-pointer ${
+                          isAnySubActive ? 'text-cyan-600' : ''
                         }`}
                       >
                         <span>{link.title}</span>
@@ -91,7 +93,7 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
 
                       {/* Dropdown Menu */}
                       <ul
-                        className={`absolute left-0 mt-1 w-64 bg-[#111622]/95 backdrop-blur-xl border border-[#1E293B] rounded-xl p-2 shadow-2xl transition-all duration-200 origin-top-left z-50 list-none m-0 ${
+                        className={`absolute left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-2xl p-2 shadow-2xl transition-all duration-200 origin-top-left z-50 list-none m-0 ${
                           isCurrentDropdownOpen
                             ? 'opacity-100 scale-100 translate-y-0 visible'
                             : 'opacity-0 scale-95 -translate-y-2 invisible pointer-events-none'
@@ -103,10 +105,10 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                             <li key={subItem.title}>
                               <Link
                                 href={subItem.href}
-                                className={`block px-4 py-2.5 rounded-lg text-sm transition-all ${
+                                className={`block px-4 py-2.5 rounded-xl text-sm transition-all ${
                                   isSubActive
-                                    ? 'bg-[#00E5FF]/10 text-[#00E5FF] font-bold'
-                                    : 'hover:bg-white/5 text-slate-300 hover:text-white font-medium'
+                                    ? 'bg-slate-900 text-white font-bold'
+                                    : 'hover:bg-slate-100 text-slate-800 hover:text-slate-950 font-medium'
                                 }`}
                               >
                                 <span>{subItem.title}</span>
@@ -124,8 +126,8 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                   <li key={link.title}>
                     <Link
                       href={link.href || '#'}
-                      className={`hover:text-[#00E5FF] transition-colors py-2 block ${
-                        isActive ? 'text-[#00E5FF]' : ''
+                      className={`hover:text-cyan-600 transition-colors py-1.5 block ${
+                        isActive ? 'text-cyan-600' : ''
                       }`}
                     >
                       {link.title}
@@ -136,13 +138,13 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
             </ul>
 
             {/* Desktop CTA Action Buttons */}
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2">
               {/* Phone Call Quick Link */}
               <a
                 href="tel:0480286282"
                 aria-label="Call AEObility (0480 286 282)"
                 title="Call AEObility (0480 286 282)"
-                className="flex min-h-[38px] min-w-[38px] h-9 w-9 items-center justify-center rounded-lg text-slate-300 hover:text-white hover:bg-white/5 border border-transparent hover:border-[#1E293B] active:scale-95 transition-all"
+                className="flex h-9 w-9 items-center justify-center rounded-full text-slate-700 hover:text-[#0F172A] hover:bg-slate-100 active:scale-95 transition-all"
               >
                 <Phone className="h-4 w-4" />
               </a>
@@ -152,7 +154,7 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                 href="/book"
                 aria-label="Book Strategy Session"
                 title="Book Strategy Session"
-                className="flex min-h-[38px] min-w-[38px] h-9 w-9 items-center justify-center rounded-lg text-slate-300 hover:text-white hover:bg-white/5 border border-transparent hover:border-[#1E293B] active:scale-95 transition-all"
+                className="flex h-9 w-9 items-center justify-center rounded-full text-slate-700 hover:text-[#0F172A] hover:bg-slate-100 active:scale-95 transition-all"
               >
                 <Calendar className="h-4 w-4" />
               </Link>
@@ -163,7 +165,7 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                 onClick={() => window.dispatchEvent(new CustomEvent('open_answer_search_modal'))}
                 aria-label="Search Site Architecture (⌘K)"
                 title="Search Site Architecture (⌘K)"
-                className="flex min-h-[38px] min-w-[38px] h-9 w-9 items-center justify-center rounded-lg text-slate-300 hover:text-white hover:bg-white/5 border border-transparent hover:border-[#1E293B] active:scale-95 transition-all"
+                className="flex h-9 w-9 items-center justify-center rounded-full text-slate-700 hover:text-[#0F172A] hover:bg-slate-100 active:scale-95 transition-all cursor-pointer"
               >
                 <Search className="h-4 w-4" />
               </button>
@@ -172,7 +174,7 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                 <Link
                   href={pathname === '/' ? '/solutions' : '/diagnostic'}
                   onClick={() => trackGaEvent(pathname === '/' ? 'nav_solutions_clicked' : 'nav_diagnostic_clicked', { source: 'navbar_desktop' })}
-                  className="px-4 py-2 text-xs font-semibold tracking-wide bg-[#111622] text-white hover:bg-[#1E293B] border border-[#1E293B] hover:border-[#00E5FF]/50 rounded-full transition-all shadow-sm ml-1.5"
+                  className="bg-[#0F172A] hover:bg-[#1E293B] text-white text-xs sm:text-sm font-semibold rounded-full px-4 py-2 transition-colors ml-1"
                 >
                   {pathname === '/' ? 'Explore Solutions' : 'Free AI Visibility Scan'}
                 </Link>
@@ -180,13 +182,13 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
             </div>
           </div>
 
-          {/* Mobile Right Action Stack: Primary Diagnostic CTA + Hamburger Menu */}
-          <div className="flex items-center gap-2.5 lg:hidden">
+          {/* Mobile Right Action Stack: Primary CTA + Hamburger Menu */}
+          <div className="flex items-center gap-2 lg:hidden">
             {pathname !== '/book' && (
               <Link
                 href={pathname === '/' ? '/solutions' : '/diagnostic'}
                 onClick={() => trackGaEvent(pathname === '/' ? 'nav_solutions_clicked' : 'nav_diagnostic_clicked', { source: 'navbar_mobile' })}
-                className="px-3.5 py-1.5 text-xs font-semibold tracking-wide border border-[#1E293B] hover:border-[#00E5FF]/50 bg-[#111622] text-white rounded-full hover:bg-[#1E293B] active:scale-95 transition-all shadow-sm"
+                className="bg-[#0F172A] hover:bg-[#1E293B] text-white text-xs sm:text-sm font-semibold rounded-full px-4 py-2 transition-colors"
               >
                 {pathname === '/' ? 'Explore Solutions' : 'Free AI Visibility Scan'}
               </Link>
@@ -194,12 +196,14 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
 
             <MobileMenuButton isOpen={isOpen} onToggle={() => setIsOpen(prev => !prev)} />
           </div>
-        </div>
-      </nav>
-      {subnavItems && subnavItems.length > 0 && (
-        <SubNavPills items={subnavItems} sectionTitle={subnavTitle} isEmbedded />
-      )}
-    </header>
+        </nav>
+        {subnavItems && subnavItems.length > 0 && (
+          <div className="pointer-events-auto max-w-6xl mx-auto mt-2">
+            <SubNavPills items={subnavItems} sectionTitle={subnavTitle} isEmbedded />
+          </div>
+        )}
+      </header>
+      {pathname !== '/' && <div className="h-20" aria-hidden="true" />}
 
       {/* Mobile Drawer Overlay Island (Mounted to document.body via Portal at z-[10000]) */}
       <MobileMenuOverlay isOpen={isOpen} onClose={() => setIsOpen(false)}>
