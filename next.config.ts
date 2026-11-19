@@ -4,6 +4,10 @@ const nextConfig: NextConfig = {
   // Generate browser source maps in production builds for Lighthouse and DevTools debugging
   productionBrowserSourceMaps: true,
   compress: true,
+  experimental: {
+    // Inline compact Tailwind v4 CSS chunks into <head> on production builds to eliminate render-blocking CSS requests
+    inlineCss: true,
+  },
   // 1. Inject Global CORS Headers for all external AI Agents
   async headers() {
     return [
