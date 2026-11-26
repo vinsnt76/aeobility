@@ -31,6 +31,8 @@ export default function AeoContactSection({
   defaultService = "unsure"
 }: AeoContactSectionProps) {
   const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [contactData, setContactData] = useState({
     name: '',
     email: '',
@@ -51,20 +53,41 @@ export default function AeoContactSection({
     };
   }, []);
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    trackGaEvent('generate_lead', {
-      event_category: 'lead_generation',
-      form_id: formId,
-      lead_type: leadType,
-      service_selected: contactData.serviceType,
-      value: 1,
-    });
-    setContactSubmitted(true);
-    setTimeout(() => {
-      setContactSubmitted(false);
-      setContactData({ name: '', email: '', website: '', serviceType: 'unsure', message: '' });
-    }, 6000);
+    setSubmitError(null);
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/api/forms/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: contactData.name,
+          email: contactData.email,
+          website: contactData.website,
+          service: `${badgeTitle}: ${contactData.serviceType}`,
+          message: contactData.message,
+          source: `Service Contact Form (${formId})`,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Unable to submit your enquiry. Please email support@aeobility.com.au directly.');
+      }
+      trackGaEvent('generate_lead', {
+        event_category: 'lead_generation',
+        form_id: formId,
+        lead_type: leadType,
+        service_selected: contactData.serviceType,
+        value: 1,
+      });
+      setContactSubmitted(true);
+      setContactData({ name: '', email: '', website: '', serviceType: defaultService, message: '' });
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Unable to submit your enquiry. Please email support@aeobility.com.au directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -179,11 +202,18 @@ export default function AeoContactSection({
               />
             </div>
 
+            {submitError && (
+              <div role="alert" className="p-3 rounded-xl bg-red-950/60 border border-red-500/40 text-xs text-red-200">
+                {submitError}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full group flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm transition-all duration-200 shadow-lg shadow-teal-500/20 cursor-pointer"
+              disabled={isSubmitting}
+              className="w-full group flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm transition-all duration-200 shadow-lg shadow-teal-500/20 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <span>{buttonText}</span>
+              <span>{isSubmitting ? 'Sending...' : buttonText}</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
 

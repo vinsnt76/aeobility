@@ -6,6 +6,8 @@ import { trackGaEvent } from '@/lib/gtag';
 
 export function HomepageContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,18 +15,45 @@ export function HomepageContactForm() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.email.trim()) return;
-    const isAssistantAssisted = typeof window !== 'undefined' && sessionStorage.getItem('aeo_assistant_assisted') === 'true';
-    trackGaEvent('generate_lead', {
-      event_category: 'lead_generation',
-      form_id: 'homepage_contact_form',
-      lead_type: 'general_contact',
-      assistant_assisted: isAssistantAssisted,
-      value: 1,
-    });
-    setSubmitted(true);
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    try {
+      const isAssistantAssisted = typeof window !== 'undefined' && sessionStorage.getItem('aeo_assistant_assisted') === 'true';
+      const res = await fetch('/api/forms/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          website: formData.url,
+          service: 'Sprint Scope Request (Homepage)',
+          message: formData.message || 'Requested custom sprint scope from homepage footer form.',
+          source: isAssistantAssisted ? 'Homepage Footer Form (AI Bill Assisted)' : 'Homepage Footer Form (/)',
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Unable to submit your enquiry right now. Please email support@aeobility.com.au directly.');
+      }
+
+      trackGaEvent('generate_lead', {
+        event_category: 'lead_generation',
+        form_id: 'homepage_contact_form',
+        lead_type: 'general_contact',
+        assistant_assisted: isAssistantAssisted,
+        value: 1,
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Unable to submit your enquiry right now. Please email support@aeobility.com.au directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -136,13 +165,20 @@ export function HomepageContactForm() {
               />
             </label>
 
+            {submitError && (
+              <div role="alert" className="md:col-span-3 p-3.5 rounded-xl bg-red-950/60 border border-red-500/40 text-xs text-red-200 font-sans text-center">
+                {submitError}
+              </div>
+            )}
+
             <footer className="md:col-span-3 text-center mt-2">
               <button
                 type="submit"
+                disabled={isSubmitting}
                 data-agent-action="submit-sprint-scope"
-                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#00E5FF] text-[#08090C] font-bold text-sm hover:bg-[#33ECFF] transition-all shadow-[0_0_20px_rgba(0,229,255,0.25)] cursor-pointer"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#00E5FF] text-[#08090C] font-bold text-sm hover:bg-[#33ECFF] transition-all shadow-[0_0_20px_rgba(0,229,255,0.25)] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                <span>Request Sprint Scope</span>
+                <span>{isSubmitting ? 'Sending...' : 'Request Sprint Scope'}</span>
                 <Send className="w-4 h-4" />
               </button>
             </footer>

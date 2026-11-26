@@ -6,17 +6,37 @@ export function FooterNewsletterForm() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email.trim()) return;
+    setError(null);
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await fetch('/api/forms/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: 'Newsletter Subscriber',
+          email: email.trim(),
+          service: 'AEObility Intelligence Newsletter',
+          message: 'Footer newsletter subscription request.',
+          source: 'Footer Newsletter Form',
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Unable to subscribe right now.');
+      }
       setSubscribed(true);
       setEmail('');
-    }, 1000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Unable to subscribe right now.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (subscribed) {
@@ -51,6 +71,11 @@ export function FooterNewsletterForm() {
           {loading ? '...' : 'Join'}
         </button>
       </div>
+      {error && (
+        <p role="alert" className="text-[11px] text-red-300 font-sans">
+          {error}
+        </p>
+      )}
       <p className="text-[10px] text-white/30 font-mono">
         Monthly Australian AEO &amp; AI Search insights. No spam.
       </p>

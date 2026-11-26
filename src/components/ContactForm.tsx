@@ -20,6 +20,8 @@ import {
 
 export default function ContactForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,8 +38,9 @@ export default function ContactForm() {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
 
     // Ignore bot submissions if honeypot field is filled
     if (formData.website_hp) {
@@ -45,14 +48,41 @@ export default function ContactForm() {
       return;
     }
 
-    trackGaEvent('generate_lead', {
-      event_category: 'lead_generation',
-      form_id: 'contact_page_form',
-      lead_type: formData.category,
-      value: 1,
-    });
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/api/forms/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          website: formData.website,
+          businessName: formData.businessName,
+          category: formData.category,
+          message: formData.message,
+          website_hp: formData.website_hp,
+          source: 'Contact Page (/contact)',
+        }),
+      });
 
-    setFormSubmitted(true);
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Unable to send your enquiry right now. Please email support@aeobility.com.au directly.');
+      }
+
+      trackGaEvent('generate_lead', {
+        event_category: 'lead_generation',
+        form_id: 'contact_page_form',
+        lead_type: formData.category,
+        value: 1,
+      });
+
+      setFormSubmitted(true);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Unable to send your enquiry right now. Please email support@aeobility.com.au directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const faqs = [
@@ -387,11 +417,18 @@ export default function ContactForm() {
                 </span>
               </div>
 
+              {submitError && (
+                <div role="alert" className="p-3.5 rounded-xl bg-red-950/60 border border-red-500/40 text-xs text-red-200 font-sans">
+                  {submitError}
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-[#00E5FF] text-[#050811] font-bold text-sm uppercase tracking-wider py-4 px-6 rounded-xl hover:shadow-[0_0_28px_rgba(0,229,255,0.5)] transition-all cursor-pointer text-center mt-2 shadow-lg"
+                disabled={isSubmitting}
+                className="w-full bg-[#00E5FF] text-[#050811] font-bold text-sm uppercase tracking-wider py-4 px-6 rounded-xl hover:shadow-[0_0_28px_rgba(0,229,255,0.5)] transition-all cursor-pointer text-center mt-2 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Submit Enquiry
+                {isSubmitting ? 'Submitting Enquiry...' : 'Submit Enquiry'}
               </button>
             </form>
           )}

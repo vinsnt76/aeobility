@@ -22,25 +22,46 @@ export default function AeoDiagnosticSection({
   leadType = "aeo_visibility_scan",
 }: AeoDiagnosticSectionProps) {
   const [diagnosticSubmitted, setDiagnosticSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [diagnosticData, setDiagnosticData] = useState({
     websiteUrl: '',
     name: '',
     email: '',
   });
 
-  const handleDiagnosticSubmit = (e: React.FormEvent) => {
+  const handleDiagnosticSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    trackGaEvent('generate_lead', {
-      event_category: 'lead_generation',
-      form_id: formId,
-      lead_type: leadType,
-      value: 1,
-    });
-    setDiagnosticSubmitted(true);
-    setTimeout(() => {
-      setDiagnosticSubmitted(false);
+    setSubmitError(null);
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/api/forms/audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: diagnosticData.name,
+          email: diagnosticData.email,
+          website: diagnosticData.websiteUrl,
+          targetQuery: heading,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Unable to submit your scan request. Please email support@aeobility.com.au directly.');
+      }
+      trackGaEvent('generate_lead', {
+        event_category: 'lead_generation',
+        form_id: formId,
+        lead_type: leadType,
+        value: 1,
+      });
+      setDiagnosticSubmitted(true);
       setDiagnosticData({ websiteUrl: '', name: '', email: '' });
-    }, 6000);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Unable to submit your scan request. Please email support@aeobility.com.au directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -130,12 +151,19 @@ export default function AeoDiagnosticSection({
               </div>
             </div>
 
+            {submitError && (
+              <div role="alert" className="p-3 rounded-xl bg-red-950/60 border border-red-500/40 text-xs text-red-200">
+                {submitError}
+              </div>
+            )}
+
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full group flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm transition-all duration-200 shadow-lg shadow-teal-500/20 cursor-pointer"
+                disabled={isSubmitting}
+                className="w-full group flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm transition-all duration-200 shadow-lg shadow-teal-500/20 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                <span>Run Free Visibility Scan</span>
+                <span>{isSubmitting ? 'Submitting...' : 'Run Free Visibility Scan'}</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>

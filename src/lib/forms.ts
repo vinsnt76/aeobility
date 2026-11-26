@@ -314,7 +314,8 @@ export const Forms = {
         businessName,
         website,
         service,
-        message
+        message,
+        source
       }: {
         name: string;
         email: string;
@@ -322,12 +323,22 @@ export const Forms = {
         website?: string;
         service?: string;
         message?: string;
+        source?: string;
       }) {
-        if (!name || !email) {
-          throw new Error("Missing required fields");
+        const cleanName = typeof name === "string" ? name.trim() : "";
+        const cleanEmail = typeof email === "string" ? email.trim().toLowerCase() : "";
+        if (!cleanName || !cleanEmail || !cleanEmail.includes("@")) {
+          throw new Error("Please provide a valid name and email address.");
         }
 
-        const resend = new Resend(process.env.RESEND_API_KEY || "re_dummykeyforbuild");
+        const apiKey = process.env.RESEND_API_KEY;
+        if (!apiKey) {
+          console.error("RESEND_API_KEY is not configured in environment variables.");
+          throw new Error("Email delivery service is not configured. Please email support@aeobility.com.au directly.");
+        }
+
+        const resend = new Resend(apiKey);
+        const fromEmail = process.env.RESEND_FROM_EMAIL || "AEObility <reports@aeobility.com.au>";
 
         const defaultRecipients = ["support@aeobility.com.au", "vince@aeobility.com.au"];
         const teamEnv = process.env.TEAM_NOTIFICATION_EMAIL;
@@ -336,33 +347,65 @@ export const Forms = {
           : defaultRecipients;
         const targetRecipients = internalRecipients.length > 0 ? internalRecipients : defaultRecipients;
 
-        await resend.emails.send({
-          from: "AEObility <noreply@aeobility.com.au>",
+        const safeName = escapeHtml(cleanName);
+        const safeEmail = escapeHtml(cleanEmail);
+        const safeBusiness = escapeHtml((businessName || "").trim() || "Not provided");
+        const safeWebsite = escapeHtml((website || "").trim() || "Not provided");
+        const safeService = escapeHtml((service || "").trim() || "General Enquiry");
+        const safeMessage = escapeHtml((message || "").trim() || "None").replace(/\n/g, "<br />");
+        const safeSource = escapeHtml((source || "").trim() || "Website Contact Form");
+
+        const internalResult = await resend.emails.send({
+          from: fromEmail,
           to: targetRecipients,
-          subject: "New AEObility Quote Request",
+          replyTo: cleanEmail,
+          subject: `[New Enquiry] ${service || "AEObility Contact"}: ${cleanName}`,
           html: `
-            <h2>New Quote Request</h2>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Business Name:</strong> ${businessName || "Not provided"}</p>
-            <p><strong>Website:</strong> ${website || "Not provided"}</p>
-            <p><strong>Service Interest:</strong> ${service || "Not specified"}</p>
-            <p><strong>Message/Notes:</strong> ${message || "None"}</p>
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 650px; color: #111827; line-height: 1.6;">
+              <h2 style="color: #0f172a; border-bottom: 2px solid #00cdd8; padding-bottom: 8px; margin-bottom: 16px;">New AEObility Enquiry</h2>
+              <p><strong>Name:</strong> ${safeName}</p>
+              <p><strong>Email:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p>
+              <p><strong>Business Name:</strong> ${safeBusiness}</p>
+              <p><strong>Website:</strong> ${safeWebsite}</p>
+              <p><strong>Category / Service:</strong> ${safeService}</p>
+              <p><strong>Form Source:</strong> ${safeSource}</p>
+              <div style="margin-top: 14px; padding: 14px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
+                <strong>Message / Notes:</strong><br />
+                ${safeMessage}
+              </div>
+            </div>
           `,
         });
 
-        await resend.emails.send({
-          from: "AEObility <noreply@aeobility.com.au>",
-          to: email,
-          subject: "Your AEObility Quote Request Has Been Received",
-          html: `
-            <p>Hi ${name},</p>
-            <p>Thank you for requesting a quote from AEObility.</p>
-            <p>Our team in Perth, Australia will review your details and prepare a tailored plan and pricing breakdown for your business within 24 business hours.</p>
-          `,
-        });
+        if (internalResult.error) {
+          console.error("Resend internal enquiry delivery error:", internalResult.error);
+          throw new Error(`Failed to dispatch enquiry: ${internalResult.error.message || "Email provider error"}`);
+        }
 
-        return { ok: true };
+        // Non-blocking client acknowledgement email
+        try {
+          const clientResult = await resend.emails.send({
+            from: fromEmail,
+            to: cleanEmail,
+            replyTo: "support@aeobility.com.au",
+            subject: "We have received your AEObility enquiry",
+            html: `
+              <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; color: #111827; line-height: 1.6;">
+                <p>Hi ${safeName},</p>
+                <p>Thank you for contacting AEObility.</p>
+                <p>We have received your enquiry regarding <strong>${safeService}</strong>. Vince Baker in Perth, Western Australia will review your details and respond within 1 business day (Monday to Friday, 9:00 AM to 5:00 PM AWST).</p>
+                <p style="font-size: 13px; color: #475569; margin-top: 20px;">Need to speak sooner? You can book a 15-minute clarity call at <a href="https://cal.com/vince-baker-aeo-call/15min">cal.com/vince-baker-aeo-call/15min</a> or call <a href="tel:0480286282">0480 286 282</a>.</p>
+              </div>
+            `,
+          });
+          if (clientResult.error) {
+            console.error("Resend client acknowledgement error (non-blocking):", clientResult.error);
+          }
+        } catch (clientErr) {
+          console.error("Resend client acknowledgement failed (non-blocking):", clientErr);
+        }
+
+        return { ok: true, messageId: internalResult.data?.id };
       }
     };
   }

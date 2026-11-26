@@ -60,7 +60,11 @@ export const SOLUTIONS_INTERNAL_LINKS = [
 export default function SolutionsPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [diagnosticSubmitted, setDiagnosticSubmitted] = useState(false);
+  const [diagnosticSubmitting, setDiagnosticSubmitting] = useState(false);
+  const [diagnosticError, setDiagnosticError] = useState<string | null>(null);
   const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactSubmitting, setContactSubmitting] = useState(false);
+  const [contactError, setContactError] = useState<string | null>(null);
 
   const [diagnosticData, setDiagnosticData] = useState({
     websiteUrl: '',
@@ -88,35 +92,75 @@ export default function SolutionsPage() {
     }
   };
 
-  const handleDiagnosticSubmit = (e: React.FormEvent) => {
+  const handleDiagnosticSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    trackGaEvent('generate_lead', {
-      event_category: 'lead_generation',
-      form_id: 'solutions_diagnostic_form',
-      lead_type: 'solutions_readiness_scan',
-      value: 1,
-    });
-    setDiagnosticSubmitted(true);
-    setTimeout(() => {
-      setDiagnosticSubmitted(false);
+    setDiagnosticError(null);
+    setDiagnosticSubmitting(true);
+    try {
+      const res = await fetch('/api/forms/audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: diagnosticData.name,
+          email: diagnosticData.email,
+          website: diagnosticData.websiteUrl,
+          targetQuery: 'Solutions Page Visibility Scan',
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Unable to submit your scan request. Please email support@aeobility.com.au directly.');
+      }
+      trackGaEvent('generate_lead', {
+        event_category: 'lead_generation',
+        form_id: 'solutions_diagnostic_form',
+        lead_type: 'solutions_readiness_scan',
+        value: 1,
+      });
+      setDiagnosticSubmitted(true);
       setDiagnosticData({ websiteUrl: '', name: '', email: '' });
-    }, 6000);
+    } catch (err) {
+      setDiagnosticError(err instanceof Error ? err.message : 'Unable to submit your scan request. Please email support@aeobility.com.au directly.');
+    } finally {
+      setDiagnosticSubmitting(false);
+    }
   };
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    trackGaEvent('generate_lead', {
-      event_category: 'lead_generation',
-      form_id: 'solutions_contact_form',
-      lead_type: 'solutions_enquiry',
-      service_selected: contactData.serviceType,
-      value: 1,
-    });
-    setContactSubmitted(true);
-    setTimeout(() => {
-      setContactSubmitted(false);
+    setContactError(null);
+    setContactSubmitting(true);
+    try {
+      const res = await fetch('/api/forms/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: contactData.name,
+          email: contactData.email,
+          website: contactData.website,
+          service: `AEO Solutions: ${contactData.serviceType}`,
+          message: contactData.message,
+          source: 'Solutions Page (/solutions)',
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Unable to submit your enquiry. Please email support@aeobility.com.au directly.');
+      }
+      trackGaEvent('generate_lead', {
+        event_category: 'lead_generation',
+        form_id: 'solutions_contact_form',
+        lead_type: 'solutions_enquiry',
+        service_selected: contactData.serviceType,
+        value: 1,
+      });
+      setContactSubmitted(true);
       setContactData({ name: '', email: '', website: '', serviceType: 'unsure', message: '' });
-    }, 6000);
+    } catch (err) {
+      setContactError(err instanceof Error ? err.message : 'Unable to submit your enquiry. Please email support@aeobility.com.au directly.');
+    } finally {
+      setContactSubmitting(false);
+    }
   };
 
   const bpSku = TECHNICAL_SPRINT_CATALOG['BPSTRAT'];
@@ -618,13 +662,20 @@ export default function SolutionsPage() {
                     </div>
                   </div>
 
+                  {diagnosticError && (
+                    <div role="alert" className="p-3 rounded-xl bg-red-950/60 border border-red-500/40 text-xs text-red-200">
+                      {diagnosticError}
+                    </div>
+                  )}
+
                   {/* Submission Action Button */}
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
+                      disabled={diagnosticSubmitting}
+                      className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      <span>Run Free Visibility Scan</span>
+                      <span>{diagnosticSubmitting ? 'Submitting...' : 'Run Free Visibility Scan'}</span>
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
                   </div>
@@ -776,11 +827,18 @@ export default function SolutionsPage() {
                     />
                   </div>
 
+                  {contactError && (
+                    <div role="alert" className="p-3 rounded-xl bg-red-950/60 border border-red-500/40 text-xs text-red-200">
+                      {contactError}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer"
+                    disabled={contactSubmitting}
+                    className="w-full group flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-gradient-to-r from-aeo-cyan to-aeo-purple text-black font-bold text-sm hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,205,216,0.25)] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    <span>Discuss Your Solution</span>
+                    <span>{contactSubmitting ? 'Sending...' : 'Discuss Your Solution'}</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </button>
 
