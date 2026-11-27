@@ -5,12 +5,12 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Top AI SEO & AEO Tools Comparison (2026) | AEObility",
     description: "Compare top-rated AI SEO and AEO tools for citation tracking, FAQ schema extraction, and Google snippet optimisation. Find managed service alternatives.",
     alternates: {
-      canonical: "https://www.aeobility.com.au/knowledge-hub/ai-seo-tools",
+      canonical: "https://aeobility.com.au/knowledge-hub/ai-seo-tools",
     },
     openGraph: {
       title: "Top AI SEO & AEO Tools Comparison (2026) | AEObility",
       description: "Compare top-rated AI SEO and AEO tools for citation tracking, FAQ schema extraction, and Google snippet optimisation. Find managed service alternatives.",
-      url: "https://www.aeobility.com.au/knowledge-hub/ai-seo-tools",
+      url: "https://aeobility.com.au/knowledge-hub/ai-seo-tools",
       type: "website",
       siteName: "AEObility",
     },

@@ -36,12 +36,12 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "What is GEO? Generative Engine Optimisation Guide | AEObility",
     description: "Understand Generative Engine Optimisation (GEO) vs local SEO. Learn how AI search platforms verify, synthesise, and recommend local and national businesses.",
     alternates: {
-      canonical: "https://www.aeobility.com.au/knowledge-hub/geo",
+      canonical: "https://aeobility.com.au/knowledge-hub/geo",
     },
     openGraph: {
       title: "What is GEO? Generative Engine Optimisation Guide | AEObility",
       description: "Understand Generative Engine Optimisation (GEO) vs local SEO. Learn how AI search platforms verify, synthesise, and recommend local and national businesses.",
-      url: "https://www.aeobility.com.au/knowledge-hub/geo",
+      url: "https://aeobility.com.au/knowledge-hub/geo",
       type: "article",
       siteName: "AEObility",
     },

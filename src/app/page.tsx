@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     "intent matching"
   ],
   alternates: {
-    canonical: 'https://www.aeobility.com.au/',
+    canonical: 'https://aeobility.com.au/',
   },
   openGraph: {
     title: "AEObility Perth | Answer Engine Optimisation & AI SEO Consultancy",
     description: "Australia's premier AEO & AI SEO agency. Optimise your brand for ChatGPT, Perplexity & Google AI Overviews. Claim your free AI visibility audit.",
-    url: "https://www.aeobility.com.au/",
+    url: "https://aeobility.com.au/",
     type: "website",
     images: [
       {
@@ -97,7 +97,7 @@ export default function Home() {
           "url": "https://aeobility.com.au/aeobility-logo-light.svg"
         },
         "image": {
-          "@id": "https://www.aeobility.com.au/#primaryimage"
+          "@id": "https://aeobility.com.au/#primaryimage"
         },
         "description": "AEObility is a Perth-based Australian consultancy specialising in Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), AI search visibility, entity SEO and schema graph engineering. AEObility helps businesses improve how their digital information, services and expertise are structured and understood by search engines and AI-powered discovery systems.",
         "disambiguatingDescription": "AEObility is an independent Australian digital consultancy specialising in AEO, GEO and machine search readability. It is distinct from Seobility, the SEO software platform.",
@@ -209,9 +209,9 @@ export default function Home() {
       },
       {
         "@type": "ImageObject",
-        "@id": "https://www.aeobility.com.au/#primaryimage",
-        "url": "https://www.aeobility.com.au/images/brand/aeobility-ai-search-visibility.webp",
-        "contentUrl": "https://www.aeobility.com.au/images/brand/aeobility-ai-search-visibility.webp",
+        "@id": "https://aeobility.com.au/#primaryimage",
+        "url": "https://aeobility.com.au/images/brand/aeobility-ai-search-visibility.webp",
+        "contentUrl": "https://aeobility.com.au/images/brand/aeobility-ai-search-visibility.webp",
         "width": 1024,
         "height": 1024,
         "encodingFormat": "image/webp",
@@ -224,7 +224,7 @@ export default function Home() {
         },
         "creditText": "AEObility",
         "copyrightNotice": "Copyright AEObility. All Rights Reserved.",
-        "acquireLicensePage": "https://www.aeobility.com.au",
+        "acquireLicensePage": "https://aeobility.com.au",
         "contentLocation": {
           "@type": "Place",
           "name": "Perth, Western Australia, Australia",
@@ -248,7 +248,7 @@ export default function Home() {
           "@id": "https://aeobility.com.au/#organization"
         },
         "primaryImageOfPage": {
-          "@id": "https://www.aeobility.com.au/#primaryimage"
+          "@id": "https://aeobility.com.au/#primaryimage"
         },
         "inLanguage": "en-AU"
       },

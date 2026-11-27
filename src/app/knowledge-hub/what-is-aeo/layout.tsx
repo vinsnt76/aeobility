@@ -5,12 +5,12 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "What is AEO? Answer Engine Optimisation Guide | AEObility",
     description: "Learn what Answer Engine Optimisation (AEO) is and how it differs from traditional SEO. Discover how AI search engines extract brand facts and citations.",
     alternates: {
-      canonical: "https://www.aeobility.com.au/knowledge-hub/what-is-aeo",
+      canonical: "https://aeobility.com.au/knowledge-hub/what-is-aeo",
     },
     openGraph: {
       title: "What is AEO? Answer Engine Optimisation Guide | AEObility",
       description: "Learn what Answer Engine Optimisation (AEO) is and how it differs from traditional SEO. Discover how AI search engines extract brand facts and citations.",
-      url: "https://www.aeobility.com.au/knowledge-hub/what-is-aeo",
+      url: "https://aeobility.com.au/knowledge-hub/what-is-aeo",
       type: "article",
       siteName: "AEObility",
     },

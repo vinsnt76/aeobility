@@ -14,10 +14,65 @@ const nextConfig: NextConfig = {
       {
         source: "/api/:path*",
         headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
           { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
           { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization" },
+        ],
+      },
+      {
+        source: "/.well-known/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
+        ],
+      },
+      {
+        source: "/:path*.md",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
+        ],
+      },
+      {
+        source: "/:path*.json",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
+        ],
+      },
+      {
+        source: "/:path*.txt",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
+        ],
+      },
+      {
+        source: "/:path*.webmanifest",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
+        ],
+      },
+      {
+        source: "/:path*.xml",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
+        ],
+      },
+      {
+        source: "/:path*.vcf",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
+        ],
+      },
+      {
+        source: "/:path*.ico",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
+        ],
+      },
+      {
+        source: "/:path*.woff2",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
         ],
       },
       {
@@ -282,7 +337,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/vcard.vcf',
-        destination: '/about/freelance-digital-specialist-perth',
+        destination: 'https://aeobility.com.au/vince-baker.vcf',
         permanent: true,
       },
       {

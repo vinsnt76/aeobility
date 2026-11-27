@@ -34,12 +34,12 @@ export const metadata: Metadata = {
   title: "Generative Engine Optimisation (GEO) Services | AEObility",
   description: "Structured GEO services for Australian businesses. Align brand entities across ChatGPT, Perplexity, and Google AI Overviews with zero agency lock-in.",
   alternates: {
-    canonical: "https://www.aeobility.com.au/services/geo-marketing",
+    canonical: "https://aeobility.com.au/services/geo-marketing",
   },
   openGraph: {
     title: "Generative Engine Optimisation (GEO) Services | AEObility",
     description: "Structured GEO services for Australian businesses. Align brand entities across ChatGPT, Perplexity, and Google AI Overviews with zero agency lock-in.",
-    url: "https://www.aeobility.com.au/services/geo-marketing",
+    url: "https://aeobility.com.au/services/geo-marketing",
     siteName: "AEObility",
     locale: "en_AU",
     type: "website",

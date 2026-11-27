@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Transparent AEO Solutions, Sprints & Pricing Tier Models | AEObility",
   description: "Discover transparent AEO solutions, fixed-scope strategic blueprints, and rapid schema implementation sprints for Australian SMBs with zero contract lock-in.",
   alternates: {
-    canonical: "https://www.aeobility.com.au/solutions",
+    canonical: "https://aeobility.com.au/solutions",
   },
   openGraph: {
     title: "Transparent AEO Solutions, Sprints & Pricing Tier Models | AEObility",

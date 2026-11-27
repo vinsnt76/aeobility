@@ -11,7 +11,7 @@ export const metadata = {
   title: "What is Google Search Engine AI? AEO & RAG Explained | AEObility",
   description: "Google Search AI and RAG service explainer. Learn how Google search engine AI features parse, synthesise, and cite machine-readable business facts.",
   alternates: {
-    canonical: "https://www.aeobility.com.au/services/aeo/definition",
+    canonical: "https://aeobility.com.au/services/aeo/definition",
   },
 };
 

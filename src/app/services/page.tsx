@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "AI Search Strategy & GEO Marketing Consultancy | AEObility",
   description: "Explore custom AEO, GEO, and AI search strategy services for Australian SMBs. Optimise your digital presence across Search, Maps, and AI answer engines.",
   alternates: {
-    canonical: "https://www.aeobility.com.au/services",
+    canonical: "https://aeobility.com.au/services",
   },
   keywords: [
     "Digital Marketing Specialist for Australian SMBs in Perth, Australia",
