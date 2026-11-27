@@ -28,13 +28,13 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "5 Critical Signals Your Business Needs GEO (Not Just Traditional SEO) | AEObility",
+  title: "5 Signs You Need GEO, Not Just Traditional SEO | AEObility",
   description: "Technical analysis of five operational indicators showing when a business requires Generative Engine Optimisation (GEO) instead of legacy keyword SEO.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/seo-vs-geo-red-flags",
   },
   openGraph: {
-    title: "5 Critical Signals Your Business Needs GEO (Not Just Traditional SEO)",
+    title: "5 Signs You Need GEO, Not Just Traditional SEO | AEObility",
     description: "Discover why top Google search rankings no longer guarantee website traffic, and learn how to fix the five critical signals of AI search divergence.",
     url: "https://aeobility.com.au/knowledge-hub/articles/seo-vs-geo-red-flags",
     siteName: "AEObility",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "5 Critical Signals Your Business Needs GEO | AEObility",
+    title: "5 Signs You Need GEO, Not Just Traditional SEO | AEObility",
     description: "Technical analysis of five operational indicators showing when a business requires Generative Engine Optimisation (GEO) instead of legacy keyword SEO.",
     images: ["https://aeobility.com.au/images/knowledge-hub/geo-vs-seo-red-flags-banner_AEObility.webp"],
   },

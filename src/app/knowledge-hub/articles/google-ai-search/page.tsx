@@ -31,13 +31,13 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Why Query Fan-Out Bypasses Your Pillar Pages | Google AI Search | AEObility",
+  title: "Google AI Search Query Fan-Out & Pillar Pages | AEObility",
   description: "Why Google AI Search query fan-out bypasses 4,000-word guides. An 8-step practitioner blueprint for structuring extractable passage-level retrieval nodes.",
   alternates: {
     canonical: "https://aeobility.com.au/knowledge-hub/articles/google-ai-search",
   },
   openGraph: {
-    title: "Why Query Fan-Out Bypasses Your Pillar Pages | Google AI Search | AEObility",
+    title: "Google AI Search Query Fan-Out & Pillar Pages | AEObility",
     description: "Why Google AI Search query fan-out bypasses 4,000-word guides. An 8-step practitioner blueprint for structuring extractable passage-level retrieval nodes.",
     url: "https://aeobility.com.au/knowledge-hub/articles/google-ai-search",
     siteName: "AEObility",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Why Query Fan-Out Bypasses Your Pillar Pages | Google AI Search | AEObility",
+    title: "Google AI Search Query Fan-Out & Pillar Pages | AEObility",
     description: "Why Google AI Search query fan-out bypasses 4,000-word guides. An 8-step practitioner blueprint for structuring extractable passage-level retrieval nodes.",
     images: ["https://aeobility.com.au/images/knowledge-hub/google-ai-search-grounded-synthesis-query-fanout-visualisation.webp"],
   },
