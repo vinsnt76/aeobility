@@ -22,13 +22,13 @@ import {
 
 export const metadata: Metadata = {
   title: 'Public API & Agent Interface Documentation | AEObility',
-  description: 'Official API documentation and automated discovery catalog for AEObility public web services, RFC 9727 linksets, OpenAPI 3.1.0 specifications, and Model Context Protocol (MCP) tools.',
+  description: 'Official AEObility public API documentation covering REST telemetry endpoints, RFC 9727 linksets, OpenAPI 3.1.0 specs, and MCP agent discovery tools.',
   alternates: {
     canonical: 'https://aeobility.com.au/docs/api',
   },
   openGraph: {
     title: 'Public API & Agent Interface Documentation | AEObility',
-    description: 'Official API documentation and automated discovery catalog for AEObility public web services, RFC 9727 linksets, and OpenAPI specifications.',
+    description: 'Official AEObility public API documentation covering REST telemetry endpoints, RFC 9727 linksets, OpenAPI 3.1.0 specs, and MCP agent discovery tools.',
     url: 'https://aeobility.com.au/docs/api',
     type: 'website',
   },
