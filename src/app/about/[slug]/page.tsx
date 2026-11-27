@@ -262,6 +262,20 @@ export default async function Page({ params }: PageProps) {
                 </details>
               ))}
             </div>
+            <div className="flex flex-wrap items-center gap-4 pt-2 text-sm">
+              <Link
+                href="/services"
+                className="text-aeo-cyan hover:underline font-semibold"
+              >
+                Explore Perth &amp; Australia AEO Services &rarr;
+              </Link>
+              <Link
+                href="/solutions/aeo-blueprint"
+                className="text-white/80 hover:text-aeo-cyan hover:underline font-medium"
+              >
+                View the Fixed-Scope $995 AEO Blueprint &rarr;
+              </Link>
+            </div>
           </section>
         )}
 

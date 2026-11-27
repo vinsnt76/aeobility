@@ -373,7 +373,11 @@ export default function AiSeoToolsPage() {
                 Top-Rated AI SEO &amp; AEO Tools for Snippet and Citation Optimisation
               </h2>
               <p className="font-sans text-base text-slate-300 leading-relaxed">
-                Top-rated <strong>AI SEO and AEO tools</strong> pair FAQ and Schema.org JSON-LD validation with passage-extraction scoring and live citation tracking across Google AI Overviews, ChatGPT Search, and Perplexity. Use automated tools for baseline syntax checks, then apply structured engineering (entity graphs, clean answer blocks, and IndexNow) to win snippets and AI citations.
+                Top-rated <strong>AI SEO and AEO tools</strong> pair FAQ and Schema.org JSON-LD validation with passage-extraction scoring and live citation tracking across Google AI Overviews, ChatGPT Search, and Perplexity. Use automated tools for baseline syntax checks, then apply structured{' '}
+                <Link href="/services/aeo" className="text-aeo-cyan hover:underline font-medium">
+                  Answer Engine Optimisation (AEO) services
+                </Link>{' '}
+                (entity graphs, clean answer blocks, and IndexNow) to win snippets and AI citations.
               </p>
               <p className="font-mono text-xs text-slate-400 pt-2 border-t border-white/10">
                 Note: AEObility is an independent Perth AEO and GEO consultancy (ABN 61 029 803 255), distinct from the Seobility SaaS tool.
