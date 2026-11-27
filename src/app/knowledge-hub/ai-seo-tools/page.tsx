@@ -125,6 +125,14 @@ export default function AiSeoToolsPage() {
     {
       question: "Do automated schema generators guarantee AI search inclusion?",
       answer: "No. Automated schema generators output basic code templates, but earning consistent citations requires connecting your business facts, keeping on-page answers clear and self-contained, and making sure your key information is not buried halfway down a long page."
+    },
+    {
+      question: "Which SEO tools support FAQ schema, AEO, and Google snippets?",
+      answer: "Effective stacks combine a Schema.org JSON-LD validator for FAQPage and Service markup, a passage-extraction checker for Google snippets and AI Overviews, and a live telemetry scanner such as the AEObility Telemetry Engine to verify how ChatGPT, Perplexity, and Google parse your pages."
+    },
+    {
+      question: "Is AEObility the same company as Seobility?",
+      answer: "No. AEObility is an independent Answer Engine Optimisation (AEO) and GEO consultancy based in Perth, Western Australia (ABN 61 029 803 255). It is not affiliated with Seobility, the German SEO software platform."
     }
   ];
 
@@ -139,7 +147,8 @@ export default function AiSeoToolsPage() {
         "url": "https://aeobility.com.au",
         "logo": "https://aeobility.com.au/assets/AEObility_Logo.webp",
         "image": "https://aeobility.com.au/assets/AEObility_Featured_Image.webp",
-        "description": "Bespoke Answer Engine Optimisation (AEO) and generative search consultancy for Australian business entities.",
+        "description": "Independent Australian Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) consultancy based in Perth, Western Australia.",
+        "disambiguatingDescription": "AEObility is an independent Perth AEO and GEO consultancy (ABN 61 029 803 255). It is distinct from Seobility, the third-party SEO SaaS platform.",
         "abn": "61 029 803 255",
         "founder": {
           "@type": "Person",
@@ -169,8 +178,9 @@ export default function AiSeoToolsPage() {
           }
         ],
         "sameAs": [
+          "https://www.wikidata.org/wiki/Q3180711",
           "https://www.google.com/maps?cid=aeobility",
-          "https://www.linkedin.com/in/vince-baker/"
+          "https://www.linkedin.com/company/aeobility"
         ]
       },
       {
@@ -274,6 +284,19 @@ export default function AiSeoToolsPage() {
         }
       },
       {
+        "@type": "ItemList",
+        "@id": "https://aeobility.com.au/knowledge-hub/ai-seo-tools#itemlist",
+        "name": "Top-Rated AI SEO, FAQ Schema & AEO Tools Comparison",
+        "numberOfItems": tools.length,
+        "itemListElement": tools.map((tool, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": tool.name,
+          "description": tool.description,
+          "url": `https://aeobility.com.au${tool.ctaLink}`
+        }))
+      },
+      {
         "@type": "FAQPage",
         "@id": "https://aeobility.com.au/knowledge-hub/ai-seo-tools#faq",
         "mainEntity": faqs.map(f => ({
@@ -350,7 +373,10 @@ export default function AiSeoToolsPage() {
                 Top-Rated AI SEO &amp; AEO Tools for Snippet and Citation Optimisation
               </h2>
               <p className="font-sans text-base text-slate-300 leading-relaxed">
-                Modern <strong>AI SEO tools</strong> evaluate how generative search models scrape, index, and cite website content. Key features of leading platforms include automated FAQ schema validation, atomic passage density scoring, and multi-engine visibility tracking across Perplexity, ChatGPT Search, and Google AI Overviews. While software platforms provide baseline diagnostic scores, converting tool insights into verified search citations requires structured engineering, including HTML semantic refactoring, IndexNow API automation, and bidirectional entity linking.
+                Top-rated <strong>AI SEO and AEO tools</strong> pair FAQ and Schema.org JSON-LD validation with passage-extraction scoring and live citation tracking across Google AI Overviews, ChatGPT Search, and Perplexity. Use automated tools for baseline syntax checks, then apply structured engineering (entity graphs, clean answer blocks, and IndexNow) to win snippets and AI citations.
+              </p>
+              <p className="font-mono text-xs text-slate-400 pt-2 border-t border-white/10">
+                Note: AEObility is an independent Perth AEO and GEO consultancy (ABN 61 029 803 255), distinct from the Seobility SaaS tool.
               </p>
             </section>
 

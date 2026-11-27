@@ -8,10 +8,18 @@ import { HUB_SUBNAV_MAPS } from '@/components/navigation/NavData';
 import { ArrowRight, AlertTriangle, CheckCircle2, Cpu, ShieldCheck, FileText, HelpCircle, XCircle } from 'lucide-react';
 
 export const metadata = {
-  title: "What is Google Search Engine AI? AEO & RAG Explained | AEObility",
-  description: "Google Search AI and RAG service explainer. Learn how Google search engine AI features parse, synthesise, and cite machine-readable business facts.",
+  title: "AEO Meaning: What is AEO in Digital Marketing? | AEObility",
+  description: "AEO meaning explained: Answer Engine Optimisation structures facts, schema, and concise answers so Google AI Overviews, ChatGPT, and Perplexity cite you.",
   alternates: {
     canonical: "https://aeobility.com.au/services/aeo/definition",
+  },
+  openGraph: {
+    title: "AEO Meaning: What is AEO in Digital Marketing? | AEObility",
+    description: "AEO meaning explained: Answer Engine Optimisation structures facts, schema, and concise answers so Google AI Overviews, ChatGPT, and Perplexity cite you.",
+    url: "https://aeobility.com.au/services/aeo/definition",
+    siteName: "AEObility",
+    locale: "en_AU",
+    type: "article",
   },
 };
 
@@ -20,6 +28,10 @@ export default function AEODefinitionPage() {
     {
       question: "What does AEO mean in digital marketing?",
       answer: "Answer Engine Optimisation (AEO) is the practice of making business information easy for AI-powered search and answer systems to find, interpret, and use. It combines clear, evidence-backed content, well-defined entities, structured data, accessible technical implementation, and logical internal linking."
+    },
+    {
+      question: "What is AEO meaning in simple terms?",
+      answer: "AEO stands for Answer Engine Optimisation. It means formatting your website facts, Schema.org structured data, and concise answer blocks so AI systems such as Google AI Overviews, ChatGPT, and Perplexity can verify and cite your business directly."
     },
     {
       question: "How is AEO different from SEO?",
@@ -102,8 +114,9 @@ export default function AEODefinitionPage() {
         "@type": "DefinedTerm",
         "@id": "https://aeobility.com.au/services/aeo/definition#definedterm",
         "name": "Answer Engine Optimisation",
-        "alternateName": "AEO",
-        "description": "The practice of making business information easy for AI-powered search and answer systems to find, interpret, and use through evidence-backed content, explicit entity definitions, and structured data.",
+        "alternateName": ["AEO", "AEO meaning", "Answer Engine Optimization"],
+        "termCode": "AEO",
+        "description": "In digital marketing, AEO (Answer Engine Optimisation) means structuring website facts, Schema.org markup, and concise answer passages so AI search engines such as Google AI Overviews, ChatGPT, and Perplexity can retrieve, verify, and cite a business directly.",
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "@id": "https://www.wikidata.org/wiki/Q124314457",
@@ -312,10 +325,10 @@ export default function AEODefinitionPage() {
                 <span>Executive Summary &bull; Digital Marketing &amp; Search Architecture</span>
               </p>
               <p className="text-sm sm:text-base text-white/90 leading-relaxed font-light">
-                In modern digital marketing, Answer Engine Optimisation (AEO) is the technical discipline of structuring business information so Google AI Overviews, Retrieval-Augmented Generation (RAG) pipelines, and conversational search architectures can find, verify, and cite your brand. It combines self-contained passage blocks, explicit entity definitions, Schema.org structured data, and logical internal linking. For a foundational top-of-funnel primer on{' '}
+                In digital marketing, <strong>AEO (Answer Engine Optimisation)</strong> means structuring your website facts, Schema.org markup, and concise answer passages so AI search engines such as Google AI Overviews, ChatGPT, and Perplexity can retrieve, verify, and cite your business directly. Unlike legacy keyword-only SEO, AEO formats each claim for machine extraction and entity verification. For a top-of-funnel primer on{' '}
                 <Link href="/knowledge-hub/what-is-aeo" className="text-[#00E5FF] font-semibold hover:underline">
                   what is AEO
-                </Link>, explore our Knowledge Hub definition hub.
+                </Link>, visit our Knowledge Hub guide.
               </p>
             </div>
 

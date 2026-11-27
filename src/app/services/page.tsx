@@ -18,10 +18,18 @@ const SERVICES_PILLS = [
 ];
 
 export const metadata: Metadata = {
-  title: "AI Search Strategy & GEO Marketing Consultancy | AEObility",
-  description: "Explore custom AEO, GEO, and AI search strategy services for Australian SMBs. Optimise your digital presence across Search, Maps, and AI answer engines.",
+  title: "AEO Services Perth & Australia | Fixed-Scope Sprints | AEObility",
+  description: "Fixed-scope AEO and GEO services in Perth and across Australia with zero retainer lock-in. Start with a $995 AEO Blueprint or rapid schema sprint.",
   alternates: {
     canonical: "https://aeobility.com.au/services",
+  },
+  openGraph: {
+    title: "AEO Services Perth & Australia | Fixed-Scope Sprints | AEObility",
+    description: "Fixed-scope AEO and GEO services in Perth and across Australia with zero retainer lock-in. Start with a $995 AEO Blueprint or rapid schema sprint.",
+    url: "https://aeobility.com.au/services",
+    siteName: "AEObility",
+    locale: "en_AU",
+    type: "website",
   },
   keywords: [
     "Digital Marketing Specialist for Australian SMBs in Perth, Australia",
@@ -103,7 +111,7 @@ export default function ServicesPage() {
       {
         "@type": "Service",
         "@id": "https://aeobility.com.au/services#service",
-        "name": "AI Search Strategy & GEO Marketing Consultancy Services",
+        "name": "AEO Services Perth & Australia | Fixed-Scope AI Search & GEO Consultancy",
         "serviceType": [
           "Answer Engine Optimisation (AEO)",
           "AI Search Strategy",
@@ -111,14 +119,24 @@ export default function ServicesPage() {
           "Semantic Site Mapping",
           "Structured Schema Markup"
         ],
-        "description": "AEObility provides AEO Services, AI Search Strategy and GEO Marketing for Australian SMBs in Perth, Australia. We optimise your digital footprint so modern LLMs including ChatGPT, Claude and Perplexity can extract, cite and recommend your services with confidence.",
+        "description": "Fixed-scope Answer Engine Optimisation (AEO), GEO Marketing, and AI search services for businesses in Perth and across Australia with zero retainer lock-in.",
         "provider": {
           "@id": "https://aeobility.com.au/#organization"
         },
-        "areaServed": {
-          "@type": "AdministrativeArea",
-          "name": "Perth, Australia"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Perth"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Western Australia"
+          },
+          {
+            "@type": "Country",
+            "name": "Australia"
+          }
+        ],
         "image": {
           "@id": "https://aeobility.com.au/services#primaryimage"
         },
@@ -137,6 +155,28 @@ export default function ServicesPage() {
           "@type": "OfferCatalog",
           "name": "AEO & GEO Marketing Services Catalog",
           "itemListElement": [
+            {
+              "@type": "Offer",
+              "price": "995",
+              "priceCurrency": "AUD",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "The AEO Blueprint (Fixed-Scope Diagnostic & 90-Day Roadmap)",
+                "description": "Full technical AEO audit, entity gap analysis, AI visibility scoring, and a 90-day implementation roadmap with zero ongoing lock-in.",
+                "url": "https://aeobility.com.au/solutions/aeo-blueprint"
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "495",
+              "priceCurrency": "AUD",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Fixed-Scope AEO Micro-Sprints",
+                "description": "Targeted schema graph engineering, answer block rewrites, and local entity clean-up delivered on fixed scope with full client ownership.",
+                "url": "https://aeobility.com.au/solutions/aeo-sprint"
+              }
+            },
             {
               "@type": "Offer",
               "itemOffered": {
@@ -250,6 +290,14 @@ export default function ServicesPage() {
               "@type": "Answer",
               "text": "You can handle Generative Engine Optimisation yourself if you know how to write structured code (Schema.org), cut out vague marketing jargon in favour of plain facts, and keep your business details consistent across external directories. Hire a specialist if your website is full of buzzwords like \"bespoke end-to-end solutions\", which AI search tools simply ignore, or if you do not have the technical background to build clean code and check how answer engines read your pages. What a solid GEO engagement actually delivers: 1) Clear structured code: Building clean schema that tells AI engines exactly who you are, where you operate, and what you sell. 2) Direct answer blocks: Rewriting key pages into short, factual answers that AI tools can lift and cite without confusion. 3) Consistent directory data: Aligning your business name, address, and contact details across Google, Bing, and major local listings. 4) Logical internal links: Connecting your services, guides, and proof points so machines understand how your topics relate. 5) Testing and handoff: Validating the code, confirming pages are indexed, and handing over full ownership of the work."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "How much do AEO services cost in Perth and Australia, and is there a retainer lock-in?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AEObility operates on transparent, fixed-scope engagements with zero ongoing retainer lock-in. Entry starts with the $995 AEO Blueprint (technical audit, entity map, and 90-day roadmap) or targeted Micro-Sprints from $495 ex. GST, with full code ownership handed over upon completion."
+            }
           }
         ]
       }
@@ -319,8 +367,8 @@ export default function ServicesPage() {
                 <span className="text-gradient-aeo">GEO Marketing Services</span>
               </h1>
               <div className="space-y-4 text-slate-300 font-normal leading-relaxed max-w-xl">
-                <p className="text-base sm:text-lg">
-                  AEObility is an Australian AEO consultancy providing <Link href="/services/aeo/local-business" className="text-aeo-cyan hover:underline font-normal">Answer Engine Optimisation for Australian small businesses</Link> and <Link href="/services/geo-marketing" className="text-aeo-cyan hover:underline font-normal">Generative Engine Optimisation (GEO) services</Link> to help local service operators become discoverable, understandable, and recommended across Search, Maps, and AI.
+                <p className="text-base sm:text-lg text-white/90">
+                  AEObility delivers fixed-scope <Link href="/services/aeo" className="text-aeo-cyan hover:underline font-normal">Answer Engine Optimisation (AEO)</Link> and <Link href="/services/geo-marketing" className="text-aeo-cyan hover:underline font-normal">GEO services</Link> for businesses in Perth and across Australia, with zero ongoing retainer lock-in. Every engagement starts with a <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline font-normal">$995 AEO Blueprint</Link> or targeted sprint that structures your schema, entities, and answer blocks so Google AI Overviews, ChatGPT, and Perplexity cite your brand.
                 </p>
                 <p className="text-sm sm:text-base text-slate-400">
                   Partner directly with our <Link href="/services/ai-search-agency" className="text-aeo-cyan hover:underline font-normal">AI search agency and AEO consultancy</Link> so modern LLMs including ChatGPT, Claude, and Perplexity can extract, cite, and recommend your services with confidence. Evaluate software options in our <Link href="/knowledge-hub/ai-seo-tools" className="text-aeo-cyan hover:underline font-normal">AI SEO tools and technology comparison hub</Link> or review our technical guide on <Link href="/knowledge-hub/guides/aeo" className="text-aeo-cyan hover:underline font-normal">Answer Engine Optimisation Core Principles</Link> to explore our RAG retrieval architecture.
@@ -642,6 +690,17 @@ export default function ServicesPage() {
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
+                  </div>
+                </details>
+                <details className="group bg-white/[0.02] border border-white/5 rounded-xl p-6 cursor-pointer open:bg-white/[0.04] transition-colors">
+                  <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center">
+                    How much do AEO services cost in Perth and Australia, and is there a retainer lock-in?
+                    <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300">+</span>
+                  </summary>
+                  <div className="mt-4 text-sm text-white/70 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30 space-y-3">
+                    <p>
+                      AEObility operates on transparent, fixed-scope engagements with zero ongoing retainer lock-in. Entry starts with the <Link href="/solutions/aeo-blueprint" className="text-aeo-cyan hover:underline font-semibold">$995 AEO Blueprint</Link> (technical audit, entity map, and 90-day roadmap) or targeted <Link href="/solutions/aeo-sprint" className="text-aeo-cyan hover:underline font-semibold">Micro-Sprints from $495 ex. GST</Link>, with full code ownership handed over upon completion.
+                    </p>
                   </div>
                 </details>
               </div>

@@ -115,7 +115,15 @@ export default async function Page({ params }: PageProps) {
         "description": config.metadata.description,
         "url": pageUrl,
         "telephone": "0480286282", 
-        "priceRange": "$$",
+        "priceRange": "$995 AUD fixed-scope Blueprint",
+        "offers": {
+          "@type": "Offer",
+          "name": "The AEO Blueprint (Fixed-Scope Technical Audit & 90-Day Roadmap)",
+          "price": "995",
+          "priceCurrency": "AUD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://aeobility.com.au/solutions/aeo-blueprint"
+        },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Perth",
@@ -132,7 +140,7 @@ export default async function Page({ params }: PageProps) {
           {
             "@type": "City",
             "@id": "https://www.wikidata.org/wiki/Q3183",
-            "name": "Perth, WA"
+            "name": "Perth, Western Australia"
           },
           {
             "@type": "AdministrativeArea",
@@ -167,6 +175,8 @@ export default async function Page({ params }: PageProps) {
           "https://www.google.com/maps?cid=aeobility",
           "https://www.linkedin.com/company/aeobility",
           "https://github.com/vinsnt76/aeobility",
+          "https://www.wikidata.org/wiki/Q3180711",
+          "https://vinniebakeraeoinsights.substack.com/",
           "https://aeobility.com.au/brand-facts"
         ],
         "provider": {
@@ -184,10 +194,33 @@ export default async function Page({ params }: PageProps) {
         "jobTitle": "Founder & AEO Specialist",
         "image": imageUrl,
         "url": "https://aeobility.com.au/vince-baker",
+        "sameAs": [
+          "https://vinniebakeraeoinsights.substack.com/",
+          "https://www.linkedin.com/in/vince-baker/",
+          "https://app.qwoted.com/sources/vince-baker",
+          "https://github.com/vinsnt76"
+        ],
         "worksFor": {
           "@id": "https://aeobility.com.au/#organization"
         }
-      }
+      },
+      ...(config.faqs && config.faqs.length > 0
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${pageUrl}#faq`,
+              "isPartOf": { "@id": `${pageUrl}#webpage` },
+              "mainEntity": config.faqs.map((item) => ({
+                "@type": "Question",
+                "name": item.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": item.answer
+                }
+              }))
+            }
+          ]
+        : [])
     ]
   };
 
@@ -207,6 +240,31 @@ export default async function Page({ params }: PageProps) {
         {/* AEObility Narrative, Frameworks, Team Specialties & Contact Card */}
         <About />
         
+        {/* Role-Specific FAQ Section */}
+        {config.faqs && config.faqs.length > 0 && (
+          <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-16 space-y-6">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {config.faqs.map((item, idx) => (
+                <details
+                  key={idx}
+                  className="group bg-white/[0.02] border border-white/10 rounded-xl p-6 cursor-pointer open:bg-white/[0.04] transition-colors"
+                >
+                  <summary className="font-semibold text-white group-open:text-aeo-cyan transition-colors outline-none list-none flex justify-between items-center gap-4">
+                    <span>{item.question}</span>
+                    <span className="text-aeo-cyan group-open:rotate-45 transition-transform duration-300 shrink-0">+</span>
+                  </summary>
+                  <p className="mt-4 text-sm text-white/75 leading-relaxed pl-4 border-l-2 border-aeo-cyan/30">
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Interactive Contact & Quote Request Form */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
           <QuoteFormSection />

@@ -33,14 +33,14 @@ import { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "What is GEO? Generative Engine Optimisation Guide | AEObility",
-    description: "Understand Generative Engine Optimisation (GEO) vs local SEO. Learn how AI search platforms verify, synthesise, and recommend local and national businesses.",
+    title: "GEO vs Local SEO: Generative Engine Optimisation Guide | AEObility",
+    description: "Compare Generative Engine Optimisation (GEO) with local and geolocation SEO. Learn how schema options differ for SEO and GEO across Google AI and ChatGPT.",
     alternates: {
       canonical: "https://aeobility.com.au/knowledge-hub/geo",
     },
     openGraph: {
-      title: "What is GEO? Generative Engine Optimisation Guide | AEObility",
-      description: "Understand Generative Engine Optimisation (GEO) vs local SEO. Learn how AI search platforms verify, synthesise, and recommend local and national businesses.",
+      title: "GEO vs Local SEO: Generative Engine Optimisation Guide | AEObility",
+      description: "Compare Generative Engine Optimisation (GEO) with local and geolocation SEO. Learn how schema options differ for SEO and GEO across Google AI and ChatGPT.",
       url: "https://aeobility.com.au/knowledge-hub/geo",
       type: "article",
       siteName: "AEObility",
@@ -69,6 +69,10 @@ export default function GEOKnowledgeNodePage() {
     {
       question: "Are GeoCoordinates and areaServed schema mandatory for AI search indexing?",
       answer: "No. No schema markup is strictly mandatory for AI search indexing or guarantees inclusion in generative answers. However, deploying GeoCoordinates and areaServed JSON-LD microdata provides a machine-readable data layer that clarifies your physical location and coverage boundaries when search systems reconcile local entities."
+    },
+    {
+      question: "How do schema options differ for traditional SEO and GEO?",
+      answer: "Traditional local SEO typically uses standalone LocalBusiness, PostalAddress, and OpeningHoursSpecification markup to support Google Maps and rich snippets. GEO extends that baseline into a connected @id entity graph linking Organization, Service, OfferCatalog, GeoCoordinates, areaServed, FAQPage, and external sameAs references so AI engines can verify facts without ambiguity."
     },
     {
       question: "How should local businesses handle location pages without creating thin duplicate content?",
@@ -146,6 +150,14 @@ export default function GEOKnowledgeNodePage() {
         "breadcrumb": {
           "@id": "https://aeobility.com.au/knowledge-hub/geo/breadcrumb"
         }
+      },
+
+      {
+        "@type": "DefinedTerm",
+        "@id": "https://aeobility.com.au/knowledge-hub/geo#definedterm",
+        "name": "Generative Engine Optimisation",
+        "alternateName": ["GEO", "GEO Local SEO"],
+        "description": "The technical practice of structuring business facts, service boundaries, and connected Schema.org entity graphs so generative AI search platforms accurately verify and recommend a business."
       },
 
       {
@@ -432,12 +444,36 @@ export default function GEOKnowledgeNodePage() {
               className="atomic-answer-block relative isolate overflow-hidden p-6 bg-slate-900/60 backdrop-blur-xl border border-white/10 border-l-4 border-l-[#00E5FF] rounded-2xl space-y-3 shadow-2xl"
             >
               <h2 className="font-display text-2xl font-bold text-white">
-                Does My Business Need Generative Engine Optimisation (GEO)?
+                GEO vs Local &amp; Geolocation SEO: What Is the Difference?
               </h2>
               <p className="font-sans text-base text-slate-300 leading-relaxed">
-                <strong>Generative Engine Optimisation (GEO)</strong> is essential for businesses competing for recommendations inside conversational AI engines and Google AI Overviews. While traditional local SEO targets map packs and ten-blue-link rankings, GEO structures your underlying brand facts, service boundaries (via Schema.org <code>GeoCoordinates</code> and <code>areaServed</code>), and verified credentials into machine-readable entity graphs. Implementing GEO ensures large language models accurately verify and cite your business when buyers ask for regional or category recommendations.
+                <strong>Generative Engine Optimisation (GEO)</strong> is distinct from traditional local or geolocation SEO. Local SEO optimises Google Business Profile pins, suburb keywords, and proximity signals to rank in Google Maps and classic ten-blue-link results. GEO structures your business facts, service boundaries, and credentials into connected machine-readable graphs so Google AI Overviews, ChatGPT, and Perplexity verify and recommend your brand.
               </p>
             </section>
+
+            {/* Scannable Schema Options Breakdown: SEO vs GEO */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-5 rounded-xl bg-white/[0.02] border border-white/10 space-y-2">
+                <h3 className="text-sm font-mono font-bold uppercase tracking-wider text-slate-300">
+                  Traditional Local SEO Schema
+                </h3>
+                <ul className="text-xs sm:text-sm text-slate-400 space-y-1.5 list-disc pl-4">
+                  <li>Standalone <code>LocalBusiness</code> and <code>PostalAddress</code> blocks</li>
+                  <li><code>OpeningHoursSpecification</code>, phone, and review snippets</li>
+                  <li>Focused on Google Maps eligibility and classic rich results</li>
+                </ul>
+              </div>
+              <div className="p-5 rounded-xl bg-cyan-950/20 border border-cyan-500/30 space-y-2">
+                <h3 className="text-sm font-mono font-bold uppercase tracking-wider text-aeo-cyan">
+                  GEO Entity &amp; Graph Schema
+                </h3>
+                <ul className="text-xs sm:text-sm text-slate-300 space-y-1.5 list-disc pl-4">
+                  <li>Connected <code>@id</code> graph joining <code>Organization</code>, <code>Service</code>, and <code>Person</code></li>
+                  <li>Explicit <code>GeoCoordinates</code>, <code>areaServed</code>, and <code>OfferCatalog</code> boundaries</li>
+                  <li>External <code>sameAs</code> corroboration + <code>FAQPage</code> for AI synthesis</li>
+                </ul>
+              </div>
+            </div>
 
             {/* 3. Hero Banner Image Graphic */}
             <div className="relative aspect-[16/9] w-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden shadow-2xl my-4">
