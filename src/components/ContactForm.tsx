@@ -26,8 +26,7 @@ export default function ContactForm() {
     name: '',
     email: '',
     website: '',
-    businessName: '',
-    category: 'New AEO or SEO Enquiry',
+    category: 'AEO / SEO Audit or $995 Blueprint',
     message: '',
     website_hp: '' // Honeypot field for invisible bot protection
   });
@@ -59,7 +58,6 @@ export default function ContactForm() {
           name: formData.name,
           email: formData.email,
           website: normalisedWebsite,
-          businessName: formData.businessName,
           category: formData.category,
           message: formData.message,
           website_hp: formData.website_hp,
@@ -277,10 +275,10 @@ export default function ContactForm() {
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent pointer-events-none" />
 
           <div className="space-y-2">
-            <span className="text-xs font-mono font-semibold text-aeo-cyan uppercase tracking-widest block">Direct Implementation</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit tracking-tight">Send an engineering enquiry or project brief.</h2>
+            <span className="text-xs font-mono font-semibold text-aeo-cyan uppercase tracking-widest block">Direct Enquiry</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-soehne-breit tracking-tight">Send a direct enquiry.</h2>
             <p className="text-xs sm:text-sm text-slate-300 font-sans">
-              Select your category below to ensure your message is routed to the right pathway.
+              Tell us briefly about your site and what you&apos;re looking to improve.
             </p>
           </div>
 
@@ -289,7 +287,7 @@ export default function ContactForm() {
               <CheckCircle2 className="w-12 h-12 text-aeo-cyan" />
               <h3 className="font-bold text-xl text-white font-soehne-breit">Enquiry Received</h3>
               <p className="text-xs sm:text-sm text-slate-200 font-sans leading-relaxed">
-                Thank you for reaching out. Vinnie Baker normally responds within 1 business day (Monday to Friday, 9:00 AM – 5:00 PM AWST) from <strong className="text-white">support@aeobility.com.au</strong>.
+                Thank you for reaching out. Vinnie Baker normally responds within 1 business day (Monday to Friday, 9:00 AM to 5:00 PM AWST) from <strong className="text-white">support@aeobility.com.au</strong>.
               </p>
               <p className="text-xs text-slate-300 font-sans">
                 Need immediate assistance? You can also <a href="https://cal.com/vince-baker-aeo-call/15min" target="_blank" rel="noopener noreferrer" className="text-aeo-cyan underline font-semibold">book a 15-minute clarity call directly</a>.
@@ -327,7 +325,7 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full h-11 px-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
-                  placeholder="Vince Baker"
+                  placeholder="Alex Taylor"
                 />
               </div>
 
@@ -343,44 +341,28 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full h-11 px-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
-                  placeholder="vince@example.com.au"
+                  placeholder="alex@yourbusiness.com.au"
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono mb-2" htmlFor="website">
-                    Website URL <span className="text-slate-400 font-normal lowercase">(optional)</span>
-                  </label>
-                  <input
-                    type="text"
-                    inputMode="url"
-                    id="website"
-                    value={formData.website}
-                    onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                    className="w-full h-11 px-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
-                    placeholder="yourbusiness.com.au"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono mb-2" htmlFor="businessName">
-                    Business Name <span className="text-slate-400 font-normal lowercase">(optional)</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="businessName"
-                    value={formData.businessName}
-                    onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
-                    className="w-full h-11 px-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
-                    placeholder="Your Business Pty Ltd"
-                  />
-                </div>
+              <div>
+                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono mb-2" htmlFor="website">
+                  Website URL <span className="text-slate-400 font-normal lowercase">(optional)</span>
+                </label>
+                <input
+                  type="text"
+                  inputMode="url"
+                  id="website"
+                  value={formData.website}
+                  onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                  className="w-full h-11 px-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
+                  placeholder="https://yourbusiness.com.au"
+                />
               </div>
 
               <div>
                 <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono mb-2" htmlFor="category">
-                  Enquiry Category <span className="text-aeo-cyan">*</span>
+                  What are you looking for? <span className="text-aeo-cyan">*</span>
                 </label>
                 <select
                   id="category"
@@ -388,27 +370,25 @@ export default function ContactForm() {
                   onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                   className="w-full h-11 px-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)] cursor-pointer"
                 >
-                  <option value="New AEO or SEO Enquiry">New AEO or SEO Enquiry</option>
-                  <option value="Book / Review $995 AEO Blueprint">Book / Review $995 AEO Blueprint</option>
-                  <option value="Existing Client Technical Support">Existing Client Technical Support</option>
-                  <option value="Local Business or E-Commerce Visibility">Local Business or E-Commerce Visibility</option>
-                  <option value="Agency Partnership / White-Label Sprint">Agency Partnership / White-Label Sprint</option>
-                  <option value="General Question / Administrative Enquiry">General Question / Administrative Enquiry</option>
+                  <option value="AEO / SEO Audit or $995 Blueprint">AEO / SEO Audit or $995 Blueprint</option>
+                  <option value="Agency / White-Label Partnership">Agency / White-Label Partnership</option>
+                  <option value="Existing Client Support">Existing Client Support</option>
+                  <option value="General Question">General Question</option>
                 </select>
               </div>
 
               <div>
                 <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono mb-2" htmlFor="message">
-                  How can we help? <span className="text-aeo-cyan">*</span>
+                  Project or Question <span className="text-aeo-cyan">*</span>
                 </label>
                 <textarea
                   id="message"
                   required
-                  rows={4}
+                  rows={3}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full p-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all resize-none shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
-                  placeholder="Briefly describe your enquiry, current website challenge, or support requirement..."
+                  placeholder="What's your main goal right now? (e.g. ranking in AI Overviews, fixing schema, or booking a Blueprint)"
                 />
               </div>
 
@@ -431,7 +411,7 @@ export default function ContactForm() {
                 disabled={isSubmitting}
                 className="w-full bg-[#00E5FF] text-[#050811] font-bold text-sm uppercase tracking-wider py-4 px-6 rounded-xl hover:shadow-[0_0_28px_rgba(0,229,255,0.5)] transition-all cursor-pointer text-center mt-2 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Submitting Enquiry...' : 'Submit Enquiry'}
+                {isSubmitting ? 'Sending Message...' : 'Send Message'}
               </button>
             </form>
           )}
