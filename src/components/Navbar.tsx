@@ -60,7 +60,7 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
                 <path d="M5 20.5L16 27L27 20.5" stroke="url(#nav-logo-grad)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span className="text-lg sm:text-xl font-extrabold tracking-tight text-white font-sans">
+            <span className="hidden sm:inline text-lg sm:text-xl font-extrabold tracking-tight text-white font-sans">
               AEO<span className="text-[#00E5FF]">bility</span>
             </span>
           </Link>
@@ -183,13 +183,13 @@ export default function Navbar({ subnavItems, subnavTitle }: NavbarProps = {}) {
           </div>
 
           {/* Mobile Right Action Stack: Primary CTA + Hamburger Menu */}
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-2 shrink-0 lg:hidden">
             {pathname !== '/book' && (
               <div className="p-[1px] rounded-full bg-gradient-to-r from-[#A080FE] via-[#fd799f]/80 to-[#00E5FF]/60">
                 <Link
                   href={pathname === '/' ? '/solutions' : '/diagnostic'}
                   onClick={() => trackGaEvent(pathname === '/' ? 'nav_solutions_clicked' : 'nav_diagnostic_clicked', { source: 'navbar_mobile' })}
-                  className="block bg-[#141927]/95 hover:bg-[#1B2236] text-white text-xs sm:text-sm font-semibold rounded-full px-4 py-2 transition-all"
+                  className="block whitespace-nowrap bg-[#141927]/95 hover:bg-[#1B2236] text-white text-xs sm:text-sm font-semibold rounded-full px-3.5 sm:px-4 py-2 transition-all"
                 >
                   {pathname === '/' ? 'Explore Solutions' : 'Free AI Visibility Scan'}
                 </Link>
