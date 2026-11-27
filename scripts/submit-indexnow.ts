@@ -76,6 +76,7 @@ export const CANONICAL_URL_LIST: string[] = [
   `https://${HOST}/knowledge-hub/articles/telemetry-diagnostic-architecture`,
   `https://${HOST}/knowledge-hub/articles/machine-legibility-data-provenance`,
   `https://${HOST}/knowledge-hub/articles/seo-vs-geo-red-flags`,
+  `https://${HOST}/knowledge-hub/articles/google-ai-search`,
 
   // 6. About & Consulting Profiles
   `https://${HOST}/about`,
