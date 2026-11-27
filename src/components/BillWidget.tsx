@@ -320,13 +320,11 @@ export default function BillWidget() {
 
     if (typeof window !== 'undefined') {
       sessionStorage.setItem('aeo_assistant_assisted', 'true');
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'bill_query_submitted', {
-          event_category: 'AI Assistant UI',
-          query: queryText,
-          mode: isTelemetryMode ? 'telemetry' : 'general'
-        });
-      }
+      trackGaEvent('bill_query_submitted', {
+        event_category: 'AI Assistant UI',
+        query: queryText,
+        mode: isTelemetryMode ? 'telemetry' : 'general'
+      });
     }
 
     let activeAudit = storedTelemetry?.result;
@@ -402,12 +400,10 @@ export default function BillWidget() {
 
     const targetPrompt = queryMap[chipText] || `Tell me about ${chipText}`;
 
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      window.gtag('event', 'bill_chip_clicked', {
-        event_category: 'AI Assistant UI',
-        chip_label: chipText
-      });
-    }
+    trackGaEvent('bill_chip_clicked', {
+      event_category: 'AI Assistant UI',
+      chip_label: chipText
+    });
 
     await executeQuery(targetPrompt);
   };
@@ -416,13 +412,11 @@ export default function BillWidget() {
     const nextMode = !isTelemetryMode;
     setIsTelemetryMode(nextMode);
 
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      window.gtag('event', 'bill_mode_toggle', {
-        event_category: 'AI Assistant',
-        event_label: nextMode ? 'Telemetry Guide' : 'General Agent',
-        value: nextMode ? 1 : 0
-      });
-    }
+    trackGaEvent('bill_mode_toggle', {
+      event_category: 'AI Assistant',
+      event_label: nextMode ? 'Telemetry Guide' : 'General Agent',
+      value: nextMode ? 1 : 0
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -551,9 +545,9 @@ export default function BillWidget() {
       return <p className="whitespace-pre-wrap text-[11px] text-slate-200 leading-relaxed font-sans">{text}</p>;
     }
 
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function' && !reportedCardIds.has(msgId)) {
+    if (typeof window !== 'undefined' && !reportedCardIds.has(msgId)) {
       reportedCardIds.add(msgId);
-      window.gtag('event', 'bill_telemetry_card_rendered', {
+      trackGaEvent('bill_telemetry_card_rendered', {
         event_category: 'AI Assistant UI',
         card_message_id: msgId,
         verdict: parsed.verdict || 'Unknown'

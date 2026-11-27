@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { X, ShieldAlert } from 'lucide-react';
+import { updateAnalyticsConsent } from '@/lib/analytics';
 
 // Regulated GDPR/EEA/UK country codes
 const REGULATED_COUNTRIES = [
@@ -14,17 +15,7 @@ export default function GlobalConsentBanner() {
   const [visible, setVisible] = useState(false);
 
   const updateConsentMode = (status: 'granted' | 'denied') => {
-    if (typeof window !== 'undefined') {
-      const win = window as unknown as { gtag?: (command: string, action: string, config: Record<string, string>) => void };
-      if (win.gtag) {
-        win.gtag('consent', 'update', {
-          'ad_storage': status,
-          'ad_user_data': status,
-          'ad_personalization': status,
-          'analytics_storage': status
-        });
-      }
-    }
+    updateAnalyticsConsent(status);
   };
 
   useEffect(() => {

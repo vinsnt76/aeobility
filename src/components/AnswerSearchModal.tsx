@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
+import { trackConversion } from '@/lib/analytics';
 import Link from 'next/link';
 import { Search, X, Sparkles, ArrowRight, AlertTriangle, ExternalLink, HelpCircle, Info } from 'lucide-react';
 import { SearchQueryResponse } from '@/lib/search/types';
@@ -83,29 +84,21 @@ export default function AnswerSearchModal() {
           setOffTopicCount(prev => prev + 1);
         }
 
-        // Dispatch GA4 & DataLayer internal search event
+        // Dispatch GA4, DataLayer, and Microsoft Clarity internal search event
         if (typeof window !== 'undefined') {
-          const win = window as unknown as {
-            dataLayer?: Array<Record<string, unknown>>;
-            gtag?: (...args: unknown[]) => void;
-          };
-          win.dataLayer = win.dataLayer || [];
-          win.dataLayer.push({
-            event: 'search',
+          const searchParams = {
             search_term: searchQuery,
             match_score: Math.round(data.similarityScore * 100),
             result_type: data.resultType,
-            matched_entity: data.topMatch?.pageName || 'None'
+            matched_entity: data.topMatch?.pageName || 'None',
+          };
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'search',
+            ...searchParams,
           });
 
-          if (typeof win.gtag === 'function') {
-            win.gtag('event', 'search', {
-              search_term: searchQuery,
-              match_score: Math.round(data.similarityScore * 100),
-              result_type: data.resultType,
-              matched_entity: data.topMatch?.pageName || 'None'
-            });
-          }
+          trackConversion('search', searchParams);
         }
       }
     } catch (err) {
