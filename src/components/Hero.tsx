@@ -15,12 +15,16 @@ export default function Hero() {
 
   const handleHeroScanSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!url.trim() || !intent.trim()) return;
+    const trimmedUrl = url.trim();
+    const trimmedIntent = intent.trim();
+    if (!trimmedUrl || !trimmedIntent) return;
+
+    const normalisedUrl = /^https?:\/\//i.test(trimmedUrl) ? trimmedUrl : `https://${trimmedUrl}`;
 
     trackGaEvent('hero_cta_clicked', { source: 'homepage_hero_direct_form' });
-    trackGaEvent('form_start_submitted', { target_url: url.trim(), target_intent: intent.trim() });
+    trackGaEvent('form_start_submitted', { target_url: normalisedUrl, target_intent: trimmedIntent });
 
-    router.push(`/diagnostic?url=${encodeURIComponent(url.trim())}&intent=${encodeURIComponent(intent.trim())}&auto=true`);
+    router.push(`/diagnostic?url=${encodeURIComponent(normalisedUrl)}&intent=${encodeURIComponent(trimmedIntent)}&auto=true`);
   };
 
   return (
@@ -115,14 +119,15 @@ export default function Hero() {
                     <input
                       id="hero-url-input"
                       name="url"
-                      type="url"
+                      type="text"
+                      inputMode="url"
                       autoComplete="url"
                       data-testid="input-telemetry-url"
                       required
                       value={url}
                       onChange={e => setUrl(e.target.value)}
                       onFocus={() => trackGaEvent('form_field_focused', { field: 'url', source: 'hero_direct_embed' })}
-                      placeholder="https://yourbrand.com.au"
+                      placeholder="yourbrand.com.au"
                       className="w-full h-11 px-3.5 rounded-xl bg-[#08090C] border border-[#1E293B] hover:border-slate-600 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-[#00E5FF] focus:ring-2 focus:ring-[#00E5FF]/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
                       spellCheck={false}
                       suppressHydrationWarning

@@ -10,8 +10,10 @@ export default function HeroScanForm() {
 
   const handleHeroScanSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (siteUrl.trim()) {
-      router.push(`/diagnostic?url=${encodeURIComponent(siteUrl.trim())}`);
+    const trimmed = siteUrl.trim();
+    if (trimmed) {
+      const normalisedUrl = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+      router.push(`/diagnostic?url=${encodeURIComponent(normalisedUrl)}`);
     } else {
       router.push('/diagnostic');
     }

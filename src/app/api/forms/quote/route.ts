@@ -34,11 +34,16 @@ export async function POST(req: Request) {
       );
     }
 
+    const rawWebsite = typeof (website || url) === "string" ? (website || url).trim() : "";
+    const normalisedWebsite = rawWebsite
+      ? (/^https?:\/\//i.test(rawWebsite) ? rawWebsite : `https://${rawWebsite}`)
+      : undefined;
+
     const result = await forms.submitQuoteForm({
       name: cleanName,
       email: cleanEmail,
       businessName: typeof businessName === "string" ? businessName.trim() : undefined,
-      website: typeof (website || url) === "string" ? (website || url).trim() : undefined,
+      website: normalisedWebsite,
       service: typeof (service || category) === "string" ? (service || category).trim() : undefined,
       message: typeof message === "string" ? message.trim() : undefined,
       source: typeof source === "string" ? source.trim() : undefined,

@@ -22,6 +22,8 @@ export function HomepageContactForm() {
     setIsSubmitting(true);
 
     try {
+      const rawUrl = formData.url.trim();
+      const normalisedUrl = rawUrl && !/^https?:\/\//i.test(rawUrl) ? `https://${rawUrl}` : rawUrl;
       const isAssistantAssisted = typeof window !== 'undefined' && sessionStorage.getItem('aeo_assistant_assisted') === 'true';
       const res = await fetch('/api/forms/quote', {
         method: 'POST',
@@ -29,7 +31,7 @@ export function HomepageContactForm() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          website: formData.url,
+          website: normalisedUrl,
           service: 'Sprint Scope Request (Homepage)',
           message: formData.message || 'Requested custom sprint scope from homepage footer form.',
           source: isAssistantAssisted ? 'Homepage Footer Form (AI Bill Assisted)' : 'Homepage Footer Form (/)',
@@ -141,11 +143,12 @@ export function HomepageContactForm() {
               <input
                 id="contact-url-input"
                 name="url"
-                type="url"
+                type="text"
+                inputMode="url"
                 autoComplete="url"
                 value={formData.url}
                 onChange={(e) => setFormData({ ...formData, url: e.target.value })}
-                placeholder="https://yourbrand.com.au"
+                placeholder="yourbrand.com.au"
                 className="w-full px-4 py-3 rounded-lg bg-[#08090C] border border-[#1E293B] text-white placeholder-slate-500 text-sm focus:border-[#00E5FF] focus:outline-none transition-colors"
               />
             </label>

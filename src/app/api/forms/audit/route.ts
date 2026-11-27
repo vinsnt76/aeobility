@@ -32,7 +32,8 @@ export async function POST(req: Request) {
 
     const cleanName = typeof name === "string" ? name.trim() : "";
     const cleanPhone = typeof phone === "string" ? phone.trim() : "";
-    const cleanWebsite = typeof website === "string" ? website.trim() : "";
+    const rawWebsite = typeof website === "string" ? website.trim() : "";
+    const cleanWebsite = rawWebsite ? (/^https?:\/\//i.test(rawWebsite) ? rawWebsite : `https://${rawWebsite}`) : "";
     const cleanTargetQuery = typeof (targetQuery || intent) === "string" ? (targetQuery || intent).trim() : "";
     const cleanBlindSpot = typeof blindSpot === "string" ? blindSpot.trim() : "";
     const cleanFirstImpression = typeof firstImpression === "string" ? firstImpression.trim() : "";

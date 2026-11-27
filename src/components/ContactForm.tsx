@@ -50,13 +50,15 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
     try {
+      const rawWebsite = formData.website.trim();
+      const normalisedWebsite = rawWebsite && !/^https?:\/\//i.test(rawWebsite) ? `https://${rawWebsite}` : rawWebsite;
       const res = await fetch('/api/forms/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          website: formData.website,
+          website: normalisedWebsite,
           businessName: formData.businessName,
           category: formData.category,
           message: formData.message,
@@ -351,12 +353,13 @@ export default function ContactForm() {
                     Website URL <span className="text-slate-400 font-normal lowercase">(optional)</span>
                   </label>
                   <input
-                    type="url"
+                    type="text"
+                    inputMode="url"
                     id="website"
                     value={formData.website}
                     onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                     className="w-full h-11 px-4 rounded-xl bg-[#080B12] border border-slate-600 text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-aeo-cyan focus:ring-2 focus:ring-aeo-cyan/25 text-sm transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]"
-                    placeholder="https://yourbusiness.com.au"
+                    placeholder="yourbusiness.com.au"
                   />
                 </div>
 

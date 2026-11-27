@@ -70,7 +70,10 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { intent, url, clientText: fallbackText } = body;
+    const { intent, url: rawUrl, clientText: fallbackText } = body;
+
+    const trimmedUrl = typeof rawUrl === 'string' ? rawUrl.trim() : '';
+    const url = trimmedUrl ? (/^https?:\/\//i.test(trimmedUrl) ? trimmedUrl : `https://${trimmedUrl}`) : '';
 
     if (!intent || (!url && !fallbackText)) {
       return NextResponse.json(

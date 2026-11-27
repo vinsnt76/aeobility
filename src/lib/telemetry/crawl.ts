@@ -2,7 +2,9 @@ import * as cheerio from 'cheerio';
 
 import { TechnicalSEO, CrawlQuality } from './types';
 
-export async function crawlUrl(url: string): Promise<{ textContent: string; technicalSEO: TechnicalSEO; schemaValidation: import('./types').SchemaValidation; crawlQuality: CrawlQuality }> {
+export async function crawlUrl(rawUrl: string): Promise<{ textContent: string; technicalSEO: TechnicalSEO; schemaValidation: import('./types').SchemaValidation; crawlQuality: CrawlQuality }> {
+  const trimmed = rawUrl.trim();
+  const url = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
   try {
     // Add a fast 6s timeout and pretend to be a normal browser to avoid simple blocks
     const res = await fetch(url, { 
