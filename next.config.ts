@@ -336,6 +336,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/docs',
+        destination: '/docs/api',
+        permanent: true,
+      },
+      {
         source: '/vcard.vcf',
         destination: 'https://aeobility.com.au/vince-baker.vcf',
         permanent: true,
